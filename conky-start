@@ -1,0 +1,23 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo 'Starting conky'
+sleep 2
+# Find out if process is running. If it is assign the PID of the process to a variable. Then shut down the process with a loop.
+cpid=$(pidof conky)
+while [[ $cpid != "" ]]; do
+	echo "Shutting down conky. . ."
+	echo "PID="$cpid
+	cpid=$(pidof conky)
+	killall conky
+	sleep 1
+done
+
+# Find out if process is running. If it is assign the PID of the process to a variable. Then start the process with a loop.
+while [[ $cpid = "" ]]; do
+	echo "Waiting for conky to start. . ."
+	detach conky
+	cpid=$(pidof conky)
+	sleep 1
+done

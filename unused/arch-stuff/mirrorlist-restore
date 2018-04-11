@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+pswd="spike"
+
+function restore(){
+	echo -e "${COLOR}"
+	# Log date and time
+	DATE_START=$(date +"%s")
+	echo "Update Start Time:"
+	DATE=$(date +"%m-%d-%y")
+	echo "Date: $DATE"
+	TIME=$(date +"%r")
+	echo "Time: $TIME"
+	echo
+	echo
+
+	# Restore previous mirrorlist
+	echo $pswd | sudo -S cp $HOME//mirrorlists/mirrorlist.old /etc/pacman.d/mirrorlist
+	sleep 2
+	echo
+	echo
+
+	# Resync
+	echo "Resyning to make sure all is good. . ."
+	echo
+	sleep 2
+	sudo pacman -Syu
+	sleep 2
+}
+
+echo -e "${COLOR}"
+echo
+echo "Restoring mirrorlist. . ."
+sleep 2
+echo
+	
+# Call restore function
+restore
+sleep 2
+
+echo -e "${COLOR}"
+echo
+echo "Mirrorlist has been restored to previous version."
+echo
+sleep 5
+echo -e "${RESTORE}"
+exit 0

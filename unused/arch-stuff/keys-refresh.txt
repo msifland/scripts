@@ -1,0 +1,277 @@
+Update Start Time:
+Date: 01-14-18
+Time: 04:30:01 AM
+Initializing keys. . .
+Populating archlinux. . .
+==> Appending keys from archlinux.gpg...
+==> Locally signing trusted keys in keyring...
+  -> Locally signing key DDB867B92AA789C165EEFA799B729B06A680C281...
+  -> Locally signing key 684148BB25B49E986A4944C55184252D824B18E8...
+  -> Locally signing key 91FFE0700E80619CEB73235CA88E23E377514E00...
+  -> Locally signing key AB19265E5D7D20687D303246BA1DFB64FFF979E7...
+  -> Locally signing key 0E8B644079F599DFC1DDC3973348882F6AC6A4C2...
+==> Importing owner trust values...
+==> Disabling revoked keys in keyring...
+  -> Disabling key 7FA647CD89891DEDC060287BB9113D1ED21E1A55...
+  -> Disabling key D4DE5ABDE2A7287644EAC7E36D1A9E70E19DAA50...
+  -> Disabling key 40440DC037C05620984379A6761FAD69BA06C6A9...
+  -> Disabling key B1F2C889CB2CCB2ADA36D963097D629E437520BD...
+  -> Disabling key BC1FBE4D2826A0B51E47ED62E2539214C6C11350...
+  -> Disabling key 63F395DE2D6398BBE458F281F2DBB4931985A992...
+  -> Disabling key 8F76BEEA0289F9E1D3E229C05F946DED983D4366...
+  -> Disabling key 4FCF887689C41B09506BE8D5F3E1D5C5D30DB0AD...
+  -> Disabling key 81D7F8241DB38BC759C80FCE3A726C6170E80477...
+  -> Disabling key 5E7585ADFF106BFFBBA319DC654B877A0864983E...
+  -> Disabling key E7210A59715F6940CF9A4E36A001876699AD6E84...
+  -> Disabling key F5A361A3A13554B85E57DDDAAF7EF7873CFD4BB6...
+  -> Disabling key 8CF934E339CAD8ABF342E822E711306E3C4F88BC...
+  -> Disabling key 5696C003B0854206450C8E5BE613C09CB4440678...
+  -> Disabling key 9515D8A8EAB88E49BB65EDBCE6B456CAF15447D5...
+  -> Disabling key 4A8B17E20B88ACA61860009B5CED81B7C2E5C0D2...
+  -> Disabling key 0B20CA1931F5DA3A70D0F8D2EA6836E1AB441196...
+  -> Disabling key 34C5D94FE7E7913E86DC427E7FB1A3800C84C0A5...
+  -> Disabling key 39F880E50E49A4D11341E8F939E4F17F295AFBF4...
+  -> Disabling key 66BD74A036D522F51DD70A3C7F2A16726521E06D...
+  -> Disabling key 44D4A033AC140143927397D47EFD567D4C7EA887...
+  -> Disabling key 27FFC4769E19F096D41D9265A04F9397CDFD6BB0...
+==> Updating trust database...
+Refreshing keys. . .
+gpg: refreshing 109 keys from hkp://pool.sks-keyservers.net
+gpg: key 4AC5588F941C2A25: "Antonio Rojas <arojas@archlinux.org>" not changed
+gpg: key FCF3C8CB5CF9C8D4: 1 signature not checked due to a missing key
+gpg: key FCF3C8CB5CF9C8D4: "Alexander Rødseth <rodseth@gmail.com>" not changed
+gpg: key 9D893EC4DAAF9129: 104 signatures not checked due to missing keys
+gpg: key 9D893EC4DAAF9129: "Bruno Pagani <bruno.pagani@ens-lyon.org>" not changed
+gpg: key 2E89012331361F01: 4 signatures not checked due to missing keys
+gpg: key 2E89012331361F01: "Evgeniy Alekseev <arcanis@archlinux.org>" not changed
+gpg: key FC1B547C8D8172C8: 77 signatures not checked due to missing keys
+gpg: key FC1B547C8D8172C8: "Levente Polyak (anthraxx) <levente@leventepolyak.net>" not changed
+gpg: key 42A1DB15EC133BAD: 1 signature not checked due to a missing key
+gpg: key 42A1DB15EC133BAD: "Angel Velásquez <angvp@archlinux.org>" not changed
+gpg: key 94657AB20F2A092B: 1 signature not checked due to a missing key
+gpg: key 94657AB20F2A092B: "Andreas Radke <andyrtr@archlinux.org>" not changed
+gpg: key F3E1D5C5D30DB0AD: 348 signatures not checked due to missing keys
+gpg: key F3E1D5C5D30DB0AD: "Andrea Scarpino <me@andreascarpino.it>" not changed
+gpg: key B02854ED753E0F1F: 1 signature not checked due to a missing key
+gpg: key B02854ED753E0F1F: "Anatol Pomozov <anatol.pomozov@gmail.com>" 1 new signature
+gpg: key 9BDCF497A4BBCC7F: "Ambrevar <ambrevar@gmail.com>" not changed
+gpg: key AFF5D95098BC6FF5: 3 signatures not checked due to missing keys
+gpg: key AFF5D95098BC6FF5: "Maxime Gauduin <alucryd@alucryd.xyz>" not changed
+gpg: key F99FFE0FEAE999BD: 5 signatures not checked due to missing keys
+gpg: key F99FFE0FEAE999BD: "Allan McRae <me@allanmcrae.com>" not changed
+gpg: key 40F557B731496106: 2 signatures not checked due to missing keys
+gpg: key 40F557B731496106: "Andrzej Giniewicz (giniu) <gginiu@gmail.com>" not changed
+gpg: key A04F9397CDFD6BB0: 5 signatures not checked due to missing keys
+gpg: key A04F9397CDFD6BB0: "Dan McGee (Arch Linux Master Key) <dan@master-key.archlinux.org>" not changed
+gpg: key 5184252D824B18E8: 6 signatures not checked due to missing keys
+gpg: key 5184252D824B18E8: "Thomas Bächler (Arch Linux Master Key) <thomas@master-key.archlinux.org>" 226 new signatures
+gpg: key 3348882F6AC6A4C2: 8 signatures not checked due to missing keys
+gpg: key 3348882F6AC6A4C2: "Pierre Schmitz (Arch Linux Master Key) <pierre@master-key.archlinux.org>" 184 new signatures
+gpg: key 7EFD567D4C7EA887: 1 duplicate signature removed
+gpg: key 7EFD567D4C7EA887: 6 signatures not checked due to missing keys
+gpg: key 7EFD567D4C7EA887: "Ionut Biru (Arch Linux Master Key) <ionut@master-key.archlinux.org>" not changed
+gpg: key A88E23E377514E00: 4 signatures not checked due to missing keys
+gpg: key A88E23E377514E00: "Florian Pritz (Arch Linux Master Key) <florian@master-key.archlinux.org>" 158 new signatures
+gpg: key BA1DFB64FFF979E7: 11 signatures not checked due to missing keys
+gpg: key BA1DFB64FFF979E7: "Allan McRae (Arch Linux Master Key) <allan@master-key.archlinux.org>" not changed
+gpg: key DB323392796CA067: 1 signature not checked due to a missing key
+gpg: key DB323392796CA067: "Ike Devolder <ike.devolder@gmail.com>" not changed
+gpg: key E8F18BA1615137BC: 6 signatures not checked due to missing keys
+gpg: key E8F18BA1615137BC: "Ionut Biru <ibiru@archlinux.org>" not changed
+gpg: key A5E9288C4FA415FA: 10 duplicate signatures removed
+gpg: key A5E9288C4FA415FA: 197 signatures not checked due to missing keys
+gpg: key A5E9288C4FA415FA: "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" 258 new signatures
+gpg: key DA6426DD215B37AD: 190 signatures not checked due to missing keys
+gpg: key DA6426DD215B37AD: "Guillaume ALAUX <guillaume@archlinux.org>" not changed
+gpg: key F22FB1D78A77AEAB: 1 signature not checked due to a missing key
+gpg: key F22FB1D78A77AEAB: "Giancarlo Razzolini (grazzolini) <grazzolini@archlinux.org>" not changed
+gpg: key B7310AE5F04569AE: 13 signatures not checked due to missing keys
+gpg: key B7310AE5F04569AE: "Giovanni Scafora <giovanni@archlinux.org>" not changed
+gpg: key 786C63F330D7CB92: 356 signatures not checked due to missing keys
+gpg: key 786C63F330D7CB92: "Felix Yan <felixonmars@archlinux.org>" not changed
+gpg: key 51E8B148A9999C34: 4 signatures not checked due to missing keys
+gpg: key 51E8B148A9999C34: "Evangelos Foutras <evangelos@foutrelis.com>" not changed
+gpg: key 90CB3D62C13D4796: 4 signatures not checked due to missing keys
+gpg: key 90CB3D62C13D4796: "Jiachen Yang <farseerfc@gmail.com>" not changed
+gpg: key 59B3122E2FA915EC: 1 signature not checked due to a missing key
+gpg: key 59B3122E2FA915EC: "Alexandre Filgueira <alexfilgueira@cinnarch.com>" not changed
+gpg: key A6234074498E9CEE: 64 signatures not checked due to missing keys
+gpg: key A6234074498E9CEE: "Christian Hesse (Arch Linux Package Signing) <arch@eworm.de>" not changed
+gpg: key FCF2CB179205AC90: 1 signature not checked due to a missing key
+gpg: key FCF2CB179205AC90: "Eric Belanger <eric@archlinux.org>" not changed
+gpg: key 5FA5E5544F010D48: 6 signatures not checked due to missing keys
+gpg: key 5FA5E5544F010D48: "Daniel Wallace <dwallace@saltstack.com>" not changed
+gpg: key 1EB2638FF56C0C53: 10 signatures not checked due to missing keys
+gpg: key 1EB2638FF56C0C53: "Dave Reisner <d@falconindy.com>" not changed
+gpg: key 5ED514A45BD5C938: 2 signatures not checked due to missing keys
+gpg: key 5ED514A45BD5C938: "Gerardo Exequiel Pozzi <vmlinuz386@gmail.com>" not changed
+gpg: key E613C09CB4440678: 1 signature not checked due to a missing key
+gpg: key E613C09CB4440678: "Daniel Isenmann <daniel@archlinux.org>" 1 new signature
+gpg: key 5C2E46A0F53A76ED: 14 signatures not checked due to missing keys
+gpg: key 5C2E46A0F53A76ED: "Dan McGee <dpmcgee@gmail.com>" not changed
+gpg: key D53A0445B47A0DAB: 1 signature not checked due to a missing key
+gpg: key D53A0445B47A0DAB: "Connor Behan <connor.behan@gmail.com>" not changed
+gpg: key BBE43771487328A9: 12 signatures not checked due to missing keys
+gpg: key BBE43771487328A9: "Bartlomiej Piotrowski <b@bpiotrowski.pl>" not changed
+gpg: key 6D1655C14CE1C13E: 2 duplicate signatures removed
+gpg: key 6D1655C14CE1C13E: 70 signatures not checked due to missing keys
+gpg: key 6D1655C14CE1C13E: 1 bad signature
+gpg: key 6D1655C14CE1C13E: 1 signature reordered
+gpg: key 6D1655C14CE1C13E: "Florian Pritz <bluewind@xinu.at>" not changed
+gpg: key E62F853100F0D0F0: 89 signatures not checked due to missing keys
+gpg: key E62F853100F0D0F0: "Gaetan Bisson <gaetan@fenua.org>" not changed
+gpg: key CF7037A4F27FB7DA: 3 signatures not checked due to missing keys
+gpg: key CF7037A4F27FB7DA: "speps <speps@aur.archlinux.org>" not changed
+gpg: key D21461E3DFE2060D: 11 signatures not checked due to missing keys
+gpg: key D21461E3DFE2060D: "Christian Rebischke (Arch Linux Security Team-Member) <Chris.Rebischke@archlinux.org>" not changed
+gpg: key 8DBD63B82072D77A: 17 signatures not checked due to missing keys
+gpg: key 8DBD63B82072D77A: "Sébastien Luttringer <seblu@seblu.net>" not changed
+gpg: key 456C7A9B91B842AE: 1 signature not checked due to a missing key
+gpg: key 456C7A9B91B842AE: "Jakob Gruber <jakob.gruber@gmail.com>" not changed
+gpg: key 81AF739EC0711BF1: 1 signature not checked due to a missing key
+gpg: key 81AF739EC0711BF1: "Rashif Rahman (Ray) <schiv@archlinux.org>" not changed
+gpg: key 426991CD8406FFF3: 1 signature not checked due to a missing key
+gpg: key 426991CD8406FFF3: "Ronald van Haren <ronald@archlinux.org>" not changed
+gpg: key 206CBC892D1493D2: 12 signatures not checked due to missing keys
+gpg: key 206CBC892D1493D2: "Rémy Oudompheng <remy@archlinux.org>" not changed
+gpg: key 7F2D434B9741E8AC: 16 signatures not checked due to missing keys
+gpg: key 7F2D434B9741E8AC: 1 bad signature
+gpg: key 7F2D434B9741E8AC: "Pierre Schmitz <pierre@archlinux.de>" not changed
+gpg: key 51DAE9B7C1AE9161: 13 signatures not checked due to missing keys
+gpg: key 51DAE9B7C1AE9161: "NicoHood <pgp@nicohood.de>" not changed
+gpg: key B4360204B250F0D3: 92 signatures not checked due to missing keys
+gpg: key B4360204B250F0D3: "Fabio Castelli <muflone@vbsimple.net>" not changed
+gpg: key 94DD2393DA2EE423: 1 signature not checked due to a missing key
+gpg: key 94DD2393DA2EE423: "Massimiliano Torromeo (Personal non-work identity) <massimiliano.torromeo@gmail.com>" not changed
+gpg: key A91764759326B440: 3 signatures not checked due to missing keys
+gpg: key A91764759326B440: "Lukas Fleischer <lfleischer@lfos.de>" not changed
+gpg: key 06096A6AD1CEDDAC: 1 signature not checked due to a missing key
+gpg: key 06096A6AD1CEDDAC: "Laurent Carlier <lordheavym@gmail.com>" not changed
+gpg: key 50FB9B273A9D0BB5: 6 signatures not checked due to missing keys
+gpg: key 50FB9B273A9D0BB5: "Johannes Löthberg <johannes@kyriasis.com>" not changed
+gpg: key 396E3E25BAB142C1: 1 signature not checked due to a missing key
+gpg: key 396E3E25BAB142C1: "Kyle Keen <keenerd@gmail.com>" not changed
+gpg: key A3D9562A589874AB: 2 signatures not checked due to missing keys
+gpg: key A3D9562A589874AB: "Jürgen Hötzel <juergen@hoetzel.info>" not changed
+gpg: key 332C9C40F40D2072: 4 signatures not checked due to missing keys
+gpg: key 332C9C40F40D2072: "Jonathan Steel <mail@jsteel.org>" not changed
+gpg: key 24E4CDB0013C2580: 1 signature not checked due to a missing key
+gpg: key 24E4CDB0013C2580: "Jaroslav Lichtblau <svetlemodry@archlinux.org>" not changed
+gpg: key 37E0AF1FDA48F373: 4 signatures not checked due to missing keys
+gpg: key 37E0AF1FDA48F373: "Jerome Leclanche <jerome@leclan.ch>" not changed
+gpg: key 976AC6FA3B94FA10: 1 signature not checked due to a missing key
+gpg: key 976AC6FA3B94FA10: "Jan de Groot <info@jandegrootict.nl>" not changed
+gpg: key C06086337C50773E: 4 signatures not checked due to missing keys
+gpg: key C06086337C50773E: "Jelle van der Waa <jelle@vdwaa.nl>" not changed
+gpg: key 654B877A0864983E: 8 signatures not checked due to missing keys
+gpg: key 654B877A0864983E: "Martin Wimpress (http://www.flexion.org) <martin@flexion.org>" not changed
+gpg: key F2DBB4931985A992: 1 signature not checked due to a missing key
+gpg: key F2DBB4931985A992: "Dieter Plaetinck <dieter@plaetinck.be>" not changed
+gpg: key 761FAD69BA06C6A9: 1 signature not checked due to a missing key
+gpg: key 761FAD69BA06C6A9: "Dicebot <public@dicebot.lv>" not changed
+gpg: key A001876699AD6E84: 6 signatures not checked due to missing keys
+gpg: key A001876699AD6E84: "Gavin Marciniak-Bisesi <Daenyth@gmail.com>" not changed
+gpg: key E6B456CAF15447D5: 4 signatures not checked due to missing keys
+gpg: key E6B456CAF15447D5: "Federico Cinelli <cinelli@aur.archlinux.org>" not changed
+gpg: key E2539214C6C11350: 1 signature not checked due to a missing key
+gpg: key E2539214C6C11350: "Federico Cinelli <cinelli.federico@gmail.com>" not changed
+gpg: key 7F2A16726521E06D: 5 signatures not checked due to missing keys
+gpg: key 7F2A16726521E06D: "Christopher Brannon <chris@the-brannons.com>" not changed
+gpg: key 1F0CD4921ECAA030: 86 signatures not checked due to missing keys
+gpg: key 1F0CD4921ECAA030: "Baptiste Jonglez <baptiste@bitsofnetworks.org>" not changed
+gpg: key 1D1F0DC78F173680: 3 signatures not checked due to missing keys
+gpg: key 1D1F0DC78F173680: "Xyne. (key #3) <xyne@archlinux.ca>" not changed
+gpg: key 097D629E437520BD: 1 signature not checked due to a missing key
+gpg: key 097D629E437520BD: "Vesa Kaihlavirta <vegai@iki.fi>" not changed
+gpg: key 39E4F17F295AFBF4: 115 signatures not checked due to missing keys
+gpg: key 39E4F17F295AFBF4: "Thorsten Töpper <atsutane@freethoughts.de>" not changed
+gpg: key E711306E3C4F88BC: 3 signatures not checked due to missing keys
+gpg: key E711306E3C4F88BC: "Timothy Redaelli <timothy.redaelli@gmail.com>" not changed
+gpg: key 771DF6627EDF681F: 7 signatures not checked due to missing keys
+gpg: key 771DF6627EDF681F: "Tobias Powalowski <tobias.powalowski@googlemail.com>" not changed
+gpg: key C8880A6406361833: 5 signatures not checked due to missing keys
+gpg: key C8880A6406361833: "Tom Gundersen <teg@jklm.no>" not changed
+gpg: key 284FC34C8E4B1A25: 10 signatures not checked due to missing keys
+gpg: key 284FC34C8E4B1A25: 1 bad signature
+gpg: key 284FC34C8E4B1A25: "Thomas Bächler <thomas@bchlr.de>" not changed
+gpg: key F9E712E59AF5F22A: 7 signatures not checked due to missing keys
+gpg: key F9E712E59AF5F22A: "Daniel Micay <danielmicay@gmail.com>" not changed
+gpg: key C847B6AEB0544167: "Nicola Squartini <tensor5@gmail.com>" not changed
+gpg: key 7FB1A3800C84C0A5: 1 signature not checked due to a missing key
+gpg: key 7FB1A3800C84C0A5: "Thomas Dziedzic <gostrc@gmail.com>" not changed
+gpg: key 39E4B877E62EB915: 1 signature not checked due to a missing key
+gpg: key 39E4B877E62EB915: "Sven-Hendrik Haase <svenstaro@gmail.com>" not changed
+gpg: key 73B8ED52F1D357C1: 1 signature not checked due to a missing key
+gpg: key 73B8ED52F1D357C1: "Lukas Jirkovsky <l.jirkovsky@gmail.com>" not changed
+gpg: key 65C110C1EA433FC7: 4 signatures not checked due to missing keys
+gpg: key 65C110C1EA433FC7: "Sergej Pupykin <arch@sergej.pp.ru>" not changed
+gpg: key C75E985FF8B993B4: "Javier 'nrz' (BlackArch Developer) <nrz@nullsecurity.net>" not changed
+gpg: key 7533BAFE69A25079: "Levon 'noptrix' Kayan (BlackArch Developer) <noptrix@nullsecurity.net>" not changed
+gpg: key 66E0CDBD1E01F333: "Evan Teitelman (BlackArch Master) <teitelmanevan@gmail.com>" not changed
+gpg: key 63EC0ADBEA87E4E3: "Evan Teitelman <teitelmanevan@gmail.com>" not changed
+gpg: key D295AA940EFDDF62: "Javier 'nrz' (BlackArch Master) <nrz@nullsecurity.net>" not changed
+gpg: key 67D8BDF42AD93F4E: "Levon 'noptrix' Kayan (BlackArch Master) <noptrix@nullsecurity.net>" not changed
+gpg: key F6B1610B3ECDBC9F: "Andrew Crerar <andrew@crerar.io>" not changed
+gpg: key 54C28F4FF5A1A949: 13 signatures not checked due to missing keys
+gpg: key 54C28F4FF5A1A949: "David Runge <dave@sleepmap.de>" not changed
+gpg: key 9C02FF419FECBE16: 7 duplicate signatures removed
+gpg: key 9C02FF419FECBE16: 345 signatures not checked due to missing keys
+gpg: key 9C02FF419FECBE16: "Morten Linderud <morten@linderud.pw>" 8 new signatures
+gpg: key EEEEE2EEEE2EEEEE: 10 duplicate signatures removed
+gpg: key EEEEE2EEEE2EEEEE: 12 signatures not checked due to missing keys
+gpg: key EEEEE2EEEE2EEEEE: 3 signatures reordered
+gpg: key EEEEE2EEEE2EEEEE: "Gaetan Bisson <gaetan@fenua.org>" not changed
+gpg: key 6BC26A17B9B7018A: 6 duplicate signatures removed
+gpg: key 6BC26A17B9B7018A: 6 signatures reordered
+gpg: key 6BC26A17B9B7018A: "Alad Wenter <alad@mailbox.org>" not changed
+gpg: key 22E3B67B4A86FDE7: "Dan Printzell <me@vild.io>" not changed
+gpg: key EB763B4E9DB887A6: 2 duplicate signatures removed
+gpg: key EB763B4E9DB887A6: 1 signature not checked due to a missing key
+gpg: key EB763B4E9DB887A6: 2 signatures reordered
+gpg: key EB763B4E9DB887A6: "Thore Bödecker <foxxx0@archlinux.org>" not changed
+gpg: key 9B729B06A680C281: 3 signatures not checked due to missing keys
+gpg: key 9B729B06A680C281: "Bartłomiej Piotrowski (Arch Linux Master Key) <bpiotrowski@master-key.archlinux.org>" not changed
+gpg: key 5CED81B7C2E5C0D2: 1 signature not checked due to a missing key
+gpg: key 5CED81B7C2E5C0D2: "Xyne. <xyne@archlinux.ca>" not changed
+gpg: key EA6836E1AB441196: 1 signature not checked due to a missing key
+gpg: key EA6836E1AB441196: "Stéphane Gaudreault <stephane@archlinux.org>" not changed
+gpg: key 3A726C6170E80477: 1 signature not checked due to a missing key
+gpg: key 3A726C6170E80477: "Роман Кирилич (Roman Kyrylych) <roman@archlinux.org>" not changed
+gpg: key 6D1A9E70E19DAA50: 2 duplicate signatures removed
+gpg: key 6D1A9E70E19DAA50: 134 signatures not checked due to missing keys
+gpg: key 6D1A9E70E19DAA50: 1 signature reordered
+gpg: key 6D1A9E70E19DAA50: "Peter Richard Lewis <pete@muddygoat.org>" not changed
+gpg: 100 keys processed so far
+gpg: key B9113D1ED21E1A55: 1 signature not checked due to a missing key
+gpg: key B9113D1ED21E1A55: "Kaiting Chen <kaitocracy@gmail.com>" not changed
+gpg: key 5F946DED983D4366: 1 signature not checked due to a missing key
+gpg: key 5F946DED983D4366: "Justin Davis (juster) <jrcd83@gmail.com>" not changed
+gpg: key AF7EF7873CFD4BB6: 1 signature not checked due to a missing key
+gpg: key AF7EF7873CFD4BB6: "Jonathan Conder <jonno.conder@gmail.com>" not changed
+gpg: key DF7209F3B84C1B2F: 3 signatures not checked due to missing keys
+gpg: key DF7209F3B84C1B2F: "Tyler Bennett (ArchStrike Developer Key) <arch3y@archstrike.org>" not changed
+gpg: key 84818A6819AF4A9B: 1 signature not checked due to a missing key
+gpg: key 84818A6819AF4A9B: "Eli Schwartz <eschwartz@archlinux.org>" not changed
+gpg: key DE64825E7CBC0D51: 7 signatures not checked due to missing keys
+gpg: key DE64825E7CBC0D51: "Kevin MacMartin (ArchStrike Dev) <prurigro@archstrike.org>" not changed
+gpg: key C65009B64EB7BB3C: "Evan Teitelman (BlackArch Developer) <teitelmanevan@gmail.com>" not changed
+gpg: Total number processed: 107
+gpg:              unchanged: 100
+gpg:         new signatures: 836
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:  10  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:  10  signed:  81  trust: 1-, 0q, 0n, 9m, 0f, 0u
+gpg: depth: 2  valid:  75  signed:  13  trust: 75-, 0q, 0n, 0m, 0f, 0u
+gpg: next trustdb check due at 2018-06-25
+Updating databases. . .
+:: Synchronizing package databases...
+downloading core.db...
+downloading extra.db...
+downloading community.db...
+downloading multilib.db...
+downloading archlinuxfr.db...
+downloading archlinuxfr.db...
+downloading archlinuxfr.db...
+downloading archlinuxfr.db...
+downloading archlinuxfr.db...
+downloading archstrike.db...

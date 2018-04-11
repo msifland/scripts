@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# This script closes the window that opens and stays open at startup
+sleep 60
+/usr/bin/megasync

@@ -1,0 +1,9 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "Starting anydesk. . ."
+echo
+sleep 120
+
+detach /usr/bin/anydesk

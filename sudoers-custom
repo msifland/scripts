@@ -1,0 +1,79 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+
+# Checking for root.
+if [[ $EUID != 0 ]] ; then
+echo "This must be run as root!"
+exit 1
+fi
+echo
+cp /etc/sudoers $HOME/tmp/
+# This section looks for Defaults timestamp_timeout and removes or add a time to it.
+SUDOERS="/etc/sudoers"
+# Explainging what we are doing.
+echo "${ILCOLOR3}Making customer sudoers file. . .${ILRESTORE}"
+sleep 1
+echo
+read -p "${ILCOLOR3}Would you like to check the timeout?[y/n]: ${ILRESTORE}" CKTO
+	if [[ "$CKTO" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		# Set variable
+		TMOUT="Defaults timestamp"
+		# Check if variable already exists in file with grep. If it does, then exit. If not, then add it to the bottome of the file.
+		if grep -q "$TMOUT" $SUDOERS; then
+			echo
+			read -p "${ILCOLOR3}Already set to $(grep "Defaults timestamp" $SUDOERS | sed 's:Defaults timestamp_timeout=::g' | sed 's:#::g'). Would you like to remove?[y/n]:${ILRESTORE} " RMV
+			if [[ "$RMV" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+				sed -i '/Defaults timestamp/d' $SUDOERS
+			fi
+		else
+			echo
+			read -p "${ILCOLOR3}No timeout set, would you like to set one?[y/n]: ${ILRESTORE}" SETTO
+			echo
+			if [[ "$SETTO" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+				read -p "${ILCOLOR3}How many minutes should the sudo timeout be set to? -1 means NO TIMEOUT. ${ILRESTORE}" MINSTO
+				echo
+				echo "${ILCOLOR3}Adding 'Defaults timestamp_timeout=$MINSTO to /etc/sudoers file. . .${ILRESTORE}"
+				sleep 2
+				sudo echo '' >> $SUDOERS
+				sudo echo "Defaults timestamp_timeout=$MINSTO" >> $SUDOERS
+			fi
+		fi
+	fi
+
+# This section looks to see if secure path is commented out for path NOT resetting PATH environment.
+echo
+read -p "${ILCOLOR3}Would you like to check secure path?[y/n]: ${ILRESTORE}" PTH
+	if [[ "$PTH" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		ENVRT="Defaults	env_reset"
+		SECPT="Defaults	secure_path"
+		if grep -Fxq "#$ENVRT" $SUDOERS; then
+			echo
+			read -p "${ILCOLOR3}Found $ENVRT but already commented out, would you like to uncomment?[y/n]: ${ILRESTORE}" UNCMT
+				if [[ "$UNCMT" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+					sed -i 's:#Defaults	env_reset:Defaults	env_reset:g' $SUDOERS
+					sed -i 's:#Defaults	secure_path:Defaults	secure_path:g' $SUDOERS
+				fi
+			echo			
+			sleep 1
+		elif grep -Fxq "$ENVRT" $SUDOERS; then
+			echo
+			echo "${ILCOLOR3}Found $ENVRT uncommented, commenting out now. . .${ILRESTORE}"
+			sed -i 's:Defaults	env_reset:#Defaults	env_reset:g' $SUDOERS
+			sed -i 's:Defaults	secure_path:#Defaults	secure_path:g' $SUDOERS
+			sleep 1
+		fi
+	fi
+
+# This checks exit status for error from output.
+if [[ $? = 0 ]]; then
+	echo
+	echo "${ILCOLOR3}All is good.${ILRESTORE}"
+else
+	echo "${ILCOLOR3}Something went wrong!!!${ILRESTORE}"
+	echo
+fi
+
+# Removes all empty lines from end of file.
+gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS
+exit

@@ -1,0 +1,38 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "${ILCOLOR2}We will now update your personal git directories consisting of Documents, scripts, and rom_scripts. . .${ILRESTORE}"
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating Documents. . .${ILRESTORE}"
+cd ~/Documents
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating scripts. . .${ILRESTORE}"
+cd ~/scripts
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating rom_scripts. . .${ILRESTORE}"
+cd ~/rom_scripts
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating pkg_bkups. . .${ILRESTORE}"
+cd ~/pkg_bkups
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1

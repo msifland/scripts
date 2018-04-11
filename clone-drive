@@ -1,0 +1,103 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo
+echo "This will clone one drive to another. If you are cloning to a USB, please make sure you run 'wipe-usb' first."
+read -p "Would you like to run 'wipe-usb' now? " WPE
+if [[ "$WPE" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	$HOME/scripts/wipe-usb
+else
+echo "Not wiping. . ."
+echo
+sleep 1
+
+# Create folers if the don't exist.
+CLONE1="$HOME/tmp/clone"
+MOUNT_CLONE1="$HOME/tmp/mount_clone"
+MOUNT_DEST1="$HOME/tmp/mount_dest"
+if [[ ! -d $CLONE1 ]]; then
+	mkdir $CLONE1
+fi
+if [[ ! -d $MOUNT_CLONE1 ]]; then
+	mkdir $MOUNT_CLONE1
+fi
+if [[ ! -d $MOUNT_DEST1 ]]; then
+	mkdir $MOUNT_DEST1
+fi
+
+# List drives if coping USB.
+echo "Listing drives. . ."
+sleep 1
+lsblk
+
+# Ask what drive to clone.
+echo
+read -p 'Which drive would you like to clone(ex. /dev/sdb, home/msifland/scripts, etc.)? ' DRIVE1
+echo
+# Check if USB, if so then mount to above folders.
+echo "You selected $DRIVE1 as your drive to clone."
+DRVMNT1=$DRIVE1/*
+if [[ -b $DRIVE1 ]]; then
+	echo
+	echo "$DRIVE1 is a USB drive, must mount first."
+	sudo mount $DRIVE1 /home/msifland/tmp/mount_clone
+	DRVMNT1=/home/msifland/tmp/mount_clone/*
+fi
+echo
+sleep 1
+
+# Ask what destination drive to use.
+echo
+read -p 'What is your destination drive(ex. /dev/sdc, /home/msifland/my-dir, etc.)? If not a USB drive then select "d" for defaut folder $HOME/tmp/clone. ' DRIVE2
+if [[ ! $DRIVE2 =~ ^([dD])$ ]]; then
+	echo
+	# Check if USB, if so then mount to above folders.
+	echo "You selected $DRIVE2 as your destination drive."
+	DRVMNT2=$DRIVE2
+	if [[ -b $DRIVE2 ]]; then
+		echo
+		echo "$DRIVE2 is a USB drive, must mount first."
+		sudo wipefs --all --force $DRIVE2
+		sudo mount $DRIVE2 /home/msifland/tmp/mount_dest
+		DRVMNT2=/home/msifland/tmp/mount_dest/
+	else
+		if [[ ! -d $DRIVE2 ]]; then
+			mkdir $DRIVE2
+		fi
+	fi
+else
+	DRVMNT2=/home/msifland/tmp/clone/
+	rm -rf $CLONE1/*
+fi
+echo
+sleep 1
+
+echo
+echo "Using cp -rf to clone $DRVMNT1 to $DRVMNT2."
+echo
+sleep 1
+
+# Clone
+sudo dd bs=4M if=$DRVMNT1 | sudo pv -trebI | sudo dd of=$DRVMNT2 && sync
+#sudo cp -axv $DRVMNT1 $DRVMNT2
+#sudo rsync -avxHAXW --progress --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} $DRVMNT1 $DRVMNT2
+
+# Unmount, if mounted.
+if [[ -b $DRIVE1 ]]; then
+	sudo umount $DRIVE1
+fi
+if [[ -b $DRIVE2 ]]; then
+	sudo umount $DRIVE2
+fi
+
+# Change ownership.
+sudo chown -R msifland:users $DRVMNT1
+sudo chown -R msifland:users $DRVMNT2
+
+echo
+echo "Done."
+echo
+echo
+
+exit

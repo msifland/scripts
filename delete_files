@@ -1,0 +1,68 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# This scripts will find and delete files.
+echo
+# Crate variables.
+log=$HOME/tmp/find_log.txt
+rm -f $log
+touch $log
+
+# Ask if recursive search.
+read -p "Would you like to search recursively? " srch
+# Yes to recursive and write earch file to a line in a tmp text file.
+if [[ "$srch" =~ ^([yE][eE][sS]|[yY])$ ]]; then
+	loct=$(find . -iname $1 2> >(grep -v 'Permission denied' >&2))
+	for i in $loct; do
+		# Shows on screen and writes to tmp file.
+		echo $i
+		echo $i >> $log
+	done
+	sleep 1
+else
+	# Not to recursive
+	loct=$(find . -maxdepth 1 -iname $1 2> >(grep -v 'Permission denied' >&2))
+	# Shows on screen and writes to tmp file.
+	for i in $loct; do
+		echo $i
+		echo $i >> $log
+	done
+	sleep 1
+fi
+
+# This line removes the "." from the beginning of earch line and replaces it with full directory.
+sed -i 's#^./#'$PWD/'#' $log
+
+echo
+# Ask to show list first in case it's needs to be edited.
+read -p "Would you like to open delete list and remove lines before deleteing? " opn
+if [[ "$opn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	nano $log
+	sleep 1
+else
+	sleep 1
+fi
+
+echo
+# Ask to delete files if not, end script.
+read -p "Would you like to delete files now? " del
+if [[ "$del" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	# Loop to delete files. Collect from list individually and delete each file.
+	for i in $(cat $log); do
+		rm -f "$i"
+		echo "Deleting $i"
+		sleep .25
+	done
+	sleep 1
+else
+	echo
+	sleep 1
+	echo "Ok, not deleting files now."
+	sleep 1
+fi
+
+echo
+# Remove tmp list.
+echo "Removing delete list now. . ."
+rm -f $log
+sleep 1

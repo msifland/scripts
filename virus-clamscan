@@ -1,0 +1,120 @@
+#!/bin/bash
+
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+BUILDLOG="$HOME/infections/last-run.txt"
+
+PSWD="spike"
+
+EXCLUDE="--exclude-dir=^/home/msifland/roms
+--exclude-dir=^$HOME/.local/share/Trash
+--exclude-dir=^$HOME/livecd
+--exclude-dir=^/root/.local/share/Trash
+--exclude-dir=^$HOME/Modules&Apps
+--exclude-dir=^$HOME/infections
+--exclude-dir=^/var/lib/pacman/local/metasploit*
+--exclude-dir=^/usr/share/doc/metasploit*
+--exclude-dir=^/opt/metasploit*
+"
+
+INCLUDE="
+/
+"
+# Example for inclusion:
+# INCLUDE="
+# /
+# /home
+# /home/msifland
+# "
+
+# Example for exclusion:
+# EXCLUDE="--exclude-dir=^/home/msifland/roms
+# --exclude-dir=^/home/msifland/scripts
+# --exclude-dir=^/home/msifland/.cache
+# --exclude-dir=^/home/msifland/.local/share/Trash
+# "
+
+function scan(){
+	# Log start date and time
+	DATE_START=$(date +"%s")
+	echo "Start Time:" 2>&1 | tee -a $BUILDLOG
+	DATE=$(date +"%m-%d-%y")
+	echo "Date: $DATE" 2>&1 | tee -a $BUILDLOG
+	TIME=$(date +"%r")
+	echo "Time: $TIME" 2>&1 | tee -a $BUILDLOG
+	echo
+	sleep 2
+
+	echo "Running clamscan to scan for viruses. . ."
+	echo
+ 	sleep 2
+
+	# List directories to include and exclude
+	echo "Scanning: $INCLUDE"
+	echo
+	sleep 2
+	echo "Excluding:"
+	echo "$EXCLUDE" | sed 's/--exclude-dir=^//g'
+	echo
+	sleep 2
+
+	# Update virus definitions
+	echo $PSWD | sudo -S freshclam
+	echo
+	sleep 2
+
+	# Start scan
+	# Create folder to store viruses if not exist
+	if [[ ! -d $HOME/infections ]]; then
+		mkdir $HOME/infections
+	fi
+	# Scan -recursivley -i only show infected
+	sudo clamscan -r -i $EXCLUDE $INCLUDE --move=$HOME/infections
+	echo
+	echo
+
+	# Log end time and how long it took
+	echo "End Time:"
+	DATE=$(date +"%m-%d-%y")
+	echo "Date: $DATE" 2>&1 | tee -a $BUILDLOG
+	TIME=$(date +"%r")
+	echo "Time: $TIME" 2>&1 | tee -a $BUILDLOG
+	DATE_END=$(date +"%s")
+	DIFF=$(($DATE_END - $DATE_START))
+	echo "It took $(($DIFF / 3600 )) hours $((($DIFF % 3600) / 60)) minutes $(($DIFF % 60)) seconds to scan your system." 2>&1 | tee -a $BUILDLOG | pv -qL 20
+	echo
+	sleep 2
+}
+
+# Remove backup log more than 4
+echo -e "${COLOR}"
+echo "Removing old build logs. . ." 2>&1 | tee -a $BUILDLOG
+echo
+sleep 2
+echo -e "${RESTORE}"
+if [[ -f /home/msifland/infections/last-run-2.txt ]]; then
+	rm -rf /home/msifland/infections/last-run-2.txt
+fi
+# Rename last-run-1 lists to last-run-2
+if [[ -f /home/msifland/infections/last-run-1.txt ]]; then
+	mv /home/msifland/infections/last-run-1.txt /home/msifland/infections/last-run-2.txt
+fi
+
+# Rename last-run to last-run-1
+if [[ -f /home/msifland/infections/last-run.txt ]]; then
+	mv /home/msifland/infections/last-run.txt /home/msifland/infections/last-run-1.txt
+fi
+
+# Call function
+echo -e "${COLOR}"
+scan 2>&1 | tee $BUILDLOG
+echo
+	sleep 2
+
+echo -e "${COLOR}"
+echo "You can edit included and excluded files and folders by typing edit-virus-clamscan"
+echo
+	sleep 2
+echo -e "${RESTORE}"
+exit 0

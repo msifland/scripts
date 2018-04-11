@@ -1,0 +1,81 @@
+#!/bin/bash
+# This is a blank bash script document.
+# 
+
+
+# Check if script has been run as root.
+if [[ ! "$USER" = "root" ]]; then
+	echo "This script must be run as root!"
+	exit
+fi
+
+echo
+echo "${ILCOLOR3}Purging old kernels. Here are the kernels on your system, newest first: ${ILRESTORE}"
+sleep 1
+
+# Gathering system kernels and slightly renaming for apt purposes. Creating a tmp file to write them too for reference.
+KERNS=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
+KERN_FILE=$HOME/tmp/kern_file
+
+if [[ ! -f $KERN_FILE ]]; then
+	touch $KERN_FILE
+fi
+echo "" > $KERN_FILE
+
+# Loop to list the kernels in the file on numbered lines and echo them on screen.
+n=0
+for i in $KERNS; do
+	let n=n+1
+	echo "$n. $i" >> $KERN_FILE
+	echo "$n. $i"
+	sleep .5
+done
+echo "${ILCOLOR3}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
+sleep 1
+
+# Ask to select line numbers for removal separated by commas. Then remove those commas and grep them to individual lines.
+echo
+read -p "Type the line numbers of the kerenels you want to uninstall, separted by a comma.(ex. 2,4,1) Or type 0 to exit: " RMV
+if [[ "$RMV" = 0 ]]; then
+	echo
+	echo "Ok, exiting now."
+	rm -f $KERN_FILE
+	sleep 1
+	exit
+fi
+
+# Format for removal, removing commas and listing individually
+FOR_REM=$(echo $RMV | sed 's:,::g' | grep -o .)
+sleep 1
+
+# Loop through the line numers from above grepping the created file for lines beginning with those numbers. Error handling here for line numbers that don't exist.
+echo
+echo "${ILCOLOR3}Kernels set to remove: ${ILRESTORE}"
+for j in $FOR_REM; do
+	if grep -q "^$j" $KERN_FILE; then
+		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g'
+		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')
+		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g')
+	else
+		# These are just examples of using a newline charater in and echo.
+		echo -e "!!!****************!!!\nError detected! No number $j. "$'\nRe-run script.\n\n'
+		exit
+	fi
+done
+sleep 1
+
+# If all is good, then remove.
+echo
+apt purge $REM
+if [[ $? = 0 ]]; then
+	echo
+	update-grub
+	echo "${ILCOLOR3}All is good.${ILRESTORE}"
+else
+	echo
+	echo "Error detected!!!"
+fi
+sleep 1
+
+rm -f $KERN_FILE
+echo $'Done.\n\n'

@@ -1,0 +1,102 @@
+#! /bin/bash
+
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+HOME_DIR=$HOME/mirrorlists
+PSWD="spike"
+
+# Log date and time
+echo -e "${COLOR}"
+DATE_START=$(date +"%s")
+echo "Update Start Time:"
+DATE=$(date +"%m-%d-%y")
+echo "Date: $DATE"
+TIME=$(date +"%r")
+echo "Time: $TIME"
+echo
+
+echo
+sleep 1
+echo "Updating US pacman mirrorlist. . ."
+echo
+echo
+sleep 2
+
+# Create dir and go into there
+if [[ ! -d $HOME_DIR ]]; then
+	mkdir $HOME_DIR
+fi
+cd $HOME_DIR
+
+# Backup that 2 old mirrorlist
+echo "Backing up old mirrolists first. . ."
+sleep 1
+echo "mv $HOME_DIR/mirrorlist.old $HOME_DIR/mirrorlist.old-1"
+sleep 1
+echo "mv $HOME_DIR/mirrorlist.old $HOME_DIR/mirrorlist.old"
+if [[ -f $HOME_DIR/mirrorlist.old ]]; then
+	mv $HOME_DIR/mirrorlist.old $HOME_DIR/mirrorlist.old-1
+fi
+if [[ -f $HOME_DIR/mirrorlist ]]; then
+	mv $HOME_DIR/mirrorlist $HOME_DIR/mirrorlist.old
+fi
+echo
+echo
+sleep 2
+
+# Go to www.archlinux.org/mirrorlist and generate up-to-date mirrorlist from US using wget
+echo "Getting mirrorlist from https://www.archlinux.org/mirrorlist/. . ."
+sleep 1
+echo "wget -O - 'https://www.archlinux.org/mirrorlist/?country=US&protocol=http' > $HOME_DIR/mrlst"
+wget -O - 'https://www.archlinux.org/mirrorlist/?country=US&protocol=http' > $HOME_DIR/mrlst
+##wget -O - 'https://www.archlinux.org/mirrorlist/?country=US&protocol=http' > $HOME_DIR/mirrorlist
+# Uncomment all the mirror lines in file using sed
+sed -i 's/^#Server/Server/' $HOME_DIR/mrlst
+##sed -i 's/^#Server/Server/' $HOME_DIR/mirrorlist
+echo
+echo
+sleep 2
+
+# Then rank them and take out ten fastest mirrors using rankmirrors
+# Commented out this line due to errors in recent updates
+echo -e "${COLOR}"
+echo "Running rankmirrors to put the fastest mirror first. . ."
+sleep 1
+echo "rankmirrors -n 10 $HOME_DIR/mrlst > $HOME_DIR/mirrorlist"
+rankmirrors -n 10 $HOME_DIR/mrlst > $HOME_DIR/mirrorlist
+echo
+echo
+sleep 2
+
+
+# Copy to /etc/pacman.d/mirrorlist
+echo "Putting mirrorlist in proper directory /etc/pacman.d/mirrorlist. . ."
+sleep 1
+echo "cp $HOME_DIR/mirrorlist /etc/pacman.d/mirrorlist"
+echo $PSWD | sudo -S cp $HOME_DIR/mirrorlist /etc/pacman.d/mirrorlist
+echo
+sleep 2
+
+# Go back to home and sit back
+cd $HOME
+
+# Resync all packages and update system with updater scripts
+echo
+echo
+sleep 2
+echo "Resyncing now with updater to make sure all is good. . ."
+echo
+sleep 2
+/bin/bash $HOME/scripts/updater
+echo
+sleep 2
+
+# Offer options to restore old mirrorlist if there are problems, with restore scripts
+echo -e "${COLOR}"
+echo "Mirrorlist has been updated. If there were errors during sync then run restore-mirrorlist in terminal."
+echo
+sleep 2
+echo -e "${RESTORE}"
+exit 0

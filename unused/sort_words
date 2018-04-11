@@ -1,0 +1,71 @@
+#!/bin/bash
+# This scripts allows sorting of serval words alphabetically and removes duplicates, eiterh on screen or in a file
+ILREST='\033[0m'
+ILRESTORE=`echo -e "${ILREST}"`
+#########################
+function goto(){
+	label=$1
+	cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v :)
+	eval "$cmd"
+	exit
+}
+
+start=${1:-"start"}
+#########################
+
+goto start
+
+start:
+
+echo
+# Ask which option you would like, either file or on screen. If choosing file then type in file name in current directory or full file path. It will automaticaly name the new sorted file in directory as $filename_sorted
+echo -n "${ILRESTORE}Would you like to sort to a file or on screen[\"file name/path\" or \"screen\"]? "
+read filescreen
+
+# Read filename input and decide what to do
+if [[ $filescreen != "screen" ]]; then
+	sleep 1
+	echo
+	echo "${ILCOLOR2}Sorting file . . ."
+	sleep 1
+	echo
+	if [[ -f $filescreen ]]; then
+		# Sort words now
+		cat $filescreen | xargs -n1 | sort -u | xargs > ${filescreen}_sorted
+		echo "${ILCOLOR2}New sorted file is called ${filescreen}_sorted"
+		sleep 1
+		echo
+		# Ask to open file
+		echo -n "${ILRESTORE}Would you like to view it now[y/n]? "
+		read yn
+		case $yn in
+		y|Y	)
+			sleep 1
+			echo
+			# Opening newly created filename_sorted
+			echo "Opening ${filescreen}_sorted now. . ."
+			sleep 1
+			detach subl3 ${filescreen}_sorted
+			;;
+		*)
+			sleep 1
+			echo
+			# Chose not to open
+			echo "${ILCOLOR2}Ok, not opening ${filescreen}_sorted now."
+			echo
+			;;
+		esac
+	else
+		echo "File $filescreen does not exist. Please try again. . ."
+		goto start
+	fi
+else
+	# Ask for serveral words to sort command prompt input
+	echo "Enter the words would you like to sort?"
+	read words
+	echo
+	# List out sorted words in terminal
+	echo "${ILCOLOR1}Sorted words: "
+	echo ${ILCOLOR2}$words | xargs -n1 | sort -u | xargs
+	echo
+fi

@@ -1,0 +1,105 @@
+#!/bin/bash
+
+# This function allows version number comparison.
+function version_gt() { 
+	test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; 
+}
+
+# Entire function here.
+function kern_check() {
+echo -e "${ILCOLOR2}"
+sync_dir="$HOME/tmp"
+cd $sync_dir
+rm -rf "$sync_dir"/*.deb
+rm -rf "$sync_dir"/*.deb.*
+echo "Checking for newest kernel from Unbunt ppa-mainline. . ."
+echo
+sleep 1
+# Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
+ver="4.15"
+read -p "Current kernel version in script is $ver, would you like to keep it? " ynver
+if [[ "$ynver" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
+	echo "OK, keeping current version of $ver"
+else
+	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " newver
+	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel-update
+	$HOME/scripts/kernel-update && exit
+fi
+echo
+
+# Check if directory exists.
+if [[ ! -d $sync_dir ]]; then
+	mkdir $sync_dir
+fi
+
+# Here we need a certain date format for search the website.
+# Search website for current changelog based on date.
+#get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-$ver" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
+get=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline | grep "v4.15" | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | sed 's:v4.15-::g' | sort -V | tail -n1)
+echo "Newest kernel version available is $get"
+sleep 1
+
+# Get current kernel version. The awk section here is nice in that everything after the '-' is deleted.
+curnt="v"$(ls /boot | grep "vmlinuz" | sed 's:vmlinuz-::g' | sed 's:-generic::g' | sort -V | tail -n1 | awk -F '\\-' '{print $1}')
+
+echo "Latest kernel version installed is $curnt"
+sleep 1
+echo -e "${ILRESTORE}"
+
+# Calling function to check versions.
+if version_gt $get $curnt; then
+	# Added this because of automation this stops the screen for a response when called with the script kern-update-timer.
+	if dialog --yesno "There is a newer kernel available.
+You are running $curnt, and $get is out.
+Would you like to install it?" 10 50; then
+		clear
+		echo
+		sleep 1
+		# Formatting for web search.
+		kern_all=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/"$get"/ | grep "all.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
+		kern_head=$(wget -qO- http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/ | grep "amd64.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
+
+		# Download files.
+		echo "${ILCOLOR2}Downloading $kern_all${ILRESTORE}"
+		wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/"$kern_all"
+
+		echo "${ILCOLOR2}Downloading $kern_head${ILRESTORE}"
+		wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/"$kern_head"
+		kern_img=$(echo $kern_head | sed 's:headers:image:g')
+		echo "${ILCOLOR2}Downloading $kern_img${ILRESTORE}"
+		wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/"$kern_img"
+
+		# Install files.
+		echo 'spike' | sudo -S dpkg -i *all.deb
+		echo 'spike' | sudo -S  dpkg -i *.deb
+		$HOME/scripts/kernel-list
+		echo
+		read -t 10 -p "Would you like to reboot to new kernel now?" ysno
+		if [[ "$ysno" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			#Clean up.
+			rm -rf "$sync_dir"/*.deb
+			rm -rf "$sync_dir"/*.deb.*
+			echo 'spike' | sudo -S reboot
+		else
+			echo
+			echo "Not rebooting now."
+			sleep 1
+		fi
+	else
+		clear
+		echo "${ILCOLOR2}Ok, not installing now, re-run script to install latest kernel.${ILRESTORE}"
+		echo
+		sleep 3
+	fi
+else
+	echo "${ILCOLOR2}You already have the latest kernel.${ILRESTORE}"
+	echo
+	sleep 3
+fi
+}
+
+kern_check
+#Clean up.
+rm -rf "$sync_dir"/*.deb
+rm -rf "$sync_dir"/*.deb.*
+cd $HOME

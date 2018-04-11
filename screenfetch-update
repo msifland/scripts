@@ -1,0 +1,30 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "Updating screenfetch to reflect my custom colors. . ."
+echo
+sleep 1
+
+# Search for my tag to see if file has already been updated.
+if grep -q '#my_custom_tag' /usr/bin/screenfetch; then
+	echo "Already updated."
+else
+	# Update file and add tag for futures checks.
+	echo "Updating now. . ."
+	# Update.
+	sudo sed -i 's:${my_lcolor}" ]; then c1="${my_lcolor}"; c2="${my_lcolor}"; c3="${my_lcolor}:${ILCOLOR1}" ]; then c1="${ILCOLOR2}"; c2="${ILCOLOR3}"; c3="${ILCOLOR4}:g' /usr/bin/screenfetch
+	# Add custom tag.
+	sudo sed -i 's:"Ubuntu"):"Ubuntu") #my_custom_tag:g' /usr/bin/screenfetch
+fi
+sleep 1
+
+# Check output status for errors.
+echo
+if [[ $? = 0 ]]; then
+	echo "All is good."
+else
+	echo "Error detected!!!"
+fi
+sleep 1
+exit

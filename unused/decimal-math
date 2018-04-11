@@ -1,0 +1,28 @@
+#!/bin/bash
+# This is and example decimal math using bc pipe
+
+# Declare first numberic variable
+echo
+echo "Enter a decimal number: "
+read d
+echo
+
+# Declare second numberic variable
+echo "Enter another decimal number: "
+read d2
+
+# Declare which simple math function to use
+echo
+echo "What math function would you like to do?(+ - * /): "
+read m
+
+# Calculate math. Either one of these 2 methods will work.
+ans=$(echo "$d $m $d2" | bc)
+#Alternate: ans=`echo "$d $m $d2" | bc`
+echo
+ans2=$(echo "scale=7; (("$d$m$d2"))" | bc)
+#Alternate: ans2=`echo "scale=7; (("$d$m$d2"))" | bc`
+
+# Display calculation
+echo $d$m$d2'='$ans2
+exit

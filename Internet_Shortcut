@@ -1,0 +1,12 @@
+[Desktop Entry]
+# Copy this file, change the name of the file then add .desktop to the end of it. Then change info below(in that order)
+Version=1.0
+Exec=/usr/bin/google-chrome-stable http://www.website.com
+X-MultipleArge=false
+Terminal=false
+Encoding=UTF-8
+Name=Internet_Shortcut_Dummy
+Type=Application
+URL=http://www.website.com
+Icon=Google-Chrome.png
+StartupNotify=true

@@ -1,0 +1,84 @@
+#!/bin/bash
+
+echo
+echo
+echo "Manual setup: "
+echo "If running on ethernet, in terminal type:
+sudo systemctl enable dhcpcd
+sudo systemctl start dhcpcd"
+
+echo
+echo
+echo "If running on wifi, in terminal type:
+sudo systemctl disable dhcpcd
+sudo systemctl stop dhcpcd
+sudo ip link set $(ip link | awk '{print $2}' | grep -i "wl" | sed 's/://') down
+sudo wifi-menu"
+
+echo
+echo
+echo "If you wish to install any programs using this as a Linux OS, then you must updater keys first.
+
+To run the MSI_Arch Installer type:
+sudo /aif-master/install.sh"
+echo
+echo
+echo "Automatic setup: "
+echo -n "Would you like to try and connect to the internet now?(y/n): "; read internetyn
+if [[ "$internetyn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo -n "What type of connection do you have? [1]-Ethernet, [2]-WiFi?: "; read ethorwi
+	if [[ "$ethorwi" = "1" ]]; then
+		echo "sudo systemctl enable dhcpcd"
+		sudo systemctl enable dhcpcd
+		echo
+		sleep 1
+		echo "sudo systemctl start dhcpcd"
+		sudo systemctl start dhcpcd
+		echo
+		sleep 1
+	elif [[ "$ethorwi" = "2" ]]; then
+		echo "sudo systemctl disable dhcpcd"
+		sudo systemctl disable dhcpcd
+		echo
+		sleep 1
+		echo "sudo systemctl stop dhcpcd"
+		sudo systemctl stop dhcpcd
+		echo
+		sleep 1
+		echo "sudo ip link set $(ip link | awk '{print $2}' | grep -i "wl" | sed 's/://') down"
+		sudo ip link set $(ip link | awk '{print $2}' | grep -i "wl" | sed 's/://') down
+		echo
+		sleep 1
+		echo "sudo wifi-menu"
+		sudo wifi-menu
+		echo
+		sleep 1
+	else
+		echo "Incorrect entry. Type 'scripts/internet-setup' to start over..."
+		echo
+		sleep 1
+	fi
+else
+	echo "Ok, not connecting now..."
+	echo
+	sleep 1
+fi
+echo -n "Would you like to update keys now?(y/n): "; read keysyn
+	if [[ "$keysyn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		echo "sudo pacman-key --init"
+		sudo pacman-key --init
+		sleep 1
+		echo "sudo pacman-key --populate"
+		sudo pacman-key --populate
+		sleep 1
+		echo "sudo pacman-key --refresh-keys"
+		sudo pacman-key --refresh-keys
+		sleep 1
+	else
+		echo "Not updating keys now..."
+	fi
+echo
+sleep 1
+echo "If you wish to start this script over, just type 'scripts/internet-setup'..."
+echo
+sleep 1

@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+psw='spike'
+y='yes'
+
+function remove-orphans(){
+	echo -e "${COLOR}"
+	# Log date and time
+	DATE_START=$(date +"%s")
+	echo "Update Start Time:"
+	DATE=$(date +"%m-%d-%y")
+	echo "Date: $DATE"
+	TIME=$(date +"%r")
+	echo "Time: $TIME"
+	echo
+	echo "Removing orphans. . ."
+	sleep 2
+
+	# Start process by updating repos and clearing caches and getting sudo password
+	echo
+	echo "Looking for Orphans from offical repos..."
+	echo
+	echo $psw | sudo -S pacman -Syy
+	sudo pacman -Rs `pacman -Qqtd | grep -Fv -f <(pacman -Qqtdm)`
+	sleep 1
+	echo -e "${COLOR}"
+	echo
+	echo "Looking for Orphans from AUR..."
+	echo
+	sudo pacman -Rs $(pacman -Qqtdm)
+	sleep 1
+	#Alternate method - pacaur --noconfirm -Rns $(pacman -Qdtqm)
+	echo
+
+	echo -e "${COLOR}"
+	echo "All Done, Check For Errors. . ."
+	echo
+	sleep 2
+}
+
+# Run funtion
+remove-orphans
+echo -e "${RESTORE}"
+sleep 2
+exit 0
+

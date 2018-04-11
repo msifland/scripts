@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+function rep_spaces(){
+	read -p "What directory would you like to replace spaces with dashes?[/path/to/dir/]" DIR
+	cd $DIR
+	if [[ ! -d $DIR ]]; then
+		echo -e "${COLOR}"
+		echo "Not a valid directory. Try again."
+		echo -e "${RESTORE}"
+		rep_spaces
+	else
+		echo
+		echo
+		echo -e "${COLOR}"
+		echo "Files before change . . ."
+		echo -e "${RESTORE}"
+		for file in * ; do
+			echo $file
+			f=`echo $file | tr [' '] ['_']`
+			[ "$file" = "$f" ] || mv -i -- "$file" "$f"
+		done
+		echo
+		echo
+		sleep 3
+		echo -e "${COLOR}"
+		echo "Files after change . . ."
+		echo -e "${RESTORE}"
+		for file in * ; do
+			echo $file
+		done
+	fi
+}
+
+rep_spaces

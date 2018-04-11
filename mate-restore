@@ -1,0 +1,36 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+PW='spike'
+echo "${ILCOLOR1}Updating repo sources. . ."
+echo $PW | sudo -S cp -rf $HOME/pkg_bkups/apt/* /etc/apt/
+
+echo
+echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
+sudo apt update
+sudo apt upgrade
+
+echo
+echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+sudo apt dist-upgrade
+
+echo
+echo "${ILCOLOR1}Checking for old apps. . .${ILRESTORE}"
+sudo apt autoremove
+
+echo
+echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
+sudo apt clean
+sudo apt autoclean
+sudo apt purge
+
+
+# This should be in a different script for restoring the list.
+echo
+echo "Restoring system."
+sudo apt install $(cat $HOME/pkg_bkups/pkgs.txt)
+
+echo
+echo "Don't forget to restore misc. files from $HOME/scripts/backups. . ."
+sleep 5

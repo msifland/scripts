@@ -1,0 +1,110 @@
+#!/bin/bash
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+# Instruction that display at start
+echo -e "${COLOR}"
+echo "We are now going to search for text in current directory (not sub-diretories) and replace it with text of choice. MAKE SURE THAT YOU ARE IN THE CORRECT DIRECTORY. Search and replace IS case sensitive. If you want to replace \\ you must use [\\\], you must use 2 to look for 1. Also quotes are NOT needed at all, even with spaces."
+sleep 2
+echo -e "${RESTORE}"
+# Ask what text to search for
+echo -n "What text string would you like to search for? "
+read initialtext
+
+# Ask what text to replace with
+echo -n "What text string would you like to replace it with? "
+read replacementtext
+
+# Main function
+function replace(){
+	echo -e "${COLOR}"
+	# Ask if you would like to use a single file or a whole directory
+	echo -n "Would you like to choose a file or a whole directory[f/d]? "
+	read fd
+	case $fd in
+	f|F	)	# This case is if single file is selected
+		echo
+		sleep 1
+		echo -n "Ok what file or full file path do you want to replace text in[file name/path]? "
+		read filename
+		if [[ ! -f "$filename" ]]; then
+			echo "Can't find file "$filename". Try again. . ."
+			echo
+			replace
+		fi
+		echo
+		echo "${ILCOLOR1}Ok replaceing text in "$filename". . ."
+		sleep 1
+		echo
+		# Show occurances of text to replace
+		grep -n $initialtext $filename
+		grep -n $initialtext $filename | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+		# Replacement command
+		perl -i -p -e "s:$initialtext:$replacementtext:g" $filename
+		echo
+		# Show new occurances in file after replacement
+		echo "${ILCOLOR1}New occurances with ${ILCOLOR2}$replacementtext:"
+		grep -n $replacementtext $filename
+		echo
+		echo "${ILCOLOR1}Text string ${ILCOLOR2}$initialtext${ILCOLOR1} has been replaced with text string ${ILCOLOR2}$replacementtext${ILRESTORE}."
+		sleep 1
+		echo
+		;;
+	d|D	)	# This case is if selecting entire directory
+		echo
+		sleep 1
+		# Choosing directory current of path
+		echo -n "What directory would you like to perform replacement in[path/to/dir OR leave blank for current]? "
+		read dir
+		echo
+		sleep 1
+		if [[ "$dir" == "" ]]; then # If current directory is chosen
+			echo "${ILCOLOR1}Ok replacing text in entire "$PWD" directory. . ."
+			sleep 1
+			echo
+			# Show occurances of text to replace
+			grep -n $initialtext $PWD/*
+			grep -n $initialtext $PWD/* | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+			# Replacement command
+			perl -i -p -e "s:$initialtext:$replacementtext:g" *
+			echo
+			# Show files with new occurances of text replaced
+			echo "${ILCOLOR1}New occurances with ${ILCOLOR2}$replacementtext:"
+			grep -n $replacementtext $PWD/*
+			echo
+		else # Choosing directory typed out ex. path/to/dir
+			echo
+			echo "${ILCOLOR1}Ok replacing text in "$dir" directory. . ."
+			sleep 1
+			echo
+			# Show occurances of text ot replace
+			grep -n $initialtext $dir/*
+			grep -n $initialtext $dir/* | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+			# Replacement command
+			perl -i -p -e "s:$initialtext:$replacementtext:g" $dir/*
+			echo
+			# Show files with new occurances of text replaced
+			echo "${ILCOLOR1}New occurances with ${ILCOLOR2}$replacementtext:"
+			grep -n $replacementtext $dir/*
+			echo
+		fi
+		echo "${ILCOLOR1}Text string ${ILCOLOR2}$initialtext${ILCOLOR1} has been replaced with text string ${ILCOLOR2}$replacementtext${ILRESTORE}."
+		sleep 1
+		echo
+		;;
+	*	) # This case if invalid entry is made
+		echo
+		sleep 1
+		echo "Invalid entry. Try again. . ."
+		sleep
+		# Start over
+		replace
+		;;
+esac
+}
+
+# Call main function
+replace
+echo -e "${RESTORE}"
+exit $?

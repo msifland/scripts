@@ -1,0 +1,32 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo
+echo "${ILCOLOR2}This updates the Sublime Text .desktop file in /usr/share/applications/sublime_text.desktop so Sublime opens files in new window."
+echo
+sleep 1
+# Set file variables.
+FILE="/usr/share/applications/sublime_text.desktop"
+
+# Look in kate file for text and change if it's  there.
+PW='spike'
+if [[ $(echo $PW | sudo -S grep 'Exec=/opt/sublime_text/sublime_text %F' $FILE) ]]; then
+	sudo sed -i 's:Exec=/opt/sublime_text/sublime_text %F:Exec=/opt/sublime_text/sublime_text -n %F:g' $FILE
+	echo
+	echo
+	echo "Sublime Text file was updated."
+	echo
+	sleep 1
+else
+	echo
+	echo
+	echo "No update needed. All is good."
+	echo
+	sleep 1
+#fi
+fi
+# Write Kate file modification date to kate-date file.
+echo "Done!!!${ILRESTORE}"
+sleep 1
+exit

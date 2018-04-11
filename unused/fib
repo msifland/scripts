@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo -n "This is the Finbanacci sequence. How many times would you like to repeat? "
+read number
+a=0
+d=0
+echo -n "What number would you like to start with? "
+read b
+
+while [[ $d -lt $number ]]; do
+	echo "Expression: $a+$b"
+	let "c=$a+$b"
+	b=$a
+	a=$c
+	echo "    Answer: $c"
+	let "d=$d+1"
+done
+

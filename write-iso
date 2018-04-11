@@ -1,0 +1,122 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+#########################
+function goto(){
+    label=$1
+    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
+    eval "$cmd"
+    exit
+}
+
+start=${1:-"start"}
+#########################
+# Start script.
+goto start
+
+# Goto ref.
+start:
+echo
+echo
+echo "This will write a iso file to a usb drive"
+echo
+sleep 1
+
+# Goto ref.
+re-start:
+
+# Show devices.
+echo
+lsblk
+echo
+
+# Ask which device and writes to variable.
+echo
+read -p "Which device would you like to write to(ex. sdb, sdc, etc.)? See above for reference. " DEVC
+DEVBLOCK="/dev/$DEVC"
+echo
+read -p "You have chosen $DEVBLOCK, is this correct? " YN
+echo
+
+# Option to wipe device.
+read -p "Would you you like to wipe device first? " YN3
+if [[ "$YN3" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	read -p "What would you like to lable it?(ex. MSI_ARCH) " LBL
+	echo
+		sleep 1
+		# Reset usb ports.
+		sudo /home/msifland/scripts/reset-usb
+		while [[ ! -b $DEVBLOCK ]]; do
+			echo "Waiting for usb devices to be reset. . ."
+			sleep 2
+		done
+		# Wipe
+		sudo wipefs --all --force $DEVBLOCK
+		# Format to vfat or ext4 and lable and show progress.
+		echo
+		read -p "Would you like vfat or ext4? " TYP
+		if [[ "$TYP" =~ ^([eE][xX][tT][4])$ ]]; then
+			sudo mkfs.ext4 -L $LBL $DEVBLOCK | sudo pv -trebI
+		else
+			sudo mkfs.vfat -n $LBL -I $DEVBLOCK | sudo pv -trebI
+		fi
+		sudo hdparm -r0 $DEVBLOCK
+		echo
+		sleep 1
+		sudo $HOME/scripts/reset-usb
+		while [[ ! -b $DEVBLOCK ]]; do
+			echo "Waiting for usb devices to be reset. . ."
+			sleep 2
+		done
+		echo
+else
+	echo
+	echo "Not wiping."
+fi
+
+# Check if device exists.
+if [[ -b $DEVBLOCK ]]; then
+	# Ask for file to copy to $DEVBLOCK
+	if [[ "$YN" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		# Goto ref.
+		ask-file:
+		echo
+		read -p "What is the full path of the .iso file you want to write(HINT: you can copy the file in file explorer and past here)? " FILE
+		echo
+		# Check if file exists
+		if [[ -f $FILE ]]; then
+			echo
+			sleep 1
+			SIZE=$(du -h $FILE)
+			echo
+			echo "File size is " $SIZE
+			echo
+			echo "Writing now, this could take a while. . ."
+			echo
+			sudo dd bs=4M if=$FILE | sudo pv -trebI | sudo dd of=$DEVBLOCK && sync
+			sudo hdparm -r0 $DEVBLOCK
+			sudo $HOME/scripts/reset-usb
+			while [[ ! -b $DEVBLOCK ]]; do
+				echo "Waiting for usb devices to be reset. . ."
+				sleep 2
+			done
+		else
+			echo "File does not exist, try again. . ."
+			echo
+			goto ask-file
+		fi
+	else
+		echo "You said NO or entered an invalid entry. Would you like to try again? " YN2
+		echo
+		if [[ "$YN" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			goto re-start
+		fi
+	fi
+else
+	echo $DEVBLOCK " does not exist. Try another. . ."
+	echo
+	goto re-start
+fi
+
+exit
+

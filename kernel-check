@@ -1,0 +1,90 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# Removing old files and creating new ones.
+
+rm -fr $HOME/tmp/*.deb
+rm -rf $HOME/tmp/*.deb.*
+echo
+kern_file=$HOME/tmp/kern_file
+
+if [[ ! -f $kern_file ]]; then
+	touch $kern_file
+fi
+echo "" > $kern_file
+
+# Searching website for versions available and showing the last 30. Also figured out after trial and error that the brackets had to be escaped.
+kern_list=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v4." | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | tail -n20)
+
+# Loop to list the kernels in the file on numbered lines and echo them on screen.
+echo "${ILCOLOR2}Here are the 20 lastest available kernels from Ubuntu ppa-mainline. . .${ILRESTORE}"
+n=0
+for i in $kern_list; do
+	let n=n+1
+	echo "$n. $i" >> $kern_file
+	echo "$n. $i"
+done
+
+# Get kernel name without extra numbers at the end. The awk section here is nice in that everything after the '-' is deleted.
+rnning=$(uname -r | awk -F '\\-' '{print $1}')
+echo "${ILCOLOR2}-----> Currently running $rnning" | pv -qL 50
+sleep 1
+
+# This also checks the kernel source website for the latest kernel to build.
+echo
+echo "${ILCOLOR2}Also checking if there is a new kernel to BUILD from main kernel source: kernel.org. Checking versions 4.15. If you wish to  check a different version, then edit this script and change to correct version to check, e.g. 4.17, 4.14, etc. If there is a newer version and you want to build it you have to call the 'kernel-build' script.${ILRESTORE}"
+sleep 1
+
+# Get and format websit info. **CHANGE KERNEL VERSION TO CHECK FOR HERE **
+get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-4.15" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
+
+echo "-----> Newest kernel from kernel source is $get"
+sleep 1
+
+function install_kern(){
+# Ask to select line numbers for install
+echo
+read -p "Type the line number of the kernel you want to install(Type 0 to exit): " inst
+sleep 1
+if [[ "$inst" = "0" ]]; then
+	# Remove old files.
+	rm -rf $kern_file
+	rm -fr $HOME/tmp/*.deb
+	rm -rf $HOME/tmp/*.deb.*
+	exit
+fi
+
+# Format for web search purposes.
+for_inst=$(grep "^$inst. v" $kern_file | sed "s:$inst. ::g")
+echo $for_inst
+cd $HOME/tmp
+if test $for_inst; then
+# More formatting for web search.
+kern_all=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/"$for_inst"/ | grep "all.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
+kern_head=$(wget -qO- http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/ | grep "amd64.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
+
+# Download files.
+echo "${ILCOLOR2}Downloading $kern_all${ILRESTORE}"
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_all"
+
+echo "${ILCOLOR2}Downloading $kern_head${ILRESTORE}"
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_head"
+kern_img=$(echo $kern_head | sed 's:headers:image:g')
+echo "${ILCOLOR2}Downloading $kern_img${ILRESTORE}"
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_img"
+
+# Install files.
+echo 'spike' | sudo -S dpkg -i *all.deb
+echo 'spike' | sudo -S  dpkg -i *.deb
+else
+	echo
+	echo "Invalid entry, try again. . ."
+	sleep 1
+	install_kern
+fi
+}
+install_kern
+# Remove old files.
+rm -rf $kern_file
+rm -fr $HOME/tmp/*.deb
+rm -rf $HOME/tmp/*.deb.*

@@ -1,0 +1,156 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "${ILCOLOR2}We are going to see if there is a new kernel to build from main kernel source: kernel.org.${ILRESTORE}"
+sleep 1
+
+# This function allows version number comparison.
+function version_gt() { 
+	test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; 
+}
+
+# Entire function here.
+function kern_check() {
+echo -e "${ILCOLOR2}"
+work_dir="$HOME/tmp/kernel-build"
+
+# Change to dir and remove any old files
+if [[ ! -d $HOME/tmp ]]; then
+	mkdir $HOME/tmp
+fi
+cd $HOME/tmp
+if [[ -d kernel-build ]]; then
+	rm -rf kernel-build
+fi
+
+# Move to working directory
+mkdir "$work_dir"
+cd "$work_dir"
+
+# Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
+ver="4.15"
+read -p "Current kernel version in script is $ver, would you like to keep it? " ynver
+if [[ "$ynver" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
+	echo "OK, keeping current version of $ver"
+else
+	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " newver
+	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel-build
+	$HOME/scripts/kernel-build && exit
+fi
+echo
+
+# Get and format websit info
+get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-$ver" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
+
+echo "Newest kernel version available is $get"
+sleep 1
+
+# Get current kernel version. The awk section here is nice in that everything after the '-' is deleted.
+curnt=$(ls /boot | grep "vmlinuz" | sed 's:vmlinuz-::g' | sed 's:-generic::g' | sort -V | tail -n1 | awk -F '\\-' '{print $1}')
+
+echo "Latest kernel version installed is $curnt"
+sleep 1
+echo -e "${ILRESTORE}"
+
+# Calling function to check versions.
+if version_gt "$get" "$curnt"; then
+	# Added this because of automation this stops the screen for a response when called with the script kern-update-timer.
+	if dialog --yesno "There is a newer kernel available.
+You are running $curnt, and $get is out.
+Would you like to install it?" 10 50; then
+		# Start timing process
+		tm_wh_start=$(date +"%s")
+		clear
+		echo
+		sleep 1
+		# Formatting for web search.
+		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
+		wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-"$get".tar.xz
+		echo
+		echo "${ILCOLOR2}Unzipping kernel and building now, this will take a while. . .${ILRESTORE}"
+		sleep 1
+		echo
+		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
+		echo 'spike' | sudo -S apt build-dep -y linux-image-$(uname -r)
+		tar -xf linux-"$get".tar.xz
+		cd linux-"$get"
+		cp /boot/config-$(uname -r) .config
+		make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-msi
+		cd ..
+		rm -rf *dbg*.deb
+		rm -rf *libc*.deb
+		echo 'spike' | sudo -S dpkg -i *.deb
+: ' Comment # This section is for building one step at a time. Harder to uninstall.
+		# Make
+		tm_start=$(date +"%s")
+		make -j4
+		tm_end=$(date +"%s")
+		tm_diff=$(( $tm_end - $tm_start ))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make''.${ILRESTORE}"
+
+		# Make modules
+		tm_start=$(date +"%s")
+		make modules -j4
+		tm_end=$(date +"%s")
+		tm_diff=$(( $tm_end - $tm_start ))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make modules''.${ILRESTORE}"
+
+		#Make modules_install
+		tm_start=$(date +"%s")
+		echo "spike" | sudo -S make modules_install -j4
+		tm_end=$(date +"%s")
+		tm_diff=$(( $tm_end - $tm_start ))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make modules_install''.${ILRESTORE}"
+
+		# Make install
+		tm_start=$(date +"%s")
+		echo "spike" | sudo -S make install -j4
+		tm_end=$(date +"%s")
+		tm_diff=$(( $tm_end - $tm_start ))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make install''.${ILRESTORE}"
+
+		#Updating initramfs and grub
+		echo "${ILCOLOR2}Updating initramfs and grub. . .${ILRESTORE}"
+		echo "spike" | sudo -S update-initramfs -c -k "$get"
+		echo "spike" | sudo -S update-grub
+Comment '
+
+		# End timing process
+		tm_wh_end=$(date +"%s")
+		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
+
+		# Purge old kernels?
+		read -p "Would you like to run kernel-purge now? " ynprg
+		echo
+		if [[ "$ynprg" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			echo 'spike' | sudo -S $HOME/scripts/kernel-purge
+		else
+			echo "Ok, not purging kernels now."
+			echo
+			sleep 1
+		fi
+	else
+		clear
+		echo "${ILCOLOR2}Ok, not installing now, re-run script to install latest kernel.${ILRESTORE}"
+		echo
+		sleep 3
+	fi
+else
+	echo "${ILCOLOR2}You already have the latest kernel.${ILRESTORE}"
+	echo
+	sleep 3
+fi
+}
+
+kern_check
+#Clean up.
+cd ..
+rm -rf kernel-build
+cd $HOME

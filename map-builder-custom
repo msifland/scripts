@@ -1,0 +1,119 @@
+#!/bin/bash
+
+cd $HOME/maps
+
+echo
+echo "This scripts allows you to build a custom state map for your garmin device..."
+sleep 1
+
+echo
+echo -n "What State would you like to build?[state name lower case. two name states get a hyphen] "
+read STATE
+sleep 1
+### Log date and time
+DATE_START=$(date +"%s")
+echo "Build Start Time:"
+DATE=$(date +"%m-%d-%y")
+echo "Date: $DATE"
+TIME=$(date +"%r")
+echo "Time: $TIME"
+echo
+
+echo
+echo "Starting process of downloading and building Garmin map of Geofarik maps: "$STATE
+sleep 1
+
+if [[ ! -d "$HOME/maps/$STATE" ]]; then
+	mkdir "$HOME/maps/$STATE"
+fi
+
+if [[ -f "$HOME/maps/$STATE_gmapsupp.img" ]]; then
+	rm -rf $HOME/maps/$STATE_gmapsupp.img.old
+	mv $HOME/maps/$STATE_gmapsupp.img $HOME/maps/$STATE_gmapsupp.img.old
+fi
+
+echo
+echo "Downloading map..."
+sleep 1
+echo
+wget -O $HOME/maps/"$STATE"_latest.osm.pbf http://download.geofabrik.de/north-america/us/$STATE-latest.osm.pbf
+
+echo
+echo "Moving "$STATE"_latest.osm.pbf file to $STATE folder..."
+mv "$STATE"_latest.osm.pbf $HOME/maps/$STATE/$STATE.osm.pbf
+cd $HOME/maps/$STATE
+
+echo
+echo "Splitting file..."
+sleep 1
+java  -Xmx6200m -jar $HOME/maps/mkgmap-splitter/mkgmap-splitter.jar $HOME/maps/$STATE/$STATE.osm.pbf --max-nodes=800000 --output=xml
+
+echo
+echo "Creating img, this will take a while..."
+sleep 1
+java -Xmx6200M -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/mkgmap/examples/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/osm_new.typ
+
+echo
+echo "Moving gmapsupp.img to Maps folder and renaming to us_se_mw_gmapsupp.img..."
+sleep 1
+mv $HOME/maps/$STATE/gmapsupp.img $HOME/maps/"$STATE"_gmapsupp.img
+
+echo
+echo "Cleaning up files..."
+sleep 1
+
+read -t 10 -p "Would you like to delete leftover files? You have 10 seconds to decide and then deleting automatically.[y/n] " yn
+	case $yn in
+		y|Y )
+			echo
+			echo "Ok deleting files..."
+			echo
+			sleep 1
+			echo
+			rm -rf $HOME/maps/$STATE
+			rm -rf $HOME/maps/*.osm.pbf
+			;;
+		n|N )
+			echo
+			echo "Ok not deleting files..."
+			echo
+			sleep 2
+			;;
+		* )
+			echo
+			echo "Timed out or invalid selection, not deleting files..."
+			echo
+			sleep 2
+			;;
+	esac
+
+echo
+echo "Copying to Garmin Device, if it's plugged in..."
+sleep 1
+if [[ -d "/run/media/msifland/GARMIN" ]]; then
+	rsync --progress --verbose $HOME/maps/$STATE_gmapsupp.img /run/media/msifland/GARMIN/Garmin/$STATE_gmapsupp.img
+else
+	echo
+	echo "No Garmin Device found. Copy manually later."
+fi
+sleep 1
+
+echo
+echo "Finished."
+sleep 1
+echo "Build End Time:"
+DATE=$(date +"%m-%d-%y")
+echo "Date: $DATE"
+TIME=$(date +"%r")
+echo "Time: $TIME"
+DATE_END=$(date +"%s")
+DIFF=$(($DATE_END - $DATE_START))
+echo "It took $(($DIFF / 3600 )) hours $((($DIFF % 3600) / 60)) minutes $(($DIFF % 60)) seconds to build."
+echo -e "${RESTORE}"
+
+cd $HOME
+$HOME/scripts/free-ram
+exit
+
+#for i in *; do mv "$i" 1_"$i"; done
+#rename -N 0001 -X 's/.*/$N/' *.jpg

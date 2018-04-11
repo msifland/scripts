@@ -1,0 +1,27 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo
+echo "Now installing 'detach'. . ."
+echo "cd $HOME/'Modules&Apps'"
+cd $HOME/'Modules&Apps'
+sleep 1
+
+echo
+echo "cd detach-0.2.3"
+cd detach-0.2.3
+sleep 1
+
+echo
+echo "make"
+make
+sleep 1
+
+echo
+echo "sudo make install"
+echo 'spike' | sudo -S make install
+sleep 1
+
+echo
+echo "Done."

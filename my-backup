@@ -1,0 +1,167 @@
+#!/bin/bash
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+PSWD="spike"
+
+# What Files or Folders to Take Backup of.
+BACKUP_FILES="
+/usr/share/mate*
+/var/spool/cron
+$HOME/bin
+$HOME/Brother_Printer
+$HOME/Documents
+$HOME/Dropbox
+$HOME/GrubThemes
+$HOME/maps
+$HOME/Modules&Apps
+$HOME/pkg_bkups
+$HOME/Projects
+$HOME/rom_scripts
+$HOME/scripts
+$HOME/Templates
+$HOME/Wallpapers
+$HOME/.android
+$HOME/.compiz
+$HOME/.cache
+$HOME/.config
+$HOME/.icons
+$HOME/.local
+$HOME/.oh-my-zsh
+$HOME/.ssh
+$HOME/.themes
+$HOME/.face
+$HOME/.bash*
+$HOME/.conky*
+$HOME/.git*
+$HOME/.repo*
+$HOME/.zsh*
+"
+
+# Excluded files and folders
+EXCLUDE="
+--exclude=$HOME/.cache/chromium
+--exclude=$HOME/.cache/chrome-remote-desktop
+--exclude=$HOME/.cache/mozilla
+--exclude=$HOME/.cache/winewizard
+--exclude=$HOME/.cache/google-chrome
+--exclude=$HOME/.cache/pacaur
+--exclude=$HOME/.cache/ukuu
+--exclude=$HOME/maps/*.img
+--exclude=$HOME/maps/*.old
+--exclude=$HOME/maps/Combine
+--exclude=$HOME/maps/US_Midwest
+--exclude=$HOME/maps/US_South
+--exclude=$HOME/maps/downloads
+--exclude=$HOME/maps/tennessee
+--exclude=$HOME/.cache/wine
+--exclude=$HOME/.config/chrome-remote-desktop
+--exclude=$HOME/.config/chromium
+--exclude=$HOME/.config/google-chrome
+--exclude=$HOME/.local/share/Steam
+--exclude=$HOME/.local/share/Trash
+--exclude=$HOME/Dropbox/Android
+--exclude=$HOME/Dropbox/Backups
+--exclude=$HOME/Dropbox/.dropbox.cache
+--exclude=$HOME/Dropbox/.dropbox
+"
+
+# Destination of Backup.
+DEST="$HOME/Dropbox/Backups"
+
+# Create archive filename.
+DAY=$(date +%m-%d-%Y)
+HOST_NAME=$(whoami)
+ARCHIVE_FILE=$HOST_NAME-$DAY".tar.gz"
+
+function backup(){
+	echo
+	echo
+	echo $(date +%m-%d-%Y) $(date +"%r")
+	echo
+	sleep 1
+
+	# Remove old backups if more than 2
+	echo "Remove old backups first. . ."
+	sleep 1
+	echo -e ${RESTORE}
+	echo "ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f"
+	if [[ ! -d "$DEST" ]]; then
+		mkdir $DEST
+	else
+		if ls $DEST/* 1> /dev/null 2>&1; then
+			ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
+		fi
+	fi
+	echo
+	sleep 1
+
+	# Print start status message.
+	echo -e ${COLOR}
+	echo "Backing up:"
+	echo -e ${RESTORE}
+	echo "$BACKUP_FILES"
+	echo -e ${COLOR}
+	echo "To $DEST/$ARCHIVE_FILE"
+	echo
+	echo
+	sleep 3
+
+	# Print excluded files
+	echo "Excluding:"
+	echo -e ${RESTORE}
+	echo "$EXCLUDE" | sed 's/--exclude=//g'
+	echo
+	sleep 3
+
+	# Backup The Files using tar.
+	echo -e ${COLOR}
+	echo "Backing up now. . ."
+	sleep 1
+	echo -e ${RESTORE}
+	echo $PSWD | sudo -S tar -czf $DEST/$ARCHIVE_FILE $EXCLUDE $BACKUP_FILES
+	echo
+	sleep 1
+
+	# Print end status message.
+	echo -e ${COLOR}
+	echo "Backup finished"
+	echo
+	sleep 1
+
+	# Change ownship of files from root to user. Could be root if done with sudo above
+	echo "Making sure ownership is correct. . ."
+	echo
+	sleep 1
+	echo -e ${RESTORE}
+	for ROOT_FILE in $(find $HOME/Dropbox/Backups/* -type f -user root); do
+		echo "Changing ownership of $ROOT_FILE from root:root to msifland:users. . .sudo chown msifland:users $ROOT_FILE"
+		sudo chown msifland:users $ROOT_FILE
+		sleep 1
+	done
+
+	# Long listing of files in $DEST to check file sizes.
+	echo -e ${COLOR}
+	echo "Showing files in $HOME/Dropbox/Backups/ . . ."
+	echo -e ${RESTORE}
+	ls -lh $DEST
+	echo
+	sleep 1
+	
+	# Instructions on how to edit this file
+	echo -e ${COLOR}
+	echo "You can edit files and folders to backup and exclude in $HOME/scripts/my_backup or by typing edit-my-backup."
+	echo
+	sleep 1
+
+	echo $(date +%m-%d-%Y) $(date +"%r")
+	echo
+	sleep 1
+}
+
+# Call funtion to backup
+echo -e ${COLOR}
+backup | tee $HOME/Dropbox/Backups/my_backup_log.txt
+echo -e ${RESTORE}
+exit 0

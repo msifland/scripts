@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ReStartLog="/home/msifland/scripts/restart_log.txt"
+pswd="spike"
+
+echo
+echo
+#Log date and time
+DATE_START=$(date +"%s")
+echo "Last Restart:" 2>&1 | tee $ReStartLog
+DATE=$(date +"%m-%d-%y")
+echo "Date: $DATE" 2>&1 | tee -a $ReStartLog
+TIME=$(date +"%r")
+echo "Time: $TIME" 2>&1 | tee -a $ReStartLog
+echo
+echo
+echo "Rebooting now....." | tee -a $ReStartLog
+echo
+echo
+echo $pswd | sudo -S reboot

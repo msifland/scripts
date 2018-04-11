@@ -1,0 +1,78 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo
+echo "This scripts is going to format a usb drive. . ."
+echo
+echo
+sleep 1
+
+function start(){
+	# Show blocks on device and ask what block you would like to use.
+	lsblk
+	echo
+	read -p "What dev block would you like to use? (ex. sdb, sdc, sdd) Look above for reference. " BLCK
+	echo
+	DEVBLOCK="/dev/$BLCK"
+	read -p "You have chosen $DEVBLOCK. Is this correct? " YN
+	echo
+
+	# Check if block exists.
+	if [[ -b $DEVBLOCK ]]; then
+		if [[ "$YN" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			read -p "What would you like to lable it?(ex. MSI_ARCH) " LBL
+			echo "Ok formatting $DEVBLOCK. . ."
+			echo
+			sleep 1
+			# Reset usb ports.
+			sudo /home/msifland/scripts/reset-usb
+			while [[ ! -b $DEVBLOCK ]]; do
+				echo "Waiting for usb devices to be reset. . ."
+				sleep 2
+			done
+			# Wipe
+			sudo wipefs --all --force $DEVBLOCK
+			# Format to vfat or ext4 and lable and show progress.
+			echo
+			read -p "Would you like vfat or ext4? " TYP
+			if [[ "$TYP" =~ ^([eE][xX][tT][4])$ ]]; then
+				sudo mkfs.ext4 -L $LBL $DEVBLOCK | sudo pv -trebI
+			else
+				sudo mkfs.vfat -n $LBL -I $DEVBLOCK | sudo pv -trebI
+			fi
+			sudo hdparm -r0 $DEVBLOCK
+			echo
+			sleep 1
+			sudo $HOME/scripts/reset-usb
+			while [[ ! -b $DEVBLOCK ]]; do
+				echo "Waiting for usb devices to be reset. . ."
+				sleep 2
+			done
+			echo
+		else
+			# Error handling if mistake was made. Option to restart.
+			read -p "Ok not formatting $DEVBLOCK. Would you like to try a diffent drive? " DIFFDRV
+			if [[ "$DIFFDRV" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+				echo
+				start
+				echo
+				sleep 1
+			else
+				echo
+				echo "Ok, exiting now. . ."
+				echo
+				sleep 1
+			fi
+		fi
+	else
+		# Option to restart.
+		echo $DEVBLOCK " does not exist. Try another. . ."
+		echo
+		start
+	fi
+}
+
+# Call main function.
+start
+exit

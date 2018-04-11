@@ -1,0 +1,84 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+
+# Check if running as root.
+if [[ ! "$USER" = "root" ]]; then
+	echo "This script must be run as root."
+	exit
+fi
+
+# Making sure you are in directory of Android image.
+read -p "Make sure your lockscreen is set to none or swipe. Are you in the directory of the Android img, and is you phone powered on in regular mode with screen unlocked? " AN_DIR
+if [[ "$AN_DIR" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
+	echo
+	echo "Flashing pixel img. . ."
+	echo
+	sleep 1
+
+	rm -rf flash*
+	# Setting variable for finding files in current dirctory to flash.
+	BOOTLDR="bootloader-marlin-*"
+	RDIO="radio-marlin-*"
+	IMG="image-marlin-*"
+	DVCE=$(adb devices | awk '{print $2}' | tail -n2)
+	FSBTDV=$(fastboot devices | awk '{print $2}')
+
+	# Check to make sure devices is connected. If so, then go through flash sequence of each file in folder and reboot each time.
+	echo
+	echo "Checking for devices. . ."
+	sleep 1
+	if [[ "$DVCE" = "device" ]]; then
+		echo
+		echo "Rebooting into bootloader. . ."
+		adb reboot bootloader
+		sleep 15
+		echo
+		echo "Checking for fastboot devices. . ."
+		sleep 1
+		if [[ $(fastboot devices | awk '{print $2}') = "fastboot" ]]; then
+			echo
+			echo "Flashing bootloader. . ."
+			fastboot flash bootloader $BOOTLDR
+			sleep 1
+			echo
+			echo "Rebooting into bootloader. . ."
+			fastboot reboot bootloader
+			sleep 1
+			echo
+			echo "Flashing radio. . ."
+			fastboot flash radio $RDIO
+			sleep 1
+			echo
+			echo "Rebooting into bootloader. . ."
+			fastboot reboot bootloader
+			sleep 1
+			echo
+			echo "Updating system. After update, then reboot to system and make sure the twrp installer img is on the device to flash, then reboot to recovery img on pc and install twrp."
+			fastboot update $IMG
+			sleep 1
+			echo
+			adb reboot bootloader
+			echo
+			echo "Rebooting into bootloader. . ."
+			fastboot reboot bootloader
+			sleep 1
+			# With Pixel, you have to run a temporary TWRP.img to install the full TWRP.
+			echo "Rebooting to temporary recovery to install full TWRP recovery. On reboot flash from your phone, reboot to installed recovery and flash magisk from your phone. After that, the process is finished."
+			fastboot boot $HOME/pixel/twrp.img
+			sleep 1
+		else
+			echo
+			echo "No fastboot device found. . ."
+		fi
+	else
+		echo
+		echo "No device found. . ."
+	fi
+else
+	echo
+	echo "Please open terminal in corrct directory and re-run. . ."
+fi
+
+cd
+exit

@@ -1,0 +1,123 @@
+#!/bin/bash
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+psw='spike'
+
+function updater(){
+	# Log date and time
+	echo
+	DATE_START=$(date +"%s")
+	echo "Update Start Time:"
+	DATE=$(date +"%m-%d-%y")
+	echo "Date: $DATE"
+	TIME=$(date +"%r")
+	echo "Time: $TIME"
+	sleep 1
+	echo
+	echo
+	echo "Updating system. . ."
+	sleep 1
+
+	# Start process by registering sudo, updating repos, and clearing caches
+	echo $psw | sudo -S pacman -Sy
+	while true; do echo "y"; done | pacaur -Scc
+	sleep 1
+	echo
+
+	echo -e "${COLOR}"
+	echo "Optimizing database. . ."
+	sleep 1
+	sudo pacman-optimize
+
+	echo -e "${COLOR}"
+	echo "Updating repos and apps. . ."
+	sleep 1
+	pacaur --noconfirm --noedit -Syyu
+	echo; sleep 1
+
+	# Removing orpans
+	echo -e "${COLOR}"
+	echo "Now removing orphans. . ."
+	sleep 1
+	echo
+	echo "Looking for Orphans from offical repos..."
+	echo
+	echo $psw | sudo -S sudo pacman --noconfirm -Rs `pacman -Qqtd | grep -Fv -f <(pacman -Qqtdm)`
+	sleep 1
+	echo -e "${COLOR}"
+	echo
+	echo "Looking for Orphans from AUR..."
+	echo
+	sudo pacman --noconfirm -Rs $(pacman -Qqtdm)
+	sleep 1
+	echo
+
+	echo -e "${COLOR}"
+	echo "Now creating backup package lists for Official and AUR repos that can be restored later. . ."
+	sleep 1
+
+	# Remove lists more than 4
+	dest="/home/msifland/pkg_bkups"
+	if [[ ! -d "$dest" ]]; then
+		mkdir $dest
+	else
+		if ls $dest/* 1> /dev/null 2>&1; then
+			ls $dest/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
+		fi
+	fi
+
+	# Rename .old lists to .old-1
+	if [[ -f /home/msifland/pkg_bkups/pkglist-off.txt.old ]]; then
+		mv /home/msifland/pkg_bkups/pkglist-off.txt.old /home/msifland/pkg_bkups/pkglist-off.txt.old-1
+	fi
+	if [[ -f /home/msifland/pkg_bkups/pkglist-loc.txt.old ]]; then
+		mv /home/msifland/pkg_bkups/pkglist-loc.txt.old /home/msifland/pkg_bkups/pkglist-loc.txt.old-1
+	fi
+
+	# Rename lists to .old
+	if [[ -f /home/msifland/pkg_bkups/pkglist-off.txt ]]; then
+		mv /home/msifland/pkg_bkups/pkglist-off.txt /home/msifland/pkg_bkups/pkglist-off.txt.old
+	fi
+	if [[ -f /home/msifland/pkg_bkups/pkglist-loc.txt ]]; then
+		mv /home/msifland/pkg_bkups/pkglist-loc.txt /home/msifland/pkg_bkups/pkglist-loc.txt.old
+	fi
+
+	# Create lists of all packages from pacaur and AUR
+	pacaur -Qqen > /home/msifland/pkg_bkups/pkglist-off.txt
+	pacaur -Qqm > /home/msifland/pkg_bkups/pkglist-loc.txt
+	sleep 1
+	# Update Kate file.
+	#$HOME/scripts/kate-updater
+	echo -e "${COLOR}"
+	echo
+	echo "Backup up .conkyrc, .bashrc, and .zshrc files. . ."
+	cp -f /home/msifland/{.bashrc,.conkyrc,.conkyrc.bak,.zshrc} /home/msifland/scripts/backups/
+	sleep 1
+	echo
+	echo
+	echo "Updating local git repos. . ."
+	$HOME/scripts/git-updater
+	sleep 1
+	echo -e "${COLOR}"
+	echo "Removing cached folder. . ."
+	sleep 1
+	echo -e "${RESTORE}"
+	echo "rm -fr $HOME/.cache/pacaur/*"
+	rm -fr $HOME/.cache/pacaur/*
+	echo
+	echo -e "${COLOR}"
+	echo "All Done, Check For Errors. . ."
+	echo
+}
+
+# Run funtion and log it with date and time
+echo -e "${COLOR}"
+updater
+echo -e "${RESTORE}"
+# | tee /home/msifland/scripts/updater_log.txt
+
+sleep 1
+exit 0
+

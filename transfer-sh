@@ -1,0 +1,57 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# This file uploads files to https://transfer.sh
+
+# Pick up output from terminal.
+FILE=$1
+# Get name of file, if slashes exist remove them.
+FILE_END=$(readlink -f $FILE | sed 's:.*/::')
+# Check if file exists.
+if [[ -f $FILE ]]; then
+	# Command to uplaod to site.
+	OUTPUT=$(curl --upload-file $FILE https://transfer.sh/$FILE_END)
+	# Show output address to file download.
+	echo $OUTPUT
+	# Create dropbox links for launchable file and text to URL.
+	LN=$HOME/Dropbox/Transfer-sh
+	read -t 25 -p "What Transfer-sh directory would you like to put the files in? Dropbox/Transfer-sh/<your directory>" TRANS_DIR
+	LNK=$HOME/Dropbox/Transfer-sh/$TRANS_DIR
+	LNK_CUT=$(readlink -f $LNK | sed 's:/home/msifland/::')
+	echo "Putting files in $LNK_CUT"
+	LINK=$LNK/$FILE_END.desktop
+	LINK_TXT=$LNK/$FILE_END-link.txt
+	# Check if files and directories exist, if not create them.
+	if [[ ! -d $LN ]]; then
+		mkdir $LN
+	fi
+	if [[ ! -d $LNK ]]; then
+		mkdir $LNK
+	fi
+	if [[ ! -f $LINK ]]; then
+		touch $LINK
+	fi
+	if [[ ! -f $LINT_TXT ]]; then
+		touch $LINK_TXT
+	fi
+	# Create entries to file to make it executable.
+	echo '[Desktop Entry]' > $LINK
+	echo 'Version=1.0' >> $LINK
+	echo 'Exec=/usr/bin/google-chrome-stable '$OUTPUT >> $LINK
+	echo 'X-MultipleArge=false' >> $LINK
+	echo 'Terminal=false' >> $LINK
+	echo 'Encoding=UTF-8' >> $LINK
+	echo 'Name='$FILE_END >> $LINK
+	echo 'Type=Application' >> $LINK
+	echo 'URL='$OUTPUT >> $LINK
+	echo 'Icon=Google-Chrome.png' >> $LINK
+	echo 'StartupNotify=true' >> $LINK
+	echo 'StartupWMClass=crx_'$FILE_END >> $LINK
+	echo $OUTPUT > $LINK_TXT
+	chmod +x $LINK
+else
+	# Error handling if file doesn't exist.
+	echo "File $FILE does not exist"
+fi
+
+exit

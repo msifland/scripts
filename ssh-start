@@ -1,0 +1,9 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+
+PW="spike"
+sleep 120
+echo $PW | sudo -S systemctl start sshd
+
+exit

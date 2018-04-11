@@ -1,0 +1,14 @@
+#!/bin/bash
+# This is a blank zsh script document.
+# Put your code below this line.
+
+FRPASSWORD="spike"
+echo $FRPASSWORD | sudo -S	$HOME/scripts/free-ram
+echo "Zeroing out swap. . ."
+echo "sudo swapoff -a"
+while free | awk '/^Swap:/ {exit !$2}'; do
+	sudo swapoff -a
+done
+echo "sudo swapon -a"
+sudo swapon -a
+exit

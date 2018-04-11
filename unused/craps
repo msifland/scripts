@@ -1,0 +1,198 @@
+#!/bin/bash
+
+RANDOM=$$       # Reseed the random number generator using script process ID.
+
+PIPS=6          # A die has 6 pips.
+MAXTHROWS=0   
+throw=0         # Number of times the dice have been cast.
+
+            	#  Must initialize counts to zero,
+twos=0          #+ since an uninitialized variable is null, NOT zero.
+threes=0
+fours=0
+fives=0
+sixes=0
+sevens=0
+eights=0
+nines=0
+tens=0
+elevens=0
+twelves=0
+
+function print_result (){
+echo
+echo "twos =    $twos"
+sleep 2
+echo "threes =  $threes"
+sleep 2
+# fours, determining if we are betting 4 and 10
+if [[ "$fourten" = "y" ]]; then
+  echo "fours =   $fours" && fou=$(echo "scale=2; (($fours*(($table_bet*1.80))))" | bc) && echo "          \$$fou"
+else
+  echo "fours =   $fours" && fou=0
+fi
+sleep 2
+# fives, determining if we are using 5 and 9, and using fourten to calculate correctly
+if [[ "$fourten" = "y" ]]; then
+  echo "fives =   $fives" && fiv=$(echo "scale=2; (($fives*(($table_bet*1.40))))" | bc) && echo "          \$$fiv"
+elif [[ "$fourten" != "y" ]] && [[ "$fivenine" = "y" ]]; then
+  echo "fives =   $fives" && fiv=$(echo "scale=2; (($fives*(($table_bet*1.40))))" | bc) && echo "          \$$fiv"
+else
+  echo "five =    $fives" && fiv=0
+fi
+sleep 2
+# sixes
+echo "sixes =   $sixes" && six=$(echo "scale=2; (($sixes*(($table_bet*1.17))))" | bc) && echo "          \$$six"
+sleep 2
+# sevens, calculating correctly for losses based on whether 4, 10 and 5, 9 are being bet
+if [[ "$fourten" = "y" ]]; then
+  echo "sevens =  $sevens" && sev=$(echo "scale=2; (($sevens*(($table_bet*6.40))))" | bc) && echo "         -\$$sev"
+elif [[ "$fourten" != "y" ]] && [[ "$fivenine" = "y" ]]; then
+  echo "sevens =  $sevens" && sev=$(echo "scale=2; (($sevens*(($table_bet*4.40))))" | bc) && echo "         -\$$sev"
+else
+  echo "sevens =  $sevens" && sev=$(echo "scale=2; (($sevens*(($table_bet*2.40))))" | bc) && echo "         -\$$sev"
+fi
+sleep 2
+# eights
+echo "eights =  $eights" && eig=$(echo "scale=2; (($eights*(($table_bet*1.17))))" | bc) && echo "          \$$eig"
+sleep 2
+# nines, same as 5
+if [[ "$fourten" = "y" ]]; then
+echo "nines =   $nines" && nin=$(echo "scale=2; (($nines*(($table_bet*1.40))))" | bc) && echo "          \$$nin"
+elif [[ "$fourten" != "y" ]] && [[ "$fivenine" = "y" ]]; then
+  echo "nines =   $nines" && nin=$(echo "scale=2; (($nines*(($table_bet*1.40))))" | bc) && echo "          \$$nin"
+else
+  echo "nines =    $nines" && nin=0
+fi
+sleep 2
+# tens, same as 4
+  if [[ "$fourten" = "y" ]]; then
+  echo "tens =    $tens" && ten=$(echo "scale=2; (($tens*(($table_bet*1.80))))" | bc) && echo "          \$$ten"
+else
+  echo "tens =    $tens" && ten=0
+fi
+sleep 2
+echo "elevens = $elevens"
+sleep 2
+echo "twelves = $twelves"
+sleep 2
+echo
+}
+
+function update_count(){
+case "$1" in
+ # Since a die has no "zero", this corresponds to 1.
+  2) ((twos++));;   # And this to 2.
+  3) ((threes++));; # And so forth.
+  4) ((fours++));;
+  5) ((fives++));;
+  6) ((sixes++));;
+  7) ((sevens++));;   
+  8) ((eights++));;   
+  9) ((nines++));; 
+  10) ((tens++));;
+  11) ((elevens++));;
+  12) ((twelves++));;
+esac
+}
+
+table_bet=0
+echo
+# questing sequence to start and determine what numbers to bet on, how many rolls, and how much to bet
+echo "This program is based on playing the inside numbers on a craps table(4,5,6,8,9,10). It will show total bets and payouts over selected number of rolls at selected minimum table bet. Here we go."
+sleep 2
+echo
+echo -n "How many rolls would you like to throw? "
+read MAXTHROWS
+echo
+sleep 2
+echo -n "What is the table bet?(\$5, \$10, etc.) "
+read table_bet
+sleep 2
+echo
+echo -n "Would you like to play 4 and 10?[y/n] "
+read fourten
+if [[ "$fourten" != "y" ]]; then
+  echo -n "Would you like to play 5 and 9?[y/n] "
+  read fivenine
+fi
+sleep 2
+
+DATE_START=$(date +"%s")
+# rolling the dice to total amout of throws
+while [ "$throw" -lt "$MAXTHROWS" ]
+do
+  let "die1 = RANDOM % $PIPS +1"
+
+  let "die2 = RANDOM % $PIPS +1"
+  
+  
+  let "rolls = $die1 + $die2"
+  echo $die1 + $die2 = $rolls
+  update_count $rolls
+  let "throw += 1"
+done  
+DATE_END=$(date +"%s")
+
+# print_rsult function above
+print_result
+
+# determining correct total bet amounts based on what numbers were chosen to bet
+if [[ "$fourten" = "y" ]]; then
+  table_bet_ttl=$(echo "scale=2; (($table_bet*6.40))" | bc)
+elif [[ "$fivenine" = "y" ]]; then
+  table_bet_ttl=$(echo "scale=2; (($table_bet*4.40))" | bc)
+else
+  table_bet_ttl=$(echo "scale=2; (($table_bet*2.4))" | bc)
+fi
+
+if [[ "$fourten" = "y" ]]; then
+  total_bet=$(echo "scale=2; (($MAXTHROWS*(($table_bet*6.40))))" | bc)
+elif [[ "$fivenine" = "y" ]]; then
+  total_bet=$(echo "scale=2; (($MAXTHROWS*(($table_bet*4.40))))" | bc)
+else
+  total_bet=$(echo "scale=2; (($MAXTHROWS*(($table_bet*2.40))))" | bc)
+fi
+
+# total statistics at the end
+won=$(echo "scale=2; (($fou+$fiv+$six+$eig+$nin+$ten))" | bc)
+lost=$(echo "scale=2; (($sev))" | bc)
+total=$(echo "scale=2; (($won-$lost))" | bc)
+none=$(echo "scale=2; ((0.00))" | bc)
+s7s=$(echo "scale=2; (($MAXTHROWS/$sevens))" | bc)
+echo "Bet per roll: \$$table_bet_ttl"
+sleep 2
+echo "Total potential money over $MAXTHROWS rolls: \$$total_bet"
+sleep 2
+echo
+echo "Won:   \$$won"
+sleep 2
+echo "Lost:  \$$lost"
+sleep 2
+# determining whether we have won or lost money
+if echo "$total > 0" | bc | grep -q 1
+then
+  echo "You won: \$$total"
+else
+  echo "You lost: \$$total"
+fi
+
+echo
+sleep 2
+echo "sevens =  $sevens"
+sleep 2
+echo "That's one 7 for every $s7s rolls."
+sleep 2
+echo
+DIFF=$(($DATE_END - $DATE_START))
+echo "Time: $((($DIFF % 3600) / 60)) minutes, $(($DIFF % 60)) seconds to roll $MAXTHROWS times."
+sleep 2
+echo
+table_time=$(echo "scale=2; (($MAXTHROWS*35))" | bc)
+echo "Equivalent to:" && . $HOME/scripts/show_time $table_time && echo "at the craps table."
+
+echo
+
+sleep 2
+
+exit $?

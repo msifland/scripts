@@ -1,0 +1,23 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "${ILCOLOR3}Showing all kernels installed on system, newest first. . .${ILRESTORE}"
+sleep 1
+
+KERNS=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
+
+for k in $KERNS; do
+	echo $k
+	sleep .5
+done
+echo "${ILCOLOR2}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
+sleep 1
+
+echo
+read -t 10 -p "${ILCOLOR2}Would you like to run 'kernels-purge'?[y/n] ${ILRESTORE}" kp
+if [[ "$kp" =~ ^[yY][eE][sS]|[yY]$ ]]; then
+	sudo $HOME/scripts/kernel-purge
+fi
+exit
+

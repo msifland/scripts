@@ -1,0 +1,44 @@
+#!/bin/bash
+# This scripts allows replacing spaces and newlines with each other
+
+echo
+# Ask what file to replace in
+echo -n "What file in this directory or full file path would you like to remove spaces or newlines?[\"file name/path\"]? "
+read filename
+sleep 1
+echo
+
+# Main replace function
+function replace(){
+	# Ask which characters you would like to replace
+	echo -n "Would you like to replace newlines with spaces or spaces with newlines[n/s]? "
+	read ns
+	# Read filename input and decide what to do
+	case $ns in
+		n|N	)
+			echo
+			echo "Ok, replacing newlines with spaces. . ."
+			sleep 1
+			echo
+			# Replaces newlines with spaces
+			perl -i -p -e 's:\n: :g' $filename
+			;;
+		s|S	)
+			echo
+			echo "Ok, replacing spaces with newlines. . ."
+			sleep 1
+			echo
+			# Replaces spaces with newlines
+			perl -i -p -e 's: :\n:g' $filename
+			;;
+		*	)
+			echo "Invalid entry, try again..."
+			replace
+			echo
+			;;
+	esac
+}
+
+# Call main function
+replace
+echo

@@ -1,0 +1,50 @@
+#!/bin/bash
+# This scripts will run an algorythm for making peanut butter and jelly sandwich
+
+clear
+echo
+echo
+echo
+echo
+echo "---------------------------------------------------------------------------------------------
+This program is going to run an algorithm for the perfect Peanutbutter and Jelly Sandwich...
+---------------------------------------------------------------------------------------------"
+sleep 5
+
+echo
+echo "Running algorithm now..."
+sleep 5
+
+count=0
+maxcount=200
+
+function rannums(){
+while [ "$count" -le $maxcount ]; do
+	number=$RANDOM
+	echo $number
+	count=$[$count+1]
+done
+}
+
+rannums | pv -qL 75
+
+sleep 1
+
+echo
+echo "The combination of the perfect Peanutbutter and Jelly Sandwich is...."
+sleep 7
+
+RNDM=$RANDOM
+echo
+echo "$RNDM part Peanutbutter..."
+sleep 3
+echo "&..."
+sleep 3
+echo "$RNDM part Jelly."
+sleep 3
+
+echo
+echo "Now go and make the perfect sandwich."
+echo
+echo
+sleep 3

@@ -1,0 +1,109 @@
+#!/bin/bash
+# This script will list files in current directory and give you a list to choose from to open or quit
+# Set current directory variable before function
+
+# This first function starts from command prompt input
+function open(){
+	echo
+	# Check if file is a file or a directory and act accordingly("$REPLY")
+	if [[ -f "$FILENAME" ]]; then
+		echo "${ILCOLOR1}Opening "$FILENAME". . ."
+		sleep 2
+		if [[ "$FILENAME" == *.pdf ]] || [[ "$FILENAME" == *.PDF ]]; then
+			detach okular "$FILENAME"
+		elif [[ "$FILENAME" == *.png ]] || [[ "$FILENAME" == *.jpg ]] || [[ "$FILENAME" == *.jpeg ]]; then
+			detach kolourpaint "$FILENAME"
+		else
+			detach subl -n "$FILENAME"
+		fi
+	# If directory then swicth to it
+	elif [[ -d "$FILENAME" ]]; then
+		echo
+		echo ""$FILENAME" is a directory, switching to "$FILENAME""
+		echo
+		if [[ -f "$q" ]]; then
+			rm "$q"
+		fi
+		cd $FILENAME
+		open_file
+	else
+		echo
+		echo "Can't find "$FILENAME", retry picking a file."
+		sleep 1
+		open_file
+	fi
+	echo
+}
+
+# This second funtion runs if first function calls it for switching directories and showing a list of files
+function open_file(){
+echo
+echo "${ILCOLOR1}Here is a list of files in "$FILENAME" directory. . ."
+sleep 1
+echo
+echo "${ILCOLOR2}Enter the number of the file you want to open select \"Quit\": "
+sleep 1
+
+# Setup prompt for entering your choice
+PS3="${ILCOLOR1}Your choice: "
+echo
+
+# Setup the "Quit" option in the list. Creates a file by the $q name so it can be call to break the select loop
+q="1-QUIT THIS PROGRAM!!!"
+touch "$q"
+
+echo -e ${ILRESTORE}
+# After you select your file open it or quit
+select FILENAME in * .*; do # Notice 2 variales not a "space" * and .*, this is for hidden files
+	case $FILENAME in
+		"$q")	# Exit command reminds about switching directories and nesting
+			echo
+			echo "${ILCOLOR2}Exiting now. If you have switched directories you are nested. Type \"1\" and hit \"ENTER\" if the \"Your Choice:\" prompt appears again."
+			sleep 1
+			break
+			;;
+		*	)	# Check if file is a file or a directory and act accordingly ("$REPLY")
+			if [[ -f "$FILENAME" ]]; then
+				echo "${ILCOLOR1}You picked "$FILENAME", we will now open "$FILENAME""
+				sleep 2
+				if [[ "$FILENAME" == *.pdf ]] || [[ "$FILENAME" == *.PDF ]]; then
+					detach okular "$FILENAME"
+				elif [[ "$FILENAME" == *.png ]] || [[ "$FILENAME" == *.jpg ]] || [[ "$FILENAME" == *.jpeg ]]; then
+					detach kolourpaint "$FILENAME"
+			else
+				detach subl -n "$FILENAME"
+			fi
+			# If directory then swicth to it
+			elif [[ -d "$FILENAME" ]]; then
+				echo
+				echo ""$FILENAME" is a directory, switching to "$FILENAME""
+				echo
+				if [[ -f "$q" ]]; then
+					rm "$q"
+				fi
+				cd $FILENAME
+				open_file
+			else
+				echo
+				echo "Can't find "$FILENAME", retry picking a file."
+				sleep 1
+				open_file
+			fi
+			;;
+	esac
+	if [[ -f "$q" ]]; then
+		rm "$q"
+	fi
+done
+}
+# Get input from terminal
+FILENAME=$PWD/"$1"
+
+# Call main function
+open
+
+# Remove temporary "Quit" option
+if [[ -f "$q" ]]; then
+	rm "$q"
+fi
+echo

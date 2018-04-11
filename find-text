@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Bash Color Random
+COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
+RESTORE='\033[0m'
+
+# Instruction that display at start
+echo -e "${COLOR}"
+echo "We are now going to search for text in current directory with the option for sub-directories, and count the occurances. MAKE SURE THAT YOU ARE IN THE CORRECT DIRECTORY IN WHICH YOU WANT TO SEARCH. Find-text is NOT case sensitive. Also no quotes are needed at all, even with spaces."
+sleep 2
+echo -e "${RESTORE}"
+
+# Ask if recursive searching
+read -p "Would you like to search recursively?[y/n]: " yn
+echo
+sleep 1
+
+# Ask what text to search for
+echo -n "What text string would you like to search for? "
+read initialtext
+sleep 1
+
+if [[ "$yn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	# Execute
+	echo -e "${COLOR}"
+	echo "Working. . ."
+	sleep 2
+	echo
+	grep -rsni --exclude-dir=.git $initialtext $PWD #2> /dev/null | grep -v .svn
+	echo
+	grep -rsni --exclude-dir=.git $initialtext $PWD  | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+	sleep 2
+	echo -e "${RESTORE}"
+else
+	# Execute
+	echo -e "${COLOR}"
+	echo "Working. . ."
+	sleep 2
+	echo
+	grep -sni --exclude-dir=.git $initialtext $PWD/{*,.*} #2> /dev/null | grep -v .svn
+	echo
+	grep -sni --exclude-dir=.git $initialtext $PWD/{*,.*} | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+	sleep 2
+	echo -e "${RESTORE}"
+fi
+	exit 0
