@@ -78,4 +78,17 @@ fi
 sleep 1
 
 rm -f $KERN_FILE
-echo $'Done.\n\n'
+echo
+echo $'Showing remaining kernles now. . .\n'
+sleep 1
+
+KERNS=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
+
+for k in $KERNS; do
+	echo $k
+	sleep .5
+done
+echo "${ILCOLOR2}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
+sleep 1
+
+echo

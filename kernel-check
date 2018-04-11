@@ -30,13 +30,15 @@ rnning=$(uname -r | awk -F '\\-' '{print $1}')
 echo "${ILCOLOR2}-----> Currently running $rnning" | pv -qL 50
 sleep 1
 
+#----------- This section has 2 places to change version number ---------
 # This also checks the kernel source website for the latest kernel to build.
 echo
-echo "${ILCOLOR2}Also checking if there is a new kernel to BUILD from main kernel source: kernel.org. Checking versions 4.15. If you wish to  check a different version, then edit this script and change to correct version to check, e.g. 4.17, 4.14, etc. If there is a newer version and you want to build it you have to call the 'kernel-build' script.${ILRESTORE}"
+echo "${ILCOLOR2}Also checking if there is a new kernel to BUILD from main kernel source: kernel.org. Checking versions 4.16. If you wish to  check a different version, then edit this script and change to correct version to check, e.g. 4.17, 4.14, etc. If there is a newer version and you want to build it you have to call the 'kernel-build' script.${ILRESTORE}"
 sleep 1
 
 # Get and format websit info. **CHANGE KERNEL VERSION TO CHECK FOR HERE **
-get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-4.15" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
+get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-4.16" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
+#----------------------------------------------------------------------
 
 echo "-----> Newest kernel from kernel source is $get"
 sleep 1
