@@ -29,7 +29,7 @@ mkdir "$work_dir"
 cd "$work_dir"
 
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
-ver="4.15"
+ver="4.16"
 read -p "Current kernel version in script is $ver, would you like to keep it? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
 	echo "OK, keeping current version of $ver"
@@ -41,7 +41,9 @@ fi
 echo
 
 # Get and format websit info
-get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-$ver" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
+### Longer version.
+#get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-$ver" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
+get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-4.16" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n1)
 
 echo "Newest kernel version available is $get"
 sleep 1

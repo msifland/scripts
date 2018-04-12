@@ -35,7 +35,9 @@ fi
 # Here we need a certain date format for search the website.
 # Search website for current changelog based on date.
 #get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-$ver" | grep ".tar.xz" | sed 's:<a href="::g' | sed "s:\">linux-$ver.*::g" | sed 's:linux-::g' | sed 's:.tar.xz::g' | sort -V | tail -n1)
-get=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline | grep "v$ver" | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | sed 's:v'$ver'-::g' | sort -V | tail -n1)
+### Longer version:
+#get=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline | grep "v$ver" | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | sed 's:v'$ver'-::g' | sort -V | tail -n1)
+get=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline | grep 4.16 | sed -e 's:.*href="::' -e 's:/">.*::' | sort -V | tail -n1)
 echo "Newest kernel version available is $get"
 sleep 1
 
