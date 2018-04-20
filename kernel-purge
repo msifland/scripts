@@ -79,7 +79,7 @@ sleep 1
 
 rm -f $KERN_FILE
 echo
-echo $'Showing remaining kernles now. . .\n'
+echo ${ILCOLOR3}$'\nShowing remaining kernles now on your system. . .'${ILRESTORE}
 sleep 1
 
 KERNS=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
