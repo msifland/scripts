@@ -375,6 +375,7 @@ alias apti-s="aptitude search"
 alias del-key="sudo apt-key del"
 alias apt-list="apt list --installed"
 alias apt-list-s="apt list --installed | grep "$1""
+alias android="$HOME/Android/Sdk/tools/bin/sdkmanager"
 
 #############Android stuff#####################
 export PATH="$HOME/rom_scripts:$PATH"

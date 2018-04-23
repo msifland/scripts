@@ -392,6 +392,7 @@ alias apti-s="aptitude search"
 alias del-key="sudo apt-key del"
 alias apt-list="apt list --installed"
 alias apt-list-s="apt list --installed | grep "$1""
+alias android="$HOME/Android/Sdk/tools/bin/sdkmanager"
 
 #############Android stuff#####################
 export PATH="$HOME/rom_scripts:$PATH"
@@ -399,7 +400,8 @@ export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export ANDROID_HOME="$HOME/Android/Sdk:$ANDROID_HOME"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/lib/jvm/default-java/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/Android/Sdk:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/build-tools/:$PATH"
+export PATH="/usr/lib/jvm/default-java/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/Android/Sdk:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/build-tools/:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:$PATH"
 # This line specifically call the latest build tools number folder(mainly for building opengapps).
 export PATH="$(find $HOME/Android/Sdk/build-tools/ -mindepth 1 -maxdepth 1 -type d):$PATH"
 export PATH="./prebuilts/sdk/tools:$PATH"
