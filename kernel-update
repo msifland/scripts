@@ -75,8 +75,7 @@ Would you like to install it?" 10 50; then
 		echo 'spike' | sudo -S  dpkg -i *.deb
 		$HOME/scripts/kernel-list
 		echo
-		read -t 10 -p "Would you like to reboot to new kernel now?" ysno
-		if [[ "$ysno" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		if dialog --timeout 10 --yesno "Would you like to reboot to new kernel now?" 10 50; then
 			#Clean up.
 			rm -rf "$sync_dir"/*.deb
 			rm -rf "$sync_dir"/*.deb.*
@@ -100,6 +99,7 @@ fi
 }
 
 kern_check
+
 #Clean up.
 rm -rf "$sync_dir"/*.deb
 rm -rf "$sync_dir"/*.deb.*
