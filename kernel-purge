@@ -56,6 +56,7 @@ for j in $FOR_REM; do
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g'
 		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')
 		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g')
+		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-generic::g')
 	else
 		# These are just examples of using a newline charater in and echo.
 		echo -e "!!!****************!!!\nError detected! No number $j. "$'\nRe-run script.\n\n'

@@ -63,15 +63,18 @@ Would you like to install it?" 10 50; then
 		# Download files.
 		echo "${ILCOLOR2}Downloading $kern_all${ILRESTORE}"
 		wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/"$kern_all"
-
 		echo "${ILCOLOR2}Downloading $kern_head${ILRESTORE}"
 		wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/"$kern_head"
-		kern_img=$(echo $kern_head | sed 's:headers:image:g')
+		kern_img=$(echo $kern_head | sed 's:headers:image-unsigned:g')
 		echo "${ILCOLOR2}Downloading $kern_img${ILRESTORE}"
 		wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/"$kern_img"
+		modules=$(echo $kern_head | sed 's:headers:modules:g')
+		echo "${ILCOLOR2}Downloading $modules${ILRESTORE}"
+		wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$get"/"$modules"
 
 		# Install files.
 		echo 'spike' | sudo -S dpkg -i *all.deb
+		echo 'spike' | sudo -S dpkg -i *modules*.deb
 		echo 'spike' | sudo -S  dpkg -i *.deb
 		$HOME/scripts/kernel-list
 		echo

@@ -74,23 +74,27 @@ for_inst=$(grep "^$inst. v" $kern_file | sed "s:$inst. ::g")
 echo $for_inst
 cd $HOME/tmp
 if test $for_inst; then
-# More formatting for web search.
-kern_all=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/"$for_inst"/ | grep "all.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
-kern_head=$(wget -qO- http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/ | grep "amd64.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
+	# More formatting for web search.
+	kern_all=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/"$for_inst"/ | grep "all.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
+	kern_head=$(wget -qO- http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/ | grep "amd64.deb" | sed 's:&nbsp;   <a href="::g' | awk -F '\\.deb' '{print $1}' | head -n1)".deb"
 
-# Download files.
-echo "${ILCOLOR2}Downloading $kern_all${ILRESTORE}"
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_all"
-
-echo "${ILCOLOR2}Downloading $kern_head${ILRESTORE}"
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_head"
-kern_img=$(echo $kern_head | sed 's:headers:image:g')
-echo "${ILCOLOR2}Downloading $kern_img${ILRESTORE}"
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_img"
+	# Download files.
+	echo "${ILCOLOR2}Downloading $kern_all${ILRESTORE}"
+	wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_all"
+	echo "${ILCOLOR2}Downloading $kern_head${ILRESTORE}"
+	wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_head"
+	kern_img=$(echo $kern_head | sed 's:headers:image-unsigned:g')
+	echo "${ILCOLOR2}Downloading $kern_img${ILRESTORE}"
+	wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$kern_img"
+	modules=$(echo $kern_head | sed 's:headers:modules:g')
+	echo "${ILCOLOR2}Downloading $modules${ILRESTORE}"
+	wget http://kernel.ubuntu.com/~kernel-ppa/mainline/"$for_inst"/"$modules"
 
 # Install files.
 echo 'spike' | sudo -S dpkg -i *all.deb
+echo 'spike' | sudo -S dpkg -i *modules*.deb
 echo 'spike' | sudo -S  dpkg -i *.deb
+
 else
 	echo
 	echo "Invalid entry, try again. . ."
