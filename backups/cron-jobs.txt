@@ -40,4 +40,4 @@
 #0 2 * * 0 env DISPLAY=:0 xfce4-terminal -H -e /home/msifland/scripts/map-my-builder
 
 # Run a check for new kernels
-45 6 * * * env DISPLAY=:0 /home/msifland/scripts/kern-update-timer
+#45 6 * * * env DISPLAY=:0 /home/msifland/scripts/kern-update-timer
