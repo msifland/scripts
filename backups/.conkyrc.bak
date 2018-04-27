@@ -87,9 +87,9 @@ $color2$hr
 ${color}${font sans:bold:size=10}NETWORK DATA
 ${color}${font sans:size=8}Network Adapter: ${color2}${texeci 36000 echo $(ip link show | grep "state UP" | cut -d':' -f2 | sed 's#:##')}${if_existing .conky_has_wireless}${goto 5}${voffset 13}${color}Wireless Network: ${color2}${wireless_essid  wlo1}${endif} \
 ${if_existing .conky_has_wireless}${goto 5}${voffset 13}${color}WiFi Signal Strength: ${color2}${wireless_link_qual_perc  wlo1}%${endif} \
-${goto 5}${voffset 13}${color}Upload Speed: ${color2}${upspeed  wlo1}/s${color2}
-${upspeedgraph  wlo1 25,255 ${color2} ${color3}}
-${color}Dnload Speed: ${color2}${downspeed  wlo1}/s
+${goto 5}${voffset 13}${color}Dnload Speed: ${color2}${downspeed  wlo1}/s
 ${color2}${downspeedgraph  wlo1 25,255 ${color2} ${color3}}
+${color}Upload Speed: ${color2}${upspeed  wlo1}/s${color2}
+${upspeedgraph  wlo1 25,255 ${color2} ${color3}}
 ${color}Interal IP: ${color2}${addr  wlo1}
 ${color}External IP: ${color2}${execi 3600 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'}
