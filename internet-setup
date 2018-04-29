@@ -63,6 +63,7 @@ else
 	echo
 	sleep 1
 fi
+<<Comment This section is for ArchLinux
 echo -n "Would you like to update keys now?(y/n): "; read keysyn
 	if [[ "$keysyn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		echo "sudo pacman-key --init"
@@ -77,6 +78,7 @@ echo -n "Would you like to update keys now?(y/n): "; read keysyn
 	else
 		echo "Not updating keys now..."
 	fi
+Comment
 echo
 sleep 1
 echo "If you wish to start this script over, just type 'scripts/internet-setup'..."

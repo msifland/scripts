@@ -34,9 +34,9 @@ override_utf8_locale yes
 use_spacer no
 maximum_width 255
 no_buffers yes
-default_color 7a7158
-color2 655d47
-color3 403a28
+default_color black #7a7158
+color2 black #655d47
+color3 black #403a28
 
 TEXT
 ${font sans:bold:size=10}${color}${alignc}Ubuntu-Mate-$sysname $kernel
@@ -54,11 +54,11 @@ ${if_existing /sys/devices/system/cpu/cpu5}${goto 5}${voffset 18}${color}${font 
 ${if_existing /sys/devices/system/cpu/cpu6}${goto 5}${voffset 18}${color}${font sans:bold:size=10}CPU7:${color2}${font sans:size=10}${cpu cpu7}% ${color3}${cpubar cpu7}${endif} \
 ${if_existing /sys/devices/system/cpu/cpu7}${goto 5}${voffset 18}${color}${font sans:bold:size=10}CPU8:${color2}${font sans:size=10}${cpu cpu8}% ${color3}${cpubar cpu8}${endif}
 ${voffset 7}${color}${font sans:bold:size=10}Total CPU:${color2}${font sans:size=10}${cpu cpu0}% ${color3}${cpubar cpu0}
-${color2}${cpugraph 0 28, 255 655d47 403a28}
+${color2}${cpugraph 0 28, 255 black black}
 $color2$stippled_hr
 ${color}${font sans:bold:size=10}RAM:${color2}${font sans:size=10} $memperc%  ${alignr}$mem/$memmax
 ${color3}$membar
-${color2}${memgraph 0 28, 255 655d47 403a28}
+${color2}${memgraph 0 28, 255 black black}
 $color2$stippled_hr
 ${color}${font sans:bold:size=10}SWAP: ${color2}${font sans:size=10}$swapperc% ${alignr}$swap/$swapmax
 ${color3}${swapbar}
