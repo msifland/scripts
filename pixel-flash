@@ -54,9 +54,9 @@ if [[ "$AN_DIR" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 			fastboot reboot bootloader
 			sleep 1
 			echo
-			echo "Updating system. After update, then reboot to system and make sure the twrp installer img is on the device to flash, then reboot to recovery img on pc and install twrp."
+			echo "Updating system. After update, device will reboot to system and then reboot to temporary recovery img on pc and then you install twrp installer from device."
 			fastboot update $IMG
-			sleep 60
+			sleep 90
 			echo
 			adb reboot bootloader
 			echo
