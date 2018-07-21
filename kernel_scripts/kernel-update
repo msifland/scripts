@@ -16,14 +16,14 @@ echo "Checking for newest kernel from Unbunt ppa-mainline. . ."
 echo
 sleep 1
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
-ver="4.14"
+ver="4.15"
 read -p "Current kernel version in script is $ver, would you like to keep it[y/n]? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
 	echo "OK, keeping current version of $ver"
 else
 	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " newver
-	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel-update
-	$HOME/scripts/kernel-update && exit
+	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-update
+	$HOME/scripts/kernel_scripts/kernel-update && exit
 fi
 echo
 
