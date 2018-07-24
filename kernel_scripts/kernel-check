@@ -13,7 +13,7 @@ if [[ ! -f $kern_file ]]; then
 fi
 echo "" > $kern_file
 
-ver="4.15"
+ver="4.17"
 read -p "Current kernel version in script is $ver, would you like to keep it[y/n]? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
 	echo "OK, keeping current version of $ver"
