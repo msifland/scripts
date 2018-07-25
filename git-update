@@ -4,7 +4,15 @@
 echo
 echo "${ILCOLOR2}We will now update your personal git directories consisting of Documents, scripts, and rom_scripts. . .${ILRESTORE}"
 sleep 1
-
+: '
+echo
+echo "${ILCOLOR1}Updating WordLists. . .${ILRESTORE}"
+cd ~/WordLists
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+'
 echo
 echo "${ILCOLOR1}Updating Documents. . .${ILRESTORE}"
 cd ~/Documents
