@@ -12,23 +12,26 @@ if [[ ! -f $kern_file ]]; then
 	touch $kern_file
 fi
 echo "" > $kern_file
-
-ver="4.17"
+<<Comment
+ver="3"
 read -p "Current kernel version in script is $ver, would you like to keep it[y/n]? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
 	echo "OK, keeping current version of $ver"
 else
-	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " newver
+	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " newver
 	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
-
+Comment
 # Searching website for versions available and showing the last 30. Also figured out after trial and error that the brackets had to be escaped.
 #kern_list=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v4." | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | tail -n20)
-kern_list=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v4." | sed -e 's:.* href="::g' -e 's:/">.*$::' | tail -n70)
-# Loop to list the kernels in the file on numbered lines and echo them on screen.
 echo "${ILCOLOR2}Here are the 50 lastest available kernels from Ubuntu ppa-mainline. . .${ILRESTORE}"
+sleep 3
+
+kern_list=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v[0-9]" | sed -e 's:.* href="::g' -e 's:/">.*$::' | tail -n50)
+# Loop to list the kernels in the file on numbered lines and echo them on screen.
+
 n=0
 for i in $kern_list; do
 	let n=n+1

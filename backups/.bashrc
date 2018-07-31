@@ -132,7 +132,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-  ########################### My-Stuff ###############################
+########################### My-Stuff ###############################
 
 function up(){ ##>Navigates up number of directories.
 LIMIT=$1
@@ -392,11 +392,12 @@ alias apti-s="aptitude search"
 alias del-key="sudo apt-key del"
 alias apt-list="apt list --installed"
 alias apt-list-s="apt list --installed | grep "$1""
-alias android="$HOME/Android/Sdk/tools/bin/sdkmanager"
+#alias android="$HOME/Android/Sdk/tools/bin/sdkmanager"
 
 #############Android stuff#####################
 export PATH="$HOME/rom_scripts:$PATH"
 export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/scripts/kernel_scripts:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export ANDROID_HOME="$HOME/Android/Sdk:$ANDROID_HOME"
@@ -420,4 +421,4 @@ if [ "$PS1" ]; then
 echo
 fi
 
-  ######################### End of My-Stuff ##########################
+######################### End of My-Stuff ##########################

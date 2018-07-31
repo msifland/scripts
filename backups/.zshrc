@@ -115,7 +115,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-  ########################### My-Stuff ###############################
+########################### My-Stuff ###############################
 
 function up(){ ##>Navigates up number of directories.
 LIMIT=$1
@@ -380,6 +380,7 @@ alias apt-list-s="apt list --installed | grep "$1""
 #############Android stuff#####################
 export PATH="$HOME/rom_scripts:$PATH"
 export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/scripts/kernel_scripts:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export ANDROID_HOME="$HOME/Android/Sdk:$ANDROID_HOME"
@@ -403,7 +404,7 @@ if [ "$PS1" ]; then
 echo
 fi
 
-  ######################### End of My-Stuff ##########################
+######################### End of My-Stuff ##########################
 
 ########## Personalized Theme with Random color generation #####
 ########## Type in terminal to see colors: spectrum_ls #########

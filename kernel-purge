@@ -15,7 +15,7 @@ sleep 1
 
 # Gathering system kernels and slightly renaming for apt purposes. Creating a tmp file to write them too for reference.
 KERNS=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
-KERN_FILE=$HOME/tmp/kern_file
+KERN_FILE=$HOME/tmp/kern_file1
 
 if [[ ! -f $KERN_FILE ]]; then
 	touch $KERN_FILE
@@ -54,9 +54,9 @@ echo "${ILCOLOR3}Kernels set to remove: ${ILRESTORE}"
 for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g'
-		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')
-		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g')
-		REM+=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-generic::g')
+		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')
+		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g')
+		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-generic::g')
 	else
 		# These are just examples of using a newline charater in and echo.
 		echo -e "!!!****************!!!\nError detected! No number $j. "$'\nRe-run script.\n\n'
@@ -67,7 +67,16 @@ sleep 1
 
 # If all is good, then remove.
 echo
-apt purge $REM
+if test $REM1; then
+	echo "y" | apt purge $REM1
+fi
+if test $REM2; then
+	echo "y" | apt purge $REM2
+fi
+if test $REM3; then
+	echo "y" | apt purge $REM3
+fi
+
 if [[ $? = 0 ]]; then
 	echo
 	update-grub
