@@ -27,7 +27,7 @@ Comment
 # Searching website for versions available and showing the last 30. Also figured out after trial and error that the brackets had to be escaped.
 #kern_list=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v4." | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | tail -n20)
 echo "${ILCOLOR2}Here are the 50 lastest available kernels from Ubuntu ppa-mainline. . .${ILRESTORE}"
-sleep 3
+sleep 5
 
 kern_list=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v[0-9]" | sed -e 's:.* href="::g' -e 's:/">.*$::' | tail -n50)
 # Loop to list the kernels in the file on numbered lines and echo them on screen.

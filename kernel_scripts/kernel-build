@@ -3,9 +3,7 @@
 # Put your code below this line.
 # Removing old files and creating new ones.
 
-# Change to dir and remove any old files
-
-
+# Change to dir and remove any old files, create variables and files.
 if [[ ! -d $HOME/tmp ]]; then
 	mkdir $HOME/tmp
 fi
@@ -14,24 +12,26 @@ cd $HOME/tmp
 if [[ -d kernel-build ]]; then
 	rm -rf kernel-build
 fi
+
 if [[ -f *.tar.xz ]]; then
 	rm -rf *.tar.xz
 fi
 
 mkdir $HOME/tmp/kernel-build
-work_dir="$HOME/tmp/kernel-build"
-cd $work_dir
+WORK_DIR="$HOME/tmp/kernel-build"
+cd $WORK_DIR
 
-rm -fr $HOME/tmp/*.deb
-rm -rf $HOME/tmp/*.deb.*
+rm -fr $WORK_DIR/*.deb
+rm -rf $WORK_DIR/*.deb.*
 echo
-kern_file=$HOME/tmp/kern_file
+kern_file=$WORK_DIR/kern_file
 
 if [[ ! -f $kern_file ]]; then
 	touch $kern_file
 fi
 echo "" > $kern_file
 
+# Set kernel version number to look for.
 ver="4"
 read -p "Current kernel version in script is $ver, would you like to keep it[Y/n]? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
@@ -70,12 +70,8 @@ read -p "Type the line number of the kernel you want to install(Type 0 to exit):
 sleep 1
 if [[ "$inst" = "0" ]]; then
 	# Remove old files.
-	rm -rf $kern_file
-	rm -fr $HOME/tmp/*.deb
-	rm -rf $HOME/tmp/*.deb.*
-	rm -rf $HOME/tmp/*.tar.xz
-	if [[ -d $HOME/tmp/kernel-build ]]; then
-		rm -rf $HOME/tmp/kernel-build
+	if [[ -d $WORK_DIR ]]; then
+		rm -rf $WORK_DIR
 	fi
 	exit
 fi
@@ -83,7 +79,7 @@ fi
 # Format for web search purposes.
 for_inst=$(grep "^$inst. " $kern_file | sed "s:$inst. ::g")
 echo $for_inst
-cd $work_dir
+cd $WORK_DIR
 if test $for_inst; then
 	tm_wh_start=$(date +"%s")
 		clear
@@ -97,11 +93,14 @@ if test $for_inst; then
 		sleep 1
 		echo
 		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
-		echo 'spike' | sudo -S apt build-dep -y linux-image-$(uname -r)
+		echo 'spike' | sudo -S apt build-dep -y linux
 		tar -xf linux-"$for_inst".tar.xz
 		cd linux-"$for_inst"
+		echo
+		echo "Copying current kernel .config. . ."
 		cp /boot/config-$(uname -r) .config
-		read -p "What would you like to append to Kernel Number for Local Version name('Enter' for blank)? " loc_ver
+		echo
+		read -p "Append to Kernel Number for Local Version name('Enter' for blank)? " loc_ver
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"
 		cd ..
 		rm -rf *dbg*.deb
@@ -121,11 +120,6 @@ fi
 }
 install_kern
 # Remove old files.
-rm -rf $kern_file
-	rm -rf $kern_file
-	rm -fr $HOME/tmp/*.deb
-	rm -rf $HOME/tmp/*.deb.*
-	rm -rf $HOME/tmp/*.tar.xz
-	if [[ -d $HOME/tmp/kernel-build ]]; then
-		rm -rf $HOME/tmp/kernel-build
-	fi
+if [[ -d $WORK_DIR ]]; then
+	rm -rf $WORK_DIR
+fi

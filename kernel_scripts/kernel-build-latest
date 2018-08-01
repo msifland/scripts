@@ -132,7 +132,7 @@ Comment '
 		read -p "Would you like to run kernel-purge now? " ynprg
 		echo
 		if [[ "$ynprg" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-			echo 'spike' | sudo -S $HOME/scripts/kernel-purge
+			echo 'spike' | sudo -S $HOME/scripts/kernel_scripts/kernel-purge
 		else
 			echo "Ok, not purging kernels now."
 			echo

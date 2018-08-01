@@ -17,7 +17,7 @@ sleep 1
 echo
 read -t 10 -p "${ILCOLOR2}Would you like to run 'kernels-purge'?[y/n] ${ILRESTORE}" kp
 if [[ "$kp" =~ ^[yY][eE][sS]|[yY]$ ]]; then
-	sudo $HOME/scripts/kernel-purge
+	sudo $HOME/scripts/kernel_scripts/kernel-purge
 fi
 exit
 

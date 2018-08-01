@@ -76,7 +76,7 @@ Would you like to install it?" 10 50; then
 		echo 'spike' | sudo -S dpkg -i *all.deb
 		echo 'spike' | sudo -S dpkg -i *modules*.deb
 		echo 'spike' | sudo -S  dpkg -i *.deb
-		$HOME/scripts/kernel-list
+		$HOME/scripts/kernel_scripts/kernel-list
 		echo
 		if dialog --timeout 10 --yesno "Would you like to reboot to new kernel now?" 10 50; then
 			#Clean up.

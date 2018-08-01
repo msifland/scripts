@@ -8,7 +8,7 @@
 
 #while true; do
 	# The 'source .zshrc' parts allows for sudo running.
-	xfce4-terminal -e "zsh -c \"source .zshrc; echo 'y' | $HOME/scripts/kernel-update; sleep 60\""
+	xfce4-terminal -e "zsh -c \"source .zshrc; echo 'y' | $HOME/scripts/kernel_scripts/kernel-update; sleep 60\""
 #	sleep 24h
 #done
 

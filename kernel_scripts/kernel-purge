@@ -1,6 +1,7 @@
 #!/bin/bash
-# This is a blank bash script document.
-# 
+# Removing kernels: image is located at /boot/
+#                   headers is located at /usr/src/
+#                   modules is located at /lib/modules/
 
 
 # Check if script has been run as root.
@@ -53,33 +54,33 @@ echo
 echo "${ILCOLOR3}Kernels set to remove: ${ILRESTORE}"
 for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
-		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g'
-		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')
-		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g')
-		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-generic::g')
+		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
+		echo $KERNS_REM
+####### Comment out because removing the modules below should remove image too.
+		#REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')
+		
+		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g') ## REvmoving 'generic' here because of the 'all' headers installed.
+		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g')
 	else
 		# These are just examples of using a newline charater in and echo.
 		echo -e "!!!****************!!!\nError detected! No number $j. "$'\nRe-run script.\n\n'
 		exit
 	fi
 done
-sleep 1
+sleep 5
 
 # If all is good, then remove.
 echo
-if test $REM1; then
-	echo "y" | apt purge $REM1
-fi
-if test $REM2; then
-	echo "y" | apt purge $REM2
-fi
-if test $REM3; then
-	echo "y" | apt purge $REM3
-fi
+echo "y" | apt purge $REM2
+echo "y" | apt purge $REM3
+
+
+
 
 if [[ $? = 0 ]]; then
 	echo
 	update-grub
+	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
 else
 	echo
