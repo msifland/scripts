@@ -100,12 +100,18 @@ if test $for_inst; then
 		echo "Copying current kernel .config. . ."
 		cp /boot/config-$(uname -r) .config
 		echo
-		read -p "Append to Kernel Number for Local Version name('Enter' for blank)? " loc_ver
-		make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"
+		#read -p "Append to Kernel Number for Local Version name('Enter' for blank)? " loc_ver
+		loc_ver="-msi"
+		sed -i 's:CONFIG_LOCALVERSION="":CONFIG_LOCALVERSION="-msi":g' .config
+		sudo make -j 4 && sudo make modules_install -j 4 && sudo make install -j 4
+		#make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"
 		cd ..
-		rm -rf *dbg*.deb
-		rm -rf *libc*.deb
-		echo 'spike' | sudo -S dpkg -i *.deb
+		#rm -rf *dbg*.deb
+		#rm -rf *libc*.deb
+		#echo 'spike' | sudo -S dpkg -i *.deb
+		UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
+		sudo update-initramfs -c -t -k "$UPD_INIT$loc_ver"
+		sudo update-grub
 		# End timing process
 		tm_wh_end=$(date +"%s")
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
