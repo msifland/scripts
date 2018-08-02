@@ -56,10 +56,9 @@ for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
 		echo $KERNS_REM
-####### Comment out because removing the modules below should remove image too.
-		#REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')
+		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')
 		
-		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g') ## REvmoving 'generic' here because of the 'all' headers installed.
+		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g') # | sed 's:-generic::g') ## REvmoving 'generic' here because of the 'all' headers installed.
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g')
 	else
 		# These are just examples of using a newline charater in and echo.
@@ -71,8 +70,16 @@ sleep 5
 
 # If all is good, then remove.
 echo
-echo "y" | apt purge $REM2
-echo "y" | apt purge $REM3
+# Image
+REM_HDRS1=$(echo $REM1 | awk -F '-' '{print $1 $2 $3}' | sed 's:linuximage:linux-image-:g')
+echo "y" | apt remove --purge $REM_HDRS1
+# Headers all and  specific
+REM_HDRS2=$(echo $REM2 | awk -F '-' '{print $1 $2 $3}' | sed 's:linuxheaders:linux-headers-:g')
+echo "y" | apt remove --purge $REM_HDRS2
+#echo "y" | apt remove --purge $REM2
+# Modules, usually uninstalls with first(image) uninstall.
+#REM_HDRS3=$(echo $REM3 | awk -F '-' '{print $1 $2 $3}' | sed 's:linuxmodules:linux-modules-:g')
+#echo "y" | apt remove --purge $REM_HDRS3
 
 
 

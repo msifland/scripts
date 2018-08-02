@@ -100,17 +100,20 @@ if test $for_inst; then
 		echo "Copying current kernel .config. . ."
 		cp /boot/config-$(uname -r) .config
 		echo
-		#read -p "Append to Kernel Number for Local Version name('Enter' for blank)? " loc_ver
-		loc_ver="-msi"
-		sed -i 's:CONFIG_LOCALVERSION="":CONFIG_LOCALVERSION="-msi":g' .config
-		sudo make -j 4 && sudo make modules_install -j 4 && sudo make install -j 4
-		#make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"
+		echo "  Append to Kernel Number for Local Version name. Current kernel: $(uname -r)"
+		echo
+		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " loc_ver
+		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
+		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+		# Build.
+		make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"
+		# Move up on directory and remove not needed deb files and install.
 		cd ..
-		#rm -rf *dbg*.deb
-		#rm -rf *libc*.deb
-		#echo 'spike' | sudo -S dpkg -i *.deb
+		rm -rf *dbg*.deb
+		rm -rf *libc*.deb
+		echo 'spike' | sudo -S dpkg -i *.deb
 		UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
-		sudo update-initramfs -c -t -k "$UPD_INIT$loc_ver"
+		sudo update-initramfs -c -t -k "$UPD_INIT$CONF_VER$loc_ver"
 		sudo update-grub
 		# End timing process
 		tm_wh_end=$(date +"%s")
