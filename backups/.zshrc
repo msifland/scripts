@@ -386,8 +386,12 @@ export PATH="/usr/local/bin:$PATH"
 export ANDROID_HOME="$HOME/Android/Sdk:$ANDROID_HOME"
 export PATH="/usr/lib/jvm/default-java/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/Android/Sdk:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/build-tools/:$PATH"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:$PATH"
-# This line specifically call the latest build tools number folder(mainly for building opengapps).
+# This line specifically call the latest build tools number folder(mainly for building opengapps). It also deletes any older folders.
 export PATH="$(find $HOME/Android/Sdk/build-tools/ -mindepth 1 -maxdepth 1 -type d):$PATH"
+cd $HOME/Android/Sdk/build-tools/
+BLD_TOOLS_KEEP=$(ls -t | head -n 1)
+find -maxdepth 1 ! -name "$BLD_TOOLS_KEEP" -exec rm -rf &> /dev/null {} \;
+cd $HOME
 export PATH="./prebuilts/sdk/tools:$PATH"
 export JAVA_HOME=/usr/lib/jvm/default-java
 export EDITOR="nano"
