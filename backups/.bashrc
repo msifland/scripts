@@ -407,7 +407,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/
 export PATH="$(find $HOME/Android/Sdk/build-tools/ -mindepth 1 -maxdepth 1 -type d):$PATH"
 cd $HOME/Android/Sdk/build-tools/
 BLD_TOOLS_KEEP=$(ls -t | head -n 1)
-find -maxdepth 1 ! -name "$BLD_TOOLS_KEEP" -exec rm -rf &> /dev/null {} \;
+find . -maxdepth 1 ! -name "$BLD_TOOLS_KEEP" -execdir rm -rf 2>/dev/null {} \+
+#find . -maxdepth 1 ! -name "$BLD_TOOLS_KEEP" -print0 | xargs -0 rm -rf 2>/dev/null
 cd $HOME
 export PATH="./prebuilts/sdk/tools:$PATH"
 export JAVA_HOME=/usr/lib/jvm/default-java
