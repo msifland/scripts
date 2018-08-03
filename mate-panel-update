@@ -18,6 +18,7 @@ sleep 1
 if grep -Fxq "sleep 30; mate-panel-later" /usr/bin/mate-panel; then
 	echo "Already updated."
 	echo
+	rm $HOME/tmp/mate-panel.bk
 	sleep 1
 	exit
 fi
@@ -36,6 +37,7 @@ else
 	echo "Error detected. Better check it out."
 fi
 echo
+rm $HOME/tmp/mate-panel.bk
 sleep 1
 
 exit
