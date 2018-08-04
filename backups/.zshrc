@@ -375,6 +375,7 @@ alias apti-s="aptitude search"
 alias del-key="sudo apt-key del"
 alias apt-list="apt list --installed"
 alias apt-list-s="apt list --installed | grep "$1""
+alias nethogs="sudo nethogs -p"
 #alias android="$HOME/Android/Sdk/tools/bin/sdkmanager"
 
 #############Android stuff#####################
@@ -388,11 +389,11 @@ export PATH="/usr/lib/jvm/default-java/bin:/usr/bin/site_perl:/usr/bin/vendor_pe
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:$PATH"
 # This line specifically call the latest build tools number folder(mainly for building opengapps). It also deletes any older folders.
 export PATH="$(find $HOME/Android/Sdk/build-tools/ -mindepth 1 -maxdepth 1 -type d):$PATH"
-cd $HOME/Android/Sdk/build-tools/
-BLD_TOOLS_KEEP=$(ls -t | head -n 1)
-find . -maxdepth 1 ! -name "$BLD_TOOLS_KEEP" -execdir rm -rf 2>/dev/null {} \+
+
+BLD_TOOLS_KEEP=$(ls -t $HOME/Android/Sdk/build-tools/ | head -n 1)
+find $HOME/Android/Sdk/build-tools/ -mindepth 1 -maxdepth 1 ! -name "$BLD_TOOLS_KEEP" -execdir rm -rf 2>/dev/null {} \+
 #find . -maxdepth 1 ! -name "$BLD_TOOLS_KEEP" -print0 | xargs -0 rm -rf 2>/dev/null
-cd $HOME
+
 export PATH="./prebuilts/sdk/tools:$PATH"
 export JAVA_HOME=/usr/lib/jvm/default-java
 export EDITOR="nano"
