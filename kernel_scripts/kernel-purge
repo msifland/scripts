@@ -86,7 +86,8 @@ echo "y" | apt remove --purge $REM_HDRS2
 
 if [[ $? = 0 ]]; then
 	echo
-	update-grub
+	# Should generate grub autatically.
+	#update-grub
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
 else
