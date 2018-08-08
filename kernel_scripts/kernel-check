@@ -14,8 +14,10 @@ fi
 echo "" > $kern_file
 <<Comment
 ver="3"
-read -p "Current kernel version in script is $ver, would you like to keep it[y/n]? " ynver
+read -p "Current kernel version in script is $ver, would you like to keep it[Y/n]? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
+	echo "OK, keeping current version of $ver"
+elseif [[ $ynver" = "" ]]; then
 	echo "OK, keeping current version of $ver"
 else
 	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " newver

@@ -72,10 +72,10 @@ sleep 5
 echo
 # Image
 REM_HDRS1=$(echo $REM1 | cut -f 1,2,3 -d "-")
-echo "y" | apt remove --purge $REM_HDRS1
+echo "y" | apt purge $REM_HDRS1
 # Headers all and  specific
 REM_HDRS2=$(echo $REM2 | cut -f 1,2,3 -d "-")
-echo "y" | apt remove --purge $REM_HDRS2
+echo "y" | apt purge $REM_HDRS2
 #echo "y" | apt remove --purge $REM2
 # Modules, usually uninstalls with first(image) uninstall.
 #REM_HDRS3=$(echo $REM3 | awk -F '-' '{print $1 $2 $3}' | sed 's:linuxmodules:linux-modules-:g')
