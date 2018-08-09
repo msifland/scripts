@@ -19,21 +19,35 @@ echo "${ILCOLOR4}Showing grub menus entries. . ."
 echo
 sleep 1
 Comment
-
+function boot_grub(){
 # Create tmp menu file with menu entries
 menu_file="$HOME/tmp/menu"
 if [[ -f "$menu_file" ]]; then
-	echo '' > $menu_file
+	rm -f "$menu_file"
+	touch "$menu_file"
 else
 	touch "$menu_file"
 fi
 echo -e "${ILRESTORE}"
-n=0
 # Formatting of the grep to add to the file
 n=-1
 grep "menuentry " /boot/grub/grub.cfg | gawk -F '\\ --class' '{print $1}' | sed "s:menuentry '::g" | sed "s:'::g" | sed 's:{::g' | gawk -F '\\menuentry "Memory test' '{print $1}' | sed 's:\t::g' | sed 's:menuentry ::g' | while read line; do
 	let n=$n+1
 	echo "$n. $line" >> "$menu_file"
+done
+
+# Create tmp menu file 2 with menu entries
+menu_file2="$HOME/tmp/menu2"
+if [[ -f "$menu_file2" ]]; then
+	rm -f "$menu_file2"
+	touch "$menu_file2"
+else
+	touch "$menu_file2"
+fi
+m=-1
+grep "menuentry_id_option" /boot/grub/grub.cfg | sed '/menuentry_id_option="/d' | awk -F "option '" '{print $NF}' | sed '/export menuentry_id_option/d' | sed "s:' {::g" | while read line2; do
+	let m=$m+1
+	echo "$m. $line2" >> "$menu_file2"
 done
 
 # Remove last 2 memtest lines rom file
@@ -49,21 +63,39 @@ if [[ $men_en = "ex" ]]; then
 	echo
 	echo "Exiting now. . . "
 	rm -rf "$menu_file"
+	rm -rf "$menu_file2"
 	sleep 1
 	exit
 fi
-sleep 1
+
+# Error handling if menu entry number is not in list, loop to start.
+if grep -q "^$men_en. " "$menu_file"; then
+	echo "Menu entry, $men_en, is valid. . ."
+	sleep 1
+else
+	echo "Menu entry, $men_en, is not in list, try again. . ."
+	sleep 1
+	boot_grub
+fi
+}
+# Call main function
+boot_grub
 
 # Tells what kernel we are booting to and adds extra part to advance menu if needed. Then removes tmp file. Make adjustents for first entry here as well. Also grub menu actually starts a 0, so subtraction is neccessary for selection.
 echo
 echo "Booting to: $(grep "^$men_en. " $menu_file). . ."
 sleep 1
 
+new_men_en=$(grep "^$men_en." $menu_file2 | sed "s:$men_en. ::g")
+echo $new_men_en
+
 # Setting up grub-reboot
-echo 'spike' | sudo -S grub-reboot "$men_en"
+echo 'spike' | sudo -S grub-reboot "$new_men_en"
 echo $men_en
 #echo 'spike' | sudo -S grub-reboot "$men_en"
-rm -rf $menu_file
+rm -rf "$menu_file"
+rm -rf "$menu_file2"
+
 
 # Give you 10 seconds to decide
 echo
