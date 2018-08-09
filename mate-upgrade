@@ -1,0 +1,21 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+clear
+echo "${ILCOLOR4}              ###########    Updating your system now   ###########${ILRESTORE}"
+echo -e ${ILCOLOR2}
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_start=$(date +"%s")
+echo -e ${ILRESTORE}
+sleep 1
+
+do-release-upgrade
+
+echo -e ${ILCOLOR2}
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_end=$(date +"%s")
+		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
+echo -e ${ILRESTORE}
+sleep 1
