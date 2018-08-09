@@ -30,6 +30,7 @@ fi
 echo -e "${ILRESTORE}"
 n=0
 # Formatting of the grep to add to the file
+n=-1
 grep "menuentry " /boot/grub/grub.cfg | gawk -F '\\ --class' '{print $1}' | sed "s:menuentry '::g" | sed "s:'::g" | sed 's:{::g' | gawk -F '\\menuentry "Memory test' '{print $1}' | sed 's:\t::g' | sed 's:menuentry ::g' | while read line; do
 	let n=$n+1
 	echo "$n. $line" >> "$menu_file"
@@ -43,8 +44,8 @@ cat $menu_file
 
 # Option to choose menu entry
 echo
-read -p "${ILCOLOR4}Which menu entry number would you like to boot to(0 to exit)? " men_en
-if [[ $men_en = 0 ]]; then
+read -p "${ILCOLOR4}Which menu entry number would you like to boot to(Type 'ex' to exit)? " men_en
+if [[ $men_en = "ex" ]]; then
 	echo
 	echo "Exiting now. . . "
 	rm -rf "$menu_file"
@@ -57,17 +58,11 @@ sleep 1
 echo
 echo "Booting to: $(grep "^$men_en. " $menu_file). . ."
 sleep 1
-if [[ "$men_en" = "1" ]]; then
-	echo ''
-	adj_men_en="$men_en"
-else
-	adj_men_en="Advanced options for Ubuntu>"$(grep "^$men_en" $menu_file | sed 's:'"$men_en. "'::g')
-	echo $adj_men_en	
-fi
-let men_en=$men_en-1
 
 # Setting up grub-reboot
-echo 'spike' | sudo -S grub-reboot "$adj_men_en"
+echo 'spike' | sudo -S grub-reboot "$men_en"
+echo $men_en
+#echo 'spike' | sudo -S grub-reboot "$men_en"
 rm -rf $menu_file
 
 # Give you 10 seconds to decide
