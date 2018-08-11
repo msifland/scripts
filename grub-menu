@@ -31,7 +31,7 @@ fi
 echo -e "${ILRESTORE}"
 # Formatting of the grep to add to the file
 n=-1
-grep "menuentry " /boot/grub/grub.cfg | gawk -F '\\ --class' '{print $1}' | sed "s:menuentry '::g" | sed "s:'::g" | sed 's:{::g' | gawk -F '\\menuentry "Memory test' '{print $1}' | sed 's:\t::g' | sed 's:menuentry ::g' | sed 's:"::g' | while read line; do
+grep "menuentry " /boot/grub/grub.cfg | gawk -F '\\ --class' '{print $1}' | sed "s:menuentry '::g" | sed "s:'::g" | sed 's:{::g' | gawk -F '\\menuentry "Memory test' '{print $1}' | sed 's:\t::g' | sed 's:menuentry ::g' | sed 's:"::g' | sed '/^$/d' | while read line; do
 	let n=$n+1
 	echo "$n. $line" >> "$menu_file"
 done
@@ -45,13 +45,13 @@ else
 	touch "$menu_file2"
 fi
 m=-1
-grep "menuentry_id_option" /boot/grub/grub.cfg | sed '/menuentry_id_option="/d' | awk -F "option '" '{print $NF}' | sed '/export menuentry_id_option/d' | sed "s:' {::g" | while read line2; do
+grep "menuentry_id_option" /boot/grub/grub.cfg | sed '/menuentry_id_option="/d' | awk -F "option '" '{print $NF}' | sed '/export menuentry_id_option/d' | sed "s:' {::g" | sed '/gnulinux-advanced/d' | while read line2; do
 	let m=$m+1
 	echo "$m. $line2" >> "$menu_file2"
 done
 
 # Remove last 2 memtest lines rom file
-head -n -2 "$menu_file" > $HOME/tmp/tmp && mv $HOME/tmp/tmp "$menu_file" && rm -f $HOME/tmp/tmp
+#head -n -2 "$menu_file" > $HOME/tmp/tmp && mv $HOME/tmp/tmp "$menu_file" && rm -f $HOME/tmp/tmp
 
 # Show file entries in terminal
 cat $menu_file
