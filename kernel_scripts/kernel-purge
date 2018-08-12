@@ -15,14 +15,18 @@ echo "${ILCOLOR3}Purging old kernels. Here are the kernels on your system, newes
 sleep 1
 
 # Gathering system kernels and slightly renaming for apt purposes. Creating a tmp file to write them too for reference.
-KERNS=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
-KERN_FILE=$HOME/tmp/kern_file1
+# This line was added for 'unsigned generic' kernels. The word 'unsigned' does not appear in the /boot/vmlinuz kernel name, therfore has to be added.
+KERNS1=$(ls /boot | grep "generic" | grep "linuz" | sed 's:vmlinuz:linux-image-unsigned:g')
+# This one is for non-unsigned kernels
+KERNS2=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sed '/generic/d' | sort -V | tac)
+
+KERN_FILE=$HOME/tmp/kern_file
 
 if [[ ! -f $KERN_FILE ]]; then
 	touch $KERN_FILE
 fi
-echo "" > $KERN_FILE
 
+KERNS="$KERNS1 $KERNS2"
 # Loop to list the kernels in the file on numbered lines and echo them on screen.
 n=0
 for i in $KERNS; do
@@ -56,9 +60,8 @@ for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
 		echo $KERNS_REM
-		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')
-		
-		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g') # | sed 's:-generic::g') ## REvmoving 'generic' here because of the 'all' headers installed.
+		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')		
+		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g') ## REvmoving 'generic' here because of the 'all' headers installed.
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g')
 	else
 		# These are just examples of using a newline charater in and echo.
@@ -71,10 +74,10 @@ sleep 5
 # If all is good, then remove.
 echo
 # Image
-REM_HDRS1=$(echo $REM1 | cut -f 1,2,3 -d "-")
+REM_HDRS1=$(echo $REM1 | cut -f 1,2,3,4 -d "-")
 echo "y" | apt purge $REM_HDRS1
 # Headers all and  specific
-REM_HDRS2=$(echo $REM2 | cut -f 1,2,3 -d "-")
+REM_HDRS2=$(echo $REM2 | cut -f 1,2,3,4 -d "-")
 echo "y" | apt purge $REM_HDRS2
 #echo "y" | apt remove --purge $REM2
 # Modules, usually uninstalls with first(image) uninstall.

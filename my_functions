@@ -4,16 +4,22 @@ color="\033[0;38;5;$((RANDOM % 255+1))m"
 #'\e[1;32;05;219m'
 color2="\033[4;38;5;$((RANDOM % 255+1))m"
 #'\033[1;38;5;027m'
+color3="\033[0;38;5;$((RANDOM % 255+1))m"
 restore='\033[0m'
 
 # First part of my functions actually showing the functions listed in the .zshrc file.
-echo -e "${color2}"; echo "my-functions"
+echo -e "${color2}"
+echo "my-functions"
+echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.zshrc"
 echo -e "${color}"
 # Removing items to show in list.
-grep -i 'function ' $HOME/.zshrc | sed 's#function goto(){##g' | sed "s/function //g" | sed "s/(){//g" | sed "s/my-functions//g" | sort
+grep -i 'function ' $HOME/.zshrc | sed 's#function goto(){##g' | sed "s/function //g" | sed "s/(){//g" | sed "s/my-functions//g" | sort | sed '/^\s*$/d'
+echo
 
 # Second part showing aliases
-echo -e "${color2}"; echo "my-aliases"; 
+echo -e "${color2}"
+echo "my-aliases"
+echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.zshrc"
 echo -e "${color}"
 grep -i 'alias ' $HOME/.zshrc | sed "s/alias //g" | sed "s/my-aliases//g" | sed "s/\\t//g" | sort
 echo
@@ -21,12 +27,22 @@ echo
 # Third part showing scripts and rom_scripts
 echo -e "${color2}"
 echo "script files"
+echo "${ILRESTORE}${ILCOLOR1}/home/msifland/scripts"
 echo -e "${color}"
 find $HOME/scripts -maxdepth 1 -type f | sed 's#/home/msifland/scripts/##' | sed 's#README.md##' | sed 's#restart_log.txt##' | sed '/^$/d' | sort
 echo
 
+# Kernel scripts
+echo -e "${color2}"
+echo "kernel script files"
+echo "${ILRESTORE}${ILCOLOR1}/home/msifland/scripts/kernel_scripts"
+echo -e "${color}"
+find $HOME/scripts/kernel_scripts -maxdepth 1 -type f | sed 's:/home/msifland/scripts/kernel_scripts/::g' | sed 's:kern-update-timer::g' | sed '/^$/d' | sort
+echo
+
 echo -e "${color2}"
 echo "rom script files"
+echo "${ILRESTORE}${ILCOLOR1}/home/msifland/rom_scripts"
 echo -e "${color}"
 find $HOME/rom_scripts -maxdepth 1 -type f | sed 's#/home/msifland/rom_scripts/##' | sed 's#README.md##' | sed 's#restart_log.txt##' | sed '/^$/d' | sort
 echo
