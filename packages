@@ -1,6 +1,6 @@
 #!/bin/bash
 # This scripts counts how many packages you have installed and shows them on screen with a count.
-
+if [[ "$1" = "" ]]; then
 echo
 # Get list of packages.
 PKGS=$(dpkg --get-selections | awk '{print $1}')
@@ -15,3 +15,11 @@ echo
 echo "${ILCOLOR4}You currently have ${ILCOLOR3}$n ${ILCOLOR4}applications installed on your system.${ILRESTORE}" | pv -qL 50
 echo
 sleep 1
+else
+	PKGS=$(dpkg --get-selections | awk '{print $1}' | grep "$1")
+	n=0
+	for i in $PKGS; do
+		let n=$n+1
+		echo "${ILRESTORE}$n. ${ILCOLOR3}$i" | pv -qL 4000
+	done
+fi

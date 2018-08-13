@@ -62,8 +62,8 @@ for j in $FOR_REM; do
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
 		echo $KERNS_REM
 		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')		
-		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g') ## REvmoving 'generic' here because of the 'all' headers installed.
-		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g')
+		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g' | sed 's:-unsigned::g') ## REvmoving 'generic' here because of the 'all' headers installed.
+		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
 	else
 		# These are just examples of using a newline charater in and echo.
 		echo -e "!!!****************!!!\nError detected! No number $j. "$'\nRe-run script.\n\n'
@@ -80,13 +80,9 @@ echo "y" | apt purge $REM_HDRS1
 # Headers all and  specific
 REM_HDRS2=$(echo $REM2 | cut -f 1,2,3,4 -d "-")
 echo "y" | apt purge $REM_HDRS2
-#echo "y" | apt remove --purge $REM2
 # Modules, usually uninstalls with first(image) uninstall.
-#REM_HDRS3=$(echo $REM3 | awk -F '-' '{print $1 $2 $3}' | sed 's:linuxmodules:linux-modules-:g')
-#echo "y" | apt remove --purge $REM_HDRS3
-
-
-
+REM_HDRS3=$(echo $REM3 | cut -f 1,2,3,4 -d "-")
+echo "y" | apt purge $REM_HDRS3
 
 if [[ $? = 0 ]]; then
 	echo
