@@ -1,0 +1,17 @@
+#!/bin/bash
+# This scripts counts how many packages you have installed and shows them on screen with a count.
+
+echo
+# Get list of packages.
+PKGS=$(dpkg --get-selections | awk '{print $1}')
+
+# Set variable n to start count then loop and add 1 for counting. Echo all packages on screen with count, then tell total number of apps.
+n=0
+for i in $PKGS; do
+	let n=$n+1
+	echo "${ILRESTORE}$n. ${ILCOLOR3}$i" | pv -qL 4000
+done
+echo
+echo "${ILCOLOR4}You currently have ${ILCOLOR3}$n ${ILCOLOR4}applications installed on your system.${ILRESTORE}" | pv -qL 50
+echo
+sleep 1
