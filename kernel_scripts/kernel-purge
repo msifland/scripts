@@ -21,6 +21,7 @@ KERNS1=$(ls /boot | grep "generic" | grep "linuz" | sed 's:vmlinuz:linux-image-u
 KERNS2=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sed '/generic/d' | sort -V | tac)
 
 KERN_FILE=$HOME/tmp/kern_file
+rm -rf $KERN_FILE
 
 if [[ ! -f $KERN_FILE ]]; then
 	touch $KERN_FILE
