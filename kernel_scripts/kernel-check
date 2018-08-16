@@ -126,10 +126,10 @@ Would you like to install it?" 10 50; then
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
 		# Purge old kernels?
-		read -p "Would you like to reboot to new kernel now?[y/n] " ynprg
+		read -p "Would you like to reboot to new kernel now?[y/n] " ynrbt
 		echo
-		if [[ "$ynprg" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-			echo 'spike' | sudo -S $HOME/scripts/kernel_scripts/kernel-purge
+		if [[ "$ynrbt" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			echo 'spike' | sudo -S reboot
 		else
 			echo "Ok, not rebooting now."
 			echo
