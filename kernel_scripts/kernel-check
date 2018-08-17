@@ -3,13 +3,13 @@
 # Put your code below this line.
 # Set kernel version number to look for.
 ver1="4"
-read -p "Current kernel version in script is $ver1, would you like to keep it[Y/n]? " ynver
-if [[ "$ynver" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
+read -p "Current kernel version in script is $ver1, would you like to keep it[Y/n]? " ynver1
+if [[ "$ynver1" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $ver1"
 else
 	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " newver
-	sed -i "s:ver=\"$ver1\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-build
-	$HOME/scripts/kernel_scripts/kernel-build-check && exit
+	sed -i "s:ver1=\"$ver1\":ver1=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
+	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
 
@@ -18,6 +18,12 @@ sleep 3
 
 kern_list=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$ver1".x/ | grep "linux-$ver1" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n25)
 # Loop to list the kernels on numbered lines and echo them on screen.
+
+if [[ "$kern_list" = "" ]]; then
+	echo "No kernels in list, re-run script."
+	exit
+fi
+
 n=0
 for i in $kern_list; do
 	let n=n+1
@@ -54,8 +60,8 @@ if [[ "$ynver" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then
 	echo "OK, keeping current version of $ver"
 else
 	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " newver
-	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-build-check
-	$HOME/scripts/kernel_scripts/kernel-build-check && exit
+	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
+	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
 
@@ -64,7 +70,7 @@ echo "${ILCOLOR2}We are going to see if there is a new kernel to build from main
 sleep 1
 
 # Get and format websit info
-get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v4.x/ | grep "linux-$ver" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n1)
+get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$ver1".x/ | grep "linux-$ver" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n1)
 
 echo
 echo "Newest kernel version available is $get"
@@ -90,7 +96,7 @@ Would you like to install it?" 10 50; then
 		sleep 1
 		# Formatting for web search.
 		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
-		wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-"$get".tar.xz
+		wget https://cdn.kernel.org/pub/linux/kernel/v"$ver1".x/linux-"$get".tar.xz
 		echo
 		echo "${ILCOLOR2}Unzipping kernel. . .${ILRESTORE}"
 		sleep 1
@@ -115,8 +121,8 @@ Would you like to install it?" 10 50; then
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
-		sudo update-initramfs -c -t -k "$UPD_INIT$CONF_VER$loc_ver"
+		#UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
+		sudo update-initramfs -c -t -k "$get$CONF_VER$loc_ver"
 		sudo update-grub
 
 		# End timing process

@@ -118,8 +118,8 @@ if test $for_inst; then
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
-		sudo update-initramfs -c -t -k "$UPD_INIT$CONF_VER$loc_ver"
+		#UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
+		sudo update-initramfs -c -t -k "$for_inst$CONF_VER$loc_ver"
 		sudo update-grub
 		# End timing process
 		tm_wh_end=$(date +"%s")
