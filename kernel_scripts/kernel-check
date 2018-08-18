@@ -2,13 +2,13 @@
 # This is a blank bash script document.
 # Put your code below this line.
 # Set kernel version number to look for.
-ver1="4"
-read -p "Current kernel version in script is $ver1, would you like to keep it[Y/n]? " ynver1
+VER1="4"
+read -p "Current kernel version in script is $VER1, would you like to keep it[Y/n]? " ynver1
 if [[ "$ynver1" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
-	echo "OK, keeping current version of $ver1"
+	echo "OK, keeping current version of $VER1"
 else
 	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " newver
-	sed -i "s:ver1=\"$ver1\":ver1=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
+	sed -i "s:ver1=\"$VER1\":ver1=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
@@ -16,16 +16,16 @@ echo
 echo "${ILCOLOR2}Here are the 25 lastest available kernels from kernel.org. . .${ILRESTORE}"
 sleep 3
 
-kern_list=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$ver1".x/ | grep "linux-$ver1" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n25)
+KERN_LIST=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER1".x/ | grep "linux-$VER1" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n25)
 # Loop to list the kernels on numbered lines and echo them on screen.
 
-if [[ "$kern_list" = "" ]]; then
+if [[ "$KERN_LIST" = "" ]]; then
 	echo "No kernels in list, re-run script."
 	exit
 fi
 
 n=0
-for i in $kern_list; do
+for i in $KERN_LIST; do
 	let n=n+1
 	echo "$n. $i"
 done
@@ -38,7 +38,8 @@ function version_gt() {
 # Entire function here.
 function kern_check() {
 echo -e "${ILCOLOR2}"
-work_dir="$HOME/tmp/kernel-build"
+WORK_DIR="$HOME/tmp/kernel-build"
+STOR_DIR="$HOME/tmp/kernel-storage"
 
 # Change to dir and remove any old files
 if [[ ! -d $HOME/tmp ]]; then
@@ -49,18 +50,19 @@ if [[ -d kernel-build ]]; then
 	rm -rf kernel-build
 fi
 
+
 # Move to working directory
-mkdir "$work_dir"
-cd "$work_dir"
+mkdir "$WORK_DIR"
+cd "$WORK_DIR"
 
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
-ver="4.18"
-read -p "${ILRESTORE}Current kernel version in script is $ver, would you like to keep it[Y/n]? " ynver
+VER="4.18"
+read -p "${ILRESTORE}Current kernel version in script is $VER, would you like to keep it[Y/n]? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
-	echo "OK, keeping current version of $ver"
+	echo "OK, keeping current version of $VER"
 else
 	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " newver
-	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
+	sed -i "s:ver=\"$VER\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
@@ -70,24 +72,24 @@ echo "${ILCOLOR2}We are going to see if there is a new kernel to build from main
 sleep 1
 
 # Get and format websit info
-get=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$ver1".x/ | grep "linux-$ver" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n1)
+GET=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER1".x/ | grep "linux-$VER" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n1)
 
 echo
-echo "Newest kernel version available is $get"
+echo "Newest kernel version available is $GET"
 sleep 1
 
 # Get current kernel version. The awk section here is nice in that everything after the '-' is deleted.
-curnt=$(ls /boot | grep "vmlinuz" | sed 's:vmlinuz-::g' | sed 's:-generic::g' | sort -V | tail -n1 | awk -F '\\-' '{print $1}')
+CURNT=$(ls /boot | grep "vmlinuz" | sed 's:vmlinuz-::g' | sed 's:-generic::g' | sort -V | tail -n1 | awk -F '\\-' '{print $1}')
 
-echo "Latest kernel version installed is $curnt"
+echo "Latest kernel version installed is $CURNT"
 sleep 1
 echo -e "${ILRESTORE}"
 
 # Calling function to check versions.
-if version_gt "$get" "$curnt"; then
+if version_gt "$GET" "$CURNT"; then
 	# Added this because of automation this stops the screen for a response when called with the script kern-update-timer.
 	if dialog --yesno "There is a newer kernel available.
-You are running $curnt, and $get is out.
+You are running $CURNT, and $GET is out.
 Would you like to install it?" 10 50; then
 		# Start timing process
 		tm_wh_start=$(date +"%s")
@@ -96,15 +98,15 @@ Would you like to install it?" 10 50; then
 		sleep 1
 		# Formatting for web search.
 		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
-		wget https://cdn.kernel.org/pub/linux/kernel/v"$ver1".x/linux-"$get".tar.xz
+		wget https://cdn.kernel.org/pub/linux/kernel/v"$VER1".x/linux-"$GET".tar.xz
 		echo
 		echo "${ILCOLOR2}Unzipping kernel. . .${ILRESTORE}"
 		sleep 1
 		echo
 		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 		echo 'spike' | sudo -S apt build-dep -y linux
-		tar -xf linux-"$get".tar.xz
-		cd linux-"$get"
+		tar -xf linux-"$GET".tar.xz
+		cd linux-"$GET"
 		echo
 		echo "${ILCOLOR2}Copying current kernel .config. . .${ILRESTORE}"
 		cp /boot/config-$(uname -r) .config
@@ -113,18 +115,20 @@ Would you like to install it?" 10 50; then
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 		echo "Local version: $CONF_VER"
 		echo
-		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " loc_ver
+		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
 		
 		scripts/config --disable DEBUG_INFO
+		if [[ "$LOC_VER" != "" ]]; then
+			sed -i "s:CONFIG_LOCALVERSION=\"\":CONFIG_LOCALVERSION=\"$LOC_VER\":g" .config
+		fi
 		# Build.
-		make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"
+		make -j `getconf _NPROCESSORS_ONLN` deb-pkg #LOCALVERSION="$LOC_VER"
 		cd ..
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		#UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
-		sudo update-initramfs -c -t -k "$get$CONF_VER$loc_ver"
+		sudo update-initramfs -c -t -k "$GET$CONF_VER$LOC_VER"
 		sudo update-grub
 
 		# End timing process
@@ -134,11 +138,20 @@ Would you like to install it?" 10 50; then
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
 		# Purge old kernels?
-		read -p "Would you like to reboot to new kernel now?[y/n] " ynrbt
+		read -p "Would you like to reboot to new kernel now?[y/n] " YNRBT
 		echo
-		if [[ "$ynrbt" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		if [[ "$YNRBT" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 			#Clean up.
 			cd ..
+			# Create kernel storage directory.
+			if [[ ! -d $STOR_DIR ]]; then
+				mkdir $STOR_DIR
+			fi
+			# Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
+			if [[ $(ls $STOR_DIR) ]]; then
+				ls $STOR_DIR/* -t | tail -n 19 | xargs rm -f
+			fi
+			cp $WORK_DIR/*.deb $STOR_DIR
 			rm -rf $HOME/tmp/kernel-build
 			cd $HOME
 			echo 'spike' | sudo -S reboot
@@ -160,6 +173,15 @@ else
 fi
 #Clean up.
 cd ..
+# Create kernel storage directory.
+if [[ ! -d $STOR_DIR ]]; then
+	mkdir $STOR_DIR
+fi
+# Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
+if [[ $(ls $STOR_DIR) ]]; then
+	ls $STOR_DIR/* -t | tail -n 19 | xargs rm -f
+fi
+cp $WORK_DIR/*.deb $STOR_DIR
 rm -rf $HOME/tmp/kernel-build
 cd $HOME
 }

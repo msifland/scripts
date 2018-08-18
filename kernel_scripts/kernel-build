@@ -21,7 +21,7 @@ fi
 if [[ -f *.tar.xz ]]; then
 	rm -rf *.tar.xz
 fi
-
+STOR_DIR="$HOME/tmp/kernel-storage"
 mkdir $HOME/tmp/kernel-build
 WORK_DIR="$HOME/tmp/kernel-build"
 cd $WORK_DIR
@@ -29,51 +29,51 @@ cd $WORK_DIR
 rm -fr $WORK_DIR/*.deb
 rm -rf $WORK_DIR/*.deb.*
 echo
-kern_file=$WORK_DIR/kern_file
+KERN_FILE=$WORK_DIR/KERN_FILE
 
-if [[ ! -f $kern_file ]]; then
-	touch $kern_file
+if [[ ! -f $KERN_FILE ]]; then
+	touch $KERN_FILE
 fi
-echo "" > $kern_file
+echo "" > $KERN_FILE
 
 # Set kernel version number to look for.
-ver="4"
-read -p "Current kernel version in script is $ver, would you like to keep it[Y/n]? " ynver
+VER="4"
+read -p "Current kernel version in script is $VER, would you like to keep it[Y/n]? " ynver
 if [[ "$ynver" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
-	echo "OK, keeping current version of $ver"
+	echo "OK, keeping current version of $VER"
 else
-	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " newver
-	sed -i "s:ver=\"$ver\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-build
+	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " NEWVER
+	sed -i "s:ver=\"$VER\":ver=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-build
 	$HOME/scripts/kernel_scripts/kernel-build && exit
 fi
 echo
 
 # Searching website for versions available and showing the last 30. Also figured out after trial and error that the brackets had to be escaped.
-#kern_list=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v4." | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | tail -n20)
+#KERN_LIST=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v4." | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | tail -n20)
 echo "${ILCOLOR2}Here are the 50 lastest available kernels from kernel.org. . .${ILRESTORE}"
 sleep 3
 
-kern_list=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$ver".x/ | grep "linux-$ver" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n50)
+KERN_LIST=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER".x/ | grep "linux-$VER" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n50)
 
 # Loop to list the kernels in the file on numbered lines and echo them on screen.
 n=0
-for i in $kern_list; do
+for i in $KERN_LIST; do
 	let n=n+1
-	echo "$n. $i" >> $kern_file
+	echo "$n. $i" >> $KERN_FILE
 	echo "$n. $i"
 done
 
 # Get kernel name without extra numbers at the end. The awk section here is nice in that everything after the '-' is deleted.
-rnning=$(uname -r | awk -F '\\-' '{print $1}')
-echo "${ILCOLOR2}-----> Currently running $rnning" | pv -qL 50
+RNNING=$(uname -r | awk -F '\\-' '{print $1}')
+echo "${ILCOLOR2}-----> Currently running $RNNING" | pv -qL 50
 sleep 1
 
 function install_kern(){
 # Ask to select line numbers for install
 echo
-read -p "Type the line number of the kernel you want to install(Type 0 to exit): " inst
+read -p "Type the line number of the kernel you want to install(Type 0 to exit): " INST
 sleep 1
-if [[ "$inst" = "0" ]]; then
+if [[ "$INST" = "0" ]]; then
 	# Remove old files.
 	if [[ -d $WORK_DIR ]]; then
 		rm -rf $WORK_DIR
@@ -82,25 +82,25 @@ if [[ "$inst" = "0" ]]; then
 fi
 
 # Format for web search purposes.
-for_inst=$(grep "^$inst. " $kern_file | sed "s:$inst. ::g")
-echo $for_inst
+FOR_INST=$(grep "^$INST. " $KERN_FILE | sed "s:$INST. ::g")
+echo $FOR_INST
 cd $WORK_DIR
-if test $for_inst; then
+if test $FOR_INST; then
 	tm_wh_start=$(date +"%s")
 		clear
 		echo
 		sleep 1
 		# Formatting for web search.
 		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
-		wget https://cdn.kernel.org/pub/linux/kernel/v"$ver".x/linux-"$for_inst".tar.xz 
+		wget https://cdn.kernel.org/pub/linux/kernel/v"$VER".x/linux-"$FOR_INST".tar.xz 
 		echo
 		echo "${ILCOLOR2}Unzipping kernel and building now, this will take a while. . .${ILRESTORE}"
 		sleep 1
 		echo
 		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 		echo 'spike' | sudo -S apt build-dep -y linux
-		tar -xf linux-"$for_inst".tar.xz
-		cd linux-"$for_inst"
+		tar -xf linux-"$FOR_INST".tar.xz
+		cd linux-"$FOR_INST"
 		echo
 		echo "Copying current kernel .config. . ."
 		cp /boot/config-$(uname -r) .config
@@ -109,19 +109,22 @@ if test $for_inst; then
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 		echo "Local version: $CONF_VER"
 		echo
-		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " loc_ver
+		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
 		
 		scripts/config --disable DEBUG_INFO
+		if [[ "$LOC_VER" != "" ]]; then
+			sed -i "s:CONFIG_LOCALVERSION=\"\":CONFIG_LOCALVERSION=\"$LOC_VER\":g" .config
+		fi
 		# Build.
-		make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"
+		make -j `getconf _NPROCESSORS_ONLN` deb-pkg #LOCALVERSION="$LOC_VER"
 		# Move up on directory and remove not needed deb files and install.
 		cd ..
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		#UPD_INIT=$(echo $for_inst | sed 's:linux-::g')
-		sudo update-initramfs -c -t -k "$for_inst$CONF_VER$loc_ver"
+		#UPD_INIT=$(echo $FOR_INST | sed 's:linux-::g')
+		sudo update-initramfs -c -t -k "$FOR_INST$CONF_VER$LOC_VER"
 		sudo update-grub
 		# End timing process
 		tm_wh_end=$(date +"%s")
@@ -137,6 +140,15 @@ fi
 }
 install_kern
 # Remove old files.
+# Create kernel storage directory.
+if [[ ! -d $STOR_DIR ]]; then
+	mkdir $STOR_DIR
+fi
+# Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
+if [[ $(ls $STOR_DIR) ]]; then
+	ls $STOR_DIR/* -t | tail -n 19 | xargs rm -f
+fi
+cp $WORK_DIR/*.deb $STOR_DIR
 if [[ -d $WORK_DIR ]]; then
 	rm -rf $WORK_DIR
 fi

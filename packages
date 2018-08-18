@@ -22,4 +22,7 @@ else
 		let n=$n+1
 		echo "${ILRESTORE}$n. ${ILCOLOR3}$i" | pv -qL 4000
 	done
+	echo
 fi
+echo "${ILRESTORE}Usage: 'packages' lists all install packages on system.
+       'packages linux' lists all install packages that match the word 'linux'."
