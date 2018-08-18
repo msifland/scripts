@@ -106,10 +106,12 @@ if test $for_inst; then
 		cp /boot/config-$(uname -r) .config
 		echo
 		echo "  Append to Kernel Number for Local Version name. Current kernel: $(uname -r)"
+		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+		echo "Local version: $CONF_VER"
 		echo
 		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " loc_ver
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
-		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+		
 		scripts/config --disable DEBUG_INFO
 		# Build.
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION="$loc_ver"

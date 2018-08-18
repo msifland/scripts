@@ -61,33 +61,46 @@ for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
 		echo $KERNS_REM
-		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-generic::g')		
-		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-generic::g' | sed 's:-unsigned::g') ## REvmoving 'generic' here because of the 'all' headers installed.
+		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')	
+		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-unsigned::g' | sed 's:-generic::g') # REvmoving 'generic' here because of the 'all' headers installed.
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
 	else
 		# These are just examples of using a newline charater in and echo.
 		echo -e "!!!****************!!!\nError detected! No number $j. "$'\nRe-run script.\n\n'
 		exit
 	fi
-done
-sleep 5
+
 
 # If all is good, then remove.
 echo
 # Image
-REM_HDRS1=$(echo $REM1 | cut -f 1,2,3,4 -d "-")
-echo "y" | apt purge $REM_HDRS1
-# Headers all and  specific
-REM_HDRS2=$(echo $REM2 | cut -f 1,2,3,4 -d "-")
-echo "y" | apt purge $REM_HDRS2
-# Modules, usually uninstalls with first(image) uninstall.
-REM_HDRS3=$(echo $REM3 | cut -f 1,2,3,4 -d "-")
-echo "y" | apt purge $REM_HDRS3
+REM_HDRS1=$(echo $REM1) # | cut -f 1,2,3,4,5 -d "-")
+k_file=$(echo $REM_HDRS1 | sed 's:linux-image:vmlinuz:' | sed 's:unsigned-::g')
+if [[ -f /boot/"$k_file" ]]; then
+	echo "y" | apt purge $REM_HDRS1
+else
+	echo "No kernel image found. $k_file"
+fi
 
+# Headers all and  specific
+REM_HDRS2=$(echo $REM2) # | cut -f 1,2,3,4 -d "-")
+if ls /usr/src/$REM_HDRS2 > /dev/null 2>&1; then
+	echo "y" | apt purge $REM_HDRS2
+else
+	echo "No headers files found. $REM_HDRS2"
+fi
+
+# Modules, usually uninstalls with first(image) uninstall.
+REM_HDRS3=$(echo $REM3) # | cut -f 1,2,3,4 -d "-")
+m_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
+if ls /lib/modules/$m_file > /dev/null 2>&1; then
+	echo "y" | apt purge $REM_HDRS3
+else
+	echo "No modules files found. $m_file"
+fi
+done
+sleep 3
 if [[ $? = 0 ]]; then
-	echo
-	# Should generate grub autatically.
-	#update-grub
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
 else
