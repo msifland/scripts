@@ -1,29 +1,30 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
-# Set kernel version number to look for.
+# Set kernel version prefix number to look for. If changed then rerun script with new version number inserted and saved in this file.
 VER1="4"
-read -p "Current kernel version in script is $VER1, would you like to keep it[Y/n]? " ynver1
-if [[ "$ynver1" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
+read -p "Current kernel version in script is $VER1, would you like to keep it[Y/n]? " YNVER1
+if [[ "$YNVER1" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $VER1"
 else
-	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " newver
-	sed -i "s:ver1=\"$VER1\":ver1=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
+	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " NEWVER1
+	sed -i "s:ver1=\"$VER1\":ver1=\"$NEWVER1\":g" $HOME/scripts/kernel_scripts/kernel-check
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
 
+# This shows the latest 25 kernels under above version prefix.
 echo "${ILCOLOR2}Here are the 25 lastest available kernels from kernel.org. . .${ILRESTORE}"
-sleep 3
-
+sleep 1
+# Format search an display.
 KERN_LIST=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER1".x/ | grep "linux-$VER1" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n25)
-# Loop to list the kernels on numbered lines and echo them on screen.
-
+# Error handling if version doesn't have any kernels.
 if [[ "$KERN_LIST" = "" ]]; then
 	echo "No kernels in list, re-run script."
 	exit
 fi
 
+# Loop through each kernel in list and show on screen with numbered lines.
 n=0
 for i in $KERN_LIST; do
 	let n=n+1
@@ -38,18 +39,18 @@ function version_gt() {
 # Entire function here.
 function kern_check() {
 echo -e "${ILCOLOR2}"
-WORK_DIR="$HOME/tmp/kernel-build"
-STOR_DIR="$HOME/tmp/kernel-storage"
+# Set dirctory variables.
+WORK_DIR="$HOME/tmp/kernel_build"
+STOR_DIR="$HOME/tmp/kernel_storage"
 
 # Change to dir and remove any old files
 if [[ ! -d $HOME/tmp ]]; then
 	mkdir $HOME/tmp
 fi
 cd $HOME/tmp
-if [[ -d kernel-build ]]; then
-	rm -rf kernel-build
+if [[ -d "$WORK_DIR" ]]; then
+	rm -rf "$WORK_DIR"
 fi
-
 
 # Move to working directory
 mkdir "$WORK_DIR"
@@ -57,12 +58,12 @@ cd "$WORK_DIR"
 
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
 VER="4.18"
-read -p "${ILRESTORE}Current kernel version in script is $VER, would you like to keep it[Y/n]? " ynver
-if [[ "$ynver" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
+read -p "${ILRESTORE}Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
+if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $VER"
 else
-	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " newver
-	sed -i "s:ver=\"$VER\":ver=\"$newver\":g" $HOME/scripts/kernel_scripts/kernel-check
+	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " NEWVER
+	sed -i "s:ver=\"$VER\":ver=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-check
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
@@ -113,7 +114,7 @@ Would you like to install it?" 10 50; then
 		echo
 		echo "  ${ILCOLOR2}Append to Kernel Number for Local Version name. Current kernel: $(uname -r)${ILRESTORE}"
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
-		echo "Local version: $CONF_VER"
+		echo "Local version from .config file: $CONF_VER"
 		echo
 		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
@@ -122,8 +123,8 @@ Would you like to install it?" 10 50; then
 		if [[ "$LOC_VER" != "" ]]; then
 			sed -i "s:CONFIG_LOCALVERSION=\"\":CONFIG_LOCALVERSION=\"$LOC_VER\":g" .config
 		fi
-		# Build.
-		make -j `getconf _NPROCESSORS_ONLN` deb-pkg #LOCALVERSION="$LOC_VER"
+		# Build, remove uneeded files, install.
+		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		cd ..
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
@@ -137,22 +138,26 @@ Would you like to install it?" 10 50; then
 		echo
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
-		# Purge old kernels?
+		# Reboot to new kernel?
 		read -p "Would you like to reboot to new kernel now?[y/n] " YNRBT
 		echo
 		if [[ "$YNRBT" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-			#Clean up.
 			cd ..
-			# Create kernel storage directory.
+			# Create kernel storage directory if doesn't exist, for storage of previously built kernels.
 			if [[ ! -d $STOR_DIR ]]; then
 				mkdir $STOR_DIR
 			fi
 			# Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
 			if [[ $(ls $STOR_DIR) ]]; then
-				ls $STOR_DIR/* -t | tail -n 19 | xargs rm -f
+				ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
 			fi
-			cp $WORK_DIR/*.deb $STOR_DIR
-			rm -rf $HOME/tmp/kernel-build
+			# Clean up.
+			if [[ -d "$WORK_DIR" ]]; then
+				if ls $WORK_DIR/*.deb > /dev/null 2>&1; then
+					cp $WORK_DIR/*.deb $STOR_DIR
+				fi
+				rm -rf "$WORK_DIR"
+			fi
 			cd $HOME
 			echo 'spike' | sudo -S reboot
 		else
@@ -169,21 +174,25 @@ Would you like to install it?" 10 50; then
 else
 	echo "${ILCOLOR2}You already have the latest kernel.${ILRESTORE}"
 	echo
-	sleep 3
+	sleep 2
 fi
-#Clean up.
 cd ..
-# Create kernel storage directory.
+# Create kernel storage directory if doesn't exist, for storage of previously built kernels.
 if [[ ! -d $STOR_DIR ]]; then
 	mkdir $STOR_DIR
 fi
 # Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
 if [[ $(ls $STOR_DIR) ]]; then
-	ls $STOR_DIR/* -t | tail -n 19 | xargs rm -f
+	ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
 fi
-cp $WORK_DIR/*.deb $STOR_DIR
-rm -rf $HOME/tmp/kernel-build
+# Clean up.
+if [[ -d "$WORK_DIR" ]]; then
+	if ls $WORK_DIR/*.deb > /dev/null 2>&1; then
+		cp $WORK_DIR/*.deb $STOR_DIR
+	fi
+	rm -rf "$WORK_DIR"
+fi
 cd $HOME
 }
-
+# Run main function.
 kern_check

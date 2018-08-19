@@ -79,7 +79,7 @@ k_file=$(echo $REM_HDRS1 | sed 's:linux-image:vmlinuz:' | sed 's:unsigned-::g')
 if [[ -f /boot/"$k_file" ]]; then
 	echo "y" | apt purge $REM_HDRS1
 else
-	echo "No kernel image found. $k_file"
+	echo "${ILCOLOR3}No kernel image found. $k_file${ILRESTORE}"
 fi
 
 # Headers all and  specific
@@ -87,7 +87,7 @@ REM_HDRS2=$(echo $REM2) # | cut -f 1,2,3,4 -d "-")
 if ls /usr/src/$REM_HDRS2 > /dev/null 2>&1; then
 	echo "y" | apt purge $REM_HDRS2
 else
-	echo "No headers files found. $REM_HDRS2"
+	echo "${ILCOLOR3}No headers files found. $REM_HDRS2${ILRESTORE}"
 fi
 
 # Modules, usually uninstalls with first(image) uninstall.
@@ -96,7 +96,7 @@ m_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
 if ls /lib/modules/$m_file > /dev/null 2>&1; then
 	echo "y" | apt purge $REM_HDRS3
 else
-	echo "No modules files found. $m_file"
+	echo "${ILCOLOR3}No modules files found. $m_file${ILRESTORE}"
 fi
 done
 sleep 3

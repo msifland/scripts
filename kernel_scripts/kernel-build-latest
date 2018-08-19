@@ -13,7 +13,8 @@ function version_gt() {
 # Entire function here.
 function kern_check() {
 echo -e "${ILCOLOR2}"
-work_dir="$HOME/tmp/kernel-build"
+work_dir="$HOME/tmp/kernel_build"
+STOR_DIR="$HOME/tmp/kernel_storage"
 
 # Change to dir and remove any old files
 if [[ ! -d $HOME/tmp ]]; then
@@ -83,44 +84,6 @@ Would you like to install it?" 10 50; then
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-: ' Comment # This section is for building one step at a time. Harder to uninstall.
-		# Make
-		tm_start=$(date +"%s")
-		make -j4
-		tm_end=$(date +"%s")
-		tm_diff=$(( $tm_end - $tm_start ))
-		echo
-		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make''.${ILRESTORE}"
-
-		# Make modules
-		tm_start=$(date +"%s")
-		make modules -j4
-		tm_end=$(date +"%s")
-		tm_diff=$(( $tm_end - $tm_start ))
-		echo
-		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make modules''.${ILRESTORE}"
-
-		#Make modules_install
-		tm_start=$(date +"%s")
-		echo "spike" | sudo -S make modules_install -j4
-		tm_end=$(date +"%s")
-		tm_diff=$(( $tm_end - $tm_start ))
-		echo
-		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make modules_install''.${ILRESTORE}"
-
-		# Make install
-		tm_start=$(date +"%s")
-		echo "spike" | sudo -S make install -j4
-		tm_end=$(date +"%s")
-		tm_diff=$(( $tm_end - $tm_start ))
-		echo
-		echo "${ILCOLOR2}It took $(($tm_diff / 3600 )) hours $((($tm_diff % 3600) / 60)) minutes $(($tm_diff % 60)) seconds to run ''make install''.${ILRESTORE}"
-
-		#Updating initramfs and grub
-		echo "${ILCOLOR2}Updating initramfs and grub. . .${ILRESTORE}"
-		echo "spike" | sudo -S update-initramfs -c -k "$get"
-		echo "spike" | sudo -S update-grub
-Comment '
 
 		# End timing process
 		tm_wh_end=$(date +"%s")
@@ -154,5 +117,14 @@ fi
 kern_check
 #Clean up.
 cd ..
-rm -rf kernel-build
+# Create kernel storage directory.
+if [[ ! -d $STOR_DIR ]]; then
+	mkdir $STOR_DIR
+fi
+# Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
+if [[ $(ls $STOR_DIR) ]]; then
+	ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
+fi
+cp $WORK_DIR/*.deb $STOR_DIR
+rm -rf kernel_build
 cd $HOME
