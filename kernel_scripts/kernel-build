@@ -49,7 +49,6 @@ fi
 echo
 
 # Searching website for versions available and showing the last 30. Also figured out after trial and error that the brackets had to be escaped.
-#KERN_LIST=$(wget -qO- http://kernel.ubuntu.com/\~kernel-ppa/mainline/ | grep "v4." | sed 's:<tr><td valign="top"><img src="/icons/folder.gif" alt="\[DIR\]"></td><td><a href="::g' | awk -F '\\/">' '{print $1}' | tail -n20)
 echo "${ILCOLOR2}Here are the 50 lastest available kernels from kernel.org. . .${ILRESTORE}"
 sleep 3
 
@@ -117,7 +116,7 @@ if test $FOR_INST; then
 			sed -i "s:CONFIG_LOCALVERSION=\"\":CONFIG_LOCALVERSION=\"$LOC_VER\":g" .config
 		fi
 		# Build.
-		make -j `getconf _NPROCESSORS_ONLN` deb-pkg #LOCALVERSION="$LOC_VER"
+		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		# Move up on directory and remove not needed deb files and install.
 		cd ..
 		rm -rf *dbg*.deb
@@ -148,7 +147,9 @@ fi
 if [[ $(ls $STOR_DIR) ]]; then
 	ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
 fi
-cp $WORK_DIR/*.deb $STOR_DIR
 if [[ -d $WORK_DIR ]]; then
+	if ls $WORK_DIR/*.deb > /dev/null 2>&1; then
+		cp $WORK_DIR/*.deb $STOR_DIR
+	fi
 	rm -rf $WORK_DIR
 fi
