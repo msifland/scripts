@@ -119,7 +119,7 @@ if test $FOR_INST; then
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		# Move up on directory and remove not needed deb files and install.
 		cd ..
-		rm -rf *dbg*.deb
+		#rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
 		#UPD_INIT=$(echo $FOR_INST | sed 's:linux-::g')
