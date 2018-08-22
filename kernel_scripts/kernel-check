@@ -131,7 +131,20 @@ Would you like to install it?" 10 50; then
 		echo 'spike' | sudo -S dpkg -i *.deb
 		sudo update-initramfs -c -t -k "$GET$CONF_VER$LOC_VER"
 		sudo update-grub
-
+		# Build perf package
+		sleep 1
+		echo
+		echo "${ILCOLOR2}Now building perf package(Linux-tools). . .${ILRESTORE}"
+		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$FOR_INST/perf-build
+		cd $WORK_DIR/linux-$FOR_INST
+		sed -i "s:VERSION=\"\":VERSION=$FOR_INST:g" perf-build		
+		./perf-build
+		cd ..
+		echo 'spike' | sudo -S apt purge "linux-perf*"
+		echo 'spike' | sudo -S dpkg -i $HOME/tmp/perf-package/*.deb
+		if ls $HOME/tmp/perf-package/*.deb >/dev/null 2>&1; then
+			cp $HOME/tmp/perf-package/*.deb $HOME/tmp/kernel_storage
+		fi
 		# End timing process
 		tm_wh_end=$(date +"%s")
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
