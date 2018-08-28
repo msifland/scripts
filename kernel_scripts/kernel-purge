@@ -57,17 +57,24 @@ sleep 1
 # Loop through the line numers from above grepping the created file for lines beginning with those numbers. Error handling here for line numbers that don't exist.
 echo
 echo "${ILCOLOR3}Kernels set to remove: ${ILRESTORE}"
+for n in $FOR_REM; do
+	if grep -q "^$n" $KERN_FILE; then
+		echo $KERNS_REM		
+	else
+		# These are just examples of using a newline charater in and echo.
+		echo -e "!!!****************!!!\nError detected! No number $n. "$'\nRe-run script.\n\n'
+		exit
+	fi
+done
+
 for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
+		echo
 		echo $KERNS_REM
 		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')	
 		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-unsigned::g' | sed 's:-generic::g') # REvmoving 'generic' here because of the 'all' headers installed.
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
-	else
-		# These are just examples of using a newline charater in and echo.
-		echo -e "!!!****************!!!\nError detected! No number $j. "$'\nRe-run script.\n\n'
-		exit
 	fi
 
 
