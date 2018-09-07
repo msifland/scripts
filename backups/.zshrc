@@ -354,7 +354,8 @@ echo -e ${rand_color} "=========================================================
 echo "     Welcome to your $(uname -rmno) machine, Michael"
 echo "     Kernel Version: $(uname -v)"
 echo -e "     Uptime: $(uptime)"
-echo "     Disk usage: $(df -h | grep /dev/sda2) $(df -h | grep /mnt/)"
+echo "     Disk use:  Prtn Nm         TtlDsk Usd  Rmn   %Us MntPnt"
+df -h | grep /dev/sd | while read line; do echo -e "\t\t$line"; done
 echo "     External IP: $(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//') / Internal IP: $(ifconfig | grep "inet 19" | gawk '{print $2}')"
 echo " =========================================================================================="
 echo -e ${restore}
