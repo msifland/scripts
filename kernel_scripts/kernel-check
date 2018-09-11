@@ -103,10 +103,10 @@ Would you like to install it?" 10 50; then
 		echo
 		echo "${ILCOLOR2}Unzipping kernel. . .${ILRESTORE}"
 		sleep 1
+		tar -xf linux-"$GET".tar.xz
 		echo
 		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 		echo 'spike' | sudo -S apt build-dep -y linux
-		tar -xf linux-"$GET".tar.xz
 		cd linux-"$GET"
 		echo
 		echo "${ILCOLOR2}Copying current kernel .config. . .${ILRESTORE}"
