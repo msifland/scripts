@@ -102,6 +102,11 @@ REM_HDRS3=$(echo $REM3) # | cut -f 1,2,3,4 -d "-")
 m_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
 if ls /lib/modules/$m_file > /dev/null 2>&1; then
 	echo "y" | apt purge $REM_HDRS3
+	sleep 1
+	echo "Trying to remove manually. . ."
+	sleep 1
+	echo "sudo rm -rf /lib/modules/$m_file"
+	sudo rm -rf /lib/modules/"$m_file"
 else
 	echo "${ILCOLOR3}No modules files found. $m_file${ILRESTORE}"
 fi

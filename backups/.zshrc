@@ -282,6 +282,18 @@ function delete-files(){ ##>Finds files and folders by name in current dir recur
 	Use with the quotes. For best results use asterisk(*) on each side of word'
 	fi
 }
+
+function pid(){ ##>Search for pid by name.
+	if [[ ! -z $1 ]]; then
+		ps aux | grep -v grep | grep -i -e VSZ -e $1
+	else
+		echo 'Searches for processes by name.
+	Usage:  pid python
+		pid google
+		pid chrome'
+	fi
+}
+
 function conky-update(){ ##>Upates conky widget for network display
 	$HOME/scripts/conky_iface_var.sh
 }
@@ -363,7 +375,6 @@ echo
 
 #############Aliases###########################
 alias cd..="cd .." #Moves up 1 directory
-alias pid="ps aux | grep -v grep | grep -i -e VSZ -e" #Searches for processes by name
 alias errors="systemctl --failed --all && journalctl -p 3 -xb" #Show system errors
 alias perms='stat -c "%a %n" *' #Get permissions in numeric form
 alias python="python2"
