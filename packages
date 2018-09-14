@@ -23,6 +23,9 @@ else
 		echo "${ILRESTORE}$n. ${ILCOLOR3}$i" | pv -qL 4000
 	done
 	echo
+	echo "${ILCOLOR4}There are ${ILCOLOR3}$n ${ILCOLOR4}applications that match ${ILCOLOR3}$1.${ILRESTORE}"
+	echo
+	sleep 1
 fi
 echo "${ILRESTORE}Usage: 'packages' lists all install packages on system.
        'packages linux' lists all install packages that match the word 'linux'."
