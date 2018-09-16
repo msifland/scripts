@@ -8,11 +8,12 @@ if [[ ! "$USER" = "root" ]]; then
 	exit
 fi
 
-# Making sure you are in directory of Android image.
-read -p "Make sure your lockscreen is set to none or swipe. Are you in the directory of the Android img, and is you phone powered on in regular mode with screen unlocked? " AN_DIR
+# Making sure you are in directory of Android image. Make sure your lockscreen is set to none or swipe.
+echo
+read -p "Are you in the directory of the Android img, and is you phone powered on in regular mode with screen unlocked? " AN_DIR
 if [[ "$AN_DIR" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
 	echo
-	echo "Flashing pixel img. . ."
+	echo "${ILCOLOR1}Flashing pixel img. . .${ILRESTORE}"
 	echo
 	sleep 1
 
@@ -26,58 +27,59 @@ if [[ "$AN_DIR" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 
 	# Check to make sure devices is connected. If so, then go through flash sequence of each file in folder and reboot each time.
 	echo
-	echo "Checking for devices. . ."
+	echo "${ILCOLOR1}Checking for devices. . .${ILRESTORE}"
 	sleep 1
 	if [[ "$DVCE" = "device" ]]; then
 		echo
-		echo "Rebooting into bootloader. . ."
+		echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
 		adb reboot bootloader
 		sleep 15
 		echo
-		echo "Checking for fastboot devices. . ."
+		echo "${ILCOLOR1}Checking for fastboot devices. . .${ILRESTORE}"
 		sleep 1
 		if [[ $(fastboot devices | awk '{print $2}') = "fastboot" ]]; then
 			echo
-			echo "Flashing bootloader. . ."
+			echo "${ILCOLOR1}Flashing bootloader. . .${ILRESTORE}"
 			fastboot flash bootloader $BOOTLDR
 			sleep 1
 			echo
-			echo "Rebooting into bootloader. . ."
+			echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
 			fastboot reboot bootloader
 			sleep 1
 			echo
-			echo "Flashing radio. . ."
+			echo "${ILCOLOR1}Flashing radio. . .${ILRESTORE}"
 			fastboot flash radio $RDIO
 			sleep 1
 			echo
-			echo "Rebooting into bootloader. . ."
+			echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
 			fastboot reboot bootloader
 			sleep 1
 			echo
-			echo "Updating system. After update, device will reboot to system and then reboot to temporary recovery img on pc and then you install twrp installer from device."
+			echo "${ILCOLOR1}Updating system. After update, device will reboot to system and then reboot to temporary recovery img on pc and then you install twrp installer from device.${ILRESTORE}"
 			fastboot update $IMG
 			sleep 90
 			echo
 			adb reboot bootloader
 			echo
-			echo "Rebooting into bootloader. . ."
+			echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
 			fastboot reboot bootloader
 			sleep 1
 			# With Pixel, you have to run a temporary TWRP.img to install the full TWRP.
-			echo "Rebooting to temporary recovery to install full TWRP recovery. On reboot flash from your phone, reboot to installed recovery and flash magisk from your phone. After that, the process is finished."
+			echo
+			echo "${ILCOLOR1} Rebooting to temporary recovery to install full TWRP recovery.\n\n If you have a pattern or pin, on reboot enter it, when asked again for pattern or pin, hit cancel. It should enter into recovery at that point.\n If not, reboot to system and remove lockscreen security and reboot to recovery by typing:\n    'adb reboot bootloader'\n    'fastboot boot $HOME/pixel/twrp.img'\n\n On reboot flash from your phone, reboot to installed recovery and flash magisk from your phone. After that, the process is finished.${ILRESTORE}"
 			fastboot boot $HOME/pixel/twrp.img
 			sleep 1
 		else
 			echo
-			echo "No fastboot device found. . ."
+			echo "${ILCOLOR1}No fastboot device found. . .${ILRESTORE}"
 		fi
 	else
 		echo
-		echo "No device found. . ."
+		echo "${ILCOLOR1}No device found. . .${ILRESTORE}"
 	fi
 else
 	echo
-	echo "Please open terminal in corrct directory and re-run. . ."
+	echo "${ILCOLOR1}Please open terminal in corrct directory and re-run. . .${ILRESTORE}"
 fi
 
 cd
