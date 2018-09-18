@@ -9,78 +9,99 @@ if [[ ! "$USER" = "root" ]]; then
 fi
 
 # Making sure you are in directory of Android image. Make sure your lockscreen is set to none or swipe.
-echo
-read -p "Are you in the directory of the Android img, and is you phone powered on in regular mode with screen unlocked? " AN_DIR
-if [[ "$AN_DIR" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
+function pat_or_pin() {
 	echo
-	echo "${ILCOLOR1}Flashing pixel img. . .${ILRESTORE}"
-	echo
-	sleep 1
-
-	rm -rf flash*
-	# Setting variable for finding files in current dirctory to flash.
-	BOOTLDR="bootloader-marlin-*"
-	RDIO="radio-marlin-*"
-	IMG="image-marlin-*"
-	DVCE=$(adb devices | awk '{print $2}' | tail -n2)
-	FSBTDV=$(fastboot devices | awk '{print $2}')
-
-	# Check to make sure devices is connected. If so, then go through flash sequence of each file in folder and reboot each time.
-	echo
-	echo "${ILCOLOR1}Checking for devices. . .${ILRESTORE}"
-	sleep 1
-	if [[ "$DVCE" = "device" ]]; then
+	read -p "Have you removed pattern or pin lockscreen on device? " AN_POP
+	if [[ "$AN_POP" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		echo
-		echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
-		adb reboot bootloader
-		sleep 15
-		echo
-		echo "${ILCOLOR1}Checking for fastboot devices. . .${ILRESTORE}"
-		sleep 1
-		if [[ $(fastboot devices | awk '{print $2}') = "fastboot" ]]; then
-			echo
-			echo "${ILCOLOR1}Flashing bootloader. . .${ILRESTORE}"
-			fastboot flash bootloader $BOOTLDR
-			sleep 1
-			echo
-			echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
-			fastboot reboot bootloader
-			sleep 1
-			echo
-			echo "${ILCOLOR1}Flashing radio. . .${ILRESTORE}"
-			fastboot flash radio $RDIO
-			sleep 1
-			echo
-			echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
-			fastboot reboot bootloader
-			sleep 1
-			echo
-			echo "${ILCOLOR1}Updating system. After update, device will reboot to system and then reboot to temporary recovery img on pc and then you install twrp installer from device.${ILRESTORE}"
-			fastboot update $IMG
-			sleep 90
-			echo
-			adb reboot bootloader
-			echo
-			echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
-			fastboot reboot bootloader
-			sleep 1
-			# With Pixel, you have to run a temporary TWRP.img to install the full TWRP.
-			echo
-			echo "${ILCOLOR1} Rebooting to temporary recovery to install full TWRP recovery.\n\n If you have a pattern or pin, on reboot enter it, when asked again for pattern or pin, hit cancel. It should enter into recovery at that point.\n If not, reboot to system and remove lockscreen security and reboot to recovery by typing:\n    'adb reboot bootloader'\n    'fastboot boot $HOME/pixel/twrp.img'\n\n On reboot flash from your phone, reboot to installed recovery and flash magisk from your phone. After that, the process is finished.${ILRESTORE}"
-			fastboot boot $HOME/pixel/twrp.img
-			sleep 1
-		else
-			echo
-			echo "${ILCOLOR1}No fastboot device found. . .${ILRESTORE}"
-		fi
+		echo "${ILCOLOR1}Good, proceeding. . .${ILRESTORE}"
 	else
 		echo
-		echo "${ILCOLOR1}No device found. . .${ILRESTORE}"
+		echo "${ILCOLOR1}Please set lockscreen to swipe or none on device. . .${ILRESTORE}"
+		pat_or_pin
+	fi
+}
+pat_or_pin
+
+function corr_dir(){
+	echo
+	read -p "Are you in the directory of the Android img, and is you phone powered on in regular mode with screen unlocked? " AN_DIR
+	if [[ "$AN_DIR" =~ ^([yY][eE][sS]|[yY])$ ]]; then	
+		echo
+		echo "${ILCOLOR1}Good, proceeding. . .${ILRESTORE}"
+		sleep 1
+		echo "${ILCOLOR1}Flashing pixel img. . .${ILRESTORE}"
+		echo
+		sleep 1
+	else
+		echo
+		echo "${ILCOLOR1}Please open terminal in corrct directory and re-run. . .${ILRESTORE}"
+		exit
+	fi
+}
+corr_dir
+
+rm -rf flash*
+# Setting variable for finding files in current dirctory to flash.
+BOOTLDR="bootloader-marlin-*"
+RDIO="radio-marlin-*"
+IMG="image-marlin-*"
+DVCE=$(adb devices | awk '{print $2}' | tail -n2)
+FSBTDV=$(fastboot devices | awk '{print $2}')
+
+# Check to make sure devices is connected. If so, then go through flash sequence of each file in folder and reboot each time.
+echo
+echo "${ILCOLOR1}Checking for devices. . .${ILRESTORE}"
+sleep 1
+if [[ "$DVCE" = "device" ]]; then
+	echo
+	echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
+	adb reboot bootloader
+	sleep 15
+	echo
+	echo "${ILCOLOR1}Checking for fastboot devices. . .${ILRESTORE}"
+	sleep 1
+	if [[ $(fastboot devices | awk '{print $2}') = "fastboot" ]]; then
+		echo
+		echo "${ILCOLOR1}Flashing bootloader. . .${ILRESTORE}"
+		fastboot flash bootloader $BOOTLDR
+		sleep 1
+		echo
+		echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
+		fastboot reboot bootloader
+		sleep 1
+		echo
+		echo "${ILCOLOR1}Flashing radio. . .${ILRESTORE}"
+		fastboot flash radio $RDIO
+		sleep 1
+		echo
+		echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
+		fastboot reboot bootloader
+		sleep 1
+		echo
+		echo "${ILCOLOR1}Updating system. After update, device will reboot to system and then reboot to temporary recovery img on pc and then you install twrp installer from device.${ILRESTORE}"
+		fastboot update $IMG
+		sleep 90
+		echo
+		adb reboot bootloader
+		echo
+		echo "${ILCOLOR1}Rebooting into bootloader. . .${ILRESTORE}"
+		fastboot reboot bootloader
+		sleep 1
+		# With Pixel, you have to run a temporary TWRP.img to install the full TWRP.
+		echo
+		echo "${ILCOLOR1} Rebooting to temporary recovery to install full TWRP recovery.\n\n If you have a pattern or pin, on reboot enter it, when asked again for pattern or pin, hit cancel. It should enter into recovery at that point.\n If not, reboot to system and remove lockscreen security and reboot to recovery by typing:\n    'adb reboot bootloader'\n    'fastboot boot $HOME/pixel/twrp.img'\n\n On reboot flash from your phone, reboot to installed recovery and flash magisk from your phone. After that, the process is finished.${ILRESTORE}"
+		fastboot boot $HOME/pixel/twrp.img
+		sleep 1
+	else
+		echo
+		echo "${ILCOLOR1}No fastboot device found. . .${ILRESTORE}"
 	fi
 else
 	echo
-	echo "${ILCOLOR1}Please open terminal in corrct directory and re-run. . .${ILRESTORE}"
+	echo "${ILCOLOR1}No device found. . .${ILRESTORE}"
 fi
+
 
 cd
 exit
