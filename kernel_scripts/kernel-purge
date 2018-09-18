@@ -81,7 +81,7 @@ for j in $FOR_REM; do
 # If all is good, then remove.
 echo
 # Image
-REM_HDRS1=$(echo $REM1) # | cut -f 1,2,3,4,5 -d "-")
+REM_HDRS1=$(echo $REM1)
 k_file=$(echo $REM_HDRS1 | sed 's:linux-image:vmlinuz:' | sed 's:unsigned-::g')
 if [[ -f /boot/"$k_file" ]]; then
 	echo "y" | apt purge $REM_HDRS1
@@ -89,30 +89,41 @@ else
 	echo "${ILCOLOR3}No kernel image found. $k_file${ILRESTORE}"
 fi
 
-# Headers all and  specific
-REM_HDRS2=$(echo $REM2) # | cut -f 1,2,3,4 -d "-")
+# Headers all and specific
+REM_HDRS2=$(echo $REM2)
 if ls /usr/src/$REM_HDRS2 > /dev/null 2>&1; then
 	echo "y" | apt purge $REM_HDRS2
 else
 	echo "${ILCOLOR3}No headers files found. $REM_HDRS2${ILRESTORE}"
 fi
 
-# Modules, usually uninstalls with first(image) uninstall.
-REM_HDRS3=$(echo $REM3) # | cut -f 1,2,3,4 -d "-")
+# Modules, usually uninstalls with first(image) uninstall. Sometimes it doesn't so added some error handling here with exit status.
+REM_HDRS3=$(echo $REM3)
 m_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
 if ls /lib/modules/$m_file > /dev/null 2>&1; then
-	echo "y" | apt purge $REM_HDRS3
 	sleep 1
-	echo "Trying to remove manually. . ."
-	sleep 1
-	echo "sudo rm -rf /lib/modules/$m_file"
-	sudo rm -rf /lib/modules/"$m_file"
+	if ! apt purge -y $REM_HDRS3; then
+		echo
+		echo "${ILCOLOR3}Errors while trying to remove. Trying to remove manually. . .${ILRESTORE}"
+		sleep 1
+		echo "sudo rm -rf /lib/modules/$m_file"
+		sudo rm -rf /lib/modules/"$m_file"
+		if [ $? -ne 0 ]; then
+			echo
+			echo "Not removed, check path and remove manyally. . ."
+			sleep 1
+		else
+			echo
+			echo "Succeeded removal."
+			sleep 1
+		fi
+	fi
 else
 	echo "${ILCOLOR3}No modules files found. $m_file${ILRESTORE}"
 fi
 done
 sleep 3
-if [[ $? = 0 ]]; then
+if [ $? -eq 0 ]; then
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
 else

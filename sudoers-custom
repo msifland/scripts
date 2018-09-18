@@ -66,7 +66,7 @@ read -p "${ILCOLOR3}Would you like to check secure path?[y/n]: ${ILRESTORE}" PTH
 	fi
 
 # This checks exit status for error from output.
-if [[ $? = 0 ]]; then
+if [ $? -eq 0 ]; then
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
 else

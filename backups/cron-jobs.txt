@@ -41,3 +41,6 @@
 
 # Run a check for new kernels
 #45 6 * * * env DISPLAY=:0 /home/msifland/scripts/kern-update-timer
+
+# Update oh-my-zsh once a week
+30 7 * * 2 env DISPLAY=:0 xfce4-terminal -e "zsh -c \"source .zshrc; upgrade_oh_my_zsh\""
