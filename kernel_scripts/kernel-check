@@ -157,7 +157,8 @@ Would you like to install it?" 10 50; then
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
 		# Reboot to new kernel?
-		read -p "Would you like to reboot to new kernel now?[y/n] " YNRBT
+		YNRBT="y"
+		read -p "Would you like to reboot to new kernel now?[Y/n] " YNRBT
 		echo
 		if [[ "$YNRBT" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 			cd ..
