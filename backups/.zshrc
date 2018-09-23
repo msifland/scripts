@@ -239,8 +239,9 @@ function edit-virus-clamscan(){ ##>Edit folders to include and exclude for virus
 	nano $HOME/scripts/virus-clamscan
 }
 
-function oh-my-zsh-updater(){ ##>Update oh-my-zsh.
-	upgrade_oh_my_zsh
+function oh-my-zsh-updater(){ ##>Updates oh-my-zsh.
+	echo "Date & Time: $(date +"%m-%d-%y -- %r")\n" | tee /home/msifland/scripts/oh-my-zsh-update-log.txt
+	upgrade_oh_my_zsh | tee -a /home/msifland/scripts/oh-my-zsh-update-log.txt
 }
 
 function file-open(){ ##>Opens a file by full name in current directory, or opens a file from full directory path, or open a directory by name and shows a list of files in that directory.
