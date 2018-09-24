@@ -1,8 +1,25 @@
 #!/bin/bash
-# This is a blank bash script document.
+# http://inglorion.net/software/detach/
 # Put your code below this line.
 echo
-echo
+echo "Checking dependancies. . ."
+sleep 1
+if dpkg --get-selections | awk '{print $1}' | grep -w "make"; then
+	MAKEY="y"
+else
+	if sudo apt install make; then
+		MAKEY="y"
+	fi
+fi
+if dpkg --get-selections | awk '{print $1}' | grep -w "cmake"; then
+	CMAKEY="y"
+else
+	if sudo apt install cmake; then
+		CMAKEY="y"
+	fi
+fi
+
+if [[ $MAKEY = "y" ]] && [[ $CMAKEY = "y" ]]; then
 echo "Now installing 'detach'. . ."
 echo "cd $HOME/'Modules&Apps'"
 cd $HOME/'Modules&Apps'
@@ -25,3 +42,6 @@ sleep 1
 
 echo
 echo "Done."
+else
+	echo "Dependencies not installed. Need make and cmake to install detach. Try installing manually: sudo apt make cmake"
+fi
