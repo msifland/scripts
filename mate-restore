@@ -29,7 +29,18 @@ sudo apt purge
 # This should be in a different script for restoring the list.
 echo
 echo "Restoring system."
-sudo apt install $(cat $HOME/pkg_bkups/pkgs.txt)
+if dpkg --get-selections | awk '{print $1}' | grep -w "aptitude"; then
+	echo
+	echo "aptitude found. . . "
+	sudo aptitude -f -y install $(cat $HOME/pkg_bkups/pkgs.txt)
+else
+	echo
+	echo "Missing aptitude, installing now. . ."
+	sleep 1
+	echo "sudo apt -y install aptitude"
+	sudo apt -y install aptitude
+	sudo aptitude -f -y install $(cat $HOME/pkg_bkups/pkgs.txt)
+fi
 
 echo
 echo "Don't forget to restore misc. files from $HOME/scripts/backups. . ."

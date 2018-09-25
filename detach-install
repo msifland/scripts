@@ -7,14 +7,14 @@ sleep 1
 if dpkg --get-selections | awk '{print $1}' | grep -w "make"; then
 	MAKEY="y"
 else
-	if sudo apt install make; then
+	if sudo apt -y install make; then
 		MAKEY="y"
 	fi
 fi
 if dpkg --get-selections | awk '{print $1}' | grep -w "cmake"; then
 	CMAKEY="y"
 else
-	if sudo apt install cmake; then
+	if sudo apt -y install cmake; then
 		CMAKEY="y"
 	fi
 fi
