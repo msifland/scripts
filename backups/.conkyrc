@@ -39,7 +39,7 @@ color2 black #655d47
 color3 black #403a28
 
 TEXT
-${font sans:bold:size=10}${color}${alignc}Ubuntu-Mate-$sysname $kernel
+${font sans:bold:size=10}${color}${alignc}Debian-Mate-$sysname $kernel
 ${font sans:bold:size=10}${color}${alignc}${machine}${color} ${exec whoami}@$nodename
 $color2${hr 3}
 ${color}${font sans:bold:size=10}Date: ${color2}${font sans:size=10}${time %A,%d %B}

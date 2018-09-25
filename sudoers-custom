@@ -12,7 +12,7 @@ cp /etc/sudoers $HOME/tmp/
 # This section looks for Defaults timestamp_timeout and removes or add a time to it.
 SUDOERS="/etc/sudoers"
 # Explainging what we are doing.
-echo "${ILCOLOR3}Making customer sudoers file. . .${ILRESTORE}"
+echo "${ILCOLOR3}Making custom sudoers file. . .${ILRESTORE}"
 sleep 1
 echo
 read -p "${ILCOLOR3}Would you like to check the timeout?[y/n]: ${ILRESTORE}" CKTO
@@ -64,7 +64,18 @@ read -p "${ILCOLOR3}Would you like to check secure path?[y/n]: ${ILRESTORE}" PTH
 			sleep 1
 		fi
 	fi
-
+	echo
+	echo 'Checking if $HOME environment is set with env_keep+="HOME"'
+	sleep 1
+	if grep -Fxq "Defaults	env_keep+=\"HOME\"" $SUDOERS; then
+		echo
+		echo '$HOME environment is already set.'
+	else
+		echo
+		echo 'Setting $HOME environment now. . .'
+		sleep 1
+		sudo echo -e "Defaults	env_keep+=\"HOME\"" >> $SUDOERS
+	fi
 # This checks exit status for error from output.
 if [ $? -eq 0 ]; then
 	echo

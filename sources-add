@@ -1,0 +1,37 @@
+#!/bin/bash
+# This scripts adds sources to /etc/apt/sources.list
+function add_sources(){
+	echo
+	read -p "Adding source to /etc/apt/sources.list. Enter source to add: " srcs
+	echo
+	read -p "You have chosen to add \"$srcs\" to your sources.list. Is it correct? " yn_src
+	if [[ ! "$yn_src" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		echo
+		read -p "Try again? " ta
+		if [[ "$ta" =~ ^([nN][oO]|[nN])$ ]]; then
+			echo
+			echo "Ok, exiting. . ."
+			sleep 1
+			exit
+		else
+			echo
+			echo "Trying again. . ."
+			sleep 1
+			add_sources
+		fi
+	else
+		sleep 1
+		echo
+		echo "echo \"$srcs\" | sudo tee -a /etc/apt/sources.list"
+		sleep 1
+		if echo -e "\n#Added manually\n$srcs" | sudo tee -a /etc/apt/sources.list; then
+			echo
+			echo "\"$srcs\" has been added to your sources.list."
+		else
+			echo
+			echo "Problem detected. Add manually."
+		fi
+	fi
+}
+add_sources
+sleep 1

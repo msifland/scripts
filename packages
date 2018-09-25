@@ -9,10 +9,10 @@ PKGS=$(dpkg --get-selections | awk '{print $1}')
 n=0
 for i in $PKGS; do
 	let n=$n+1
-	echo "${ILRESTORE}$n. ${ILCOLOR3}$i" | pv -qL 4000
+	echo "${ILRESTORE}$n. ${ILCOLOR3}$i"
 done
 echo
-echo "${ILCOLOR4}You currently have ${ILCOLOR3}$n ${ILCOLOR4}applications installed on your system.${ILRESTORE}" | pv -qL 50
+echo "${ILCOLOR4}You currently have ${ILCOLOR3}$n ${ILCOLOR4}applications installed on your system.${ILRESTORE}" | pv -qL 80
 echo
 sleep 1
 else
@@ -20,10 +20,10 @@ else
 	n=0
 	for i in $PKGS; do
 		let n=$n+1
-		echo "${ILRESTORE}$n. ${ILCOLOR3}$i" | pv -qL 4000
+		echo "${ILRESTORE}$n. ${ILCOLOR3}$i" | pv -qL 800
 	done
 	echo
-	echo "${ILCOLOR4}There are ${ILCOLOR3}$n ${ILCOLOR4}applications that match ${ILCOLOR3}$1.${ILRESTORE}"
+	echo "${ILCOLOR4}There are ${ILCOLOR3}$n ${ILCOLOR4}applications that match ${ILCOLOR3}$1.${ILRESTORE}" | pv -qL 80
 	echo
 	sleep 1
 fi
