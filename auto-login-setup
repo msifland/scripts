@@ -1,0 +1,31 @@
+#!/bin/bash
+# Setting up auto login on system
+# Check if script has been run as root.
+if [[ ! "$USER" = "root" ]]; then
+	echo "This script must be run as root!"
+	exit
+fi
+
+echo
+echo "${ILCOLOR3}Setting up auto-login. . .${ILRESTORE}"
+echo
+sleep 1
+echo "${ILCOLOR3}Editing file /etc/lightdm/lightdm.conf. Umcommenting and adding user to lines:${ILRESTORE}"
+echo
+sleep 1
+if grep -w "#autologin-user="  /etc/lightdm/lightdm.conf; then
+sed -i 's:#autologin-user=:autologin-user=msifland:g' /etc/lightdm/lightdm.conf
+else
+	echo "Already updated."
+fi
+if grep -w "#autologin-user-timeout=0"  /etc/lightdm/lightdm.conf; then
+sed -i 's:#autologin-user-timeout=0:autologin-user-timeout=0:g' /etc/lightdm/lightdm.conf
+else
+	echo "Already updated."
+fi
+
+if [[ $? ]]; then
+	echo "All is good."
+else
+	echo "Errors were detected. Check file manually."
+fi
