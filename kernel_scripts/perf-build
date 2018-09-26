@@ -5,6 +5,7 @@ VERSION=""
 if [[ -d "$HOME/tmp/perf-package" ]]; then
 	rm -rf $HOME/tmp/perf-package
 fi
+mkdir $HOME/tmp/perf-package
 
 sudo apt-get install --yes libaudit-dev libslang2-dev libelf-dev libdw-dev libnuma-dev libunwind-dev libperl-dev libiberty-dev asciidoc binutils-dev flex bison
 

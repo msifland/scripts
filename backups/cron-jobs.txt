@@ -31,7 +31,7 @@
 
 ########################### Ubuntu Linux #########################
 # Update system daily. Different here because we a calling more than one command. 
-0 7 * * * env DISPLAY=:0 xfce4-terminal --hold -e "zsh -c \"source .zshrc; /home/msifland/scripts/mate-update\""
+0 7 * * * env DISPLAY=:0 xfce4-terminal --hold -e "zsh -c \"source .zshrc; /home/msifland/scripts/debian-update\""
 
 # Backups my important files. See script for files that are backed up
 0 1 * * * env DISPLAY=:0 xfce4-terminal -e /home/msifland/scripts/my-backup
