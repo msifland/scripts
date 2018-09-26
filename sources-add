@@ -30,6 +30,8 @@ function add_sources(){
 		echo
 		echo "echo \"$srcs\" | sudo tee -a /etc/apt/sources.list"
 		sleep 1
+
+		# Need to add three lines here. One with a 'Added manually' tag, one with the source, one with the source and 'deb-src' at the beginning. The 'echo -e' makes echo execute the '\n' which is newline.
 		# Checking for errors here and reporting if there are.
 		if echo -e "\n#Added manually\n$srcs\ndeb-src $srcs" | sudo tee -a /etc/apt/sources.list; then
 			echo
