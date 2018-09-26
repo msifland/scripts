@@ -1,31 +1,77 @@
 #!/bin/bash
-# Setting up auto login on system
+# Setting up auto login and numlock on system startup
 # Check if script has been run as root.
 if [[ ! "$USER" = "root" ]]; then
 	echo "This script must be run as root!"
 	exit
 fi
 
+# Set up varible.
+CONF="/etc/lightdm/lightdm.conf"
+
+# Script explains what it's doing.
 echo
-echo "${ILCOLOR3}Setting up auto-login. . .${ILRESTORE}"
+echo "${ILCOLOR3}Setting up auto-login and auto numlock. . .${ILRESTORE}"
 echo
 sleep 1
-echo "${ILCOLOR3}Editing file /etc/lightdm/lightdm.conf. Umcommenting and adding user to lines:${ILRESTORE}"
+echo "${ILCOLOR3}Editing file $CONF. Umcommenting and adding user to lines:${ILRESTORE}"
 echo
 sleep 1
-if grep -w "#autologin-user="  /etc/lightdm/lightdm.conf; then
-sed -i 's:#autologin-user=:autologin-user=msifland:g' /etc/lightdm/lightdm.conf
+
+# Check if phrase is commented out, and if so uncommenting, if not then letting us know it's already updated.
+if grep -wq "#autologin-user="  $CONF; then
+	sed -i 's:#autologin-user=:autologin-user=msifland:g' $CONF
 else
-	echo "Already updated."
-fi
-if grep -w "#autologin-user-timeout=0"  /etc/lightdm/lightdm.conf; then
-sed -i 's:#autologin-user-timeout=0:autologin-user-timeout=0:g' /etc/lightdm/lightdm.conf
-else
-	echo "Already updated."
+	echo
+	echo "Already updated autologin-user."
+	sleep 1
 fi
 
-if [[ $? -eq 0 ]]; then
-	echo "All is good."
+# Check if phrase is commented out, and if so uncommenting, if not then letting us know it's already updated.
+if grep -wq "#autologin-user-timeout=0"  $CONF; then
+	sed -i 's:#autologin-user-timeout=0:autologin-user-timeout=0:g' $CONF
 else
+	echo
+	echo "Already updated autologin-user-timeout."
+	sleep 1
+fi
+
+# For numlock on, we need an application name numlockx installed. Checking if installed, if not, then install it. Then look for needed phrase, if not there then add it to bottom of file.
+if dpkg --get-selections | awk '{print $1}' | grep -wq "numlockx"; then
+	if grep -wq "greeter-setup-script=/usr/bin/numlockx on" $CONF; then
+		echo
+		echo "Numlockx on already added."
+		sleep 1
+	else
+		echo
+		echo "Adding numlock on at startup. . ."
+		echo "greeter-setup-script=/usr/bin/numlockx on" >> $CONF
+		sleep 1
+	fi
+else
+	echo
+	echo "Installing numlockx. . ."
+	sleep 1
+	sudo apt -y install numlockx
+	if grep -wq "greeter-setup-script=/usr/bin/numlockx on" $CONF; then
+		echo
+		echo "numlockx on already added."
+		sleep 1
+	else
+		echo
+		echo "Adding numlock on at startup. . ."
+		echo "greeter-setup-script=/usr/bin/numlockx on" >> $CONF
+		sleep 1
+	fi
+fi
+
+# Check for errors and let user know if there were.
+if [[ $? -eq 0 ]]; then
+	echo
+	echo "All is good."
+	sleep 1
+else
+	echo
 	echo "Errors were detected. Check file manually."
+	sleep 1
 fi

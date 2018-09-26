@@ -9,17 +9,21 @@ exit 1
 fi
 echo
 cp /etc/sudoers $HOME/tmp/
+
 # This section looks for Defaults timestamp_timeout and removes or add a time to it.
 SUDOERS="/etc/sudoers"
+
 # Explainging what we are doing.
 echo "${ILCOLOR3}Making custom sudoers file. . .${ILRESTORE}"
 sleep 1
 echo
 read -p "${ILCOLOR3}Would you like to check the timeout?[y/n]: ${ILRESTORE}" CKTO
 	if [[ "$CKTO" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+
 		# Set variable
 		TMOUT="Defaults timestamp"
-		# Check if variable already exists in file with grep. If it does, then exit. If not, then add it to the bottome of the file.
+
+		# Check if variable already exists in file with grep. If it does, then exit. If not, then add it to the bottom of the file.
 		if grep -q "$TMOUT" $SUDOERS; then
 			echo
 			read -p "${ILCOLOR3}Already set to $(grep "Defaults timestamp" $SUDOERS | sed 's:Defaults timestamp_timeout=::g' | sed 's:#::g'). Would you like to remove?[y/n]:${ILRESTORE} " RMV
@@ -64,27 +68,31 @@ read -p "${ILCOLOR3}Would you like to check secure path?[y/n]: ${ILRESTORE}" PTH
 			sleep 1
 		fi
 	fi
+echo
+echo 'Checking if $HOME environment is set with env_keep+="HOME"'
+sleep 1
+if grep -Fxq "Defaults	env_keep+=\"HOME\"" $SUDOERS; then
 	echo
-	echo 'Checking if $HOME environment is set with env_keep+="HOME"'
+	echo '$HOME environment is already set.'
+else
+	echo
+	echo 'Setting $HOME environment now. . .'
 	sleep 1
-	if grep -Fxq "Defaults	env_keep+=\"HOME\"" $SUDOERS; then
-		echo
-		echo '$HOME environment is already set.'
-	else
-		echo
-		echo 'Setting $HOME environment now. . .'
-		sleep 1
-		sudo echo -e "Defaults	env_keep+=\"HOME\"" >> $SUDOERS
-	fi
+	sudo echo -e "Defaults	env_keep+=\"HOME\"" >> $SUDOERS
+fi
+
 # This checks exit status for error from output.
 if [ $? -eq 0 ]; then
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
+	sleep 1
 else
-	echo "${ILCOLOR3}Something went wrong!!!${ILRESTORE}"
 	echo
+	echo "${ILCOLOR3}Something went wrong!!!${ILRESTORE}"
+	sleep 1
 fi
 
+# Some systems do not come with 'gawk' installed, this checks to see if it's installed, if not, install it.
 # Removes all empty lines from end of file.
 if dpkg --get-selections | awk '{print $1}' | grep -w "gawk"; then
     gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS

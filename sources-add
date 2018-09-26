@@ -1,6 +1,10 @@
 #!/bin/bash
 # This scripts adds sources to /etc/apt/sources.list
+
+# Used function for loop purposes.
 function add_sources(){
+	
+	# Asking for source to add and double checking that it's correct. If it's not, then loop to beginning. Also option to exit.
 	echo
 	read -p "Adding source to /etc/apt/sources.list. Enter source to add and make sure it starts with \"deb \", if not, add \"deb <source>\" : " srcs
 	echo
@@ -21,9 +25,12 @@ function add_sources(){
 		fi
 	else
 		sleep 1
+
+		# Here we are echoing the command that we are going to execute to add to the file.
 		echo
 		echo "echo \"$srcs\" | sudo tee -a /etc/apt/sources.list"
 		sleep 1
+		# Checking for errors here and reporting if there are.
 		if echo -e "\n#Added manually\n$srcs\ndeb-src $srcs" | sudo tee -a /etc/apt/sources.list; then
 			echo
 			echo "\"$srcs\" has been added to your sources.list."
@@ -32,16 +39,24 @@ function add_sources(){
 			echo "Problem detected. Add manually."
 		fi
 	fi
+
 	# Reformatting sources file due to 'deb-src' second line.
 	sudo sed -i 's:deb-src deb:deb-src:g' /etc/apt/sources.list
 }
+
+# Main function call.
 add_sources
+
+# On some systems 'gawk' is not installed automatically. This checks to see if it's installed, if not, then install it.
+# Removing all white space from end of file.
 if dpkg --get-selections | awk '{print $1}' | grep -wq "gawk"; then
     sudo gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' /etc/apt/sources.list
 else
     sudo apt -y install gawk
     sudo gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' /etc/apt/sources.list
 fi
+
+# Opening file for double checking and manual editing.
 echo
 echo "Showing /etc/apt/sources.list for manual edit if needed."
 sleep 2
