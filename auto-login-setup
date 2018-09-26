@@ -24,7 +24,7 @@ else
 	echo "Already updated."
 fi
 
-if [[ $? ]]; then
+if [[ $? -eq 0 ]]; then
 	echo "All is good."
 else
 	echo "Errors were detected. Check file manually."

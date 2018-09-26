@@ -86,5 +86,10 @@ else
 fi
 
 # Removes all empty lines from end of file.
-gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS
+if dpkg --get-selections | awk '{print $1}' | grep -w "gawk"; then
+    gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS
+else
+    sudo apt -y install gawk
+    gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS
+fi
 exit
