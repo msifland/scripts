@@ -17,7 +17,7 @@ done
 # Find out if process is running. If it is assign the PID of the process to a variable. Then start the process with a loop.
 while [[ $cpid = "" ]]; do
 	echo "Waiting for conky to start. . ."
-	detach conky
+	conky
 	cpid=$(pidof conky)
 	sleep 1
 done
