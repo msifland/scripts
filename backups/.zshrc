@@ -246,14 +246,14 @@ function oh-my-zsh-updater(){ ##>Updates oh-my-zsh.
 
 function file-open(){ ##>Opens a file by full name in current directory, or opens a file from full directory path, or open a directory by name and shows a list of files in that directory.
 	if [[ -f "$1" ]]; then
-		$HOME/scripts/open_file "$1"
+		$HOME/scripts/open-file "$1"
 	elif [[ -d "$1" ]]; then
 		echo
-		$HOME/scripts/open_file "$1"
+		$HOME/scripts/open-file "$1"
 		echo
 	elif [[ -z "$1" ]]; then
 		echo
-		$HOME/scripts/open_file
+		$HOME/scripts/open-file
 		echo
 	else
 		echo

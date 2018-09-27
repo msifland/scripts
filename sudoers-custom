@@ -16,6 +16,18 @@ SUDOERS="/etc/sudoers"
 # Explainging what we are doing.
 echo "${ILCOLOR3}Making custom sudoers file. . .${ILRESTORE}"
 sleep 1
+
+# Debian does not automatically add user to sudo. So this adds me
+if grep -wq "msifland" $SUDOERS; then
+	echo
+	echo "User msifland has already been added."
+	sleep 1
+else
+	echo
+	echo "Adding user msifland to /etc/sudoers."
+	sudo echo "msifland        ALL=(ALL:ALL) ALL" >> $SUDOERS
+	sleep 1
+fi
 echo
 read -p "${ILCOLOR3}Would you like to check the timeout?[y/n]: ${ILRESTORE}" CKTO
 	if [[ "$CKTO" =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -96,7 +108,7 @@ fi
 
 # Some systems do not come with 'gawk' installed, this checks to see if it's installed, if not, install it.
 # Removes all empty lines from end of file.
-if dpkg --get-selections | awk '{print $1}' | grep -w "gawk"; then
+if dpkg --get-selections | awk '{print $1}' | grep -wq "gawk"; then
     gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS
 else
     sudo apt -y install gawk

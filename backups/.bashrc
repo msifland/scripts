@@ -256,20 +256,21 @@ function edit-virus-clamscan(){ ##>Edit folders to include and exclude for virus
 	nano $HOME/scripts/virus-clamscan
 }
 
-function oh-my-zsh-updater(){ ##>Update oh-my-zsh.
-	upgrade_oh_my_zsh
+function oh-my-zsh-updater(){ ##>Updates oh-my-zsh.
+	echo "Date & Time: $(date +"%m-%d-%y -- %r")\n" | tee /home/msifland/scripts/oh-my-zsh-update-log.txt
+	upgrade_oh_my_zsh | tee -a /home/msifland/scripts/oh-my-zsh-update-log.txt
 }
 
 function file-open(){ ##>Opens a file by full name in current directory, or opens a file from full directory path, or open a directory by name and shows a list of files in that directory.
 	if [[ -f "$1" ]]; then
-		$HOME/scripts/open_file "$1"
+		$HOME/scripts/open-file "$1"
 	elif [[ -d "$1" ]]; then
 		echo
-		$HOME/scripts/open_file "$1"
+		$HOME/scripts/open-file "$1"
 		echo
 	elif [[ -z "$1" ]]; then
 		echo
-		$HOME/scripts/open_file
+		$HOME/scripts/open-file
 		echo
 	else
 		echo
@@ -383,9 +384,9 @@ echo -e ${rand_color} "=========================================================
 echo "     Welcome to your $(uname -rmno) machine, Michael"
 echo "     Kernel Version: $(uname -v)"
 echo -e "     Uptime: $(uptime)"
-echo "     Disk use:  Prtn Nm         TtlDsk Usd  Rmn   %Us MntPnt"
+echo "     Disk use:  Prtitn          Total Used  Rmn   %Us MntPnt"
 df -h | grep /dev/sd | while read line; do echo -e "\t\t$line"; done
-echo "     External IP: $(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//') / Internal IP: $(ifconfig | grep "inet 19" | gawk '{print $2}')"
+echo "     External IP: $(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//') / Internal IP: $(ip address | grep "inet 19" | sed '/vmnet/ d' | gawk '{print $2}' | sed 's:/24::g')"
 echo " =========================================================================================="
 echo -e ${restore}
 echo
@@ -397,13 +398,14 @@ alias perms='stat -c "%a %n" *' #Get permissions in numeric form
 alias python="python2"
 alias gmt="$HOME/maps/gmt/gmt"
 alias rec-key="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys"
-alias apt-i="sudo apt install"
-alias apt-r="sudo apt purge"
-alias apt-s="apt search"
-alias apti-s="aptitude search"
+#alias apt-i="sudo apt install"
+#alias apt-r="sudo apt purge"
+#alias apt-s="apt search"
+#alias apti-s="aptitude search"
 alias del-key="sudo apt-key del"
 alias apt-list="apt list --installed"
 alias apt-list-s="apt list --installed | grep "$1""
+alias nethogs="sudo nethogs -p"
 #alias android="$HOME/Android/Sdk/tools/bin/sdkmanager"
 
 #############Android stuff#####################

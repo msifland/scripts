@@ -21,7 +21,7 @@ sleep 1
 
 # Check output status for errors.
 echo
-if [[ $? = 0 ]]; then
+if [[ $? -eq 0 ]]; then
 	echo "All is good."
 else
 	echo "Error detected!!!"
