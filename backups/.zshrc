@@ -143,6 +143,9 @@ function find-stuff(){ ##>Find items in a specified date rage for specified. dir
 		find_stuff
 	fi
 }
+fucntion iso-gen(){
+		/$HOME/scripts/gen-iso
+}
 
 function rom-sync(){ ##>Sync specified ROM.
 	if [[ ! -z $1 ]]; then

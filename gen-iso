@@ -1,0 +1,45 @@
+#!/bin/bash
+# This generates a bootable linux iso correctly with iso options.
+# Put your code below this line.
+echo
+function iso_gen(){
+	echo
+	read -p "What is the path of the folder you want to turn into an iso image?: " ISO_NM
+	sleep 1
+
+	echo
+	read -p "The name of the .iso file is to be ${ILCOLOR4}\"$ISO_NM.iso\"${ILRESTORE}. Is that correct? " CRRCT
+	sleep 1
+	ISO_NM="$ISO_NM.iso"
+	if [[ $CRRCT =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		ISO_PTH=$(echo $ISO_NM | sed 's:.iso::g')
+
+		echo
+		read -p "Running ${ILCOLOR4}\"genisoimage -o $ISO_NM -v -J -R -D $ISO_PTH\"${ILRESTORE}
+Ready to run?: " RDY
+		sleep 1
+		if [[ $RDY =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			sleep 1
+			if genisoimage -o $ISO_NM -eltorito-boot -v -J -R -D $ISO_PTH; then
+				echo
+				echo "Iso image ${ILCOLOR4}\"$ISO_NM\"${ILRESTORE} created."
+				sleep 1
+			else
+				echo
+				echo "Errors detected."
+				sleep 1
+			fi
+		else
+			echo
+			echo "Try again. . ."
+			sleep 1
+			iso_gen
+		fi
+	else
+		echo
+		echo "Try again. . ."
+		sleep 1
+		iso_gen
+	fi
+}
+iso_gen
