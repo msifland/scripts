@@ -1,0 +1,8 @@
+#!/bin/bash
+
+read -p "Are you superuser? " yn
+if [[ ! $yn = "y" ]]; then
+echo "Change to superuser by typing su. Then rerun script with full path /home/msifland/scripts/test."
+else
+echo "ok. good"
+fi
