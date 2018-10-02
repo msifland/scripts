@@ -1,11 +1,26 @@
-Date & Time: 09-26-18 -- 02:54:09 PM
+Date & Time: 10-02-18 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating 5e1d3513..e107b85e
+Updating e107b85e..8bc9f23b
 Fast-forward
- plugins/react-native/README.md | 1 -
- themes/agnoster.zsh-theme      | 4 ++--
- 2 files changed, 2 insertions(+), 3 deletions(-)
+ plugins/brew/README.md                           | 19 ++++++++
+ plugins/chruby/chruby.plugin.zsh                 |  8 +++-
+ plugins/django/README.md                         | 56 +++++++++++++++++++++++
+ plugins/fedora/README.md                         |  1 +
+ plugins/git-auto-fetch/README.md                 | 31 +++++++++++++
+ plugins/git-auto-fetch/git-auto-fetch.plugin.zsh | 27 +++++++++++
+ plugins/iwhois/README.md                         | 24 ++++++++++
+ plugins/iwhois/iwhois.plugin.zsh                 |  3 --
+ plugins/jenv/README.md                           | 18 +++++++-
+ plugins/sudo/README.md                           | 57 ++++++++++++++++++++++++
+ 10 files changed, 238 insertions(+), 6 deletions(-)
+ create mode 100644 plugins/brew/README.md
+ create mode 100644 plugins/django/README.md
+ create mode 100644 plugins/fedora/README.md
+ create mode 100644 plugins/git-auto-fetch/README.md
+ create mode 100644 plugins/git-auto-fetch/git-auto-fetch.plugin.zsh
+ create mode 100644 plugins/iwhois/README.md
+ create mode 100644 plugins/sudo/README.md
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  

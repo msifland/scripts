@@ -36,3 +36,11 @@ git add --all
 git commit -m 'auto commit'
 git push -u origin master
 sleep 1
+
+echo
+echo "${ILCOLOR1}Updating firmware_debian_non-free. . .${ILRESTORE}"
+cd ~/firmware_debian_non-free
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
