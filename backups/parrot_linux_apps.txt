@@ -326,11 +326,6 @@ file
 fimap
 findmyhash
 findutils
-firebird3.0-common
-firebird3.0-common-doc
-firebird3.0-server-core:amd64
-firebird3.0-utils
-firefox
 firmware-amd-graphics
 firmware-atheros
 firmware-b43-installer
