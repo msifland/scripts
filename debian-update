@@ -22,6 +22,7 @@ echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 echo $PW | sudo -S echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
 sudo apt update -y
 sudo apt upgrade -y
+sudo apt full-upgrade -y
 
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
