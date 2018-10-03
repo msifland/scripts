@@ -128,21 +128,6 @@ cd $P
 export MPWD=$P
 }
 
-function find-stuff(){ ##>Find items in a specified date rage for specified. directory
-	sleep 1
-	read -p "What directory would you like to find in?[/path/to/dir] " directory
-	sleep 1
-	if [[ -d "$directory" ]]; then
-		read -p "What date range? Start date?[yyyy-mm-dd] " start_date
-		sleep 1
-		read -p "End date?[yyyy-mm-dd] " end_date
-		sleep 1
-		find "$directory" -type f -name "*" -newermt "$start_date" ! -newermt "$end_date"
-	else
-		echo "Not a valid directory, please try again..."
-		find_stuff
-	fi
-}
 fucntion iso-gen(){
 		/$HOME/scripts/gen-iso
 }
@@ -401,7 +386,7 @@ export PATH="$HOME/scripts/kernel_scripts:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export ANDROID_HOME="$HOME/Android/Sdk:$ANDROID_HOME"
-export PATH="/usr/lib/jvm/default-java/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/Android/Sdk:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/build-tools/:$PATH"
+export PATH="/usr/lib/jvm/default-java/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/Android/Sdk:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/build-tools/:$HOME/Android/android-studio/bin:$PATH"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:$PATH"
 # This line specifically call the latest build tools number folder(mainly for building opengapps). It also deletes any older folders.
 export PATH="$(find $HOME/Android/Sdk/build-tools/ -mindepth 1 -maxdepth 1 -type d):$PATH"
@@ -459,7 +444,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$FG[$num1]%}✗✗✗"
 
 # Put it all together! (The 'ENTER's' actually create a 'NEWLINE' on prompt
-PROMPT="$MSI_CURRENT_TIME_$MSI_CURRENT_RUBY_$MSI_CURRENT_MACH_$MSI_CURRENT_USER_$MSI_PROMPT_CHAR_ $MSI_CURRENT_LOCA_
+PROMPT="
+$MSI_CURRENT_TIME_$MSI_CURRENT_RUBY_$MSI_CURRENT_MACH_$MSI_CURRENT_USER_$MSI_PROMPT_CHAR_ $MSI_CURRENT_LOCA_
 %{$FG[$num2]%} └──╼>> "
 
 ############### End of personalized theme ###########################

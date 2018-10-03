@@ -6,21 +6,29 @@ function iso_gen(){
 	echo
 	read -p "What is the path of the folder you want to turn into an iso image?: " ISO_NM
 	sleep 1
+	ISO_NM_OR=$ISO_NM
+	echo
+	read -p "Type a custome name to add to the beginning of the file or leave blank. " CST_NM
+	CST_NM="$CST_NM"$(basename $ISO_NM)
+	FRST_NM=$(echo $ISO_NM | sed "s:$(basename $ISO_NM)::g")
+	TTL_NM=$(echo $FRST_NM$CST_NM)
+	echo $TTL_NM
 
 	echo
-	read -p "The name of the .iso file is to be ${ILCOLOR4}\"$ISO_NM.iso\"${ILRESTORE}. Is that correct? " CRRCT
+	read -p "The name of the .iso file is to be ${ILCOLOR4}\"$TTL_NM.iso\"${ILRESTORE}. Is that correct? " CRRCT
 	sleep 1
-	ISO_NM="$ISO_NM.iso"
+
+	ISO_NM="$TTL_NM.iso"
 	if [[ $CRRCT =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		ISO_PTH=$(echo $ISO_NM | sed 's:.iso::g')
 
 		echo
-		read -p "Running ${ILCOLOR4}\"genisoimage -o $ISO_NM -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V -D $ISO_PTH\"${ILRESTORE}
+		read -p "Running ${ILCOLOR4}\"genisoimage -o $ISO_NM -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V -D $ISO_NM_OR\"${ILRESTORE}
 Ready to run?: " RDY
 		sleep 1
 		if [[ $RDY =~ ^([yY][eE][sS]|[yY])$ ]]; then
 			sleep 1
-			if genisoimage -o $ISO_NM -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V -D $ISO_PTH; then
+			if genisoimage -o $ISO_NM -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V -D $ISO_NM_OR; then
 				echo
 				echo "Iso image ${ILCOLOR4}\"$ISO_NM\"${ILRESTORE} created."
 				sleep 1

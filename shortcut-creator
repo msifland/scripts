@@ -1,0 +1,50 @@
+#!/bin/bash
+# This script create a launcher shortcut.
+echo
+echo "Creating a desktop lanucher file. This is a simple application.desktop lanucher creator."
+echo
+sleep 1
+
+echo
+read -p "What is the name of your program/file? " PRG
+sleep 1
+
+echo
+read -p "What is the executable file(ex. path/to/file)? If this is an internt shortcut the executable file should be /usr/bin/chromium. " EXC
+sleep 1
+
+echo
+read -p "Is this a URL internet file? If yes, type URL address, if not, leave blank. " URL_FL
+if [[ ! "$URL_FL" = "" ]]; then
+	EXC="$EXC $URL_FL"
+fi
+sleep 1
+
+echo
+read -p "Should this program open in terminal? " YN_TRM
+if [[ "$YN_TRM" = "Y" ]]; then
+	YN_TRM="true"
+else
+	YN_TRM="false"
+fi
+sleep 1
+
+touch $HOME/tmp/$PRG.desktop
+LINK=$HOME/tmp/$PRG.desktop
+echo
+echo "Creating your launcher shortcut $LINK and making it executable."
+sleep 2
+
+# Create entries to file to make it executable.
+	echo "[Desktop Entry]" > $LINK
+	echo "Version=1.0" >> $LINK
+	echo "Exec=$EXC" >> $LINK
+	echo "Terminal=$YN_TRM" >> $LINK
+	echo "Encoding=UTF-8" >> $LINK
+	echo "Name=$PRG" >> $LINK
+	echo "Type=Application" >> $LINK
+	echo "URL=$URL_FL" >> $LINK
+	echo "Icon=/home/msifland/My-Linux.ico" >> $LINK
+	echo "StartupNotify=true" >> $LINK
+
+	chmod +x $LINK
