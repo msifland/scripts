@@ -1,26 +1,72 @@
-Date & Time: 10-02-18 -- 07:30:03 AM
+Date & Time: 10-04-18 -- 10:40:14 AM
 
 Updating Oh My Zsh
-Updating e107b85e..8bc9f23b
+Updating 8bc9f23b..6f24f4a1
 Fast-forward
- plugins/brew/README.md                           | 19 ++++++++
- plugins/chruby/chruby.plugin.zsh                 |  8 +++-
- plugins/django/README.md                         | 56 +++++++++++++++++++++++
- plugins/fedora/README.md                         |  1 +
- plugins/git-auto-fetch/README.md                 | 31 +++++++++++++
- plugins/git-auto-fetch/git-auto-fetch.plugin.zsh | 27 +++++++++++
- plugins/iwhois/README.md                         | 24 ++++++++++
- plugins/iwhois/iwhois.plugin.zsh                 |  3 --
- plugins/jenv/README.md                           | 18 +++++++-
- plugins/sudo/README.md                           | 57 ++++++++++++++++++++++++
- 10 files changed, 238 insertions(+), 6 deletions(-)
- create mode 100644 plugins/brew/README.md
- create mode 100644 plugins/django/README.md
- create mode 100644 plugins/fedora/README.md
- create mode 100644 plugins/git-auto-fetch/README.md
- create mode 100644 plugins/git-auto-fetch/git-auto-fetch.plugin.zsh
- create mode 100644 plugins/iwhois/README.md
- create mode 100644 plugins/sudo/README.md
+ plugins/bower/README.md              | 18 +++++++
+ plugins/chucknorris/README.md        | 20 ++++++++
+ plugins/dircycle/README.md           | 79 ++++++++++++++++++++++++++++++
+ plugins/dircycle/dircycle.plugin.zsh | 21 +++++---
+ plugins/emoji-clock/README.md        | 14 ++++++
+ plugins/encode64/README.md           | 69 ++++++++++++++++++++++++++
+ plugins/go/README.md                 |  1 +
+ plugins/golang/README.md             | 29 +++++++++++
+ plugins/gradle/README.md             | 23 +++++++++
+ plugins/grunt/README.md              | 37 ++++++++++++++
+ plugins/gulp/README.md               |  8 +++
+ plugins/jump/jump.plugin.zsh         |  2 +-
+ plugins/kubectl/kubectl.plugin.zsh   | 28 ++++++++++-
+ plugins/laravel/README.md            | 19 ++++++++
+ plugins/laravel4/README.md           | 18 +++++++
+ plugins/laravel5/README.md           | 18 +++++++
+ plugins/macports/README.md           | 21 ++++++++
+ plugins/macports/macports.plugin.zsh |  4 +-
+ plugins/mix/README.md                | 19 ++++++++
+ plugins/mix/_mix                     |  8 +++
+ plugins/node/README.md               | 16 ++++++
+ plugins/nvm/README.md                |  9 ++++
+ plugins/postgres/README.md           | 22 +++++++++
+ plugins/python/README.md             | 16 ++++++
+ plugins/rsync/README.md              | 16 ++++++
+ plugins/ruby/README.md               | 20 ++++++++
+ plugins/suse/README.md               | 90 ++++++++++++++++++++++++++++++++++
+ plugins/suse/suse.plugin.zsh         | 94 ++++++++++++++++++------------------
+ plugins/tmuxinator/README.md         | 19 ++++++++
+ plugins/ubuntu/README.md             | 52 ++++++++++++++++++++
+ plugins/ubuntu/readme.md             | 21 --------
+ plugins/vagrant/README.md            |  9 ++++
+ plugins/vagrant/_vagrant             |  2 +-
+ plugins/vscode/README.md             |  4 +-
+ plugins/vscode/vscode.plugin.zsh     |  4 +-
+ plugins/web-search/README.md         | 50 +++++++++++++++++++
+ 36 files changed, 813 insertions(+), 87 deletions(-)
+ create mode 100644 plugins/bower/README.md
+ create mode 100644 plugins/chucknorris/README.md
+ create mode 100644 plugins/dircycle/README.md
+ create mode 100644 plugins/emoji-clock/README.md
+ create mode 100644 plugins/encode64/README.md
+ create mode 100644 plugins/go/README.md
+ create mode 100644 plugins/golang/README.md
+ create mode 100644 plugins/gradle/README.md
+ create mode 100644 plugins/grunt/README.md
+ create mode 100644 plugins/gulp/README.md
+ create mode 100644 plugins/laravel/README.md
+ create mode 100644 plugins/laravel4/README.md
+ create mode 100644 plugins/laravel5/README.md
+ create mode 100644 plugins/macports/README.md
+ create mode 100644 plugins/mix/README.md
+ create mode 100644 plugins/node/README.md
+ create mode 100644 plugins/nvm/README.md
+ create mode 100644 plugins/postgres/README.md
+ create mode 100644 plugins/python/README.md
+ create mode 100644 plugins/rsync/README.md
+ create mode 100644 plugins/ruby/README.md
+ create mode 100644 plugins/suse/README.md
+ create mode 100644 plugins/tmuxinator/README.md
+ create mode 100644 plugins/ubuntu/README.md
+ delete mode 100644 plugins/ubuntu/readme.md
+ create mode 100644 plugins/vagrant/README.md
+ create mode 100644 plugins/web-search/README.md
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  

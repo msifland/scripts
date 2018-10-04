@@ -54,6 +54,9 @@ fi
 
 # Move to working directory
 mkdir "$WORK_DIR"
+if [[ ! -d $STOR_DIR ]]; then
+	mkdir $STOR_DIR
+fi
 cd "$WORK_DIR"
 
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
