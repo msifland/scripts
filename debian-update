@@ -98,7 +98,7 @@ sleep 1
 
 echo
 echo "${ILCOLOR1}Backing up cron jobs. . .${ILRESTORE}"
-crontab -l > $HOME/scripts/backups/cron-jobs.txt
+crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
 sleep 1
 
 echo
