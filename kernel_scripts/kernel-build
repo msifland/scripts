@@ -24,6 +24,9 @@ if [[ -f *.tar.xz ]]; then
 	rm -rf *.tar.xz
 fi
 mkdir "$WORK_DIR"
+if [[ ! -d $STOR_DIR ]]; then
+	mkdir $STOR_DIR
+fi
 cd $WORK_DIR
 
 rm -fr $WORK_DIR/*.deb
@@ -115,7 +118,15 @@ if test $FOR_INST; then
 		if [[ "$LOC_VER" != "" ]]; then
 			sed -i "s:CONFIG_LOCALVERSION=\"\":CONFIG_LOCALVERSION=\"$LOC_VER\":g" .config
 		fi
+
+		echo
+		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
+		if grep -w "^CONFIG_SYSTEM_TRUSTED_KEYS=" .config; then
+			sed -i 's:CONFIG_SYSTEM_TRUSTED_KEYS=:#CONFIG_SYSTEM_TRUSTED_KEYS=:g' .config
+		fi
+
 		# Build.
+		make olddefconfig
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		# Move up on directory and remove not needed deb files and install.
 		cd ..
@@ -124,6 +135,7 @@ if test $FOR_INST; then
 		echo 'spike' | sudo -S dpkg -i *.deb
 		sudo update-initramfs -c -t -k "$FOR_INST$CONF_VER$LOC_VER"
 		sudo update-grub
+
 		# Build perf package
 		sleep 1
 		echo
