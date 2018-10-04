@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script create a launcher shortcut.
 echo
-echo "Creating a desktop lanucher file. This is a simple application.desktop lanucher creator."
+echo "${ILCOLOR3}Creating a desktop lanucher file. This is a simple application.desktop lanucher creator.${ILRESTORE}"
 echo
 sleep 1
 
@@ -32,7 +32,7 @@ sleep 1
 touch $HOME/tmp/$PRG.desktop
 LINK=$HOME/tmp/$PRG.desktop
 echo
-echo "Creating your launcher shortcut $LINK and making it executable."
+echo "${ILCOLOR3}Creating your launcher shortcut $LINK and making it executable.${ILRESTORE}"
 sleep 2
 
 # Create entries to file to make it executable.
@@ -44,7 +44,30 @@ sleep 2
 	echo "Name=$PRG" >> $LINK
 	echo "Type=Application" >> $LINK
 	echo "URL=$URL_FL" >> $LINK
-	echo "Icon=/home/msifland/My-Linux.ico" >> $LINK
+	echo "Icon=/home/msifland/scripts/backups/My-Linux.ico" >> $LINK
 	echo "StartupNotify=true" >> $LINK
 
 	chmod +x $LINK
+
+echo
+read -p "Shortcut has been created, would like like to add it to /usr/share/applications? " YN_APPS
+if [[ "$YN_APPS" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	sleep 1
+	echo
+	echo "${ILCOLOR3}Adding $PRG to /usr/share/applications. . ."
+	if sudo cp $LINK /usr/share/applications/; then
+		sleep 1
+		echo
+		echo "Done."
+		sleep 1
+	else
+		echo
+		echo "Error detected, copy manually."
+		sleep 1
+	fi
+else
+	sleep 1
+	echo
+	echo "${ILCOLOR3}Ok, you can alway copy later.${ILRESTORE}"
+	sleep 1
+fi

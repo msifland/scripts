@@ -18,6 +18,9 @@ else
 fi
 
 echo
+if [[ ! -d /home/msifland/tmp ]]: then
+	mkdir /home/msifland/tmp
+fi
 cp /etc/sudoers /home/msifland/tmp/
 
 # This section looks for Defaults timestamp_timeout and removes or add a time to it.

@@ -3,45 +3,64 @@
 # Put your code below this line.
 echo
 PW='spike'
-echo "${ILCOLOR1}Updating repo sources. . ."
+echo "${ILCOLOR1}Updating repo sources. . .${ILRESTORE}"
+sleep 1
+echo $PW | sudo -S cp -rf $HOME/pkg_bkups/apt/sources.list /etc/apt
+echo $PW | sudo -S apt update
+echo
+echo "${ILCOLOR1}Looking for apt-transport-https. . .${ILRESTORE}"
+sleep 1
+if dpkg --get-selections | awk '{print $1}' | grep -w "apt-transport-https"; then
+	echo "${ILCOLOR1}apt-transport-https found. Transfering remaining apt files.${ILRESTORE}"
+	sleep 1
+else
+	echo "${ILCOLOR1}Installing apt-transport-https and then transfering remaining apt files.${ILRESTORE}"
+	sleep 1
+	echo $PW | sudo -S sudo apt install -y apt-transport-https
+fi
 echo $PW | sudo -S cp -rf $HOME/pkg_bkups/apt/* /etc/apt/
 
 echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
-sudo apt update
-sudo apt upgrade
-
+sleep 1
+echo $PW | sudo -S sudo apt -y update
+echo $PW | sudo -S sudo apt -y upgrade
+echo $PW | sudo -S sudo apt -y full-upgrade
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
-sudo apt dist-upgrade
+sleep 1
+echo $PW | sudo -S sudo apt -y dist-upgrade
 
 echo
 echo "${ILCOLOR1}Checking for old apps. . .${ILRESTORE}"
-sudo apt autoremove
+sleep 1
+echo $PW | sudo -S sudo apt -y autoremove
 
 echo
 echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
-sudo apt clean
-sudo apt autoclean
-sudo apt purge
+sleep 1
+echo $PW | sudo -S sudo apt -y clean
+echo $PW | sudo -S sudo apt -y autoclean
+echo $PW | sudo -S sudo apt -y purge
 
 
 # This should be in a different script for restoring the list.
 echo
 echo "Restoring system."
+sleep 1
 if dpkg --get-selections | awk '{print $1}' | grep -w "aptitude"; then
 	echo
 	echo "aptitude found. . . "
-	sudo aptitude -f -y install $(cat $HOME/pkg_bkups/pkgs.txt)
+	echo $PW | sudo -S aptitude -f -y install $(cat $HOME/pkg_bkups/pkgs.txt)
 else
 	echo
 	echo "Missing aptitude, installing now. . ."
 	sleep 1
 	echo "sudo apt -y install aptitude"
-	sudo apt -y install aptitude
-	sudo aptitude -f -y install $(cat $HOME/pkg_bkups/pkgs.txt)
+	echo $PW | sudo -S apt -y install aptitude
+	echo $PW | sudo -S aptitude -f -y install $(cat $HOME/pkg_bkups/pkgs.txt)
 fi
 
 echo
 echo "Don't forget to restore misc. files from $HOME/scripts/backups. . ."
-sleep 5
+sleep 3

@@ -8,12 +8,12 @@ PSWD="spike"
 # What Files or Folders to Take Backup of.
 BACKUP_FILES="
 /usr/share/mate*
-/var/spool/cron
 /etc/udev/rules.d/51-android.rules
 $HOME/bin
 $HOME/Brother_Printer
 $HOME/Documents
 $HOME/Dropbox
+$HOME/firmware_debian_non-free
 $HOME/GrubThemes
 $HOME/maps
 $HOME/Modules&Apps
