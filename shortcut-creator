@@ -44,7 +44,7 @@ sleep 2
 	echo "Name=$PRG" >> $LINK
 	echo "Type=Application" >> $LINK
 	echo "URL=$URL_FL" >> $LINK
-	echo "Icon=/home/msifland/scripts/backups/My-Linux.ico" >> $LINK
+	echo "Icon=/home/msifland/pkg_bkups/backups/My-Linux.ico" >> $LINK
 	echo "StartupNotify=true" >> $LINK
 
 	chmod +x $LINK
