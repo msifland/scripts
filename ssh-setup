@@ -1,0 +1,103 @@
+#!/bin/bash
+# This is a script to automate ssh connections setup on new install.
+echo
+echo "Setting up ssh server on your pc."
+echo
+sleep 1
+
+SSH_FILE="/etc/ssh/sshd_config"
+
+echo
+echo "Checking if openssh is installed. . ."
+sleep 1
+if ! dpkg --get-selections | awk '{print $1}' | grep -wq "openssh"; then
+	echo 'spike' | sudo -S apt install openssh
+else
+	echo "openssh is installed."
+fi
+sleep 1
+
+echo
+echo "Checking if Port 22 in $SSH_FILE is uncommented. . ."
+sleep 1
+if grep "^#Port 22" $SSH_FILE; then
+	sudo sed -i 's:#Port 22:Port 22:g' $SSH_FILE
+else
+	echo "Already uncommented."
+fi
+sleep 1
+
+echo
+echo "Checking if 'PermitRootLogin prohibit-password' is uncommented. . ."
+sleep 1
+if grep "^#PermitRootLogin prohibit-password" $SSH_FILE; then
+	sudo sed -i 's:#PermitRootLogin prohibit-password:PermitRootLogin prohibit-password:g' $SSH_FILE
+else
+	echo "Already uncommented."
+fi
+sleep 1
+
+echo
+echo "Checking if 'X11Forwarding no' is set to 'yes'. . ."
+sleep 1
+if grep "^#X11Forwarding no" $SSH_FILE; then
+	sudo sed -i 's:#X11Forwarding no:X11Forwarding yes:g' $SSH_FILE
+else
+	echo "Already set."
+fi
+sleep 1
+
+echo
+echo "Checking if 'AllowUsers msifland' is added. . ."
+sleep 1
+if ! grep "^AllowUsers $USER" $SSH_FILE; then
+	echo "AllowUsers $USER" | sudo tee -a $SSH_FILE
+else
+	echo "Already added."
+fi
+sleep 1
+
+function enter_port(){
+echo
+read -p "The most secure ports are below 1024. Enter a port number to open(suggested 882): " PRT
+sleep 1
+echo
+echo "Checking if Port $PRT in $SSH_FILE is uncommented. . ."
+if grep -wq "^Port $PRT" $SSH_FILE; then
+	read -p "Port $PRT is already in file, would you like to enter a different one? " DIFF_PRT
+	if [[ $DIFF_PRT =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		sleep 1
+		enter_port
+	else
+		echo "Moving on. . ."
+	fi
+else
+	echo "Adding Port $PRT to $SSH_FILE"
+	echo "Port $PRT" | sudo tee -a $SSH_FILE
+fi
+sleep 1
+}
+enter_port
+
+echo
+echo "Running commands to restart ssh. . ."
+sleep 1
+echo 'spike' | sudo -S sudo systemctl stop sshd
+sudo service ssh restart
+sleep 1
+
+echo
+echo "Be sure to set your connections to static ip. Opening instruction and connections settings. . ."
+sleep 3
+subl /home/msifland/Documents/Linux_Setup/ip_static_settings
+nm-connection-editor
+
+echo
+echo "Also set up your firewall with rules for your new port to ssh. . ."
+sleep 3
+gufw
+
+echo
+echo "Also opening up a web page for router setting, set up port forwarding in your router to the Port $PRT."
+sleep 3
+detach /usr/bin/chromium
