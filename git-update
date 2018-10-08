@@ -6,6 +6,22 @@ echo "${ILCOLOR2}We will now update your personal git directories consisting of 
 sleep 1
 
 echo
+echo "${ILCOLOR1}Updating firmware_debian_non-free. . .${ILRESTORE}"
+cd ~/firmware_debian_non-free
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating rom_scripts. . .${ILRESTORE}"
+cd ~/rom_scripts
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+echo
 echo "${ILCOLOR1}Updating Documents. . .${ILRESTORE}"
 cd ~/Documents
 git add --all
@@ -21,25 +37,10 @@ git commit -m 'auto commit'
 git push -u origin master
 sleep 1
 
-echo
-echo "${ILCOLOR1}Updating rom_scripts. . .${ILRESTORE}"
-cd ~/rom_scripts
-git add --all
-git commit -m 'auto commit'
-git push -u origin master
-sleep 1
 
 echo
 echo "${ILCOLOR1}Updating pkg_bkups. . .${ILRESTORE}"
 cd ~/pkg_bkups
-git add --all
-git commit -m 'auto commit'
-git push -u origin master
-sleep 1
-
-echo
-echo "${ILCOLOR1}Updating firmware_debian_non-free. . .${ILRESTORE}"
-cd ~/firmware_debian_non-free
 git add --all
 git commit -m 'auto commit'
 git push -u origin master
