@@ -10,7 +10,7 @@ tm_wh_start=$(date +"%s")
 echo -e ${ILRESTORE}
 sleep 1
 echo
-echo "${ILCOLOR1}Updating system. . .${ILRESTORE}"
+echo "${ILCOLOR1}Updating system your $(uname --all) system. . .${ILRESTORE}"
 sleep 1
 
 # Password to run as sudo.
@@ -22,10 +22,10 @@ echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 echo $PW | sudo -S echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt full-upgrade -y
 
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+sudo apt full-upgrade -y
 sudo apt dist-upgrade -y
 
 echo
