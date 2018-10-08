@@ -10,7 +10,7 @@ tm_wh_start=$(date +"%s")
 echo -e ${ILRESTORE}
 sleep 1
 echo
-echo "${ILCOLOR1}Updating system your $(uname --all) system. . .${ILRESTORE}"
+echo "${ILCOLOR1}Updating your $(uname --all) system. . .${ILRESTORE}"
 sleep 1
 
 # Password to run as sudo.
