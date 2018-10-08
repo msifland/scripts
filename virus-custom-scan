@@ -1,0 +1,88 @@
+#!/bin/bash
+# This script is for scanning a certain selected partition for viruses.
+
+# Set variables and create directories.
+INFS_DIR=/home/msifland/infections
+PSWD="spike"
+if [[ ! -d $HOME/infections ]]; then
+		mkdir $HOME/infections
+fi
+
+# Description
+echo
+echo "${ILCOLOR2}We are going to scan a selected partition or folder for viruses.${ILRESTORE}"
+echo
+sleep 1
+
+# Showing available partitions.
+echo
+echo "${ILCOLOR2}Here are the available partitions:${ILRESTORE} "
+sleep 1
+lsblk
+echo
+sleep 1
+
+# Function to scan, listed first so we can call it later.
+function scan_it(){
+	# Ask if you would like to copy or move found infections to the infections folder. Then run scan.
+	echo
+	WHR="c"
+	read -p "Would you like to move any found viruses to a folder, or would you like to copy them to a folder for analasys and manual removal((C)opy/(m)ove)?: " WHR
+	sleep 1
+	echo
+	echo "${ILCOLOR2}Putting a log in $HOME/infections/custom-scan.txt${ILRESTORE}"
+	sleep 1
+	if [[ $WHR =~ ^([mM][oO][vV][eE]|[mM])$ ]]; then
+		echo "${ILCOLOR2}MOVING infected files to $INFS_DIR. . .${ILRESTORE}"
+		sleep 1
+		echo "${ILCOLOR2}sudo clamscan -r -i $PTH --move=$HOME/infections${ILRESTORE}"
+		sleep 2
+		echo $PSWD | sudo -S freshclam
+		sudo clamscan -r -i $PTH --move=$HOME/infections
+	else
+		echo "${ILCOLOR2}COPYING infected files to $INFS_DIR${ILRESTORE}"
+		sleep 1
+		echo "${ILCOLOR2}sudo clamscan -r -i $PTH --copy=$HOME/infections${ILRESTORE}"
+		sleep 2
+		echo $PSWD | sudo -S freshclam
+		sudo clamscan -r -i $PTH --copy=$HOME/infections
+	fi
+}
+
+# Function to setup scan.
+# This is called first to run.
+function selected_path(){
+	# Ask name of directory or partition to scan.
+	echo
+	read -p "Scan location: You can either type in one of the partitions above for a full scan of that partition(/dev/sda2), or you can type in a custom location full path(/home/msifland/scripts): " PTH
+
+	# Error handling if path or dev block exists. If exists call scan function, if not, then start over with this function.
+	if [[ -d $PTH ]]; then
+		echo
+		sleep 1
+		echo "${ILCOLOR2}Ok scanning $PTH. . .${ILRESTORE}"
+		sleep 1
+		scan_it
+	else
+		echo
+		sleep 1
+		echo "${ILCOLOR2}Path $PTH does not exist, checking /proc/mounts(mount points). . .${ILRESTORE}"
+		sleep 1
+		if df -h | awk '{print $1}' | grep -w "$PTH"; then
+			echo
+			sleep 1
+			echo "${ILCOLOR2}Ok scanning $PTH. . .${ILRESTORE}"
+			sleep 1
+			scan_it
+		else
+			echo
+			sleep 1
+			echo "${ILCOLOR2}Mount point $PTH does not exist, try again. . .${ILRESTORE}"
+			sleep 1
+			selected_path
+		fi
+	fi
+
+}
+# Call to start script at selected_path function, which will then call scan_it function.
+selected_path | tee $HOME/infections/custom-scan.txt
