@@ -14,14 +14,6 @@ git push -u origin master
 sleep 1
 
 echo
-echo "${ILCOLOR1}Updating rom_scripts. . .${ILRESTORE}"
-cd ~/rom_scripts
-git add --all
-git commit -m 'auto commit'
-git push -u origin master
-sleep 1
-
-echo
 echo "${ILCOLOR1}Updating Documents. . .${ILRESTORE}"
 cd ~/Documents
 git add --all

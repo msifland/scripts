@@ -7,16 +7,7 @@ color2="\033[4;38;5;$((RANDOM % 255+1))m"
 color3="\033[0;38;5;$((RANDOM % 255+1))m"
 restore='\033[0m'
 
-# First part showing rom-scripts
-echo -e "${color2}"
-echo "rom script files"
-echo "${ILRESTORE}${ILCOLOR1}/home/msifland/rom_scripts"
-echo -e "${color}"
-find $HOME/rom_scripts -maxdepth 1 -type f | sed 's#/home/msifland/rom_scripts/##' | sed 's#README.md##' | sed 's#restart_log.txt##' | sed '/^$/d' | sort |    pv -qL 2000
-echo
-echo
-
-# Second part showing aliases
+# Showing aliases
 echo -e "${color2}"
 echo "my-aliases"
 echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.zshrc"
@@ -24,7 +15,7 @@ echo -e "${color}"
 grep -i 'alias ' $HOME/.zshrc | sed "s/alias //g" | sed "s/my-aliases//g" | sed "s/\\t//g" | sort |    pv -qL 3000
 echo
 
-# Third part of my functions actually showing the functions listed in the .zshrc file.
+# This part of my functions actually showing the functions listed in the .zshrc file.
 echo -e "${color2}"
 echo "my-functions"
 echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.zshrc"
@@ -33,7 +24,7 @@ echo -e "${color}"
 grep -i 'function ' $HOME/.zshrc | sed 's#function goto(){##g' | sed "s/function //g" | sed "s/(){//g" | sed "s/my-functions//g" | sort | sed '/^\s*$/d' |    pv -qL 3000
 echo
 
-# Fourth part showing scripts and rom_scripts
+# Showing scripts and rom_scripts
 echo -e "${color2}"
 echo "script files"
 echo "${ILRESTORE}${ILCOLOR1}/home/msifland/scripts"
