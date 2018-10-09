@@ -31,7 +31,7 @@ fi
 echo -e "${ILRESTORE}"
 # Formatting of the grep to add to the file
 n=-1
-grep "menuentry " /boot/grub/grub.cfg | gawk -F '\\ --class' '{print $1}' | sed "s:menuentry '::g" | sed "s:'::g" | sed 's:{::g' | gawk -F '\\menuentry "Memory test' '{print $1}' | sed 's:\t::g' | sed 's:menuentry ::g' | sed 's:"::g' | sed '/^$/d' | while read line; do
+grep "menuentry " /boot/grub/grub.cfg | awk -F '\\ --class' '{print $1}' | sed "s:menuentry '::g" | sed "s:'::g" | sed 's:{::g' | awk -F '\\menuentry "Memory test' '{print $1}' | sed 's:\t::g' | sed 's:menuentry ::g' | sed 's:"::g' | sed '/^$/d' | while read line; do
 	let n=$n+1
 	echo "$n. $line" >> "$menu_file"
 done

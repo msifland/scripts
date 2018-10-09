@@ -6,14 +6,14 @@
 if [[ "$EUID" -ne "0" ]]; then
 	echo
 	echo "${ILCOLOR3}This scripts has to be run as superuser."
-	echo "When this script exits, it will prompt for password for superuser. Enter password, and scripts will re-run as superuser. It may ask for password more than once.${ILRESTORE}"
+	echo "You will be prompted for password for superuser. Enter password, and scripts will re-run as superuser. It may ask for password more than once.${ILRESTORE}"
 	sleep 1
 	echo "su"
-	su - "root" -c "/home/msifland/scripts/sudoers-custom && exit" && su - "msifland" -c exit
+	su - "root" -c "/home/msifland/scripts/sudoers-custom && exit" && echo && echo "Enter root password to exit" && su - "msifland" -c exit
 	exit
 else
 	echo
-	echo "Ok good, proceeding now. . ."
+	echo "Ok proceeding as root. . ."
 	sleep 1
 fi
 
@@ -25,6 +25,9 @@ cp /etc/sudoers /home/msifland/tmp/
 
 # This section looks for Defaults timestamp_timeout and removes or add a time to it.
 SUDOERS="/etc/sudoers"
+
+# Removes all empty lines from end of file.
+echo "$(awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS)" > $SUDOERS
 
 # Explainging what we are doing.
 echo "${ILCOLOR3}Making custom sudoers file. . .${ILRESTORE}"
@@ -105,6 +108,7 @@ else
 	echo
 	echo 'Setting /home/msifland environment now. . .'
 	sleep 1
+	echo '' >> $SUDOERS
 	echo -e "Defaults	env_keep+=\"HOME\"" >> $SUDOERS
 fi
 
@@ -119,13 +123,8 @@ else
 	sleep 1
 fi
 
-# Some systems do not come with 'gawk' installed, this checks to see if it's installed, if not, install it.
-# Removes all empty lines from end of file.
-if dpkg --get-selections | awk '{print $1}' | grep -wq "gawk"; then
-    gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS
-else
-    sudo apt -y install gawk
-    gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS
-fi
-sleep 1
+echo
+echo "Running visudo for review and manual editing. . ."
+sleep 2
+visudo
 exit

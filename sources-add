@@ -1,9 +1,26 @@
 #!/bin/bash
 # This scripts adds sources to /etc/apt/sources.list
 
-# Used function for loop purposes.
+# Checking for root and re-run under root if not.
+if [[ "$EUID" -ne "0" ]]; then
+	echo
+	echo "${ILCOLOR3}This scripts has to be run as superuser."
+	echo "You will be prompted for password for superuser. Enter password, and scripts will re-run as superuser. It may ask for password more than once.${ILRESTORE}"
+	sleep 1
+	echo "su"
+	su - "root" -c "/home/msifland/scripts/sources-add && exit" && echo && echo "Enter root password to exit" && su - "msifland" -c exit
+	exit
+else
+	echo
+	echo "Ok proceeding as root. . ."
+	sleep 1
+fi
+
+# Used function for loop recall.
 function add_sources(){
-	
+	# Removing all white space from end of file.
+	echo "$(awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' /etc/apt/sources.list)" > /etc/apt/sources.list
+
 	# Asking for source to add and double checking that it's correct. If it's not, then loop to beginning. Also option to exit.
 	echo
 	read -p "Adding source to /etc/apt/sources.list. Enter source to add and make sure it starts with \"deb \", if not, add \"deb <source>\" : " srcs
@@ -48,15 +65,6 @@ function add_sources(){
 
 # Main function call.
 add_sources
-
-# On some systems 'gawk' is not installed automatically. This checks to see if it's installed, if not, then install it.
-# Removing all white space from end of file.
-if dpkg --get-selections | awk '{print $1}' | grep -wq "gawk"; then
-    sudo gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' /etc/apt/sources.list
-else
-    sudo apt -y install gawk
-    sudo gawk -i inplace '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' /etc/apt/sources.list
-fi
 
 # Opening file for double checking and manual editing.
 echo
