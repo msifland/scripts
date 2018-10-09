@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo "spike" | sudo -S $HOME/livecd/build.sh -v > $HOME/MEGAsync/ArchIso/archiso_log.txt
