@@ -39,90 +39,114 @@ done
 echo "${ILCOLOR3}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
 sleep 1
 
-# Ask to select line numbers for removal separated by commas. Then remove those commas and grep them to individual lines.
-echo
-read -p "Type the line numbers of the kerenels you want to uninstall, separted by a comma.(ex. 2,4,1) Or type 0 to exit: " RMV
-if [[ "$RMV" = 0 ]]; then
+# Create funtion to select kernels and if incorrect retry.
+function slct_krns(){
+	# Ask to select line numbers for removal separated by commas. Then remove those commas and grep them to individual lines.
 	echo
-	echo "Ok, exiting now."
-	rm -f $KERN_FILE
-	sleep 1
-	exit
-fi
-
-# Format for removal, removing commas and listing individually
-FOR_REM=$(echo $RMV | sed 's:,::g' | grep -o .)
-sleep 1
-
-# Loop through the line numers from above grepping the created file for lines beginning with those numbers. Error handling here for line numbers that don't exist.
-echo
-echo "${ILCOLOR3}Kernels set to remove: ${ILRESTORE}"
-for n in $FOR_REM; do
-	if grep -q "^$n" $KERN_FILE; then
-		echo $KERNS_REM		
-	else
-		# These are just examples of using a newline charater in and echo.
-		echo -e "!!!****************!!!\nError detected! No number $n. "$'\nRe-run script.\n\n'
+	read -p "Type the line numbers of the kerenels you want to uninstall, separted by a comma.(ex. 2,4,1) Or type 0 to exit: " RMV
+	if [[ "$RMV" = 0 ]]; then
+		echo
+		echo "Ok, exiting now."
+		rm -f $KERN_FILE
+		sleep 1
 		exit
 	fi
-done
+
+	# Format for removal, removing commas and listing individually
+	FOR_REM=$(echo $RMV | tr , "\n" | grep -o .)
+	sleep 1
+
+	# Loop through the line numers from above grepping the created file for lines beginning with those numbers. Error handling here for line numbers that don't exist.
+	echo
+	echo "${ILCOLOR3}Kernels set to remove: ${ILRESTORE}"
+	for n in $FOR_REM; do
+		if grep -q "^$n" $KERN_FILE; then
+			echo $(grep "^$n" $KERN_FILE)	
+		else
+			# These are just examples of using a newline charater in and echo.
+			echo -e "!!!****************!!!\nError detected! No number $n. "$'\nRe-run script.\n\n'
+			exit
+		fi
+	done
+	# Ask if correct.
+	echo
+	RMV_SET="n"
+	read -p "Is this correct[y/N]? " RMV_SET
+	sleep 1
+	if [[ $RMV_SET =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		echo
+		echo "${ILCOLOR3}Ok removing selections. . ."
+	else
+		echo
+		echo "${ILCOLOR3}Ok, retry. . ."
+		sleep 1
+		slct_krns
+	fi
+}
+# Call function.
+slct_krns
 
 for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
 		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
-		echo
-		echo $KERNS_REM
 		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')	
 		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-unsigned::g' | sed 's:-generic::g') # REvmoving 'generic' here because of the 'all' headers installed.
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
 	fi
 
-
-# If all is good, then remove.
-echo
-# Image
-REM_HDRS1=$(echo $REM1)
-k_file=$(echo $REM_HDRS1 | sed 's:linux-image:vmlinuz:' | sed 's:unsigned-::g')
-if [[ -f /boot/"$k_file" ]]; then
-	echo "y" | apt purge $REM_HDRS1
-else
-	echo "${ILCOLOR3}No kernel image found. $k_file${ILRESTORE}"
-fi
-
-# Headers all and specific
-REM_HDRS2=$(echo $REM2)
-if ls /usr/src/$REM_HDRS2 > /dev/null 2>&1; then
-	echo "y" | apt purge $REM_HDRS2
-else
-	echo "${ILCOLOR3}No headers files found. $REM_HDRS2${ILRESTORE}"
-fi
-
-# Modules, usually uninstalls with first(image) uninstall. Sometimes it doesn't so added some error handling here with exit status.
-REM_HDRS3=$(echo $REM3)
-m_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
-if ls /lib/modules/$m_file > /dev/null 2>&1; then
-	sleep 1
-	if ! apt purge -y $REM_HDRS3; then
+	# If all is good, then remove.
+	echo
+	# Image
+	REM_HDRS1=$(echo $REM1)
+	k_file=$(echo $REM_HDRS1 | sed 's:linux-image:vmlinuz:' | sed 's:unsigned-::g')
+	if [[ -f /boot/"$k_file" ]]; then
+		echo "y" | apt purge $REM_HDRS1
+	else
 		echo
-		echo "${ILCOLOR3}Errors while trying to remove. Trying to remove manually. . .${ILRESTORE}"
+		echo "${ILCOLOR3}No kernel image found. $k_file${ILRESTORE}"
 		sleep 1
-		echo "sudo rm -rf /lib/modules/$m_file"
-		sudo rm -rf /lib/modules/"$m_file"
-		if [ $? -ne 0 ]; then
-			echo
-			echo "Not removed, check path and remove manyally. . ."
-			sleep 1
-		else
-			echo
-			echo "Succeeded removal."
-			sleep 1
-		fi
 	fi
-else
-	echo "${ILCOLOR3}No modules files found. $m_file${ILRESTORE}"
-fi
+
+	# Headers all and specific
+	REM_HDRS2=$(echo $REM2)
+	if ls /usr/src/$REM_HDRS2 > /dev/null 2>&1; then
+		echo "y" | apt purge $REM_HDRS2
+	else
+		echo
+		echo "${ILCOLOR3}No headers files found. $REM_HDRS2${ILRESTORE}"
+		sleep 1
+	fi
+
+	# Modules, usually uninstalls with first(image) uninstall. Sometimes it doesn't so added some error handling here with exit status.
+	REM_HDRS3=$(echo $REM3)
+	m_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
+	if ls /lib/modules/$m_file > /dev/null 2>&1; then
+		sleep 1
+		if ! apt purge -y $REM_HDRS3; then
+			echo
+			echo "${ILCOLOR3}Errors while trying to remove. Trying to remove manually. . .${ILRESTORE}"
+			sleep 1
+			echo "sudo rm -rf /lib/modules/$m_file"
+			sudo rm -rf /lib/modules/"$m_file"
+			if [ $? -ne 0 ]; then
+				echo
+				echo "Not removed, check path and remove manyally. . ."
+				sleep 1
+			else
+				echo
+				echo "Succeeded removal."
+				sleep 1
+			fi
+		fi
+	else
+		echo
+		echo "${ILCOLOR3}No modules files found. $m_file${ILRESTORE}"
+		sleep 1
+	fi
 done
+
 sleep 3
+
 if [ $? -eq 0 ]; then
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
