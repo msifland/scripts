@@ -27,6 +27,7 @@ cp /etc/sudoers /home/msifland/tmp/
 SUDOERS="/etc/sudoers"
 
 # Removes all empty lines from end of file.
+# Good format is running script as root, which this file makes you run as root, as long as you have root password.
 echo "$(awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS)" > $SUDOERS
 
 # Explainging what we are doing.
