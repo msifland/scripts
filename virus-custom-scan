@@ -7,6 +7,7 @@ PSWD="spike"
 if [[ ! -d $HOME/infections ]]; then
 		mkdir $HOME/infections
 fi
+echo $PSWD | sudo -S umount /media &> /dev/null
 
 # Description
 echo
@@ -18,7 +19,7 @@ sleep 1
 echo
 echo "${ILCOLOR2}Here are the available partitions:${ILRESTORE} "
 sleep 1
-lsblk
+sudo blkid | awk '{print $1 " " $2}' | sed 's#:##g'
 echo
 sleep 1
 
@@ -37,14 +38,14 @@ function scan_it(){
 		sleep 1
 		echo "${ILCOLOR2}sudo clamscan -r -i $PTH --move=$HOME/infections${ILRESTORE}"
 		sleep 2
-		echo $PSWD | sudo -S freshclam
+		sudo freshclam
 		sudo clamscan -r -i $PTH --move=$HOME/infections
 	else
 		echo "${ILCOLOR2}COPYING infected files to $INFS_DIR${ILRESTORE}"
 		sleep 1
 		echo "${ILCOLOR2}sudo clamscan -r -i $PTH --copy=$HOME/infections${ILRESTORE}"
 		sleep 2
-		echo $PSWD | sudo -S freshclam
+		sudo freshclam
 		sudo clamscan -r -i $PTH --copy=$HOME/infections
 	fi
 }
@@ -68,11 +69,13 @@ function selected_path(){
 		sleep 1
 		echo "${ILCOLOR2}Path $PTH does not exist, checking /proc/mounts(mount points). . .${ILRESTORE}"
 		sleep 1
-		if df -h | awk '{print $1}' | grep -w "$PTH"; then
+		if sudo blkid | awk '{print $1}' | grep -w "$PTH"; then
 			echo
 			sleep 1
-			echo "${ILCOLOR2}Ok scanning $PTH. . .${ILRESTORE}"
+			echo "${ILCOLOR2}Ok, mounting $PTH to /media and scanning. . .${ILRESTORE}"
 			sleep 1
+			sudo mount $PTH /media
+			PTH=/media
 			scan_it
 		else
 			echo
