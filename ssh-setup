@@ -59,8 +59,15 @@ sleep 1
 
 function enter_port(){
 echo
-read -p "The most secure ports are below 1024. Enter a port number to open(suggested 882): " PRT
+read -p "The most secure ports are below 1024. Enter a port number to open(suggested 882, '0' to exit): " PRT
 sleep 1
+
+if [[ $PRT = 0 ]]; then
+	echo
+	echo "Exiting now. . ."
+	sleep 1
+	exit
+fi
 echo
 echo "Checking if Port $PRT in $SSH_FILE is uncommented. . ."
 if grep -wq "^Port $PRT" $SSH_FILE; then
