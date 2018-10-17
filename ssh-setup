@@ -112,6 +112,7 @@ fi
 
 echo
 echo "Copying /home/msifland/pkg_bkups/backups/firewall_profile.profile to /etc/gufw/Home.profile. . . "
+sudo rm -rf /etc/gufw/Home.profile
 sudo cp /home/msifland/pkg_bkups/backups/firewall_profile.profile /etc/gufw/Home.profile 
 sleep 1
 
