@@ -1,7 +1,6 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
-echo
 echo "${ILCOLOR2}We will now update your personal git directories consisting of Documents, scripts, and rom_scripts. . .${ILRESTORE}"
 sleep 2
 
