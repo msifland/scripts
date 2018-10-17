@@ -21,15 +21,18 @@ echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 echo $PW | sudo -S echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
 sudo apt update -y
 sudo apt upgrade -y
+sleep 1
 
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
 sudo apt full-upgrade -y
 sudo apt dist-upgrade -y
+sleep 1
 
 echo
 echo "${ILCOLOR1}Checking for old apps. . .${ILRESTORE}"
 sudo apt autoremove -y
+sleep 1
 
 echo
 echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
@@ -38,6 +41,7 @@ sudo apt autoclean -y
 sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
 rm -v -f ~/.cache/thumbnails/*/*.png ~/.thumbnails/*/*.png
 rm -v -f ~/.cache/thumbnails/*/*/*.png ~/.thumbnails/*/*/*.png
+sleep 1
 
 # Set backups folders and files, and only keep 3 of each.
 DEST="$HOME/pkg_bkups"
@@ -101,7 +105,7 @@ crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
 sleep 1
 
 echo
-echo "${ILCOLOR1}Updating local git repos. . .${ILRESTORE}"
+echo "${ILCOLOR2}Updating local git repos. . .${ILRESTORE}"
 $HOME/scripts/git-update
 sleep 1
 
