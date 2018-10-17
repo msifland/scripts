@@ -100,9 +100,24 @@ subl /home/msifland/Documents/Linux_Setup/ip_static_settings
 nm-connection-editor
 
 echo
-echo "Also set up your firewall with rules for your new port to ssh. . ."
-sleep 3
-gufw
+echo "Setting up rules from backed up profile for firewall. . ."
+sleep 1
+if ! dpkg --get-selections | awk '{print $1}' | grep -w "gufw"; then
+	echo
+	echo "Uncomplicated firewall not found, installing now. . ."
+	sleep 1
+	echo
+	echo 'spike' | sudo -S apt install gufw
+fi
+
+echo
+echo "Copying /home/msifland/pkg_bkups/backups/firewall_profile.profile to /etc/gufw/Home.profile. . . "
+sudo cp /home/msifland/pkg_bkups/backups/firewall_profile.profile /etc/gufw/Home.profile 
+sleep 1
+
+echo "Opening firewall to see if settings were copied successfully. Look under rules tab. . ."
+sleep 1
+sudo gufw
 
 echo
 echo "Also opening up a web page for router setting, set up port forwarding in your router to the Port $PRT."
