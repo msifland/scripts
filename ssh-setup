@@ -110,12 +110,58 @@ if ! dpkg --get-selections | awk '{print $1}' | grep -w "gufw"; then
 	echo 'spike' | sudo -S apt install gufw
 fi
 
+# Add ports to firewall profile
+function count_rules(){
+	# Count rules and add 1 for formatting to file.
+	RULE=$(grep -o "^\[Rule" /home/msifland/pkg_bkups/backups/firewall_profile.profile | wc -l)
+
+	# Echo rules to Home.profile of firewall.
+	echo "
+[Rule$RULE]
+ufw_rule = $PRT ALLOW IN Anywhere
+description = SSH
+command = /usr/sbin/ufw allow in proto tcp from any to any port $PRT
+policy = allow
+direction = in
+protocol = 
+from_ip = 
+from_port = 
+to_ip = 
+to_port = $PRT
+iface = 
+routed = 
+logging = " >> /home/msifland/pkg_bkups/backups/firewall_profile.profile
+
+	let RULE=$RULE+1
+	echo "
+[Rule$RULE]
+ufw_rule = $PRT (v6) ALLOW IN Anywhere (v6)
+description = SSH
+command = /usr/sbin/ufw allow in proto tcp from any to any port $PRT
+policy = allow
+direction = in
+protocol = 
+from_ip = 
+from_port = 
+to_ip = 
+to_port = $PRT
+iface = 
+routed = 
+logging = " >> /home/msifland/pkg_bkups/backups/firewall_profile.profile
+
+}
+# Call function.
+count_rules
+
 echo
 echo "Copying /home/msifland/pkg_bkups/backups/firewall_profile.profile to /etc/gufw/Home.profile. . . "
+sudo pkill ufw
+sudo pkill gufw
 sudo rm -rf /etc/gufw/Home.profile
 sudo cp /home/msifland/pkg_bkups/backups/firewall_profile.profile /etc/gufw/Home.profile 
 sleep 1
 
+echo
 echo "Opening firewall to see if settings were copied successfully. Look under rules tab. . ."
 sleep 1
 sudo gufw
