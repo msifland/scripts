@@ -73,16 +73,16 @@ sleep 1
 
 # Creating list for restore purposes.
 echo
-echo "${ILCOLOR4}Creating list of apps, and copying repos installed on system for restore purposes later. . .${ILRESTORE}"
+echo "${ILCOLOR3}Creating list of apps, and copying repos installed on system for restore purposes later. . .${ILRESTORE}"
 dpkg --get-selections | awk '{print $1}' > $DEST/pkgs.txt
 
 # This section copies /etc/apt folder and keeps 3 copies.
 if ls $DEST/apt.old-1/* > /dev/null 2>&1; then
-	rm -rf $DEST/apt.old-1/*	
+	rm -rf $DEST/apt.old-1/*
 fi
 if ls $DEST/apt.old/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt.old/* $DEST/apt.old-1/
-	rm -rf $DEST/apt.old/*	
+	rm -rf $DEST/apt.old/*
 fi
 if ls $DEST/apt/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt/* $DEST/apt.old/
