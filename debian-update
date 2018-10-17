@@ -9,7 +9,7 @@ echo $(date +%m-%d-%Y) $(date +"%r")
 tm_wh_start=$(date +"%s")
 echo -e ${ILRESTORE}
 sleep 1
-echo "${ILCOLOR3}Updating $(uname --all)${ILRESTORE}"
+echo "${ILCOLOR2}Updating $(uname --all)${ILRESTORE}"
 sleep 1
 
 # Password to run as sudo.
@@ -72,7 +72,7 @@ sleep 1
 
 # Creating list for restore purposes.
 echo
-echo "${ILCOLOR3}Creating list of apps, and copying repos installed on system for restore purposes later. . .${ILRESTORE}"
+echo "${ILCOLOR2}Creating list of apps, and copying repos installed on system for restore purposes later. . .${ILRESTORE}"
 dpkg --get-selections | awk '{print $1}' > $DEST/pkgs.txt
 
 # This section copies /etc/apt folder and keeps 3 copies.
