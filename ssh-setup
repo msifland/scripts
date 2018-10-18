@@ -5,6 +5,8 @@ echo "Setting up ssh server on your pc."
 echo
 sleep 1
 
+echo 'spike' | sudo -S -v
+
 SSH_FILE="/etc/ssh/sshd_config"
 
 echo
@@ -107,7 +109,7 @@ if ! dpkg --get-selections | awk '{print $1}' | grep -w "gufw"; then
 	echo "Uncomplicated firewall not found, installing now. . ."
 	sleep 1
 	echo
-	echo 'spike' | sudo -S apt install gufw
+	sudo apt install gufw
 fi
 
 # Add ports to firewall profile
@@ -150,6 +152,7 @@ routed =
 logging = " >> /home/msifland/pkg_bkups/backups/firewall_profile.profile
 
 }
+echo 'spike' | sudo -S -v
 # Check if port is already added to firewall profile template so it doesn't get entered twice. If not call count_rules function.
 if ! grep -q "ufw_rule = $PRT" /home/msifland/pkg_bkups/backups/firewall_profile.profile; then
 	count_rules
@@ -161,7 +164,7 @@ fi
 
 echo
 echo "Copying /home/msifland/pkg_bkups/backups/firewall_profile.profile to /etc/gufw/Home.profile. . . "
-sudo pkill ufw
+pkill ufw
 sudo pkill gufw
 sudo rm -rf /etc/gufw/Home.profile
 sudo cp /home/msifland/pkg_bkups/backups/firewall_profile.profile /etc/gufw/Home.profile 

@@ -18,7 +18,8 @@ echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 
 # This sets sudo for the remainder of scripts.
-echo $PW | sudo -S echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
+echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
+echo $PW | sudo -S -v
 sudo apt update -y
 sudo apt upgrade -y
 sleep 1

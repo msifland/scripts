@@ -1,6 +1,7 @@
 #!/bin/bash
 # This scripts adds sources to /etc/apt/sources.list
 
+echo 'spike' | sudo -S -v
 # Used function for loop recall.
 function add_sources(){
 	# Removing all white space from end of file.
