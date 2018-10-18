@@ -150,8 +150,14 @@ routed =
 logging = " >> /home/msifland/pkg_bkups/backups/firewall_profile.profile
 
 }
-# Call function.
-count_rules
+# Check if port is already added to firewall profile template so it doesn't get entered twice. If not call count_rules function.
+if ! grep -q "ufw_rule = $PRT" /home/msifland/pkg_bkups/backups/firewall_profile.profile; then
+	count_rules
+else
+	echo
+	echo "Port $PRT is already listed in /home/msifland/pkg_bkups/backups/firewall_profile.profile."
+	sleep 1
+fi
 
 echo
 echo "Copying /home/msifland/pkg_bkups/backups/firewall_profile.profile to /etc/gufw/Home.profile. . . "
