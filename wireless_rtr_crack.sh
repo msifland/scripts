@@ -27,4 +27,3 @@ sudo ip link set wlo1 up"
 sudo ip link set wlo1 down
 #sudo wifi-menu
 sudo ip link set wlo1 up
-

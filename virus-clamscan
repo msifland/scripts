@@ -62,7 +62,8 @@ function scan(){
 	echo "Updating clamscan before run. . ."
 	echo
  	sleep 2
-	echo $PSWD | sudo -S freshclam
+	echo $PSWD | sudo -S -v
+	sudo freshclam
 	echo
 	sleep 2
 

@@ -4,7 +4,7 @@ COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
 RESTORE='\033[0m'
 
 PSWD="spike"
-
+echo $PSWD | sudo -S -v
 # What Files or Folders to Take Backup of.
 BACKUP_FILES="
 /usr/share/mate*
@@ -119,7 +119,7 @@ function backup(){
 	echo "Backing up now. . ."
 	sleep 1
 	echo -e ${RESTORE}
-	echo $PSWD | sudo -S tar -czf $DEST/$ARCHIVE_FILE $EXCLUDE $BACKUP_FILES
+	sudo tar -czf $DEST/$ARCHIVE_FILE $EXCLUDE $BACKUP_FILES
 	echo
 	sleep 1
 

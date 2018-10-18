@@ -1,6 +1,7 @@
 #!/bin/bash
 # http://inglorion.net/software/detach/
 # Put your code below this line.
+echo 'spike' | sudo -S -v
 echo
 echo "Checking dependancies. . ."
 sleep 1
@@ -37,7 +38,7 @@ sleep 1
 
 echo
 echo "sudo make install"
-echo 'spike' | sudo -S make install
+sudo make install
 sleep 1
 
 echo

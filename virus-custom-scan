@@ -7,7 +7,8 @@ PSWD="spike"
 if [[ ! -d $HOME/infections ]]; then
 		mkdir $HOME/infections
 fi
-echo $PSWD | sudo -S umount /media &> /dev/null
+echo $PSWD | sudo -S -v
+sudo umount /media &> /dev/null
 
 # Description
 echo

@@ -11,7 +11,8 @@ FILE="/usr/share/applications/sublime_text.desktop"
 
 # Look in kate file for text and change if it's  there.
 PW='spike'
-if [[ $(echo $PW | sudo -S grep 'Exec=/opt/sublime_text/sublime_text %F' $FILE) ]]; then
+echo $PW | sudo -S -v
+if [[ $(sudo grep 'Exec=/opt/sublime_text/sublime_text %F' $FILE) ]]; then
 	sudo sed -i 's:Exec=/opt/sublime_text/sublime_text %F:Exec=/opt/sublime_text/sublime_text -n %F:g' $FILE
 	echo
 	echo

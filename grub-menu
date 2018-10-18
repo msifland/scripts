@@ -1,7 +1,7 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
-
+echo 'spike' | sudo -S -v
 <<Comment
 # Check default gub file to make sure it's set up correctly
 gr_def=$(grep "GRUB_DEFAULT=" /etc/default/grub)
@@ -90,9 +90,8 @@ new_men_en=$(grep "^$men_en." $menu_file2 | sed "s:$men_en. ::g")
 echo $new_men_en
 
 # Setting up grub-reboot
-echo 'spike' | sudo -S grub-reboot "$new_men_en"
+sudo grub-reboot "$new_men_en"
 echo $men_en
-#echo 'spike' | sudo -S grub-reboot "$men_en"
 rm -rf "$menu_file"
 rm -rf "$menu_file2"
 

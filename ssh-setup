@@ -13,7 +13,7 @@ echo
 echo "Checking if openssh is installed. . ."
 sleep 1
 if ! dpkg --get-selections | awk '{print $1}' | grep -wq "openssh"; then
-	echo 'spike' | sudo -S apt install openssh
+	sudo apt install openssh
 else
 	echo "openssh is installed."
 fi
@@ -91,7 +91,7 @@ enter_port
 echo
 echo "Running commands to restart ssh. . ."
 sleep 1
-echo 'spike' | sudo -S sudo systemctl stop sshd
+sudo sudo systemctl stop sshd
 sudo service ssh restart
 sleep 1
 
@@ -164,7 +164,7 @@ fi
 
 echo
 echo "Copying /home/msifland/pkg_bkups/backups/firewall_profile.profile to /etc/gufw/Home.profile. . . "
-pkill ufw
+sudo pkill ufw
 sudo pkill gufw
 sudo rm -rf /etc/gufw/Home.profile
 sudo cp /home/msifland/pkg_bkups/backups/firewall_profile.profile /etc/gufw/Home.profile 

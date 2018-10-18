@@ -2,7 +2,7 @@
 # This is a blank bash script document.
 # Put your code below this line.
 # Removing old files and creating new ones.
-
+echo 'spike' | sudo -S -v
 # This function allows version number comparison.
 function version_gt() { 
 	test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; 
@@ -133,8 +133,8 @@ if test $FOR_INST; then
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		sudo update-initramfs -c -t -k "$FOR_INST$CONF_VER$LOC_VER"
-		sudo update-grub
+		echo 'spike' | sudo -S update-initramfs -c -t -k "$FOR_INST$CONF_VER$LOC_VER"
+		echo 'spike' | sudo -S update-grub
 
 		# Build perf package
 		sleep 1
@@ -145,8 +145,8 @@ if test $FOR_INST; then
 		sed -i "s:VERSION=\"\":VERSION=$FOR_INST:g" perf-build		
 		./perf-build
 		cd ..
-		sudo apt purge -y "linux-perf*"
-		sudo dpkg -i $HOME/tmp/perf-package/*.deb
+		echo 'spike' | sudo -S apt purge -y "linux-perf*"
+		echo 'spike' | sudo -S dpkg -i $HOME/tmp/perf-package/*.deb
 		if ls $HOME/tmp/perf-package/*.deb >/dev/null 2>&1; then
 			cp $HOME/tmp/perf-package/*.deb $HOME/tmp/kernel_storage
 		fi
