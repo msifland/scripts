@@ -5,8 +5,9 @@ echo
 PW='spike'
 echo "${ILCOLOR1}Updating repo sources. . .${ILRESTORE}"
 sleep 1
-echo $PW | sudo -S cp -rf $HOME/pkg_bkups/apt/sources.list /etc/apt
-echo $PW | sudo -S apt update
+echo $PW | sudo -S mv /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo cp -rf $HOME/pkg_bkups/apt/sources.list /etc/apt/
+sudo apt update
 echo
 echo "${ILCOLOR1}Looking for apt-transport-https. . .${ILRESTORE}"
 sleep 1
@@ -24,11 +25,11 @@ echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 sleep 1
 echo $PW | sudo -S sudo apt -y update
-echo $PW | sudo -S sudo apt -y upgrade
-echo $PW | sudo -S sudo apt -y full-upgrade
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
 sleep 1
+echo $PW | sudo -S sudo apt -y upgrade
+echo $PW | sudo -S sudo apt -y full-upgrade
 echo $PW | sudo -S sudo apt -y dist-upgrade
 
 echo

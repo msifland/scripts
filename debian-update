@@ -22,11 +22,11 @@ echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
 sleep 1
 echo $PW | sudo -S -v
 sudo apt update -y
-sudo apt upgrade -y
 sleep 1
 
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+sudo apt upgrade -y
 sudo apt full-upgrade -y
 sudo apt dist-upgrade -y
 sleep 1
