@@ -1,0 +1,83 @@
+#!/bin/bash
+# This is a way to downgrade packges from apt. It is dependant upon having multiple distros listed in apt/sources.list. I.e., stable, unstable, testing, etc.
+if [[ -z $1 ]]; then
+	echo "Usage: downgrade chromium
+       downgrade python3"
+	exit
+fi
+
+# Create tmp file to write version to.
+VER_FILE="$HOME/tmp/version-file"
+if [[ -f $VER_FILE ]]; then
+	rm $VER_FILE
+	touch $VER_FILE
+elif [[ ! -f $VER_FILE ]]; then
+	touch $VER_FILE
+fi
+
+# Create a list in a file and show versions on screen. Formatting is involved here to get correct string to install.
+echo
+echo "Here is a list of version of $1. . ."
+sleep 1
+
+apt list -a $1 | while read line; do
+	echo "$line" >> $VER_FILE
+done
+INST=$(grep "installed" $VER_FILE)
+sed -i '/installed/d' $VER_FILE
+sed -i 's:Listing...::g' $VER_FILE
+sed -i '/^$/d' $VER_FILE
+
+VER=1
+cat $VER_FILE | while read line; do
+	echo "$VER. $line" >> $VER_FILE
+	let VER=$VER+1
+done
+sed -i '/^[^0-9]/d' $VER_FILE
+sed -i "1i[installed] $INST" $VER_FILE
+cat $VER_FILE
+
+# Choose the version to install. Created function so we could loop back to it.
+function choose(){
+echo
+read -p "Choose number to install[0 to exit]: " num_inst
+sleep 1
+if [[ "$num_inst" = 0 ]]; then
+	echo
+	echo "Exiting now. . ."
+	sleep 1
+	exit
+fi
+if ! grep -wq "^$num_inst" $VER_FILE; then
+	echo
+	echo "No $num_inst, try again. . ."
+	sleep 1
+	choose
+fi
+
+i="$(grep -w "^$num_inst" $VER_FILE)"
+echo
+yn_crct="y"
+read -p "Ok installing --$i-- is this correct{Y/n]? " yn_crct
+sleep 1
+if [[ ! "$yn_crct" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo
+	echo "Try again. . ."
+	sleep 1
+	choose
+fi
+}
+# Run choose funtion.
+choose
+
+# Format for install.
+INST=$(grep -w "^$num_inst" $VER_FILE)
+#VER_INST=$(echo $INST | awk '{print $2}') # option for using app/realease info for installation, i.e. chromium/testing.
+VER_INST=$(echo $INST | awk '{print $3}') # option for using app=version# info for installation, i.e. chromium=4.5.8-4~9u1
+#FOR_INST=$(echo "$VER_INST") # option for using app/realease info for installation, i.e. chromium/testing.
+FOR_INST=$(echo "$1=$VER_INST")# option for using app=version# info for installation, i.e. chromium=4.5.8-4~9u1
+echo 'spike' | sudo -S -v
+sudo apt install $FOR_INST
+
+rm $VER_FILE
+exit
