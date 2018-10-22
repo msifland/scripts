@@ -77,7 +77,7 @@ choose
 INST_TYP="r"
 echo
 # Option run update via repo release or by version number. 
-read -p "Would you like to install via repo(testing, stable, etc.) or would you like to install via version number(3.5.796~9ud)? Repo install recommended[R/v] " INST_TYP
+read -p "Would you like to install via repo(testing, stable, etc.) or would you like to install via version number(3.5.796~9ud)? [r]epo install is recommended, if [r]epo install does NOT work, re-run and choose [v]ersion install.[R/v] " INST_TYP
 	sleep 1
 	echo
 	echo "${ILCOLOR2}We are downgrading with 'aptitude', you will be ask to choose a solution for downgrading. If you select 'n' for the first one, it will give more options each time you select 'n'.${ILRESTORE}"
