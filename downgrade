@@ -1,8 +1,8 @@
 #!/bin/bash
 # This is a way to downgrade packges from apt. It is dependant upon having multiple distros listed in apt/sources.list. I.e., stable, unstable, testing, etc.
 if [[ -z $1 ]]; then
-	echo "Usage: downgrade chromium
-       downgrade python3"
+	echo "${ILCOLOR2}Usage: downgrade chromium
+       downgrade python3${ILRESTORE}"
 	exit
 fi
 
@@ -17,7 +17,7 @@ fi
 
 # Create a list in a file and show versions on screen. Formatting is involved here to get correct string to install.
 echo
-echo "Here is a list of version of $1. . ."
+echo "${ILCOLOR2}Here is a list of version of $1. . .${ILRESTORE}"
 sleep 1
 
 apt list -a $1 | while read line; do
@@ -39,45 +39,63 @@ cat $VER_FILE
 
 # Choose the version to install. Created function so we could loop back to it.
 function choose(){
-echo
-read -p "Choose number to install[0 to exit]: " num_inst
-sleep 1
-if [[ "$num_inst" = 0 ]]; then
 	echo
-	echo "Exiting now. . ."
-	sleep 1
-	exit
-fi
-if ! grep -wq "^$num_inst" $VER_FILE; then
-	echo
-	echo "No $num_inst, try again. . ."
-	sleep 1
-	choose
-fi
+	read -p "Choose number to install[0 to exit]: " num_inst
+		sleep 1
+		# Option to exit script
+		if [[ "$num_inst" = 0 ]]; then
+			echo
+			echo "Exiting now. . ."
+			rm $VER_FILE
+			sleep 1
+			exit
+		fi
+		# Error handling for entering number that doesn't exist.
+		if ! grep -wq "^$num_inst" $VER_FILE; then
+			echo
+			echo "No $num_inst, try again. . ."
+			sleep 1
+			choose
+		fi
 
+# Variable show repeating install version for comfirmation.
 i="$(grep -w "^$num_inst" $VER_FILE)"
 echo
 yn_crct="y"
-read -p "Ok installing --$i-- is this correct{Y/n]? " yn_crct
-sleep 1
-if [[ ! "$yn_crct" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo
-	echo "Try again. . ."
+read -p "${ILCOLOR2}Ok installing --> $i <-- is this correct[Y/n]?${ILRESTORE} " yn_crct
 	sleep 1
-	choose
-fi
+	if [[ ! "$yn_crct" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		echo
+		echo "${ILCOLOR2}Try again. . .${ILRESTORE}"
+		sleep 1
+		choose
+	fi
 }
 # Run choose funtion.
 choose
 
-# Format for install.
-INST=$(grep -w "^$num_inst" $VER_FILE)
-#VER_INST=$(echo $INST | awk '{print $2}') # option for using app/realease info for installation, i.e. chromium/testing.
-VER_INST=$(echo $INST | awk '{print $3}') # option for using app=version# info for installation, i.e. chromium=4.5.8-4~9u1
-#FOR_INST=$(echo "$VER_INST") # option for using app/realease info for installation, i.e. chromium/testing.
-FOR_INST=$(echo "$1=$VER_INST")# option for using app=version# info for installation, i.e. chromium=4.5.8-4~9u1
-echo 'spike' | sudo -S -v
-sudo apt install $FOR_INST
+INST_TYP="r"
+echo
+# Option run update via repo release or by version number. 
+read -p "Would you like to install via repo(testing, stable, etc.) or would you like to install via version number(3.5.796~9ud)? Repo install recommended[R/v] " INST_TYP
+	sleep 1
+	echo
+	echo "${ILCOLOR2}We are downgrading with 'aptitude', you will be ask to choose a solution for downgrading. If you select 'n' for the first one, it will give more options each time you select 'n'.${ILRESTORE}"
+	INST=$(grep -w "^$num_inst" $VER_FILE)
+	if [[ $INST_TYP =~ ^([rR][eE][pP][oO]|[rR])$ ]]; then
+		# Repo release install type.
+		VER_INST=$(echo $INST | awk '{print $2}')
+		FOR_INST=$(echo "$VER_INST")
+	else
+		# Version number install type.
+		VER_INST=$(echo $INST | awk '{print $3}')
+		FOR_INST=$(echo "$1=$VER_INST")
+	fi
 
+# Install with aptitude.
+echo 'spike' | sudo -S -v
+sudo aptitude install $FOR_INST
+
+# Clean up.
 rm $VER_FILE
 exit
