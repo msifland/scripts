@@ -8,7 +8,7 @@ if [[ "$YNVER1" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then
 	echo "OK, keeping current version of $VER1"
 else
 	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " NEWVER1
-	sed -i "s:ver1=\"$VER1\":ver1=\"$NEWVER1\":g" $HOME/scripts/kernel_scripts/kernel-check
+	sed -i "s:VER1=\"$VER1\":VER1=\"$NEWVER1\":g" $HOME/scripts/kernel_scripts/kernel-check
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
@@ -60,13 +60,13 @@ fi
 cd "$WORK_DIR"
 
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
-VER="4.18"
+VER="4.19"
 read -p "${ILRESTORE}Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
 if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $VER"
 else
 	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " NEWVER
-	sed -i "s:ver=\"$VER\":ver=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-check
+	sed -i "s:VER=\"$VER\":VER=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-check
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
@@ -143,13 +143,15 @@ Would you like to install it?" 10 50; then
 		sudo update-grub
 
 		# Build perf package
+		export $WORK_DIR
+		export $GET
 		sleep 1
 		echo
 		echo "${ILCOLOR2}Now building perf package(Linux-tools). . .${ILRESTORE}"
 		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET/perf-build
 		cd $WORK_DIR/linux-$GET
 		sed -i "s:VERSION=\"\":VERSION=\"$GET\":g" perf-build		
-		./perf-build
+		xfce4-terminal --hold -e "zsh -c \" cd $WORK_DIR/linux-$GET; ./perf-build; echo 'Done build perf package, you can close this window now to install perf package. . .'\""
 		cd ..
 		sudo apt purge -y "linux-perf*"
 		sudo dpkg -i --force-all $HOME/tmp/perf-package/*.deb
