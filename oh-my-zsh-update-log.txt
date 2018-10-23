@@ -1,90 +1,32 @@
-Date & Time: 10-16-18 -- 07:30:03 AM
+Date & Time: 10-23-18 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating 6f24f4a1..489be245
+Updating 489be245..576ada13
 Fast-forward
- plugins/archlinux/README.md                  |  20 ++++
- plugins/archlinux/archlinux.plugin.zsh       |  33 ++++++
- plugins/autojump/README.md                   |  11 ++
- plugins/autopep8/README.md                   |   8 ++
- plugins/autopep8/autopep8.plugin.zsh         |   0
- plugins/catimg/README.md                     |  35 +++++++
- plugins/cloudfoundry/README.md               |  58 +++++++++++
- plugins/cloudfoundry/cloudfoundry.plugin.zsh |  34 +++++++
- plugins/colorize/colorize.plugin.zsh         |   6 +-
- plugins/command-not-found/README.md          |  31 ++++++
- plugins/dircycle/README.md                   |  13 ++-
- plugins/dirhistory/README.md                 |  17 ++++
- plugins/dirpersist/README.md                 |   9 ++
- plugins/docker-compose/README.md             |  29 +++++-
- plugins/emacs/README.md                      |  30 ++++++
- plugins/gem/README.md                        |  17 ++++
- plugins/gitfast/README.md                    | 138 +++++++++++++++++++++++++
- plugins/iterm2/README.md                     |  29 ++++++
- plugins/jump/README.md                       |  19 ++++
- plugins/kate/README.md                       |  20 ++++
- plugins/kitchen/README.md                    |   9 ++
- plugins/kubectl/README.md                    |  88 ++++++++++++++++
- plugins/kubectl/kubectl.plugin.zsh           |   4 +-
- plugins/lol/README.md                        |  83 +++++++++++++++
- plugins/man/README.md                        |  13 +++
- plugins/mercurial/mercurial.plugin.zsh       |   1 +
- plugins/mosh/README.md                       |   9 ++
- plugins/nanoc/README.md                      |  23 +++++
- plugins/ng/ng.plugin.zsh                     |   6 +-
- plugins/nyan/README.md                       |   5 +
- plugins/pep8/README.md                       |   8 ++
- plugins/pylint/README.md                     |  15 +++
- plugins/scala/README.md                      |  15 +++
- plugins/swiftpm/_swift                       | 147 ++++++++++++++-------------
- plugins/systemadmin/README.md                |  61 +++++++++++
- plugins/systemd/README.md                    |  53 ++++++++++
- plugins/terraform/terraform.plugin.zsh       |   2 +
- plugins/textmate/README.md                   |  16 +++
- plugins/themes/README.md                     |  18 ++++
- plugins/themes/themes.plugin.zsh             |  10 +-
- plugins/vagrant/README.md                    |   3 +-
- plugins/virtualenv/README.md                 |  15 +++
- plugins/vundle/README.md                     |  19 ++++
- plugins/yum/README.md                        |  27 +++++
- themes/amuse.zsh-theme                       |   2 +-
- themes/candy-kingdom.zsh-theme               |   2 +-
- themes/dstufft.zsh-theme                     |   2 +-
- themes/fino-time.zsh-theme                   |   3 +-
- themes/fino.zsh-theme                        |   3 +-
- 49 files changed, 1124 insertions(+), 95 deletions(-)
- create mode 100644 plugins/autojump/README.md
- create mode 100644 plugins/autopep8/README.md
- delete mode 100644 plugins/autopep8/autopep8.plugin.zsh
- create mode 100644 plugins/catimg/README.md
- create mode 100644 plugins/cloudfoundry/README.md
- create mode 100644 plugins/cloudfoundry/cloudfoundry.plugin.zsh
- create mode 100644 plugins/command-not-found/README.md
- create mode 100644 plugins/dirhistory/README.md
- create mode 100644 plugins/dirpersist/README.md
- create mode 100644 plugins/emacs/README.md
- create mode 100644 plugins/gem/README.md
- create mode 100644 plugins/gitfast/README.md
- create mode 100644 plugins/iterm2/README.md
- create mode 100644 plugins/jump/README.md
- create mode 100644 plugins/kate/README.md
- create mode 100644 plugins/kitchen/README.md
- create mode 100644 plugins/kubectl/README.md
- create mode 100644 plugins/lol/README.md
- create mode 100644 plugins/man/README.md
- create mode 100644 plugins/mosh/README.md
- create mode 100644 plugins/nanoc/README.md
- create mode 100644 plugins/nyan/README.md
- create mode 100644 plugins/pep8/README.md
- create mode 100644 plugins/pylint/README.md
- create mode 100644 plugins/scala/README.md
- create mode 100644 plugins/systemadmin/README.md
- create mode 100644 plugins/systemd/README.md
- create mode 100644 plugins/textmate/README.md
- create mode 100644 plugins/themes/README.md
- create mode 100644 plugins/virtualenv/README.md
- create mode 100644 plugins/vundle/README.md
- create mode 100644 plugins/yum/README.md
+ plugins/battery/README.md                  | 13 +++++
+ plugins/colorize/README.md                 | 18 ++++++
+ plugins/colorize/colorize.plugin.zsh       | 21 ++++---
+ plugins/composer/README.md                 | 29 ++++++++++
+ plugins/gitignore/README.md                | 17 ++++++
+ plugins/gpg-agent/README.md                |  8 +++
+ plugins/nanoc/README.md                    | 19 +++----
+ plugins/nanoc/_nanoc                       | 68 +++++++++++++++++++----
+ plugins/nanoc/nanoc.plugin.zsh             |  7 +--
+ plugins/osx/README.md                      |  2 +-
+ plugins/sbt/README.md                      | 32 +++++++++++
+ plugins/sublime/sublime.plugin.zsh         |  4 +-
+ plugins/systemadmin/README.md              | 88 +++++++++++++-----------------
+ plugins/systemadmin/systemadmin.plugin.zsh | 28 ++++------
+ plugins/tmux/README.md                     | 39 +++++++++++++
+ themes/agnoster.zsh-theme                  |  2 +-
+ 16 files changed, 287 insertions(+), 108 deletions(-)
+ create mode 100644 plugins/battery/README.md
+ create mode 100644 plugins/colorize/README.md
+ create mode 100644 plugins/composer/README.md
+ create mode 100644 plugins/gitignore/README.md
+ create mode 100644 plugins/gpg-agent/README.md
+ create mode 100644 plugins/sbt/README.md
+ create mode 100644 plugins/tmux/README.md
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
