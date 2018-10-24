@@ -20,6 +20,12 @@ EXCLUDE="--exclude-dir=^/home/msifland/roms
 --exclude-dir=^/dev
 --exclude-dir=^/proc
 "
+# Example for exclusion:
+# EXCLUDE="--exclude-dir=^/home/msifland/roms
+# --exclude-dir=^/home/msifland/scripts
+# --exclude-dir=^/home/msifland/.cache
+# --exclude-dir=^/home/msifland/.local/share/Trash
+# "
 
 INCLUDE="
 /
@@ -29,13 +35,6 @@ INCLUDE="
 # /
 # /home
 # /home/msifland
-# "
-
-# Example for exclusion:
-# EXCLUDE="--exclude-dir=^/home/msifland/roms
-# --exclude-dir=^/home/msifland/scripts
-# --exclude-dir=^/home/msifland/.cache
-# --exclude-dir=^/home/msifland/.local/share/Trash
 # "
 
 function scan(){
