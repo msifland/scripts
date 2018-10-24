@@ -32,7 +32,7 @@ fi
 # Show variables to user and ask to update
 read -p "The current .conkyrc files shows ${ILCOLOR1}$CONKY_NET ${ILRESTORE}as adapter interface, the current PC adapter interface is ${ILCOLOR2}$IFACE${ILRESTORE}. Would you like to go ahead and update? " upd
 
-if [[ "$upd" =~ ^([yY][eE][sS]|[yY]) ]]; then
+if [[ "$upd" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo
 	echo "Ok updating .conkyrc file. . ."
 	sleep 1

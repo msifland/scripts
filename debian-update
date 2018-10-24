@@ -98,7 +98,7 @@ sleep 1
 
 echo
 echo "${ILCOLOR1}Backup up .conkyrc, .bashrc, and .zshrc files. . .${ILRESTORE}"
-cp -f /home/msifland/{.bashrc,.conkyrc,.conkyrc.bak,.zshrc} /home/msifland/pkg_bkups/backups/
+cp -f $HOME/{.bashrc,.conkyrc,.conkyrc.bak,.zshrc} $HOME/pkg_bkups/backups/
 sleep 1
 
 echo

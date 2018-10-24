@@ -63,6 +63,9 @@ function scan(){
 	echo
  	sleep 2
 	echo $PSWD | sudo -S -v
+	if [[ -f /var/log/clamav/freshclam.log ]]; then
+		sudo rm /var/log/clamav/freshclam.log
+	fi
 	sudo freshclam
 	echo
 	sleep 2

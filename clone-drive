@@ -41,15 +41,15 @@ DRVMNT1=$DRIVE1/*
 if [[ -b $DRIVE1 ]]; then
 	echo
 	echo "$DRIVE1 is a USB drive, must mount first."
-	sudo mount $DRIVE1 /home/msifland/tmp/mount_clone
-	DRVMNT1=/home/msifland/tmp/mount_clone/*
+	sudo mount $DRIVE1 $HOME/tmp/mount_clone
+	DRVMNT1=$HOME/tmp/mount_clone/*
 fi
 echo
 sleep 1
 
 # Ask what destination drive to use.
 echo
-read -p 'What is your destination drive(ex. /dev/sdc, /home/msifland/my-dir, etc.)? If not a USB drive then select "d" for defaut folder $HOME/tmp/clone. ' DRIVE2
+read -p 'What is your destination drive(ex. /dev/sdc, $HOME/my-dir, etc.)? If not a USB drive then select "d" for defaut folder $HOME/tmp/clone. ' DRIVE2
 if [[ ! $DRIVE2 =~ ^([dD])$ ]]; then
 	echo
 	# Check if USB, if so then mount to above folders.
@@ -59,15 +59,15 @@ if [[ ! $DRIVE2 =~ ^([dD])$ ]]; then
 		echo
 		echo "$DRIVE2 is a USB drive, must mount first."
 		sudo wipefs --all --force $DRIVE2
-		sudo mount $DRIVE2 /home/msifland/tmp/mount_dest
-		DRVMNT2=/home/msifland/tmp/mount_dest/
+		sudo mount $DRIVE2 $HOME/tmp/mount_dest
+		DRVMNT2=$HOME/tmp/mount_dest/
 	else
 		if [[ ! -d $DRIVE2 ]]; then
 			mkdir $DRIVE2
 		fi
 	fi
 else
-	DRVMNT2=/home/msifland/tmp/clone/
+	DRVMNT2=$HOME/tmp/clone/
 	rm -rf $CLONE1/*
 fi
 echo
