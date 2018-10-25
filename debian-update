@@ -107,6 +107,11 @@ crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
 sleep 1
 
 echo
+echo "${ILCOLOR1}Backing up /etc/fstab for reference because of multi-partitions. . .${ILRESTORE}"
+sudo cp /etc/fstab $HOME/pkg_bkups/backups/fstab
+sleep 1
+
+echo
 echo "${ILCOLOR2}Updating local git repos. . .${ILRESTORE}"
 $HOME/scripts/git-update
 sleep 1
