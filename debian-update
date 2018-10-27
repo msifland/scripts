@@ -13,7 +13,6 @@ sleep 1
 
 # Password to run as sudo.
 PW="spike"
-echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 
 # This sets sudo for the remainder of scripts.
