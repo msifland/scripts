@@ -13,12 +13,12 @@ sleep 1
 
 # Password to run as sudo.
 PW="spike"
-echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
-
-# This sets sudo for the remainder of scripts.
 echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
 sleep 1
 echo $PW | sudo -S -v
+echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
+
+# Run script
 sudo apt update -y
 sleep 1
 
