@@ -95,7 +95,6 @@ fi
 cp -rf /etc/apt/* $DEST/apt/
 sleep 1
 
-echo
 echo "${ILCOLOR1}Backup up .conkyrc, .bashrc, and .zshrc files. . .${ILRESTORE}"
 cp -f $HOME/{.bashrc,.conkyrc,.conkyrc.bak,.zshrc} $HOME/pkg_bkups/backups/
 sleep 1
@@ -120,6 +119,7 @@ echo
 echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
 sleep 1
 
+echo
 echo -e ${ILCOLOR2}
 echo $(date +%m-%d-%Y) $(date +"%r")
 tm_wh_end=$(date +"%s")
