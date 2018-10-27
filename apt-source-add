@@ -10,7 +10,14 @@ function add_sources(){
 
 	# Asking for source to add and double checking that it's correct. If it's not, then loop to beginning. Also option to exit.
 	echo
-	read -p "Adding source to /etc/apt/sources.list. Enter source to add and make sure it starts with \"deb \", if not, add \"deb <source>\" : " srcs
+	read -p "Adding source to /etc/apt/sources.list. Enter source to add and make sure it starts with \"deb \", if not, type \"deb <source>\" : " srcs
+	sleep 1
+
+	# Give it a commented out name.
+	echo
+	read -p "What name would you like to give it? " nme
+	sleep 1
+
 	echo
 	read -p "You have chosen to add \"$srcs\" to your sources.list. Is it correct? " yn_src
 	if [[ ! "$yn_src" =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -35,9 +42,9 @@ function add_sources(){
 		echo "echo \"$srcs\" | sudo tee -a /etc/apt/sources.list"
 		sleep 1
 
-		# Need to add three lines here. One with a 'Added manually' tag, one with the source, one with the source and 'deb-src' at the beginning. The 'echo -e' makes echo execute the '\n' which is newline.
+		# Need to add three lines here. One with a '$nme, Added manually' tag, one with the source, one with the source and 'deb-src' at the beginning. The 'echo -e' makes echo execute the '\n' which is newline.
 		# Checking for errors here and reporting if there are.
-		if echo -e "\n#Added manually\n$srcs\ndeb-src $srcs" | sudo tee -a /etc/apt/sources.list; then
+		if echo -e "\n#$nme - Added manually\n$srcs\ndeb-src $srcs" | sudo tee -a /etc/apt/sources.list; then
 			echo
 			echo "\"$srcs\" has been added to your sources.list."
 		else
