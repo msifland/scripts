@@ -7,9 +7,8 @@ echo "${ILCOLOR4}              ###########    Updating your system now   #######
 echo -e ${ILCOLOR2}
 echo $(date +%m-%d-%Y) $(date +"%r")
 tm_wh_start=$(date +"%s")
-echo -e ${ILRESTORE}
 sleep 1
-echo "${ILCOLOR2}Updating $(uname --all)${ILRESTORE}"
+echo "Updating $(uname --all)${ILRESTORE}"
 sleep 1
 
 # Password to run as sudo.
@@ -112,6 +111,7 @@ cp /etc/fstab $HOME/pkg_bkups/backups/fstab
 sleep 1
 
 echo
+echo
 echo "${ILCOLOR2}Updating local git repos. . .${ILRESTORE}"
 $HOME/scripts/git-update
 sleep 1
@@ -124,7 +124,6 @@ echo -e ${ILCOLOR2}
 echo $(date +%m-%d-%Y) $(date +"%r")
 tm_wh_end=$(date +"%s")
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
-		echo
 		echo "${ILCOLOR2}It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 echo -e ${ILRESTORE}
 sleep 1
