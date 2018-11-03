@@ -16,6 +16,7 @@ PW="spike"
 echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
 sleep 1
 echo $PW | sudo -S -v
+echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 
 # Run script
