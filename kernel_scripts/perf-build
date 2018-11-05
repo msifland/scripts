@@ -7,6 +7,7 @@ if [[ -d "$HOME/tmp/perf-package" ]]; then
 fi
 mkdir $HOME/tmp/perf-package
 
+echo 'spike' | sudo -S -v
 sudo apt-get install --yes libaudit-dev libslang2-dev libelf-dev libdw-dev libnuma-dev libunwind-dev libperl-dev libiberty-dev asciidoc binutils-dev flex bison
 
 make -C tools/perf/ install DESTDIR=$HOME/tmp/perf-package/linux-perf-${VERSION}/usr

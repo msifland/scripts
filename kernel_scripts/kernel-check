@@ -143,15 +143,15 @@ Would you like to install it?" 10 50; then
 		sudo update-grub
 
 		# Build perf package
-		export $WORK_DIR
-		export $GET
+		export WORK_DIR="$WORK_DIR"
+		export GET="$GET"
 		sleep 1
 		echo
 		echo "${ILCOLOR2}Now building perf package(Linux-tools). . .${ILRESTORE}"
 		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET/perf-build
 		cd $WORK_DIR/linux-$GET
 		sed -i "s:VERSION=\"\":VERSION=\"$GET\":g" perf-build		
-		xfce4-terminal --hold -e "zsh -c \" cd $WORK_DIR/linux-$GET; ./perf-build; echo 'Done build perf package, you can close this window now to install perf package. . .'\""
+		xfce4-terminal --hold -e "zsh -c \" cd $WORK_DIR/linux-$GET; ./perf-build; echo 'Done building perf package, you can close this window now to install perf package. . .'\""
 		cd ..
 		sudo apt purge -y "linux-perf*"
 		sudo dpkg -i --force-all $HOME/tmp/perf-package/*.deb
