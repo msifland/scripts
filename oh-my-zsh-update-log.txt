@@ -1,51 +1,27 @@
-Date & Time: 10-30-18 -- 07:30:04 AM
+Date & Time: 11-06-18 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating 576ada13..e83a4c81
+Updating e83a4c81..05b61706
 Fast-forward
- plugins/aws/README.md                        | 20 ++++++++
- plugins/aws/aws.plugin.zsh                   |  8 ++--
- plugins/cabal/README.md                      |  9 ++++
- plugins/celery/README.md                     |  9 ++++
- plugins/doctl/README.md                      |  9 ++++
- plugins/git-flow-avh/README.md               | 19 ++++++++
- plugins/git-flow-avh/git-flow-avh.plugin.zsh | 22 ---------
- plugins/git-hubflow/README.md                | 24 ++++++++++
- plugins/git-hubflow/git-hubflow.plugin.zsh   | 22 ---------
- plugins/grails/README.md                     | 71 ++++++++++++++++++++++++++++
- plugins/helm/README.md                       |  9 ++++
- plugins/heroku/README.md                     |  9 ++++
- plugins/homestead/README.md                  |  9 ++++
- plugins/jake-node/README.md                  |  9 ++++
- plugins/kops/README.md                       | 12 +++++
- plugins/kops/kops.plugin.zsh                 |  6 ---
- plugins/minikube/README.md                   |  9 ++++
- plugins/mvn/mvn.plugin.zsh                   |  4 +-
- plugins/stack/README.md                      |  9 ++++
- plugins/symfony/README.md                    |  9 ++++
- plugins/symfony2/README.md                   | 28 +++++++++++
- plugins/symfony2/symfony2.plugin.zsh         |  3 ++
- plugins/systemadmin/systemadmin.plugin.zsh   |  6 +--
- plugins/yarn/README.md                       |  6 +++
- plugins/yarn/yarn.plugin.zsh                 |  6 +++
- themes/avit.zsh-theme                        |  2 +-
- 26 files changed, 288 insertions(+), 61 deletions(-)
- create mode 100644 plugins/aws/README.md
- create mode 100644 plugins/cabal/README.md
- create mode 100644 plugins/celery/README.md
- create mode 100644 plugins/doctl/README.md
- create mode 100644 plugins/git-flow-avh/README.md
- create mode 100644 plugins/git-hubflow/README.md
- create mode 100644 plugins/grails/README.md
- create mode 100644 plugins/helm/README.md
- create mode 100644 plugins/heroku/README.md
- create mode 100644 plugins/homestead/README.md
- create mode 100644 plugins/jake-node/README.md
- create mode 100644 plugins/kops/README.md
- create mode 100644 plugins/minikube/README.md
- create mode 100644 plugins/stack/README.md
- create mode 100644 plugins/symfony/README.md
- create mode 100644 plugins/symfony2/README.md
+ plugins/ant/README.md                    | 12 ++++++++++++
+ plugins/bwana/README.md                  |  9 +++++++++
+ plugins/capistrano/README.md             | 14 ++++++++++++++
+ plugins/capistrano/capistrano.plugin.zsh |  4 ++--
+ plugins/cpanm/README.md                  |  9 +++++++++
+ plugins/cpanm/_cpanm                     |  3 ---
+ plugins/fabric/README.md                 |  9 +++++++++
+ plugins/fabric/{_fab => _fabric}         |  0
+ plugins/fabric/fabric.plugin.zsh         |  1 -
+ plugins/transfer/README.md               |  4 ++++
+ plugins/transfer/transfer.plugin.zsh     | 10 +++++++++-
+ 11 files changed, 68 insertions(+), 7 deletions(-)
+ create mode 100644 plugins/ant/README.md
+ create mode 100644 plugins/bwana/README.md
+ create mode 100644 plugins/capistrano/README.md
+ create mode 100644 plugins/cpanm/README.md
+ create mode 100644 plugins/fabric/README.md
+ rename plugins/fabric/{_fab => _fabric} (100%)
+ delete mode 100644 plugins/fabric/fabric.plugin.zsh
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
