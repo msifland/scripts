@@ -1,11 +1,11 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
-echo "${ILCOLOR2}We will now update your personal git directories consisting of Documents, scripts, and rom_scripts. . .${ILRESTORE}"
+echo "${ILCOLOR2}We will now update your personal git directories consisting of Documents, scripts, etc. . .${ILRESTORE}"
 sleep 2
 
-echo "${ILCOLOR1}Updating firmware_debian_non-free. . .${ILRESTORE}"
-cd ~/firmware_debian_non-free
+echo "${ILCOLOR1}Updating Projects. . .${ILRESTORE}"
+cd ~/Projects
 git add --all
 git commit -m 'auto commit'
 git push -u origin master
