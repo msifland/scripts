@@ -103,6 +103,8 @@ echo
 echo "${ILCOLOR1}Backing up cron jobs. . .${ILRESTORE}"
 if [[ -f /var/spool/crontabs/msifland ]]; then
 	crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
+else
+	echo "No crontab file"
 fi
 sleep 1
 
