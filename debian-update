@@ -100,7 +100,7 @@ cp -f $HOME/{.bashrc,.conkyrc,.conkyrc.bak,.zshrc} $HOME/pkg_bkups/backups/
 sleep 1
 
 echo
-echo "${ILCOLOR1}Backing up cron jobs. . .${ILRESTORE}"
+echo "${ILCOLOR1}Backing up crontab. . .${ILRESTORE}"
 if [[ -s /var/spool/cron/crontabs/msifland ]]; then
 	crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
 else
