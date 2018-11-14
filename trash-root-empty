@@ -1,0 +1,65 @@
+#!/bin/bash
+# This script will empty root trash.
+# Set up sudo and explanation.
+echo 'spike' | sudo -S -v
+echo
+echo "${ILCOLOR1}Emptying root trash. . .${ILRESTORE}"
+sleep 1
+
+# Trash folder variable
+ROOT_TRASH="/root/.local/share/Trash"
+echo
+
+echo "${ILCOLOR2}All files and folders inside Trash folder:${ILCOLOR3}"
+sleep 1
+# Checking if folders or files in root trash. Using 'test' because sudo has to be called to access this perticular folder.
+if sudo test -d "$ROOT_TRASH"; then
+	# Showing files.
+	sudo find "$ROOT_TRASH/" #-maxdepth 1
+	sleep 1
+	echo
+	# Checking if files dir actually has files or is empty.
+	if sudo ls -A "$ROOT_TRASH/files"  > /dev/null 2>&1; then
+		echo
+		# Set 'n' as default for question of deleting.
+		yn_del="n"
+		read -p "${ILCOLOR1}Deleting ALL contents of /root/.local/share/Trash. Are you sure[y/N]?${ILRESTORE} " yn_del
+		sleep 1
+		if [[ "$yn_del" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			echo
+			echo "${ILCOLOR2}Deleting now. . .${ILRESTORE}"
+			echo
+			sleep 1
+			# Run and test if any files were left behing.
+			if sudo sudo rm -rfv "$ROOT_TRASH"; then
+				echo
+				echo "${ILCOLOR2}All went well, exiting now. . .${ILRESTORE}"
+				sleep 1
+				exit
+			else
+				# If file left behind then open in file manager.
+				echo
+				echo "${ILCOLOR3}It looks like some files were left behind, opening file explorer as root to check manually. . .${ILRESTORE}"
+				sleep 1
+				sudo xdg-open "$ROOT_TRASH"
+				exit
+		fi
+		# Rest is error handling and exiting.
+		else
+			echo
+			echo "${ILCOLOR2}Exiting now. . .${ILRESTORE}"
+			sleep 1
+			exit
+		fi
+	else
+		echo
+		echo "${ILCOLOR2}Nothing in $ROOT_TRASH, exiting now. . .${ILRESTORE}"
+		sleep 1
+		exit
+	fi
+else
+	echo
+	echo "${ILCOLOR2}Nothing in $ROOT_TRASH, exiting now. . .${ILRESTORE}"
+	sleep 1
+	exit
+fi
