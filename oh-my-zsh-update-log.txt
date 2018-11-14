@@ -1,27 +1,11 @@
-Date & Time: 11-06-18 -- 07:30:03 AM
+Date & Time: 11-13-18 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating e83a4c81..05b61706
+Updating 05b61706..3d8f2bda
 Fast-forward
- plugins/ant/README.md                    | 12 ++++++++++++
- plugins/bwana/README.md                  |  9 +++++++++
- plugins/capistrano/README.md             | 14 ++++++++++++++
- plugins/capistrano/capistrano.plugin.zsh |  4 ++--
- plugins/cpanm/README.md                  |  9 +++++++++
- plugins/cpanm/_cpanm                     |  3 ---
- plugins/fabric/README.md                 |  9 +++++++++
- plugins/fabric/{_fab => _fabric}         |  0
- plugins/fabric/fabric.plugin.zsh         |  1 -
- plugins/transfer/README.md               |  4 ++++
- plugins/transfer/transfer.plugin.zsh     | 10 +++++++++-
- 11 files changed, 68 insertions(+), 7 deletions(-)
- create mode 100644 plugins/ant/README.md
- create mode 100644 plugins/bwana/README.md
- create mode 100644 plugins/capistrano/README.md
- create mode 100644 plugins/cpanm/README.md
- create mode 100644 plugins/fabric/README.md
- rename plugins/fabric/{_fab => _fabric} (100%)
- delete mode 100644 plugins/fabric/fabric.plugin.zsh
+ plugins/transfer/README.md           |  4 ----
+ plugins/transfer/transfer.plugin.zsh | 10 +---------
+ 2 files changed, 1 insertion(+), 13 deletions(-)
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
