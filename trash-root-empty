@@ -10,10 +10,10 @@ sleep 1
 ROOT_TRASH="/root/.local/share/Trash"
 echo
 
-echo "${ILCOLOR2}All files and folders inside Trash folder:${ILCOLOR3}"
-sleep 1
 # Checking if folders or files in root trash. Using 'test' because sudo has to be called to access this perticular folder.
 if sudo test -d "$ROOT_TRASH"; then
+	echo "${ILCOLOR2}All files and folders inside Trash folder:${ILCOLOR3}"
+	sleep 1
 	# Showing files.
 	sudo find "$ROOT_TRASH/" #-maxdepth 1
 	sleep 1

@@ -19,22 +19,32 @@ fi
 echo
 echo "${ILCOLOR2}Here is a list of version of $1. . .${ILRESTORE}"
 sleep 1
-
+# Write list to file
 apt list -a $1 | while read line; do
 	echo "$line" >> $VER_FILE
 done
+
+# Variable for the installed version of package.
 INST=$(grep "installed" $VER_FILE)
+# Formatting list. 1-remove 'installed' line, in variable above.
 sed -i '/installed/d' $VER_FILE
+# Remove specfic junk lines.
 sed -i 's:Listing...::g' $VER_FILE
+# Remove empty lines.
 sed -i '/^$/d' $VER_FILE
 
+# Variable for numbering lines in file.
 VER=1
+# Read file then insert lines with line numbers.
 cat $VER_FILE | while read line; do
 	echo "$VER. $line" >> $VER_FILE
 	let VER=$VER+1
 done
+# Remove lines not starting with numbers.
 sed -i '/^[^0-9]/d' $VER_FILE
+# Add '[installed]' to the first package line from $INST variable created above to show what version is currently installed.
 sed -i "1i[installed] $INST" $VER_FILE
+# Show file contents on screen to offer a choice.
 cat $VER_FILE
 
 # Choose the version to install. Created function so we could loop back to it.
@@ -74,15 +84,15 @@ read -p "${ILCOLOR2}Ok installing --> $i <-- is this correct[Y/n]?${ILRESTORE} "
 # Run choose funtion.
 choose
 
-INST_TYP="r"
+inst_typ="r"
 echo
 # Option run update via repo release or by version number. 
-read -p "Would you like to install via repo(testing, stable, etc.) or would you like to install via version number(3.5.796~9ud)? [r]epo install is recommended, if [r]epo install does NOT work, re-run and choose [v]ersion install.[R/v] " INST_TYP
+read -p "Would you like to install via repo(testing, stable, etc.) or would you like to install via version number(3.5.796~9ud)? [r]epo install is recommended, if [r]epo install does NOT work, re-run and choose [v]ersion install.[R/v] " inst_typ
 	sleep 1
 	echo
 	echo "${ILCOLOR2}We are downgrading with 'aptitude', you will be ask to choose a solution for downgrading. If you select 'n' for the first one, it will give more options each time you select 'n'.${ILRESTORE}"
 	INST=$(grep -w "^$num_inst" $VER_FILE)
-	if [[ $INST_TYP =~ ^([rR][eE][pP][oO]|[rR])$ ]]; then
+	if [[ $inst_typ =~ ^([rR][eE][pP][oO]|[rR])$ ]]; then
 		# Repo release install type.
 		VER_INST=$(echo $INST | awk '{print $2}')
 		FOR_INST=$(echo "$VER_INST")

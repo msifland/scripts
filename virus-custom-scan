@@ -39,10 +39,8 @@ function scan_it(){
 		sleep 1
 		echo "${ILCOLOR2}sudo clamscan -r -i $PTH --move=$HOME/infections${ILRESTORE}"
 		sleep 2
-		# Delete this file as it seems to get locked up and can't update.
-		if [[ -f /var/log/clamav/freshclam.log ]]; then
-			sudo rm /var/log/clamav/freshclam.log
-		fi
+		
+		sudo killall freshclam
 		sudo freshclam
 		sudo clamscan -r -i $PTH --move=$HOME/infections
 	else
