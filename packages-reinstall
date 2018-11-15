@@ -1,0 +1,42 @@
+#!/bin/bash
+# This is a quick script to reinstall all currently install packages.
+# Checking if scripts is being run as root. If not re-run script as root automatically.
+if [[ "$EUID" -ne "0" ]]; then
+	echo 
+	echo "${ILCOLOR2}Running as 'su'. Enter su password when prompted. . .${ILRESTORE}"
+	echo "su"
+	su - "root" -c "/home/msifland/scripts/packages-reinstall && exit" && echo && echo "Enter root password to exit" && su - "msifland" -c exit
+	exit
+else
+	echo
+	echo "Ok, proceeding as root. . ."
+	sleep 1
+fi
+
+# Here we go.
+echo
+echo "${ILCOLOR1}Reinstalling all installed apps. . .${ILRESTORE}"
+echo
+sleep 1
+
+# Ask for comformation to move forward.
+echo
+yn_proc="n"
+read -p "Are you ready to proceed[y/N]?: " yn_proc
+sleep 1
+
+# Error check for process as a whole.
+if [[ "$yn_proc" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	if for pkg in $(dpkg --get-selections | awk '{print $1}' | egrep -v '(dpkg|apt|mysql|mythtv)'); do apt install -y -f --reinstall $pkg; done; then
+		echo
+		echo "${ILCOLOR3}*******Error detected!!!*******${ILRESTORE}"
+		sleep 1
+	else
+		echo "${ILCOLOR2}Clean install.${ILRESTORE}"
+	fi
+else
+	echo
+	echo "${ILCOLOR2}Exiting now.${ILRESTORE}"
+	sleep 1
+	exit
+fi
