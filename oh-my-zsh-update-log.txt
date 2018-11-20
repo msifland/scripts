@@ -1,11 +1,15 @@
-Date & Time: 11-13-18 -- 07:30:03 AM
+Date & Time: 11-20-18 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating 05b61706..3d8f2bda
+Updating 3d8f2bda..e8aba1bf
 Fast-forward
- plugins/transfer/README.md           |  4 ----
- plugins/transfer/transfer.plugin.zsh | 10 +---------
- 2 files changed, 1 insertion(+), 13 deletions(-)
+ plugins/fabric/{_fabric => _fab} | 0
+ plugins/fabric/fabric.plugin.zsh | 0
+ plugins/golang/golang.plugin.zsh | 1 +
+ plugins/tmux/tmux.plugin.zsh     | 2 +-
+ 4 files changed, 2 insertions(+), 1 deletion(-)
+ rename plugins/fabric/{_fabric => _fab} (100%)
+ create mode 100644 plugins/fabric/fabric.plugin.zsh
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
