@@ -2,10 +2,8 @@
 # This is a blank bash script document.
 # Put your code below this line.
 echo
-echo "Starting EVE. . ."
+echo "Killing all wine associated .exe files. . ."
 echo
 sleep 1
-cd ~/.wine32/drive_c/EVE/ && WINEARCH=win32 WINEPREFIX=~/.wine32 wine eve.exe
-
 
 ps ax | egrep "*.exe|*exe]" | awk '{ print $1 }' | xargs kill -9
