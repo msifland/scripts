@@ -1,8 +1,0 @@
-#!/bin/bash
-# This is a blank bash script document.
-# Put your code below this line.
-echo
-echo "Starting EVE. . ."
-echo
-sleep 1
-cd ~/.wine32/drive_c/EVE/ && WINEARCH=win32 WINEPREFIX=~/.wine32 wine eve.exe

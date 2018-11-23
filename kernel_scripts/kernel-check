@@ -151,7 +151,7 @@ Would you like to install it?" 10 50; then
 		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET/perf-build
 		cd $WORK_DIR/linux-$GET
 		sed -i "s:VERSION=\"\":VERSION=\"$GET\":g" perf-build		
-		xterm -hold -e "zsh -c \"cd $WORK_DIR/linux-$GET; ./perf-build; echo 'Done building perf package, you can close this window now to install perf package. . .'\""
+		xterm -hold -e "zsh -c \"cd $WORK_DIR/linux-$GET; ./perf-build; echo; echo; echo 'Done building perf package, you can close this window now to install perf package. . .'\""
 		cd ..
 		sudo apt purge -y "linux-perf*"
 		sudo dpkg -i --force-all $HOME/tmp/perf-package/*.deb
