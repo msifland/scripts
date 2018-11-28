@@ -32,13 +32,9 @@ echo $PW | sudo -S sudo apt -y upgrade
 echo $PW | sudo -S sudo apt -y full-upgrade
 
 echo
-echo "${ILCOLOR1}Checking for old apps. . .${ILRESTORE}"
-sleep 1
-echo $PW | sudo -S sudo apt -y autoremove
-
-echo
 echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
 sleep 1
+echo $PW | sudo -S sudo apt -y autoremove
 echo $PW | sudo -S sudo apt -y clean
 echo $PW | sudo -S sudo apt -y autoclean
 echo $PW | sudo -S sudo apt -y purge
@@ -62,5 +58,5 @@ else
 fi
 
 echo
-echo "Don't forget to restore misc. files from $HOME/scripts/backups. . ."
+echo "Don't forget to restore misc. files from $HOME/pkg_bkups/backups. . ."
 sleep 3
