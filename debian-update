@@ -15,7 +15,7 @@ sleep 1
 PW="spike"
 echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
 sleep 1
-echo $PW | sudo -S -v
+echo $PW | sudo -S -s -v
 echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 
@@ -30,12 +30,8 @@ sudo apt full-upgrade -y
 sleep 1
 
 echo
-echo "${ILCOLOR1}Checking for old apps. . .${ILRESTORE}"
-sudo apt autoremove -y
-sleep 1
-
-echo
 echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
+sudo apt autoremove -y
 sudo apt clean -y
 sudo apt autoclean -y
 sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
