@@ -30,7 +30,6 @@ echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
 sleep 1
 echo $PW | sudo -S sudo apt -y upgrade
 echo $PW | sudo -S sudo apt -y full-upgrade
-echo $PW | sudo -S sudo apt -y dist-upgrade
 
 echo
 echo "${ILCOLOR1}Checking for old apps. . .${ILRESTORE}"
