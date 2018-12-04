@@ -29,7 +29,6 @@ EXCLUDE="--exclude-dir=^/home/msifland/roms
 
 INCLUDE="
 /
-/home
 "
 # Example for inclusion:
 # INCLUDE="
