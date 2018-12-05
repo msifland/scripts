@@ -1,15 +1,13 @@
-Date & Time: 11-20-18 -- 07:30:03 AM
+Date & Time: 12-04-18 -- 07:30:04 AM
 
 Updating Oh My Zsh
-Updating 3d8f2bda..e8aba1bf
+Updating e8aba1bf..2614b7ec
 Fast-forward
- plugins/fabric/{_fabric => _fab} | 0
- plugins/fabric/fabric.plugin.zsh | 0
- plugins/golang/golang.plugin.zsh | 1 +
- plugins/tmux/tmux.plugin.zsh     | 2 +-
- 4 files changed, 2 insertions(+), 1 deletion(-)
- rename plugins/fabric/{_fabric => _fab} (100%)
- create mode 100644 plugins/fabric/fabric.plugin.zsh
+ plugins/debian/README.md     | 75 ++++++++++++++++++++++++++++++++++++++++++++
+ plugins/osx/osx.plugin.zsh   |  2 +-
+ plugins/tmux/tmux.plugin.zsh |  2 +-
+ 3 files changed, 77 insertions(+), 2 deletions(-)
+ create mode 100644 plugins/debian/README.md
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
