@@ -15,7 +15,7 @@ echo "${ILCOLOR2}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
 sleep 1
 
 echo
-read -t 10 -p "${ILCOLOR2}Would you like to run 'kernels-purge'?[y/n] ${ILRESTORE}" kp
+read -t 10 -p "${ILCOLOR2}Would you like to run 'kernel-purge'?[y/n] ${ILRESTORE}" kp
 if [[ "$kp" =~ ^[yY][eE][sS]|[yY]$ ]]; then
 	sudo $HOME/scripts/kernel_scripts/kernel-purge
 fi
