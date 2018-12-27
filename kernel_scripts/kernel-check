@@ -60,7 +60,7 @@ fi
 cd "$WORK_DIR"
 
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
-VER="4.19"
+VER="4.20"
 read -p "${ILRESTORE}Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
 if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $VER"
