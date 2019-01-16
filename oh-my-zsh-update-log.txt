@@ -1,7 +1,10 @@
-Date & Time: 01-08-19 -- 07:30:05 AM
+Date & Time: 01-15-19 -- 07:30:18 AM
 
 Updating Oh My Zsh
-Already up to date.
+Updating a2995014..9329efd2
+Fast-forward
+ plugins/ssh-agent/ssh-agent.plugin.zsh | 37 +++++++++++++++++++++++++++-------
+ 1 file changed, 30 insertions(+), 7 deletions(-)
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
