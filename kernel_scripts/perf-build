@@ -66,3 +66,5 @@ rm -f ./usr/lib64/libperf-gtk.so
 cd ..
 
 fakeroot dpkg-deb --build linux-perf-${VERSION}/
+
+read -p "Press 'ENTER' or close this window to exit and install perf package."

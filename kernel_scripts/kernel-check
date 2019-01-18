@@ -2,6 +2,7 @@
 # This is a blank bash script document.
 # Put your code below this line.
 # Set kernel version prefix number to look for. If changed then rerun script with new version number inserted and saved in this file.
+<< Comment
 VER1="4"
 read -p "Current kernel version in script is $VER1, would you like to keep it[Y/n]? " YNVER1
 if [[ "$YNVER1" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
@@ -30,6 +31,7 @@ for i in $KERN_LIST; do
 	let n=n+1
 	echo "$n. $i"
 done
+Comment
 
 # This function allows version number comparison.
 function version_gt() { 
@@ -59,6 +61,7 @@ if [[ ! -d $STOR_DIR ]]; then
 fi
 cd "$WORK_DIR"
 
+<< Comment
 # Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
 VER="4.20"
 read -p "${ILRESTORE}Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
@@ -70,30 +73,37 @@ else
 	$HOME/scripts/kernel_scripts/kernel-check && exit
 fi
 echo
+Comment
 
 echo
 echo "${ILCOLOR2}We are going to see if there is a new kernel to build from main kernel source: kernel.org.${ILRESTORE}"
 sleep 1
 
 # Get and format websit info
+GET=$(wget -qO- https://www.kernel.org | grep -A1  "latest_link\">" | grep "<a href=" | sed -e 's:<a href="::' | sed -e 's:">*::' | sed -e "s:tar.xz.*:tar.xz:" | sed "s/^[ \t]*//")
+GET_VER=$(echo $GET | sed -e "s:.*linux-::" | sed -e "s:.tar.xz::")
+<< Comment
 GET=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER1".x/ | grep "linux-$VER" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n1)
+Comment
 
 echo
-echo "Newest kernel version available is $GET"
+echo "Newest stable kernel version available is ${ILCOLOR2}$GET_VER${ILRESTORE}"
 sleep 1
 
 # Get current kernel version. The awk section here is nice in that everything after the '-' is deleted.
 CURNT=$(ls /boot | grep "vmlinuz" | sed 's:vmlinuz-::g' | sed 's:-generic::g' | sort -V | tail -n1 | awk -F '\\-' '{print $1}')
 
-echo "Latest kernel version installed is $CURNT"
+echo "Latest kernel version installed is ${ILCOLOR2}$CURNT"
 sleep 1
 echo -e "${ILRESTORE}"
 
+
+
 # Calling function to check versions.
-if version_gt "$GET" "$CURNT"; then
+if version_gt "$GET_VER" "$CURNT"; then
 	# Added this because of automation this stops the screen for a response when called with the script kern-update-timer.
 	if dialog --yesno "There is a newer kernel available.
-You are running $CURNT, and $GET is out.
+You are running $CURNT, and $GET_VER is out.
 Would you like to install it?" 10 50; then
 		# Start timing process
 		tm_wh_start=$(date +"%s")
@@ -102,15 +112,16 @@ Would you like to install it?" 10 50; then
 		sleep 1
 		# Formatting for web search.
 		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
-		wget https://cdn.kernel.org/pub/linux/kernel/v"$VER1".x/linux-"$GET".tar.xz
+		wget $GET
+		#wget https://cdn.kernel.org/pub/linux/kernel/v"$VER1".x/linux-"$GET".tar.xz
 		echo
 		echo "${ILCOLOR2}Unzipping kernel. . .${ILRESTORE}"
 		sleep 1
-		tar -xf linux-"$GET".tar.xz
+		tar -xf linux-"$GET_VER".tar.xz
 		echo
 		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 		echo 'spike' | sudo -S apt build-dep -y linux
-		cd linux-"$GET"
+		cd linux-"$GET_VER"
 		echo
 		echo "${ILCOLOR2}Copying current kernel .config. . .${ILRESTORE}"
 		cp /boot/config-$(uname -r) .config
@@ -139,19 +150,19 @@ Would you like to install it?" 10 50; then
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		sudo update-initramfs -c -t -k "$GET$CONF_VER$LOC_VER"
+		sudo update-initramfs -c -t -k "$GET_VER$CONF_VER$LOC_VER"
 		sudo update-grub
 
 		# Build perf package
 		export WORK_DIR="$WORK_DIR"
-		export GET="$GET"
+		export GET="$GET_VER"
 		sleep 1
 		echo
 		echo "${ILCOLOR2}Now building perf package(Linux-tools). . .${ILRESTORE}"
-		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET/perf-build
-		cd $WORK_DIR/linux-$GET
-		sed -i "s:VERSION=\"\":VERSION=\"$GET\":g" perf-build		
-		xterm -hold -e "zsh -c \"cd $WORK_DIR/linux-$GET; ./perf-build; echo; echo; echo 'Done building perf package, you can close this window now to install perf package. . .'\""
+		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET_VER/perf-build
+		cd $WORK_DIR/linux-$GET_VER
+		sed -i "s:VERSION=\"\":VERSION=\"$GET_VER\":g" perf-build		
+		xterm -e "zsh -c \"cd $WORK_DIR/linux-$GET_VER; ./perf-build; echo; echo;\""
 		cd ..
 		sudo apt purge -y "linux-perf*"
 		sudo dpkg -i --force-all $HOME/tmp/perf-package/*.deb
