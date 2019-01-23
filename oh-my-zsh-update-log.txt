@@ -1,10 +1,17 @@
-Date & Time: 01-15-19 -- 07:30:18 AM
+Date & Time: 01-22-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating a2995014..9329efd2
+Updating 9329efd2..c4948696
 Fast-forward
- plugins/ssh-agent/ssh-agent.plugin.zsh | 37 +++++++++++++++++++++++++++-------
- 1 file changed, 30 insertions(+), 7 deletions(-)
+ lib/misc.zsh                           |  1 -
+ plugins/extract/README.md              |  1 +
+ plugins/extract/_extract               |  2 +-
+ plugins/extract/extract.plugin.zsh     |  2 +-
+ plugins/git/git.plugin.zsh             |  4 ++--
+ plugins/ssh-agent/ssh-agent.plugin.zsh | 32 +++++++++++++++++++++-----------
+ templates/zshrc.zsh-template           |  4 +---
+ tools/install.sh                       |  2 +-
+ 8 files changed, 28 insertions(+), 20 deletions(-)
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
