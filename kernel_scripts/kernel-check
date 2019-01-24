@@ -130,12 +130,15 @@ Would you like to install it?" 10 50; then
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 		echo "Local version from .config file: $CONF_VER"
 		echo
-		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " LOC_VER
-		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
-		
+		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank, or '0' to take off custom version number.)? " LOC_VER
+		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
 		scripts/config --disable DEBUG_INFO
+
 		if [[ "$LOC_VER" != "" ]]; then
-			sed -i "s:CONFIG_LOCALVERSION=\"\":CONFIG_LOCALVERSION=\"$LOC_VER\":g" .config
+			sed -i "s:CONFIG_LOCALVERSION=\".*:CONFIG_LOCALVERSION=\"-$LOC_VER\":g" .config
+		fi
+		if [[ "$LOC_VER" = "0" ]]; then
+			sed -i "s:CONFIG_LOCALVERSION=.*:CONFIG_LOCALVERSION=\"\":g" .config
 		fi
 		
 		echo
@@ -150,7 +153,10 @@ Would you like to install it?" 10 50; then
 		rm -rf *dbg*.deb
 		rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		sudo update-initramfs -c -t -k "$GET_VER$CONF_VER$LOC_VER"
+
+		#Get .config version for next step.
+		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+		sudo update-initramfs -c -t -k "$GET_VER$CONF_VER_WRT"
 		sudo update-grub
 
 		# Build perf package
