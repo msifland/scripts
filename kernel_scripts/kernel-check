@@ -140,7 +140,9 @@ Would you like to install it?" 10 50; then
 		if [[ "$LOC_VER" = "0" ]]; then
 			sed -i "s:CONFIG_LOCALVERSION=.*:CONFIG_LOCALVERSION=\"\":g" .config
 		fi
-		
+		# This variable is for initramfs update format below.
+		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+
 		echo
 		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
 		if grep -w "^CONFIG_SYSTEM_TRUSTED_KEYS=" .config; then
@@ -155,7 +157,6 @@ Would you like to install it?" 10 50; then
 		echo 'spike' | sudo -S dpkg -i *.deb
 
 		#Get .config version for next step.
-		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 		sudo update-initramfs -c -t -k "$GET_VER$CONF_VER_WRT"
 		sudo update-grub
 
