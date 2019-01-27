@@ -2,6 +2,11 @@
 # This is a blank bash script document.
 # Put your code below this line.
 # Set kernel version prefix number to look for. If changed then rerun script with new version number inserted and saved in this file.
+PW="spike"
+echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
+sleep 1
+echo $PW | sudo -S -v
+echo
 << Comment
 VER1="4"
 read -p "Current kernel version in script is $VER1, would you like to keep it[Y/n]? " YNVER1
