@@ -1,17 +1,11 @@
-Date & Time: 01-22-19 -- 07:30:03 AM
+Date & Time: 01-29-19 -- 07:30:04 AM
 
 Updating Oh My Zsh
-Updating 9329efd2..c4948696
+Updating c4948696..ea6ec09b
 Fast-forward
- lib/misc.zsh                           |  1 -
- plugins/extract/README.md              |  1 +
- plugins/extract/_extract               |  2 +-
- plugins/extract/extract.plugin.zsh     |  2 +-
- plugins/git/git.plugin.zsh             |  4 ++--
- plugins/ssh-agent/ssh-agent.plugin.zsh | 32 +++++++++++++++++++++-----------
- templates/zshrc.zsh-template           |  4 +---
- tools/install.sh                       |  2 +-
- 8 files changed, 28 insertions(+), 20 deletions(-)
+ plugins/cake/README.md | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 plugins/cake/README.md
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
