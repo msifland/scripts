@@ -1,11 +1,12 @@
-Date & Time: 01-29-19 -- 07:30:04 AM
+Date & Time: 02-05-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating c4948696..ea6ec09b
+Updating ea6ec09b..851899e5
 Fast-forward
- plugins/cake/README.md | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
- create mode 100644 plugins/cake/README.md
+ plugins/git/git.plugin.zsh           | 4 ++--
+ plugins/transfer/transfer.plugin.zsh | 4 +++-
+ themes/gallifrey.zsh-theme           | 9 ++++++---
+ 3 files changed, 11 insertions(+), 6 deletions(-)
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
