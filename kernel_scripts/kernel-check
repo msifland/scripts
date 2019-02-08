@@ -159,8 +159,8 @@ Would you like to install it?" 10 50; then
 		echo 'spike' | sudo -S dpkg -i *.deb
 
 		#Get .config version for next step.
-		sudo update-initramfs -c -t -k "$GET_VER$CONF_VER_WRT"
-		sudo update-grub
+		echo 'spike' | sudo -S update-initramfs -c -t -k "$GET_VER$CONF_VER_WRT"
+		echo 'spike' | sudo -S update-grub
 
 		# Build perf package
 		export WORK_DIR="$WORK_DIR"
@@ -173,8 +173,8 @@ Would you like to install it?" 10 50; then
 		sed -i "s:VERSION=\"\":VERSION=\"$GET_VER\":g" perf-build		
 		xterm -e "zsh -c \"cd $WORK_DIR/linux-$GET_VER; ./perf-build; echo; echo;\""
 		cd ..
-		sudo apt purge -y "linux-perf*"
-		sudo dpkg -i --force-all $HOME/tmp/perf-package/*.deb
+		echo 'spike' | sudo -S apt purge -y "linux-perf*"
+		echo 'spike' | sudo -S dpkg -i --force-all $HOME/tmp/perf-package/*.deb
 		if ls $HOME/tmp/perf-package/*.deb >/dev/null 2>&1; then
 			cp $HOME/tmp/perf-package/*.deb $HOME/tmp/kernel_storage
 		fi
