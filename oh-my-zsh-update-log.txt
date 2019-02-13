@@ -1,12 +1,11 @@
-Date & Time: 02-05-19 -- 07:30:03 AM
+Date & Time: 02-12-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating ea6ec09b..851899e5
+Updating 851899e5..86ea3195
 Fast-forward
- plugins/git/git.plugin.zsh           | 4 ++--
- plugins/transfer/transfer.plugin.zsh | 4 +++-
- themes/gallifrey.zsh-theme           | 9 ++++++---
- 3 files changed, 11 insertions(+), 6 deletions(-)
+ plugins/asdf/asdf.plugin.zsh | 8 +++++---
+ plugins/z/z.sh               | 6 ++++++
+ 2 files changed, 11 insertions(+), 3 deletions(-)
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
