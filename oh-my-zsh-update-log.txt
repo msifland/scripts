@@ -1,11 +1,31 @@
-Date & Time: 02-12-19 -- 07:30:03 AM
+Date & Time: 02-19-19 -- 07:30:04 AM
 
 Updating Oh My Zsh
-Updating 851899e5..86ea3195
+Updating 86ea3195..dfd1b4f8
 Fast-forward
- plugins/asdf/asdf.plugin.zsh | 8 +++++---
- plugins/z/z.sh               | 6 ++++++
- 2 files changed, 11 insertions(+), 3 deletions(-)
+ LICENSE.txt                              |   2 +-
+ plugins/adb/_adb                         |   9 +-
+ plugins/brew/README.md                   |   2 +
+ plugins/brew/brew.plugin.zsh             |   2 +
+ plugins/emacs/emacs.plugin.zsh           |   2 +-
+ plugins/jenv/jenv.plugin.zsh             |   2 +-
+ plugins/kubectl/README.md                |   2 +
+ plugins/kubectl/kubectl.plugin.zsh       |   4 +
+ plugins/laravel/README.md                |  45 ++-
+ plugins/laravel/laravel.plugin.zsh       |  23 ++
+ plugins/mvn/README.md                    |  54 ++-
+ plugins/mvn/mvn.plugin.zsh               | 549 ++++++++++++++++---------------
+ plugins/osx/spotify                      |  11 +-
+ plugins/ros/README.mkd                   |  10 +
+ plugins/ros/_ros                         |  64 ++++
+ plugins/timer/README.md                  |  17 +
+ plugins/timer/timer.plugin.zsh           |  29 ++
+ plugins/web-search/web-search.plugin.zsh |   2 +
+ 18 files changed, 536 insertions(+), 293 deletions(-)
+ create mode 100644 plugins/ros/README.mkd
+ create mode 100644 plugins/ros/_ros
+ create mode 100644 plugins/timer/README.md
+ create mode 100644 plugins/timer/timer.plugin.zsh
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
