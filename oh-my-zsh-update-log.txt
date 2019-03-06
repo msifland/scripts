@@ -1,18 +1,11 @@
-Date & Time: 02-26-19 -- 07:30:07 AM
+Date & Time: 03-05-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating dfd1b4f8..f319aa84
+Updating f319aa84..52afbf77
 Fast-forward
- README.md                          | 2 +-
- lib/functions.zsh                  | 6 +++---
- oh-my-zsh.sh                       | 8 +++-----
- plugins/ansible/README.md          | 3 +--
- plugins/ansible/ansible.plugin.zsh | 3 +--
- plugins/emacs/emacs.plugin.zsh     | 2 +-
- plugins/fancy-ctrl-z/README.md     | 6 +++---
- tools/install.sh                   | 2 +-
- tools/upgrade.sh                   | 2 +-
- 9 files changed, 15 insertions(+), 19 deletions(-)
+ README.md                                               |  2 +-
+ plugins/per-directory-history/per-directory-history.zsh | 11 ++++++++---
+ 2 files changed, 9 insertions(+), 4 deletions(-)
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
@@ -22,4 +15,4 @@ Current branch master is up to date.
                         /____/                       
 Hooray! Oh My Zsh has been updated and/or is at the current version.
 To keep up on the latest news and updates, follow us on twitter: https://twitter.com/ohmyzsh
-Get your Oh My Zsh swag at:  https://shop.planetargon.com/
+Get your Oh My Zsh swag at:  https://shop.planetargon.com/collections/oh-my-zsh
