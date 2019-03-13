@@ -188,6 +188,9 @@ sleep 1
 osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/Combine/my_se.osm.pbf
 
 # Formatting for faster and better processing.
+echo
+echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
+sleep 1
 cd $HOME/maps/Combine
 osmconvert --drop-version $HOME/maps/Combine/my_se.osm.pbf -o=$HOME/maps/Combine/my_se.o5m
 
