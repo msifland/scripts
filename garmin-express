@@ -1,0 +1,8 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "${ILCOLOR2}Starting GarminExpress. . .${ILRESTORE}"
+echo
+sleep 1
+WINEPREFIX=/home/msifland/GarminExpress wine explorer /desktop=garmin,1366x768 '/home/msifland/GarminExpress/drive_c/Program Files/Garmin/Express/express.exe'
