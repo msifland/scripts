@@ -219,18 +219,18 @@ if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
 	echo
 	echo "${ILCOLOR1}Checking for Garmin Device. . .${ILRESTORE}"
 	sleep 1
-	if [[ -d "/run/media/msifland/GARMIN" ]]; then
+	if [[ -d "/media/msifland/D216-4B4C" ]]; then
 		echo "Garming device found. . ."
 		echo
 		sleep 1
-		if [[ -f /run/media/msifland/GARMIN/Garmin/my_se_gmapsupp.img ]];then
+		if [[ -f /media/msifland/D216-4B4C/Garmin/my_se_gmapsupp.img ]];then
 			echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-			rm -rf /run/media/msifland/GARMIN/Garmin/my_se_gmapsupp.img
+			rm -rf /media/msifland/D216-4B4C/Garmin/my_se_gmapsupp.img
 			echo
 			sleep 1
 		fi
 		echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-		rsync --progress --verbose $HOME/maps/my_se_gmapsupp.img /run/media/msifland/GARMIN/Garmin/my_se_gmapsupp.img
+		rsync --progress --verbose $HOME/maps/my_se_gmapsupp.img /media/msifland/D216-4B4C/Garmin/my_se_gmapsupp.img
 	else
 		echo
 		echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
