@@ -1,7 +1,47 @@
-Date & Time: 03-19-19 -- 07:30:04 AM
+Date & Time: 03-26-19 -- 07:30:04 AM
 
 Updating Oh My Zsh
-Already up to date.
+Updating 9509fd6a..8fba5036
+Fast-forward
+ lib/compfix.zsh                                    |   2 +-
+ lib/termsupport.zsh                                |   2 +-
+ oh-my-zsh.sh                                       |   3 +
+ plugins/aws/README.md                              |  28 +-
+ plugins/aws/aws.plugin.zsh                         |  91 +++--
+ plugins/cargo/README.md                            |   4 +-
+ plugins/cargo/_cargo                               |  86 +++-
+ plugins/command-not-found/README.md                |   1 +
+ .../command-not-found/command-not-found.plugin.zsh |   7 +
+ plugins/fd/README.md                               |  13 +
+ plugins/fd/_fd                                     |  83 ++++
+ plugins/git/git.plugin.zsh                         |   2 +-
+ plugins/golang/golang.plugin.zsh                   |  79 +++-
+ plugins/lighthouse/README.md                       |  26 ++
+ plugins/lighthouse/lighthouse.plugin.zsh           |  14 +-
+ plugins/otp/otp.plugin.zsh                         |  54 +++
+ plugins/rake-fast/rake-fast.plugin.zsh             |   2 +-
+ plugins/react-native/README.md                     |  67 ++--
+ plugins/react-native/react-native.plugin.zsh       |  17 +
+ plugins/ripgrep/README.md                          |  13 +
+ plugins/ripgrep/_ripgrep                           | 433 +++++++++++++++++++++
+ plugins/suse/README.md                             |  40 +-
+ plugins/suse/suse.plugin.zsh                       |  40 +-
+ plugins/web-search/README.md                       |   2 +
+ plugins/web-search/web-search.plugin.zsh           |   4 +-
+ themes/agnoster.zsh-theme                          |  14 +
+ themes/dst.zsh-theme                               |   2 +-
+ themes/gentoo.zsh-theme                            |   2 +-
+ themes/pygmalion-virtualenv.zsh-theme              |  50 +++
+ themes/tjkirch.zsh-theme                           |   2 +-
+ themes/tjkirch_mod.zsh-theme                       |   2 +-
+ 31 files changed, 1041 insertions(+), 144 deletions(-)
+ create mode 100644 plugins/fd/README.md
+ create mode 100644 plugins/fd/_fd
+ create mode 100644 plugins/lighthouse/README.md
+ create mode 100644 plugins/otp/otp.plugin.zsh
+ create mode 100644 plugins/ripgrep/README.md
+ create mode 100644 plugins/ripgrep/_ripgrep
+ create mode 100644 themes/pygmalion-virtualenv.zsh-theme
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
