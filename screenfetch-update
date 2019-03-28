@@ -2,9 +2,15 @@
 # This is a blank bash script document.
 # Put your code below this line.
 echo
-echo "Updating screenfetch to reflect my custom colors. . ."
+echo "Downloading screenfetch latest and updating screenfetch to reflect my custom colors. . ."
 echo
 sleep 1
+
+cd $HOME/pkg_bkups/backups/screenfetch
+git pull https://github.com/KittyKatt/screenFetch
+echo 'spike' | sudo -S cp screenfetch-dev /usr/bin/screenfetch
+sudo chmod +x /usr/bin/screenfetch
+cd
 
 # Search for my tag to see if file has already been updated.
 if grep -q '#my_custom_tag' /usr/bin/screenfetch; then
