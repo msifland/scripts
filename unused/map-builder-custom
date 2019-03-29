@@ -3,7 +3,7 @@
 cd $HOME/maps
 
 echo
-echo "This scripts allows you to build a custom state map for your garmin device..."
+echo "${ILCOLOR1}This scripts allows you to build a custom state map for your garmin device...${ILRESTORE}"
 sleep 1
 
 echo
@@ -20,7 +20,7 @@ echo "Time: $TIME"
 echo
 
 echo
-echo "Starting process of downloading and building Garmin map of Geofarik maps: "$STATE
+echo "${ILCOLOR1}Starting process of downloading and building Garmin map of Geofarik maps:${ILRESTORE} "$STATE
 sleep 1
 
 if [[ ! -d "$HOME/maps/$STATE" ]]; then
@@ -33,73 +33,59 @@ if [[ -f "$HOME/maps/$STATE_gmapsupp.img" ]]; then
 fi
 
 echo
-echo "Downloading map..."
+echo "${ILCOLOR1}Downloading map...${ILRESTORE}"
 sleep 1
 echo
 wget -O $HOME/maps/"$STATE"_latest.osm.pbf http://download.geofabrik.de/north-america/us/$STATE-latest.osm.pbf
 
 echo
-echo "Moving "$STATE"_latest.osm.pbf file to $STATE folder..."
+echo "${ILCOLOR1}Moving "$STATE"_latest.osm.pbf file to $STATE folder...${ILRESTORE}"
 mv "$STATE"_latest.osm.pbf $HOME/maps/$STATE/$STATE.osm.pbf
 cd $HOME/maps/$STATE
 
+# Formatting for faster and better processing.
 echo
-echo "Splitting file..."
+echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
 sleep 1
-java  -Xmx6200m -jar $HOME/maps/mkgmap-splitter/mkgmap-splitter.jar $HOME/maps/$STATE/$STATE.osm.pbf --max-nodes=800000 --output=xml
+osmconvert --drop-version $HOME/maps/$STATE/$STATE.osm.pbf -o=$HOME/maps/$STATE/$STATE.o5m
 
 echo
-echo "Creating img, this will take a while..."
+echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 sleep 1
-java -Xmx6200M -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/mkgmap/examples/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/osm_new.typ
+mkgmap-splitter $HOME/maps/$STATE/$STATE.o5m --max-nodes=800000 --output=xml
 
 echo
-echo "Moving gmapsupp.img to Maps folder and renaming to us_se_mw_gmapsupp.img..."
+echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
+sleep 1
+mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/osm_new.typ
+
+echo
+echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to $STATE_gmapsupp.img...${ILRESTORE}"
 sleep 1
 mv $HOME/maps/$STATE/gmapsupp.img $HOME/maps/"$STATE"_gmapsupp.img
-
-echo
-echo "Cleaning up files..."
 sleep 1
 
-read -t 10 -p "Would you like to delete leftover files? You have 10 seconds to decide and then deleting automatically.[y/n] " yn
-	case $yn in
-		y|Y )
-			echo
-			echo "Ok deleting files..."
-			echo
-			sleep 1
-			echo
-			rm -rf $HOME/maps/$STATE
-			rm -rf $HOME/maps/*.osm.pbf
-			;;
-		n|N )
-			echo
-			echo "Ok not deleting files..."
-			echo
-			sleep 2
-			;;
-		* )
-			echo
-			echo "Timed out or invalid selection, not deleting files..."
-			echo
-			sleep 2
-			;;
-	esac
-
 echo
-echo "Copying to Garmin Device, if it's plugged in..."
+echo "${ILCOLOR1}Checking for Garmin Device. . .${ILRESTORE}"
 sleep 1
-if [[ -d "/run/media/msifland/GARMIN" ]]; then
-	rsync --progress --verbose $HOME/maps/$STATE_gmapsupp.img /run/media/msifland/GARMIN/Garmin/$STATE_gmapsupp.img
+if [[ -d "/media/msifland/D216-4B4C" ]]; then
+	rsync --progress --verbose $HOME/maps/$STATE_gmapsupp.img /media/msifland/D216-4B4C/Garmin/$STATE_gmapsupp.img
 else
 	echo
-	echo "No Garmin Device found. Copy manually later."
+	echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
 fi
 sleep 1
 
 echo
-echo "Finished."
+echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
+sleep 1
+
+echo
+rm -rf $HOME/maps/$STATE
+rm -rf $HOME/maps/*.osm.pbf
+
+echo
+echo "${ILCOLOR1}Finished."
 sleep 1
 echo "Build End Time:"
 DATE=$(date +"%m-%d-%y")

@@ -15,7 +15,6 @@ TIME=$(date +"%r")
 echo "Time: $TIME"
 echo -e ${ILRESTORE}
 
-cd $HOME/maps
 echo
 echo "${ILCOLOR1}Starting process of downloading and building Garmin map of the following Geofarik maps:"
 
@@ -31,6 +30,9 @@ echo -e ${ILRESTORE}
 sleep 1
 
 # Create directories if they don't exist.
+if [[ ! -d "$HOME/maps" ]]; then
+	mkdir "$HOME/maps"
+fi
 if [[ ! -d "$HOME/maps/Combine" ]]; then
 	mkdir "$HOME/maps/Combine"
 fi
@@ -43,6 +45,7 @@ if [[ ! -d "$HOME/maps/downloads" ]]; then
 else
 	rm -rf $HOME/maps/downloads/*
 fi
+cd $HOME/maps
 
 # Downloading maps from geofabrik.
 echo
