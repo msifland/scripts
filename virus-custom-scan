@@ -24,6 +24,12 @@ sudo blkid | awk '{print $1 " " $2}' | sed 's#:##g'
 echo
 sleep 1
 
+echo
+echo "${ILCOLOR2}Here are the root directories:${ILRESTORE} "
+sleep 1
+ls -d /*
+sleep 1    
+
 # Function to scan, listed first so we can call it later.
 function scan_it(){
 	# Ask if you would like to copy or move found infections to the infections folder. Then run scan.
