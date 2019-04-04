@@ -210,7 +210,7 @@ mkgmap-splitter $HOME/maps/Combine/my_se.o5m --max-nodes=800000 --output=xml
 echo
 echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 sleep 1
-mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/osm_new.typ
+mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
 
 # Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
 if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
