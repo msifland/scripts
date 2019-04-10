@@ -1,7 +1,37 @@
-Date & Time: 04-02-19 -- 07:30:04 AM
+Date & Time: 04-09-19 -- 07:30:04 AM
 
 Updating Oh My Zsh
-Already up to date.
+Updating 3a6bf6b..351fa06
+Fast-forward
+ CODE_OF_CONDUCT.md                   |  76 +++
+ CONTRIBUTING.md                      |   4 +-
+ README.md                            |   6 +-
+ lib/history.zsh                      |   4 +-
+ lib/theme-and-appearance.zsh         |   3 -
+ plugins/cloudapp/cloudapp.plugin.zsh |   8 +-
+ plugins/git-prompt/gitstatus.py      |   2 +-
+ plugins/git/git.plugin.zsh           |   1 +
+ plugins/gitfast/README.md            | 129 +----
+ plugins/gitfast/_git                 |  11 +-
+ plugins/gitfast/git-completion.bash  | 913 ++++++++++++++++++++++++++++-------
+ plugins/gitfast/git-prompt.sh        |   9 +-
+ plugins/gitfast/gitfast.plugin.zsh   |   7 +-
+ plugins/gulp/gulp.plugin.zsh         |   4 +-
+ plugins/iwhois/README.md             |  24 -
+ plugins/iwhois/iwhois.plugin.zsh     |   5 -
+ plugins/nvm/nvm.plugin.zsh           |   7 +-
+ plugins/osx/osx.plugin.zsh           |  37 ++
+ plugins/pip/pip.plugin.zsh           |   4 +-
+ plugins/swiftpm/README.md            |   2 +-
+ plugins/swiftpm/_swift               | 235 ++++++---
+ plugins/vault/README.md              |  19 +-
+ templates/zshrc.zsh-template         |   3 -
+ themes/refined.zsh-theme             |   1 +
+ tools/check_for_upgrade.sh           |   4 +-
+ 25 files changed, 1067 insertions(+), 451 deletions(-)
+ create mode 100644 CODE_OF_CONDUCT.md
+ delete mode 100644 plugins/iwhois/README.md
+ delete mode 100644 plugins/iwhois/iwhois.plugin.zsh
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
