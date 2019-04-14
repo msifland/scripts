@@ -1,31 +1,7 @@
-Date & Time: 04-10-19 -- 11:22:12 AM
+Date & Time: 04-13-19 -- 09:52:45 AM
 
 Updating Oh My Zsh
-Updating 351fa065..7824dc63
-Fast-forward
- lib/git.zsh                              |  34 +-----
- plugins/archlinux/README.md              |   2 +-
- plugins/autojump/autojump.plugin.zsh     |  58 ++++++----
- plugins/aws/README.md                    |   2 +
- plugins/aws/aws.plugin.zsh               |   2 +-
- plugins/docker-compose/_docker-compose   | 168 ++++++++++------------------
- plugins/emacs/emacsclient.sh             |   2 +-
- plugins/git-prompt/README.md             |  61 +++++++++++
- plugins/git-prompt/git-prompt.plugin.zsh |   3 -
- plugins/git/git.plugin.zsh               |   8 +-
- plugins/httpie/README.md                 |  17 ++-
- plugins/httpie/_httpie                   | 181 +++++++++++++++++++++++++++++++
- plugins/httpie/httpie.plugin.zsh         |  33 ------
- plugins/kube-ps1/README.md               |  28 ++++-
- plugins/kube-ps1/kube-ps1.plugin.zsh     |  28 +++--
- plugins/tmuxinator/_tmuxinator           |   6 +-
- plugins/vi-mode/vi-mode.plugin.zsh       |  13 +--
- themes/bira.zsh-theme                    |   5 +-
- themes/fishy.zsh-theme                   |   2 +-
- 19 files changed, 424 insertions(+), 229 deletions(-)
- create mode 100644 plugins/git-prompt/README.md
- create mode 100644 plugins/httpie/_httpie
- delete mode 100644 plugins/httpie/httpie.plugin.zsh
+Already up to date.
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
