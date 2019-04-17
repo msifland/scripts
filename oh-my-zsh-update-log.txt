@@ -1,7 +1,16 @@
-Date & Time: 04-13-19 -- 09:52:45 AM
+Date & Time: 04-16-19 -- 07:30:07 AM
 
 Updating Oh My Zsh
-Already up to date.
+Updating b57c0ac6..8d95f760
+Fast-forward
+ plugins/bwana/README.md            |   3 +
+ plugins/bwana/bwana.plugin.zsh     |   4 +-
+ plugins/emacs/emacsclient.sh       |   2 +-
+ plugins/rails/README.md            |  83 ++++++++++++++++
+ plugins/sublime/README.md          |  38 +++++---
+ plugins/sublime/sublime.plugin.zsh | 189 ++++++++++++++++++-------------------
+ 6 files changed, 207 insertions(+), 112 deletions(-)
+ create mode 100644 plugins/rails/README.md
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
