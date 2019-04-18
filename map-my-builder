@@ -5,6 +5,32 @@
 
 echo
 echo "Running My Map Builder for Garmin devices. . ."
+sleep 1
+
+# Check if device is connected and don't run until it is, unless 'b' is typed for bypass.
+echo
+echo "Checking if Garmin device is connected. . ."
+sleep 1
+echo 
+chck=""
+function garmin_check(){
+	shopt -s nocasematch
+	sleep 1
+	if [[ -d "/media/msifland/D216-4B4C" ]]; then
+		echo "Garmin device found. . ."
+		echo
+		sleep 1
+	else
+		if [[ ! "$chck" = "b" ]]; then
+			read -t 10 -p "No Garmin device found, checking again in 10 seconds. [B] for bypass. . . " chck; echo
+			garmin_check
+		else
+			echo
+			echo "Ok, bypassing device check. . ."
+			sleep 1
+		fi
+	fi
+shopt -s casematch
 ### Log date and time
 echo -e ${ILCOLOR1}
 DATE_START=$(date +"%s")
@@ -266,4 +292,6 @@ echo -e "${ILRESTORE}"
 
 cd $HOME
 $HOME/scripts/free-ram
+}
+garmin_check
 exit
