@@ -1,18 +1,12 @@
-Date & Time: 04-21-19 -- 09:25:54 AM
+Date & Time: 04-23-19 -- 07:30:08 AM
 
 Updating Oh My Zsh
-Updating 8d95f760..9b2410fb
+Updating 9b2410fb..f4647658
 Fast-forward
- plugins/kubectl/README.md          |    2 +-
- plugins/kubectl/kubectl.plugin.zsh |    3 +-
- plugins/sfdx/README.md             |   11 +
- plugins/sfdx/_sfdx                 | 1110 ++++++++++++++++++++++++++++++++++++
- themes/agnoster.zsh-theme          |    1 -
- themes/bira.zsh-theme              |   19 +-
- tools/install.sh                   |    4 +-
- 7 files changed, 1136 insertions(+), 14 deletions(-)
- create mode 100644 plugins/sfdx/README.md
- create mode 100644 plugins/sfdx/_sfdx
+ lib/theme-and-appearance.zsh         |  2 +-
+ plugins/colorize/README.md           | 15 +++++++++++++--
+ plugins/colorize/colorize.plugin.zsh | 23 ++++++++++++++++++++++-
+ 3 files changed, 36 insertions(+), 4 deletions(-)
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
