@@ -1,12 +1,7 @@
-Date & Time: 04-23-19 -- 07:30:08 AM
+Date & Time: 04-30-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating 9b2410fb..f4647658
-Fast-forward
- lib/theme-and-appearance.zsh         |  2 +-
- plugins/colorize/README.md           | 15 +++++++++++++--
- plugins/colorize/colorize.plugin.zsh | 23 ++++++++++++++++++++++-
- 3 files changed, 36 insertions(+), 4 deletions(-)
+Already up to date.
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
