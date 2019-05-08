@@ -1,4 +1,4 @@
-Date & Time: 04-30-19 -- 07:30:03 AM
+Date & Time: 05-07-19 -- 07:30:06 AM
 
 Updating Oh My Zsh
 Already up to date.
