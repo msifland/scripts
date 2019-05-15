@@ -1,7 +1,63 @@
-Date & Time: 05-07-19 -- 07:30:06 AM
+Date & Time: 05-14-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Already up to date.
+Updating 6da59ff0..486fa101
+Fast-forward
+ lib/directories.zsh                        | 10 +++-
+ lib/misc.zsh                               |  6 +--
+ lib/prompt_info_functions.zsh              | 19 +++++--
+ lib/theme-and-appearance.zsh               |  2 +
+ oh-my-zsh.sh                               | 19 +++----
+ plugins/aws/aws.plugin.zsh                 | 10 ++--
+ plugins/catimg/catimg.plugin.zsh           |  2 +-
+ plugins/catimg/catimg.sh                   |  2 +-
+ plugins/django/django.plugin.zsh           |  2 +-
+ plugins/git-extras/git-extras.plugin.zsh   |  4 +-
+ plugins/git-hubflow/git-hubflow.plugin.zsh | 12 ++---
+ plugins/gulp/gulp.plugin.zsh               |  2 +-
+ plugins/jira/README.md                     |  1 +
+ plugins/jira/jira.plugin.zsh               |  5 +-
+ plugins/osx/README.md                      |  2 +-
+ plugins/osx/spotify                        | 64 ++++++++++++++++------
+ plugins/pipenv/README.md                   | 28 ++++++++++
+ plugins/pipenv/pipenv.plugin.zsh           | 42 +++++++++++++++
+ plugins/please/README.md                   | 26 +++++++++
+ plugins/please/please.plugin.zsh           |  7 +++
+ plugins/pyenv/pyenv.plugin.zsh             |  2 +-
+ plugins/rbenv/rbenv.plugin.zsh             | 87 ++++++++++++++++--------------
+ plugins/sdk/README.md                      |  8 +++
+ plugins/sdk/sdk.plugin.zsh                 | 82 ++++++++++++++++++++++++++++
+ plugins/ssh-agent/ssh-agent.plugin.zsh     |  2 +-
+ plugins/vscode/README.md                   | 15 ++++++
+ plugins/vscode/vscode.plugin.zsh           | 31 ++++++-----
+ templates/zshrc.zsh-template               |  3 ++
+ themes/3den.zsh-theme                      |  2 +-
+ themes/alanpeabody.zsh-theme               | 14 ++---
+ themes/amuse.zsh-theme                     | 27 +++-------
+ themes/bira.zsh-theme                      | 18 +++----
+ themes/crunch.zsh-theme                    | 10 ++--
+ themes/dallas.zsh-theme                    | 13 ++---
+ themes/fino-time.zsh-theme                 |  8 ++-
+ themes/fino.zsh-theme                      | 12 ++---
+ themes/frontcube.zsh-theme                 |  5 +-
+ themes/gallois.zsh-theme                   |  4 +-
+ themes/gnzh.zsh-theme                      | 12 ++---
+ themes/itchy.zsh-theme                     |  4 +-
+ themes/jaischeema.zsh-theme                | 10 ++--
+ themes/macovsky-ruby.zsh-theme             | 16 +-----
+ themes/macovsky.zsh-theme                  | 14 +++--
+ themes/mira.zsh-theme                      | 20 +++----
+ themes/simonoff.zsh-theme                  |  6 +--
+ themes/suvash.zsh-theme                    | 15 +-----
+ themes/wedisagree.zsh-theme                |  5 +-
+ 47 files changed, 457 insertions(+), 253 deletions(-)
+ create mode 100644 plugins/pipenv/README.md
+ create mode 100644 plugins/pipenv/pipenv.plugin.zsh
+ create mode 100644 plugins/please/README.md
+ create mode 100644 plugins/please/please.plugin.zsh
+ create mode 100644 plugins/sdk/README.md
+ create mode 100644 plugins/sdk/sdk.plugin.zsh
+ mode change 100644 => 120000 themes/macovsky-ruby.zsh-theme
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
