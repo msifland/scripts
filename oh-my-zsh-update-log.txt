@@ -1,23 +1,18 @@
-Date & Time: 05-21-19 -- 07:30:02 AM
+Date & Time: 05-28-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating 486fa101..f62a71e9
+Updating 60736c9f..7f66a070
 Fast-forward
- .github/ISSUE_TEMPLATE/bug_report.md           |  39 +++++
- .github/ISSUE_TEMPLATE/feature_request.md      |  26 +++
- .github/ISSUE_TEMPLATE/support.md              |  12 ++
- plugins/dotenv/README.md                       |  11 ++
- plugins/dotenv/dotenv.plugin.zsh               |  12 +-
- plugins/git/README.md                          | 211 ++++++++++++++++++++++++-
- plugins/git/git.plugin.zsh                     |  47 ++----
- plugins/rails/README.md                        |   2 +-
- plugins/rails/rails.plugin.zsh                 |   2 +-
- plugins/svn-fast-info/svn-fast-info.plugin.zsh |  49 +++---
- plugins/vi-mode/vi-mode.plugin.zsh             |  13 +-
- 11 files changed, 355 insertions(+), 69 deletions(-)
- create mode 100644 .github/ISSUE_TEMPLATE/bug_report.md
- create mode 100644 .github/ISSUE_TEMPLATE/feature_request.md
- create mode 100644 .github/ISSUE_TEMPLATE/support.md
+ plugins/aws/aws.plugin.zsh                         | 33 +++++----
+ plugins/emotty/emotty.plugin.zsh                   | 10 ++-
+ plugins/frontend-search/README.md                  | 78 ++++++++++++----------
+ plugins/frontend-search/_frontend-search.sh        | 65 ++++++++++++------
+ plugins/frontend-search/frontend-search.plugin.zsh | 32 ++++++---
+ plugins/ng/ng.plugin.zsh                           |  5 +-
+ plugins/osx/osx.plugin.zsh                         | 16 ++++-
+ plugins/torrent/README.md                          | 13 ++++
+ 8 files changed, 163 insertions(+), 89 deletions(-)
+ create mode 100644 plugins/torrent/README.md
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
