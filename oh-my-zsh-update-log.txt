@@ -1,18 +1,14 @@
-Date & Time: 05-28-19 -- 07:30:03 AM
+Date & Time: 06-04-19 -- 07:30:02 AM
 
 Updating Oh My Zsh
-Updating 60736c9f..7f66a070
+Updating 27228d83..52fdae4b
 Fast-forward
- plugins/aws/aws.plugin.zsh                         | 33 +++++----
- plugins/emotty/emotty.plugin.zsh                   | 10 ++-
- plugins/frontend-search/README.md                  | 78 ++++++++++++----------
- plugins/frontend-search/_frontend-search.sh        | 65 ++++++++++++------
- plugins/frontend-search/frontend-search.plugin.zsh | 32 ++++++---
- plugins/ng/ng.plugin.zsh                           |  5 +-
- plugins/osx/osx.plugin.zsh                         | 16 ++++-
- plugins/torrent/README.md                          | 13 ++++
- 8 files changed, 163 insertions(+), 89 deletions(-)
- create mode 100644 plugins/torrent/README.md
+ .editorconfig      |  10 ++
+ README.md          |  69 ++++++++--
+ tools/install.sh   | 380 +++++++++++++++++++++++++++++++++++++----------------
+ tools/uninstall.sh |  36 +++--
+ 4 files changed, 363 insertions(+), 132 deletions(-)
+ create mode 100644 .editorconfig
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
