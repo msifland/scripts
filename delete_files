@@ -3,6 +3,7 @@
 # Put your code below this line.
 # This scripts will find and delete files.
 echo
+
 # Crate variables.
 log=$HOME/tmp/find_log.txt
 rm -f $log
