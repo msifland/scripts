@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Date & Time: 06-11-19 -- 07:30:04 AM
 
 Updating Oh My Zsh
@@ -6,6 +7,33 @@ Fast-forward
  .github/ISSUE_TEMPLATE/feature_request.md | 4 ++--
  plugins/pip/pip.plugin.zsh                | 1 +
  2 files changed, 3 insertions(+), 2 deletions(-)
+=======
+Date & Time: 06-19-19 -- 01:33:13 PM
+
+Updating Oh My Zsh
+Updating 24cd8e83..c105c04b
+Fast-forward
+ plugins/colorize/README.md           |   6 ++
+ plugins/colorize/colorize.plugin.zsh |  22 ++++---
+ plugins/debian/README.md             | 114 +++++++++++++++++++----------------
+ plugins/debian/debian.plugin.zsh     |  97 ++++++++++++++---------------
+ plugins/dnote/README.md              |  51 ++++++++++++++++
+ plugins/dnote/_dnote                 |  39 ++++++++++++
+ plugins/gatsby/README.md             |   7 +++
+ plugins/gatsby/_gatsby               |  24 ++++++++
+ plugins/git/git.plugin.zsh           |   1 +
+ plugins/kubectl/README.md            |  15 +++++
+ plugins/kubectl/kubectl.plugin.zsh   |  18 ++++++
+ plugins/rails/README.md              |   2 +-
+ plugins/ubuntu/README.md             |  68 ++++++++++++---------
+ plugins/ubuntu/ubuntu.plugin.zsh     |  93 +++++++++-------------------
+ themes/crcandy.zsh-theme             |   2 +-
+ 15 files changed, 353 insertions(+), 206 deletions(-)
+ create mode 100644 plugins/dnote/README.md
+ create mode 100644 plugins/dnote/_dnote
+ create mode 100644 plugins/gatsby/README.md
+ create mode 100644 plugins/gatsby/_gatsby
+>>>>>>> 2be739acb5939cdb9ea3ba77793845f34fc34ef6
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
