@@ -96,7 +96,7 @@ sleep 1
 
 echo
 echo "${ILCOLOR1}Backing up crontab. . .${ILRESTORE}"
-if [[ -s /var/spool/cron/crontabs/msifland ]]; then
+if sudo test -s "/var/spool/cron/crontabs/msifland"; then
 	crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
 else
 	echo "No crontab file"
