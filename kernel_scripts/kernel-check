@@ -144,11 +144,11 @@ Would you like to install it?" 10 50; then
 		# This variable is for initramfs update format below.
 		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 
-		echo
-		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
-		if grep -w "^CONFIG_SYSTEM_TRUSTED_KEYS=" .config; then
-			sed -i 's:CONFIG_SYSTEM_TRUSTED_KEYS=:#CONFIG_SYSTEM_TRUSTED_KEYS=:g' .config
-		fi
+		#echo
+		#echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
+		#if grep -w "^CONFIG_SYSTEM_TRUSTED_KEYS=" .config; then
+		#	sed -i 's:CONFIG_SYSTEM_TRUSTED_KEYS=:#CONFIG_SYSTEM_TRUSTED_KEYS=:g' .config
+		#fi
 		# Build, remove uneeded files, install.
 		# oldefconfig pulls current options from .config file and automatically answers new options without prompt.
 		make olddefconfig		

@@ -3,6 +3,10 @@
 # Put your code below this line.
 echo
 PW='spike'
+echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
+sleep 1
+echo $PW | sudo -S -v
+echo
 echo "${ILCOLOR1}Updating repo sources. . .${ILRESTORE}"
 sleep 1
 echo $PW | sudo -S mv /etc/apt/sources.list /etc/apt/sources.list.bak
@@ -44,6 +48,13 @@ echo $PW | sudo -S sudo apt -y purge
 echo
 echo "Restoring system."
 sleep 1
+echo
+echo "Adding i386 architecture. . ."
+sleep 1
+echo "sudo dpkg --add-architecture i386"
+sudo dpkg --add-architecture i386
+sleep 1
+
 if dpkg --get-selections | awk '{print $1}' | grep -w "aptitude"; then
 	echo
 	echo "aptitude found. . . "
