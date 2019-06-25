@@ -6,10 +6,9 @@ RESTORE='\033[0m'
 PSWD="spike"
 echo $PSWD | sudo -S -v
 # What Files or Folders to Take Backup of.
+#/usr/share/mate*
 BACKUP_FILES="
-/usr/share/mate*
 /etc/udev/rules.d/51-android.rules
-$HOME/bin
 $HOME/Brother_Printer
 $HOME/Documents
 $HOME/Dropbox
@@ -21,7 +20,7 @@ $HOME/Projects
 $HOME/scripts
 $HOME/Templates
 $HOME/Wallpapers
-$HOME/.compiz
+$HOME/.anydesk
 $HOME/.cache
 $HOME/.config
 $HOME/.icons
