@@ -29,6 +29,7 @@ $HOME/.oh-my-zsh
 $HOME/.ssh
 $HOME/.themes
 $HOME/.face
+$HOME/.xprofile
 $HOME/.bash*
 $HOME/.conky*
 $HOME/.git*
