@@ -161,6 +161,12 @@ Would you like to install it?" 10 50; then
 		#Get .config version for next step.
 		echo 'spike' | sudo -S update-initramfs -c -t -k "$GET_VER$CONF_VER_WRT"
 		echo 'spike' | sudo -S update-grub
+		
+		# End timing process
+		tm_wh_end=$(date +"%s")
+		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
 		# Build perf package
 		export WORK_DIR="$WORK_DIR"
@@ -181,12 +187,6 @@ Would you like to install it?" 10 50; then
 		if [[ -d $HOME/tmp/perf-package ]]; then
 			rm -rf $HOME/tmp/perf-package
 		fi
-		
-		# End timing process
-		tm_wh_end=$(date +"%s")
-		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
-		echo
-		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
 		# Reboot to new kernel?
 		YNRBT="y"
