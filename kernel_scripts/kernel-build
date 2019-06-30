@@ -40,13 +40,13 @@ fi
 echo "" > $KERN_FILE
 
 # Set kernel version number to look for.
-VER="4"
+VER="5"
 read -p "Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
 if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $VER"
 else
 	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " NEWVER
-	sed -i "s:ver=\"$VER\":ver=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-build
+	sed -i "s:VER=\"$VER\":VER=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-build
 	$HOME/scripts/kernel_scripts/kernel-build && exit
 fi
 echo
@@ -116,7 +116,7 @@ if test $FOR_INST; then
 		
 		scripts/config --disable DEBUG_INFO
 		if [[ "$LOC_VER" != "" ]]; then
-			sed -i "s:CONFIG_LOCALVERSION=\"\":CONFIG_LOCALVERSION=\"$LOC_VER\":g" .config
+			sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"$LOC_VER\"" .config
 		fi
 
 		echo
@@ -128,12 +128,15 @@ if test $FOR_INST; then
 		# Build.
 		make olddefconfig
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
+		echo 'spike' | sudo -S make modules_install
 		# Move up on directory and remove not needed deb files and install.
+		# This variable is for initramfs update format below.
+		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 		cd ..
-		rm -rf *dbg*.deb
-		rm -rf *libc*.deb
+		#rm -rf *dbg*.deb
+		#rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
-		echo 'spike' | sudo -S update-initramfs -c -t -k "$FOR_INST$CONF_VER$LOC_VER"
+		echo 'spike' | sudo -S update-initramfs -c -t -k "$FOR_INST$CONF_VER_WRT"
 		echo 'spike' | sudo -S update-grub
 
 		sleep 1

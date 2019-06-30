@@ -153,9 +153,10 @@ Would you like to install it?" 10 50; then
 		# oldefconfig pulls current options from .config file and automatically answers new options without prompt.
 		make olddefconfig		
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
+		echo 'spike' | sudo -S make modules_install
 		cd ..
-		rm -rf *dbg*.deb
-		rm -rf *libc*.deb
+		#rm -rf *dbg*.deb
+		#rm -rf *libc*.deb
 		echo 'spike' | sudo -S dpkg -i *.deb
 
 		#Get .config version for next step.
