@@ -4,6 +4,9 @@
 COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
 RESTORE='\033[0m'
 BUILDLOG="$HOME/infections/last-run.txt"
+if [[ ! -d "/home/msifland/infections" ]]; then
+	mkdir "/home/msifland/infections"
+fi
 if [[ ! -f $BUILDLOG ]]; then
 	touch $BUILDLOG
 fi
