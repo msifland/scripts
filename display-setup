@@ -1,20 +1,21 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
-echo
-echo "Setting up custom display size using cvt and xrandr"
-echo
-sleep 1
 
 # Create variables
 XPROF="$HOME/.xprofile"
-AUTSTRT="$HOME/.config/autostart/display-start"
+AUTSTRT="$HOME/.config/autostart/display-start.desktop"
 
 # Clean up
 rm -rf $XPROF
 rm -rf $AUTSTRT
 
-read -p "What display size would you like(width height) ex. 1752 985? " DISP_SIZE
+echo
+echo "${ILCOLOR2}Setting up custom display size using cvt and xrandr. Adding to $XPROF and creating startup app in $AUTSTRT to call $XPROF at start.${ILRESTORE}"
+echo
+sleep 2
+
+read -p "What display size would you like(width height, ex. 1752 985)? " DISP_SIZE
 
 # Setup xrandr properties for custom display and write to .xprofile
 RES="$DISP_SIZE"
@@ -45,5 +46,22 @@ if [[ ! -f $AUTSTRT ]]; then
 fi
 
 # Write .xprofile to execute on startup
-echo "#!/bin/bash" > $AUTSTRT
-echo "$XPROF" >> $AUTSTRT
+echo "[Desktop Entry]" > $AUTSTRT
+echo "Type=Application" >> $AUTSTRT
+echo "Exec=$XPROF" >> $AUTSTRT
+echo "Hidden=false" >> $AUTSTRT
+echo "NoDisplay=false" >> $AUTSTRT
+echo "X-GNOME-Autostart-enabled=true" >> $AUTSTRT
+echo "Name[en_US]=display-start" >> $AUTSTRT
+echo "Name=display-start" >> $AUTSTRT
+echo "Comment[en_US]=Starts custom display size, created by display-setup script" >> $AUTSTRT
+echo "Comment=" >> $AUTSTRT
+
+# Check output status for errors.
+if [[ $? -eq 0 ]]; then
+	echo "${ILCOLOR2}No errors detected.${ILRESTORE}"
+else
+	echo "${ILCOLOR2}Error detected!!! Check output above in terminal.${ILRESTORE}"
+fi
+sleep 1
+exit
