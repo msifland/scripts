@@ -1,6 +1,8 @@
 #!/bin/bash
 # This is a scripts that solves scrambles letters to words.
 WORD_FILE="$HOME/Documents/my-english-words.txt"
+#/usr/share/dict/american-english"
+#$HOME/Documents/my-english-words.txt"
 
 echo
 read -p "${ILCOLOR2}Enter the letters to unscramble:${ILRESTORE} " ltrs
@@ -14,8 +16,9 @@ sleep 1
 
 grep -i -P "^(?:([$ltrs])(?!.*?\1)){$LTRS_NMBR}$" $WORD_FILE | column
 echo
+sleep 2
 
-read -p "${ILCOLOR3}Press [ENTER] to show all words with these letters in them.${ILRESTORE}"
+echo "${ILCOLOR3}Here are all words with these letters in them.${ILRESTORE}"
 
 grep -i -P "^(?:([$ltrs])(?!.*?\1)){2,100}$" $WORD_FILE | awk '{ print length(), $0 | "sort -n" }' | column
 
