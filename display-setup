@@ -42,7 +42,6 @@ $XPROF
 # Check for .config/autostart file and create and make executable
 if [[ ! -f $AUTSTRT ]]; then
 	touch $AUTSTRT
-	chmod +x $AUTSTRT
 fi
 
 # Write .xprofile to execute on startup
