@@ -5,14 +5,14 @@ echo 'spike' | sudo -S -v
 echo
 echo "Checking dependancies. . ."
 sleep 1
-if dpkg --get-selections | awk '{print $1}' | grep -w "make"; then
+if dpkg --get-selections | awk '{print $1}' | grep -x "make"; then
 	MAKEY="y"
 else
 	if sudo apt -y install make; then
 		MAKEY="y"
 	fi
 fi
-if dpkg --get-selections | awk '{print $1}' | grep -w "cmake"; then
+if dpkg --get-selections | awk '{print $1}' | grep -x "cmake"; then
 	CMAKEY="y"
 else
 	if sudo apt -y install cmake; then
