@@ -32,9 +32,10 @@ cat > $XPROF << _EOF
 #!/bin/sh
 xrandr --newmode $MODELINE
 xrandr --addmode $DISP $MODERES
-xrandr -s $MODERES
 xrandr --output $DISP --mode $MODERES
 _EOF
+# Pulled out of above lines to write for test purposes, may not need.
+#xrandr -s $MODERES
 
 # Run .xprofile
 $XPROF
