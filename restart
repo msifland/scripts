@@ -17,4 +17,4 @@ echo
 echo "Rebooting now....." | tee -a $ReStartLog
 echo
 echo
-echo $pswd | sudo -S reboot
+echo $pswd | sudo -S shutdown -r
