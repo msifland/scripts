@@ -4,13 +4,50 @@
 echo
 echo "Attempting to connect to wifi on this machine. . ."
 echo
+nmcli r wifi on
 sleep 1
+if ! dpkg --get-selections | awk '{print $1}' | grep -wq "network-manager"; then
+	sudo dpkg -i --force-all $HOME/pkg_bkups/backups/network-manager.deb
+fi
 
 echo
-echo "ip link sho | grep w"
-ip link sho | grep w
+echo "Using nmcli to try and connect."
+echo
+sleep 1
+echo "Disconnecting from current network fi connected. . ."
+if nmcli dev wifi | grep "*" | awk '{print $2}'; then
+	CURR_CONN=$(nmcli dev wifi | grep "*" | awk '{print $2}')
+#	nmcli con down id $CURR_CONN
+fi
+sleep 5
+
+WI_CRD=$(nmcli dev | grep -w "wifi" | grep "^w")
+echo
+echo "Curretn wireless card is $WI_CRD"
 sleep 1
 
-WI_CARD=$(ip link sho | grep w | cut -d" " -f2 | sed "s/://g")
-sudo ifconfig $WI_CARD down
-sudo ifconfig $WI_CARD up
+echo "Setting connection down. . ."
+sudo ifconfig $WI_CRD down
+dhclient -r $WI_CRD
+echo
+sleep 5
+echo "Setting connection up. . ."
+sudo ifconfig $WI_CRD up
+echo
+sleep 5
+
+
+echo
+echo "***Showing connections with nmcli. Press 'q' when finished viewing and continue.***"
+nmcli dev wifi
+echo
+read -p "Type in the ESSID network name to connect: " NET_NAME
+echo
+read -p "What is the password for $NET_NAME? " PSSWD
+echo
+
+echo "Attempting to connect to SSID:$NET_NAME now. . ."
+nmcli dev wifi connect $NET_NAME password $PSSWD
+
+
+exit

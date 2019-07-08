@@ -131,7 +131,7 @@ Would you like to install it?" 10 50; then
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 		echo "Local version from .config file: $CONF_VER"
 		echo
-		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank, or '0' to remove custom version number.)? " LOC_VER
+		read -p "  Leave blank for same as current. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
 		scripts/config --disable DEBUG_INFO
 
