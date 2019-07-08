@@ -1,0 +1,16 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "Attempting to connect to wifi on this machine. . ."
+echo
+sleep 1
+
+echo
+echo "ip link sho | grep w"
+ip link sho | grep w
+sleep 1
+
+WI_CARD=$(ip link sho | grep w | cut -d" " -f2 | sed "s/://g")
+sudo ifconfig $WI_CARD down
+sudo ifconfig $WI_CARD up

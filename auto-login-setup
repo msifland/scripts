@@ -14,24 +14,59 @@ echo
 echo "${ILCOLOR3}Setting up auto-login and auto numlock. . .${ILRESTORE}"
 echo
 sleep 1
-echo "${ILCOLOR3}Editing file $CONF. Umcommenting and adding user to lines:${ILRESTORE}"
+echo "${ILCOLOR3}Editing file $CONF. Umcommenting and adding user file.${ILRESTORE}"
 echo
 sleep 1
 
-# Check if phrase is commented out, and if so uncommenting, if not then letting us know it's already updated.
-if grep -wq "#autologin-user="  $CONF; then
-	sed -i 's:#autologin-user=:autologin-user=msifland:g' $CONF
-else
+# Check for file and create if necessary
+if [[ ! -f $CONF ]]; then
 	echo
+	echo "File $CONF not found, creating now. . . "
+	sleep 1
+	touch $CONF
+	echo "[SeatDefaults]" > $CONF
+fi
+
+# Check if '[SeatDefaults]' flag is in file.
+echo
+echo "Checking for flag '[SeatDefaults]' in $CONF. . ."
+if ! grep -wq "SeatDefaults" $CONF; then
+	echo "[SeatDefaults]" > $CONF
+	echo "Added [SeatDefaults] to $CONF"
+	sleep 1
+else
+	echo "Flag '[SeatDefaults]' found."
+	sleep 1
+fi
+
+# Check if phrase exists, is commented out, and if so uncommenting, if not then letting us know it's already updated.
+echo
+echo "Checking for autologin-user=msifland. . ."
+if ! grep -wq "autologin-user" $CONF; then
+		echo "autologin-user=msifland" >> $CONF
+		echo "Added to $CONF"
+		sleep 1
+elif grep -q "^#autologin-user="  $CONF; then
+	sed -i 's:#autologin-user=.*:autologin-user=msifland:g' $CONF
+	echo "Uncommented in $CONF"
+	sleep 1
+else
 	echo "Already updated autologin-user."
 	sleep 1
 fi
 
 # Check if phrase is commented out, and if so uncommenting, if not then letting us know it's already updated.
-if grep -wq "#autologin-user-timeout=0"  $CONF; then
+echo
+echo "Checking for autologin-user-timeout=0. . ."
+if ! grep -wq "autologin-user-timeout" $CONF; then
+	echo "autologin-user-timeout=0" >> $CONF
+	echo "Added to $CONF"
+	sleep 1
+elif grep -q "^#autologin-user-timeout=0"  $CONF; then
 	sed -i 's:#autologin-user-timeout=0:autologin-user-timeout=0:g' $CONF
+	echo "Uncommented from $CONF"
+	sleep 1
 else
-	echo
 	echo "Already updated autologin-user-timeout."
 	sleep 1
 fi
