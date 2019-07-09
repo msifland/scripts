@@ -15,26 +15,25 @@ echo "Using nmcli to try and connect."
 echo
 sleep 1
 echo "Disconnecting from current network fi connected. . ."
-if nmcli dev wifi | grep "*" | awk '{print $2}'; then
-	CURR_CONN=$(nmcli dev wifi | grep "*" | awk '{print $2}')
-#	nmcli con down id $CURR_CONN
-fi
-sleep 5
 
-WI_CRD=$(nmcli dev | grep -w "wifi" | grep "^w")
+CURR_CONN=$(nmcli dev wifi | grep "*" | awk '{print $2}')
+nmcli con down $CURR_CONN
+sleep 1
+
+WI_CRD=$(nmcli dev | grep -w "wifi" | grep "^w" | awk '{print $1}')
 echo
 echo "Curretn wireless card is $WI_CRD"
 sleep 1
 
 echo "Setting connection down. . ."
 sudo ifconfig $WI_CRD down
-dhclient -r $WI_CRD
+sudo dhclient -r $WI_CRD
 echo
 sleep 5
-echo "Setting connection up. . ."
+echo "Setting connection up, and scanning for networks. . ."
 sudo ifconfig $WI_CRD up
 echo
-sleep 5
+sleep 60
 
 
 echo
