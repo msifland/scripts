@@ -1,0 +1,56 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "${ILCOLOR3}Mounting a folder for full chroot.${ILRESTORE}"
+echo
+sleep 1
+
+echo "${ILCOLOR3}Showing drives:${ILRESTORE} "
+lsblk
+sleep 1
+
+echo
+read -p "${ILCOLOR3}Type device you would like to mount(ex. /dev/sdb1):${ILRESTORE} " MNT_DVC
+sleep 1
+
+echo
+echo "Mounting with: sudo mount $MNT_DVC /mnt"
+sudo mount $MNT_DVC /mnt
+sleep 1
+
+echo
+read -p "${ILCOLOR3}Would you like to mount any other devices manually(ex. /dev/sda2 for /mnt/home)? Leave blank for no:${ILRESTORE} " MNT_DVC2
+sleep 1
+
+if [[ ! $MNT_DVC2 = "" ]]; then
+	echo
+	read -p "${ILCOLOR3}What folder to mount to(ex. /mnt/home)${ILRESTORE} " MNT_DVC2_FLDR
+	sleep 1
+	echo "Mounting with: sudo mount $MNT_DVC2 $MNT_DVC2_FLDR"
+	sudo mount $MNT_DVC2 $MNT_DVC2_FLDR
+	sleep 1
+else
+	echo
+	echo "${ILCOLOR3}No other device selected.${ILRESTORE}"
+	sleep 1
+fi
+
+echo
+echo "${ILCOLOR3}Mounting other needed drives to /mnt."
+echo "for i in /dev /dev/pts /proc /sys; do sudo mount -B $i /mnt$i; done"
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+sleep 1
+
+echo
+echo "Adding resolv.conf for connection with: sudo cp /etc/resolv.conf /mnt/etc/"
+sudo cp /etc/resolv.conf /mnt/etc/
+sleep 1
+
+echo
+echo "${ILCOLOR3}Chroot'ing now. . .${ILRESTORE}"
+echo "sudo chroot /mnt"
+sudo chroot /mnt
+
+echo "${ILCOLOR3}Exiting script. . .${ILRESTORE}"
+sleep 1

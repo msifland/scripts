@@ -28,6 +28,7 @@ echo
 echo "${ILCOLOR2}Here are the root directories:${ILRESTORE} "
 sleep 1
 ls -d /*
+echo
 sleep 1    
 
 # Function to scan, listed first so we can call it later.
@@ -35,7 +36,7 @@ function scan_it(){
 	# Ask if you would like to copy or move found infections to the infections folder. Then run scan.
 	echo
 	WHR="c"
-	read -p "Would you like to move any found viruses to a folder, or would you like to copy them to a folder for analasys and manual removal((C)opy/(m)ove)?: " WHR
+	read -p "${ILCOLOR2}Would you like to move any found viruses to a folder, or would you like to copy them to a folder for analasys and manual removal((C)opy/(m)ove)?:${ILRESTORE} " WHR
 	sleep 1
 	echo
 	echo "${ILCOLOR2}Putting a log in $HOME/infections/custom-scan.txt${ILRESTORE}"
@@ -68,7 +69,7 @@ function scan_it(){
 function selected_path(){
 	# Ask name of directory or partition to scan.
 	echo
-	read -p "Scan location: You can either type in one of the partitions above for a full scan of that partition(/dev/sda2), or you can type in a custom location full path(/home/msifland/scripts): " PTH
+	read -p "${ILCOLOR2}Scan location: You can either type in one of the partitions above for a full scan of that partition(/dev/sda2), or you can type in a custom location full path(/home/msifland/scripts):${ILRESTORE} " PTH
 
 	# Error handling if path or dev block exists. If exists call scan function, if not, then start over with this function.
 	if [[ -d $PTH ]]; then
