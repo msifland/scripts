@@ -37,7 +37,7 @@ else
 fi
 
 echo
-echo "${ILCOLOR3}Mounting other needed drives to /mnt."
+echo "${ILCOLOR3}Mounting other needed drives to /mnt.${ILRESTORE}"
 echo "for i in /dev /dev/pts /proc /sys; do sudo mount -B $i /mnt$i; done"
 for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
 sleep 1
@@ -52,5 +52,6 @@ echo "${ILCOLOR3}Chroot'ing now. . .${ILRESTORE}"
 echo "sudo chroot /mnt"
 sudo chroot /mnt
 
+echo
 echo "${ILCOLOR3}Exiting script. . .${ILRESTORE}"
 sleep 1
