@@ -1,0 +1,144 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo 'spike' | sudo -S -v
+sudo umount /mnt/ubuntu
+sudo rm -rf /mnt/ubuntu
+echo
+echo "This is going to install Ubuntu to a drive or partition of your choice. It will be installed under one file system and partiton."
+sleep 1
+
+echo
+echo "Here are the available drives:"
+sleep 1
+
+echo
+lsblk
+sleep 1
+
+echo
+read -p "Please type drive that you would like to install ubunut too(ex. /dev/sda1, /dev/sdb 2, etc.) " INST_DRV
+
+echo
+read -p "We are going to format drive to ext4, which will erase all datat on $INST_DRV. Are you sure you want to proceed[y/N]? " PR_YN
+if [[ ! "$PR_YN" =~ ^([Yy][Ee][Ss]|[Yy])$ ]]; then
+	echo
+	echo "Not proceeding and exiting. . ."
+	sleep 1
+	exit
+else
+	echo
+	echo "Ok, proceeding to format $INST_DRV. . ."
+	sudo mkfs -t ext4 $INST_DRV
+	sleep 1
+fi
+
+sudo mkdir /mnt/ubuntu
+sudo mount $INST_DRV /mnt/ubuntu
+
+echo
+echo "Checking to make sure debootstrap is installed. . ."
+if ! dpkg --get-selections | awk '{print $ 1}' | grep -wq "debootstrap"; then
+	sudo apt -y install debootstrap
+else
+	echo
+	echo "debootstrap is present, proceeding. . ."
+fi
+sleep 1
+
+echo
+read -p "right-click this link: https://wiki.ubuntu.com/Releases, and open link to find the name variant you want to install(ex. bionic, disco, trusty, etc.). Type lowercase name variant here: " NM_VAR
+sleep 1
+
+echo
+echo "Installing now for 64bit systems. . ."
+sleep 1
+sudo debootstrap --arch amd64 $NM_VAR /mnt/ubuntu
+
+echo
+echo "Chroot'ing into newly installed environment. . ."
+sleep 1
+
+echo
+echo "sudo LANG=C.UTF-8 chroot /mnt/ubuntu /bin/bash"
+cat << EOF | sudo LANG=C.UTF-8 chroot /mnt/ubuntu /bin/bash
+	export TERM=xterm-color
+	locale-gen en_US.UTF-8
+	echo "deb-src http://archive.ubuntu.com/ubuntu $NM_VAR main restricted" >> /etc/apt/sources.list
+	echo "deb http://security.ubuntu.com/ubuntu $NM_VAR-security main restricted" >> /etc/apt/sources.list
+	echo "deb-src http://security.ubuntu.com/ubuntu $NM_VAR-security main restricted" >> /etc/apt/sources.list
+	echo "deb http://us.archive.ubuntu.com/ubuntu $NM_VAR-backports main restricted" >> /etc/apt/sources.list
+	echo "deb-src http://us.archive.ubuntu.com/ubuntu $NM_VAR-backports main restricted" >> /etc/apt/sources.list
+	echo "deb http://us.archive.ubuntu.com/ubuntu $NM_VAR-updates main restricted" >> /etc/apt/sources.list
+	echo "deb-src http://us.archive.ubuntu.com/ubuntu $NM_VAR-updates main restricted" >> /etc/apt/sources.list
+	echo "deb http://archive.ubuntu.com/ubuntu $NM_VAR universe" >> /etc/apt/sources.list
+	echo "deb-src http://archive.ubuntu.com/ubuntu $NM_VAR universe" >> /etc/apt/sources.list
+	echo "deb http://archive.ubuntu.com/ubuntu $NM_VAR multiverse" >> /etc/apt/sources.list
+	echo "deb-src http://archive.ubuntu.com/ubuntu $NM_VAR multiverse" >> /etc/apt/sources.list
+
+	apt update
+	apt -y install makedev nano
+	mount none /proc -t proc
+	mount --bind dev /dev
+	mount --bind dev/pts /dev/pts
+	cd /dev
+	MAKEDEV generic
+	cd ..
+	DEV_ID=$(blkid | grep "$INST_DRV" | awk '{print $2}' | sed 's:"::g')
+	echo "$DEV_ID       /             ext4    defaults                 0    1" > /etc/fstab
+	dpkg-reconfigure tzdata
+	apt -y install network-manager
+    apt -y install net-tools
+	echo
+	echo "Installing latest kernel."
+	sleep 1
+	apt -y install e2fsck-static
+	ln -s /usr/sbin/e2fsck /sbin/fsck.ext4dev
+	KERN=$(apt-cache search linux-image | grep -i "linux-image-.*generic.*" | sed '/.*unsigned.*/d' | sed 's: -.*::g' | tail -1)
+	apt -y install $KERN
+	apt -y install linux-firmware
+	apt -y install dkms
+	apt -y install tasksel
+	tasksel install standard
+	apt -y clean
+	apt -y upgrade
+	apt -y autoremove
+
+	echo
+	read -p "Type your username: " USRNM
+	sleep 1
+	adduser $USRNM
+	addgroup --system admin
+	adduser $USRNM admin
+	echo "" >> /etc/sudoers
+	echo "%admin ALL=(ALL) ALL" >> /etc/sudoers
+
+	echo
+	passwd root
+
+	echo
+	echo "Setting hostname. . ."
+	echo "$USRNM" > /etc/hostname
+	echo
+	read -p "Type any other apps to install separated with a space(ex. ubuntu-mate-desktop xfce4-terminal conky xterm): " APPS_INST
+	apt -y install "$APPS_INST"
+
+	echo
+	echo "Exiting back to shell and copying /etc/apt/sources.list to new install."
+	sleep 1
+EOF
+exit
+
+echo 
+echo "sudo cp /etc/apt/sources.list /mnt/ubuntu/etc/apt/sources.list"
+sudo cp /etc/apt/sources.list /mnt/ubuntu/etc/apt/sources.list
+sudo cp /etc/network/interfaces /mnt/ubuntu/etc/network/interfaces
+sudo cp /etc/resolv.conf /mnt/ubuntu/etc/resolv.conf
+sudo cp /etc/hosts /mnt/ubuntu/etc/hosts
+echo
+echo "Run update-grub if you haven't already in the install."
+echo "Restart and install other apps. But, first, on restart run: sudo tasksel install standard."
+sleep 1
+
+echo
+exit
