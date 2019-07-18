@@ -1,0 +1,57 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "Continuing with ubuntu-install process with script in chroot environment."
+sleep 1
+echo
+
+LANG=C.UTF-8
+export TERM=xterm-color
+apt update
+apt -y install makedev nano
+cd /dev
+MAKEDEV generic
+cd ..
+DEV_ID=$(blkid | grep "$INST_DRV" | awk '{print $2}' | sed 's:"::g')
+echo "$DEV_ID       /             ext4    defaults                 0    1" > /etc/fstab
+dpkg-reconfigure tzdata
+apt -y install network-manager
+   apt -y install net-tools
+echo
+echo "Installing latest kernel."
+sleep 1
+apt -y install e2fsck-static
+ln -s /usr/sbin/e2fsck /sbin/fsck.ext4dev
+KERN=$(apt-cache search linux-image | grep -i "linux-image-.*generic.*" | sed '/.*unsigned.*/d' | sed 's: -.*::g' | tail -1)
+apt -y install $KERN
+apt -y install linux-firmware
+apt -y install dkms
+apt -y install tasksel
+tasksel install standard
+apt -y upgrade
+apt -y autoremove
+apt -y clean
+
+echo
+read -p "Type your username: " USRNM
+sleep 1
+adduser $USRNM
+addgroup --system admin
+adduser $USRNM admin
+echo "" >> /etc/sudoers
+echo "%admin ALL=(ALL) ALL" >> /etc/sudoers
+
+echo
+passwd root
+
+echo
+echo "Setting hostname. . ."
+echo "$USRNM" > /etc/hostname
+echo
+read -p "Type any other apps to install separated with a space(ex. ubuntu-mate-desktop xfce4-terminal conky xterm): " APPS_INST
+	apt -y install "$APPS_INST"
+
+echo
+echo "Exiting back to shell and copying /etc/apt/sources.list to new install."
+sleep 1
