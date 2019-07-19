@@ -68,10 +68,12 @@ sudo mount --bind /dev /mnt/ubuntu/dev
 sudo mount --bind /dev/pts /mnt/ubuntu/dev/pts
 sudo mount -t proc proc /mnt/ubuntu/proc
 sudo mount -t sysfs sys /mnt/ubuntu/sys
+sudo cp /usr/share/zoneinfo/America/Chicago /mnt/ubuntu/etc/localtime
 
 sudo NM_VAR="$NM_VAR" INST_DRV="$INST_DRV" chroot /mnt/ubuntu /bin/bash -c "./ubuntu-install-deps"
 
 echo
+sudo rm -rf /mnt/ubuntu/etc/network/interfaces
 sudo cp /etc/network/interfaces /mnt/ubuntu/etc/network/interfaces
 ETH_AD=$(ifconfig | awk '{print $1}' | grep "^w")
 sudo echo "auto $ETH_AD" >> /mnt/ubuntu/etc/network/interfaces
