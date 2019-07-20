@@ -2,7 +2,7 @@
 # This is a blank bash script document.
 # Put your code below this line.
 echo 'spike' | sudo -S -v
-<< Comment
+
 sudo umount /mnt/ubuntu
 sudo rm -rf /mnt/ubuntu
 echo
@@ -54,36 +54,45 @@ sleep 1
 echo
 echo "Installing now for 64bit systems. . ."
 sleep 1
-sudo debootstrap --arch amd64 $NM_VAR /mnt/ubuntu
-Comment
+sudo debootstrap --arch amd64 $NM_VAR /mnt/ubuntu http://archive.ubuntu.com/ubuntu
+
 echo
 echo "Chroot'ing into newly installed environment. . ."
 sleep 1
 
 echo
+sudo mount -o bind /dev /mnt/ubuntu/dev
+sudo mount -o bind /dev/pts /mnt/ubuntu/dev/pts
+sudo mount -t proc /proc /mnt/ubuntu/proc
+sudo mount -t sysfs /sys /mnt/ubuntu/sys
 sudo rm -rf /mnt/ubuntu/etc/apt/sources.list
 sudo cp /etc/apt/sources.list /mnt/ubuntu/etc/apt/
-sudo cp $HOME/scripts/ubuntu-install-deps /mnt/ubuntu/
-sudo mount --bind /dev /mnt/ubuntu/dev
-sudo mount --bind /dev/pts /mnt/ubuntu/dev/pts
-sudo mount -t proc proc /mnt/ubuntu/proc
-sudo mount -t sysfs sys /mnt/ubuntu/sys
-sudo cp /usr/share/zoneinfo/America/Chicago /mnt/ubuntu/etc/localtime
-
-sudo NM_VAR="$NM_VAR" INST_DRV="$INST_DRV" chroot /mnt/ubuntu /bin/bash -c "./ubuntu-install-deps"
-
-echo
-sudo rm -rf /mnt/ubuntu/etc/network/interfaces
-sudo cp /etc/network/interfaces /mnt/ubuntu/etc/network/interfaces
-ETH_AD=$(ifconfig | awk '{print $1}' | grep "^w")
-sudo echo "auto $ETH_AD" >> /mnt/ubuntu/etc/network/interfaces
-sudo echo "iface $ETH_AD inet dhcp" >> /mnt/ubuntu/etc/network/interfaces
 sudo cp /etc/resolv.conf /mnt/ubuntu/etc/resolv.conf
 sudo cp /etc/hosts /mnt/ubuntu/etc/hosts
+sudo cp /usr/share/zoneinfo/America/Chicago /mnt/ubuntu/etc/localtime
+
+sudo cp $HOME/scripts/ubuntu-install-deps /mnt/ubuntu/
+sudo NM_VAR="$NM_VAR" INST_DRV="$INST_DRV" chroot /mnt/ubuntu /bin/bash -c "./ubuntu-install-deps"
+
+sudo rm -rf /mnt/ubuntu/etc/network/interfaces
+sudo cp /etc/network/interfaces $HOME/tmp/
+WI_AD=$(ifconfig | awk '{print $1}' | grep "^e" | sed 's/://g' | sed '/ether/d')
+echo "allow-hotplug $WI_AD" >> $HOME/tmp/interfaces
+echo "iface $WI_AD inet dhcp" >> $HOME/tmp/interfaces
+ETH_AD=$(ifconfig | awk '{print $1}' | grep "^w" | sed 's/://g')
+echo "allow-hotplug $ETH_AD" >> $HOME/tmp/interfaces
+echo "iface $ETH_AD inet dhcp" >> $HOME/tmp/interfaces
+sudo cp $HOME/tmp/interfaces /mnt/ubuntu/etc/network/interfaces
 echo
 echo "Run update-grub if you haven't already in the install."
 echo "Restart and install other apps. But, first, on restart run: sudo tasksel install standard."
 sleep 1
 sudo rm -rf /mnt/ubuntu/ubuntu-install-deps
+sudo umount /mnt/ubuntu/dev/pts
+sudo umount /mnt/ubuntu/dev
+sudo umount /mnt/ubuntu/proc
+sudo umount /mnt/ubuntu/sys
+sudo umount /mnt/ubuntu
+
 echo
 exit

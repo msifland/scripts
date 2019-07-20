@@ -9,15 +9,19 @@ echo
 echo 'LANG="en_US.UTF-8"' >  /etc/default/locale
 echo 'America/Chicago' > /etc/timezone
 export TERM=xterm-color
-apt update
-apt -y install makedev nano
-cd /dev
-MAKEDEV generic
-cd ..
-DEV_ID=$(blkid | grep "$INST_DRV" | awk '{print $2}' | sed 's:"::g')
-echo "$DEV_ID       /             ext4    defaults                 0    1" > /etc/fstab
+dpkg-divert --local --rename --add /sbin/initctl
+ln -s /bin/true /sbin/initctl
 locale-gen en_US.UTF-8
 dpkg-reconfigure -f non-interactive tzdata
+apt update
+apt upgrade
+
+#apt -y install makedev nano
+#cd /dev
+#MAKEDEV generic
+#cd ..
+DEV_ID=$(blkid | grep "$INST_DRV" | awk '{print $2}' | sed 's:"::g')
+echo "$DEV_ID       /             ext4    defaults                 0    1" > /etc/fstab
 apt -y install network-manager
 apt -y install net-tools
 apt -y install wireless-tools
@@ -38,11 +42,19 @@ apt -y autoremove
 apt -y clean
 
 echo
+
 read -p "Type your username: " USRNM
 sleep 1
 adduser $USRNM
 addgroup --system admin
 adduser $USRNM admin
+usermod -aG adm $USRNM
+usermod -aG cdrom $USRNM
+usermod -aG sudo $USRNM
+usermod -aG dip $USRNM
+usermod -aG plugdev $USRNM
+usermod -aG lpadmin $USRNM
+usermod -aG sambashare $USRNM
 echo "" >> /etc/sudoers
 echo "%admin ALL=(ALL) ALL" >> /etc/sudoers
 
@@ -53,9 +65,27 @@ echo
 echo "Setting hostname. . ."
 echo "$USRNM" > /etc/hostname
 echo
-read -p "Type any other apps to install separated with a space(ex. ubuntu-mate-desktop xfce4-terminal conky xterm): " APPS_INST
-	apt -y install "$APPS_INST"
+sleep 1
 
+YN_APPS="y"
+while [[ "$YN_APPS" =~ ^([Yy][Ee][Ss]|[Yy])$ ]]; do
+	read -p "Type additional apps to install separated with a space(ex. ubuntu-mate-desktop xfce4-terminal conky xterm): " APPS_INST
+	for i in $APPS_INST; do echo "$i" >> /apps.txt; done
+	apt -y install $(cat /apps.txt)
+	rm -rf /apps.txt
+	echo
+	echo -n "Would you like to install any additional apps?[y/N] "
+	read -n1 Input
+	case $Input in
+		[Nn]):
+        YN_APPS="N"
+        ;;
+    esac
+done
+
+rm -rf /sbin/initctl
+dpkg-divert --local --rename --remove /sbin/initctl
+rm -rf /sbin/initctl
 echo
-echo "Exiting back to shell and copying /etc/apt/sources.list to new install."
+echo "Exiting back to shell."
 sleep 1
