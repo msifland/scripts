@@ -14,20 +14,24 @@ echo
 echo "${ILCOLOR3}Purging old kernels. Here are the kernels on your system, newest first: ${ILRESTORE}"
 sleep 1
 
+########## This section is for unsigned kernels if presetn #########
 # Gathering system kernels and slightly renaming for apt purposes. Creating a tmp file to write them too for reference.
 # This line was added for 'unsigned generic' kernels. The word 'unsigned' does not appear in the /boot/vmlinuz kernel name, therfore has to be added.
-KERNS1=$(ls /boot | grep "generic" | grep "linuz" | sed 's:vmlinuz:linux-image-unsigned:g')
+#KERNS1=$(ls /boot | grep "generic" | grep "linuz" | sed 's:vmlinuz:linux-image-unsigned:g')
 # This one is for non-unsigned kernels
-KERNS2=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sed '/generic/d' | sort -V | tac)
+#KERNS2=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sed '/generic/d' | sort -V | tac)
+##################################################################
 
+KERNS1=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
 KERN_FILE=$HOME/tmp/kern_file
 rm -rf $KERN_FILE
 
 if [[ ! -f $KERN_FILE ]]; then
 	touch $KERN_FILE
 fi
+				# This goes with the above for unsigned kernels
+KERNS="$KERNS1" #$KERNS2"
 
-KERNS="$KERNS1 $KERNS2"
 # Loop to list the kernels in the file on numbered lines and echo them on screen.
 n=0
 for i in $KERNS; do
