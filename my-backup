@@ -8,7 +8,6 @@ echo $PSWD | sudo -S -v
 # What Files or Folders to Take Backup of.
 #/usr/share/mate*
 BACKUP_FILES="
-/etc/udev/rules.d/51-android.rules
 $HOME/Brother_Printer
 $HOME/Documents
 $HOME/Dropbox
