@@ -1,12 +1,13 @@
-Date & Time: 07-16-19 -- 07:30:04 AM
+Date & Time: 07-23-19 -- 07:30:03 AM
 
 Updating Oh My Zsh
-Updating b259cdf7..17f4cfca
+Updating 17f4cfca..508cba2f
 Fast-forward
- README.md                 | 3 +--
- plugins/git/README.md     | 1 +
- themes/af-magic.zsh-theme | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ plugins/bwana/README.md        | 12 ------------
+ plugins/bwana/bwana.plugin.zsh | 13 -------------
+ 2 files changed, 25 deletions(-)
+ delete mode 100644 plugins/bwana/README.md
+ delete mode 100644 plugins/bwana/bwana.plugin.zsh
 Current branch master is up to date.
          __                                     __   
   ____  / /_     ____ ___  __  __   ____  _____/ /_  
