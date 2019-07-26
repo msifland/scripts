@@ -81,7 +81,7 @@ function backup(){
 	echo "Remove old backups first. . ."
 	sleep 1
 	echo -e ${RESTORE}
-	echo "ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f"
+	echo "ls $DEST/* -t | sed -e '1,3d' | xargs -d '\n' rm -f"
 	if [[ ! -d "$DEST" ]]; then
 		mkdir $DEST
 	else

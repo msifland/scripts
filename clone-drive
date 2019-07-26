@@ -94,7 +94,7 @@ else
 	sleep 1
 
 	echo
-	echo 'Running command: sudo rsync -aurlpEovxHAXW --progress --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} $DRVMNT1 $DRVMNT2'
+	echo 'Running command: sudo rsync -aurlpEovxHAXW --progress --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"}' $DRVMNT1 $DRVMNT2
 	echo
 	sleep 1
 
@@ -102,6 +102,29 @@ else
 	#sudo cp -axv $DRVMNT1 $DRVMNT2
 	sudo rsync -aurlpEovxHAXW --progress --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} $DRVMNT1 $DRVMNT2
 
+	echo
+	echo "Modifying fstab. . ."
+	GRB_INST=$(echo $DRVMNT2 | sed 's:[0-9]::g')
+	FST_HME=$(blkid | grep -iwq "home" | awk '{print $3}' | sed 's:"::g')
+	FST_DRV=$(blkid | grep -iwq "$DRVMNT2" | awk '{print $3}' | sed 's:"::g')
+	sudo rm -rf $DRVMNT2/etc/fstab
+	touch $HOME/tmp/fstab
+	echo "$FST_DRV /               ext4    errors=remount-ro 0       1" > $HOME/tmp/fstab
+	echo "" >> $HOME/tmp/fstab
+	if blkid | grep -iwq "home"; then
+	echo "$FST_HME /home           ext4    defaults        0       2" >> $HOME/tmp/fstab
+	echo "" >> $HOME/tmp/fstab
+	fi
+	echo "/dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0" >> $HOME/tmp/fstab
+	sudo cp $HOME/tmp/fstab "$DRIVE2/etc/"
+	sleep 1
+
+	echo
+	echo "Installing grub on $GRB_INST. . ."
+	sudo grub-install $GRB_INST
+	sudo update-grub $GRB_INST
+	sleep 1
+	
 	# Unmount, if mounted.
 	if [[ -b $DRIVE1 ]]; then
 		sudo umount $DRIVE1

@@ -140,7 +140,7 @@ while true ; do
 
     read -p '
 
-Copy this and put your selection numbers in between the quotes, ex. sudo grub-reboot "1>4".
+Copy this and put your selection numbers in between the quotes, ex. sudo grub-reboot "2>4".
 
 sudo grub-reboot ""; sudo shutdown -r now
 
