@@ -1,0 +1,60 @@
+#!/bin/bash
+# Installing from original at https://github.com/ronen25/nautilus-copypath
+echo
+echo "Installing Nautilus Copy Path Extention. . ."
+sleep 1
+
+# Checking for dependencies
+if ! dpkg --get-selections | grep -wq "python-nautilus"; then
+	echo
+	echo "Installing dependency python-nautilus. . ."
+	sudo apt -y install python-nautilus
+	sleep 1
+fi
+
+if ! dpkg --get-selections | grep -wq "python3-gi"; then
+	echo
+	echo "Installing dependency python3-gi. . ."
+	sudo apt -y install python3-gi
+	sleep 1
+fi
+
+# Create directory variables
+FILES_DIR="$HOME/pkg_bkups/backups/nautilus-copypath-master"
+PYTH_DIR="$HOME/.local/share/nautilus-python"
+PYTH_DIR_EXT="$HOME/.local/share/nautilus-python/extensions"
+# Check if folders exist and create them
+if [[ ! -d "$PYTH_DIR" ]]; then
+	echo
+	echo "Creating directory $PYTH_DIR. . ."
+	mkdir "$PYTH_DIR"
+	sleep 1
+fi
+if [[ ! -d "$PYTH_DIR_EXT" ]]; then
+	echo
+	echo "Creating directory $PYTH_DIR_EXT"
+	mkdir "$PYTH_DIR_EXT"
+	sleep 1
+fi
+
+# Change to directory where files are
+cd $FILES_DIR
+# Check if file exists and create it
+CPY_FILE="$FILES_DIR/nautilus-copypath.py"
+if [[ -f "$PYTH_DIR_EXT/$CPY_FILE" ]]; then
+	echo
+	echo "File $PYTH_DIR_EXT/$CPY_FILE already exists."
+	sleep 1
+else
+	cp "$CPY_FILE" "$PYTH_DIR_EXT"
+	sleep 1
+fi
+
+echo
+echo "Restarting Nautilus. . ."
+sleep 1
+nautilus -q
+# This shows not output in terminal and starts released from terminal
+nohup nautilus >/dev/null 2>&1 &
+exit
+

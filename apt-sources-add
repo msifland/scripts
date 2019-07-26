@@ -1,11 +1,10 @@
 #!/bin/bash
 # This scripts adds sources to /etc/apt/sources.list
-
+# Good format for running as sudo and to entire scripts as root.
 echo 'spike' | sudo -S -v
 # Used function for loop recall.
 function add_sources(){
 	# Removing all white space from end of file.
-	# Good format for running as sudo and to entire scripts as root.
 	sudo sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' /etc/apt/sources.list
 
 	# Asking for source to add and double checking that it's correct. If it's not, then loop to beginning. Also option to exit.
@@ -44,7 +43,7 @@ function add_sources(){
 
 		# Need to add three lines here. One with a '$nme, Added manually' tag, one with the source, one with the source and 'deb-src' at the beginning. The 'echo -e' makes echo execute the '\n' which is newline.
 		# Checking for errors here and reporting if there are.
-		if echo -e "\n# $nme - Added manually\n$srcs\ndeb-src $srcs" | sudo tee -a /etc/apt/sources.list; then
+		if echo -e "\n###$nme - Added manually\n$srcs\ndeb-src $srcs" | sudo tee -a /etc/apt/sources.list; then
 			echo
 			echo "\"$srcs\" has been added to your sources.list."
 		else
