@@ -1,0 +1,3 @@
+#!/bin/bash
+# This script runs {your script} from cron. Needed to run in terminal
+gnome-terminal -- zsh -c "$HOME/scripts/{your script}; read -n1"
