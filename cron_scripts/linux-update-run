@@ -1,7 +1,9 @@
 #!/bin/bash
 # This script runs {your script} from cron. Needed to run in terminal
+
 export DISPLAY=$(w $(id -un) | awk '{print $2}' | sed '/up/d' | sed '/TTY/d')
 export GNOME_DESKTOP_SESSION_ID=true
-export DBUS_SESSION_BUS_ADDRESS=$(sed -zne 's/^DBUS_SESSION_BUS_ADDRESS=//p' /proc/`pgrep gnome-session -U $(id -u)`/environ)
+DBUS_SESS=$(sed -zne 's/^DBUS_SESSION_BUS_ADDRESS=//p' /proc/`pgrep gnome-session -U $(id -u)`/environ)
+export DBUS_SESSION_BUS_ADDRESS="$DBUS_SESS"
 
-gnome-terminal -- zsh -c "source .zshrc; $HOME/scripts/linux-update; read -s"
+/usr/bin/gnome-terminal -- zsh -c "source .zshrc; clear; $HOME/scripts/linux-update; read -s"
