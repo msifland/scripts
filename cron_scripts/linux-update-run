@@ -6,4 +6,4 @@ export GNOME_DESKTOP_SESSION_ID=true
 DBUS_SESS=$(sed -zne 's/^DBUS_SESSION_BUS_ADDRESS=//p' /proc/`pgrep gnome-session -U $(id -u)`/environ)
 export DBUS_SESSION_BUS_ADDRESS="$DBUS_SESS"
 
-/usr/bin/gnome-terminal -- bash -c "source .zshrc; clear; $HOME/scripts/linux-update; read -n1"
+/usr/bin/gnome-terminal -- zsh -c "source .zshrc; clear; $HOME/scripts/linux-update; read -s"
