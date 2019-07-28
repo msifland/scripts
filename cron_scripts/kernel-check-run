@@ -1,9 +1,9 @@
 #!/bin/bash
-# This script runs ****your script**** from cron. Needed to run in terminal
+# This script runs kernel-check from cron. Needed to run in terminal
 
 export DISPLAY=$(w $(id -un) | awk '{print $2}' | sed '/up/d' | sed '/TTY/d')
 export GNOME_DESKTOP_SESSION_ID=true
 DBUS_SESS=$(sed -zne 's/^DBUS_SESSION_BUS_ADDRESS=//p' /proc/`pgrep gnome-session -U $(id -u)`/environ)
 export DBUS_SESSION_BUS_ADDRESS="$DBUS_SESS"
 
-/usr/bin/gnome-terminal -- zsh -c "source .zshrc; clear; $HOME/scripts/****my script****; read -s"
+/usr/bin/gnome-terminal -- zsh -c "source .zshrc; clear; $HOME/scripts/kernel-check; read -s"
