@@ -41,6 +41,7 @@ EXCLUDE="
 --exclude=$HOME/.cache/chromium
 --exclude=$HOME/.cache/chrome-remote-desktop
 --exclude=$HOME/.cache/mozilla
+--exclude=$HOME/.cache/tracker
 --exclude=$HOME/.cache/wine*
 --exclude=$HOME/.cache/google-chrome
 --exclude=$HOME/maps/*.img
@@ -86,7 +87,7 @@ function backup(){
 		mkdir $DEST
 	else
 		if ls $DEST/* 1> /dev/null 2>&1; then
-			ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
+			ls $DEST/* -t | sed -e '1,3d' | xargs -d '\n' rm -f
 		fi
 	fi
 	echo
