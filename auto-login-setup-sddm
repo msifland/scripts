@@ -1,0 +1,86 @@
+#!/bin/bash
+# Setting up auto login and numlock on system startup
+# Check if script has been run as root.
+if [[ ! "$USER" = "root" ]]; then
+	echo "This script must be run as root!"
+	exit
+fi
+
+# Set up varible.
+CONF="/etc/sddm.conf"
+
+# Script explains what it's doing.
+echo
+echo "${ILCOLOR3}Setting up auto-login for sddm. . .${ILRESTORE}"
+echo
+sleep 1
+echo "${ILCOLOR3}Creating and editing file $CONF. Adding:
+[Autologin]
+User=msifland
+Session=plasma.desktop
+Relogin=
+${ILRESTORE}"
+echo
+sleep 1
+
+# Check for file and create if necessary
+if [[ ! -f $CONF ]]; then
+	echo
+	echo "File $CONF not found, creating now. . . "
+	sleep 1
+	touch $CONF
+fi
+
+# Check if '[Autologin]' flag is in file.
+echo
+echo "Checking for flag '[Autologin]' in $CONF. . ."
+if ! grep -wq "Autologin" $CONF; then
+	echo "[Autologin]" > $CONF
+	echo "Added [Autologin] to $CONF"
+	sleep 1
+else
+	echo "Flag '[Autologin]' found."
+	sleep 1
+fi
+
+
+echo
+echo "Checking for User=msifland. . ."
+if ! grep -wq "User=msifland" $CONF; then
+	sed -i '/User=/d' $CONF
+	echo "User=msifland" >> $CONF
+	echo "Added to $CONF"
+	sleep 1
+else
+	echo "Already updated User=msifland."
+	sleep 1
+fi
+
+echo
+echo "Checking for Session=plasma.desktop. . ."
+if ! grep -wq "Session=plasma.desktop" $CONF; then
+	sed -i '/Session=/d' $CONF
+	echo "Session=plasma.desktop" >> $CONF
+	echo "Added to $CONF"
+	sleep 1
+else
+	echo "Already updated Session=plasma.desktop."
+	sleep 1
+fi
+
+sed -i '/Relogin=/d' $CONF
+echo "Relogin=" >> $CONF
+
+# Check for errors and let user know if there were.
+if [[ $? -eq 0 ]]; then
+	echo
+	echo "All is good."
+	sleep 1
+else
+	echo
+	echo "Errors were detected. Check file manually."
+	sleep 1
+fi
+
+sed -i '/^$/d' $CONF
+echo "$(awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $CONF)" > $CONF

@@ -1,0 +1,33 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo
+echo "${ILCOLOR2}This updates the Kate Text .desktop file in /usr/share/applications/org.kde.kate.desktop so Kate opens files in new window."
+echo
+sleep 1
+# Set file variables.
+FILE="/usr/share/applications/org.kde.kate.desktop"
+
+# Look in kate file for text and change if it's  there.
+PW='spike'
+echo $PW | sudo -S -v
+if [[ $(sudo grep 'Exec=kate -b %U' $FILE) ]]; then
+	sudo sed -i 's:Exec=kate -b %U:Exec=kate -b -n:g' $FILE
+	echo
+	echo
+	echo "Kate Text file was updated."
+	echo
+	sleep 1
+else
+	echo
+	echo
+	echo "No update needed. All is good."
+	echo
+	sleep 1
+#fi
+fi
+# Write Kate file modification date to kate-date file.
+echo "Done!!!${ILRESTORE}"
+sleep 1
+exit

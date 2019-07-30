@@ -1,9 +1,4 @@
 #!/bin/bash
 # This script runs oh-my-zsh-updater from cron. Needed to run in terminal
 
-export DISPLAY=$(w $(id -un) | awk '{print $2}' | sed '/up/d' | sed '/TTY/d')
-export GNOME_DESKTOP_SESSION_ID=true
-DBUS_SESS=$(sed -zne 's/^DBUS_SESSION_BUS_ADDRESS=//p' /proc/`pgrep gnome-session -U $(id -u)`/environ)
-export DBUS_SESSION_BUS_ADDRESS="$DBUS_SESS"
-
-/usr/bin/gnome-terminal -- zsh -c "source .zshrc; clear; $HOME/scripts/oh-my-zsh-updater; read -s"
+/usr/bin/konsole -e zsh -c "source .zshrc; clear; upgrade_oh_my_zsh; read -s"
