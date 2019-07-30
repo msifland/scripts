@@ -5,13 +5,14 @@ sleep 1
 
 echo
 echo "Checking if krusader is installed. . ."
+sleep 2
 if ! dpkg --get-selections | grep -w "krusader"; then
 	sudo -y apt install krusader
 else
 	echo
 	echo "krusader found!"
 fi
-sleep 2
+sleep 1
 
 DIR1="$HOME/.local/share/kservices5"
 DIR2="$HOME/.local/share/kservices5/ServiceMenus"
