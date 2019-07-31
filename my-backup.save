@@ -28,6 +28,7 @@ $HOME/.oh-my-zsh
 $HOME/.ssh
 $HOME/.themes
 $HOME/.face
+$HOME/.Xresources
 $HOME/.xprofile
 $HOME/.bash*
 $HOME/.conky*
@@ -134,8 +135,8 @@ function backup(){
 	sleep 1
 	echo -e ${RESTORE}
 	for ROOT_FILE in $(find $HOME/Dropbox/Backups/* -type f -user root); do
-		echo "Changing ownership of $ROOT_FILE from root:root to msifland:msifland. . .sudo chown msifland:msifland $ROOT_FILE"
-		sudo chown msifland:msifland $ROOT_FILE
+		echo "Changing ownership of $ROOT_FILE from root:root to msifland:users. . .sudo chown msifland:users $ROOT_FILE"
+		sudo chown msifland:users $ROOT_FILE
 		sleep 1
 	done
 
