@@ -1,4 +1,4 @@
 #!/bin/bash
 # This script runs {your script} from cron. Needed to run in terminal
 
-/usr/bin/konsole -e zsh -c "source .zshrc; clear; $HOME/scripts/linux-update; read -s"
+env DISPLAY=:0 /usr/bin/konsole -e zsh -c "source .zshrc; clear; $HOME/scripts/linux-update; read -s"
