@@ -92,7 +92,7 @@ slct_krns
 
 for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
-		grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
+		grep -q "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
 		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')	
 		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-unsigned::g' | sed 's:-generic::g') # REvmoving 'generic' here because of the 'all' headers installed.
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
@@ -147,6 +147,32 @@ for j in $FOR_REM; do
 		echo "${ILCOLOR3}No modules files found. $m_file${ILRESTORE}"
 		sleep 1
 	fi
+
+	# /var/lib/initramfs-tools files. This is where the system reads and tries to create a boot image from.
+	i_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
+	echo
+	echo "${ILCOLOR3}Looking for leftover file in /var/lib/initramfs-tools/. . .${ILRESTORE}"
+	sleep 1
+	if ls /var/lib/initramfs-tools/$i_file > /dev/null 2>&1; then
+		sleep 1
+		echo "${ILCOLOR3}Found leftover files. Using: sudo rm -rf /var/lib/initramfs-tools/$i_file${ILRESTORE}"
+		sleep 1
+		sudo rm -rf /var/lib/initramfs-tools/"$i_file"
+		if [ $? -ne 0 ]; then
+			echo
+			echo "Not removed, check path and remove manyally. . ."
+			sleep 1
+		else
+			echo
+			echo "Succeeded removal."
+			sleep 1
+		fi
+	else
+		echo
+		echo "${ILCOLOR3}No leftover files found.${ILRESTORE}"
+		echo
+		sleep 1
+	fi
 done
 
 sleep 3
@@ -173,13 +199,4 @@ for k in $KERNS; do
 done
 echo "${ILCOLOR2}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
 sleep 1
-echo
-echo "Also showing kernel info from /var/lib/initramfs-tools. This folder is where the system tries to create kernels from. If there are extra kernels listed there, delete them manually."
-sleep 1
-echo
-VAR_LIB_KERNS=$(ls /var/lib/initramfs-tools)
-for v in $VAR_LIB_KERNS; do
-	echo $v
-	sleep .5
-done
 echo

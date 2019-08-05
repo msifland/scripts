@@ -3,37 +3,6 @@
 # Put your code below this line.
 # Set kernel version prefix number to look for. If changed then rerun script with new version number inserted and saved in this file.
 
-<< Comment
-VER1="4"
-read -p "Current kernel version in script is $VER1, would you like to keep it[Y/n]? " YNVER1
-if [[ "$YNVER1" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
-	echo "OK, keeping current version of $VER1"
-else
-	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " NEWVER1
-	sed -i "s:VER1=\"$VER1\":VER1=\"$NEWVER1\":g" $HOME/scripts/kernel_scripts/kernel-check
-	$HOME/scripts/kernel_scripts/kernel-check && exit
-fi
-echo
-
-# This shows the latest 25 kernels under above version prefix.
-echo "${ILCOLOR2}Here are the 25 lastest available kernels from kernel.org. . .${ILRESTORE}"
-sleep 1
-# Format search an display.
-KERN_LIST=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER1".x/ | grep "linux-$VER1" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n25)
-# Error handling if version doesn't have any kernels.
-if [[ "$KERN_LIST" = "" ]]; then
-	echo "No kernels in list, re-run script."
-	exit
-fi
-
-# Loop through each kernel in list and show on screen with numbered lines.
-n=0
-for i in $KERN_LIST; do
-	let n=n+1
-	echo "$n. $i"
-done
-Comment
-
 # This function allows version number comparison.
 function version_gt() { 
 	test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; 
@@ -61,20 +30,6 @@ if [[ ! -d $STOR_DIR ]]; then
 	mkdir $STOR_DIR
 fi
 cd "$WORK_DIR"
-
-<< Comment
-# Version number to check for online. Ask if we want to keep or change it? This part will actually change it in the file here.
-VER="4.20"
-read -p "${ILRESTORE}Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
-if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
-	echo "OK, keeping current version of $VER"
-else
-	read -p "What verion would you like to change the script to(e.g. 4.16, 4.13, etc.)? " NEWVER
-	sed -i "s:VER=\"$VER\":VER=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-check
-	$HOME/scripts/kernel_scripts/kernel-check && exit
-fi
-echo
-Comment
 
 echo
 echo "${ILCOLOR2}We are going to see if there is a new kernel to build from main kernel source: kernel.org.${ILRESTORE}"
@@ -131,7 +86,7 @@ Would you like to install it?" 10 50; then
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 		echo "Local version from .config file: $CONF_VER"
 		echo
-		read -p "  Leave blank for same as current. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
+		read -t 20 -p "  Leave blank for same as current. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
 		scripts/config --disable DEBUG_INFO
 
