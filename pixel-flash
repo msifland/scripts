@@ -12,7 +12,19 @@ fi
 function pat_or_pin() {
 	echo
 	AN_POP="n"
-	read -p "Make sure you have the latest TWRP files and Magisk file on your phone and have lockscreen security set to swipe or none. Have you done these important steps[y/N]? " AN_POP
+	read -p "
+Download latest Android image from:
+https://developers.google.com/android/images#marlin
+	Extract to $HOME/pixel/, cd to that directory and run this script from there.
+Make sure you have the latest TWRP files from: 
+https://dl.twrp.me/marlin/
+	Rename the 'twrp-xxx-marlin.img' file to 'twrp.img' for the purposes of this script.
+
+The latest Magisk file ON YOUR PHONE, from https://github.com/topjohnwu/Magisk/releases
+
+Have lockscreen security set to swipe or none.
+
+Have you done these important steps[y/N]? " AN_POP
 	if [[ "$AN_POP" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		echo
 		echo "${ILCOLOR1}Good, proceeding. . .${ILRESTORE}"
@@ -95,7 +107,7 @@ if [[ "$DVCE" = "device" ]]; then
 		sleep 1
 		# With Pixel, you have to run a temporary TWRP.img to install the full TWRP.
 		echo
-		echo -e "${ILCOLOR1} Rebooting to temporary recovery to install full TWRP recovery.\n\n If you have a pattern or pin, on reboot to system and remove lockscreen security and reboot to recovery by typing:\n    'adb reboot bootloader'\n    'fastboot boot $HOME/pixel/twrp.img'\n\n On reboot flash from your phone, reboot to installed recovery and flash magisk from your phone. After that, the process is finished.${ILRESTORE}"
+		echo -e "${ILCOLOR1} Rebooting to temporary recovery to install full TWRP recovery.\n\n If you have a pattern or pin, on reboot to system and remove lockscreen security and reboot to recovery by typing:\n    'adb reboot bootloader'\n    'fastboot boot $HOME/pixel/twrp.img'\n\n On reboot flash from your phone, reboot to installed recovery and flash magisk.zip from your phone. After that, the process is finished.${ILRESTORE}"
 		fastboot boot $HOME/pixel/twrp.img
 		sleep 1
 	else

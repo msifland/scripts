@@ -166,7 +166,7 @@ Would you like to install it?" 10 50; then
 				rm -rf "$WORK_DIR"
 			fi
 			cd $HOME
-			echo 'spike' | sudo -S reboot
+			echo 'spike' | sudo -S shutdown -r now
 		else
 			echo "Ok, not rebooting now."
 			echo
