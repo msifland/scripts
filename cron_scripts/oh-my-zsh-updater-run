@@ -1,4 +1,4 @@
 #!/bin/bash
 # This script runs ****your script**** from cron. Needed to run in terminal. Put you crontab -e job as a path to this script. The 'read -s' at the end(zsh read syntax), is to hold the window open.(read -n1 for bash syntax)
 export DISPLAY=:0
-/usr/bin/konsole -e zsh -c "source .zshrc; clear; upgrade_oh_my_zsh"
+/usr/bin/mate-terminal -e "zsh -c \"source .zshrc; clear; upgrade_oh_my_zsh\""
