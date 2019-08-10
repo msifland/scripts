@@ -136,9 +136,9 @@ else
 	echo
 	echo "Done."
 	echo
-	rm -rf $CLONE1
-	rm -rf $MOUNT_CLONE1
-	rm -rf $MOUNT_DEST1
+	#rm -rf $CLONE1
+	#rm -rf $MOUNT_CLONE1
+	#rm -rf $MOUNT_DEST1
 	if [ $? -eq 0 ]; then
 		echo
 		echo "${ILCOLOR3}Mount is good.${ILRESTORE}"
