@@ -1,0 +1,5 @@
+#!/bin/zsh
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+env > $HOME/scripts/cron_scripts/env-environment
