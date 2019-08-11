@@ -1,4 +1,4 @@
 #!/bin/bash
 # This script runs ****your script**** from cron. Needed to run in terminal. Put you crontab -e job as a path to this script.
 export DISPLAY=:0
-/usr/bin/mate-terminal -e "zsh -c \"source .zshrc; clear; $HOME/scripts/linux-update; read -s\""
+/usr/bin/xfce4-terminal -e "zsh -c \"source .zshrc; clear; $HOME/scripts/linux-update; read -s\""
