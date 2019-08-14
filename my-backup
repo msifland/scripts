@@ -25,6 +25,7 @@ $HOME/.config
 $HOME/.icons
 $HOME/.local
 $HOME/.oh-my-zsh
+$HOME/.profile
 $HOME/.ssh
 $HOME/.themes
 $HOME/.face
