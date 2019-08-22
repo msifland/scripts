@@ -36,6 +36,7 @@ $HOME/.conky*
 $HOME/.git*
 $HOME/.repo*
 $HOME/.zsh*
+/usr/share/mate*
 "
 
 # Excluded files and folders
@@ -46,6 +47,7 @@ EXCLUDE="
 --exclude=$HOME/.cache/tracker
 --exclude=$HOME/.cache/wine*
 --exclude=$HOME/.cache/google-chrome
+--exclude=$HOME/.cache/at-spi*
 --exclude=$HOME/maps/*.img
 --exclude=$HOME/maps/*.old
 --exclude=$HOME/maps/Combine
