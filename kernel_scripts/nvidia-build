@@ -1,0 +1,18 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+
+INST_FILE="$HOME/.config/autostart/nvidia-kernel-build.desktop"
+
+cat << EOF > $INST_FILE
+[Desktop Entry]
+Type=Application
+Exec=xterm -e 'zsh -c "PATH=/usr/bin:/usr/sbin:/bin:/sbin:$PATH; echo \\\"Building nvidia-kernel\\\"; sudo m-a auto-install --force nvidia-kernel; sudo update-grub; echo; echo \\\"Finished building nvidia-kernel for current kernel, press enter to finish process. . .\\\"; read -s; rm -rf $HOME/.config/autostart/nvidia-kernel-build.desktop; sudo shutdown -r now"'
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[en_US]=nvidia-kernel-build
+Name=nvidia-kernel-build
+Comment[en_US]=
+Comment=
+X-MATE-Autostart-Delay=60
+EOF

@@ -144,6 +144,12 @@ Would you like to install it?" 10 50; then
 			rm -rf $HOME/tmp/perf-package
 		fi
 
+		# Build nvidia-kernel at boot
+		if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
+			sudo apt -y install module-assistant
+		fi
+		$HOME/scripts/kernel_scripts/nvidia-build
+		
 		# Reboot to new kernel?
 		YNRBT="y"
 		read -p "Would you like to reboot to new kernel now?[Y/n] " YNRBT
