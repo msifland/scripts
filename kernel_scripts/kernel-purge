@@ -96,6 +96,8 @@ for j in $FOR_REM; do
 		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')	
 		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-unsigned::g' | sed 's:-generic::g') # REvmoving 'generic' here because of the 'all' headers installed.
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
+		# For removeing nvidia module-assistant build
+		REM4=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image-::g' | sed 's:-unsigned::g')
 	fi
 
 	# If all is good, then remove.
@@ -173,6 +175,8 @@ for j in $FOR_REM; do
 		echo
 		sleep 1
 	fi
+	# Removing module-assistant nvidia build.
+	sudo apt purge nvidia-kernel-"$REM4"
 done
 
 sleep 3
