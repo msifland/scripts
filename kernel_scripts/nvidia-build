@@ -7,7 +7,7 @@ INST_FILE="$HOME/.config/autostart/nvidia-kernel-build.desktop"
 cat << EOF > $INST_FILE
 [Desktop Entry]
 Type=Application
-Exec=xterm -e 'zsh -c "PATH=/usr/bin:/usr/sbin:/bin:/sbin:$PATH; echo \\\"Building nvidia-kernel for newly installed kernel. Please enter your password below to continue. . .\\\"; echo; sudo module-assistant auto-install --force nvidia-kernel; sudo update-grub; echo; echo \\\"Finished building nvidia-kernel for current kernel, press enter to finish process. . .\\\"; read -s; rm -rf $HOME/.config/autostart/nvidia-kernel-build.desktop; sudo shutdown -r now"'
+Exec=xterm -e 'zsh -c "PATH=/usr/bin:/usr/sbin:/bin:/sbin:$PATH; echo \\\"Building nvidia-kernel for newly installed kernel. Please enter your password below to continue. . .\\\"; echo; sudo module-assistant auto-install --force nvidia-legacy-390xx-kernel; sudo update-grub; echo; echo \\\"Finished building nvidia-kernel for current kernel, press enter to finish process. . .\\\"; read -s; rm -rf $HOME/.config/autostart/nvidia-kernel-build.desktop; sudo shutdown -r now"'
 Hidden=false
 X-MATE-Autostart-enabled=true
 Name[en_US]=nvidia-kernel-build

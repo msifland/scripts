@@ -93,11 +93,14 @@ slct_krns
 for j in $FOR_REM; do
 	if grep -q "^$j" $KERN_FILE; then
 		grep -q "^$j. linux" $KERN_FILE | sed "s:$j. ::g" # | sed 's:-generic::g'
-		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')	
+		# Kernel
+		REM1=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g") # | sed 's:-generic::g')
+		# Headers
 		REM2=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-headers-:g' | sed 's:-unsigned::g' | sed 's:-generic::g') # REvmoving 'generic' here because of the 'all' headers installed.
+		# Modules
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
 		# For removeing nvidia module-assistant build
-		REM4=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image-::g' | sed 's:-unsigned::g')
+		REM4=$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image-::g' | sed 's:-unsigned::g')
 	fi
 
 	# If all is good, then remove.
@@ -175,8 +178,14 @@ for j in $FOR_REM; do
 		echo
 		sleep 1
 	fi
+
 	# Removing module-assistant nvidia build.
-	sudo apt purge nvidia-kernel-"$REM4"
+	if dpkg --get-selections | grep -wq "nvidia-legacy-390xx-kernel-$REM4"; then
+		echo
+		echo "Removing modules built by module-assistant for nvidia drivers. . ."
+		sleep 1
+		sudo apt purge nvidia-legacy-390xx-kernel-"$REM4"
+	fi
 done
 
 sleep 3
