@@ -148,7 +148,9 @@ Would you like to install it?" 10 50; then
 		if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
 			sudo apt -y install module-assistant
 		fi
-		$HOME/scripts/kernel_scripts/nvidia-build
+
+		# If using nvidia drivers.
+		#$HOME/scripts/kernel_scripts/nvidia-build
 		
 		# Reboot to new kernel?
 		YNRBT="y"
