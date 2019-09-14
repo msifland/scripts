@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Starting compiz window manager."
+sleep 5
+
+echo "nohup /bin/sh -c compiz-decorator --replace &"
+sleep 5
+nohup /bin/sh -c compiz-decorator --replace &
+sleep 5
+
+echo
+echo "nohup compiz --replace --keep-desktop-hints &"
+sleep 5
+nohup compiz --replace --keep-desktop-hints &
+sleep 5
+
+echo
+if [ $? -eq 0 ]; then
+	echo
+	echo "All went well."
+else
+	echo
+	echo "Error detected!!!"
+fi
+sleep 3
+# Kill current terminal that this process is running in.
+kill -9 $PPID
