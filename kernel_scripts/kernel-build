@@ -52,10 +52,10 @@ fi
 echo
 
 # Searching website for versions available and showing the last 30. Also figured out after trial and error that the brackets had to be escaped.
-echo "${ILCOLOR2}Here are the 50 lastest available kernels from kernel.org. . .${ILRESTORE}"
+echo "${ILCOLOR2}Here are the 25 lastest available kernels from kernel.org. . .${ILRESTORE}"
 sleep 3
 
-KERN_LIST=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER".x/ | grep "linux-$VER" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n50)
+KERN_LIST=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER".x/ | grep "linux-$VER" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n25)
 
 # Loop to list the kernels in the file on numbered lines and echo them on screen.
 n=0
@@ -85,57 +85,72 @@ fi
 
 # Format for web search purposes.
 FOR_INST=$(grep "^$INST. " $KERN_FILE | sed "s:$INST. ::g")
-echo $FOR_INST
+
 cd $WORK_DIR
 if test $FOR_INST; then
 	tm_wh_start=$(date +"%s")
 		clear
+		echo $FOR_INST
 		echo
 		sleep 1
 		# Formatting for web search.
 		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
 		wget https://cdn.kernel.org/pub/linux/kernel/v"$VER".x/linux-"$FOR_INST".tar.xz 
 		echo
+
 		echo "${ILCOLOR2}Unzipping kernel and building now, this will take a while. . .${ILRESTORE}"
 		sleep 1
 		echo
+
 		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 		echo 'spike' | sudo -S apt build-dep -y linux
 		tar -xf linux-"$FOR_INST".tar.xz
 		cd linux-"$FOR_INST"
 		echo
-		echo "Copying current kernel .config. . ."
-		cp /boot/config-$(uname -r) .config
-		echo
-		echo "  Append to Kernel Number for Local Version name. Current kernel: $(uname -r)"
-		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
-		echo "Local version: $CONF_VER"
-		echo
-		read -p "  If current kernel already has a local version appended just leave blank. Copied .config file will already contain local version name.('Enter' for blank)? " LOC_VER
-		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
-		
-		scripts/config --disable DEBUG_INFO
-		if [[ "$LOC_VER" != "" ]]; then
-			sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"$LOC_VER\"" .config
-		fi
 
+		CURR_STAB=$(ls /boot | grep "config" | sort -g | head -1)
+		echo "${ILCOLOR2}Copying current STABLE kernel - ${ILRESTORE}$CURR_STAB. . ."
+		cp /boot/$CURR_STAB .config
+		echo
+
+		echo "${ILCOLOR2}Append to Kernel Number for Local Version name.
+    Current running kernel:${ILRESTORE} $(uname -r)"
+		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+		echo
+		echo "${ILCOLOR2}Local version from .config file:${ILRESTORE} $CONF_VER"
+		echo
+		
+		read -p "  Leave blank for same as STABLE. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
+		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
+		scripts/config --disable DEBUG_INFO
+
+		if [[ "$LOC_VER" != "" ]]; then
+			sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config
+		fi
+		if [[ "$LOC_VER" = "0" ]]; then
+			sed -i "s:CONFIG_LOCALVERSION=.*:CONFIG_LOCALVERSION=\"\":g" .config
+		fi
+		
 		echo
 		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
 		if grep -w "^CONFIG_SYSTEM_TRUSTED_KEYS=" .config; then
 			sed -i 's:CONFIG_SYSTEM_TRUSTED_KEYS=:#CONFIG_SYSTEM_TRUSTED_KEYS=:g' .config
 		fi
 
-		# Build.
+		# Build, remove uneeded files, install.
+		# oldefconfig pulls current options from .config file and automatically answers new options without prompt.
 		make olddefconfig
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		echo 'spike' | sudo -S make modules_install
-		# Move up on directory and remove not needed deb files and install.
-		# This variable is for initramfs update format below.
+
+		# This variable is here before we change out of this directory, for initramfs update format below.
 		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+
 		cd ..
-		#rm -rf *dbg*.deb
-		#rm -rf *libc*.deb
+
 		echo 'spike' | sudo -S dpkg -i *.deb
+		
+		# Get .config version for next step.
 		echo 'spike' | sudo -S update-initramfs -c -t -k "$FOR_INST$CONF_VER_WRT"
 		echo 'spike' | sudo -S update-grub
 
@@ -145,6 +160,17 @@ if test $FOR_INST; then
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
 		echo
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
+
+<< Comment
+		# Build nvidia-kernel at boot
+		if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
+			sudo apt -y install module-assistant
+		fi
+
+		# If using nvidia drivers.
+		$HOME/scripts/kernel_scripts/nvidia-build
+Comment
+
 else
 	echo
 	echo "Invalid entry, try again. . ."

@@ -64,60 +64,71 @@ Would you like to install it?" 10 50; then
 		# Start timing process
 		tm_wh_start=$(date +"%s")
 		clear
+
 		echo
 		sleep 1
 		# Formatting for web search.
 		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
 		wget $GET
-		#wget https://cdn.kernel.org/pub/linux/kernel/v"$VER1".x/linux-"$GET".tar.xz
 		echo
+
 		echo "${ILCOLOR2}Unzipping kernel. . .${ILRESTORE}"
 		sleep 1
 		tar -xf linux-"$GET_VER".tar.xz
 		echo
+
 		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 		echo 'spike' | sudo -S apt build-dep -y linux
 		cd linux-"$GET_VER"
 		echo
-		echo "${ILCOLOR2}Copying current kernel .config. . .${ILRESTORE}"
-		cp /boot/config-$(uname -r) .config
+
+		CURR_STAB=$(ls /boot | grep "config" | sort -g | head -1)
+		echo "${ILCOLOR2}Copying current STABLE kernel - ${ILRESTORE}$CURR_STAB. . ."
+		cp /boot/$CURR_STAB .config
 		echo
-		echo "  ${ILCOLOR2}Append to Kernel Number for Local Version name. Current kernel: $(uname -r)${ILRESTORE}"
+
+		echo "${ILCOLOR2}Append to Kernel Number for Local Version name.
+    Current running kernel:${ILRESTORE} $(uname -r)"
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
-		echo "Local version from .config file: $CONF_VER"
 		echo
-		read -t 20 -p "  Leave blank for same as current. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
+		echo "${ILCOLOR2}Local version from .config file:${ILRESTORE} $CONF_VER"
+		echo
+		
+		read -p "  Leave blank for same as STABLE. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
 		scripts/config --disable DEBUG_INFO
 
 		if [[ "$LOC_VER" != "" ]]; then
-			sed -i "s:CONFIG_LOCALVERSION=\".*:CONFIG_LOCALVERSION=\"-$LOC_VER\":g" .config
+			sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config
 		fi
 		if [[ "$LOC_VER" = "0" ]]; then
 			sed -i "s:CONFIG_LOCALVERSION=.*:CONFIG_LOCALVERSION=\"\":g" .config
 		fi
-		# This variable is for initramfs update format below.
-		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 
 		echo
 		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
 		if grep -w "^CONFIG_SYSTEM_TRUSTED_KEYS=" .config; then
 			sed -i 's:CONFIG_SYSTEM_TRUSTED_KEYS=:#CONFIG_SYSTEM_TRUSTED_KEYS=:g' .config
 		fi
+
 		# Build, remove uneeded files, install.
 		# oldefconfig pulls current options from .config file and automatically answers new options without prompt.
 		make olddefconfig		
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		echo 'spike' | sudo -S make modules_install
+
+		# This variable is here before we change out of this directory, for initramfs update format below.
+		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+
 		cd ..
-		#rm -rf *dbg*.deb
-		#rm -rf *libc*.deb
+
 		echo 'spike' | sudo -S dpkg -i *.deb
 
-		#Get .config version for next step.
+		# Get .config version for next step.
 		echo 'spike' | sudo -S update-initramfs -c -t -k "$GET_VER$CONF_VER_WRT"
 		echo 'spike' | sudo -S update-grub
 		
+		sleep 1
 		# End timing process
 		tm_wh_end=$(date +"%s")
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
@@ -129,6 +140,7 @@ Would you like to install it?" 10 50; then
 		export GET="$GET_VER"
 		sleep 1
 		echo
+		
 		echo "${ILCOLOR2}Now building perf package(Linux-tools). . .${ILRESTORE}"
 		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET_VER/perf-build
 		cd $WORK_DIR/linux-$GET_VER
@@ -144,13 +156,15 @@ Would you like to install it?" 10 50; then
 			rm -rf $HOME/tmp/perf-package
 		fi
 
+<< Comment
 		# Build nvidia-kernel at boot
 		if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
 			sudo apt -y install module-assistant
 		fi
 
 		# If using nvidia drivers.
-		#$HOME/scripts/kernel_scripts/nvidia-build
+		$HOME/scripts/kernel_scripts/nvidia-build
+Comment
 		
 		# Reboot to new kernel?
 		YNRBT="y"

@@ -153,32 +153,6 @@ for j in $FOR_REM; do
 		sleep 1
 	fi
 
-	# /var/lib/initramfs-tools files. This is where the system reads and tries to create a boot image from.
-	i_file=$(echo $REM_HDRS3 | sed 's:linux-modules-::g')
-	echo
-	echo "${ILCOLOR3}Looking for leftover file in /var/lib/initramfs-tools/. . .${ILRESTORE}"
-	sleep 1
-	if ls /var/lib/initramfs-tools/$i_file > /dev/null 2>&1; then
-		sleep 1
-		echo "${ILCOLOR3}Found leftover files. Using: sudo rm -rf /var/lib/initramfs-tools/$i_file${ILRESTORE}"
-		sleep 1
-		sudo rm -rf /var/lib/initramfs-tools/"$i_file"
-		if [ $? -ne 0 ]; then
-			echo
-			echo "Not removed, check path and remove manyally. . ."
-			sleep 1
-		else
-			echo
-			echo "Succeeded removal."
-			sleep 1
-		fi
-	else
-		echo
-		echo "${ILCOLOR3}No leftover files found.${ILRESTORE}"
-		echo
-		sleep 1
-	fi
-
 << Comment
 	# Removing module-assistant nvidia build.
 	if dpkg --get-selections | grep -wq "nvidia-legacy-390xx-kernel-$REM4"; then
@@ -188,9 +162,32 @@ for j in $FOR_REM; do
 		sudo apt purge nvidia-legacy-390xx-kernel-"$REM4"
 	fi
 Comment
-
 done
 
+# /var/lib/initramfs-tools files. This is where the system reads and tries to create a boot image from.
+echo
+echo "${ILCOLOR1}Also showing kernel info from /var/lib/initramfs-tools. This folder is where the system tries to create kernels from. If there are extra kernels listed there, delete them manually.${ILRESTORE}"
+sleep 1
+echo
+VAR_LIB_KERNS=$(ls /var/lib/initramfs-tools | tac)
+for v in $VAR_LIB_KERNS; do
+	echo $v
+	sleep .5
+done
+echo
+read -p "Would you like to delete any extra files?[y/n]: " del_ext
+if [[ $del_ext =~ ^[yY][eE][sS]|[yY]$ ]]; then
+	echo
+	read -p "Type the full name of file to delete(not path). Mutiple files separtated by a space: " del_inits
+	IFS=' ' read -a del_inits_array <<< "${del_inits}"
+	for n in "${del_inits_array[@]}"; do
+		echo "sudo rm -rf /var/lib/initramfs-tools/$n"
+		sudo rm -rf /var/lib/initramfs-tools/"$n"
+	done
+else
+	echo
+	echo "Ok not deleting anything in /var/lib/initramfs-tools."
+fi
 sleep 3
 
 if [ $? -eq 0 ]; then
