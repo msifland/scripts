@@ -61,6 +61,7 @@ EXCLUDE="
 --exclude=$HOME/.local/share/applications
 --exclude=$HOME/.local/share/baloo
 --exclude=$HOME/.local/share/akonadi
+--exclude=$HOME/.local/share/lutris
 --exclude=$HOME/.local/share/Steam
 --exclude=$HOME/.local/share/Trash
 --exclude=$HOME/Dropbox/Android
