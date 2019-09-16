@@ -3,7 +3,7 @@
 # Put your code below this line.
 # Set kernel version prefix number to look for. If changed then rerun script with new version number inserted and saved in this file.
 
-# This function allows version number comparison.
+# This function allows version number comparison used below.
 function version_gt() { 
 	test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; 
 }
@@ -11,6 +11,7 @@ function version_gt() {
 # Entire function here.
 function kern_check() {
 echo -e "${ILCOLOR2}"
+
 # Set dirctory variables.
 WORK_DIR="$HOME/tmp/kernel_build"
 STOR_DIR="$HOME/tmp/kernel_storage"
@@ -38,9 +39,6 @@ sleep 1
 # Get and format websit info
 GET=$(wget -qO- https://www.kernel.org | grep -A1  "latest_link\">" | grep "<a href=" | sed -e 's:<a href="::' | sed -e 's:">*::' | sed -e "s:tar.xz.*:tar.xz:" | sed "s/^[ \t]*//")
 GET_VER=$(echo $GET | sed -e "s:.*linux-::" | sed -e "s:.tar.xz::")
-<< Comment
-GET=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER1".x/ | grep "linux-$VER" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n1)
-Comment
 
 echo
 echo "Newest stable kernel version available is ${ILCOLOR2}$GET_VER${ILRESTORE}"
@@ -52,8 +50,6 @@ CURNT=$(ls /boot | grep "vmlinuz" | sed 's:vmlinuz-::g' | sed 's:-generic::g' | 
 echo "Latest kernel version installed is ${ILCOLOR2}$CURNT"
 sleep 1
 echo -e "${ILRESTORE}"
-
-
 
 # Calling function to check versions.
 if version_gt "$GET_VER" "$CURNT"; then
@@ -87,6 +83,8 @@ Would you like to install it?" 10 50; then
 		cp /boot/$CURR_STAB .config
 		echo
 
+		# This section is if you want to add an option the chose a local verson name to append to kernel version.
+<< Comment
 		echo "${ILCOLOR2}Append to Kernel Number for Local Version name.
     Current running kernel:${ILRESTORE} $(uname -r)"
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
@@ -95,15 +93,22 @@ Would you like to install it?" 10 50; then
 		echo
 		
 		read -p "  Leave blank for same as STABLE. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
-		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
-		scripts/config --disable DEBUG_INFO
-
+		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.
 		if [[ "$LOC_VER" != "" ]]; then
 			sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config
 		fi
 		if [[ "$LOC_VER" = "0" ]]; then
 			sed -i "s:CONFIG_LOCALVERSION=.*:CONFIG_LOCALVERSION=\"\":g" .config
 		fi
+Comment
+
+		scripts/config --disable DEBUG_INFO
+		echo "${ILCOLOR2}Appending '-msi' to kernel version to show as custom built kernel."
+		# This is local version appended to kernel
+		LOC_VER="-msi"
+		echo 'sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config'
+		sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config
+		sleep 1
 
 		echo
 		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
@@ -111,8 +116,7 @@ Would you like to install it?" 10 50; then
 			sed -i 's:CONFIG_SYSTEM_TRUSTED_KEYS=:#CONFIG_SYSTEM_TRUSTED_KEYS=:g' .config
 		fi
 
-		# Build, remove uneeded files, install.
-		# oldefconfig pulls current options from .config file and automatically answers new options without prompt.
+		# Command 'oldefconfig' pulls current options from .config file and automatically answers new options without prompt.
 		make olddefconfig		
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		echo 'spike' | sudo -S make modules_install
@@ -120,15 +124,13 @@ Would you like to install it?" 10 50; then
 		# This variable is here before we change out of this directory, for initramfs update format below.
 		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
 
+		# Installing kernel and updateing grub and initramfs
 		cd ..
-
 		echo 'spike' | sudo -S dpkg -i *.deb
-
-		# Get .config version for next step.
 		echo 'spike' | sudo -S update-initramfs -c -t -k "$GET_VER$CONF_VER_WRT"
-		echo 'spike' | sudo -S update-grub
-		
+		echo 'spike' | sudo -S update-grub		
 		sleep 1
+
 		# End timing process
 		tm_wh_end=$(date +"%s")
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
@@ -140,8 +142,9 @@ Would you like to install it?" 10 50; then
 		export GET="$GET_VER"
 		sleep 1
 		echo
-		
 		echo "${ILCOLOR2}Now building perf package(Linux-tools). . .${ILRESTORE}"
+
+		# Copy script to current directory to build.
 		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET_VER/perf-build
 		cd $WORK_DIR/linux-$GET_VER
 		sed -i "s:VERSION=\"\":VERSION=\"$GET_VER\":g" perf-build		
@@ -156,6 +159,7 @@ Would you like to install it?" 10 50; then
 			rm -rf $HOME/tmp/perf-package
 		fi
 
+		# This section is for if you are using nvidia drivers.
 << Comment
 		# Build nvidia-kernel at boot
 		if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
@@ -176,10 +180,12 @@ Comment
 			if [[ ! -d $STOR_DIR ]]; then
 				mkdir $STOR_DIR
 			fi
+
 			# Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
 			if [[ $(ls $STOR_DIR) ]]; then
 				ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
 			fi
+
 			# Clean up.
 			if [[ -d "$WORK_DIR" ]]; then
 				if ls $WORK_DIR/*.deb > /dev/null 2>&1; then
@@ -187,6 +193,7 @@ Comment
 				fi
 				rm -rf "$WORK_DIR"
 			fi
+
 			cd $HOME
 			echo 'spike' | sudo -S shutdown -r now
 		else
@@ -206,14 +213,17 @@ else
 	sleep 2
 fi
 cd ..
+
 # Create kernel storage directory if doesn't exist, for storage of previously built kernels.
 if [[ ! -d $STOR_DIR ]]; then
 	mkdir $STOR_DIR
 fi
+
 # Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
 if [[ $(ls $STOR_DIR) ]]; then
 	ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
 fi
+
 # Clean up.
 if [[ -d "$WORK_DIR" ]]; then
 	if ls $WORK_DIR/*.deb > /dev/null 2>&1; then
@@ -223,5 +233,6 @@ if [[ -d "$WORK_DIR" ]]; then
 fi
 cd $HOME
 }
+
 # Run main function.
 kern_check
