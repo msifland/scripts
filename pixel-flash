@@ -20,7 +20,7 @@ Make sure you have the latest TWRP files from:
 https://dl.twrp.me/marlin/
 	Rename the 'twrp-xxx-marlin.img' file to 'twrp.img' for the purposes of this script.
 
-The latest Magisk file ON YOUR PHONE, from https://github.com/topjohnwu/Magisk/releases
+The latest Magisk file ON YOUR PHONE, from https://github.com/topjohnwu/Magisk/releases, or from the Magisk app on your phone.
 
 Have lockscreen security set to swipe or none.
 
@@ -31,7 +31,7 @@ Have you done these important steps[y/N]? " AN_POP
 		sleep 1
 	else
 		echo
-		echo "${ILCOLOR1}Please set lockscreen to swipe or none on device. . .${ILRESTORE}"
+		echo "${ILCOLOR1}Please do the steps before proceeding. . .${ILRESTORE}"
 		sleep 1
 		pat_or_pin
 	fi
