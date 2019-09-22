@@ -106,8 +106,8 @@ Comment
 		echo "${ILCOLOR2}Appending '-msi' to kernel version to show as custom built kernel."
 		# This is local version appended to kernel
 		LOC_VER="-msi"
-		echo 'sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config'
-		sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config
+		echo 'sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"$LOC_VER\"" .config'
+		sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"$LOC_VER\"" .config
 		sleep 1
 
 		echo
