@@ -37,7 +37,7 @@ if [[ -f $FILE ]]; then
 	# Create entries to file to make it executable.
 	echo '[Desktop Entry]' > $LINK
 	echo 'Version=1.0' >> $LINK
-	echo 'Exec=/usr/bin/chromium '$OUTPUT >> $LINK
+	echo 'Exec=/usr/bin/google-chrome-stable '$OUTPUT >> $LINK
 	echo 'X-MultipleArge=false' >> $LINK
 	echo 'Terminal=false' >> $LINK
 	echo 'Encoding=UTF-8' >> $LINK
