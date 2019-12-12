@@ -1,0 +1,31 @@
+#!/bin/bash
+
+echo
+echo "Checking dependencies. . ."
+echo
+sleep 2
+if ! dpkg --get-selections | awk '(pring $1)' | grep -x "xterm"; then
+	sudo apt install xterm
+fi
+if ! dpkg --get-selections | awk '(pring $1)' | grep -x "conky"; then
+	sudo apt install conky
+fi
+
+sleep 10; xterm -e "zsh -c \"/home/msifland/scripts/conky_start\""
+
+
+echo
+echo "Checking ethernet or wireless connections. . ."
+echo
+sleep 2
+
+$HOME/scripts/conky_iface_var.sh
+
+if [ $? -eq 0 ]; then
+	echo
+	echo "All is good."
+else
+	echo
+	echo "Error detected!!!"
+fi
+sleep 2
