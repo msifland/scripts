@@ -98,9 +98,11 @@ echo
 echo "${ILCOLOR1}Upating git repos. . .${ILRESTORE}"
 cd $HOME/scripts
 git stash
+git fetch
 git pull
 cd $HOME/Documents
 git stash
+git fetch
 git pull
 echo
 
