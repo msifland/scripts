@@ -1,13 +1,13 @@
 #!/bin/bash
-
+# Check if conky has correct dependencies and network interface adjuments.
 echo
 echo "Checking dependencies. . ."
 echo
 sleep 2
-if ! dpkg --get-selections | awk '(pring $1)' | grep -x "xterm"; then
+if ! dpkg --get-selections | awk '{print $1}' | grep -x "xterm"; then
 	sudo apt install xterm
 fi
-if ! dpkg --get-selections | awk '(pring $1)' | grep -x "conky"; then
+if ! dpkg --get-selections | awk '{print $1}' | grep -x "conky"; then
 	sudo apt install conky
 fi
 
