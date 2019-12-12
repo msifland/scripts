@@ -1,5 +1,4 @@
 #!/bin/zsh
-# This is a blank bash script document.
-# Put your code below this line.
+# This is call on startup from .config/autostart to create an env file to use for cron scripts to be able to run cron jobs in an open terminal.
 echo
-env > $HOME/scripts/cron_scripts/env-environment
+mate-terminal -e "zsh -c \"source /home/msifland/.zshrc; clear; env > $HOME/scripts/cron_scripts/env-environment\""
