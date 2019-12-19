@@ -3,16 +3,19 @@
 # Put your code below this line.
 echo
 echo
-echo "This scripts is going to format a usb drive. . ."
+echo "This scripts is going to format a usb drive or partition. . ."
 echo
 echo
 sleep 1
-
+read -p "Would you like to continue[y/n]: " yn_con
+if [[ ! $yn_con = "y" ]]; then
+	exit
+fi
 function start(){
 	# Show blocks on device and ask what block you would like to use.
 	lsblk
 	echo
-	read -p "What dev block would you like to use? (ex. sdb, sdc, sdd) Look above for reference. " BLCK
+	read -p "What dev block would you like to use? (ex. sdb, sda3, sdc, sdd) Look above for reference. " BLCK
 	echo
 	DEVBLOCK="/dev/$BLCK"
 	read -p "You have chosen $DEVBLOCK. Is this correct? " YN

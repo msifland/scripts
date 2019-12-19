@@ -1,0 +1,59 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# Check if script has been run as root.
+if [[ ! "$USER" = "root" ]]; then
+	echo "This script must be run as root!"
+	exit
+fi
+
+$HOME/scripts/wipe-usb
+if [[ -d /mnt/deb-inst ]]; then
+rm -rf /mnt/deb-inst
+fi
+
+cd /
+mkdir /mnt
+mkdir /mnt/deb-inst
+mkdir /mnt/deb-inst/work
+cd /mnt/deb-inst/work
+wget http://ftp.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.116_all.deb
+cd /
+dpkg -i /mnt/deb-inst/work/*.deb
+
+echo
+lsblk
+echo
+read -p "Enter partition name(ex. /dev/sdb1): " part_name
+
+mount $part_name /mnt/deb-inst
+
+debootstrap --arch amd64 testing /mnt/deb-inst http://ftp.us.debian.org/debian/
+
+mount -t proc /proc /mnt/deb-inst/proc
+mount -t sysfs /sys /mnt/deb-inst/sys
+mount -o bind /dev /mnt/deb-inst/dev
+mount -o bind /dev/pts /mnt/deb-inst/dev/pts
+
+cp /etc/network/interfaces /mnt/deb-inst/etc/network/interfaces
+cp /etc/resolv.conf /mnt/deb-inst/etc/resolv.conf
+cp /etc/hosts /mnt/deb-inst/etc/hosts
+cp /etc/hostname /mnt/deb-inst/etc/hostname
+cp /etc/apt/sources.list /mnt/deb-inst/etc/apt/sources.list
+cp /home/msifland/scripts/debian-install-continue /mnt/deb-inst/debian-install-continue
+
+cat << EOF | part_name=$part_name chroot /mnt/deb-inst env /bin/bash
+./debian-install-continue
+EOF
+
+umount /mnt/deb-inst/proc
+umount /mnt/deb-inst/sys
+umount /mnt/deb-inst/dev/pts
+umount /mnt/deb-inst/dev
+umount /mnt/deb-instsu
+#rm -rf /mnt/deb-inst
+read -p "What partition would you like to install grub to? Debian install was to $part_name(ex. /dev/sdb). " grb_inst
+grub-install $grb_inst
+update-grub
+exit
+exit

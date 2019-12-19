@@ -1,0 +1,33 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+apt update
+apt install -y ncurses-term xterm
+export TERM=xterm-color
+apt install -y makedev
+cd /dev
+MAKEDEV generic
+cd /
+apt install -y ca-certificates
+dpkg-reconfigure tzdata
+apt install -y locales
+dpkg-reconfigure locales
+
+apt install -y linux-image-5.3.0-3-amd64
+apt install grub2
+apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree tasksel
+tasksel
+
+fstab_entry=$(blkid | grep $part_name | awk '{print $3}' | sed 's:"::g')
+
+echo "$fstab_entry    /    ext4    defaults    1    1" >> /etc/fstab
+nano /etc/fstab
+
+echo "Enter root passwd: "
+passwd
+
+read -p "Type a user name: " usrnme
+adduser $usrnme
+
+apt clean
+rm -rf /work
