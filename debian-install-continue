@@ -13,21 +13,42 @@ dpkg-reconfigure tzdata
 apt install -y locales
 dpkg-reconfigure locales
 
-apt install -y linux-image-5.3.0-3-amd64
-apt install grub2
-apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree tasksel
+LX_IMG=$(apt search linux-image | grep "image" | grep "amd64" | sort -V | head -1 | sed -e 's:/.*::' | sed -e 's:-dbg.*::'
+)
+apt install -y "$LX_IMG"
+apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree tasksel zsh zsh-syntax-highlighting dialog wget
+dpkg --configure -a
 tasksel
+dpkg --configure -a
 
 fstab_entry=$(blkid | grep $part_name | awk '{print $3}' | sed 's:"::g')
 
-echo "$fstab_entry    /    ext4    defaults    1    1" >> /etc/fstab
+echo "$fstab_entry    /    ext4    defaults    0    1" >> /etc/fstab
+echo "" >> /etc/fstab
+echo "/dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0" >> /etc/fstab
+read -p "Opening /etc/fstab to review and manually make changes. Root partition and cdrom partition have been added already. If you need to add any other partitions, open a terminal and type 'sudo blkid', this will give you the UUID's for any partitions to add, eg. /home, /usr, /var, etc. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
 nano /etc/fstab
-
-echo "Enter root passwd: "
-passwd
+read -p "If separate /home partition, would you like to setup now[y/n]? " sep_hm
+if [[ $sep_hm = "y" ]]; then
+	read -p "What is the home partition(ex. /dev/sdb2)? " hm_prt
+	mount $hm_prt /home
+fi
+read  -p "Enter root password: " new_psswrd
+echo -e "$new_psswrd\n$new_psswrd\n" | passwd
 
 read -p "Type a user name: " usrnme
-adduser $usrnme
+read -p "Type the user name's password: " usrnme_psswrd
+echo -e "$usrnme_psswrd\n$usrnme_psswrd\n" | passwd $usrnme
+sed -i 's:bash:zsh:g' /etc/passwd
+mkdir work
+cd /work
+wget http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
+mkdir firmware && tar -C firmware -xvf firmware.tar.gz
+cd firmware
+dpkg -i *.deb
 
-apt clean
+cd /
 rm -rf /work
+echo "grub-pc grub-pc/install_devices_empty   boolean true" | debconf-set-selections
+DEBIAN_FRONTEND=text apt-get -y install grub2
+exit
