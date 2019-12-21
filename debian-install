@@ -8,9 +8,10 @@ if [[ ! "$USER" = "root" ]]; then
 fi
 $HOME/scripts/wipe-partition
 if [[ -d /mnt/deb-inst ]]; then
-rm -rf /mnt/deb-inst
+	echo
+#rm -rf /mnt/deb-inst
 fi
-
+<< com
 cd /
 mkdir /mnt
 mkdir /mnt/deb-inst
@@ -29,11 +30,12 @@ read -p "Enter partition to configure(/dev/sdb): " part_conf
 cfdisk $part_conf
 echo
 lsblk
-echo "Now you need to format earch partition as ext4. A new terminal will open and for each partition type 'sudo mkfs -t ext4 /dev/sdXY. Then type exit to close the terminal and continue the install process."
+echo "Now you need to format earch partition as ext4. A new terminal will open and for each partition type 'sudo mkfs -t -L \"lable\" ext4 /dev/sdXY. Then type exit to close the terminal and continue the install process."
 sleep 5
 mate-terminal -e "sh -c \"echo; echo; lsblk; echo; echo; sh\""
 echo
 
+lsblk
 read -p "Enter partition name to install to(ex. /dev/sdb1): " part_name
 umount $part_name
 umount $part_conf
@@ -54,7 +56,8 @@ cp /etc/hostname /mnt/deb-inst/etc/hostname
 cp /etc/apt/sources.list /mnt/deb-inst/etc/apt/sources.list
 nano /mnt/deb-inst/etc/apt/sources.list
 cp /home/msifland/scripts/debian-install-continue /mnt/deb-inst/debian-install-continue
-
+com
+part_name="/dev/sda3"
 cat << EOF | part_name=$part_name chroot /mnt/deb-inst env /bin/bash
 ./debian-install-continue
 EOF
@@ -63,9 +66,18 @@ sudo nano /mnt/deb-inst/etc/apt/sources.list
 read -p "What partition would you like to install grub to? Debian install was to $part_name(ex. /dev/sdb). " grb_inst
 sudo grub-install $grb_inst
 sudo update-grub $grb_inst
+<< com
+read -p "Opening /etc/fstab to review and manually make changes. Root partition and cdrom partition have been added already in most cases. Check to make sure it's right. A new terminal will open and will give you the UUID's for any partitions to add, eg. /home, /usr, /var, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
+mate-terminal -e "sh -c \"echo; blkid; sh\"" 
+sudo nano /mnt/deb-inst/etc/fstab
+read -p "If separate /home partition, would you like to setup now[y/n]? " sep_hm
+if [[ $sep_hm = "y" ]]; then
+	read -p "What is the home partition(ex. /dev/sdb2)? " hm_prt
+	mount $hm_prt /home
+fi
 
 read -p "Would you like to install you personal file for this installation[y/n]? " per_fls
-if[[ $per_fls = "y" ]]; then
+if [[ "$per_fls" = "y" ]]; then
 	cp -rf $HOME/Documents /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/"Modules&Apps" /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/msifland/
@@ -73,6 +85,8 @@ if[[ $per_fls = "y" ]]; then
 	cp -rf $HOME/scripts /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/.config /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/.local /mnt/deb-inst/home/msifland/
+	cp -rf $HOME/.zshrc /mnt/deb-inst/home/msifland/
+	cp -rf $HOME/.bashrc /mnt/deb-inst/home/msifland/
 fi
 
 sudo umount /mnt/deb-inst/proc
@@ -80,5 +94,5 @@ sudo umount /mnt/deb-inst/sys
 sudo umount /mnt/deb-inst/dev/pts
 sudo umount /mnt/deb-inst/dev
 sudo umount /mnt/deb-inst
-
+com
 exit
