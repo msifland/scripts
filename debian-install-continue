@@ -1,47 +1,78 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
-
+echo
+echo "Updating apt and installing initial applications. . ."
+echo
+sleep 1
 apt update
 apt install -y ncurses-term xterm
 export TERM=xterm-color
+
+echo
+echo "Installing makedev and /dev generic files. . ."
+echo
+sleep 1
 apt install -y makedev
 cd /dev
 MAKEDEV generic
 cd /
+
+echo
+echo "Setting up time zones and locales. . ."
+echo
+sleep 1
 apt install -y ca-certificates
 dpkg-reconfigure tzdata
 apt install -y locales
 dpkg-reconfigure locales
 apt install -y wget nano pv git screenfetch jshon
 
+echo
+echo "Installing linux-image and firmware files. . ."
+echo
+sleep 1
 LX_IMG=$(wget -qO- https://packages.debian.org/testing/linux-image-amd64 | grep "linux-image" | sort -V | head -1 | sed -e 's:.*eye/::' -e 's:">.*::')
 apt install -y "$LX_IMG"
-
 apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree tasksel zsh zsh-syntax-highlighting dialog
+
+echo
+echo "Using tasksel to install the rest of the system. . ."
+echo
+sleep 1
 dpkg --configure -a
 tasksel
 dpkg --configure -a
 
-fstab_entry=$(blkid | grep $part_name | awk '{print $3}' | sed 's:"::g')
-
+echo
+echo "Entering fstab entry for new install. . ."
+echo
+sleep 1
+fstab_entry=$(blkid | grep $part_name | sed -e 's#.*: ##' -e 's#" .*##' |sed 's:"::g')
 echo "$fstab_entry    /    ext4    defaults    0    1" >> /etc/fstab
 echo "" >> /etc/fstab
 echo "/dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0" >> /etc/fstab
 
+echo
+echo "Setting up root password and new user. . ."
+echo
+sleep 1
 dialog --inputbox "Enter root password: " 10 50 2>new_psswrd.txt
 new_psswrd=$(<new_psswrd.txt)
 { echo $new_psswrd; echo $new_psswrd; } | passwd
 
-dialog --inputbox "Type a user name: " 10 50 2>usrnme.txt
+dialog --inputbox "Type a new user name: " 10 50 2>usrnme.txt
 dialog --inputbox "Type the user name's password: " 10 50 2>usrnme_psswrd.txt
 usrnme=$(<usrnme.txt)
 usrnme_psswrd=$(<usrnme_psswrd.txt)
-
 { echo $usrnme_psswrd; echo $usrnme_psswrd; } | adduser $usrnme
 
 rm -rf usrnme.txt usrnme_psswrd.txt new_psswrd.txt
 
+echo
+echo "Updating /etc/passwd with zsh instead of bash and installing generic firmware files. . ."
+echo
+sleep 1
 sed -i 's:bash:zsh:g' /etc/passwd
 mkdir work
 cd /work
@@ -50,12 +81,17 @@ mkdir firmware && tar -C firmware -xvf firmware.tar.gz
 cd firmware
 dpkg -i *.deb
 cd /
+
+echo
+echo "Finishing up installation and installing final apps. . ."
+echo
+sleep 1
 apt --fix-broken -y install
 dpkg --configure -a
 apt update
 apt upgrade -y
 apt install -y mate-applets mate-desktop-environment-extras
 rm -rf /work
-echo "Do NOT enter a number, leave blank. . ."
-DEBIAN_FRONTEND=text apt-get -y install grub2
+
+DEBIAN_FRONTEND=noninteractive apt -y install grub2
 exit

@@ -6,18 +6,33 @@ if [[ ! "$USER" = "root" ]]; then
 	echo "This script must be run as root!"
 	exit
 fi
+echo
+echo "Running script wipe-partition. If you wish to bypass type 'n'."
+echo
+sleep 1
 $HOME/scripts/wipe-partition
 if [[ -d /mnt/deb-inst ]]; then
 	echo
-#rm -rf /mnt/deb-inst
+	echo "Removing previous install directory /mnt/deb-inst. . ."
+	echo
+	sleep 1
+	rm -rf /mnt/deb-inst
 fi
-<< com
+
+echo
+echo "Making directories. . ."
+echo
+sleep 1
 cd /
 mkdir /mnt
 mkdir /mnt/deb-inst
 mkdir /mnt/deb-inst/work
 cd /mnt/deb-inst/work
 
+echo
+echo "Downloading debootstrap. . ."
+echo
+sleep 1
 DEBOOT_STRP=$(wget -qO- http://ftp.debian.org/debian/pool/main/d/debootstrap | grep "all.deb" | sort -V | tail -1 | sed -e 's:.*a href="::' -e 's:.>.*::' )
 wget http://ftp.debian.org/debian/pool/main/d/debootstrap/"$DEBOOT_STRP"
 
@@ -26,24 +41,31 @@ dpkg -i /mnt/deb-inst/work/*.deb
 
 echo
 lsblk
+echo
 read -p "Enter partition to configure(/dev/sdb): " part_conf
+sleep 1
 cfdisk $part_conf
 echo
 lsblk
-echo "Now you need to format earch partition as ext4. A new terminal will open and for each partition type 'sudo mkfs -t -L \"lable\" ext4 /dev/sdXY. Then type exit to close the terminal and continue the install process."
+echo
+echo "Now you need to format earch partition as ext4. A new terminal will open and for each partition type 'sudo mkfs -t -L \"label\" ext4 /dev/sdXY. Then type exit to close the terminal and continue the install process."
 sleep 5
-mate-terminal -e "sh -c \"echo; echo; lsblk; echo; echo; sh\""
+mate-terminal -e "sh -c \"echo; echo; lsblk; echo; echo; echo \"type exit\"; sh\""
 echo
 
 lsblk
+echo
 read -p "Enter partition name to install to(ex. /dev/sdb1): " part_name
+sleep 1
 umount $part_name
 umount $part_conf
-
 mount $part_name /mnt/deb-inst
 
 debootstrap --arch amd64 testing /mnt/deb-inst http://ftp.us.debian.org/debian/
-
+echo
+echo "Mounting system folders and copying /etc files for internet connection. . ."
+echo
+sleep 1
 mount -t proc /proc /mnt/deb-inst/proc
 mount -t sysfs /sys /mnt/deb-inst/sys
 mount -o bind /dev /mnt/deb-inst/dev
@@ -56,43 +78,68 @@ cp /etc/hostname /mnt/deb-inst/etc/hostname
 cp /etc/apt/sources.list /mnt/deb-inst/etc/apt/sources.list
 nano /mnt/deb-inst/etc/apt/sources.list
 cp /home/msifland/scripts/debian-install-continue /mnt/deb-inst/debian-install-continue
-com
-part_name="/dev/sda3"
+
+echo
+echo "Chroot'ing into new install to finish the process. . ."
+echo
+sleep 1
+part_name="$part_name"
 cat << EOF | part_name=$part_name chroot /mnt/deb-inst env /bin/bash
 ./debian-install-continue
 EOF
 sudo nano /mnt/deb-inst/etc/apt/sources.list
 
+echo
 read -p "What partition would you like to install grub to? Debian install was to $part_name(ex. /dev/sdb). " grb_inst
 sudo grub-install $grb_inst
 sudo update-grub $grb_inst
-<< com
+
+echo
 read -p "Opening /etc/fstab to review and manually make changes. Root partition and cdrom partition have been added already in most cases. Check to make sure it's right. A new terminal will open and will give you the UUID's for any partitions to add, eg. /home, /usr, /var, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
-mate-terminal -e "sh -c \"echo; blkid; sh\"" 
+mate-terminal -e "sh -c \"echo; echo \"Copy UUID's to add to /etc/fstab\"; echo; blkid; sh\"" 
 sudo nano /mnt/deb-inst/etc/fstab
 read -p "If separate /home partition, would you like to setup now[y/n]? " sep_hm
+sleep 1
 if [[ $sep_hm = "y" ]]; then
 	read -p "What is the home partition(ex. /dev/sdb2)? " hm_prt
-	mount $hm_prt /home
+	sudo mkdir /mnt/deb-inst/temp
+	sudo mkdir /mnt/deb-inst/temp/home
+	sudo mount $hm_prt /mnt/deb-inst/temp/home
+	sudo cp -rf /mnt/deb-inst/home/* /mnt/deb-inst/temp/home/
+	sudo rm -rf /mnt/deb-inst/home/*
+	sudo umount /mnt/deb-inst/temp/home
+	sudo mount $hm_prt /mnt/deb-inst/home	
 fi
 
-read -p "Would you like to install you personal file for this installation[y/n]? " per_fls
+echo
+read -p "Would you like to install you personal files for this installation[y/n]? " per_fls
+sleep 1
 if [[ "$per_fls" = "y" ]]; then
 	cp -rf $HOME/Documents /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/"Modules&Apps" /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/Projects /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/scripts /mnt/deb-inst/home/msifland/
+	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/.config /mnt/deb-inst/home/msifland/
 	cp -rf $HOME/.local /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/.zshrc /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/.bashrc /mnt/deb-inst/home/msifland/
+	sudo chown -R msifland:msifland /mnt/deb-inst/home/msifland/.config
+	sudo chown -R msifland:msifland /mnt/deb-inst/home/msifland/.local
 fi
-
+cp -rf $HOME/.zshrc /mnt/deb-inst/home/msifland/
+cp -rf $HOME/.bashrc /mnt/deb-inst/home/msifland/
+echo
+echo "Attempting to umount devices and system files. . ."
+echo
+sleep 1
 sudo umount /mnt/deb-inst/proc
 sudo umount /mnt/deb-inst/sys
 sudo umount /mnt/deb-inst/dev/pts
 sudo umount /mnt/deb-inst/dev
 sudo umount /mnt/deb-inst
-com
+
+echo
+echo "All done."
+echo
+sleep 1
 exit
