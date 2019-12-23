@@ -135,8 +135,6 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.config /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
-	sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme/.config
-	sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme/.local
 fi
 echo
 read -p "Would you like to copy your personal bash and zsh files for this installation[y/n]? " cpy_sh
@@ -145,7 +143,7 @@ if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/.bashrc /mnt/deb-inst/home/$usrnme/
 fi
 sleep 1
-
+sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/*
 echo
 echo "Attempting to umount devices and system files. . ."
 echo
