@@ -12,7 +12,7 @@ touch $log
 # Ask if recursive search.
 read -p "Would you like to search recursively? " srch
 # Yes to recursive and write earch file to a line in a tmp text file.
-if [[ "$srch" =~ ^([yE][eE][sS]|[yY])$ ]]; then
+if [[ "$srch" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	loct=$(find . -iname $1 2> >(grep -v 'Permission denied' >&2))
 	for i in $loct; do
 		# Shows on screen and writes to tmp file.

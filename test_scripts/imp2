@@ -1,0 +1,7 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo $var1
+read -p "Type a variable2: " var2
+
+export var2=$var2

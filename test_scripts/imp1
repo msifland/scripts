@@ -1,0 +1,12 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+read -p "Type a variable1: " var1
+
+export var1=$var1
+
+source $HOME/scripts/test_scripts/imp2
+
+
+echo "echoing $var2 from second script"

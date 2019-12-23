@@ -24,9 +24,15 @@ echo "Making directories. . ."
 echo
 sleep 1
 cd /
-mkdir /mnt
-mkdir /mnt/deb-inst
-mkdir /mnt/deb-inst/work
+if [[ ! -d /mnt ]]; then
+	mkdir /mnt
+fi
+if [[ ! -d /mnt/deb-inst ]]; then
+	mkdir /mnt/deb-inst
+fi
+if [[ ! -d /mnt/deb-inst/work ]]; then
+	mkdir /mnt/deb-inst/work
+fi
 cd /mnt/deb-inst/work
 
 echo
@@ -50,7 +56,7 @@ lsblk
 echo
 echo "Now you need to format earch partition as ext4. A new terminal will open and for each partition type 'sudo mkfs -t -L \"label\" ext4 /dev/sdXY. Then type exit to close the terminal and continue the install process."
 sleep 5
-mate-terminal -e "sh -c \"echo; echo; lsblk; echo; echo; echo \"type exit\"; sh\""
+/usr/bin/mate-terminal -e "bash -c \"echo; echo; lsblk; echo; echo 'Type exit when done'; echo; sh\""
 echo
 
 lsblk
@@ -85,8 +91,9 @@ echo
 sleep 1
 part_name="$part_name"
 cat << EOF | part_name=$part_name chroot /mnt/deb-inst env /bin/bash
-./debian-install-continue
+source /debian-install-continue
 EOF
+sudo rm -rf /mnt/deb-inst/debian-install-continue
 sudo nano /mnt/deb-inst/etc/apt/sources.list
 
 echo
@@ -95,12 +102,14 @@ sudo grub-install $grb_inst
 sudo update-grub $grb_inst
 
 echo
-read -p "Opening /etc/fstab to review and manually make changes. Root partition and cdrom partition have been added already in most cases. Check to make sure it's right. A new terminal will open and will give you the UUID's for any partitions to add, eg. /home, /usr, /var, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
-mate-terminal -e "sh -c \"echo; echo \"Copy UUID's to add to /etc/fstab\"; echo; blkid; sh\"" 
-sudo nano /mnt/deb-inst/etc/fstab
+read -p "Opening /etc/fstab to review and manually make changes. Root partition and cdrom partition have been added already in most cases. Check to make sure it's right. Showing you the UUID's for any partitions to add, eg. /home, /usr, /var, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
+echo
+echo
+sudo blkid
+/usr/bin/mate-terminal -e "bash -c \"sudo nano /mnt/deb-inst/etc/fstab\""
 read -p "If separate /home partition, would you like to setup now[y/n]? " sep_hm
 sleep 1
-if [[ $sep_hm = "y" ]]; then
+if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	read -p "What is the home partition(ex. /dev/sdb2)? " hm_prt
 	sudo mkdir /mnt/deb-inst/temp
 	sudo mkdir /mnt/deb-inst/temp/home
@@ -112,26 +121,36 @@ if [[ $sep_hm = "y" ]]; then
 fi
 
 echo
+read -p "Re-type the username you used to setup during the install: " usrnme
+echo
+sleep 1
 read -p "Would you like to install you personal files for this installation[y/n]? " per_fls
 sleep 1
-if [[ "$per_fls" = "y" ]]; then
-	cp -rf $HOME/Documents /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/"Modules&Apps" /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/Projects /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/scripts /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/.config /mnt/deb-inst/home/msifland/
-	cp -rf $HOME/.local /mnt/deb-inst/home/msifland/
-	sudo chown -R msifland:msifland /mnt/deb-inst/home/msifland/.config
-	sudo chown -R msifland:msifland /mnt/deb-inst/home/msifland/.local
+if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	cp -rf $HOME/Documents /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/"Modules&Apps" /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/Projects /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/scripts /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.config /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
+	sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme/.config
+	sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme/.local
 fi
-cp -rf $HOME/.zshrc /mnt/deb-inst/home/msifland/
-cp -rf $HOME/.bashrc /mnt/deb-inst/home/msifland/
+echo
+read -p "Would you like to copy your personal bash and zsh files for this installation[y/n]? " cpy_sh
+if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	cp -rf $HOME/.zshrc /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.bashrc /mnt/deb-inst/home/$usrnme/
+fi
+sleep 1
+
 echo
 echo "Attempting to umount devices and system files. . ."
 echo
 sleep 1
+
 sudo umount /mnt/deb-inst/proc
 sudo umount /mnt/deb-inst/sys
 sudo umount /mnt/deb-inst/dev/pts

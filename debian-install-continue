@@ -1,6 +1,7 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
+
 echo
 echo "Updating apt and installing initial applications. . ."
 echo
@@ -60,20 +61,22 @@ sleep 1
 dialog --inputbox "Enter root password: " 10 50 2>new_psswrd.txt
 new_psswrd=$(<new_psswrd.txt)
 { echo $new_psswrd; echo $new_psswrd; } | passwd
-
 dialog --inputbox "Type a new user name: " 10 50 2>usrnme.txt
 dialog --inputbox "Type the user name's password: " 10 50 2>usrnme_psswrd.txt
 usrnme=$(<usrnme.txt)
 usrnme_psswrd=$(<usrnme_psswrd.txt)
 { echo $usrnme_psswrd; echo $usrnme_psswrd; } | adduser $usrnme
-
+export usrnme=$usrnme
 rm -rf usrnme.txt usrnme_psswrd.txt new_psswrd.txt
 
 echo
 echo "Updating /etc/passwd with zsh instead of bash and installing generic firmware files. . ."
 echo
 sleep 1
-sed -i 's:bash:zsh:g' /etc/passwd
+read -p "Would you like to changes default shell from bash to zsh[y/n]? " def_shell
+if [[ "$def_shell" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	sed -i 's:bash:zsh:g' /etc/passwd
+fi
 mkdir work
 cd /work
 wget http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
@@ -90,8 +93,9 @@ apt --fix-broken -y install
 dpkg --configure -a
 apt update
 apt upgrade -y
-apt install -y mate-applets mate-desktop-environment-extras
+apt install -y mate-applets mate-desktop-environment-extras 
 rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
+
 exit
