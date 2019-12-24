@@ -1,0 +1,131 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+
+# Checking for root and re-run under root if not.
+if [[ "$EUID" -ne "0" ]]; then
+	echo
+	echo "${ILCOLOR3}This scripts has to be run as superuser."
+	echo "You will be prompted for password for superuser. Enter password, and scripts will re-run as superuser. It may ask for password more than once.${ILRESTORE}"
+	sleep 1
+	echo "su"
+	su - "root" -c "/home/---user---/scripts/sudoers_custom && exit" && echo && echo "Enter root password to exit" && su - "---user---" -c exit
+	exit
+else
+	echo
+	echo "Ok proceeding as root. . ."
+	sleep 1
+fi
+
+echo
+if [[ ! -d /home/---user---/tmp ]]; then
+	mkdir /home/---user---/tmp
+fi
+cp /etc/sudoers /home/---user---/tmp/
+
+# This section looks for Defaults timestamp_timeout and removes or add a time to it.
+SUDOERS="/etc/sudoers"
+
+# Removes all empty lines from end of file.
+# Good format is running script as root, which this file makes you run as root, as long as you have root password.
+echo "$(awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $SUDOERS)" > $SUDOERS
+
+# Explainging what we are doing.
+echo "${ILCOLOR3}Making custom sudoers file. . .${ILRESTORE}"
+sleep 1
+
+# Debian does not automatically add user to sudo. So this adds me
+if grep -wq "---user---" $SUDOERS; then
+	echo
+	echo "User ---user--- has already been added."
+	sleep 1
+else
+	echo
+	echo "Adding user ---user--- to /etc/sudoers."
+	echo "---user---        ALL=(ALL:ALL) ALL" >> $SUDOERS
+	sleep 1
+fi
+echo
+read -p "${ILCOLOR3}Would you like to check the timeout?[y/n]: ${ILRESTORE}" CKTO
+	if [[ "$CKTO" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+
+		# Set variable
+		TMOUT="Defaults timestamp"
+
+		# Check if variable already exists in file with grep. If it does, then exit. If not, then add it to the bottom of the file.
+		if grep -q "$TMOUT" $SUDOERS; then
+			echo
+			read -p "${ILCOLOR3}Already set to $(grep "Defaults timestamp" $SUDOERS | sed 's:Defaults timestamp_timeout=::g' | sed 's:#::g'). Would you like to remove?[y/n]:${ILRESTORE} " RMV
+			if [[ "$RMV" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+				sed -i '/Defaults timestamp/d' $SUDOERS
+			fi
+		else
+			echo
+			read -p "${ILCOLOR3}No timeout set, would you like to set one?[y/n]: ${ILRESTORE}" SETTO
+			echo
+			if [[ "$SETTO" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+				read -p "${ILCOLOR3}How many minutes should the sudo timeout be set to? -1 means NO TIMEOUT. ${ILRESTORE}" MINSTO
+				echo
+				echo "${ILCOLOR3}Adding 'Defaults timestamp_timeout=$MINSTO to /etc/sudoers file. . .${ILRESTORE}"
+				sleep 2
+				echo '' >> $SUDOERS
+				echo "Defaults timestamp_timeout=$MINSTO" >> $SUDOERS
+			fi
+		fi
+	fi
+	sleep 1
+
+# This section looks to see if secure path is commented out for path NOT resetting PATH environment.
+echo
+read -p "${ILCOLOR3}Would you like to check secure path?[y/n]: ${ILRESTORE}" PTH
+	if [[ "$PTH" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		ENVRT="Defaults	env_reset"
+		SECPT="Defaults	secure_path"
+		if grep -Fxq "#$ENVRT" $SUDOERS; then
+			echo
+			read -p "${ILCOLOR3}Found $ENVRT but already commented out, would you like to uncomment?[y/n]: ${ILRESTORE}" UNCMT
+				if [[ "$UNCMT" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+					sed -i 's:#Defaults	env_reset:Defaults	env_reset:g' $SUDOERS
+					sed -i 's:#Defaults	secure_path:Defaults	secure_path:g' $SUDOERS
+				fi
+			echo			
+		elif grep -Fxq "$ENVRT" $SUDOERS; then
+			echo
+			echo "${ILCOLOR3}Found $ENVRT uncommented, commenting out now. . .${ILRESTORE}"
+			sed -i 's:Defaults	env_reset:#Defaults	env_reset:g' $SUDOERS
+			sed -i 's:Defaults	secure_path:#Defaults	secure_path:g' $SUDOERS
+		fi
+	fi
+	sleep 1
+
+# Check to see if /home/---user--- environment is set to $USER home. This is so when sudo is used the /home/---user--- path doesn't change to /root. That's what it does by default on Debian Linux. 
+echo
+echo "Checking if /home/---user--- environment is set with env_keep+=\"HOME\""
+sleep 1
+if grep -Fxq "Defaults	env_keep+=\"HOME\"" $SUDOERS; then
+	echo
+	echo "/home/---user--- environment is already set."
+else
+	echo
+	echo "Setting /home/---user--- environment now. . ."
+	sleep 1
+	echo '' >> $SUDOERS
+	echo -e "Defaults	env_keep+=\"HOME\"" >> $SUDOERS
+fi
+
+# This checks exit status for error from output.
+if [ $? -eq 0 ]; then
+	echo
+	echo "${ILCOLOR3}All is good.${ILRESTORE}"
+	sleep 1
+else
+	echo
+	echo "${ILCOLOR3}Something went wrong!!!${ILRESTORE}"
+	sleep 1
+fi
+
+echo
+echo "Running visudo for review and manual editing. . ."
+sleep 2
+visudo
+exit

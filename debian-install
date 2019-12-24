@@ -48,20 +48,20 @@ dpkg -i /mnt/deb-inst/work/*.deb
 echo
 lsblk
 echo
-read -p "Enter partition to configure(/dev/sdb): " part_conf
+read -p "Enter partition to configure with cfdisk(ex. /dev/sdb): " part_conf
 sleep 1
 cfdisk $part_conf
 echo
 lsblk
 echo
-echo "Now you need to format earch partition as ext4. A new terminal will open and for each partition type 'sudo mkfs -t -L \"label\" ext4 /dev/sdXY. Then type exit to close the terminal and continue the install process."
+echo "Now you need to format earch partition as ext4. A new terminal will open and for this."
 sleep 5
-/usr/bin/mate-terminal -e "bash -c \"echo; echo; lsblk; echo; echo 'Type exit when done'; echo; sh\""
+/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: mkfs -t ext4 -L <label> /dev/sdXY. Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
 echo
 
 lsblk
 echo
-read -p "Enter partition name to install to(ex. /dev/sdb1): " part_name
+read -p "Enter the partition name to install to(ex. /dev/sdb1): " part_name
 sleep 1
 umount $part_name
 umount $part_conf
@@ -107,6 +107,7 @@ echo
 echo
 sudo blkid
 /usr/bin/mate-terminal -e "bash -c \"sudo nano /mnt/deb-inst/etc/fstab\""
+echo
 read -p "If separate /home partition, would you like to setup now[y/n]? " sep_hm
 sleep 1
 if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -121,9 +122,9 @@ if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo
-read -p "Re-type the username you used to setup during the install: " usrnme
-echo
-sleep 1
+usrnme=$(</mnt/deb-inst/usrnme.txt)
+rm -rf usrnme.txt usrnme_psswrd.txt new_psswrd.txt
+echo "Username is $usrnme"
 read -p "Would you like to install you personal files for this installation[y/n]? " per_fls
 sleep 1
 if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -139,6 +140,7 @@ fi
 echo
 read -p "Would you like to copy your personal bash and zsh files for this installation[y/n]? " cpy_sh
 if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    cp -rf $HOME/.conkyrc /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.zshrc /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.bashrc /mnt/deb-inst/home/$usrnme/
 fi

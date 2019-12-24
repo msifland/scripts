@@ -49,7 +49,7 @@ echo
 echo "Entering fstab entry for new install. . ."
 echo
 sleep 1
-fstab_entry=$(blkid | grep $part_name | sed -e 's#.*: ##' -e 's#" .*##' |sed 's:"::g')
+fstab_entry=$(blkid -s UUID | grep "$part_name" | sed -e 's#.*: ##' | sed 's:"::g')
 echo "$fstab_entry    /    ext4    defaults    0    1" >> /etc/fstab
 echo "" >> /etc/fstab
 echo "/dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0" >> /etc/fstab
@@ -66,8 +66,6 @@ dialog --inputbox "Type the user name's password: " 10 50 2>usrnme_psswrd.txt
 usrnme=$(<usrnme.txt)
 usrnme_psswrd=$(<usrnme_psswrd.txt)
 { echo $usrnme_psswrd; echo $usrnme_psswrd; } | adduser $usrnme
-export usrnme=$usrnme
-rm -rf usrnme.txt usrnme_psswrd.txt new_psswrd.txt
 
 echo
 echo "Updating /etc/passwd with zsh instead of bash and installing generic firmware files. . ."
@@ -93,7 +91,7 @@ apt --fix-broken -y install
 dpkg --configure -a
 apt update
 apt upgrade -y
-apt install -y mate-applets mate-desktop-environment-extras 
+apt install -y mate-applets mate-desktop-environment-extras conky aircrack-ng curl chromium
 rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
