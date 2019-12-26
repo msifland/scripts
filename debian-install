@@ -6,6 +6,9 @@ if [[ ! "$USER" = "root" ]]; then
 	echo "This script must be run as root!"
 	exit
 fi
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_start=$(date +"%s")
+sleep 1
 echo
 echo "Running script wipe-partition. If you wish to bypass type 'n'."
 echo
@@ -56,7 +59,7 @@ lsblk
 echo
 echo "Now you need to format earch partition as ext4. A new terminal will open and for this."
 sleep 5
-/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: mkfs -t ext4 -L <label> /dev/sdXY. Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
+/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: mkfs -t ext4 -L \"label\" /dev/sdXY. Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
 echo
 
 lsblk
@@ -128,6 +131,7 @@ echo "Username is $usrnme"
 read -p "Would you like to install you personal files for this installation[y/n]? " per_fls
 sleep 1
 if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo "Copying user files from current system to new system. . ."
 	cp -rf $HOME/Documents /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/"Modules&Apps" /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/$usrnme/
@@ -138,14 +142,20 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
 fi
 echo
-read -p "Would you like to copy your personal bash and zsh files for this installation[y/n]? " cpy_sh
+read -p "Would you like to copy your personal bash, zsh and conky files for this installation[y/n]? " cpy_sh
 if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo "Copying these files now. . ."
+	sleep 1
     cp -rf $HOME/.conkyrc /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.zshrc /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.bashrc /mnt/deb-inst/home/$usrnme/
 fi
 sleep 1
+echo
+echo "Making sure ownership is correct on all newly copied files. . ."
 sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/*
+slee 1
+
 echo
 echo "Attempting to umount devices and system files. . ."
 echo
@@ -161,4 +171,8 @@ echo
 echo "All done."
 echo
 sleep 1
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_end=$(date +"%s")
+tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
+echo "It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process."
 exit

@@ -24,7 +24,12 @@ function start(){
 	# Check if block exists.
 	if [[ -b $DEVBLOCK ]]; then
 		if [[ "$YN" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-			read -p "What would you like to lable it?(ex. MSI_ARCH) " LBL
+			read -p "Would you like to label the new device? " LBL_YN
+			if [[ "$LBL_YN" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+				read -p "What would you like to lable it?(ex. MSI_ARCH) " LBL
+			fi
+			sleep 1
+			echo
 			echo "Ok formatting $DEVBLOCK. . ."
 			echo
 			sleep 1
@@ -38,12 +43,8 @@ function start(){
 			sudo wipefs --all --force $DEVBLOCK
 			# Format to vfat or ext4 and lable and show progress.
 			echo
-			read -p "Would you like vfat or ext4? " TYP
-			if [[ "$TYP" =~ ^([eE][xX][tT][4])$ ]]; then
-				sudo mkfs.ext4 -L $LBL $DEVBLOCK | sudo pv -trebI
-			else
-				sudo mkfs.vfat -n $LBL -I $DEVBLOCK | sudo pv -trebI
-			fi
+			read -p "What filesystem would you like to use(ext4, ext2, vfat, etc.)? " TYP
+				sudo mkfs -t "$TYP" -L "$LBL" $DEVBLOCK | sudo pv -trebI
 			sudo hdparm -r0 $DEVBLOCK
 			echo
 			sleep 1
