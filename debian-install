@@ -156,7 +156,7 @@ sleep 1
 echo
 echo "Making sure ownership is correct on all newly copied files. . ."
 sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/*
-slee 1
+sleep 1
 
 echo
 echo "Attempting to umount devices and system files. . ."
