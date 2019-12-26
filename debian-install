@@ -140,6 +140,8 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.config /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
+	echo "Files copied. You may want to delete select autostart files from .config/autostart."
+	sleep 2
 fi
 echo
 read -p "Would you like to copy your personal bash, zsh and conky files for this installation[y/n]? " cpy_sh
