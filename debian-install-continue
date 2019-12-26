@@ -96,4 +96,5 @@ rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
 
-exit
+echo "Do anything else that needs to be done. Then type 'exit' to contiue with script."
+sh

@@ -59,7 +59,7 @@ lsblk
 echo
 echo "Now you need to format earch partition as ext4. A new terminal will open and for this."
 sleep 5
-/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: mkfs -t ext4 -L \"label\" /dev/sdXY. Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
+/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: mkfs -t ext4 -L \"label\" /dev/sdXY. Then type exit to close the terminal and continue the install process. You may have to umount drives to continue'; echo; lsblk; echo; echo; sh\""
 echo
 
 lsblk

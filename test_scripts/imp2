@@ -5,3 +5,6 @@ echo $var1
 read -p "Type a variable2: " var2
 
 export var2=$var2
+
+echo "do anything"
+sh
