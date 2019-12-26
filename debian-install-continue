@@ -97,7 +97,7 @@ rm -rf /work
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
 
 echo
-echo "Do anything else that needs to be done. Then type 'exit' to contiue with script."
+echo "Do anything else that needs to be done. For example: apt get install <any extra apps>, or tasksel to reinstall Debian apps. Then type 'exit' to contiue with script."
 echo
 sleep 2
 sh
