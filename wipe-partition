@@ -35,6 +35,9 @@ function start(){
 			sleep 1
 			# Reset usb ports.
 			sudo /home/msifland/scripts/reset-usb
+			for blk in $(df -h | grep "$DEVBLOCK" | awk '{ print $1 }'); do
+				sudo umount $blk
+			done
 			while [[ ! -b $DEVBLOCK ]]; do
 				echo "Waiting for usb devices to be reset. . ."
 				sleep 2

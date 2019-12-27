@@ -53,6 +53,9 @@ lsblk
 echo
 read -p "Enter partition to configure with cfdisk(ex. /dev/sdb): " part_conf
 sleep 1
+for blk in $(df -h | grep "$part_conf" | awk '{ print $1 }'); do
+	sudo umount $blk
+done
 cfdisk $part_conf
 echo
 lsblk
