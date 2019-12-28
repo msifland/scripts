@@ -146,11 +146,13 @@ sudo blkid
 /usr/bin/mate-terminal -e "bash -c \"sudo nano /mnt/deb-inst/etc/fstab\""
 echo
 
+<<com
 echo
 grb_inst=$(echo "${part_name%?}")
 echo "Debian install was to $part_name.Installing grub to $grb_inst. . ."
 sudo grub-install $grb_inst
 sudo update-grub $grb_inst
+com
 
 echo
 usrnme=$(</mnt/deb-inst/usrnme.txt)
@@ -194,8 +196,9 @@ sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/*
 sleep 1
 
 echo
-echo "Chroot'ing back in to update grub or anything else you need. Type 'exit' when done. . ."
+echo "Chroot'ing back in to update grub and anything else you need. Type 'exit' when done. . ."
 echo
+grb_inst=$(echo "${part_name%?}")
 sudo chroot /mnt/deb-inst env /bin/sh -c "grub-install $grb_inst; update-grub; sh"
 echo
 sleep 1
