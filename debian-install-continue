@@ -57,10 +57,11 @@ echo "/dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0" >> 
 echo
 echo "Setting up root password and new user. . ."
 echo
-sleep 1
+sleep 2
 dialog --inputbox "Enter root password: " 10 50 2>new_psswrd.txt
 new_psswrd=$(<new_psswrd.txt)
 { echo $new_psswrd; echo $new_psswrd; } | passwd
+sleep 2
 dialog --inputbox "Type a new user name: " 10 50 2>usrnme.txt
 dialog --inputbox "Type the user name's password: " 10 50 2>usrnme_psswrd.txt
 usrnme=$(<usrnme.txt)
@@ -68,13 +69,11 @@ usrnme_psswrd=$(<usrnme_psswrd.txt)
 { echo $usrnme_psswrd; echo $usrnme_psswrd; } | adduser $usrnme
 
 echo
-echo "Updating /etc/passwd with zsh instead of bash and installing generic firmware files. . ."
+echo "Installing generic firmware files. . ."
 echo
 sleep 1
-read -p "Would you like to changes default shell from bash to zsh[y/n]? " def_shell
-if [[ "$def_shell" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	sed -i 's:bash:zsh:g' /etc/passwd
-fi
+
+echo
 mkdir work
 cd /work
 wget http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
@@ -96,8 +95,4 @@ rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
 
-echo
-echo "Do anything else that needs to be done. For example: apt get install <any extra apps>, or tasksel to reinstall Debian apps. Then type 'exit' to contiue with script."
-echo
-sleep 2
-sh
+exit

@@ -18,7 +18,7 @@ function start(){
 	read -p "What dev block would you like to format? (ex. /dev/sdb, /dev/sda3, /dev/sdc, /dev/sdd) Look above for reference. " BLCK
 	echo
 	DEVBLOCK="$BLCK"
-	read -p "You have chosen $DEVBLOCK. Is this correct? " YN
+	read -p "You have chosen $DEVBLOCK. Is this correct[y/n]? " YN
 	echo
 
 	# Check if block exists.
@@ -40,14 +40,14 @@ function start(){
 			done
 			while [[ ! -b $DEVBLOCK ]]; do
 				echo "Waiting for usb devices to be reset. . ."
-				sleep 2
+				sleep 5
 			done
 			# Wipe
 			sudo wipefs --all --force $DEVBLOCK
 			# Format to vfat or ext4 and lable and show progress.
 			echo
 			read -p "What filesystem would you like to use(ext4, ext2, vfat, etc.)? " TYP
-				sudo mkfs -t "$TYP" -L "$LBL" $DEVBLOCK | sudo pv -trebI
+			sudo mkfs -t "$TYP" -L "$LBL" $DEVBLOCK | sudo pv -trebI
 			sudo hdparm -r0 $DEVBLOCK
 			echo
 			sleep 1

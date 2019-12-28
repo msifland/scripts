@@ -1,0 +1,21 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+read -p "Did you use a separate /home or /boot partition[y/n]? " sep_hm
+sleep 1
+if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo
+	read -p "Enter each partition separated by a space(ex. home boot var tmp, etc.) " parts
+	parts_arr=($parts)
+	for part in "${parts_arr[@]}"; do
+		echo $part
+		read -p "What partition for $part(ex. /dev/sdb2)? " new_prt
+		if [[ ! -d temp ]]; then
+			mkdir temp
+		fi
+		mkdir temp/$part
+		echo "$part created. . ."
+		sleep 1
+	done
+fi

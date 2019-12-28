@@ -1,0 +1,8 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "Entering root and coming back out. . ."
+sleep 1
+
+sudo chroot /mnt/deb-inst env /bin/sh -c "update-grub; sh"
