@@ -90,7 +90,7 @@ apt --fix-broken -y install
 dpkg --configure -a
 apt update
 apt upgrade -y
-apt install -y mate-applets mate-desktop-environment-extras conky aircrack-ng curl chromium
+apt install -y mate-applets mate-desktop-environment-extras conky aircrack-ng curl chromium gparted software-properties-common
 rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2

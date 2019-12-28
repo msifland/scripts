@@ -147,7 +147,8 @@ sudo blkid
 echo
 
 echo
-read -p "What partition would you like to install grub to? Debian install was to $part_name(ex. /dev/sdb). " grb_inst
+grb_inst=$(echo "${part_name%?}")
+echo "Debian install was to $part_name.Installing grub to $grb_inst. . ."
 sudo grub-install $grb_inst
 sudo update-grub $grb_inst
 
@@ -195,7 +196,7 @@ sleep 1
 echo
 echo "Chroot'ing back in to update grub or anything else you need. Type 'exit' when done. . ."
 echo
-sudo chroot /mnt/deb-inst env /bin/sh -c "update-grub; sh"
+sudo chroot /mnt/deb-inst env /bin/sh -c "grub-install $grb_inst; update-grub; sh"
 echo
 sleep 1
 
