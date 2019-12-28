@@ -170,6 +170,7 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.config /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.cache /mnt/deb-inst/home/$usrnme/
 	echo "Files copied. You may want to delete select autostart files from .config/autostart."
 	sleep 2
 fi
@@ -189,6 +190,7 @@ read -p "Would you like to change default shell from bash to zsh[y/n]? " def_she
 if [[ "$def_shell" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	sed -i 's:bash:zsh:g' /mnt/deb-inst/etc/passwd
 fi
+sleep 1
 
 echo
 echo "Making sure ownership is correct on all newly copied files. . ."
@@ -198,14 +200,17 @@ sleep 1
 echo
 echo "Chroot'ing back in to update grub and anything else you need. Type 'exit' when done. . ."
 echo
+sleep 1
 grb_inst=$(echo "${part_name%?}")
-sudo chroot /mnt/deb-inst env /bin/sh -c "grub-install $grb_inst; update-grub; sh"
+grb_inst=$grb_inst
+sudo chroot /mnt/deb-inst env /bin/sh -c "echo; grub-install $grb_inst; echo; update-grub; echo; sh"
 echo
 sleep 1
 
 echo
 read -p "Pausing in case you missed something. You can open a new termianl and chroot back into enviroment /mnt/deb-inst and finish up. Press [ENTER] to finish the process."
 echo
+sleep 1
 
 echo
 echo "Attempting to umount devices and system files. . ."
