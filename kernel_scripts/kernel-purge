@@ -101,6 +101,7 @@ for j in $FOR_REM; do
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
 		# For removeing nvidia module-assistant build
 		#REM4=$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image-::g' | sed 's:-unsigned::g')
+		REM5=$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image:initrd.img:g' | sed 's: ::g')
 	fi
 
 	# If all is good, then remove.
@@ -152,6 +153,19 @@ for j in $FOR_REM; do
 		echo "${ILCOLOR3}No modules files found. $m_file${ILRESTORE}"
 		sleep 1
 	fi
+
+	echo
+	echo "Removing /boot/$REM5"
+	sleep 1
+	if [[ -f /boot/$REM5 ]]; then
+		rm -rf /boot/$REM5
+		echo
+		echo "/boot/$REM5 removed."
+	else
+		echo
+		echo "	No file /boot/$REM5"
+	fi
+	sleep 1
 
 << Comment
 	# Removing module-assistant nvidia build.
