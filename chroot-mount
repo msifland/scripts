@@ -19,22 +19,26 @@ echo "Mounting with: sudo mount $MNT_DVC /mnt"
 sudo mount $MNT_DVC /mnt
 sleep 1
 
+function dev_mnt(){
 echo
-read -p "${ILCOLOR3}Would you like to mount any other devices manually(ex. /dev/sda2 for /mnt/home)? Leave blank for no:${ILRESTORE} " MNT_DVC2
+read -p "${ILCOLOR3}Would you like to mount any other devices manually(ex. /dev/sda2. This is for separate home and/or boot partitions)? Leave blank for no:${ILRESTORE} " MNT_DVC2
 sleep 1
 
 if [[ ! $MNT_DVC2 = "" ]]; then
 	echo
-	read -p "${ILCOLOR3}What folder to mount to(ex. /mnt/home)${ILRESTORE} " MNT_DVC2_FLDR
+	read -p "${ILCOLOR3}What folder to mount to(ex. /mnt/home, /mnt/boot)${ILRESTORE} " MNT_DVC2_FLDR
 	sleep 1
 	echo "Mounting with: sudo mount $MNT_DVC2 $MNT_DVC2_FLDR"
 	sudo mount $MNT_DVC2 $MNT_DVC2_FLDR
 	sleep 1
+	dev_mnt
 else
 	echo
 	echo "${ILCOLOR3}No other device selected.${ILRESTORE}"
 	sleep 1
 fi
+}
+dev_mnt
 
 echo
 echo "${ILCOLOR3}Mounting other needed drives to /mnt.${ILRESTORE}"

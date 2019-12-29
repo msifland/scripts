@@ -27,7 +27,7 @@ apt install -y ca-certificates
 dpkg-reconfigure tzdata
 apt install -y locales
 dpkg-reconfigure locales
-apt install -y wget nano pv git screenfetch jshon
+apt install -y wget nano pv git screenfetch jshon dialog
 
 echo
 echo "Installing linux-image and firmware files. . ."
@@ -35,7 +35,7 @@ echo
 sleep 1
 LX_IMG=$(wget -qO- https://packages.debian.org/testing/linux-image-amd64 | grep "linux-image" | sort -V | head -1 | sed -e 's:.*eye/::' -e 's:">.*::')
 apt install -y "$LX_IMG"
-apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree tasksel zsh zsh-syntax-highlighting dialog
+apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree tasksel zsh zsh-syntax-highlighting
 
 echo
 echo "Using tasksel to install the rest of the system. . ."
@@ -52,7 +52,7 @@ sleep 1
 fstab_entry=$(blkid -s UUID | grep "$part_name" | sed -e 's#.*: ##' | sed 's:"::g')
 echo "$fstab_entry    /    ext4    defaults    0    1" >> /etc/fstab
 echo "" >> /etc/fstab
-echo "/dev/sr0        /media/cdrom0   udf,iso9660 user,noauto     0       0" >> /etc/fstab
+echo "/dev/sr0    /media/cdrom0    udf,iso9660 user,noauto    0    0" >> /etc/fstab
 
 echo
 echo "Setting up root password and new user. . ."

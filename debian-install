@@ -6,9 +6,7 @@ if [[ ! "$USER" = "root" ]]; then
 	echo "This script must be run as root!"
 	exit
 fi
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_start=$(date +"%s")
-sleep 1
+
 echo
 echo
 echo "This script is set up to install Debian Mate. So be sure to select Debian Desktop Env. and Mate Desktop when this time comes, along with any other various packages."
@@ -101,12 +99,15 @@ echo
 echo "Chroot'ing into new install to finish the process. . ."
 echo
 sleep 1
-part_name="$part_name"
-cat << EOF | part_name=$part_name chroot /mnt/deb-inst env /bin/bash
+cat << EOF | part_name="$part_name" chroot /mnt/deb-inst env /bin/bash
 source /debian-install-continue
 EOF
 sudo rm -rf /mnt/deb-inst/debian-install-continue
 sudo nano /mnt/deb-inst/etc/apt/sources.list
+
+echo
+sudo blkid
+echo
 
 echo
 read -p "Did you use a separate /home or other partition[y/n]? " sep_hm
@@ -145,20 +146,13 @@ echo
 sudo blkid
 /usr/bin/mate-terminal -e "bash -c \"sudo nano /mnt/deb-inst/etc/fstab\""
 echo
-
-<<com
-echo
-grb_inst=$(echo "${part_name%?}")
-echo "Debian install was to $part_name.Installing grub to $grb_inst. . ."
-sudo grub-install $grb_inst
-sudo update-grub $grb_inst
-com
+sleep 1
 
 echo
 usrnme=$(</mnt/deb-inst/usrnme.txt)
 rm -rf /mnt/deb-inst/usrnme.txt usrnme_psswrd.txt new_psswrd.txt
 echo "Username is $usrnme"
-read -p "Would you like to install you personal files for this installation[y/n]? " per_fls
+read -p "Would you like to install your personal files for this installation(scripts, pkg_bkups, etc.[y/n]? " per_fls
 sleep 1
 if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Copying user files from current system to new system. . ."
@@ -167,7 +161,15 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/Projects /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/scripts /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/
+	echo "Files copied."
+	sleep 2
+fi
+
+echo 
+read -p "Would you like to install your config files for this installation(.config, .local, .cache, etc.[y/n]? " con_fls
+sleep 1
+if [[ "$con_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo "Copying user files from current system to new system. . ."
 	cp -rf $HOME/.config /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.cache /mnt/deb-inst/home/$usrnme/
@@ -182,9 +184,11 @@ if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	sleep 1
     cp -rf $HOME/.conkyrc /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.zshrc /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/	
 	cp -rf $HOME/.bashrc /mnt/deb-inst/home/$usrnme/
 fi
 sleep 1
+
 echo
 read -p "Would you like to change default shell from bash to zsh[y/n]? " def_shell
 if [[ "$def_shell" =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -193,23 +197,20 @@ fi
 sleep 1
 
 echo
-echo "Making sure ownership is correct on all newly copied files. . ."
-sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/*
-sleep 1
-
-echo
 echo "Chroot'ing back in to update grub and anything else you need. Type 'exit' when done. . ."
 echo
-sleep 1
-grb_inst=$(echo "${part_name%?}")
-grb_inst=$grb_inst
-sudo chroot /mnt/deb-inst env /bin/sh -c "echo; grub-install $grb_inst; echo; update-grub; echo; sh"
+grb_inst_su=$(echo "${part_name%?}")
+grb_inst="$grb_inst_su" sudo chroot /mnt/deb-inst env /bin/sh -c "echo \"grub-install $grb_inst\"; grub-install $grb_inst; echo; echo \"update-grub\"; update-grub; echo; echo; sh"
 echo
 sleep 1
 
 echo
 read -p "Pausing in case you missed something. You can open a new termianl and chroot back into enviroment /mnt/deb-inst and finish up. Press [ENTER] to finish the process."
+sleep 1
+
 echo
+echo "Making sure ownership is correct on /home/$usrnme directory. . ."
+sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme
 sleep 1
 
 echo
@@ -226,8 +227,5 @@ echo
 echo "All done."
 echo
 sleep 1
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_end=$(date +"%s")
-tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
-echo "It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process."
+
 exit
