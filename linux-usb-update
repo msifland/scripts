@@ -110,6 +110,7 @@ git fetch
 git pull
 echo
 echo
+cd
 
 echo
 echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
