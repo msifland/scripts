@@ -27,7 +27,7 @@ apt install -y ca-certificates
 dpkg-reconfigure tzdata
 apt install -y locales
 dpkg-reconfigure locales
-apt install -y wget nano pv git screenfetch jshon dialog
+apt install -y wget nano pv git screenfetch jshon dialog zsh zsh-syntax-highlighting tasksel
 
 echo
 echo "Installing linux-image and firmware files. . ."
@@ -35,7 +35,7 @@ echo
 sleep 1
 LX_IMG=$(wget -qO- https://packages.debian.org/testing/linux-image-amd64 | grep "linux-image" | sort -V | head -1 | sed -e 's:.*eye/::' -e 's:">.*::')
 apt install -y "$LX_IMG"
-apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree tasksel zsh zsh-syntax-highlighting
+apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree
 
 echo
 echo "Using tasksel to install the rest of the system. . ."
@@ -90,7 +90,9 @@ apt --fix-broken -y install
 dpkg --configure -a
 apt update
 apt upgrade -y
-apt install -y mate-applets mate-desktop-environment-extras conky aircrack-ng curl chromium gparted software-properties-common hdparm
+apt purge mate-screensaver
+apt autoremove
+apt install -y mate-applets mate-desktop-environment-extras conky aircrack-ng curl chromium gparted software-properties-common hdparm xscreensaver xscreensaver-data-extra
 rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
