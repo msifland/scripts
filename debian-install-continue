@@ -7,6 +7,7 @@ echo "Updating apt and installing initial applications. . ."
 echo
 sleep 1
 apt update
+apt upgrade
 apt install -y ncurses-term xterm
 export TERM=xterm-color
 
@@ -74,13 +75,15 @@ echo
 sleep 1
 
 echo
-mkdir work
-cd /work
+mkdir /firm_work
+cd /firm_work
 wget http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
 mkdir firmware && tar -C firmware -xvf firmware.tar.gz
 cd firmware
 dpkg -i *.deb
 cd /
+rm -rf /firm_work
+
 
 echo
 echo "Finishing up installation and installing final apps. . ."
