@@ -93,7 +93,7 @@ echo
 
 lsblk
 echo
-read -p "Enter the partition in which to install Debian(ex. /dev/sdb1): " part_name
+read -p "Enter the partition in which to install the Debian root file system(ex. /dev/sdb2): " part_name
 sleep 1
 umount $part_name
 umount $part_conf
