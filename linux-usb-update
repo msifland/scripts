@@ -104,6 +104,11 @@ cd $HOME/Documents
 git stash
 git fetch
 git pull
+cd $HOME/Projects
+git stash
+git fetch
+git pull
+echo
 echo
 
 echo
