@@ -13,6 +13,7 @@ echo "This script is set up to install Debian Mate. So be sure to select Debian 
 echo
 sleep 1
 
+<< Comment
 echo "Running script wipe-partition. If you wish to bypass type 'n'."
 echo
 sleep 1
@@ -24,9 +25,10 @@ if [[ -d /mnt/deb-inst ]]; then
 	sleep 1
 	rm -rf /mnt/deb-inst
 fi
+Comment
 
 echo
-echo "Making directories. . ."
+echo "Creating work directories. . ."
 echo
 sleep 1
 cd /
@@ -41,6 +43,12 @@ if [[ ! -d /mnt/deb-inst/work ]]; then
 fi
 cd /mnt/deb-inst/work
 
+sudo umount /mnt/deb-inst/proc
+sudo umount /mnt/deb-inst/sys
+sudo umount /mnt/deb-inst/dev/pts
+sudo umount /mnt/deb-inst/dev
+sudo umount /mnt/deb-inst
+
 echo
 echo "Downloading debootstrap. . ."
 echo
@@ -54,25 +62,38 @@ dpkg -i /mnt/deb-inst/work/*.deb
 echo
 lsblk
 echo
-read -p "Enter partition to configure with cfdisk. Configure partition type to dos.(ex. /dev/sdb). " part_conf
+read -p "Enter partition to configure.(ex. /dev/sdb). " part_conf
 sleep 1
 for blk in $(df -h | grep "$part_conf" | awk '{ print $1 }'); do
 	sudo umount $blk
 done
+echo
+read -p "Would you like to completely wipe $part_conf first[y/n] " wipe_part
+if [[ "$wipe_part" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	dd if=/dev/zero of="$part_conf"  bs=512  count=1
+	echo "Device wiped succesfully."
+else
+	echo "	Not wiping."
+fi
+sleep 1
+echo
+read -p "Moving on to cfdisk to create and configure patitions. If creating separate boot partition it should be a minimum of 500M. Root partition should be minimun of 20G and the rest for home partition. Be sure to configure to 'dos'. Press [ENTER] to continue."
+sleep 1
 cfdisk $part_conf
 echo
 lsblk
 echo
 echo "Now you need to format earch partition as ext4. A new terminal will open and for this."
 sleep 5
-/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: mkfs -t ext4 -L \"label\" /dev/sdXY.
+/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: 
+	mkfs -t ext4 -L \"label\" /dev/sdXY. (You may have to unmount first)
 
-Then type exit to close the terminal and continue the install process. You may have to umount drives to continue'; echo; lsblk; echo; echo; sh\""
+Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
 echo
 
 lsblk
 echo
-read -p "Enter the partition name to install to(ex. /dev/sdb1): " part_name
+read -p "Enter the partition in which to install Debian(ex. /dev/sdb1): " part_name
 sleep 1
 umount $part_name
 umount $part_conf
