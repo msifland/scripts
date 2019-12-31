@@ -1,0 +1,35 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo ""
+sleep 1
+echo
+read -p "Did you use a separate /home or other partition[y/n]? " sep_hm
+sleep 1
+if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo
+	read -p "Enter each partition separated by a space(ex. home boot var tmp, etc.) " parts
+	parts_arr=($parts)
+	for part in "${parts_arr[@]}"; do
+		echo
+		read -p "What partition for $part(ex. /dev/sdb2)? " new_prt
+		if [[ ! -d /mnt/deb-inst/temp ]]; then
+			sudo mkdir /mnt/deb-inst/temp
+		fi
+		sudo mkdir /mnt/deb-inst/temp/$part
+		sudo mount $new_prt /mnt/deb-inst/temp/$part
+		sudo cp -rf /mnt/deb-inst/$part/* /mnt/deb-inst/temp/$part/
+		sudo rm -rf /mnt/deb-inst/$part/*
+		sudo umount /mnt/deb-inst/temp/$part
+		sudo mount $new_prt /mnt/deb-inst/$part
+		echo "$part created. . ."
+		echo
+		echo "Putting entry $part into /etc/fstab. . ."
+		fstab_entry=$(sudo blkid -s UUID | grep "$new_prt" | sed -e 's#.*: ##' | sed 's:"::g')
+		echo "" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
+		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
+		sleep 1
+	done
+	sudo rm -rf /mnt/deb-inst/temp
+fi
