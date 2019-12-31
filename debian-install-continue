@@ -43,7 +43,7 @@ echo "Using tasksel to install the rest of the system. . ."
 echo
 sleep 1
 dpkg --configure -a
-tasksel
+tasksel install mate-desktop web-server print-service ssh-server laptop
 dpkg --configure -a
 
 echo
@@ -95,7 +95,10 @@ apt update
 apt upgrade -y
 apt purge mate-screensaver
 apt autoremove
-apt install -y mate-applets mate-desktop-environment-extras conky aircrack-ng curl chromium gparted software-properties-common hdparm xscreensaver xscreensaver-data-extra
+apt install -y mate-applets mate-desktop-environment-extras conky aircrack-ng curl gparted software-properties-common hdparm xscreensaver xscreensaver-data-extra
+apt update
+apt upgrade -y
+apt autoremove
 rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
