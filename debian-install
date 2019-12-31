@@ -86,6 +86,52 @@ sleep 5
 Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
 echo
 
+function separate_parts(){
+echo
+read -p "Did you use a separate /home or other partition[y/n]? " sep_hm
+sleep 1
+if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo
+	read -p "This function will loop over until you leave this field blank. 
+Enter single partition name(ex. home boot var tmp, etc.) 
+It is very important that you type these entries correctly in this section. " part
+	echo
+	if [[ ! $part = "" ]]; then
+		read -p "What partition for $part(ex. /dev/sdb3)? " new_prt
+		if [[ ! -d /mnt/deb-inst/temp ]]; then
+			sudo mkdir /mnt/deb-inst/temp
+		fi
+		sudo mkdir /mnt/deb-inst/temp/$part
+		sudo mount $new_prt /mnt/deb-inst/temp/$part
+		if [[ ! -d /mnt/deb-inst/$part ]]; then
+			sudo mkdir /mnt/deb-inst/$part
+		fi
+		sudo cp -rf /mnt/deb-inst/$part/* /mnt/deb-inst/temp/$part/
+		sudo rm -rf /mnt/deb-inst/$part/*
+		sudo umount /mnt/deb-inst/temp/$part
+		sudo mount $new_prt /mnt/deb-inst/$part
+		echo "$part created. . ."
+		echo
+		echo "Putting entry $part into /etc/fstab. . ."
+		fstab_entry=$(sudo blkid -s UUID | grep "$new_prt" | sed -e 's#.*: ##' | sed 's:"::g')
+		echo "" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
+		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
+		sleep 1
+		separate_parts
+	else
+		echo
+		echo "No other devices entered. Moving on. . ."
+		sleep 1
+		sudo rm -rf /mnt/deb-inst/temp
+	fi
+else
+	echo
+	echo "No separate patitions used. Moving on. . ."
+	sleep 1
+fi
+}
+separate_parts
+
 lsblk
 echo
 read -p "Enter the partition in which to install the Debian root file system(ex. /dev/sdb2): " part_name
@@ -126,38 +172,9 @@ sudo blkid
 echo
 
 echo
-read -p "Did you use a separate /home or other partition[y/n]? " sep_hm
-sleep 1
-if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo
-	read -p "Enter each partition separated by a space(ex. home boot var tmp, etc.) " parts
-	parts_arr=($parts)
-	for part in "${parts_arr[@]}"; do
-		echo
-		read -p "What partition for $part(ex. /dev/sdb2)? " new_prt
-		if [[ ! -d /mnt/deb-inst/temp ]]; then
-			sudo mkdir /mnt/deb-inst/temp
-		fi
-		sudo mkdir /mnt/deb-inst/temp/$part
-		sudo mount $new_prt /mnt/deb-inst/temp/$part
-		sudo cp -rf /mnt/deb-inst/$part/* /mnt/deb-inst/temp/$part/
-		sudo rm -rf /mnt/deb-inst/$part/*
-		sudo umount /mnt/deb-inst/temp/$part
-		sudo mount $new_prt /mnt/deb-inst/$part
-		echo "$part created. . ."
-		echo
-		echo "Putting entry $part into /etc/fstab. . ."
-		fstab_entry=$(sudo blkid -s UUID | grep "$new_prt" | sed -e 's#.*: ##' | sed 's:"::g')
-		echo "" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
-		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
-		sleep 1
-	done
-	sudo rm -rf /mnt/deb-inst/temp
-fi
-
-echo
 read -p "Opening /etc/fstab to review and manually make changes. Showing you the UUID's for any partitions to add, eg. /home, /boot, /tmp, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
 echo
+
 echo
 sudo blkid
 /usr/bin/mate-terminal -e "bash -c \"sudo nano /mnt/deb-inst/etc/fstab\""
@@ -199,6 +216,8 @@ if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Copying these files now. . ."
 	sleep 1
     cp -rf $HOME/.conkyrc /mnt/deb-inst/home/$usrnme/
+    cp -rf $HOME/.conkyrc_has_wireless /mnt/deb-inst/home/$usrnme/
+    cp -rf $HOME/.conkyrc.bak /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.zshrc /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/	
 	cp -rf $HOME/.bashrc /mnt/deb-inst/home/$usrnme/
