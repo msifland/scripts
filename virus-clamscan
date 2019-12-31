@@ -3,7 +3,7 @@
 # Bash Color Random
 COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
 RESTORE='\033[0m'
-BUILDLOG="$HOME/infections/last-run.txt"
+BUILDLOG="$HOME/infections/.last-run.txt"
 if [[ ! -d "/home/msifland/infections" ]]; then
 	mkdir "/home/msifland/infections"
 fi
@@ -22,6 +22,8 @@ EXCLUDE="--exclude-dir=^/home/msifland/roms
 --exclude-dir=^/sys
 --exclude-dir=^/dev
 --exclude-dir=^/proc
+--exclude=^metasploit-framework
+--exclude-dir=^/opt/metasploit-framework
 "
 # Example for exclusion:
 # EXCLUDE="--exclude-dir=^/home/msifland/roms
@@ -104,17 +106,17 @@ echo "Removing old build logs. . ." 2>&1 | tee -a $BUILDLOG
 echo
 sleep 2
 echo -e "${RESTORE}"
-if [[ -f /home/msifland/infections/last-run-2.txt ]]; then
-	rm -rf /home/msifland/infections/last-run-2.txt
+if [[ -f /home/msifland/infections/.last-run-2.txt ]]; then
+	rm -rf /home/msifland/infections/.last-run-2.txt
 fi
-# Rename last-run-1 lists to last-run-2
-if [[ -f /home/msifland/infections/last-run-1.txt ]]; then
-	mv /home/msifland/infections/last-run-1.txt /home/msifland/infections/last-run-2.txt
+# Rename .last-run-1 lists to .last-run-2
+if [[ -f /home/msifland/infections/.last-run-1.txt ]]; then
+	mv /home/msifland/infections/.last-run-1.txt /home/msifland/infections/.last-run-2.txt
 fi
 
-# Rename last-run to last-run-1
-if [[ -f /home/msifland/infections/last-run.txt ]]; then
-	mv /home/msifland/infections/last-run.txt /home/msifland/infections/last-run-1.txt
+# Rename .last-run to .last-run-1
+if [[ -f /home/msifland/infections/.last-run.txt ]]; then
+	mv /home/msifland/infections/.last-run.txt /home/msifland/infections/.last-run-1.txt
 fi
 
 # Call function
