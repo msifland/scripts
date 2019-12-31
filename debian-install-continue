@@ -51,6 +51,7 @@ echo "Entering fstab entry for new install. . ."
 echo
 sleep 1
 fstab_entry=$(blkid -s UUID | grep "$part_name" | sed -e 's#.*: ##' | sed 's:"::g')
+echo "##### msifland custom install #####" > /etc/fstab
 echo "$fstab_entry    /    ext4    defaults    0    1" >> /etc/fstab
 echo "" >> /etc/fstab
 echo "/dev/sr0    /media/cdrom0    udf,iso9660 user,noauto    0    0" >> /etc/fstab
