@@ -232,7 +232,6 @@ sleep 1
 echo
 echo "Chroot'ing back in to environment to update grub and anything else you need. Type 'exit' when done. . ."
 echo
-part_name="/dev/sdb2"
 grb_inst_su=$(echo "${part_name%?}")
 grb_inst="$grb_inst_su"
 sleep 1
@@ -240,8 +239,6 @@ grb_inst="$grb_inst" sudo chroot /mnt/deb-inst env /bin/sh -c "echo \"grub-insta
 echo
 sleep 1
 echo
-
-usrnme="msifland"
 
 echo "Updating permissions to $usrnme"
 sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme
