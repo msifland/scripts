@@ -39,7 +39,7 @@ function scan_it(){
 	read -p "${ILCOLOR2}Would you like to move any found viruses to a folder, or would you like to copy them to a folder for analasys and manual removal((C)opy/(m)ove)?:${ILRESTORE} " WHR
 	sleep 1
 	echo
-	echo "${ILCOLOR2}Putting a log in $HOME/infections/custom-scan.txt${ILRESTORE}"
+	echo "${ILCOLOR2}Putting a log in $HOME/infections/.custom-scan.txt${ILRESTORE}"
 	sleep 1
 	if [[ $WHR =~ ^([mM][oO][vV][eE]|[mM])$ ]]; then
 		echo "${ILCOLOR2}MOVING infected files to $INFS_DIR. . .${ILRESTORE}"
@@ -102,4 +102,4 @@ function selected_path(){
 
 }
 # Call to start script at selected_path function, which will then call scan_it function.
-selected_path | tee $HOME/infections/custom-scan.txt
+selected_path | tee $HOME/infections/.custom-scan.txt
