@@ -1,0 +1,48 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "${ILCOLOR4}This scripts will setup a bigger display for xterm.${ILRESTORE}"
+sleep 2
+
+X_FILE="$HOME/.Xresources"
+
+echo
+echo "${ILCOLOR4}Checking for $X_FILE file. . .${ILRESTORE}"
+sleep 2
+if [[ ! -f $X_FILE ]]; then
+	echo
+	echo "${ILCOLOR4}Creating $X_FILE. . .${ILRESTORE}"
+	touch $X_FILE
+	sleep 2
+fi
+if grep -wq "xterm\*geometry: 80x40" $X_FILE; then
+	echo
+	echo "${ILCOLOR4}xterm*geometry: 80x40 is already added to X_FILE. Finishing up. . .${ILRESTORE}"
+	sleep 2
+else
+	echo
+	echo "${ILCOLOR4}Adding configuration it $X_FILE. . .${ILRESTORE}"
+	sleep 2
+	cat << EOF > $X_FILE
+xterm*Background: black
+xterm*Foreground: white
+xterm*faceName: Monospace
+xterm*faceSize: 10
+xterm*geometry: 80x40
+EOF
+
+	echo
+	echo "${ILCOLOR4}Configuration added to $X_FILE. Merging with xterm now. . .${ILRESTORE}"
+	sleep 2
+	xrdb -merge $X_FILE
+fi
+
+if [ $? -eq 0 ]; then
+	echo
+	echo "${ILCOLOR3}All went well.${ILRESTORE}"
+else
+	echo
+	echo "${ILCOLOR2}Error detected!!!${ILRESTORE}"
+fi
+sleep 2
