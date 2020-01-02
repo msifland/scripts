@@ -194,6 +194,10 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/Projects /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/scripts /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/Templates /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/Music /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/Pictures /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/Videos /mnt/deb-inst/home/$usrnme/
 	echo "Files copied."
 	sleep 2
 fi
