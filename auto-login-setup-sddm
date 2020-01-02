@@ -17,7 +17,7 @@ sleep 1
 echo "${ILCOLOR3}Creating and editing file $CONF. Adding:
 [Autologin]
 User=msifland
-Session=plasma.desktop
+Session=lxqt.desktop
 Relogin=
 ${ILRESTORE}"
 echo
@@ -82,5 +82,6 @@ else
 	sleep 1
 fi
 
+# Removing blank lines at end of file.
 sed -i '/^$/d' $CONF
 echo "$(awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}' $CONF)" > $CONF
