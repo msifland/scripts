@@ -13,6 +13,14 @@ echo "This script is set up to install Debian Mate. So be sure to select Debian 
 echo
 sleep 1
 
+sudo umount -a
+sudo umount /mnt/deb-inst/proc
+sudo umount /mnt/deb-inst/sys
+sudo umount /mnt/deb-inst/dev/pts
+sudo umount /mnt/deb-inst/dev
+sudo umount /mnt/deb-inst
+sleep 1
+
 if [[ -d /mnt/deb-inst ]]; then
 	echo
 	echo "Removing previous install directory /mnt/deb-inst. . ."
@@ -36,13 +44,6 @@ if [[ ! -d /mnt/deb-inst/work ]]; then
 	mkdir /mnt/deb-inst/work
 fi
 cd /mnt/deb-inst/work
-
-sudo umount -a
-sudo umount /mnt/deb-inst/proc
-sudo umount /mnt/deb-inst/sys
-sudo umount /mnt/deb-inst/dev/pts
-sudo umount /mnt/deb-inst/dev
-sudo umount /mnt/deb-inst
 
 echo
 echo "Downloading debootstrap. . ."
@@ -86,52 +87,6 @@ sleep 5
 Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
 echo
 
-function separate_parts(){
-echo
-read -p "Did you use a separate /home or other partition[y/n]? " sep_hm
-sleep 1
-if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo
-	read -p "This function will loop over until you leave this field blank. 
-Enter single partition name(ex. home boot var tmp, etc.) 
-It is very important that you type these entries correctly in this section. " part
-	echo
-	if [[ ! $part = "" ]]; then
-		read -p "What partition for $part(ex. /dev/sdb3)? " new_prt
-		if [[ ! -d /mnt/deb-inst/temp ]]; then
-			sudo mkdir /mnt/deb-inst/temp
-		fi
-		sudo mkdir /mnt/deb-inst/temp/$part
-		sudo mount $new_prt /mnt/deb-inst/temp/$part
-		if [[ ! -d /mnt/deb-inst/$part ]]; then
-			sudo mkdir /mnt/deb-inst/$part
-		fi
-		sudo cp -rf /mnt/deb-inst/$part/* /mnt/deb-inst/temp/$part/
-		sudo rm -rf /mnt/deb-inst/$part/*
-		sudo umount /mnt/deb-inst/temp/$part
-		sudo mount $new_prt /mnt/deb-inst/$part
-		echo "$part created. . ."
-		echo
-		echo "Putting entry $part into /etc/fstab. . ."
-		fstab_entry=$(sudo blkid -s UUID | grep "$new_prt" | sed -e 's#.*: ##' | sed 's:"::g')
-		echo "" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
-		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
-		sleep 1
-		separate_parts
-	else
-		echo
-		echo "No other devices entered. Moving on. . ."
-		sleep 1
-		sudo rm -rf /mnt/deb-inst/temp
-	fi
-else
-	echo
-	echo "No separate patitions used. Moving on. . ."
-	sleep 1
-fi
-}
-separate_parts
-
 lsblk
 echo
 read -p "Enter the partition in which to install the Debian root file system(ex. /dev/sdb2): " part_name
@@ -171,10 +126,67 @@ echo
 sudo blkid
 echo
 
+function separate_parts(){
+	lsblk
+	echo
+	read -p "This function will loop over until you leave this field blank.
+It is very important that you type these entries correctly in this section.
+
+Enter single partition name. (ex. home boot var tmp, etc.): " part
+	echo
+	if [[ ! $part = "" ]]; then
+		read -p "What partition for $part(ex. /dev/sdb3)? " new_prt
+		if [[ ! -d /mnt/deb-inst/temp ]]; then
+			sudo mkdir /mnt/deb-inst/temp
+		fi
+		sudo mkdir /mnt/deb-inst/temp/$part
+		sudo mount $new_prt /mnt/deb-inst/temp/$part
+		if [[ ! -d /mnt/deb-inst/$part ]]; then
+			sudo mkdir /mnt/deb-inst/$part
+		fi
+		if [[ ! -d /mnt/deb-inst/$part ]]; then
+			sudo mkdir /mnt/deb-inst/$part
+		fi
+		sudo cp -rf /mnt/deb-inst/$part/* /mnt/deb-inst/temp/$part/
+		sudo rm -rf /mnt/deb-inst/$part/*
+		sudo umount /mnt/deb-inst/temp/$part
+		sudo mount $new_prt /mnt/deb-inst/$part
+		echo "$part created. . ."
+		echo
+		echo "Putting entry $part into /etc/fstab. . ."
+		fstab_entry=$(sudo blkid -s UUID | grep "$new_prt" | sed -e 's#.*: ##' | sed 's:"::g')
+		if [[ ! -d /mnt/deb-inst/etc ]]; then
+			sudo mkdir /mnt/deb-inst/etc
+			if [[ ! -f /mnt/deb-inst/etc/fstab ]]; then
+				sudo touch /mnt/deb-inst/etc/fstab
+			fi
+		fi
+		echo "" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
+		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
+		sleep 1
+		echo
+		separate_parts
+	else
+		echo
+		echo "No other devices entered. Moving on. . ."
+		sleep 1
+		sudo rm -rf /mnt/deb-inst/temp
+	fi
+}
+echo
+read -p "Did you use a separate /home or other partition[y/n]? " sep_hm
+sleep 1
+if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo
+	separate_parts
+else
+	echo
+	echo "No separate patitions used. Moving on. . ."
+	sleep 1
+fi
 echo
 read -p "Opening /etc/fstab to review and manually make changes. Showing you the UUID's for any partitions to add, eg. /home, /boot, /tmp, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
 echo
-
 echo
 sudo blkid
 /usr/bin/mate-terminal -e "bash -c \"sudo nano /mnt/deb-inst/etc/fstab\""
@@ -239,7 +251,7 @@ echo
 read -p "Would you like to disable os-prober in grub[y/n]? " dis_ospr
 sleep 1
 	if [[ "$dis_ospr" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-		if grep "GRUB_DISABLE_OS_PROBER=true" /mnt/eeb_inst/etc/default/grub; then
+		if grep "GRUB_DISABLE_OS_PROBER=true" /mnt/deb_inst/etc/default/grub; then
 			echo
 			echo "Already disabled."
 			sleep 1
