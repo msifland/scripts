@@ -2,6 +2,18 @@
 # This generates a bootable linux iso correctly with iso options.
 # Put your code below this line.
 echo
+echo "Checking dependencies. . ."
+sleep 1
+if ! dpkg --get-selections | grep "genisoimage"; then
+	echo
+	echo "Package genisoimage not found, installing now. . ."
+	sudo apt install genisoimage
+	sleep 1
+else
+	echo
+	echo "Package genisoimage is installed. Continuing. . ."
+	sleep 1
+fi
 function iso_gen(){
 	echo
 	read -p "What is the path of the folder you want to turn into an iso image?: " ISO_NM
@@ -51,3 +63,4 @@ Ready to run?: " RDY
 	fi
 }
 iso_gen
+
