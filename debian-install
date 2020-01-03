@@ -201,6 +201,42 @@ read -p "Would you like to install your personal files for this installation(scr
 sleep 1
 if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Copying user files from current system to new system. . ."
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Downloads ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Downloads
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Documents ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Documents
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/"Modules&Apps" ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/"Modules&Apps"
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/pkg_bkups ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/pkg_bkups
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Projects ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Projects
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/scripts ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/scripts
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Templates ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Templates
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Music ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Music
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Pictures ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Pictures
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Videos ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Videos
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/tmp ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/tmp
+	fi
+	if [[ ! -d /mnt/deb-inst/home/$usrnme/Wallpapers ]]; then
+		mkdir /mnt/deb-inst/home/$usrnme/Wallpapers
+	fi
 	cp -rf $HOME/Documents /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/"Modules&Apps" /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/$usrnme/
@@ -210,6 +246,8 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/Music /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/Pictures /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/Videos /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/tmp /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/Wallpapers /mnt/deb-inst/home/$usrnme/
 	echo "Files copied."
 	sleep 2
 fi
@@ -232,7 +270,7 @@ if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Copying these files now. . ."
 	sleep 1
     cp -rf $HOME/.conkyrc /mnt/deb-inst/home/$usrnme/
-    cp -rf $HOME/.conkyrc_has_wireless /mnt/deb-inst/home/$usrnme/
+    cp -rf $HOME/.conky_has_wireless /mnt/deb-inst/home/$usrnme/
     cp -rf $HOME/.conkyrc.bak /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.zshrc /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/	

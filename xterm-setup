@@ -30,6 +30,10 @@ xterm*Foreground: white
 xterm*faceName: Monospace
 xterm*faceSize: 10
 xterm*geometry: 80x40
+XTerm*selectToClipboard: true
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
 EOF
 
 	echo
