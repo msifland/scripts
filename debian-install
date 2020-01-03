@@ -260,6 +260,7 @@ if [[ "$con_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cp -rf $HOME/.config /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
 	cp -rf $HOME/.cache /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.Xresources /mnt/deb-inst/home/$usrnme/
 	echo "Files copied. You may want to delete select autostart files from .config/autostart."
 	sleep 2
 fi

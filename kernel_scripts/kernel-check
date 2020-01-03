@@ -83,7 +83,7 @@ Would you like to install it?" 10 50; then
 		cp /boot/$CURR_STAB .config
 		echo
 
-		# This section is if you want to add an option the chose a local verson name to append to kernel version.
+		# This section is if you want to add an option the choose a local verson name to append to kernel version.
 << Comment
 		echo "${ILCOLOR2}Append to Kernel Number for Local Version name.
     Current running kernel:${ILRESTORE} $(uname -r)"
@@ -117,7 +117,8 @@ Comment
 		fi
 
 		# Command 'oldefconfig' pulls current options from .config file and automatically answers new options without prompt.
-		make olddefconfig		
+		#make olddefconfig		
+		yes "" | make oldconfig
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		echo 'spike' | sudo -S make modules_install
 
