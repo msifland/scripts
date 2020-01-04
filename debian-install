@@ -247,7 +247,6 @@ sleep 1
 	cp -rf $HOME/Wallpapers $INST_PTH/home/$usrnme/
 	echo "Files copied."
 	sleep 2
-fi
 
 echo 
 read -p "Would you like to install your config files for this installation(.config, .local, .cache, etc.[y/n]? " con_fls
