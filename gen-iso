@@ -20,11 +20,12 @@ function iso_gen(){
 	sleep 1
 	ISO_NM_OR=$ISO_NM
 	echo
-	read -p "Type a custome name to add to the beginning of the file or leave blank. " CST_NM
+	read -p "Type a custom name to add to the beginning of the file or leave blank. " CST_NM
 	CST_NM="$CST_NM"$(basename $ISO_NM)
 	FRST_NM=$(echo $ISO_NM | sed "s:$(basename $ISO_NM)::g")
 	TTL_NM=$(echo $FRST_NM$CST_NM)
 	echo $TTL_NM
+	sleep 1
 
 	echo
 	read -p "The name of the .iso file is to be ${ILCOLOR4}\"$TTL_NM.iso\"${ILRESTORE}. Is that correct? " CRRCT
