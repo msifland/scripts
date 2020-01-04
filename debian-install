@@ -7,26 +7,27 @@ if [[ ! "$USER" = "root" ]]; then
 	exit
 fi
 
+INST_PTH="/mnt/deb-inst"
 echo
 echo
-echo "This script is set up to install Debian Mate. So be sure to select Debian Desktop Env. and Mate Desktop when this time comes, along with any other various packages."
+echo "This script is set up to install Debian Mate. So be sure to select Mate Desktop when this time comes, along with any other various packages."
 echo
 sleep 1
 
 sudo umount -a
-sudo umount /mnt/deb-inst/proc
-sudo umount /mnt/deb-inst/sys
-sudo umount /mnt/deb-inst/dev/pts
-sudo umount /mnt/deb-inst/dev
-sudo umount /mnt/deb-inst
+sudo umount $INST_PTH/proc
+sudo umount $INST_PTH/sys
+sudo umount $INST_PTH/dev/pts
+sudo umount $INST_PTH/dev
+sudo umount $INST_PTH
 sleep 1
 
-if [[ -d /mnt/deb-inst ]]; then
+if [[ -d $INST_PTH ]]; then
 	echo
-	echo "Removing previous install directory /mnt/deb-inst. . ."
+	echo "Removing previous install directory $INST_PTH. . ."
 	echo
 	sleep 1
-	sudo rm -rf /mnt/deb-inst
+	sudo rm -rf $INST_PTH
 fi
 
 echo
@@ -37,13 +38,13 @@ cd /
 if [[ ! -d /mnt ]]; then
 	mkdir /mnt
 fi
-if [[ ! -d /mnt/deb-inst ]]; then
-	mkdir /mnt/deb-inst
+if [[ ! -d $INST_PTH ]]; then
+	mkdir $INST_PTH
 fi
-if [[ ! -d /mnt/deb-inst/work ]]; then
-	mkdir /mnt/deb-inst/work
+if [[ ! -d $INST_PTH/work ]]; then
+	mkdir $INST_PTH/work
 fi
-cd /mnt/deb-inst/work
+cd $INST_PTH/work
 
 echo
 echo "Downloading debootstrap. . ."
@@ -53,17 +54,18 @@ DEBOOT_STRP=$(wget -qO- http://ftp.debian.org/debian/pool/main/d/debootstrap | g
 wget http://ftp.debian.org/debian/pool/main/d/debootstrap/"$DEBOOT_STRP"
 
 cd /
-dpkg -i /mnt/deb-inst/work/*.deb
+dpkg -i $INST_PTH/work/*.deb
 
 echo
 lsblk
 echo
-read -p "Enter partition to configure.(ex. /dev/sdb). " part_conf
+read -p "Enter main partition block to configure for installation.(ex. /dev/sdb). " part_conf
 sleep 1
 for blk in $(df -h | grep "$part_conf" | awk '{ print $1 }'); do
 	sudo umount $blk
 done
 echo
+
 read -p "Would you like to completely wipe $part_conf first[y/n] " wipe_part
 if [[ "$wipe_part" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	dd if=/dev/zero of="$part_conf"  bs=512  count=1
@@ -72,16 +74,18 @@ else
 	echo "	Not wiping."
 fi
 sleep 1
+
 echo
 read -p "Moving on to cfdisk to create and configure patitions. If creating separate boot partition it should be a minimum of 500M. Root partition should be minimun of 20G and the rest for home partition. Be sure to configure to 'dos'. Press [ENTER] to continue."
 sleep 1
 cfdisk $part_conf
 echo
+
 lsblk
 echo
 echo "Now you need to format earch partition as ext4. A new terminal will open and for this."
 sleep 5
-/usr/bin/mate-terminal -e "bash -c \"echo; echo 'For each partition type: 
+/usr/bin/xterm -e "bash -c \"echo; echo 'For each partition type: 
 	mkfs -t ext4 -L \"label\" /dev/sdXY. (You may have to unmount first)
 
 Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
@@ -93,34 +97,34 @@ read -p "Enter the partition in which to install the Debian root file system(ex.
 sleep 1
 umount $part_name
 umount $part_conf
-mount $part_name /mnt/deb-inst
+mount $part_name $INST_PTH
+debootstrap --arch amd64 testing $INST_PTH http://ftp.us.debian.org/debian/
 
-debootstrap --arch amd64 testing /mnt/deb-inst http://ftp.us.debian.org/debian/
 echo
 echo "Mounting system folders and copying /etc files for internet connection. . ."
 echo
 sleep 1
-mount -t proc /proc /mnt/deb-inst/proc
-mount -t sysfs /sys /mnt/deb-inst/sys
-mount -o bind /dev /mnt/deb-inst/dev
-mount -o bind /dev/pts /mnt/deb-inst/dev/pts
-cp /etc/network/interfaces /mnt/deb-inst/etc/network/interfaces
-cp /etc/resolv.conf /mnt/deb-inst/etc/resolv.conf
-cp /etc/hosts /mnt/deb-inst/etc/hosts
-cp /etc/hostname /mnt/deb-inst/etc/hostname
-cp /etc/apt/sources.list /mnt/deb-inst/etc/apt/sources.list
-nano /mnt/deb-inst/etc/apt/sources.list
-cp /home/msifland/scripts/debian-install-continue /mnt/deb-inst/debian-install-continue
+mount -t proc /proc $INST_PTH/proc
+mount -t sysfs /sys $INST_PTH/sys
+mount -o bind /dev $INST_PTH/dev
+mount -o bind /dev/pts $INST_PTH/dev/pts
+cp /etc/network/interfaces $INST_PTH/etc/network/interfaces
+cp /etc/resolv.conf $INST_PTH/etc/resolv.conf
+cp /etc/hosts $INST_PTH/etc/hosts
+cp /etc/hostname $INST_PTH/etc/hostname
+cp /etc/apt/sources.list $INST_PTH/etc/apt/sources.list
+nano $INST_PTH/etc/apt/sources.list
+cp /home/msifland/scripts/debian-install-continue $INST_PTH/debian-install-continue
 
 echo
 echo "Chroot'ing into new install to finish the process. . ."
 echo
 sleep 1
-cat << EOF | part_name="$part_name" chroot /mnt/deb-inst env /bin/bash
+cat << EOF | part_name="$part_name" chroot $INST_PTH env /bin/bash
 source /debian-install-continue
 EOF
-sudo rm -rf /mnt/deb-inst/debian-install-continue
-sudo nano /mnt/deb-inst/etc/apt/sources.list
+sudo rm -rf $INST_PTH/debian-install-continue
+sudo nano $INST_PTH/etc/apt/sources.list
 
 echo
 sudo blkid
@@ -136,33 +140,33 @@ Enter single partition name. (ex. home boot var tmp, etc.): " part
 	echo
 	if [[ ! $part = "" ]]; then
 		read -p "What partition for $part(ex. /dev/sdb3)? " new_prt
-		if [[ ! -d /mnt/deb-inst/temp ]]; then
-			sudo mkdir /mnt/deb-inst/temp
+		if [[ ! -d $INST_PTH/temp ]]; then
+			sudo mkdir $INST_PTH/temp
 		fi
-		sudo mkdir /mnt/deb-inst/temp/$part
-		sudo mount $new_prt /mnt/deb-inst/temp/$part
-		if [[ ! -d /mnt/deb-inst/$part ]]; then
-			sudo mkdir /mnt/deb-inst/$part
+		sudo mkdir $INST_PTH/temp/$part
+		sudo mount $new_prt $INST_PTH/temp/$part
+		if [[ ! -d $INST_PTH/$part ]]; then
+			sudo mkdir $INST_PTH/$part
 		fi
-		if [[ ! -d /mnt/deb-inst/$part ]]; then
-			sudo mkdir /mnt/deb-inst/$part
+		if [[ ! -d $INST_PTH/$part ]]; then
+			sudo mkdir $INST_PTH/$part
 		fi
-		sudo cp -rf /mnt/deb-inst/$part/* /mnt/deb-inst/temp/$part/
-		sudo rm -rf /mnt/deb-inst/$part/*
-		sudo umount /mnt/deb-inst/temp/$part
-		sudo mount $new_prt /mnt/deb-inst/$part
+		sudo cp -rf $INST_PTH/$part/* $INST_PTH/temp/$part/
+		sudo rm -rf $INST_PTH/$part/*
+		sudo umount $INST_PTH/temp/$part
+		sudo mount $new_prt $INST_PTH/$part
 		echo "$part created. . ."
 		echo
 		echo "Putting entry $part into /etc/fstab. . ."
 		fstab_entry=$(sudo blkid -s UUID | grep "$new_prt" | sed -e 's#.*: ##' | sed 's:"::g')
-		if [[ ! -d /mnt/deb-inst/etc ]]; then
-			sudo mkdir /mnt/deb-inst/etc
-			if [[ ! -f /mnt/deb-inst/etc/fstab ]]; then
-				sudo touch /mnt/deb-inst/etc/fstab
+		if [[ ! -d $INST_PTH/etc ]]; then
+			sudo mkdir $INST_PTH/etc
+			if [[ ! -f $INST_PTH/etc/fstab ]]; then
+				sudo touch $INST_PTH/etc/fstab
 			fi
 		fi
-		echo "" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
-		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a /mnt/deb-inst/etc/fstab > /dev/null
+		echo "" | sudo tee -a $INST_PTH/etc/fstab > /dev/null
+		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a $INST_PTH/etc/fstab > /dev/null
 		sleep 1
 		echo
 		separate_parts
@@ -170,7 +174,7 @@ Enter single partition name. (ex. home boot var tmp, etc.): " part
 		echo
 		echo "No other devices entered. Moving on. . ."
 		sleep 1
-		sudo rm -rf /mnt/deb-inst/temp
+		sudo rm -rf $INST_PTH/temp
 	fi
 }
 echo
@@ -188,66 +192,59 @@ echo
 read -p "Opening /etc/fstab to review and manually make changes. Showing you the UUID's for any partitions to add, eg. /home, /boot, /tmp, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
 echo
 echo
+
+if ! dpkg --get-selections | grep -wq "xterm"; then
+	apt install xterm
+fi
 sudo blkid
-/usr/bin/mate-terminal -e "bash -c \"sudo nano /mnt/deb-inst/etc/fstab\""
+/usr/bin/xterm -e "bash -c \"sudo nano $INST_PTH/etc/fstab\""
 echo
 sleep 1
 
 echo
-usrnme=$(</mnt/deb-inst/usrnme.txt)
-rm -rf /mnt/deb-inst/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt,usrnme_psswrd.txt}
+usrnme=$(<$INST_PTH/usrnme.txt)
+rm -rf $INST_PTH/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt,usrnme_psswrd.txt}
 echo "Username is $usrnme"
+echo "Creating standard directories. . ."
+sleep 1
+USR_PTH="$INST_PTH/home/$usrnme"
+for dir in \
+        $USR_PTH/Downloads \
+        $USR_PTH/Documents \
+        $USR_PTH/"Modules&Apps" \
+        $USR_PTH/pkg_bkups \
+        $USR_PTH/Projects \
+        $USR_PTH/scripts \
+        $USR_PTH/Templates \
+        $USR_PTH/Music \
+        $USR_PTH/Pictures \
+        $USR_PTH/Videos \
+        $USR_PTH/tmp \
+        $USR_PTH/Wallpapers
+do
+    if [[ ! -d "$dir" ]]; then
+    	echo "Making $dir"
+    	mkdir "$dir"
+    else
+    	echo "$dir exists"
+    fi
+    sleep .25
+done
+sleep 1
+
 read -p "Would you like to install your personal files for this installation(scripts, pkg_bkups, etc.[y/n]? " per_fls
 sleep 1
-if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo "Copying user files from current system to new system. . ."
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Downloads ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Downloads
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Documents ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Documents
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/"Modules&Apps" ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/"Modules&Apps"
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/pkg_bkups ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/pkg_bkups
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Projects ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Projects
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/scripts ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/scripts
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Templates ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Templates
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Music ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Music
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Pictures ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Pictures
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Videos ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Videos
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/tmp ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/tmp
-	fi
-	if [[ ! -d /mnt/deb-inst/home/$usrnme/Wallpapers ]]; then
-		mkdir /mnt/deb-inst/home/$usrnme/Wallpapers
-	fi
-	cp -rf $HOME/Documents /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/"Modules&Apps" /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/pkg_bkups /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/Projects /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/scripts /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/Templates /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/Music /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/Pictures /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/Videos /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/tmp /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/Wallpapers /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/Documents $INST_PTH/home/$usrnme/
+	cp -rf $HOME/"Modules&Apps" $INST_PTH/home/$usrnme/
+	cp -rf $HOME/pkg_bkups $INST_PTH/home/$usrnme/
+	cp -rf $HOME/Projects $INST_PTH/home/$usrnme/
+	cp -rf $HOME/scripts $INST_PTH/home/$usrnme/
+	cp -rf $HOME/Templates $INST_PTH/home/$usrnme/
+	cp -rf $HOME/Music $INST_PTH/home/$usrnme/
+	cp -rf $HOME/Pictures $INST_PTH/home/$usrnme/
+	cp -rf $HOME/Videos $INST_PTH/home/$usrnme/
+	cp -rf $HOME/tmp $INST_PTH/home/$usrnme/
+	cp -rf $HOME/Wallpapers $INST_PTH/home/$usrnme/
 	echo "Files copied."
 	sleep 2
 fi
@@ -257,10 +254,10 @@ read -p "Would you like to install your config files for this installation(.conf
 sleep 1
 if [[ "$con_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Copying config files from current system to new system. . ."
-	cp -rf $HOME/.config /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/.local /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/.cache /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/.Xresources /mnt/deb-inst/home/$usrnme/
+	cp -rf $HOME/.config $INST_PTH/home/$usrnme/
+	cp -rf $HOME/.local $INST_PTH/home/$usrnme/
+	cp -rf $HOME/.cache $INST_PTH/home/$usrnme/
+	cp -rf $HOME/.Xresources $INST_PTH/home/$usrnme/
 	echo "Files copied. You may want to delete select autostart files from .config/autostart."
 	sleep 2
 fi
@@ -270,19 +267,19 @@ read -p "Would you like to copy your personal bash, zsh and conky files for this
 if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Copying these files now. . ."
 	sleep 1
-    cp -rf $HOME/.conkyrc /mnt/deb-inst/home/$usrnme/
-    cp -rf $HOME/.conky_has_wireless /mnt/deb-inst/home/$usrnme/
-    cp -rf $HOME/.conkyrc.bak /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/.zshrc /mnt/deb-inst/home/$usrnme/
-	cp -rf $HOME/.oh-my-zsh /mnt/deb-inst/home/$usrnme/	
-	cp -rf $HOME/.bashrc /mnt/deb-inst/home/$usrnme/
+    cp -rf $HOME/.conkyrc $INST_PTH/home/$usrnme/
+    cp -rf $HOME/.conky_has_wireless $INST_PTH/home/$usrnme/
+    cp -rf $HOME/.conkyrc.bak $INST_PTH/home/$usrnme/
+	cp -rf $HOME/.zshrc $INST_PTH/home/$usrnme/
+	cp -rf $HOME/.oh-my-zsh $INST_PTH/home/$usrnme/	
+	cp -rf $HOME/.bashrc $INST_PTH/home/$usrnme/
 fi
 sleep 1
 
 echo
 read -p "Would you like to change default shell from bash to zsh[y/n]? " def_shell
 if [[ "$def_shell" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	sed -i 's:bash:zsh:g' /mnt/deb-inst/etc/passwd
+	sed -i 's:bash:zsh:g' $INST_PTH/etc/passwd
 fi
 sleep 1
 
@@ -296,9 +293,9 @@ sleep 1
 			sleep 1
 		else
 			echo
-			echo "Adding \"GRUB_DISABLE_OS_PROBER=true\" to /mnt/deb-inst/default/grub"
+			echo "Adding \"GRUB_DISABLE_OS_PROBER=true\" to $INST_PTH/default/grub"
 			sleep 1
-			echo "GRUB_DISABLE_OS_PROBER=true" | sudo tee -a /mnt/deb-inst/etc/default/grub
+			echo "GRUB_DISABLE_OS_PROBER=true" | sudo tee -a $INST_PTH/etc/default/grub
 		fi
 	fi
 sleep 1
@@ -309,20 +306,20 @@ echo
 grb_inst_su=$(echo "${part_name%?}")
 grb_inst="$grb_inst_su"
 sleep 1
-grb_inst="$grb_inst" sudo chroot /mnt/deb-inst env /bin/sh -c "echo \"grub-install $grb_inst\"; grub-install $grb_inst; echo; echo \"update-grub\"; update-grub; echo; echo; sh"
+grb_inst="$grb_inst" sudo chroot $INST_PTH env /bin/sh -c "echo \"grub-install $grb_inst\"; grub-install $grb_inst; echo; echo \"update-grub\"; update-grub; echo; echo; sh"
 echo
 sleep 1
 echo
 
 echo "Updating permissions to $usrnme"
-sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme
+sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
 echo
-read -p "Pausing in case you missed something. You can open a new termianl and chroot back into enviroment /mnt/deb-inst and finish up. Press [ENTER] to finish the process."
+read -p "Pausing in case you missed something. You can open a new termianl and chroot back into enviroment(sudo chroot $INST_PTH /bin/sh), or open file explorer to $INST_PTH. Press [ENTER] to finish the process."
 sleep 1
 
 echo
 echo "Making sure ownership is correct on /home/$usrnme directory. . ."
-sudo chown -R $usrnme:$usrnme /mnt/deb-inst/home/$usrnme
+sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
 sleep 1
 
 echo
@@ -330,11 +327,11 @@ echo "Attempting to umount devices and system files. . ."
 echo
 sleep 1
 sudo umount -a
-sudo umount /mnt/deb-inst/proc
-sudo umount /mnt/deb-inst/sys
-sudo umount /mnt/deb-inst/dev/pts
-sudo umount /mnt/deb-inst/dev
-sudo umount /mnt/deb-inst
+sudo umount $INST_PTH/proc
+sudo umount $INST_PTH/sys
+sudo umount $INST_PTH/dev/pts
+sudo umount $INST_PTH/dev
+sudo umount $INST_PTH
 
 echo
 echo "All done."

@@ -96,7 +96,7 @@ apt update
 apt upgrade -y
 apt purge mate-screensaver
 apt autoremove
-apt install -y conky aircrack-ng curl gparted software-properties-common hdparm xscreensaver xscreensaver-data-extra lightdm lightdm-settings slick-greeter variety mate-applets mate-desktop-environment-extras chromium genisoimage net-tools
+apt install -y conky aircrack-ng curl gparted software-properties-common hdparm xscreensaver xscreensaver-data-extra lightdm lightdm-settings slick-greeter variety mate-applets mate-desktop-environment-extras chromium genisoimage net-tools numlockx
 apt update
 apt upgrade -y
 apt autoremove
