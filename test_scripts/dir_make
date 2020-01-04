@@ -1,0 +1,27 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+usrnme="msifland"
+FLL_PTH="/home/$usrnme"
+for dir in \
+        $FLL_PTH/Downloads \
+        $FLL_PTH/Documents \
+        $FLL_PTH/"Modules&Apps" \
+        $FLL_PTH/pkg_bkups \
+        $FLL_PTH/Projects \
+        $FLL_PTH/scripts \
+        $FLL_PTH/Templates \
+        $FLL_PTH/Music \
+        $FLL_PTH/Pictures \
+        $FLL_PTH/Videos \
+        $FLL_PTH/tmp \
+        $FLL_PTH/Wallpapers
+do
+    if [[ ! -d "$dir" ]]; then
+    	echo "Making $dir"
+    	mkdir "$dir"
+    else
+    	echo "$dir exists"
+    fi
+    sleep .25
+done
