@@ -1,0 +1,4 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+env $(cat /home/msifland/scripts/cron_scripts/env-environment) /usr/bin/xterm -e "bash -c \"source /home/msifland/.bashrc; clear; /home/msifland/scripts/conky-check\""

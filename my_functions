@@ -10,18 +10,18 @@ restore='\033[0m'
 # Showing aliases
 echo -e "${color2}"
 echo "my-aliases"
-echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.zshrc"
+echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.bashrc"
 echo -e "${color}"
-grep -i 'alias ' $HOME/.zshrc | sed "s/alias //g" | sed "s/my-aliases//g" | sed "s/\\t//g" | sort |    pv -qL 3000
+grep -i 'alias ' $HOME/.bashrc | sed "s/alias //g" | sed "s/my-aliases//g" | sed "s/\\t//g" | sort |    pv -qL 3000
 echo
 
-# This part of my functions actually showing the functions listed in the .zshrc file.
+# This part of my functions actually showing the functions listed in the .bashrc file.
 echo -e "${color2}"
 echo "my-functions"
-echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.zshrc"
+echo "${ILRESTORE}${ILCOLOR1}/home/msifland/.bashrc"
 echo -e "${color}"
 # Removing items to show in list.
-grep -i 'function ' $HOME/.zshrc | sed 's#function goto(){##g' | sed "s/function //g" | sed "s/(){//g" | sed "s/my-functions//g" | sort | sed '/^\s*$/d' |    pv -qL 3000
+grep -i 'function ' $HOME/.bashrc | sed 's#function goto(){##g' | sed "s/function //g" | sed "s/(){//g" | sed "s/my-functions//g" | sort | sed '/^\s*$/d' |    pv -qL 3000
 echo
 
 # Showing scripts and rom_scripts

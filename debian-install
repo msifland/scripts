@@ -232,8 +232,9 @@ do
 done
 sleep 1
 
-read -p "Would you like to install your personal files for this installation(scripts, pkg_bkups, etc.[y/n]? " per_fls
-sleep 1
+echo
+read -p "Would you like to install your personal files for this installation(scripts, pkg_bkups, Documents, etc.[y/n]? " per_fls
+sleep 1cf
 	cp -rf $HOME/Documents $INST_PTH/home/$usrnme/
 	cp -rf $HOME/"Modules&Apps" $INST_PTH/home/$usrnme/
 	cp -rf $HOME/pkg_bkups $INST_PTH/home/$usrnme/
@@ -262,23 +263,14 @@ if [[ "$con_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 echo
-read -p "Would you like to copy your personal bash, zsh and conky files for this installation[y/n]? " cpy_sh
+read -p "Would you like to copy your personal bash and conky files for this installation[y/n]? " cpy_sh
+sleep 1
 if [[ "$cpy_sh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Copying these files now. . ."
 	sleep 1
     cp -rf $HOME/.conkyrc $INST_PTH/home/$usrnme/
-    cp -rf $HOME/.conky_has_wireless $INST_PTH/home/$usrnme/
     cp -rf $HOME/.conkyrc.bak $INST_PTH/home/$usrnme/
-	cp -rf $HOME/.zshrc $INST_PTH/home/$usrnme/
-	cp -rf $HOME/.oh-my-zsh $INST_PTH/home/$usrnme/	
 	cp -rf $HOME/.bashrc $INST_PTH/home/$usrnme/
-fi
-sleep 1
-
-echo
-read -p "Would you like to change default shell from bash to zsh[y/n]? " def_shell
-if [[ "$def_shell" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	sed -i 's:bash:zsh:g' $INST_PTH/etc/passwd
 fi
 sleep 1
 
@@ -301,6 +293,7 @@ sleep 1
 
 echo
 echo "Chroot'ing back in to environment to update grub and anything else you need. Type 'exit' when done. . ."
+sleep 1
 echo
 grb_inst_su=$(echo "${part_name%?}")
 grb_inst="$grb_inst_su"
@@ -311,6 +304,7 @@ sleep 1
 echo
 
 echo "Updating permissions to $usrnme"
+sleep 1
 sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
 echo
 read -p "Pausing in case you missed something. You can open a new termianl and chroot back into enviroment(sudo chroot $INST_PTH /bin/sh), or open file explorer to $INST_PTH. Press [ENTER] to finish the process."
