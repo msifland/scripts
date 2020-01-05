@@ -24,7 +24,6 @@ $HOME/.cache
 $HOME/.config
 $HOME/.icons
 $HOME/.local
-$HOME/.oh-my-zsh
 $HOME/.profile
 $HOME/.ssh
 $HOME/.themes
@@ -35,7 +34,6 @@ $HOME/.bash*
 $HOME/.conky*
 $HOME/.git*
 $HOME/.repo*
-$HOME/.zsh*
 /usr/share/mate*
 "
 

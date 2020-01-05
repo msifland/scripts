@@ -28,7 +28,7 @@ apt install -y ca-certificates
 dpkg-reconfigure tzdata
 apt install -y locales
 dpkg-reconfigure locales
-apt install -y wget nano pv git screenfetch jshon dialog zsh zsh-syntax-highlighting tasksel
+apt install -y wget nano pv git screenfetch jshon dialog tasksel
 
 echo
 echo "Installing linux-image and firmware files. . ."
