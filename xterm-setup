@@ -22,7 +22,7 @@ if grep -wq "xterm\*geometry: 80x40" $X_FILE; then
 	sleep 2
 else
 	echo
-	echo "${ILCOLOR4}Adding configuration it $X_FILE. . .${ILRESTORE}"
+	echo "${ILCOLOR4}Adding configuration to $X_FILE. . .${ILRESTORE}"
 	sleep 2
 	cat << EOF > $X_FILE
 xterm*Background: black
