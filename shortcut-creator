@@ -68,6 +68,6 @@ if [[ "$YN_APPS" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 else
 	sleep 1
 	echo
-	echo "${ILCOLOR3}Ok, you can alway copy later.${ILRESTORE}"
+	echo "${ILCOLOR3}Ok, you can always copy later.${ILRESTORE}"
 	sleep 1
 fi

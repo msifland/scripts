@@ -139,9 +139,7 @@ if test $FOR_INST; then
 
 		# Build, remove uneeded files, install.
 		# oldefconfig pulls current options from .config file and automatically answers new options without prompt.
-		#make olddefconfig
-		make allyesconfig
-		make allmodconfig
+		make olddefconfig
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		echo 'spike' | sudo -S make modules_install
 
