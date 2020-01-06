@@ -3,7 +3,7 @@
 # Put your code below this line.
 
 clear
-echo "${ILCOLOR4}           ###########    Updating your system now   ###########${ILRESTORE}"
+echo "${ILCOLOR4}           ###########    Updating your USB system now   ###########${ILRESTORE}"
 echo -e ${ILCOLOR2}
 echo $(date +%m-%d-%Y) $(date +"%r")
 tm_wh_start=$(date +"%s")
