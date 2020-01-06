@@ -14,6 +14,7 @@ echo "This script is set up to install Debian Mate. So be sure to select Mate De
 echo
 sleep 1
 
+# Unmounting all
 sudo umount -a
 sudo umount $INST_PTH/proc
 sudo umount $INST_PTH/sys
@@ -21,6 +22,11 @@ sudo umount $INST_PTH/dev/pts
 sudo umount $INST_PTH/dev
 sudo umount $INST_PTH
 sleep 1
+# Re-mounting boot for main if it exists.
+if blkid | grep -i "boot"; then
+	blk_mnt=$(blkid | grep -i "boot" | awk '{ print $1 }')
+	sudo mount &blk_mnt /boot
+fi
 
 if [[ -d $INST_PTH ]]; then
 	echo
@@ -319,13 +325,18 @@ echo
 echo "Attempting to umount devices and system files. . ."
 echo
 sleep 1
+# Unmounting all
 sudo umount -a
 sudo umount $INST_PTH/proc
 sudo umount $INST_PTH/sys
 sudo umount $INST_PTH/dev/pts
 sudo umount $INST_PTH/dev
 sudo umount $INST_PTH
-
+# Re-mounting boot for main if it exists.
+if blkid | grep -i "boot"; then
+	blk_mnt=$(blkid | grep -i "boot" | awk '{ print $1 }')
+	sudo mount &blk_mnt /boot
+fi
 echo
 echo "All done."
 echo
