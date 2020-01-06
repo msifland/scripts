@@ -91,7 +91,7 @@ sleep 1
 
 echo
 echo "${ILCOLOR1}Backup up .conkyrc, .bashrc, and .xprofile files. . .${ILRESTORE}"
-cp -f $HOME/{.bashrc,.conkyrc,.conkyrc.bak,.xprofile} $HOME/pkg_bkups/backups/
+cp -f $HOME/{.bashrc,.blerc,.conkyrc,.conkyrc.bak,.xprofile} $HOME/pkg_bkups/backups/
 sleep 1
 
 echo
