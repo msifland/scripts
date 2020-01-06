@@ -22,14 +22,14 @@ EXCLUDE="--exclude-dir=^/home/msifland/roms
 --exclude-dir=^/sys
 --exclude-dir=^/dev
 --exclude-dir=^/proc
---exclude=^metasploit-framework
---exclude-dir=^/opt/metasploit-framework
+--exclude=.*metasploit-framework.*
 "
 # Example for exclusion:
 # EXCLUDE="--exclude-dir=^/home/msifland/roms
 # --exclude-dir=^/home/msifland/scripts
 # --exclude-dir=^/home/msifland/.cache
 # --exclude-dir=^/home/msifland/.local/share/Trash
+# --exclude-dir=^/opt/metasploit-framework
 # "
 
 INCLUDE="
