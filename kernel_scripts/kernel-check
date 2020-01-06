@@ -119,8 +119,7 @@ Comment
 
 		# Command 'oldefconfig' pulls current options from .config file and automatically answers new options without prompt.
 		make olddefconfig
-		make menuconfig
-
+		#make menuconfig
 		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
 		echo 'spike' | sudo -S make modules_install
 

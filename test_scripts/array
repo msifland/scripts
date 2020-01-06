@@ -2,6 +2,7 @@
 # This is a blank bash script document.
 # Put your code below this line.
 echo
+<< comment
 read -p "Did you use a separate /home or /boot partition[y/n]? " sep_hm
 sleep 1
 if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -19,3 +20,17 @@ if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
 		sleep 1
 	done
 fi
+comment
+
+#simple array
+read -p "enter apps to install separted by a [SPACE]: " sep_wrds
+sleep 1
+
+echo
+sep_wrds_arr=($sep_wrds)
+for wrd in ${sep_wrds_arr[@]}; do
+	echo
+	echo "sudo apt install $wrd"
+	sudo apt install --reinstall $wrd
+	sleep .5
+done
