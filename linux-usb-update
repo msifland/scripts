@@ -101,6 +101,13 @@ done
 sleep 1
 
 echo
+echo "${ILCOLOR1}Backing up crontab. . .${ILRESTORE}"
+if sudo test -s "/var/spool/cron/crontabs/msifland"; then
+	crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
+fi
+sleep 1
+
+echo
 echo "${ILCOLOR1}Upating git repos. . .${ILRESTORE}"
 cd $HOME/scripts
 git stash
