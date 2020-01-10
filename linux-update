@@ -89,9 +89,10 @@ fi
 cp -rf /etc/apt/* $DEST/apt/
 sleep 1
 
+RC_FILES="$HOME/{.bashrc,.blerc,.conkyrc,.conkyrc.bak,.xprofile}"
 echo
-echo "${ILCOLOR1}Backup up .conkyrc, .bashrc, and .xprofile files. . .${ILRESTORE}"
-cp -f $HOME/{.bashrc,.blerc,.conkyrc,.conkyrc.bak,.xprofile} $HOME/pkg_bkups/backups/
+echo "${ILCOLOR1}Backup up $RC_FILES files. . .${ILRESTORE}"
+cp -f $RC_FILES $HOME/pkg_bkups/backups/
 sleep 1
 
 echo
