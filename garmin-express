@@ -3,6 +3,35 @@
 # Put your code below this line.
 echo
 echo "${ILCOLOR2}Starting GarminExpress. . .${ILRESTORE}"
+GARM_DIR="$HOME/GarminExpress"
+WIN_GARM_DIR="$GARM_DIR/drive_c/Program Files/Garmin/Express"
+
+function rn-grm(){
+if [[ ! -d $GARM_DIR ]]; then
+	mkdir $GARM_DIR
+fi
+WINEARCH=win32 WINEPREFIX=$GARM_DIR winetricks dotnet452 vcrun2010 corefonts
+WINEARCH=win32 WINEPREFIX=$GARM_DIR winetricks win7
+
+if [[ ! -d $WIN_GARM_DIR ]]; then
+	WINEPREFIX=$HOME/GarminExpress wine explorer /desktop=garmin,1366x768 $HOME/'Modules&Apps'/GarminExpress.exe
+fi
+
 echo
 sleep 1
-WINEPREFIX=/home/msifland/GarminExpress wine explorer /desktop=garmin,1366x768 '/home/msifland/GarminExpress/drive_c/Program Files/Garmin/Express/express.exe'
+WINEPREFIX=$HOME/GarminExpress wine explorer /desktop=garmin,1600x900 "$HOME/GarminExpress/drive_c/Program Files/Garmin/Express/express.exe"
+}
+rn-grm
+
+if [ $? -eq 0 ]; then
+	echo
+	echo "${ILCOLOR3}No errors detected.${ILRESTORE}"
+else
+	echo
+	echo "Error detected!!!"
+	read -p "Would you like to reinstall Garmin Express?[y/n] "
+	rm -rf $GARM_DIR
+	rn-grm
+fi
+sleep 1
+exit
