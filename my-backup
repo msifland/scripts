@@ -1,14 +1,10 @@
 #!/bin/bash
-# Bash Color Random
-COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
-RESTORE='\033[0m'
 
 PSWD="spike"
 echo $PSWD | sudo -S -v
 # What Files or Folders to Take Backup of.
 #/usr/share/mate*
-BACKUP_FILES="
-$HOME/Brother_Printer
+BACKUP_FILES="$HOME/Brother_Printer
 $HOME/Documents
 $HOME/Dropbox
 $HOME/GrubThemes
@@ -35,12 +31,10 @@ $HOME/.bash*
 $HOME/.conky*
 $HOME/.git*
 $HOME/.repo*
-/usr/share/mate*
-"
+/usr/share/mate*"
 
 # Excluded files and folders
-EXCLUDE="
---exclude=$HOME/.cache/chromium
+EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/.cache/chrome-remote-desktop
 --exclude=$HOME/.cache/mozilla
 --exclude=$HOME/.cache/tracker
@@ -66,8 +60,7 @@ EXCLUDE="
 --exclude=$HOME/Dropbox/Android
 --exclude=$HOME/Dropbox/Backups
 --exclude=$HOME/Dropbox/.dropbox.cache
---exclude=$HOME/Dropbox/.dropbox
-"
+--exclude=$HOME/Dropbox/.dropbox"
 
 # Destination of Backup.
 DEST="$HOME/Dropbox/Backups"
@@ -78,16 +71,23 @@ HOST_NAME=$(whoami)
 ARCHIVE_FILE=$HOST_NAME-$DAY".tar.gz"
 
 function backup(){
+	cd
 	echo
 	echo
 	echo $(date +%m-%d-%Y) $(date +"%r")
+	tm_wh_start=$(date +"%s")
 	echo
 	sleep 1
 
 	# Remove old backups if more than 2
-	echo "Remove old backups first. . ."
-	sleep 1
-	echo -e ${RESTORE}
+	echo "${ILCOLOR2}Remove old backups first. . .${ILRESTORE}"
+	sleep 2
+	RMV_FLS=$(ls $DEST/* -t | sed -e '1,4d')
+	for fle in $RMV_FLS
+	do 
+		echo $fle
+		sleep .25
+	done
 	echo "ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f"
 	if [[ ! -d "$DEST" ]]; then
 		mkdir $DEST
@@ -100,43 +100,34 @@ function backup(){
 	sleep 1
 
 	# Print start status message.
-	echo -e ${COLOR}
-	echo "Backing up:"
-	echo -e ${RESTORE}
+	echo "${ILCOLOR2}Backing up:${ILRESTORE}"
 	echo "$BACKUP_FILES"
-	echo -e ${COLOR}
-	echo "To $DEST/$ARCHIVE_FILE"
+	echo "${ILCOLOR2}To $DEST/$ARCHIVE_FILE"
 	echo
 	echo
 	sleep 3
 
 	# Print excluded files
-	echo "Excluding:"
-	echo -e ${RESTORE}
+	echo "Excluding:${ILRESTORE}"
 	echo "$EXCLUDE" | sed 's/--exclude=//g'
 	echo
 	sleep 3
 
 	# Backup The Files using tar.
-	echo -e ${COLOR}
-	echo "Backing up now. . ."
+	echo "${ILCOLOR2}Backing up now. . .${ILRESTORE}"
 	sleep 1
-	echo -e ${RESTORE}
 	sudo tar -czf $DEST/$ARCHIVE_FILE $EXCLUDE $BACKUP_FILES
-	echo
 	sleep 1
 
 	# Print end status message.
-	echo -e ${COLOR}
-	echo "Backup finished"
+	echo "${ILCOLOR2}Backup finished"
 	echo
 	sleep 1
 
 	# Change ownship of files from root to user. Could be root if done with sudo above
-	echo "Making sure ownership is correct. . ."
+	echo "Making sure ownership is correct. . .${ILRESTORE}"
 	echo
 	sleep 1
-	echo -e ${RESTORE}
 	for ROOT_FILE in $(find $HOME/Dropbox/Backups/* -type f -user root); do
 		echo "Changing ownership of $ROOT_FILE from root:root to msifland:msifland. . .sudo chown msifland:msifland $ROOT_FILE"
 		sudo chown msifland:msifland $ROOT_FILE
@@ -144,26 +135,24 @@ function backup(){
 	done
 
 	# Long listing of files in $DEST to check file sizes.
-	echo -e ${COLOR}
-	echo "Showing files in $HOME/Dropbox/Backups/ . . ."
-	echo -e ${RESTORE}
+	echo "${ILCOLOR2}Showing files in $HOME/Dropbox/Backups/ . . .${ILRESTORE}"
 	ls -lh $DEST
 	echo
 	sleep 1
 	
 	# Instructions on how to edit this file
-	echo -e ${COLOR}
-	echo "You can edit files and folders to backup and exclude in $HOME/scripts/my_backup or by typing edit-my-backup."
+	echo "${ILCOLOR2}You can edit files and folders to backup and exclude in $HOME/scripts/my_backup or by typing edit-my-backup.${ILRESTORE}"
 	echo
 	sleep 1
 
 	echo $(date +%m-%d-%Y) $(date +"%r")
+	tm_wh_end=$(date +"%s")
+		tm_wh_diff=$(($tm_wh_end - $tm_wh_start))
+	echo "${ILCOLOR2}It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 	echo
 	sleep 1
 }
 
 # Call funtion to backup
-echo -e ${COLOR}
 backup | tee $HOME/Dropbox/Backups/my_backup_log.txt
-echo -e ${RESTORE}
 exit 0
