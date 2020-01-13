@@ -1,12 +1,12 @@
 SHELL=/bin/bash
-SESSION_MANAGER=local/debian:@/tmp/.ICE-unix/1791,unix/debian:/tmp/.ICE-unix/1791
-WINDOWID=79691783
+SESSION_MANAGER=local/debian:@/tmp/.ICE-unix/1586,unix/debian:/tmp/.ICE-unix/1586
+WINDOWID=71303175
 QT_ACCESSIBILITY=1
 COLORTERM=truecolor
 XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
-SSH_AUTH_SOCK=/tmp/ssh-JOB1OjDUUZb0/agent.1791
+SSH_AUTH_SOCK=/tmp/ssh-9Roei7Eu5oQD/agent.1586
 DESKTOP_SESSION=lightdm-xsession
-SSH_AGENT_PID=1874
+SSH_AGENT_PID=1668
 NO_AT_BRIDGE=1
 GTK_MODULES=gail:atk-bridge
 XDG_SEAT=seat0
