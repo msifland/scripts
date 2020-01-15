@@ -111,6 +111,7 @@ function selected_path(){
 				sleep 1
 			fi
 			scan_it
+			sudo umount "$PTH_MNT"
 		else
 			echo
 			sleep 1
@@ -119,7 +120,6 @@ function selected_path(){
 			selected_path
 		fi
 	fi
-	sudo umount "$PTH_MNT"
 }
 # Call to start script at selected_path function, which will then call scan_it function.
 selected_path | tee $HOME/infections/.custom-scan.txt
