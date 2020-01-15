@@ -10,6 +10,16 @@ fi
 echo $PSWD | sudo -S -v
 sudo umount /media &> /dev/null
 
+echo
+echo "Checking dependencies. . ."
+if ! dpkg --get-selections | grep -qw "clamav"; then
+	sudo apt install clamav
+else
+	echo
+	echo "clamav found."
+fi
+sleep 1
+
 # Description
 echo
 echo "${ILCOLOR2}We are going to scan a selected partition or folder for viruses.${ILRESTORE}"
