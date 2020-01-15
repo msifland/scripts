@@ -2,4 +2,5 @@
 # This is a blank bash script document.
 # Put your code below this line.
 sleep 60
-env $(cat /home/msifland/scripts/cron_scripts/env-environment) /usr/bin/xterm -e "bash -c \"source /home/msifland/.bashrc; clear; /home/msifland/scripts/conky-check\""
+cd
+env $(cat ~/scripts/cron_scripts/env-environment) /usr/bin/xterm -e "bash -c \"source ~/.bashrc; clear; $HOME/scripts/conky-check\""
