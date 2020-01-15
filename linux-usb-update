@@ -41,14 +41,22 @@ sleep 1
 
 echo
 echo "${ILCOLOR1}Upating git repos. . .${ILRESTORE}"
+echo "$HOME/pkg_bkups"
+cd $HOME/pkg_bkups
+git stash
+git fetch
+git pull
+echo "$HOME/scripts"
 cd $HOME/scripts
 git stash
 git fetch
 git pull
+echo "$HOME/Documents"
 cd $HOME/Documents
 git stash
 git fetch
 git pull
+echo "$HOME/Projects"
 cd $HOME/Projects
 git stash
 git fetch
