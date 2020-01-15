@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/bin/bash -i
 # This is call on startup from .config/autostart to create an env file to use for cron scripts to be able to run cron jobs in an open terminal.
-echo
 sleep 55
-mate-terminal -e "bash -c \"source /home/msifland/.bashrc; clear; env > $HOME/scripts/cron_scripts/env-environment\""
+mate-terminal -e "bash -c \"source ~/.bashrc; env > $HOME/scripts/cron_scripts/env-environment; sed -i '/LESSCLOSE/d' $HOME/scripts/cron_scripts/env-environment; sed -i '/LESSOPEN/d' $HOME/scripts/cron_scripts/env-environment\""
+
+
