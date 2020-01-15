@@ -80,7 +80,7 @@ function selected_path(){
 	# Ask name of directory or partition to scan.
 	echo
 	read -p "${ILCOLOR2}Scan location: You can either type in one of the partitions above for a full scan of that partition(/dev/sda2), or you can type in a custom location full path(/home/msifland/scripts):${ILRESTORE} " PTH
-
+	PTH_MNT="$PTH"
 	# Error handling if path or dev block exists. If exists call scan function, if not, then start over with this function.
 	if [[ -d $PTH ]]; then
 		echo
@@ -96,10 +96,20 @@ function selected_path(){
 		if sudo blkid | awk '{print $1}' | grep -w "$PTH"; then
 			echo
 			sleep 1
-			echo "${ILCOLOR2}Ok, mounting $PTH to /media and scanning. . .${ILRESTORE}"
-			sleep 1
-			sudo mount $PTH /media
-			PTH=/media
+			if sudo blkid | grep "$PTH" | grep -i "type=\"ntfs\""; then
+				echo "${ILCOLOR2}Ok, mounting $PTH to /mnt/ntfs and scanning. . .${ILRESTORE}"
+				if [[ ! -d /mnt/ntfs ]]; then
+					sudo mkdir /mnt/ntfs
+				fi
+				sudo mount -t ntfs "$PTH" /mnt/ntfs
+				PTH=/mnt/ntfs
+				sleep 1
+			else
+				echo "${ILCOLOR2}Ok, mounting $PTH to /media and scanning. . .${ILRESTORE}"
+				sudo mount $PTH /media
+				PTH=/media
+				sleep 1
+			fi
 			scan_it
 		else
 			echo
@@ -109,7 +119,7 @@ function selected_path(){
 			selected_path
 		fi
 	fi
-
+	sudo umount "$PTH_MNT"
 }
 # Call to start script at selected_path function, which will then call scan_it function.
 selected_path | tee $HOME/infections/.custom-scan.txt
