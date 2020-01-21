@@ -13,11 +13,12 @@ fi
 
 PSWD="spike"
 
-EXCLUDE="--exclude-dir=^/home/msifland/roms
+EXCLUDE="--exclude-dir=^$HOME/roms
 --exclude-dir=^$HOME/.local/share/Trash
---exclude-dir=^/root/.local/share/Trash
 --exclude-dir=^$HOME/Modules&Apps
 --exclude-dir=^$HOME/infections
+--exclude-dir=^$HOME/GarminExpress
+--exclude-dir=^/root/.local/share/Trash
 --exclude-dir=^/media
 --exclude-dir=^/sys
 --exclude-dir=^/dev
