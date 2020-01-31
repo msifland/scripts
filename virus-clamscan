@@ -18,6 +18,7 @@ EXCLUDE="--exclude-dir=^$HOME/roms
 --exclude-dir=^$HOME/Modules&Apps
 --exclude-dir=^$HOME/infections
 --exclude-dir=^$HOME/GarminExpress
+--exclude-dir=^$HOME/.wine
 --exclude-dir=^/root/.local/share/Trash
 --exclude-dir=^/media
 --exclude-dir=^/sys
