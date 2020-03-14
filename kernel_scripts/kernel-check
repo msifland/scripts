@@ -139,6 +139,7 @@ Comment
 		echo
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
+<< Comment
 		# Build perf package
 		export WORK_DIR="$WORK_DIR"
 		export GET="$GET_VER"
@@ -160,6 +161,7 @@ Comment
 		if [[ -d $HOME/tmp/perf-package ]]; then
 			rm -rf $HOME/tmp/perf-package
 		fi
+Comment
 
 		# This section is for if you are using nvidia drivers.
 << Comment
