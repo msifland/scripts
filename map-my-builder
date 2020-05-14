@@ -265,7 +265,6 @@ function build_map(){
 	echo -e "${ILRESTORE}"
 
 	cd $HOME
-	$HOME/scripts/free-ram
 	exit
 }
 
