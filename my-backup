@@ -51,12 +51,15 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/.config/chrome-remote-desktop
 --exclude=$HOME/.config/chromium
 --exclude=$HOME/.config/google-chrome
+--exclude=$HOME/.config/skypeforlinux
+--exclude=$HOME/.config/Code
 --exclude=$HOME/.local/share/applications
 --exclude=$HOME/.local/share/baloo
 --exclude=$HOME/.local/share/akonadi
 --exclude=$HOME/.local/share/lutris
 --exclude=$HOME/.local/share/Steam
 --exclude=$HOME/.local/share/Trash
+--exclude=$HOME/.local/share/data
 --exclude=$HOME/Dropbox/Android
 --exclude=$HOME/Dropbox/Backups
 --exclude=$HOME/Dropbox/.dropbox.cache
