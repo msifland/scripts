@@ -118,8 +118,13 @@ echo "${ILCOLOR2}Updating local git repos. . .${ILRESTORE}"
 $HOME/scripts/git-update
 sleep 1
 
-echo
-echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
+if [ $? -eq 0 ]; then
+	echo
+	echo "${ILCOLOR3}All is good.${ILRESTORE}"
+else
+	echo
+	echo "${ILCOLOR1}Error detected!!!${ILRESTORE}"
+fi
 sleep 1
 
 echo
