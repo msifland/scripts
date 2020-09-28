@@ -53,7 +53,7 @@ done
 
 # Start conky
 echo "Starting conky now. . ."
-conky
+detach conky
 sleep 10
 # Kill current terminal that this process is running in.
 kill -9 $PPID

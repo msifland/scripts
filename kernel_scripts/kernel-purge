@@ -23,7 +23,7 @@ sleep 1
 ##################################################################
 
 KERNS1=$(ls /boot/vmlinuz* | sed 's:/boot/vmlinuz:linux-image:g' | sort -V | tac)
-KERN_FILE=$HOME/tmp/kern_file
+KERN_FILE=/home/msifland/tmp/kern_file
 rm -rf $KERN_FILE
 
 if [[ ! -f $KERN_FILE ]]; then
@@ -177,7 +177,7 @@ for j in $FOR_REM; do
 	fi
 Comment
 done
-
+<<Comment
 # /var/lib/initramfs-tools files. This is where the system reads and tries to create a boot image from.
 echo
 echo "${ILCOLOR1}Also showing kernel info from /var/lib/initramfs-tools. This folder is where the system tries to create kernels from. If there are extra kernels listed there, delete them manually.${ILRESTORE}"
@@ -203,7 +203,7 @@ else
 	echo "Ok not deleting anything in /var/lib/initramfs-tools."
 fi
 sleep 3
-
+Comment
 if [ $? -eq 0 ]; then
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
