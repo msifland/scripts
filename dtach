@@ -1,7 +1,0 @@
-#!/bin/bash
-
-dtach=$1
-
-$dtach & # Runs the process - script on background
-
-disown -h %$(jobs -l | grep $(ps -A | grep $dtach | cut --delimiter=' ' -f1) | cut --delimiter=' ' -f1 | tr -d '[]+') # and then disowns it from parents process
