@@ -26,9 +26,9 @@ if [[ "$yn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Working. . ."
 	sleep 2
 	echo
-	grep -rsni --exclude-dir=.git $initialtext $PWD #2> /dev/null | grep -v .svn
+	grep -rsni --exclude-dir=.git "$initialtext" $PWD #2> /dev/null | grep -v .svn
 	echo
-	grep -rsni --exclude-dir=.git $initialtext $PWD  | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+	grep -rsni --exclude-dir=.git "$initialtext" $PWD  | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
 	sleep 2
 	echo -e "${RESTORE}"
 else
@@ -37,9 +37,9 @@ else
 	echo "Working. . ."
 	sleep 2
 	echo
-	grep -sni --exclude-dir=.git $initialtext $PWD/{*,.*} #2> /dev/null | grep -v .svn
+	grep -sni --exclude-dir=.git "$initialtext" $PWD/{*,.*} #2> /dev/null | grep -v .svn
 	echo
-	grep -sni --exclude-dir=.git $initialtext $PWD/{*,.*} | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+	grep -sni --exclude-dir=.git "$initialtext" $PWD/{*,.*} | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
 	sleep 2
 	echo -e "${RESTORE}"
 fi
