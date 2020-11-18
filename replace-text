@@ -34,18 +34,18 @@ function replace(){
 			replace
 		fi
 		echo
-		echo "${ILCOLOR1}Ok replaceing text in "$filename". . ."
+		echo "${ILCOLOR1}Ok replaceing text in "$filename". . .${ILCOLOR2}"
 		sleep 1
-		echo
 		# Show occurances of text to replace
-		grep -n $initialtext $filename
-		grep -n $initialtext $filename | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+		grep -n "$initialtext" $filename
+		grep -n "$initialtext" $filename | echo "${ILCOLOR1}$(wc -l) occurances of $initialtext."
 		# Replacement command
 		perl -i -p -e "s:$initialtext:$replacementtext:g" $filename
 		echo
 		# Show new occurances in file after replacement
 		echo "${ILCOLOR1}New occurances with ${ILCOLOR2}$replacementtext:"
-		grep -n $replacementtext $filename
+		grep -n "$replacementtext" $filename
+		grep -n "$replacementtext" $filename | echo "${ILCOLOR1}$(wc -l) occurances of $replacementtext."
 		echo
 		echo "${ILCOLOR1}Text string ${ILCOLOR2}$initialtext${ILCOLOR1} has been replaced with text string ${ILCOLOR2}$replacementtext${ILRESTORE}."
 		sleep 1
@@ -60,33 +60,34 @@ function replace(){
 		echo
 		sleep 1
 		if [[ "$dir" == "" ]]; then # If current directory is chosen
-			echo "${ILCOLOR1}Ok replacing text in entire "$PWD" directory. . ."
+			echo "${ILCOLOR1}Ok replacing text in entire "$PWD" directory. . .${ILCOLOR2}"
 			sleep 1
-			echo
 			# Show occurances of text to replace
-			grep -n $initialtext $PWD/*
-			grep -n $initialtext $PWD/* | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+			grep -n "$initialtext" $PWD/*
+			grep -n "$initialtext" $PWD/* | echo "${ILCOLOR1}$(wc -l) occurances of $initialtext."
 			# Replacement command
 			perl -i -p -e "s:$initialtext:$replacementtext:g" *
 			echo
 			# Show files with new occurances of text replaced
 			echo "${ILCOLOR1}New occurances with ${ILCOLOR2}$replacementtext:"
-			grep -n $replacementtext $PWD/*
+			grep -n "$replacementtext" $PWD/*
+			grep -n "$replacementtext" $PWD/* | echo "${ILCOLOR1}$(wc -l) occurances of $replacementtext."
 			echo
 		else # Choosing directory typed out ex. path/to/dir
 			echo
-			echo "${ILCOLOR1}Ok replacing text in "$dir" directory. . ."
+			echo "${ILCOLOR1}Ok replacing text in "$dir" directory. . .${ILCOLOR2}"
 			sleep 1
 			echo
 			# Show occurances of text ot replace
-			grep -n $initialtext $dir/*
-			grep -n $initialtext $dir/* | echo "${ILCOLOR2}$(wc -l) occurances of $initialtext."
+			grep -n "$initialtext" $dir/*
+			grep -n "$initialtext" $dir/* | echo "${ILCOLOR1}$(wc -l) occurances of $initialtext."
 			# Replacement command
 			perl -i -p -e "s:$initialtext:$replacementtext:g" $dir/*
 			echo
 			# Show files with new occurances of text replaced
 			echo "${ILCOLOR1}New occurances with ${ILCOLOR2}$replacementtext:"
-			grep -n $replacementtext $dir/*
+			grep -n "$replacementtext" $dir/*
+			grep -n "$replacementtext" $dir/* | echo "${ILCOLOR1}$(wc -l) occurances of $replacementtext."
 			echo
 		fi
 		echo "${ILCOLOR1}Text string ${ILCOLOR2}$initialtext${ILCOLOR1} has been replaced with text string ${ILCOLOR2}$replacementtext${ILRESTORE}."
