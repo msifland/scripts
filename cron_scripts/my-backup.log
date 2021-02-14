@@ -1,0 +1,91 @@
+[sudo] password for msifland: 
+
+02-14-2021 03:47:23 PM
+
+[1;38;5;170mRemove old backups first. . .[0m
+/home/msifland/Dropbox/Backups/msifland-02-11-2021.tar.gz
+ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
+
+[1;38;5;170mBacking up:[0m
+/home/msifland/Brother_Printer
+/home/msifland/Documents
+/home/msifland/Dropbox
+/home/msifland/GrubThemes
+/home/msifland/maps
+/home/msifland/Modules&Apps
+/home/msifland/pkg_bkups
+/home/msifland/Projects
+/home/msifland/scripts
+/home/msifland/Templates
+/home/msifland/Wallpapers
+/home/msifland/.anydesk
+/home/msifland/.blerc
+/home/msifland/.cache
+/home/msifland/.config
+/home/msifland/.icons
+/home/msifland/.local
+/home/msifland/.profile
+/home/msifland/.ssh
+/home/msifland/.themes
+/home/msifland/.face
+/home/msifland/.xprofile
+/home/msifland/.Xresources
+/home/msifland/.bash*
+/home/msifland/.conky*
+/home/msifland/.git*
+/home/msifland/.repo*
+/usr/share/mate*
+[1;38;5;170mTo /home/msifland/Dropbox/Backups/msifland-02-14-2021.tar.gz
+
+
+Excluding:[0m
+/home/msifland/.cache/chromium
+/home/msifland/.cache/chrome-remote-desktop
+/home/msifland/.cache/mozilla
+/home/msifland/.cache/tracker
+/home/msifland/.cache/wine*
+/home/msifland/.cache/google-chrome
+/home/msifland/.cache/at-spi*
+/home/msifland/maps/*.img
+/home/msifland/maps/*.old
+/home/msifland/maps/Combine
+/home/msifland/maps/US_Midwest
+/home/msifland/maps/US_South
+/home/msifland/maps/downloads
+/home/msifland/maps/tennessee
+/home/msifland/.config/chrome-remote-desktop
+/home/msifland/.config/chromium
+/home/msifland/.config/google-chrome
+/home/msifland/.config/skypeforlinux
+/home/msifland/.config/Code
+/home/msifland/.local/share/applications
+/home/msifland/.local/share/baloo
+/home/msifland/.local/share/akonadi
+/home/msifland/.local/share/lutris
+/home/msifland/.local/share/Steam
+/home/msifland/.local/share/Trash
+/home/msifland/.local/share/data
+/home/msifland/Dropbox/Android
+/home/msifland/Dropbox/Backups
+/home/msifland/Dropbox/.dropbox.cache
+/home/msifland/Dropbox/.dropbox
+
+[1;38;5;170mBacking up now. . .[0m
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+[1;38;5;170mBackup finished
+
+Making sure ownership is correct. . .[0m
+
+[1;38;5;170mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
+total 1.6G
+-rw-r--r-- 1 msifland msifland 535M Feb 12 01:31 msifland-02-12-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 534M Feb 13 01:30 msifland-02-13-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 535M Feb 14 15:48 msifland-02-14-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 2.2K Feb 14 15:48 my_backup_log.txt
+
+[1;38;5;170mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
+
+02-14-2021 03:48:30 PM
+[1;38;5;170mIt took 1 minutes 7 seconds to run whole process.[0m
+
