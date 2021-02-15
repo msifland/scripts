@@ -5,13 +5,12 @@ echo
 echo "Downloading screenfetch latest and updating screenfetch to reflect my custom colors. . ."
 echo
 sleep 1
-if [[ -d $HOME/pkg_bkups/backups/screenfetch ]]; then
-	cd $HOME/pkg_bkups/backups/screenfetch
-else
-	mkdir $HOME/pkg_bkups/backups/screenfetch
-	cd $HOME/pkg_bkups/backups/screenfetch
+if [[ -d $HOME/pkg_bkups/backups/screenFetch ]]; then
+	rm -rf $HOME/pkg_bkups/backups/screenFetch
 fi
-git pull https://github.com/KittyKatt/screenFetch
+cd $HOME/pkg_bkups/backups/
+git clone https://github.com/KittyKatt/screenFetch
+cd $HOME/pkg_bkups/backups/screenFetch
 echo 'spike' | sudo -S cp screenfetch-dev /usr/bin/screenfetch
 sudo chmod +x /usr/bin/screenfetch
 cd

@@ -1,0 +1,110 @@
+[1;38;5;160m
+Removing old build logs. . .
+
+[0m
+[1;38;5;160m
+Start Time:
+Date: 02-15-21
+Time: 02:30:03 AM
+
+Scanning: 
+/
+
+
+Excluding:
+/home/msifland/roms
+/home/msifland/.local/share/Trash
+/home/msifland/Modules&Apps
+/home/msifland/infections
+/home/msifland/GarminExpress
+/home/msifland/.wine
+/root/.local/share/Trash
+/media
+/sys
+/dev
+/proc
+--exclude=.*metasploit-framework.*
+
+
+Updating clamscan before run. . .
+
+[sudo] password for msifland: Mon Feb 15 02:30:11 2021 -> ClamAV update process started at Mon Feb 15 02:30:11 2021
+Mon Feb 15 02:30:11 2021 -> daily.cld database is up to date (version: 26080, sigs: 4060834, f-level: 63, builder: raynman)
+Mon Feb 15 02:30:11 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
+Mon Feb 15 02:30:11 2021 -> bytecode.cld database is up to date (version: 331, sigs: 94, f-level: 63, builder: anvilleg)
+
+Running clamscan to scan for viruses. . .
+
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
+LibClamAV Error: CRITICAL: fmap() failed
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/arp.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/arp.exe: copied to '/home/msifland/infections/arp.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fsutil.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fsutil.exe: copied to '/home/msifland/infections/fsutil.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/aspnet_regiis.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/aspnet_regiis.exe: copied to '/home/msifland/infections/aspnet_regiis.exe.009'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wusa.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wusa.exe: copied to '/home/msifland/infections/wusa.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/conhost.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/conhost.exe: copied to '/home/msifland/infections/conhost.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/tasklist.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/tasklist.exe: copied to '/home/msifland/infections/tasklist.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regini.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regini.exe: copied to '/home/msifland/infections/regini.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regasm.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regasm.exe: copied to '/home/msifland/infections/regasm.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wevtutil.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wevtutil.exe: copied to '/home/msifland/infections/wevtutil.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/servicemodelreg.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/servicemodelreg.exe: copied to '/home/msifland/infections/servicemodelreg.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/powershell.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/powershell.exe: copied to '/home/msifland/infections/powershell.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dpnsvr.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dpnsvr.exe: copied to '/home/msifland/infections/dpnsvr.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dism.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dism.exe: copied to '/home/msifland/infections/dism.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/ngen.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/ngen.exe: copied to '/home/msifland/infections/ngen.exe.009'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wmplayer.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wmplayer.exe: copied to '/home/msifland/infections/wmplayer.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/sdbinst.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/sdbinst.exe: copied to '/home/msifland/infections/sdbinst.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/netsh.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/netsh.exe: copied to '/home/msifland/infections/netsh.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/subst.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/subst.exe: copied to '/home/msifland/infections/subst.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/shutdown.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/shutdown.exe: copied to '/home/msifland/infections/shutdown.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/systeminfo.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/systeminfo.exe: copied to '/home/msifland/infections/systeminfo.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regsvcs.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regsvcs.exe: copied to '/home/msifland/infections/regsvcs.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/findstr.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/findstr.exe: copied to '/home/msifland/infections/findstr.exe.001'
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fc.exe: Win.Malware.Trickbot-9829385-0 FOUND
+/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fc.exe: copied to '/home/msifland/infections/fc.exe.001'
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8610155
+Engine version: 0.103.0
+Scanned directories: 73951
+Scanned files: 607342
+Infected files: 23
+Total errors: 1
+Data scanned: 47155.34 MB
+Data read: 136639.68 MB (ratio 0.35:1)
+Time: 15095.913 sec (251 m 35 s)
+Start Date: 2021:02:15 02:30:15
+End Date:   2021:02:15 06:41:51
+
+
+End Time:
+Date: 02-15-21
+Time: 06:41:52 AM
+It took 4 hours 11 minutes 49 seconds to scan your system.
+
+
+[1;38;5;160m
+You can edit included and excluded files and folders by typing edit-virus-clamscan
+
+[0m
