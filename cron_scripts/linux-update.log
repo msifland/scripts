@@ -1,41 +1,56 @@
-[H[2J[3J[1;38;5;78m           ###########    Updating your system now   ###########[0m
-[1;38;5;170m
-02-14-2021 04:00:42 PM
+[H[2J[3J[1;38;5;100m           ###########    Updating your system now   ###########[0m
+[1;38;5;64m
+02-15-2021 07:00:01 AM
 Updating Linux debian 5.10.16-msi #1 SMP Sun Feb 14 15:21:48 CST 2021 x86_64 GNU/Linux[0m
-[1;38;5;65mRunning as sudo. . .[0m
+[1;38;5;170mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;82mUpdating sources and checking for app updates. . .[0m
+[1;38;5;134mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:2 http://www.deb-multimedia.org bullseye InRelease
-Hit:3 http://repo.steampowered.com/steam precise InRelease
-Hit:4 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:5 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
-Hit:6 http://deb.debian.org/debian testing InRelease
-Hit:7 http://repo.sinew.in stable InRelease
-Hit:8 http://security.debian.org stable/updates InRelease
-Hit:9 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:10 https://repo.skype.com/deb stable InRelease
+Get:1 http://security.debian.org stable/updates InRelease [65.4 kB]
+Hit:2 http://dl.google.com/linux/chrome/deb stable InRelease
+Get:3 http://deb.debian.org/debian testing InRelease [123 kB]
+Hit:4 http://repo.steampowered.com/steam precise InRelease
+Hit:5 https://repo.skype.com/deb stable InRelease
+Hit:6 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:7 https://download.sublimetext.com apt/stable/ InRelease
+Hit:8 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:9 http://repository.spotify.com stable InRelease
+Get:10 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
 Hit:11 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:12 https://download.sublimetext.com apt/stable/ InRelease
-Hit:13 http://deb.debian.org/debian testing-updates InRelease
-Hit:14 http://repository.spotify.com stable InRelease
-Hit:15 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:16 http://deb.debian.org/debian-security testing-security InRelease
-Hit:17 http://deb.debian.org/debian stable InRelease
-Hit:18 http://deb.debian.org/debian stable-updates InRelease
-Hit:19 http://deb.debian.org/debian unstable InRelease
-Hit:20 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Hit:12 http://repo.sinew.in stable InRelease
+Hit:13 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Get:14 http://security.debian.org stable/updates/main Sources [178 kB]
+Get:15 http://deb.debian.org/debian-security testing-security InRelease [44.1 kB]
+Hit:16 http://deb.debian.org/debian stable InRelease
+Get:17 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
+Get:18 http://security.debian.org stable/updates/main amd64 Packages [267 kB]
+Get:19 http://deb.debian.org/debian unstable InRelease [153 kB]
+Get:20 http://security.debian.org stable/updates/main i386 Packages [266 kB]
 Get:21 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Fetched 2,461 B in 2s (1,251 B/s)
+Hit:22 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Hit:23 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
+Get:24 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:25 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:26 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:27 http://deb.debian.org/debian unstable/main Sources T-2021-02-15-0759.49-F-2021-02-15-0759.49.pdiff [2,353 B]
+Get:27 http://deb.debian.org/debian unstable/main Sources T-2021-02-15-0759.49-F-2021-02-15-0759.49.pdiff [2,353 B]
+Get:28 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-02-15-0759.49-F-2021-02-15-0759.49.pdiff [2,261 B]
+Get:28 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-02-15-0759.49-F-2021-02-15-0759.49.pdiff [2,261 B]
+Get:29 http://deb.debian.org/debian unstable/main i386 Packages T-2021-02-15-0759.49-F-2021-02-15-0759.49.pdiff [1,793 B]
+Get:29 http://deb.debian.org/debian unstable/main i386 Packages T-2021-02-15-0759.49-F-2021-02-15-0759.49.pdiff [1,793 B]
+Get:30 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [3,175 kB]
+Get:31 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,604 kB]
+Get:32 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,346 kB]
+Hit:33 http://www.deb-multimedia.org bullseye InRelease
+Fetched 15.5 MB in 8s (1,905 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
 All packages are up to date.
 
-[1;38;5;82mChecking for system upgrade. . .[0m
+[1;38;5;134mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -53,7 +68,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;82mCleaning up system. . .[0m
+[1;38;5;134mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -77,11 +92,17 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+removed '/home/msifland/.cache/thumbnails/normal/52e9bf6975ac66e80565a51b12ba5900.png'
+removed '/home/msifland/.cache/thumbnails/normal/93069ae9b9aa3777c01e36de8909fb98.png'
+removed '/home/msifland/.cache/thumbnails/normal/cfad236b715853f1784a6b81caa0ec8b.png'
+removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
+removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
+removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
 
-[1;38;5;170mBacking up important files and apps. . .[0m
-[1;38;5;82mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;64mBacking up important files and apps. . .[0m
+[1;38;5;134mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;82mBacking up important config files. . .[0m
+[1;38;5;134mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -90,14 +111,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;82mBacking up crontab. . .[0m
+[1;38;5;134mBacking up crontab. . .[0m
 
-[1;38;5;82mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;134mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;170mUpdating local git repos. . .[0m
-[1;38;5;170mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;82mUpdating Projects. . .[0m
+[1;38;5;64mUpdating local git repos. . .[0m
+[1;38;5;64mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;134mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -105,7 +126,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;82mUpdating Documents. . .[0m
+[1;38;5;134mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -113,4 +134,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;82mUpdating scripts. . .[0m
+[1;38;5;134mUpdating scripts. . .[0m
