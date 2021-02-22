@@ -1,10 +1,7 @@
 
 Downloading screenfetch latest and updating screenfetch to reflect my custom colors. . .
 
-From https://github.com/KittyKatt/screenFetch
- * branch            HEAD       -> FETCH_HEAD
-fatal: refusing to merge unrelated histories
-[sudo] password for msifland: cp: cannot stat 'screenfetch-dev': No such file or directory
-Already updated.
+Cloning into 'screenFetch'...
+[sudo] password for msifland: Updating now. . .
 
 All is good.
