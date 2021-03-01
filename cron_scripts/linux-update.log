@@ -1,59 +1,41 @@
-[H[2J[3J[1;38;5;17m           ###########    Updating your system now   ###########[0m
-[1;38;5;214m
-02-22-2021 07:00:01 AM
+[H[2J[3J[1;38;5;98m           ###########    Updating your system now   ###########[0m
+[1;38;5;115m
+03-01-2021 07:00:01 AM
 Updating Linux debian 5.11.0-msi #1 SMP Mon Feb 15 06:46:26 CST 2021 x86_64 GNU/Linux[0m
-[1;38;5;151mRunning as sudo. . .[0m
+[1;38;5;90mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;120mUpdating sources and checking for app updates. . .[0m
+[1;38;5;134mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://security.debian.org stable/updates InRelease
-Get:2 http://deb.debian.org/debian testing InRelease [123 kB]
-Hit:3 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:4 http://repo.steampowered.com/steam precise InRelease
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 http://repo.steampowered.com/steam precise InRelease
+Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:4 http://security.debian.org stable/updates InRelease
 Hit:5 https://repo.skype.com/deb stable InRelease
-Hit:6 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:7 https://download.sublimetext.com apt/stable/ InRelease
-Get:8 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
-Get:9 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
-Hit:10 http://repository.spotify.com stable InRelease
-Hit:11 http://deb.debian.org/debian-security testing-security InRelease
-Hit:12 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
-Hit:13 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:14 http://deb.debian.org/debian stable InRelease
-Get:15 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Get:16 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
-Hit:17 http://repo.sinew.in stable InRelease
-Get:18 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [419 B]
-Get:19 http://deb.debian.org/debian unstable InRelease [153 kB]
-Get:20 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [419 B]
-Get:21 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [3,105 kB]
-Hit:22 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:23 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,479 kB]
-Get:24 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,107 kB]
-Hit:25 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:26 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:27 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:28 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:29 http://deb.debian.org/debian unstable/main Sources T-2021-02-22-0759.49-F-2021-02-22-0759.49.pdiff [5,434 B]
-Get:29 http://deb.debian.org/debian unstable/main Sources T-2021-02-22-0759.49-F-2021-02-22-0759.49.pdiff [5,434 B]
-Get:30 http://deb.debian.org/debian unstable/main i386 Packages T-2021-02-22-0759.49-F-2021-02-22-0759.49.pdiff [2,146 B]
-Get:30 http://deb.debian.org/debian unstable/main i386 Packages T-2021-02-22-0759.49-F-2021-02-22-0759.49.pdiff [2,146 B]
-Get:31 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-02-22-0759.49-F-2021-02-22-0759.49.pdiff [2,142 B]
-Get:31 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-02-22-0759.49-F-2021-02-22-0759.49.pdiff [2,142 B]
-Get:32 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [3,179 kB]
-Get:33 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,341 kB]
-Get:34 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
-Get:35 http://www.deb-multimedia.org bullseye/main i386 Packages [119 kB]
-Get:36 http://www.deb-multimedia.org bullseye/main amd64 Packages [124 kB]
-Fetched 25.0 MB in 6s (4,016 kB/s)
+Hit:6 https://download.sublimetext.com apt/stable/ InRelease
+Hit:7 http://repository.spotify.com stable InRelease
+Hit:8 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:9 http://repo.sinew.in stable InRelease
+Hit:10 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
+Hit:11 http://deb.debian.org/debian testing InRelease
+Hit:12 http://deb.debian.org/debian testing-updates InRelease
+Get:13 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:14 http://deb.debian.org/debian-security testing-security InRelease
+Hit:15 http://deb.debian.org/debian stable InRelease
+Hit:16 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:17 http://deb.debian.org/debian stable-updates InRelease
+Hit:18 http://deb.debian.org/debian unstable InRelease
+Hit:19 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:20 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Hit:21 http://www.deb-multimedia.org bullseye InRelease
+Fetched 2,461 B in 5s (484 B/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-1 package can be upgraded. Run 'apt list --upgradable' to see it.
+19 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;120mChecking for system upgrade. . .[0m
+[1;38;5;134mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -61,19 +43,122 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following packages were automatically installed and are no longer required:
+  libmjpegutils-2.1-0 libmpeg2encpp-2.1-0 libmplex2-2.1-0
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  libmjpegutils-2.2-0 libmpeg2encpp-2.2-0 libmplex2-2.2-0
 The following packages will be upgraded:
+  ffmpeg gstreamer1.0-plugins-bad libavcodec58 libavcodec58:i386 libavdevice58
+  libavfilter7 libavformat58 libavresample4 libavresample4:i386 libavutil56
+  libavutil56:i386 libdav1d5 libdav1d5:i386 libgstreamer-plugins-bad1.0-0
+  libpostproc55 libswresample3 libswresample3:i386 libswscale5
   metasploit-framework
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 248 MB of archives.
-After this operation, 3,300 kB disk space will be freed.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.32+20210222112500~1rapid7-1 [248 MB]
+19 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 271 MB of archives.
+After this operation, 1,198 kB of additional disk space will be used.
+Get:1 http://www.deb-multimedia.org bullseye/main amd64 libavutil56 amd64 10:4.3.2-dmo1 [329 kB]
+Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.33+20210227112515~1rapid7-1 [248 MB]
+Get:3 http://www.deb-multimedia.org bullseye/main i386 libavutil56 i386 10:4.3.2-dmo1 [338 kB]
+Get:4 http://www.deb-multimedia.org bullseye/main amd64 libdav1d5 amd64 1:0.8.2-dmo1 [343 kB]
+Get:5 http://www.deb-multimedia.org bullseye/main i386 libdav1d5 i386 1:0.8.2-dmo1 [266 kB]
+Get:6 http://www.deb-multimedia.org bullseye/main amd64 libswresample3 amd64 10:4.3.2-dmo1 [111 kB]
+Get:7 http://www.deb-multimedia.org bullseye/main i386 libswresample3 i386 10:4.3.2-dmo1 [116 kB]
+Get:8 http://www.deb-multimedia.org bullseye/main i386 libavcodec58 i386 10:4.3.2-dmo1 [4,904 kB]
+Get:9 http://www.deb-multimedia.org bullseye/main amd64 libavcodec58 amd64 10:4.3.2-dmo1 [4,979 kB]
+Get:10 http://www.deb-multimedia.org bullseye/main amd64 libavformat58 amd64 10:4.3.2-dmo1 [1,057 kB]
+Get:11 http://www.deb-multimedia.org bullseye/main i386 libavresample4 i386 10:4.3.2-dmo1 [111 kB]
+Get:12 http://www.deb-multimedia.org bullseye/main amd64 libavresample4 amd64 10:4.3.2-dmo1 [108 kB]
+Get:13 http://www.deb-multimedia.org bullseye/main amd64 libpostproc55 amd64 10:4.3.2-dmo1 [109 kB]
+Get:14 http://www.deb-multimedia.org bullseye/main amd64 libswscale5 amd64 10:4.3.2-dmo1 [213 kB]
+Get:15 http://www.deb-multimedia.org bullseye/main amd64 libavfilter7 amd64 10:4.3.2-dmo1 [1,329 kB]
+Get:16 http://www.deb-multimedia.org bullseye/main amd64 libavdevice58 amd64 10:4.3.2-dmo1 [127 kB]
+Get:17 http://www.deb-multimedia.org bullseye/main amd64 ffmpeg amd64 10:4.3.2-dmo1 [1,596 kB]
+Get:18 http://www.deb-multimedia.org bullseye/main amd64 libmjpegutils-2.2-0 amd64 2:2.2.0-dmo1 [32.3 kB]
+Get:19 http://www.deb-multimedia.org bullseye/main amd64 libmpeg2encpp-2.2-0 amd64 2:2.2.0-dmo1 [81.1 kB]
+Get:20 http://www.deb-multimedia.org bullseye/main amd64 libmplex2-2.2-0 amd64 2:2.2.0-dmo1 [50.4 kB]
+Get:21 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-bad amd64 1:1.18.3-dmo3 [4,206 kB]
+Get:22 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-plugins-bad1.0-0 amd64 1:1.18.3-dmo3 [2,288 kB]
 apt-listchanges: Reading changelogs...
-Fetched 248 MB in 27s (9,258 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 514065 files and directories currently installed.)
-Preparing to unpack .../metasploit-framework_6.0.32+20210222112500~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.0.32+20210222112500~1rapid7-1) over (6.0.31+20210214112451~1rapid7-1) ...
-Setting up metasploit-framework (6.0.32+20210222112500~1rapid7-1) ...
+Fetched 271 MB in 1min 22s (3,323 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 513795 files and directories currently installed.)
+Preparing to unpack .../00-libavutil56_10%3a4.3.2-dmo1_i386.deb ...
+De-configuring libavutil56:amd64 (10:4.3.1-dmo10) ...
+Unpacking libavutil56:i386 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../01-libavutil56_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking libavutil56:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../02-libdav1d5_1%3a0.8.2-dmo1_i386.deb ...
+De-configuring libdav1d5:amd64 (1:0.8.1-dmo1) ...
+Unpacking libdav1d5:i386 (1:0.8.2-dmo1) over (1:0.8.1-dmo1) ...
+Preparing to unpack .../03-libdav1d5_1%3a0.8.2-dmo1_amd64.deb ...
+Unpacking libdav1d5:amd64 (1:0.8.2-dmo1) over (1:0.8.1-dmo1) ...
+Preparing to unpack .../04-libswresample3_10%3a4.3.2-dmo1_i386.deb ...
+De-configuring libswresample3:amd64 (10:4.3.1-dmo10) ...
+Unpacking libswresample3:i386 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../05-libswresample3_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking libswresample3:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../06-libavcodec58_10%3a4.3.2-dmo1_amd64.deb ...
+De-configuring libavcodec58:i386 (10:4.3.1-dmo10) ...
+Unpacking libavcodec58:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../07-libavcodec58_10%3a4.3.2-dmo1_i386.deb ...
+Unpacking libavcodec58:i386 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../08-libavformat58_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking libavformat58:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../09-libavresample4_10%3a4.3.2-dmo1_amd64.deb ...
+De-configuring libavresample4:i386 (10:4.3.1-dmo10) ...
+Unpacking libavresample4:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../10-libavresample4_10%3a4.3.2-dmo1_i386.deb ...
+Unpacking libavresample4:i386 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../11-libpostproc55_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking libpostproc55:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../12-libswscale5_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking libswscale5:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../13-libavfilter7_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking libavfilter7:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../14-libavdevice58_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking libavdevice58:amd64 (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Preparing to unpack .../15-ffmpeg_10%3a4.3.2-dmo1_amd64.deb ...
+Unpacking ffmpeg (10:4.3.2-dmo1) over (10:4.3.1-dmo10) ...
+Selecting previously unselected package libmjpegutils-2.2-0:amd64.
+Preparing to unpack .../16-libmjpegutils-2.2-0_2%3a2.2.0-dmo1_amd64.deb ...
+Unpacking libmjpegutils-2.2-0:amd64 (2:2.2.0-dmo1) ...
+Selecting previously unselected package libmpeg2encpp-2.2-0:amd64.
+Preparing to unpack .../17-libmpeg2encpp-2.2-0_2%3a2.2.0-dmo1_amd64.deb ...
+Unpacking libmpeg2encpp-2.2-0:amd64 (2:2.2.0-dmo1) ...
+Selecting previously unselected package libmplex2-2.2-0:amd64.
+Preparing to unpack .../18-libmplex2-2.2-0_2%3a2.2.0-dmo1_amd64.deb ...
+Unpacking libmplex2-2.2-0:amd64 (2:2.2.0-dmo1) ...
+Preparing to unpack .../19-gstreamer1.0-plugins-bad_1%3a1.18.3-dmo3_amd64.deb ...
+Unpacking gstreamer1.0-plugins-bad:amd64 (1:1.18.3-dmo3) over (1:1.18.3-dmo2) ...
+Preparing to unpack .../20-libgstreamer-plugins-bad1.0-0_1%3a1.18.3-dmo3_amd64.deb ...
+Unpacking libgstreamer-plugins-bad1.0-0:amd64 (1:1.18.3-dmo3) over (1:1.18.3-dmo2) ...
+Preparing to unpack .../21-metasploit-framework_6.0.33+20210227112515~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.0.33+20210227112515~1rapid7-1) over (6.0.32+20210222112500~1rapid7-1) ...
+Setting up metasploit-framework (6.0.33+20210227112515~1rapid7-1) ...
 Run msfconsole to get started
+Setting up libavutil56:amd64 (10:4.3.2-dmo1) ...
+Setting up libavutil56:i386 (10:4.3.2-dmo1) ...
+Setting up libgstreamer-plugins-bad1.0-0:amd64 (1:1.18.3-dmo3) ...
+Setting up libmjpegutils-2.2-0:amd64 (2:2.2.0-dmo1) ...
+Setting up libpostproc55:amd64 (10:4.3.2-dmo1) ...
+Setting up libmplex2-2.2-0:amd64 (2:2.2.0-dmo1) ...
+Setting up libswscale5:amd64 (10:4.3.2-dmo1) ...
+Setting up libdav1d5:amd64 (1:0.8.2-dmo1) ...
+Setting up libdav1d5:i386 (1:0.8.2-dmo1) ...
+Setting up libmpeg2encpp-2.2-0:amd64 (2:2.2.0-dmo1) ...
+Setting up libswresample3:amd64 (10:4.3.2-dmo1) ...
+Setting up libswresample3:i386 (10:4.3.2-dmo1) ...
+Setting up libavresample4:amd64 (10:4.3.2-dmo1) ...
+Setting up libavresample4:i386 (10:4.3.2-dmo1) ...
+Setting up gstreamer1.0-plugins-bad:amd64 (1:1.18.3-dmo3) ...
+Setting up libavcodec58:amd64 (10:4.3.2-dmo1) ...
+Setting up libavcodec58:i386 (10:4.3.2-dmo1) ...
+Setting up libavformat58:amd64 (10:4.3.2-dmo1) ...
+Setting up libavfilter7:amd64 (10:4.3.2-dmo1) ...
+Setting up libavdevice58:amd64 (10:4.3.2-dmo1) ...
+Setting up ffmpeg (10:4.3.2-dmo1) ...
+Processing triggers for man-db (2.9.4-2) ...
+Processing triggers for libc-bin (2.31-9) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -81,9 +166,36 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following packages were automatically installed and are no longer required:
+  libmjpegutils-2.1-0 libmpeg2encpp-2.1-0 libmplex2-2.1-0
+Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;120mCleaning up system. . .[0m
+[1;38;5;134mCleaning up system. . .[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  libmjpegutils-2.1-0 libmpeg2encpp-2.1-0 libmplex2-2.1-0
+0 upgraded, 0 newly installed, 3 to remove and 0 not upgraded.
+After this operation, 461 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 513855 files and directories currently installed.)
+Removing libmpeg2encpp-2.1-0:amd64 (2:2.1.0-dmo12) ...
+Removing libmplex2-2.1-0:amd64 (2:2.1.0-dmo12) ...
+Removing libmjpegutils-2.1-0:amd64 (2:2.1.0-dmo12) ...
+Processing triggers for libc-bin (2.31-9) ...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -92,26 +204,10 @@ Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+[1;38;5;115mBacking up important files and apps. . .[0m
+[1;38;5;134mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
-[1;38;5;214mBacking up important files and apps. . .[0m
-[1;38;5;120mCreating list of apps, and copying repos from /etc/apt. . .[0m
-
-[1;38;5;120mBacking up important config files. . .[0m
+[1;38;5;134mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -120,14 +216,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;120mBacking up crontab. . .[0m
+[1;38;5;134mBacking up crontab. . .[0m
 
-[1;38;5;120mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;134mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;214mUpdating local git repos. . .[0m
-[1;38;5;214mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;120mUpdating Projects. . .[0m
+[1;38;5;115mUpdating local git repos. . .[0m
+[1;38;5;115mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;134mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -135,7 +231,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;120mUpdating Documents. . .[0m
+[1;38;5;134mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -143,4 +239,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;120mUpdating scripts. . .[0m
+[1;38;5;134mUpdating scripts. . .[0m
