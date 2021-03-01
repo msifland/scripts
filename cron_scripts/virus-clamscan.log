@@ -1,10 +1,10 @@
-[1;38;5;253m
+[1;38;5;196m
 Removing old build logs. . .
 
 [0m
-[1;38;5;253m
+[1;38;5;196m
 Start Time:
-Date: 02-22-21
+Date: 03-01-21
 Time: 02:30:03 AM
 
 Scanning: 
@@ -28,177 +28,65 @@ Excluding:
 
 Updating clamscan before run. . .
 
-[sudo] password for msifland: Mon Feb 22 02:30:11 2021 -> ClamAV update process started at Mon Feb 22 02:30:11 2021
-Mon Feb 22 02:30:11 2021 -> daily.cld database is up to date (version: 26087, sigs: 4008904, f-level: 63, builder: raynman)
-Mon Feb 22 02:30:11 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
-Mon Feb 22 02:30:11 2021 -> bytecode.cld database is up to date (version: 332, sigs: 93, f-level: 63, builder: awillia2)
+[sudo] password for msifland: Mon Mar  1 02:30:12 2021 -> ClamAV update process started at Mon Mar  1 02:30:12 2021
+Mon Mar  1 02:30:12 2021 -> daily.cld database is up to date (version: 26094, sigs: 3955353, f-level: 63, builder: raynman)
+Mon Mar  1 02:30:12 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
+Mon Mar  1 02:30:12 2021 -> bytecode.cld database is up to date (version: 332, sigs: 93, f-level: 63, builder: awillia2)
 
 Running clamscan to scan for viruses. . .
 
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 LibClamAV Error: CRITICAL: fmap() failed
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{D5AEE36E-4771-4F65-BDB6-8C59077BFBE4}v14.16.27033/packages/vcRuntimeMinimum_x86/cab1.cab: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{D5AEE36E-4771-4F65-BDB6-8C59077BFBE4}v14.16.27033/packages/vcRuntimeMinimum_x86/cab1.cab: copied to '/home/msifland/infections/cab1.cab'
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{88D1025F-45D0-45C6-9EDB-379C2EE07AD7}v14.16.27033/packages/vcRuntimeAdditional_x86/cab1.cab: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{88D1025F-45D0-45C6-9EDB-379C2EE07AD7}v14.16.27033/packages/vcRuntimeAdditional_x86/cab1.cab: copied to '/home/msifland/infections/cab1.cab.001'
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{27744187-E45F-41F3-8BC2-0DC5F9238FDB}v14.16.27033/packages/vcRuntimeAdditional_amd64/cab1.cab: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{27744187-E45F-41F3-8BC2-0DC5F9238FDB}v14.16.27033/packages/vcRuntimeAdditional_amd64/cab1.cab: copied to '/home/msifland/infections/cab1.cab.002'
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{65835E57-3712-4382-990A-8D39008A8E0B}v14.16.27033/packages/vcRuntimeMinimum_amd64/cab1.cab: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{65835E57-3712-4382-990A-8D39008A8E0B}v14.16.27033/packages/vcRuntimeMinimum_amd64/cab1.cab: copied to '/home/msifland/infections/cab1.cab.003'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140enu.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140enu.dll: copied to '/home/msifland/infections/mfc140enu.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140ita.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140ita.dll: copied to '/home/msifland/infections/mfc140ita.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfcm140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfcm140.dll: copied to '/home/msifland/infections/mfcm140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140kor.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140kor.dll: copied to '/home/msifland/infections/mfc140kor.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140.dll: copied to '/home/msifland/infections/mfc140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcomp140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcomp140.dll: copied to '/home/msifland/infections/vcomp140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_2.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_2.dll: copied to '/home/msifland/infections/msvcp140_2.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140jpn.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140jpn.dll: copied to '/home/msifland/infections/mfc140jpn.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_1.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_1.dll: copied to '/home/msifland/infections/msvcp140_1.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140u.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140u.dll: copied to '/home/msifland/infections/mfc140u.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140rus.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140rus.dll: copied to '/home/msifland/infections/mfc140rus.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfcm140u.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfcm140u.dll: copied to '/home/msifland/infections/mfcm140u.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vccorlib140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vccorlib140.dll: copied to '/home/msifland/infections/vccorlib140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcamp140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcamp140.dll: copied to '/home/msifland/infections/vcamp140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140fra.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140fra.dll: copied to '/home/msifland/infections/mfc140fra.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140cht.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140cht.dll: copied to '/home/msifland/infections/mfc140cht.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140.dll: copied to '/home/msifland/infections/msvcp140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/concrt140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/concrt140.dll: copied to '/home/msifland/infections/concrt140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcruntime140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcruntime140.dll: copied to '/home/msifland/infections/vcruntime140.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140deu.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140deu.dll: copied to '/home/msifland/infections/mfc140deu.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140esn.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140esn.dll: copied to '/home/msifland/infections/mfc140esn.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140chs.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/mfc140chs.dll: copied to '/home/msifland/infections/mfc140chs.dll'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140enu.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140enu.dll: copied to '/home/msifland/infections/mfc140enu.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140ita.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140ita.dll: copied to '/home/msifland/infections/mfc140ita.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfcm140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfcm140.dll: copied to '/home/msifland/infections/mfcm140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140kor.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140kor.dll: copied to '/home/msifland/infections/mfc140kor.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140.dll: copied to '/home/msifland/infections/mfc140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcomp140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcomp140.dll: copied to '/home/msifland/infections/vcomp140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_2.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_2.dll: copied to '/home/msifland/infections/msvcp140_2.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140jpn.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140jpn.dll: copied to '/home/msifland/infections/mfc140jpn.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_1.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_1.dll: copied to '/home/msifland/infections/msvcp140_1.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140rus.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140rus.dll: copied to '/home/msifland/infections/mfc140rus.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfcm140u.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfcm140u.dll: copied to '/home/msifland/infections/mfcm140u.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vccorlib140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vccorlib140.dll: copied to '/home/msifland/infections/vccorlib140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcamp140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcamp140.dll: copied to '/home/msifland/infections/vcamp140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140fra.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140fra.dll: copied to '/home/msifland/infections/mfc140fra.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140cht.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140cht.dll: copied to '/home/msifland/infections/mfc140cht.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140.dll: copied to '/home/msifland/infections/msvcp140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/concrt140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/concrt140.dll: copied to '/home/msifland/infections/concrt140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcruntime140.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcruntime140.dll: copied to '/home/msifland/infections/vcruntime140.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140deu.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140deu.dll: copied to '/home/msifland/infections/mfc140deu.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140esn.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140esn.dll: copied to '/home/msifland/infections/mfc140esn.dll.001'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140chs.dll: Win.Dropper.Fileinfector-9832585-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/mfc140chs.dll: copied to '/home/msifland/infections/mfc140chs.dll.001'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/arp.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/arp.exe: copied to '/home/msifland/infections/arp.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fsutil.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fsutil.exe: copied to '/home/msifland/infections/fsutil.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/aspnet_regiis.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/aspnet_regiis.exe: copied to '/home/msifland/infections/aspnet_regiis.exe.010'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wusa.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wusa.exe: copied to '/home/msifland/infections/wusa.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/conhost.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/conhost.exe: copied to '/home/msifland/infections/conhost.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/tasklist.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/tasklist.exe: copied to '/home/msifland/infections/tasklist.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regini.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regini.exe: copied to '/home/msifland/infections/regini.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regasm.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regasm.exe: copied to '/home/msifland/infections/regasm.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wevtutil.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wevtutil.exe: copied to '/home/msifland/infections/wevtutil.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/servicemodelreg.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/servicemodelreg.exe: copied to '/home/msifland/infections/servicemodelreg.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/powershell.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/powershell.exe: copied to '/home/msifland/infections/powershell.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dpnsvr.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dpnsvr.exe: copied to '/home/msifland/infections/dpnsvr.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dism.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/dism.exe: copied to '/home/msifland/infections/dism.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/ngen.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/ngen.exe: copied to '/home/msifland/infections/ngen.exe.010'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wmplayer.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/wmplayer.exe: copied to '/home/msifland/infections/wmplayer.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/sdbinst.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/sdbinst.exe: copied to '/home/msifland/infections/sdbinst.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/netsh.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/netsh.exe: copied to '/home/msifland/infections/netsh.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/subst.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/subst.exe: copied to '/home/msifland/infections/subst.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/shutdown.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/shutdown.exe: copied to '/home/msifland/infections/shutdown.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/systeminfo.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/systeminfo.exe: copied to '/home/msifland/infections/systeminfo.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regsvcs.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/regsvcs.exe: copied to '/home/msifland/infections/regsvcs.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/findstr.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/findstr.exe: copied to '/home/msifland/infections/findstr.exe.002'
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fc.exe: Win.Malware.Trickbot-9829385-0 FOUND
-/home/msifland/.PlayOnLinux/wine/linux-x86/4.21/lib/wine/fc.exe: copied to '/home/msifland/infections/fc.exe.002'
+/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{D5AEE36E-4771-4F65-BDB6-8C59077BFBE4}v14.16.27033/packages/vcRuntimeMinimum_x86/cab1.cab: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{D5AEE36E-4771-4F65-BDB6-8C59077BFBE4}v14.16.27033/packages/vcRuntimeMinimum_x86/cab1.cab: copied to '/home/msifland/infections/cab1.cab.004'
+/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{65835E57-3712-4382-990A-8D39008A8E0B}v14.16.27033/packages/vcRuntimeMinimum_amd64/cab1.cab: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{65835E57-3712-4382-990A-8D39008A8E0B}v14.16.27033/packages/vcRuntimeMinimum_amd64/cab1.cab: copied to '/home/msifland/infections/cab1.cab.005'
+/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_2.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_2.dll: copied to '/home/msifland/infections/msvcp140_2.dll.002'
+/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_1.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_1.dll: copied to '/home/msifland/infections/msvcp140_1.dll.002'
+/home/msifland/Games/star-citizen/drive_c/windows/system32/vccorlib140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/system32/vccorlib140.dll: copied to '/home/msifland/infections/vccorlib140.dll.002'
+/home/msifland/Games/star-citizen/drive_c/windows/system32/vcamp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/system32/vcamp140.dll: copied to '/home/msifland/infections/vcamp140.dll.002'
+/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140.dll: copied to '/home/msifland/infections/msvcp140.dll.002'
+/home/msifland/Games/star-citizen/drive_c/windows/system32/concrt140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/system32/concrt140.dll: copied to '/home/msifland/infections/concrt140.dll.002'
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_2.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_2.dll: copied to '/home/msifland/infections/msvcp140_2.dll.003'
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_1.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_1.dll: copied to '/home/msifland/infections/msvcp140_1.dll.003'
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vccorlib140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vccorlib140.dll: copied to '/home/msifland/infections/vccorlib140.dll.003'
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcamp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcamp140.dll: copied to '/home/msifland/infections/vcamp140.dll.003'
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140.dll: copied to '/home/msifland/infections/msvcp140.dll.003'
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/concrt140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
+/home/msifland/Games/star-citizen/drive_c/windows/syswow64/concrt140.dll: copied to '/home/msifland/infections/concrt140.dll.003'
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8558224
+Known viruses: 8505015
 Engine version: 0.103.0
-Scanned directories: 77887
-Scanned files: 617738
-Infected files: 70
+Scanned directories: 77904
+Scanned files: 617493
+Infected files: 14
 Total errors: 1
-Data scanned: 47557.32 MB
-Data read: 136876.30 MB (ratio 0.35:1)
-Time: 14822.132 sec (247 m 2 s)
-Start Date: 2021:02:22 02:30:15
-End Date:   2021:02:22 06:37:17
+Data scanned: 47446.97 MB
+Data read: 136706.53 MB (ratio 0.35:1)
+Time: 14803.405 sec (246 m 43 s)
+Start Date: 2021:03:01 02:30:16
+End Date:   2021:03:01 06:36:59
 
 
 End Time:
-Date: 02-22-21
-Time: 06:37:18 AM
-It took 4 hours 7 minutes 15 seconds to scan your system.
+Date: 03-01-21
+Time: 06:36:59 AM
+It took 4 hours 6 minutes 56 seconds to scan your system.
 
 
-[1;38;5;253m
+[1;38;5;196m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
