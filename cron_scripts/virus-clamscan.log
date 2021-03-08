@@ -1,11 +1,11 @@
-[1;38;5;196m
+[1;38;5;187m
 Removing old build logs. . .
 
 [0m
-[1;38;5;196m
+[1;38;5;187m
 Start Time:
-Date: 03-01-21
-Time: 02:30:03 AM
+Date: 03-08-21
+Time: 02:30:04 AM
 
 Scanning: 
 /
@@ -28,65 +28,38 @@ Excluding:
 
 Updating clamscan before run. . .
 
-[sudo] password for msifland: Mon Mar  1 02:30:12 2021 -> ClamAV update process started at Mon Mar  1 02:30:12 2021
-Mon Mar  1 02:30:12 2021 -> daily.cld database is up to date (version: 26094, sigs: 3955353, f-level: 63, builder: raynman)
-Mon Mar  1 02:30:12 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
-Mon Mar  1 02:30:12 2021 -> bytecode.cld database is up to date (version: 332, sigs: 93, f-level: 63, builder: awillia2)
+[sudo] password for msifland: Mon Mar  8 02:30:12 2021 -> ClamAV update process started at Mon Mar  8 02:30:12 2021
+Mon Mar  8 02:30:12 2021 -> daily.cld database is up to date (version: 26101, sigs: 3958228, f-level: 63, builder: raynman)
+Mon Mar  8 02:30:12 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
+Mon Mar  8 02:30:12 2021 -> bytecode.cld database is up to date (version: 332, sigs: 93, f-level: 63, builder: awillia2)
 
 Running clamscan to scan for viruses. . .
 
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 LibClamAV Error: CRITICAL: fmap() failed
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{D5AEE36E-4771-4F65-BDB6-8C59077BFBE4}v14.16.27033/packages/vcRuntimeMinimum_x86/cab1.cab: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{D5AEE36E-4771-4F65-BDB6-8C59077BFBE4}v14.16.27033/packages/vcRuntimeMinimum_x86/cab1.cab: copied to '/home/msifland/infections/cab1.cab.004'
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{65835E57-3712-4382-990A-8D39008A8E0B}v14.16.27033/packages/vcRuntimeMinimum_amd64/cab1.cab: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/ProgramData/Package Cache/{65835E57-3712-4382-990A-8D39008A8E0B}v14.16.27033/packages/vcRuntimeMinimum_amd64/cab1.cab: copied to '/home/msifland/infections/cab1.cab.005'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_2.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_2.dll: copied to '/home/msifland/infections/msvcp140_2.dll.002'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_1.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140_1.dll: copied to '/home/msifland/infections/msvcp140_1.dll.002'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vccorlib140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vccorlib140.dll: copied to '/home/msifland/infections/vccorlib140.dll.002'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcamp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/vcamp140.dll: copied to '/home/msifland/infections/vcamp140.dll.002'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/msvcp140.dll: copied to '/home/msifland/infections/msvcp140.dll.002'
-/home/msifland/Games/star-citizen/drive_c/windows/system32/concrt140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/system32/concrt140.dll: copied to '/home/msifland/infections/concrt140.dll.002'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_2.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_2.dll: copied to '/home/msifland/infections/msvcp140_2.dll.003'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_1.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140_1.dll: copied to '/home/msifland/infections/msvcp140_1.dll.003'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vccorlib140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vccorlib140.dll: copied to '/home/msifland/infections/vccorlib140.dll.003'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcamp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/vcamp140.dll: copied to '/home/msifland/infections/vcamp140.dll.003'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/msvcp140.dll: copied to '/home/msifland/infections/msvcp140.dll.003'
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/concrt140.dll: Win.Dropper.Fileinfector-9832966-0 FOUND
-/home/msifland/Games/star-citizen/drive_c/windows/syswow64/concrt140.dll: copied to '/home/msifland/infections/concrt140.dll.003'
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8505015
+Known viruses: 8507879
 Engine version: 0.103.0
-Scanned directories: 77904
-Scanned files: 617493
-Infected files: 14
+Scanned directories: 81836
+Scanned files: 628155
+Infected files: 0
 Total errors: 1
-Data scanned: 47446.97 MB
-Data read: 136706.53 MB (ratio 0.35:1)
-Time: 14803.405 sec (246 m 43 s)
-Start Date: 2021:03:01 02:30:16
-End Date:   2021:03:01 06:36:59
+Data scanned: 47834.50 MB
+Data read: 137080.37 MB (ratio 0.35:1)
+Time: 15065.234 sec (251 m 5 s)
+Start Date: 2021:03:08 02:30:16
+End Date:   2021:03:08 06:41:21
 
 
 End Time:
-Date: 03-01-21
-Time: 06:36:59 AM
-It took 4 hours 6 minutes 56 seconds to scan your system.
+Date: 03-08-21
+Time: 06:41:21 AM
+It took 4 hours 11 minutes 18 seconds to scan your system.
 
 
-[1;38;5;196m
+[1;38;5;187m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
