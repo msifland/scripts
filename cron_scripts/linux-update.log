@@ -1,66 +1,81 @@
-[H[2J[3J[1;38;5;181m           ###########    Updating your system now   ###########[0m
-[1;38;5;24m
-03-08-2021 07:00:01 AM
-Updating Linux debian 5.11.2-msi #1 SMP Mon Mar 1 06:46:32 CST 2021 x86_64 GNU/Linux[0m
-[1;38;5;57mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;100m           ###########    Updating your system now   ###########[0m
+[1;38;5;104m
+03-15-2021 07:00:01 AM
+Updating Linux debian 5.11.4-msi #1 SMP Mon Mar 8 06:46:31 CST 2021 x86_64 GNU/Linux[0m
+[1;38;5;185mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;134mUpdating sources and checking for app updates. . .[0m
+[1;38;5;221mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:2 http://repo.steampowered.com/steam precise InRelease
-Hit:3 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:4 http://deb.debian.org/debian testing InRelease [142 kB]
-Get:5 http://security.debian.org stable/updates InRelease [65.4 kB]
-Get:6 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
-Hit:7 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
-Get:8 http://deb.debian.org/debian-security testing-security InRelease [44.1 kB]
-Get:9 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Hit:10 https://repo.skype.com/deb stable InRelease
-Hit:11 http://deb.debian.org/debian stable InRelease
-Get:12 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
-Get:13 http://deb.debian.org/debian unstable InRelease [154 kB]
-Get:14 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,019 kB]
-Hit:15 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:16 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,310 kB]
-Hit:17 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:18 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:19 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:20 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:21 http://deb.debian.org/debian unstable/main Sources T-2021-03-08-0800.25-F-2021-03-08-0800.25.pdiff [559 B]
-Get:21 http://deb.debian.org/debian unstable/main Sources T-2021-03-08-0800.25-F-2021-03-08-0800.25.pdiff [559 B]
-Get:22 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
-Get:23 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-08-0800.25-F-2021-03-08-0800.25.pdiff [477 B]
-Get:23 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-08-0800.25-F-2021-03-08-0800.25.pdiff [477 B]
-Get:24 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-08-0800.25-F-2021-03-08-0800.25.pdiff [479 B]
-Get:24 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-08-0800.25-F-2021-03-08-0800.25.pdiff [479 B]
-Get:25 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,068 kB]
-Get:26 http://www.deb-multimedia.org bullseye/main i386 Packages [120 kB]
-Get:27 http://www.deb-multimedia.org bullseye/main amd64 Packages [124 kB]
-Err:28 https://dl.winehq.org/wine-builds/debian sid InRelease
-  Could not connect to dl.winehq.org:443 (199.232.34.217), connection timed out
-Err:29 https://download.sublimetext.com apt/stable/ InRelease
-  Could not connect to download.sublimetext.com:443 (104.236.0.104), connection timed out
-Err:30 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-  Could not connect to downloads.metasploit.com:80 (23.55.210.179), connection timed out
-Err:31 http://repo.sinew.in stable InRelease
-  Could not connect to repo.sinew.in:80 (52.218.170.10), connection timed out
-Err:32 http://repository.spotify.com stable InRelease
-  Could not connect to repository.spotify.com:80 (54.230.74.163), connection timed out Could not connect to repository.spotify.com:80 (54.230.74.30), connection timed out Could not connect to repository.spotify.com:80 (54.230.74.16), connection timed out Could not connect to repository.spotify.com:80 (54.230.74.134), connection timed out
-Fetched 16.3 MB in 31s (522 kB/s)
+Hit:2 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:3 http://deb.debian.org/debian testing InRelease [142 kB]
+Get:4 http://security.debian.org stable/updates InRelease [65.4 kB]
+Hit:5 http://repo.steampowered.com/steam precise InRelease
+Hit:6 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:7 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:8 https://download.sublimetext.com apt/stable/ InRelease
+Hit:9 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
+Hit:10 http://repository.spotify.com stable InRelease
+Hit:11 http://repo.sinew.in stable InRelease
+Hit:12 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Get:13 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
+Get:14 http://deb.debian.org/debian-security testing-security InRelease [44.1 kB]
+Hit:15 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:16 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:17 http://deb.debian.org/debian stable InRelease
+Get:18 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
+Get:19 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [419 B]
+Get:20 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [419 B]
+Get:21 http://deb.debian.org/debian unstable InRelease [154 kB]
+Get:22 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:23 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:24 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Hit:25 https://repo.skype.com/deb stable InRelease
+Get:26 http://deb.debian.org/debian testing/main Sources T-2021-03-15-0200.29-F-2021-03-14-2000.42.pdiff [4,589 B]
+Get:26 http://deb.debian.org/debian testing/main Sources T-2021-03-15-0200.29-F-2021-03-14-2000.42.pdiff [4,589 B]
+Get:27 http://deb.debian.org/debian testing/main amd64 Packages T-2021-03-15-0200.29-F-2021-03-14-2000.42.pdiff [15.2 kB]
+Get:27 http://deb.debian.org/debian testing/main amd64 Packages T-2021-03-15-0200.29-F-2021-03-14-2000.42.pdiff [15.2 kB]
+Get:28 http://deb.debian.org/debian testing/main i386 Packages T-2021-03-15-0200.29-F-2021-03-14-2000.42.pdiff [15.2 kB]
+Get:28 http://deb.debian.org/debian testing/main i386 Packages T-2021-03-15-0200.29-F-2021-03-14-2000.42.pdiff [15.2 kB]
+Get:29 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,018 kB]
+Get:30 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,485 kB]
+Get:31 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,311 kB]
+Get:32 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [13.1 kB]
+Get:33 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
+Get:34 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:35 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:36 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:37 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:38 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:39 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:40 http://deb.debian.org/debian unstable/main Sources T-2021-03-15-0809.38-F-2021-03-14-1400.44.pdiff [6,647 B]
+Get:40 http://deb.debian.org/debian unstable/main Sources T-2021-03-15-0809.38-F-2021-03-14-1400.44.pdiff [6,647 B]
+Get:41 http://deb.debian.org/debian unstable/non-free Sources T-2021-03-15-0809.38-F-2021-03-15-0200.29.pdiff [629 B]
+Get:41 http://deb.debian.org/debian unstable/non-free Sources T-2021-03-15-0809.38-F-2021-03-15-0200.29.pdiff [629 B]
+Get:42 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-15-0809.38-F-2021-03-14-1400.44.pdiff [11.2 kB]
+Get:42 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-15-0809.38-F-2021-03-14-1400.44.pdiff [11.2 kB]
+Get:43 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-15-0809.38-F-2021-03-14-1400.44.pdiff [11.4 kB]
+Get:43 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-15-0809.38-F-2021-03-14-1400.44.pdiff [11.4 kB]
+Get:44 http://www.deb-multimedia.org bullseye/main i386 Packages [120 kB]
+Get:45 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-03-15-0809.38-F-2021-03-15-0809.38.pdiff [370 B]
+Get:45 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-03-15-0809.38-F-2021-03-15-0809.38.pdiff [370 B]
+Get:46 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-03-15-0809.38-F-2021-03-15-0809.38.pdiff [372 B]
+Get:46 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-03-15-0809.38-F-2021-03-15-0809.38.pdiff [372 B]
+Get:47 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,072 kB]
+Get:48 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,597 kB]
+Get:49 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,544 kB]
+Get:50 http://www.deb-multimedia.org bullseye/main amd64 Packages [124 kB]
+Get:51 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [11.6 kB]
+Get:52 http://deb.debian.org/debian unstable/non-free DEP-11 64x64 Icons [27.7 kB]
+Fetched 31.5 MB in 16s (1,965 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-10 packages can be upgraded. Run 'apt list --upgradable' to see them.
-W: Failed to fetch http://repo.sinew.in/dists/stable/InRelease  Could not connect to repo.sinew.in:80 (52.218.170.10), connection timed out
-W: Failed to fetch http://repository.spotify.com/dists/stable/InRelease  Could not connect to repository.spotify.com:80 (54.230.74.163), connection timed out Could not connect to repository.spotify.com:80 (54.230.74.30), connection timed out Could not connect to repository.spotify.com:80 (54.230.74.16), connection timed out Could not connect to repository.spotify.com:80 (54.230.74.134), connection timed out
-W: Failed to fetch https://dl.winehq.org/wine-builds/debian/dists/sid/InRelease  Could not connect to dl.winehq.org:443 (199.232.34.217), connection timed out
-W: Failed to fetch https://download.sublimetext.com/apt/stable/InRelease  Could not connect to download.sublimetext.com:443 (104.236.0.104), connection timed out
-W: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/InRelease  Could not connect to downloads.metasploit.com:80 (23.55.210.179), connection timed out
-W: Some index files failed to download. They have been ignored, or old ones used instead.
+27 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;134mChecking for system upgrade. . .[0m
+[1;38;5;221mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -69,27 +84,137 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
+  chromium chromium-common chromium-sandbox debhelper git git-man
   gstreamer1.0-gl gstreamer1.0-plugins-base gstreamer1.0-plugins-base:i386
-  gstreamer1.0-x gstreamer1.0-x:i386 libgstreamer-gl1.0-0
-  libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-0:i386 megasync
-  metasploit-framework
-10 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 275 MB of archives.
-After this operation, 65.5 kB of additional disk space will be used.
-Get:1 http://www.deb-multimedia.org bullseye/main i386 libgstreamer-plugins-base1.0-0 i386 1.18.3-dmo2 [2,166 kB]
-Get:2 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ megasync 4.4.0-1.1 [12.9 MB]
-Get:3 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.18.3-dmo2 [2,142 kB]
-Get:4 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-gl1.0-0 amd64 1.18.3-dmo2 [1,514 kB]
-Get:5 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-gl amd64 1.18.3-dmo2 [1,448 kB]
-Get:6 http://www.deb-multimedia.org bullseye/main i386 gstreamer1.0-plugins-base i386 1.18.3-dmo2 [1,995 kB]
-Get:7 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-base amd64 1.18.3-dmo2 [1,982 kB]
-Get:8 http://www.deb-multimedia.org bullseye/main i386 gstreamer1.0-x i386 1.18.3-dmo2 [1,422 kB]
-Get:9 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-x amd64 1.18.3-dmo2 [1,420 kB]
-Err:10 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.34+20210307112507~1rapid7-1
-  Could not connect to downloads.metasploit.com:80 (23.55.210.179), connection timed out
-Fetched 27.0 MB in 31s (881 kB/s)
-E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/pool/main/m/metasploit-framework/metasploit-framework_6.0.34+20210307112507~1rapid7-1_amd64.deb  Could not connect to downloads.metasploit.com:80 (23.55.210.179), connection timed out
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+  gstreamer1.0-x gstreamer1.0-x:i386 libdebhelper-perl libgstreamer-gl1.0-0
+  libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-0:i386 libmfx1
+  libonig5 libpython2.7 libpython2.7-minimal libpython2.7-stdlib libx264-161
+  libx264-161:i386 megasync metasploit-framework python2.7 python2.7-minimal
+  python3-pil
+27 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 349 MB/351 MB of archives.
+After this operation, 3,199 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 libpython2.7 amd64 2.7.18-6 [1,022 kB]
+Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.35+20210314102504~1rapid7-1 [248 MB]
+Get:3 http://www.deb-multimedia.org bullseye/main i386 libgstreamer-plugins-base1.0-0 i386 1.18.3-dmo2 [2,166 kB]
+Get:4 http://deb.debian.org/debian testing/main amd64 python2.7 amd64 2.7.18-6 [310 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 libpython2.7-stdlib amd64 2.7.18-6 [1,863 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 python2.7-minimal amd64 2.7.18-6 [1,334 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 libpython2.7-minimal amd64 2.7.18-6 [396 kB]
+Get:8 http://deb.debian.org/debian testing/main amd64 chromium amd64 89.0.4389.82-1 [55.2 MB]
+Get:9 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ megasync 4.4.0-1.1 [12.9 MB]
+Get:10 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.18.3-dmo2 [2,142 kB]
+Get:11 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-gl1.0-0 amd64 1.18.3-dmo2 [1,514 kB]
+Get:12 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-gl amd64 1.18.3-dmo2 [1,448 kB]
+Get:13 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-base amd64 1.18.3-dmo2 [1,982 kB]
+Get:14 http://www.deb-multimedia.org bullseye/main i386 gstreamer1.0-plugins-base i386 1.18.3-dmo2 [1,995 kB]
+Get:15 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-x amd64 1.18.3-dmo2 [1,420 kB]
+Get:16 http://www.deb-multimedia.org bullseye/main i386 gstreamer1.0-x i386 1.18.3-dmo2 [1,422 kB]
+Get:17 http://www.deb-multimedia.org bullseye/main amd64 libmfx1 amd64 2:21.1.2-dmo1 [3,251 kB]
+Get:18 http://deb.debian.org/debian testing/main amd64 chromium-sandbox amd64 89.0.4389.82-1 [111 kB]
+Get:19 http://deb.debian.org/debian testing/main amd64 chromium-common amd64 89.0.4389.82-1 [1,367 kB]
+Get:20 http://deb.debian.org/debian testing/main amd64 git amd64 1:2.30.2-1 [5,527 kB]
+Get:21 http://deb.debian.org/debian testing/main amd64 git-man all 1:2.30.2-1 [1,827 kB]
+Get:22 http://deb.debian.org/debian testing/main amd64 libonig5 amd64 6.9.6-1.1 [185 kB]
+Get:23 http://www.deb-multimedia.org bullseye/main amd64 libx264-161 amd64 4:0.161.3048+gitb86ae3c-dmo1 [825 kB]
+Get:24 http://www.deb-multimedia.org bullseye/main i386 libx264-161 i386 4:0.161.3048+gitb86ae3c-dmo1 [836 kB]
+apt-listchanges: Reading changelogs...
+Fetched 349 MB in 1min 30s (3,870 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554495 files and directories currently installed.)
+Preparing to unpack .../00-libpython2.7_2.7.18-6_amd64.deb ...
+Unpacking libpython2.7:amd64 (2.7.18-6) over (2.7.18-5) ...
+Preparing to unpack .../01-python2.7_2.7.18-6_amd64.deb ...
+Unpacking python2.7 (2.7.18-6) over (2.7.18-5) ...
+Preparing to unpack .../02-libpython2.7-stdlib_2.7.18-6_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.18-6) over (2.7.18-5) ...
+Preparing to unpack .../03-python2.7-minimal_2.7.18-6_amd64.deb ...
+Unpacking python2.7-minimal (2.7.18-6) over (2.7.18-5) ...
+Preparing to unpack .../04-libpython2.7-minimal_2.7.18-6_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.18-6) over (2.7.18-5) ...
+Preparing to unpack .../05-chromium_89.0.4389.82-1_amd64.deb ...
+Unpacking chromium (89.0.4389.82-1) over (88.0.4324.182-1) ...
+Preparing to unpack .../06-chromium-sandbox_89.0.4389.82-1_amd64.deb ...
+Unpacking chromium-sandbox (89.0.4389.82-1) over (88.0.4324.182-1) ...
+Preparing to unpack .../07-chromium-common_89.0.4389.82-1_amd64.deb ...
+Unpacking chromium-common (89.0.4389.82-1) over (88.0.4324.182-1) ...
+Preparing to unpack .../08-debhelper_13.3.4_all.deb ...
+Unpacking debhelper (13.3.4) over (13.3.3) ...
+Preparing to unpack .../09-libdebhelper-perl_13.3.4_all.deb ...
+Unpacking libdebhelper-perl (13.3.4) over (13.3.3) ...
+Preparing to unpack .../10-git_1%3a2.30.2-1_amd64.deb ...
+Unpacking git (1:2.30.2-1) over (1:2.30.1-1) ...
+Preparing to unpack .../11-git-man_1%3a2.30.2-1_all.deb ...
+Unpacking git-man (1:2.30.2-1) over (1:2.30.1-1) ...
+Preparing to unpack .../12-libgstreamer-plugins-base1.0-0_1.18.3-dmo2_amd64.deb ...
+De-configuring libgstreamer-plugins-base1.0-0:i386 (1.18.3-dmo1) ...
+Unpacking libgstreamer-plugins-base1.0-0:amd64 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../13-libgstreamer-plugins-base1.0-0_1.18.3-dmo2_i386.deb ...
+Unpacking libgstreamer-plugins-base1.0-0:i386 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../14-libgstreamer-gl1.0-0_1.18.3-dmo2_amd64.deb ...
+Unpacking libgstreamer-gl1.0-0:amd64 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../15-gstreamer1.0-gl_1.18.3-dmo2_amd64.deb ...
+Unpacking gstreamer1.0-gl:amd64 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../16-gstreamer1.0-plugins-base_1.18.3-dmo2_i386.deb ...
+De-configuring gstreamer1.0-plugins-base:amd64 (1.18.3-dmo1) ...
+Unpacking gstreamer1.0-plugins-base:i386 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../17-gstreamer1.0-plugins-base_1.18.3-dmo2_amd64.deb ...
+Unpacking gstreamer1.0-plugins-base:amd64 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../18-gstreamer1.0-x_1.18.3-dmo2_amd64.deb ...
+De-configuring gstreamer1.0-x:i386 (1.18.3-dmo1) ...
+Unpacking gstreamer1.0-x:amd64 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../19-gstreamer1.0-x_1.18.3-dmo2_i386.deb ...
+Unpacking gstreamer1.0-x:i386 (1.18.3-dmo2) over (1.18.3-dmo1) ...
+Preparing to unpack .../20-libmfx1_2%3a21.1.2-dmo1_amd64.deb ...
+Unpacking libmfx1:amd64 (2:21.1.2-dmo1) over (2:21.1.1-dmo1) ...
+Preparing to unpack .../21-libonig5_6.9.6-1.1_amd64.deb ...
+Unpacking libonig5:amd64 (6.9.6-1.1) over (6.9.6-1) ...
+Preparing to unpack .../22-libx264-161_4%3a0.161.3048+gitb86ae3c-dmo1_amd64.deb ...
+De-configuring libx264-161:i386 (4:0.161.3046+gitfa26446-dmo1) ...
+Unpacking libx264-161:amd64 (4:0.161.3048+gitb86ae3c-dmo1) over (4:0.161.3046+gitfa26446-dmo1) ...
+Preparing to unpack .../23-libx264-161_4%3a0.161.3048+gitb86ae3c-dmo1_i386.deb ...
+Unpacking libx264-161:i386 (4:0.161.3048+gitb86ae3c-dmo1) over (4:0.161.3046+gitfa26446-dmo1) ...
+Preparing to unpack .../24-python3-pil_8.1.2-1_amd64.deb ...
+Unpacking python3-pil:amd64 (8.1.2-1) over (8.1.1-1) ...
+Preparing to unpack .../25-megasync_4.4.0-1.1_amd64.deb ...
+Unpacking megasync (4.4.0-1.1) over (4.3.8-1.1) ...
+Preparing to unpack .../26-metasploit-framework_6.0.35+20210314102504~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.0.35+20210314102504~1rapid7-1) over (6.0.33+20210227112515~1rapid7-1) ...
+Setting up megasync (4.4.0-1.1) ...
+fs.inotify.max_user_watches = 524288
+Setting up libdebhelper-perl (13.3.4) ...
+Setting up debhelper (13.3.4) ...
+Setting up libgstreamer-plugins-base1.0-0:amd64 (1.18.3-dmo2) ...
+Setting up libgstreamer-plugins-base1.0-0:i386 (1.18.3-dmo2) ...
+Setting up metasploit-framework (6.0.35+20210314102504~1rapid7-1) ...
+Run msfconsole to get started
+Setting up chromium-sandbox (89.0.4389.82-1) ...
+Setting up libx264-161:amd64 (4:0.161.3048+gitb86ae3c-dmo1) ...
+Setting up libx264-161:i386 (4:0.161.3048+gitb86ae3c-dmo1) ...
+Setting up python3-pil:amd64 (8.1.2-1) ...
+Setting up libgstreamer-gl1.0-0:amd64 (1.18.3-dmo2) ...
+Setting up gstreamer1.0-plugins-base:amd64 (1.18.3-dmo2) ...
+Setting up gstreamer1.0-plugins-base:i386 (1.18.3-dmo2) ...
+Setting up libpython2.7-minimal:amd64 (2.7.18-6) ...
+Setting up python2.7-minimal (2.7.18-6) ...
+Setting up git-man (1:2.30.2-1) ...
+Setting up chromium-common (89.0.4389.82-1) ...
+Setting up chromium (89.0.4389.82-1) ...
+Setting up libmfx1:amd64 (2:21.1.2-dmo1) ...
+Setting up libonig5:amd64 (6.9.6-1.1) ...
+Setting up gstreamer1.0-gl:amd64 (1.18.3-dmo2) ...
+Setting up gstreamer1.0-x:amd64 (1.18.3-dmo2) ...
+Setting up gstreamer1.0-x:i386 (1.18.3-dmo2) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.18-6) ...
+Setting up git (1:2.30.2-1) ...
+Setting up libpython2.7:amd64 (2.7.18-6) ...
+Setting up python2.7 (2.7.18-6) ...
+Processing triggers for man-db (2.9.4-2) ...
+Processing triggers for mailcap (3.69) ...
+Processing triggers for bamfdaemon (0.5.4-2) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libc-bin (2.31-9) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -97,27 +222,16 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  gstreamer1.0-gl gstreamer1.0-plugins-base gstreamer1.0-plugins-base:i386
-  gstreamer1.0-x gstreamer1.0-x:i386 libgstreamer-gl1.0-0
-  libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-0:i386 megasync
-  metasploit-framework
-10 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 248 MB/275 MB of archives.
-After this operation, 65.5 kB of additional disk space will be used.
-Err:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.34+20210307112507~1rapid7-1
-  Could not connect to downloads.metasploit.com:80 (23.55.210.179), connection timed out
-E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/pool/main/m/metasploit-framework/metasploit-framework_6.0.34+20210307112507~1rapid7-1_amd64.deb  Could not connect to downloads.metasploit.com:80 (23.55.210.179), connection timed out
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;134mCleaning up system. . .[0m
+[1;38;5;221mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -133,12 +247,17 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+The following packages will be REMOVED:
+  linux-image-5.10.0-3-amd64*
+0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+After this operation, 0 B of additional disk space will be used.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554468 files and directories currently installed.)
+Purging configuration files for linux-image-5.10.0-3-amd64 (5.10.13-1) ...
 
-[1;38;5;24mBacking up important files and apps. . .[0m
-[1;38;5;134mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;104mBacking up important files and apps. . .[0m
+[1;38;5;221mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;134mBacking up important config files. . .[0m
+[1;38;5;221mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -147,25 +266,27 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;134mBacking up crontab. . .[0m
+[1;38;5;221mBacking up crontab. . .[0m
 
-[1;38;5;134mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;221mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;24mUpdating local git repos. . .[0m
-[1;38;5;24mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;134mUpdating Projects. . .[0m
+[1;38;5;104mUpdating local git repos. . .[0m
+[1;38;5;104mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;221mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-fatal: unable to access 'https://github.com/msifland/Projects.git/': Failed to connect to github.com port 443: Connection timed out
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;134mUpdating Documents. . .[0m
+[1;38;5;221mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-fatal: unable to access 'https://github.com/msifland/Documents.git/': Failed to connect to github.com port 443: Connection timed out
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;134mUpdating scripts. . .[0m
+[1;38;5;221mUpdating scripts. . .[0m
