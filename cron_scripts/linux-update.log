@@ -1,113 +1,61 @@
-[H[2J[3J[1;38;5;33m           ###########    Updating your system now   ###########[0m
-[1;38;5;162m
-03-22-2021 07:00:01 AM
-Updating Linux debian 5.11.6-msi #1 SMP Mon Mar 15 06:46:27 CDT 2021 x86_64 GNU/Linux[0m
-[1;38;5;19mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;114m           ###########    Updating your system now   ###########[0m
+[1;38;5;71m
+03-24-2021 09:48:01 AM
+Updating Linux debian 5.11.8-msi #1 SMP Mon Mar 22 06:51:01 CDT 2021 x86_64 GNU/Linux[0m
+[1;38;5;156mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;90mUpdating sources and checking for app updates. . .[0m
+[1;38;5;168mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:2 http://repository.spotify.com stable InRelease
-Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
-Hit:4 https://download.sublimetext.com apt/stable/ InRelease
-Hit:5 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:6 http://repo.steampowered.com/steam precise InRelease
-Hit:7 http://repo.sinew.in stable InRelease
-Get:8 http://deb.debian.org/debian testing InRelease [142 kB]
-Hit:9 https://repo.skype.com/deb stable InRelease
-Hit:10 http://security.debian.org stable/updates InRelease
-Hit:11 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
-Get:12 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
-Hit:13 http://deb.debian.org/debian-security testing-security InRelease
-Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [418 B]
-Err:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages
-  Hash Sum mismatch
-  Hashes of expected file:
-   - Filesize:418 [weak]
-   - SHA256:9ed99f0db2c32613f254ffb7a9f5c31355466d8097144e9d9bc24e88a40e8830
-   - SHA1:ea47cb64a6c47e20ad1badaad5538c4be72663de [weak]
-   - MD5Sum:5e60dfe568d96ced03147a756acddf92 [weak]
-  Hashes of received file:
-   - SHA256:63881de567d3723c002477ace6fc9da6a9583f70b54518e72bf5b606cce6a7cb
-   - SHA1:860bdfffd6ed4b8e5e81dc88e2d79849faec4202 [weak]
-   - MD5Sum:c2f311e0e979250ac98970fc8dd66ef0 [weak]
-   - Filesize:418 [weak]
-  Last modification reported: Sun, 21 Mar 2021 11:07:49 +0000
-  Release file created at: Mon, 22 Mar 2021 11:09:41 +0000
-Hit:15 http://deb.debian.org/debian stable InRelease
-Get:16 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Get:17 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
-Get:18 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [417 B]
-Err:18 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages
-  
-Get:19 http://deb.debian.org/debian unstable InRelease [154 kB]
-Hit:20 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:21 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Hit:22 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:23 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:24 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:26 http://deb.debian.org/debian testing/main Sources T-2021-03-22-0200.43-F-2021-03-22-0200.43.pdiff [918 B]
-Get:26 http://deb.debian.org/debian testing/main Sources T-2021-03-22-0200.43-F-2021-03-22-0200.43.pdiff [918 B]
-Get:27 http://deb.debian.org/debian testing/main i386 Packages T-2021-03-22-0200.43-F-2021-03-22-0200.43.pdiff [1,681 B]
-Get:27 http://deb.debian.org/debian testing/main i386 Packages T-2021-03-22-0200.43-F-2021-03-22-0200.43.pdiff [1,681 B]
-Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2021-03-22-0200.43-F-2021-03-22-0200.43.pdiff [1,719 B]
-Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2021-03-22-0200.43-F-2021-03-22-0200.43.pdiff [1,719 B]
-Get:29 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,017 kB]
-Get:30 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,483 kB]
-Get:31 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,310 kB]
-Get:32 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
-Get:33 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
-Get:34 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:35 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:36 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:37 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:38 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
-Get:39 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:40 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [51.0 kB]
-Get:41 http://deb.debian.org/debian unstable/non-free Sources T-2021-03-22-0800.37-F-2021-03-22-0200.43.pdiff [1,270 B]
-Get:41 http://deb.debian.org/debian unstable/non-free Sources T-2021-03-22-0800.37-F-2021-03-22-0200.43.pdiff [1,270 B]
-Get:42 http://deb.debian.org/debian unstable/main Sources T-2021-03-22-0800.37-F-2021-03-21-0800.50.pdiff [13.2 kB]
-Get:42 http://deb.debian.org/debian unstable/main Sources T-2021-03-22-0800.37-F-2021-03-21-0800.50.pdiff [13.2 kB]
-Get:43 http://www.deb-multimedia.org bullseye/main i386 Packages [120 kB]
-Get:44 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-22-0800.37-F-2021-03-21-0800.50.pdiff [19.2 kB]
-Get:44 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-22-0800.37-F-2021-03-21-0800.50.pdiff [19.2 kB]
-Get:45 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-22-0800.37-F-2021-03-21-0800.50.pdiff [10.4 kB]
-Get:45 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-22-0800.37-F-2021-03-21-0800.50.pdiff [10.4 kB]
-Get:46 http://deb.debian.org/debian unstable/main Translation-en T-2021-03-22-0800.37-F-2021-03-21-1400.50.pdiff [1,017 B]
-Get:46 http://deb.debian.org/debian unstable/main Translation-en T-2021-03-22-0800.37-F-2021-03-21-1400.50.pdiff [1,017 B]
-Get:47 http://www.deb-multimedia.org bullseye/main amd64 Packages [124 kB]
-Get:48 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-03-22-0800.37-F-2021-03-22-0800.37.pdiff [3,688 B]
-Get:48 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-03-22-0800.37-F-2021-03-22-0800.37.pdiff [3,688 B]
-Get:49 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-03-22-0800.37-F-2021-03-22-0800.37.pdiff [5,494 B]
-Get:49 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-03-22-0800.37-F-2021-03-22-0800.37.pdiff [5,494 B]
-Get:50 http://deb.debian.org/debian unstable/non-free Translation-en T-2021-03-22-0800.37-F-2021-03-22-0800.37.pdiff [445 B]
-Get:50 http://deb.debian.org/debian unstable/non-free Translation-en T-2021-03-22-0800.37-F-2021-03-22-0800.37.pdiff [445 B]
-Get:51 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,072 kB]
-Get:52 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,597 kB]
-Get:53 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,544 kB]
-Get:54 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [11.7 kB]
-Fetched 31.4 MB in 15s (2,051 kB/s)
+Hit:1 http://security.debian.org stable/updates InRelease
+Hit:2 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:3 http://repo.steampowered.com/steam precise InRelease
+Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:5 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:6 https://repo.skype.com/deb stable InRelease
+Get:7 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:8 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
+Hit:9 https://download.sublimetext.com apt/stable/ InRelease
+Get:10 http://deb.debian.org/debian testing InRelease [142 kB]
+Hit:11 http://repository.spotify.com stable InRelease
+Hit:12 http://repo.sinew.in stable InRelease
+Hit:13 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Get:14 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
+Get:15 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Get:16 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [418 B]
+Hit:17 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:18 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [419 B]
+Hit:19 http://deb.debian.org/debian-security testing-security InRelease
+Hit:20 http://deb.debian.org/debian stable InRelease
+Hit:21 http://www.deb-multimedia.org bullseye InRelease
+Get:22 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
+Get:23 http://deb.debian.org/debian unstable InRelease [154 kB]
+Get:24 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,017 kB]
+Get:25 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,483 kB]
+Get:26 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,313 kB]
+Get:27 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:28 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:29 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:30 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:31 http://deb.debian.org/debian unstable/main Sources T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [12.1 kB]
+Get:31 http://deb.debian.org/debian unstable/main Sources T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [12.1 kB]
+Get:32 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [2,116 B]
+Get:32 http://deb.debian.org/debian unstable/main i386 Packages T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [2,116 B]
+Get:33 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [12.2 kB]
+Get:33 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [12.2 kB]
+Get:34 http://deb.debian.org/debian unstable/main Translation-en T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [230 B]
+Get:34 http://deb.debian.org/debian unstable/main Translation-en T-2021-03-24-1401.13-F-2021-03-24-1401.13.pdiff [230 B]
+Get:35 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,073 kB]
+Get:36 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,594 kB]
+Get:37 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,543 kB]
+Fetched 30.7 MB in 9s (3,479 kB/s)
 Reading package lists...
-E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/main/binary-amd64/Packages.gz  Hash Sum mismatch
-   Hashes of expected file:
-    - Filesize:418 [weak]
-    - SHA256:9ed99f0db2c32613f254ffb7a9f5c31355466d8097144e9d9bc24e88a40e8830
-    - SHA1:ea47cb64a6c47e20ad1badaad5538c4be72663de [weak]
-    - MD5Sum:5e60dfe568d96ced03147a756acddf92 [weak]
-   Hashes of received file:
-    - SHA256:63881de567d3723c002477ace6fc9da6a9583f70b54518e72bf5b606cce6a7cb
-    - SHA1:860bdfffd6ed4b8e5e81dc88e2d79849faec4202 [weak]
-    - MD5Sum:c2f311e0e979250ac98970fc8dd66ef0 [weak]
-    - Filesize:418 [weak]
-   Last modification reported: Sun, 21 Mar 2021 11:07:49 +0000
-   Release file created at: Mon, 22 Mar 2021 11:09:41 +0000
-E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/main/binary-i386/Packages.gz  
-E: Some index files failed to download. They have been ignored, or old ones used instead.
+Building dependency tree...
+Reading state information...
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
 
-[1;38;5;90mChecking for system upgrade. . .[0m
+[1;38;5;168mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -116,93 +64,18 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  gstreamer1.0-gl gstreamer1.0-libav gstreamer1.0-plugins-bad
-  gstreamer1.0-plugins-base gstreamer1.0-plugins-base:i386
-  gstreamer1.0-plugins-good gstreamer1.0-plugins-good:i386
-  gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio gstreamer1.0-x
-  gstreamer1.0-x:i386 libgstreamer-gl1.0-0 libgstreamer-plugins-bad1.0-0
-  libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-0:i386
-  librubberband2 metasploit-framework
-17 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 278 MB of archives.
-After this operation, 413 kB of additional disk space will be used.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.37+20210320102506~1rapid7-1 [248 MB]
-Get:2 http://www.deb-multimedia.org bullseye/main i386 libgstreamer-plugins-base1.0-0 i386 1.18.4-dmo1 [2,168 kB]
-Get:3 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.18.4-dmo1 [2,145 kB]
-Get:4 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-gl1.0-0 amd64 1.18.4-dmo1 [1,516 kB]
-Get:5 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-gl amd64 1.18.4-dmo1 [1,450 kB]
-Get:6 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-libav amd64 1:1.18.4-dmo1 [212 kB]
-Get:7 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-ugly amd64 1:1.18.4-dmo1 [446 kB]
-Get:8 http://www.deb-multimedia.org bullseye/main i386 gstreamer1.0-plugins-base i386 1.18.4-dmo1 [1,997 kB]
-Get:9 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-base amd64 1.18.4-dmo1 [1,984 kB]
-Get:10 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-bad amd64 1:1.18.4-dmo1 [4,205 kB]
-Get:11 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-good amd64 1.18.4-dmo1 [3,137 kB]
-Get:12 http://www.deb-multimedia.org bullseye/main i386 gstreamer1.0-plugins-good i386 1.18.4-dmo1 [3,188 kB]
-Get:13 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-plugins-bad1.0-0 amd64 1:1.18.4-dmo1 [2,290 kB]
-Get:14 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-pulseaudio amd64 1.18.4-dmo1 [1,406 kB]
-Get:15 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-x amd64 1.18.4-dmo1 [1,422 kB]
-Get:16 http://www.deb-multimedia.org bullseye/main i386 gstreamer1.0-x i386 1.18.4-dmo1 [1,424 kB]
-Get:17 http://www.deb-multimedia.org bullseye/main amd64 librubberband2 amd64 1.9.1-dmo1 [88.8 kB]
+  metasploit-framework
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 248 MB of archives.
+After this operation, 92.2 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.37+20210324102507~1rapid7-1 [248 MB]
 apt-listchanges: Reading changelogs...
-Fetched 278 MB in 27s (10.3 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 574829 files and directories currently installed.)
-Preparing to unpack .../00-libgstreamer-plugins-base1.0-0_1.18.4-dmo1_amd64.deb ...
-De-configuring libgstreamer-plugins-base1.0-0:i386 (1.18.3-dmo2) ...
-Unpacking libgstreamer-plugins-base1.0-0:amd64 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../01-libgstreamer-plugins-base1.0-0_1.18.4-dmo1_i386.deb ...
-Unpacking libgstreamer-plugins-base1.0-0:i386 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../02-libgstreamer-gl1.0-0_1.18.4-dmo1_amd64.deb ...
-Unpacking libgstreamer-gl1.0-0:amd64 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../03-gstreamer1.0-gl_1.18.4-dmo1_amd64.deb ...
-Unpacking gstreamer1.0-gl:amd64 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../04-gstreamer1.0-libav_1%3a1.18.4-dmo1_amd64.deb ...
-Unpacking gstreamer1.0-libav:amd64 (1:1.18.4-dmo1) over (1:1.18.3-dmo1) ...
-Preparing to unpack .../05-gstreamer1.0-plugins-ugly_1%3a1.18.4-dmo1_amd64.deb ...
-Unpacking gstreamer1.0-plugins-ugly:amd64 (1:1.18.4-dmo1) over (1:1.18.3-dmo1) ...
-Preparing to unpack .../06-gstreamer1.0-plugins-base_1.18.4-dmo1_amd64.deb ...
-De-configuring gstreamer1.0-plugins-base:i386 (1.18.3-dmo2) ...
-Unpacking gstreamer1.0-plugins-base:amd64 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../07-gstreamer1.0-plugins-base_1.18.4-dmo1_i386.deb ...
-Unpacking gstreamer1.0-plugins-base:i386 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../08-gstreamer1.0-plugins-bad_1%3a1.18.4-dmo1_amd64.deb ...
-Unpacking gstreamer1.0-plugins-bad:amd64 (1:1.18.4-dmo1) over (1:1.18.3-dmo3) ...
-Preparing to unpack .../09-gstreamer1.0-plugins-good_1.18.4-dmo1_i386.deb ...
-De-configuring gstreamer1.0-plugins-good:amd64 (1.18.3-dmo1) ...
-Unpacking gstreamer1.0-plugins-good:i386 (1.18.4-dmo1) over (1.18.3-dmo1) ...
-Preparing to unpack .../10-gstreamer1.0-plugins-good_1.18.4-dmo1_amd64.deb ...
-Unpacking gstreamer1.0-plugins-good:amd64 (1.18.4-dmo1) over (1.18.3-dmo1) ...
-Preparing to unpack .../11-libgstreamer-plugins-bad1.0-0_1%3a1.18.4-dmo1_amd64.deb ...
-Unpacking libgstreamer-plugins-bad1.0-0:amd64 (1:1.18.4-dmo1) over (1:1.18.3-dmo3) ...
-Preparing to unpack .../12-gstreamer1.0-pulseaudio_1.18.4-dmo1_amd64.deb ...
-Unpacking gstreamer1.0-pulseaudio:amd64 (1.18.4-dmo1) over (1.18.3-dmo1) ...
-Preparing to unpack .../13-gstreamer1.0-x_1.18.4-dmo1_amd64.deb ...
-De-configuring gstreamer1.0-x:i386 (1.18.3-dmo2) ...
-Unpacking gstreamer1.0-x:amd64 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../14-gstreamer1.0-x_1.18.4-dmo1_i386.deb ...
-Unpacking gstreamer1.0-x:i386 (1.18.4-dmo1) over (1.18.3-dmo2) ...
-Preparing to unpack .../15-librubberband2_1.9.1-dmo1_amd64.deb ...
-Unpacking librubberband2:amd64 (1.9.1-dmo1) over (1.9.0-dmo1) ...
-Preparing to unpack .../16-metasploit-framework_6.0.37+20210320102506~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.0.37+20210320102506~1rapid7-1) over (6.0.35+20210314102504~1rapid7-1) ...
-Setting up libgstreamer-plugins-base1.0-0:amd64 (1.18.4-dmo1) ...
-Setting up libgstreamer-plugins-base1.0-0:i386 (1.18.4-dmo1) ...
-Setting up metasploit-framework (6.0.37+20210320102506~1rapid7-1) ...
+Fetched 248 MB in 1min 7s (3,736 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 595204 files and directories currently installed.)
+Preparing to unpack .../metasploit-framework_6.0.37+20210324102507~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.0.37+20210324102507~1rapid7-1) over (6.0.37+20210320102506~1rapid7-1) ...
+Setting up metasploit-framework (6.0.37+20210324102507~1rapid7-1) ...
 Run msfconsole to get started
-Setting up libgstreamer-plugins-bad1.0-0:amd64 (1:1.18.4-dmo1) ...
-Setting up libgstreamer-gl1.0-0:amd64 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-plugins-base:amd64 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-plugins-base:i386 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-plugins-bad:amd64 (1:1.18.4-dmo1) ...
-Setting up librubberband2:amd64 (1.9.1-dmo1) ...
-Setting up gstreamer1.0-plugins-ugly:amd64 (1:1.18.4-dmo1) ...
-Setting up gstreamer1.0-pulseaudio:amd64 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-libav:amd64 (1:1.18.4-dmo1) ...
-Setting up gstreamer1.0-gl:amd64 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-x:amd64 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-x:i386 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-plugins-good:amd64 (1.18.4-dmo1) ...
-Setting up gstreamer1.0-plugins-good:i386 (1.18.4-dmo1) ...
-Processing triggers for libc-bin (2.31-9) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -212,7 +85,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;90mCleaning up system. . .[0m
+[1;38;5;168mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -241,10 +114,10 @@ removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d0
 removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
 removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
 
-[1;38;5;162mBacking up important files and apps. . .[0m
-[1;38;5;90mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;71mBacking up important files and apps. . .[0m
+[1;38;5;168mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;90mBacking up important config files. . .[0m
+[1;38;5;168mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -253,14 +126,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;90mBacking up crontab. . .[0m
+[1;38;5;168mBacking up crontab. . .[0m
 
-[1;38;5;90mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;168mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;162mUpdating local git repos. . .[0m
-[1;38;5;162mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;90mUpdating Projects. . .[0m
+[1;38;5;71mUpdating local git repos. . .[0m
+[1;38;5;71mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;168mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -268,7 +141,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;90mUpdating Documents. . .[0m
+[1;38;5;168mUpdating Documents. . .[0m
 /home/msifland/scripts/git-update: line 16: cd: /home/msifland/Documents: No such file or directory
 On branch master
 Your branch is up to date with 'origin/master'.
@@ -277,4 +150,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;90mUpdating scripts. . .[0m
+[1;38;5;168mUpdating scripts. . .[0m
