@@ -1,10 +1,10 @@
-[1;38;5;199m
+[1;38;5;74m
 Removing old build logs. . .
 
 [0m
-[1;38;5;199m
+[1;38;5;74m
 Start Time:
-Date: 03-22-21
+Date: 03-29-21
 Time: 02:30:03 AM
 
 Scanning: 
@@ -28,10 +28,10 @@ Excluding:
 
 Updating clamscan before run. . .
 
-[sudo] password for msifland: Mon Mar 22 02:30:11 2021 -> ClamAV update process started at Mon Mar 22 02:30:11 2021
-Mon Mar 22 02:30:11 2021 -> daily.cld database is up to date (version: 26116, sigs: 3964606, f-level: 63, builder: raynman)
-Mon Mar 22 02:30:11 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
-Mon Mar 22 02:30:11 2021 -> bytecode.cld database is up to date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+[sudo] password for msifland: Mon Mar 29 02:30:11 2021 -> ClamAV update process started at Mon Mar 29 02:30:11 2021
+Mon Mar 29 02:30:11 2021 -> daily.cld database is up to date (version: 26123, sigs: 3966434, f-level: 63, builder: raynman)
+Mon Mar 29 02:30:11 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
+Mon Mar 29 02:30:11 2021 -> bytecode.cld database is up to date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
 
 Running clamscan to scan for viruses. . .
 
@@ -40,26 +40,26 @@ LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanni
 LibClamAV Error: CRITICAL: fmap() failed
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8514248
+Known viruses: 8516075
 Engine version: 0.103.0
-Scanned directories: 89714
-Scanned files: 648885
+Scanned directories: 93663
+Scanned files: 660289
 Infected files: 0
 Total errors: 1
-Data scanned: 48394.35 MB
-Data read: 137150.64 MB (ratio 0.35:1)
-Time: 15078.627 sec (251 m 18 s)
-Start Date: 2021:03:22 02:30:15
-End Date:   2021:03:22 06:41:34
+Data scanned: 48895.92 MB
+Data read: 137690.34 MB (ratio 0.36:1)
+Time: 15026.648 sec (250 m 26 s)
+Start Date: 2021:03:29 02:30:15
+End Date:   2021:03:29 06:40:42
 
 
 End Time:
-Date: 03-22-21
-Time: 06:41:34 AM
-It took 4 hours 11 minutes 31 seconds to scan your system.
+Date: 03-29-21
+Time: 06:40:42 AM
+It took 4 hours 10 minutes 39 seconds to scan your system.
 
 
-[1;38;5;199m
+[1;38;5;74m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
