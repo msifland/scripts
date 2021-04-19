@@ -1,11 +1,11 @@
-[1;38;5;24m
+[1;38;5;96m
 Removing old build logs. . .
 
 [0m
-[1;38;5;24m
+[1;38;5;96m
 Start Time:
-Date: 04-12-21
-Time: 02:30:03 AM
+Date: 04-19-21
+Time: 02:30:04 AM
 
 Scanning: 
 /
@@ -28,13 +28,13 @@ Excluding:
 
 Updating clamscan before run. . .
 
-[sudo] password for msifland: Mon Apr 12 02:30:11 2021 -> ClamAV update process started at Mon Apr 12 02:30:11 2021
-Mon Apr 12 02:30:11 2021 -> ^Your ClamAV installation is OUTDATED!
-Mon Apr 12 02:30:11 2021 -> ^Local version: 0.103.0 Recommended version: 0.103.2
-Mon Apr 12 02:30:11 2021 -> DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav
-Mon Apr 12 02:30:11 2021 -> daily.cld database is up to date (version: 26137, sigs: 3969790, f-level: 63, builder: raynman)
-Mon Apr 12 02:30:11 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
-Mon Apr 12 02:30:11 2021 -> bytecode.cld database is up to date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+[sudo] password for msifland: Mon Apr 19 02:30:12 2021 -> ClamAV update process started at Mon Apr 19 02:30:12 2021
+Mon Apr 19 02:30:12 2021 -> ^Your ClamAV installation is OUTDATED!
+Mon Apr 19 02:30:12 2021 -> ^Local version: 0.103.0 Recommended version: 0.103.2
+Mon Apr 19 02:30:12 2021 -> DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav
+Mon Apr 19 02:30:12 2021 -> daily.cld database is up to date (version: 26144, sigs: 3971258, f-level: 63, builder: raynman)
+Mon Apr 19 02:30:12 2021 -> main.cld database is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
+Mon Apr 19 02:30:12 2021 -> bytecode.cld database is up to date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
 
 Running clamscan to scan for viruses. . .
 
@@ -43,26 +43,26 @@ LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanni
 LibClamAV Error: CRITICAL: fmap() failed
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8519429
+Known viruses: 8520893
 Engine version: 0.103.0
-Scanned directories: 101539
-Scanned files: 680964
+Scanned directories: 105490
+Scanned files: 691368
 Infected files: 0
 Total errors: 1
-Data scanned: 49559.60 MB
-Data read: 138342.37 MB (ratio 0.36:1)
-Time: 16235.783 sec (270 m 35 s)
-Start Date: 2021:04:12 02:30:15
-End Date:   2021:04:12 07:00:51
+Data scanned: 50042.64 MB
+Data read: 138839.93 MB (ratio 0.36:1)
+Time: 15677.971 sec (261 m 17 s)
+Start Date: 2021:04:19 02:30:16
+End Date:   2021:04:19 06:51:34
 
 
 End Time:
-Date: 04-12-21
-Time: 07:00:51 AM
-It took 4 hours 30 minutes 48 seconds to scan your system.
+Date: 04-19-21
+Time: 06:51:34 AM
+It took 4 hours 21 minutes 30 seconds to scan your system.
 
 
-[1;38;5;24m
+[1;38;5;96m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
