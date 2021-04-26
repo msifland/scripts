@@ -1,44 +1,85 @@
-[H[2J[3J[1;38;5;38m           ###########    Updating your system now   ###########[0m
-[1;38;5;89m
-04-22-2021 08:29:30 AM
+[H[2J[3J[1;38;5;159m           ###########    Updating your system now   ###########[0m
+[1;38;5;12m
+04-26-2021 07:00:02 AM
 Updating Linux debian 5.11.15-msi #1 SMP Mon Apr 19 06:47:25 CDT 2021 x86_64 GNU/Linux[0m
-[1;38;5;130mRunning as sudo. . .[0m
+[1;38;5;249mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;98mUpdating sources and checking for app updates. . .[0m
+[1;38;5;251mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
 Hit:2 http://repo.steampowered.com/steam precise InRelease
-Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:4 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:5 https://download.sublimetext.com apt/stable/ InRelease
-Get:6 http://security.debian.org stable/updates InRelease [65.4 kB]
-Hit:7 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:8 http://deb.debian.org/debian testing InRelease
-Hit:9 https://repo.skype.com/deb stable InRelease
+Get:3 http://deb.debian.org/debian testing InRelease [146 kB]
+Get:4 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease [1,512 B]
+Hit:5 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:6 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:7 http://security.debian.org stable/updates InRelease
+Hit:8 https://download.sublimetext.com apt/stable/ InRelease
+Hit:9 http://repo.sinew.in stable InRelease
 Hit:10 http://repository.spotify.com stable InRelease
-Hit:11 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
-Hit:12 http://deb.debian.org/debian testing-updates InRelease
-Hit:13 http://repo.sinew.in stable InRelease
-Hit:14 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:15 http://deb.debian.org/debian-security testing-security InRelease [44.1 kB]
-Hit:16 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Hit:17 http://deb.debian.org/debian stable InRelease
-Get:18 http://security.debian.org stable/updates/main Sources [180 kB]
-Get:19 http://security.debian.org stable/updates/main amd64 Packages [272 kB]
-Get:20 http://security.debian.org stable/updates/main i386 Packages [271 kB]
-Hit:21 http://deb.debian.org/debian stable-updates InRelease
-Hit:22 http://www.deb-multimedia.org bullseye InRelease
-Hit:23 http://deb.debian.org/debian unstable InRelease
-Get:24 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Fetched 835 kB in 2s (422 kB/s)
+Get:11 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
+Hit:12 http://deb.debian.org/debian-security testing-security InRelease
+Hit:13 http://deb.debian.org/debian stable InRelease
+Get:14 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Get:15 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
+Get:16 http://deb.debian.org/debian unstable InRelease [157 kB]
+Get:17 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:18 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:19 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:21 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:22 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:23 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [56.6 kB]
+Hit:24 https://repo.skype.com/deb stable InRelease
+Get:25 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [418 B]
+Hit:26 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:27 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [418 B]
+Get:28 http://deb.debian.org/debian testing/non-free Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [474 B]
+Get:28 http://deb.debian.org/debian testing/non-free Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [474 B]
+Get:29 http://deb.debian.org/debian testing/main Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [1,620 B]
+Get:29 http://deb.debian.org/debian testing/main Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [1,620 B]
+Hit:30 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Get:31 http://deb.debian.org/debian testing/main amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,426 B]
+Get:31 http://deb.debian.org/debian testing/main amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,426 B]
+Get:32 http://deb.debian.org/debian testing/main i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,581 B]
+Get:32 http://deb.debian.org/debian testing/main i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,581 B]
+Hit:33 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:34 http://deb.debian.org/debian testing/non-free amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [5,089 B]
+Get:34 http://deb.debian.org/debian testing/non-free amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [5,089 B]
+Get:35 http://deb.debian.org/debian testing/non-free i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [3,544 B]
+Get:35 http://deb.debian.org/debian testing/non-free i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [3,544 B]
+Get:36 http://deb.debian.org/debian testing/non-free Translation-en T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [216 B]
+Get:36 http://deb.debian.org/debian testing/non-free Translation-en T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [216 B]
+Get:37 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,016 kB]
+Get:38 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,480 kB]
+Get:39 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,309 kB]
+Get:40 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
+Get:41 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:42 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:43 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:44 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:45 http://deb.debian.org/debian unstable/main Sources T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [6,359 B]
+Get:45 http://deb.debian.org/debian unstable/main Sources T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [6,359 B]
+Get:46 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [72.7 kB]
+Get:46 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [72.7 kB]
+Get:47 http://deb.debian.org/debian unstable/main i386 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [73.1 kB]
+Get:47 http://deb.debian.org/debian unstable/main i386 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [73.1 kB]
+Get:48 http://deb.debian.org/debian unstable/main Translation-en T-2021-04-26-0201.07-F-2021-04-25-2020.08.pdiff [199 B]
+Get:48 http://deb.debian.org/debian unstable/main Translation-en T-2021-04-26-0201.07-F-2021-04-25-2020.08.pdiff [199 B]
+Get:49 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,075 kB]
+Get:50 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,601 kB]
+Get:51 http://www.deb-multimedia.org bullseye/main i386 Packages [121 kB]
+Get:52 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,547 kB]
+Get:53 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [14.4 kB]
+Get:54 http://www.deb-multimedia.org bullseye/main amd64 Packages [125 kB]
+Fetched 31.6 MB in 15s (2,057 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-7 packages can be upgraded. Run 'apt list --upgradable' to see them.
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;98mChecking for system upgrade. . .[0m
+[1;38;5;251mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -47,46 +88,33 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  libbluray2 libdavs2-16 libdavs2-16:i386 libvidstab1.1 libxavs2-13
-  libxavs2-13:i386 metasploit-framework
-7 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 250 MB of archives.
-After this operation, 87.0 kB disk space will be freed.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.41+20210421102557~1rapid7-1 [249 MB]
-Get:2 http://www.deb-multimedia.org bullseye/main amd64 libbluray2 amd64 2:1.3.0-dmo2 [133 kB]
-Get:3 http://www.deb-multimedia.org bullseye/main i386 libdavs2-16 i386 1.6.205~20210414.gitb06d758-dmo1 [94.9 kB]
-Get:4 http://www.deb-multimedia.org bullseye/main amd64 libdavs2-16 amd64 1.6.205~20210414.gitb06d758-dmo1 [263 kB]
-Get:5 http://www.deb-multimedia.org bullseye/main amd64 libvidstab1.1 amd64 2:1.1.0-dmo5 [38.0 kB]
-Get:6 http://www.deb-multimedia.org bullseye/main i386 libxavs2-13 i386 1:1.3.232~20210414.giteae1e8b-dmo1 [236 kB]
-Get:7 http://www.deb-multimedia.org bullseye/main amd64 libxavs2-13 amd64 1:1.3.232~20210414.giteae1e8b-dmo1 [538 kB]
+  metasploit-framework python3-pexpect thunderbird
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 291 MB of archives.
+After this operation, 101 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 python3-pexpect all 4.8.0-2 [54.9 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 thunderbird amd64 1:78.10.0-1 [41.6 MB]
+Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.42+20210426102554~1rapid7-1 [249 MB]
 apt-listchanges: Reading changelogs...
-Fetched 250 MB in 1min 40s (2,515 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 513932 files and directories currently installed.)
-Preparing to unpack .../0-libbluray2_2%3a1.3.0-dmo2_amd64.deb ...
-Unpacking libbluray2:amd64 (2:1.3.0-dmo2) over (2:1.3.0-dmo1) ...
-Preparing to unpack .../1-libdavs2-16_1.6.205~20210414.gitb06d758-dmo1_i386.deb ...
-De-configuring libdavs2-16:amd64 (1.6.175~20181125.git00ef2c8-dmo2) ...
-Unpacking libdavs2-16:i386 (1.6.205~20210414.gitb06d758-dmo1) over (1.6.175~20181125.git00ef2c8-dmo2) ...
-Preparing to unpack .../2-libdavs2-16_1.6.205~20210414.gitb06d758-dmo1_amd64.deb ...
-Unpacking libdavs2-16:amd64 (1.6.205~20210414.gitb06d758-dmo1) over (1.6.175~20181125.git00ef2c8-dmo2) ...
-Preparing to unpack .../3-libvidstab1.1_2%3a1.1.0-dmo5_amd64.deb ...
-Unpacking libvidstab1.1:amd64 (2:1.1.0-dmo5) over (2:1.1.0-dmo2) ...
-Preparing to unpack .../4-libxavs2-13_1%3a1.3.232~20210414.giteae1e8b-dmo1_i386.deb ...
-De-configuring libxavs2-13:amd64 (1:1.3-dmo2) ...
-Unpacking libxavs2-13:i386 (1:1.3.232~20210414.giteae1e8b-dmo1) over (1:1.3-dmo2) ...
-Preparing to unpack .../5-libxavs2-13_1%3a1.3.232~20210414.giteae1e8b-dmo1_amd64.deb ...
-Unpacking libxavs2-13:amd64 (1:1.3.232~20210414.giteae1e8b-dmo1) over (1:1.3-dmo2) ...
-Preparing to unpack .../6-metasploit-framework_6.0.41+20210421102557~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.0.41+20210421102557~1rapid7-1) over (6.0.41+20210419102556~1rapid7-1) ...
-Setting up metasploit-framework (6.0.41+20210421102557~1rapid7-1) ...
+Fetched 291 MB in 1min 18s (3,708 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 452975 files and directories currently installed.)
+Preparing to unpack .../python3-pexpect_4.8.0-2_all.deb ...
+Unpacking python3-pexpect (4.8.0-2) over (4.8.0-1) ...
+Preparing to unpack .../thunderbird_1%3a78.10.0-1_amd64.deb ...
+Unpacking thunderbird (1:78.10.0-1) over (1:78.9.0-1) ...
+Preparing to unpack .../metasploit-framework_6.0.42+20210426102554~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.0.42+20210426102554~1rapid7-1) over (6.0.41+20210421102557~1rapid7-1) ...
+Setting up metasploit-framework (6.0.42+20210426102554~1rapid7-1) ...
 Run msfconsole to get started
-Setting up libvidstab1.1:amd64 (2:1.1.0-dmo5) ...
-Setting up libxavs2-13:amd64 (1:1.3.232~20210414.giteae1e8b-dmo1) ...
-Setting up libxavs2-13:i386 (1:1.3.232~20210414.giteae1e8b-dmo1) ...
-Setting up libdavs2-16:amd64 (1.6.205~20210414.gitb06d758-dmo1) ...
-Setting up libdavs2-16:i386 (1.6.205~20210414.gitb06d758-dmo1) ...
-Setting up libbluray2:amd64 (2:1.3.0-dmo2) ...
-Processing triggers for libc-bin (2.31-11) ...
+Setting up python3-pexpect (4.8.0-2) ...
+Setting up thunderbird (1:78.10.0-1) ...
+Skipping profile in /etc/apparmor.d/disable: usr.bin.thunderbird
+Processing triggers for bamfdaemon (0.5.4-2) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for man-db (2.9.4-2) ...
+Processing triggers for mailcap (3.69) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -96,7 +124,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;98mCleaning up system. . .[0m
+[1;38;5;251mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -120,15 +148,11 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-removed '/home/msifland/.cache/thumbnails/normal/cfad236b715853f1784a6b81caa0ec8b.png'
-removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
-removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
-removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
 
-[1;38;5;89mBacking up important files and apps. . .[0m
-[1;38;5;98mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;12mBacking up important files and apps. . .[0m
+[1;38;5;251mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;98mBacking up important config files. . .[0m
+[1;38;5;251mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -137,14 +161,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;98mBacking up crontab. . .[0m
+[1;38;5;251mBacking up crontab. . .[0m
 
-[1;38;5;98mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;251mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;89mUpdating local git repos. . .[0m
-[1;38;5;89mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;98mUpdating Projects. . .[0m
+[1;38;5;12mUpdating local git repos. . .[0m
+[1;38;5;12mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;251mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -152,8 +176,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;98mUpdating Documents. . .[0m
-/home/msifland/scripts/git-update: line 16: cd: /home/msifland/Documents: No such file or directory
+[1;38;5;251mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -161,24 +184,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;98mUpdating scripts. . .[0m
-[master e7364b5] auto commit
- 4 files changed, 22479 insertions(+), 293 deletions(-)
- rewrite cron_scripts/linux-update.log (83%)
-To https://github.com/msifland/scripts
-   ddca1f5..e7364b5  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;98mUpdating pkg_bkups. . .[0m
-[master eb309f1] auto commit
- 6 files changed, 18 insertions(+), 23 deletions(-)
-To https://github.com/msifland/pkg_bkups
-   e031f63..eb309f1  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;130mAll is good.[0m
-
-[1;38;5;89m
-04-22-2021 08:32:38 AM
-[1;38;5;89mIt took 3 minutes 8 seconds to run whole process.[0m
-[0m
+[1;38;5;251mUpdating scripts. . .[0m
