@@ -1,85 +1,71 @@
-[H[2J[3J[1;38;5;159m           ###########    Updating your system now   ###########[0m
-[1;38;5;12m
-04-26-2021 07:00:02 AM
-Updating Linux debian 5.11.15-msi #1 SMP Mon Apr 19 06:47:25 CDT 2021 x86_64 GNU/Linux[0m
-[1;38;5;249mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;232m           ###########    Updating your system now   ###########[0m
+[1;38;5;170m
+05-03-2021 07:00:01 AM
+Updating Linux debian 5.12.0-msi #1 SMP Mon Apr 26 06:47:52 CDT 2021 x86_64 GNU/Linux[0m
+[1;38;5;48mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;251mUpdating sources and checking for app updates. . .[0m
+[1;38;5;63mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:2 http://repo.steampowered.com/steam precise InRelease
-Get:3 http://deb.debian.org/debian testing InRelease [146 kB]
-Get:4 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease [1,512 B]
-Hit:5 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:6 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
-Hit:7 http://security.debian.org stable/updates InRelease
-Hit:8 https://download.sublimetext.com apt/stable/ InRelease
-Hit:9 http://repo.sinew.in stable InRelease
-Hit:10 http://repository.spotify.com stable InRelease
-Get:11 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
+Hit:1 http://security.debian.org stable/updates InRelease
+Hit:2 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:3 http://repository.spotify.com stable InRelease
+Get:4 http://deb.debian.org/debian testing InRelease [146 kB]
+Hit:5 http://repo.steampowered.com/steam precise InRelease
+Hit:6 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:7 http://download.opensuse.org/repositories/home:/strycore/Debian_Testing ./ InRelease
+Get:8 https://download.sublimetext.com apt/stable/ InRelease [2,562 B]
+Get:9 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Get:10 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
+Hit:11 http://repo.sinew.in stable InRelease
 Hit:12 http://deb.debian.org/debian-security testing-security InRelease
 Hit:13 http://deb.debian.org/debian stable InRelease
 Get:14 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
 Get:15 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
 Get:16 http://deb.debian.org/debian unstable InRelease [157 kB]
-Get:17 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Hit:17 https://repo.skype.com/deb stable InRelease
 Get:18 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:19 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Hit:19 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
 Get:20 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:21 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:22 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
-Get:23 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [56.6 kB]
-Hit:24 https://repo.skype.com/deb stable InRelease
-Get:25 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [418 B]
-Hit:26 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:27 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [418 B]
-Get:28 http://deb.debian.org/debian testing/non-free Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [474 B]
-Get:28 http://deb.debian.org/debian testing/non-free Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [474 B]
-Get:29 http://deb.debian.org/debian testing/main Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [1,620 B]
-Get:29 http://deb.debian.org/debian testing/main Sources T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [1,620 B]
-Hit:30 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:31 http://deb.debian.org/debian testing/main amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,426 B]
-Get:31 http://deb.debian.org/debian testing/main amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,426 B]
-Get:32 http://deb.debian.org/debian testing/main i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,581 B]
-Get:32 http://deb.debian.org/debian testing/main i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [7,581 B]
-Hit:33 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:34 http://deb.debian.org/debian testing/non-free amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [5,089 B]
-Get:34 http://deb.debian.org/debian testing/non-free amd64 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [5,089 B]
-Get:35 http://deb.debian.org/debian testing/non-free i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [3,544 B]
-Get:35 http://deb.debian.org/debian testing/non-free i386 Packages T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [3,544 B]
-Get:36 http://deb.debian.org/debian testing/non-free Translation-en T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [216 B]
-Get:36 http://deb.debian.org/debian testing/non-free Translation-en T-2021-04-26-0201.07-F-2021-04-26-0201.07.pdiff [216 B]
-Get:37 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,016 kB]
-Get:38 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,480 kB]
-Get:39 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,309 kB]
-Get:40 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
-Get:41 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:42 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:43 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:44 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:45 http://deb.debian.org/debian unstable/main Sources T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [6,359 B]
-Get:45 http://deb.debian.org/debian unstable/main Sources T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [6,359 B]
-Get:46 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [72.7 kB]
-Get:46 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [72.7 kB]
-Get:47 http://deb.debian.org/debian unstable/main i386 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [73.1 kB]
-Get:47 http://deb.debian.org/debian unstable/main i386 Packages T-2021-04-26-0800.44-F-2021-04-25-2020.08.pdiff [73.1 kB]
-Get:48 http://deb.debian.org/debian unstable/main Translation-en T-2021-04-26-0201.07-F-2021-04-25-2020.08.pdiff [199 B]
-Get:48 http://deb.debian.org/debian unstable/main Translation-en T-2021-04-26-0201.07-F-2021-04-25-2020.08.pdiff [199 B]
-Get:49 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,075 kB]
-Get:50 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,601 kB]
-Get:51 http://www.deb-multimedia.org bullseye/main i386 Packages [121 kB]
-Get:52 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,547 kB]
-Get:53 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [14.4 kB]
-Get:54 http://www.deb-multimedia.org bullseye/main amd64 Packages [125 kB]
-Fetched 31.6 MB in 15s (2,057 kB/s)
+Get:21 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:22 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Hit:23 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:24 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:25 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
+Get:26 http://deb.debian.org/debian testing/main Sources T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [4,384 B]
+Get:26 http://deb.debian.org/debian testing/main Sources T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [4,384 B]
+Get:27 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [419 B]
+Get:28 http://deb.debian.org/debian testing/main i386 Packages T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [7,367 B]
+Get:29 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [417 B]
+Get:28 http://deb.debian.org/debian testing/main i386 Packages T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [7,367 B]
+Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [7,215 B]
+Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [7,215 B]
+Get:31 http://deb.debian.org/debian testing/main Translation-en T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [342 B]
+Get:31 http://deb.debian.org/debian testing/main Translation-en T-2021-05-03-0200.53-F-2021-05-03-0200.53.pdiff [342 B]
+Get:32 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,017 kB]
+Get:33 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [13.1 kB]
+Get:34 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:35 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:36 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:37 http://deb.debian.org/debian unstable/main Sources T-2021-05-03-0800.56-F-2021-05-03-0200.53.pdiff [1,900 B]
+Get:37 http://deb.debian.org/debian unstable/main Sources T-2021-05-03-0800.56-F-2021-05-03-0200.53.pdiff [1,900 B]
+Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-05-03-0800.56-F-2021-05-03-0200.53.pdiff [1,544 B]
+Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-05-03-0800.56-F-2021-05-03-0200.53.pdiff [1,544 B]
+Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2021-05-03-0800.56-F-2021-05-03-0200.53.pdiff [1,541 B]
+Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2021-05-03-0800.56-F-2021-05-03-0200.53.pdiff [1,541 B]
+Get:40 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,074 kB]
+Get:41 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,601 kB]
+Get:42 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,550 kB]
+Get:43 http://www.deb-multimedia.org bullseye/main amd64 Packages [125 kB]
+Get:44 http://www.deb-multimedia.org bullseye/main i386 Packages [121 kB]
+Fetched 20.4 MB in 15s (1,332 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+22 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;251mChecking for system upgrade. . .[0m
+[1;38;5;63mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -88,33 +74,114 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  metasploit-framework python3-pexpect thunderbird
-3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 291 MB of archives.
-After this operation, 101 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 python3-pexpect all 4.8.0-2 [54.9 kB]
-Get:2 http://deb.debian.org/debian testing/main amd64 thunderbird amd64 1:78.10.0-1 [41.6 MB]
-Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.42+20210426102554~1rapid7-1 [249 MB]
+  ffmpeg gstreamer1.0-plugins-bad libavcodec58 libavcodec58:i386 libavdevice58
+  libavfilter7 libavformat58 libavresample4 libavresample4:i386 libavutil56
+  libavutil56:i386 libfdk-aac2 libfdk-aac2:i386 libges-1.0-0
+  libgstreamer-plugins-bad1.0-0 libpostproc55 libswresample3
+  libswresample3:i386 libswscale5 libvpx6 libvpx6:i386 metasploit-framework
+22 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 275 MB of archives.
+After this operation, 595 kB disk space will be freed.
+Get:1 http://deb.debian.org/debian testing/main amd64 libges-1.0-0 amd64 1.18.4-2 [538 kB]
+Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.43+20210503102527~1rapid7-1 [249 MB]
+Get:3 http://www.deb-multimedia.org bullseye/main amd64 libavutil56 amd64 10:4.3.2-dmo5 [329 kB]
+Get:4 http://www.deb-multimedia.org bullseye/main i386 libavutil56 i386 10:4.3.2-dmo5 [338 kB]
+Get:5 http://www.deb-multimedia.org bullseye/main amd64 libfdk-aac2 amd64 1:2.0.2-dmo2 [671 kB]
+Get:6 http://www.deb-multimedia.org bullseye/main i386 libfdk-aac2 i386 1:2.0.2-dmo2 [687 kB]
+Get:7 http://www.deb-multimedia.org bullseye/main amd64 libswresample3 amd64 10:4.3.2-dmo5 [112 kB]
+Get:8 http://www.deb-multimedia.org bullseye/main i386 libswresample3 i386 10:4.3.2-dmo5 [117 kB]
+Get:9 http://www.deb-multimedia.org bullseye/main amd64 libvpx6 amd64 1.10.0+really1.8.1-dmo1 [823 kB]
+Get:10 http://www.deb-multimedia.org bullseye/main i386 libvpx6 i386 1.10.0+really1.8.1-dmo1 [801 kB]
+Get:11 http://www.deb-multimedia.org bullseye/main i386 libavcodec58 i386 10:4.3.2-dmo5 [4,908 kB]
+Get:12 http://www.deb-multimedia.org bullseye/main amd64 libavcodec58 amd64 10:4.3.2-dmo5 [4,982 kB]
+Get:13 http://www.deb-multimedia.org bullseye/main amd64 libavformat58 amd64 10:4.3.2-dmo5 [1,056 kB]
+Get:14 http://www.deb-multimedia.org bullseye/main i386 libavresample4 i386 10:4.3.2-dmo5 [111 kB]
+Get:15 http://www.deb-multimedia.org bullseye/main amd64 libavresample4 amd64 10:4.3.2-dmo5 [108 kB]
+Get:16 http://www.deb-multimedia.org bullseye/main amd64 libpostproc55 amd64 10:4.3.2-dmo5 [109 kB]
+Get:17 http://www.deb-multimedia.org bullseye/main amd64 libswscale5 amd64 10:4.3.2-dmo5 [213 kB]
+Get:18 http://www.deb-multimedia.org bullseye/main amd64 libavfilter7 amd64 10:4.3.2-dmo5 [1,328 kB]
+Get:19 http://www.deb-multimedia.org bullseye/main amd64 libavdevice58 amd64 10:4.3.2-dmo5 [127 kB]
+Get:20 http://www.deb-multimedia.org bullseye/main amd64 ffmpeg amd64 10:4.3.2-dmo5 [1,597 kB]
+Get:21 http://www.deb-multimedia.org bullseye/main amd64 gstreamer1.0-plugins-bad amd64 1:1.18.4-dmo4 [4,206 kB]
+Get:22 http://www.deb-multimedia.org bullseye/main amd64 libgstreamer-plugins-bad1.0-0 amd64 1:1.18.4-dmo4 [2,290 kB]
 apt-listchanges: Reading changelogs...
-Fetched 291 MB in 1min 18s (3,708 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 452975 files and directories currently installed.)
-Preparing to unpack .../python3-pexpect_4.8.0-2_all.deb ...
-Unpacking python3-pexpect (4.8.0-2) over (4.8.0-1) ...
-Preparing to unpack .../thunderbird_1%3a78.10.0-1_amd64.deb ...
-Unpacking thunderbird (1:78.10.0-1) over (1:78.9.0-1) ...
-Preparing to unpack .../metasploit-framework_6.0.42+20210426102554~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.0.42+20210426102554~1rapid7-1) over (6.0.41+20210421102557~1rapid7-1) ...
-Setting up metasploit-framework (6.0.42+20210426102554~1rapid7-1) ...
+Fetched 275 MB in 1min 22s (3,338 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 473362 files and directories currently installed.)
+Preparing to unpack .../00-libavutil56_10%3a4.3.2-dmo5_i386.deb ...
+De-configuring libavutil56:amd64 (10:4.3.2-dmo4) ...
+Unpacking libavutil56:i386 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../01-libavutil56_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking libavutil56:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../02-libfdk-aac2_1%3a2.0.2-dmo2_i386.deb ...
+De-configuring libfdk-aac2:amd64 (1:2.0.1-dmo1) ...
+Unpacking libfdk-aac2:i386 (1:2.0.2-dmo2) over (1:2.0.1-dmo1) ...
+Preparing to unpack .../03-libfdk-aac2_1%3a2.0.2-dmo2_amd64.deb ...
+Unpacking libfdk-aac2:amd64 (1:2.0.2-dmo2) over (1:2.0.1-dmo1) ...
+Preparing to unpack .../04-libswresample3_10%3a4.3.2-dmo5_i386.deb ...
+De-configuring libswresample3:amd64 (10:4.3.2-dmo4) ...
+Unpacking libswresample3:i386 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../05-libswresample3_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking libswresample3:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../06-libvpx6_1.10.0+really1.8.1-dmo1_i386.deb ...
+De-configuring libvpx6:amd64 (1.10.0-dmo1) ...
+Unpacking libvpx6:i386 (1.10.0+really1.8.1-dmo1) over (1.10.0-dmo1) ...
+Preparing to unpack .../07-libvpx6_1.10.0+really1.8.1-dmo1_amd64.deb ...
+Unpacking libvpx6:amd64 (1.10.0+really1.8.1-dmo1) over (1.10.0-dmo1) ...
+Preparing to unpack .../08-libavcodec58_10%3a4.3.2-dmo5_amd64.deb ...
+De-configuring libavcodec58:i386 (10:4.3.2-dmo4) ...
+Unpacking libavcodec58:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../09-libavcodec58_10%3a4.3.2-dmo5_i386.deb ...
+Unpacking libavcodec58:i386 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../10-libavformat58_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking libavformat58:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../11-libavresample4_10%3a4.3.2-dmo5_amd64.deb ...
+De-configuring libavresample4:i386 (10:4.3.2-dmo4) ...
+Unpacking libavresample4:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../12-libavresample4_10%3a4.3.2-dmo5_i386.deb ...
+Unpacking libavresample4:i386 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../13-libpostproc55_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking libpostproc55:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../14-libswscale5_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking libswscale5:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../15-libavfilter7_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking libavfilter7:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../16-libavdevice58_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking libavdevice58:amd64 (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../17-ffmpeg_10%3a4.3.2-dmo5_amd64.deb ...
+Unpacking ffmpeg (10:4.3.2-dmo5) over (10:4.3.2-dmo4) ...
+Preparing to unpack .../18-gstreamer1.0-plugins-bad_1%3a1.18.4-dmo4_amd64.deb ...
+Unpacking gstreamer1.0-plugins-bad:amd64 (1:1.18.4-dmo4) over (1:1.18.4-dmo3) ...
+Preparing to unpack .../19-libgstreamer-plugins-bad1.0-0_1%3a1.18.4-dmo4_amd64.deb ...
+Unpacking libgstreamer-plugins-bad1.0-0:amd64 (1:1.18.4-dmo4) over (1:1.18.4-dmo3) ...
+Preparing to unpack .../20-libges-1.0-0_1.18.4-2_amd64.deb ...
+Unpacking libges-1.0-0 (1.18.4-2) over (1.18.3-1) ...
+Preparing to unpack .../21-metasploit-framework_6.0.43+20210503102527~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.0.43+20210503102527~1rapid7-1) over (6.0.42+20210426102554~1rapid7-1) ...
+Setting up libfdk-aac2:amd64 (1:2.0.2-dmo2) ...
+Setting up libfdk-aac2:i386 (1:2.0.2-dmo2) ...
+Setting up metasploit-framework (6.0.43+20210503102527~1rapid7-1) ...
 Run msfconsole to get started
-Setting up python3-pexpect (4.8.0-2) ...
-Setting up thunderbird (1:78.10.0-1) ...
-Skipping profile in /etc/apparmor.d/disable: usr.bin.thunderbird
-Processing triggers for bamfdaemon (0.5.4-2) ...
-Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for desktop-file-utils (0.26-1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
+Setting up libavutil56:amd64 (10:4.3.2-dmo5) ...
+Setting up libavutil56:i386 (10:4.3.2-dmo5) ...
+Setting up libgstreamer-plugins-bad1.0-0:amd64 (1:1.18.4-dmo4) ...
+Setting up gstreamer1.0-plugins-bad:amd64 (1:1.18.4-dmo4) ...
+Setting up libpostproc55:amd64 (10:4.3.2-dmo5) ...
+Setting up libvpx6:amd64 (1.10.0+really1.8.1-dmo1) ...
+Setting up libvpx6:i386 (1.10.0+really1.8.1-dmo1) ...
+Setting up libswscale5:amd64 (10:4.3.2-dmo5) ...
+Setting up libges-1.0-0 (1.18.4-2) ...
+Setting up libswresample3:amd64 (10:4.3.2-dmo5) ...
+Setting up libswresample3:i386 (10:4.3.2-dmo5) ...
+Setting up libavresample4:amd64 (10:4.3.2-dmo5) ...
+Setting up libavresample4:i386 (10:4.3.2-dmo5) ...
+Setting up libavcodec58:amd64 (10:4.3.2-dmo5) ...
+Setting up libavcodec58:i386 (10:4.3.2-dmo5) ...
+Setting up libavformat58:amd64 (10:4.3.2-dmo5) ...
+Setting up libavfilter7:amd64 (10:4.3.2-dmo5) ...
+Setting up libavdevice58:amd64 (10:4.3.2-dmo5) ...
+Setting up ffmpeg (10:4.3.2-dmo5) ...
 Processing triggers for man-db (2.9.4-2) ...
-Processing triggers for mailcap (3.69) ...
+Processing triggers for libc-bin (2.31-11) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -124,7 +191,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;251mCleaning up system. . .[0m
+[1;38;5;63mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -149,10 +216,10 @@ Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;12mBacking up important files and apps. . .[0m
-[1;38;5;251mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;170mBacking up important files and apps. . .[0m
+[1;38;5;63mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;251mBacking up important config files. . .[0m
+[1;38;5;63mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -161,14 +228,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;251mBacking up crontab. . .[0m
+[1;38;5;63mBacking up crontab. . .[0m
 
-[1;38;5;251mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;63mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;12mUpdating local git repos. . .[0m
-[1;38;5;12mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;251mUpdating Projects. . .[0m
+[1;38;5;170mUpdating local git repos. . .[0m
+[1;38;5;170mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;63mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -176,7 +243,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;251mUpdating Documents. . .[0m
+[1;38;5;63mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -184,4 +251,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;251mUpdating scripts. . .[0m
+[1;38;5;63mUpdating scripts. . .[0m

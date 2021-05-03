@@ -1,11 +1,11 @@
-[1;38;5;97m
+[1;38;5;118m
 Removing old build logs. . .
 
 [0m
-[1;38;5;97m
+[1;38;5;118m
 Start Time:
-Date: 04-26-21
-Time: 02:30:03 AM
+Date: 05-03-21
+Time: 02:30:04 AM
 
 Scanning: 
 /
@@ -28,10 +28,10 @@ Excluding:
 
 Updating clamscan before run. . .
 
-[sudo] password for msifland: Mon Apr 26 02:30:11 2021 -> ClamAV update process started at Mon Apr 26 02:30:11 2021
-Mon Apr 26 02:30:11 2021 -> daily.cld database is up-to-date (version: 26151, sigs: 3973043, f-level: 63, builder: raynman)
-Mon Apr 26 02:30:11 2021 -> main.cld database is up-to-date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
-Mon Apr 26 02:30:11 2021 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+[sudo] password for msifland: Mon May  3 02:30:12 2021 -> ClamAV update process started at Mon May  3 02:30:12 2021
+Mon May  3 02:30:12 2021 -> daily.cld database is up-to-date (version: 26158, sigs: 3975539, f-level: 63, builder: raynman)
+Mon May  3 02:30:12 2021 -> main.cld database is up-to-date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)
+Mon May  3 02:30:12 2021 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
 
 Running clamscan to scan for viruses. . .
 
@@ -113,25 +113,25 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8522677
+Known viruses: 8525167
 Engine version: 0.103.2
-Scanned directories: 66239
-Scanned files: 589128
+Scanned directories: 70188
+Scanned files: 599504
 Infected files: 0
-Data scanned: 41263.98 MB
-Data read: 135837.94 MB (ratio 0.30:1)
-Time: 10817.476 sec (180 m 17 s)
-Start Date: 2021:04:26 02:30:15
-End Date:   2021:04:26 05:30:33
+Data scanned: 41655.42 MB
+Data read: 136088.16 MB (ratio 0.31:1)
+Time: 10953.713 sec (182 m 33 s)
+Start Date: 2021:05:03 02:30:16
+End Date:   2021:05:03 05:32:50
 
 
 End Time:
-Date: 04-26-21
-Time: 05:30:33 AM
-It took 3 hours 0 minutes 30 seconds to scan your system.
+Date: 05-03-21
+Time: 05:32:50 AM
+It took 3 hours 2 minutes 46 seconds to scan your system.
 
 
-[1;38;5;97m
+[1;38;5;118m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
