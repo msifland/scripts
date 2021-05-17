@@ -1,9 +1,9 @@
 [sudo] password for msifland: 
 
-05-15-2021 01:30:01 AM
+05-17-2021 01:30:02 AM
 
 [1;38;5;26mRemove old backups first. . .[0m
-/home/msifland/Dropbox/Backups/msifland-05-11-2021.tar.gz
+/home/msifland/Dropbox/Backups/msifland-05-13-2021.tar.gz
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 
 [1;38;5;26mBacking up:[0m
@@ -35,7 +35,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;26mTo /home/msifland/Dropbox/Backups/msifland-05-15-2021.tar.gz
+[1;38;5;26mTo /home/msifland/Dropbox/Backups/msifland-05-17-2021.tar.gz
 
 
 Excluding:[0m
@@ -77,17 +77,17 @@ tar: Removing leading `/' from hard link targets
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-05-15-2021.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-05-15-2021.tar.gz
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-05-17-2021.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-05-17-2021.tar.gz
 [1;38;5;26mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
 total 2.2G
--rw-r--r-- 1 msifland msifland 545M May 12 01:30 msifland-05-12-2021.tar.gz
--rw-r--r-- 1 msifland msifland 545M May 13 01:30 msifland-05-13-2021.tar.gz
 -rw-r--r-- 1 msifland msifland 546M May 14 01:30 msifland-05-14-2021.tar.gz
 -rw-r--r-- 1 msifland msifland 544M May 15 01:42 msifland-05-15-2021.tar.gz
--rw-r--r-- 1 msifland msifland 2.4K May 15 01:42 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 544M May 16 01:31 msifland-05-16-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 545M May 17 01:30 msifland-05-17-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 2.4K May 17 01:30 my_backup_log.txt
 
 [1;38;5;26mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-05-15-2021 01:42:46 AM
-[1;38;5;26mIt took 12 minutes 45 seconds to run whole process.[0m
+05-17-2021 01:30:50 AM
+[1;38;5;26mIt took 0 minutes 48 seconds to run whole process.[0m
 
