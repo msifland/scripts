@@ -236,3 +236,23 @@ Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 [1;38;5;64mUpdating scripts. . .[0m
+[master 8454b79] auto commit
+ 6 files changed, 14131 insertions(+), 32965 deletions(-)
+ rewrite cron_scripts/linux-update.log (70%)
+To https://github.com/msifland/scripts
+   eb286c4..8454b79  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+[1;38;5;64mUpdating pkg_bkups. . .[0m
+[master 8b679bf] auto commit
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+To https://github.com/msifland/pkg_bkups
+   7380fe7..8b679bf  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+[1;38;5;196mAll is good.[0m
+
+[1;38;5;226m
+06-07-2021 07:08:46 AM
+[1;38;5;226mIt took 8 minutes 45 seconds to run whole process.[0m
+[0m
