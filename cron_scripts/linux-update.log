@@ -1,6 +1,6 @@
 [H[2J[3J[1;38;5;163m           ###########    Updating your system now   ###########[0m
 [1;38;5;179m
-06-19-2021 09:19:28 AM
+06-19-2021 09:20:58 AM
 Updating Linux debian 5.12.10-msi #1 SMP Mon Jun 14 11:38:34 CDT 2021 x86_64 GNU/Linux[0m
 [1;38;5;164mRunning as sudo. . .[0m
 [sudo] password for msifland: 
@@ -10,27 +10,41 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
 Hit:2 http://repo.steampowered.com/steam precise InRelease
-Hit:3 http://deb.debian.org/debian testing InRelease
-Hit:4 https://download.sublimetext.com apt/stable/ InRelease
-Hit:5 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:6 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:7 https://repo.skype.com/deb stable InRelease
-Hit:8 http://security.debian.org stable/updates InRelease
-Hit:9 http://repo.sinew.in stable InRelease
-Hit:10 http://deb.debian.org/debian testing-updates InRelease
-Hit:11 http://repository.spotify.com stable InRelease
-Hit:12 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:13 http://www.deb-multimedia.org bullseye InRelease
-Hit:14 http://deb.debian.org/debian-security testing-security InRelease
-Hit:15 http://deb.debian.org/debian stable InRelease
-Get:16 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease [1,497 B]
-Hit:17 http://deb.debian.org/debian stable-updates InRelease
-Hit:18 http://deb.debian.org/debian unstable InRelease
-Hit:19 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:20 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:21 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Err:16 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease
+Hit:3 http://security.debian.org stable/updates InRelease
+Hit:4 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:5 https://repo.skype.com/deb stable InRelease
+Hit:6 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:7 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease [1,497 B]
+Hit:8 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:9 https://download.sublimetext.com apt/stable/ InRelease
+Hit:10 http://deb.debian.org/debian testing InRelease
+Hit:11 http://www.deb-multimedia.org bullseye InRelease
+Hit:12 http://repository.spotify.com stable InRelease
+Hit:13 http://repo.sinew.in stable InRelease
+Hit:14 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:15 http://deb.debian.org/debian testing-updates InRelease
+Err:7 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease
   The following signatures were invalid: EXPKEYSIG 2F7F0DA5FD5B64B9 home:strycore OBS Project <home:strycore@build.opensuse.org>
+Hit:16 http://deb.debian.org/debian-security testing-security InRelease
+Get:17 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:18 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Hit:19 http://deb.debian.org/debian stable InRelease
+Get:20 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
+Get:21 http://deb.debian.org/debian unstable InRelease [161 kB]
+Get:22 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:23 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:24 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:25 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:26 http://deb.debian.org/debian unstable/main Sources T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [1,539 B]
+Get:26 http://deb.debian.org/debian unstable/main Sources T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [1,539 B]
+Get:27 http://deb.debian.org/debian unstable/main i386 Packages T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [35 B]
+Get:27 http://deb.debian.org/debian unstable/main i386 Packages T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [35 B]
+Get:28 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [35 B]
+Get:28 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [35 B]
+Get:29 http://deb.debian.org/debian unstable/main Translation-en T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [33 B]
+Get:29 http://deb.debian.org/debian unstable/main Translation-en T-2021-06-19-1401.23-F-2021-06-19-1401.23.pdiff [33 B]
+Get:30 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,080 kB]
+Get:31 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,565 kB]
 Reading package lists...
 W: GPG error: http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease: The following signatures were invalid: EXPKEYSIG 2F7F0DA5FD5B64B9 home:strycore OBS Project <home:strycore@build.opensuse.org>
 E: The repository 'http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease' is not signed.
