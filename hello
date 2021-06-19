@@ -1,0 +1,7 @@
+#!/bin/bash
+# This is a bash script.
+# Put your description below this line and code below that.
+# 
+echo
+echo "Hello World"
+sleep 1
