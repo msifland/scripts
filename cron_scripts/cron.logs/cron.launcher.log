@@ -1,0 +1,60 @@
+
+06-25 14:31 msifland running:
+['nice', 'ionice', '-c3', 'linux-update-test']
+in directory /home/msifland with log in scripts/cron_scripts/cron.logs/linux-update-test.1624649492.log
+Returned 127 after 0.02 seconds
+
+06-25 14:31 msifland running:
+['nice', 'ionice', '-c3', 'linux-update-test']
+in directory /home/msifland with log in ./scripts/cron_scripts/cron.logs/linux-update-test.1624649505.log
+Returned 127 after 0.00156 seconds
+
+06-25 14:37 msifland running:
+['nice', 'ionice', '-c3', 'linux-update-test']
+in directory /home/msifland with log in ./scripts/cron_scripts/cron.logs/linux-update-test.1624649851.log
+Returned 127 after 0.00142 seconds
+
+06-25 14:37 msifland running:
+['nice', 'ionice', '-c3', 'linux-update']
+in directory /home/msifland with log in ./scripts/cron_scripts/cron.logs/linux-update.1624649869.log
+Returned 127 after 0.00122 seconds
+
+06-25 14:56 msifland running:
+['nice', 'ionice', '-c3', 'linux-update']
+in directory /home/msifland with log in scripts/cron_scripts/cron.logs/linux-update.1624650960.log
+Returned 127 after 0.00149 seconds
+
+06-25 15:01 msifland running:
+['nice', 'ionice', '-c3', 'linux-update-run']
+in directory /home/msifland with log in scripts/cron_scripts/cron.logs/linux-update-run.1624651284.log
+Returned 127 after 0.0014 seconds
+
+06-25 15:02 msifland running:
+['nice', 'ionice', '-c3', 'scripts/cron_scripts/linux-update-run']
+in directory /home/msifland/scripts/cron_scripts with log in scripts/cron_scripts/cron.logs/linux-update-run.1624651333.log
+Returned 127 after 0.00145 seconds
+
+06-25 15:02 msifland running:
+['nice', 'ionice', '-c3', './scripts/cron_scripts/linux-update-run']
+in directory /home/msifland/scripts/cron_scripts with log in scripts/cron_scripts/cron.logs/linux-update-run.1624651362.log
+Returned 127 after 0.00121 seconds
+
+06-25 15:02 msifland running:
+['nice', 'ionice', '-c3', './scripts/cron_scripts/linux-update-run']
+in directory /home/msifland/scripts/cron_scripts with log in scripts/cron_scripts/cron.logs/linux-update-run.1624651377.log
+Returned 127 after 0.00148 seconds
+
+06-25 15:07 msifland running:
+['nice', 'ionice', '-c3', './scripts/cron_scripts/linux-update-run']
+in directory /home/msifland/scripts/cron_scripts with log in scripts/cron_scripts/cron.logs/linux-update-run.1624651650.log
+Returned 127 after 0.00129 seconds
+
+06-25 15:08 msifland running:
+['nice', 'ionice', '-c3', 'scripts/cron_scripts/linux-update-run']
+in directory /home/msifland/scripts/cron_scripts with log in scripts/cron_scripts/cron.logs/linux-update-run.1624651713.log
+Returned 127 after 0.00121 seconds
+
+06-25 15:09 msifland running:
+['nice', 'ionice', '-c3', '/home/msifland/scripts/cron_scripts/linux-update-run']
+in directory /home/msifland/scripts/cron_scripts with log in scripts/cron_scripts/cron.logs/linux-update-run.1624651744.log
+Returned 0 after 0.0496 seconds

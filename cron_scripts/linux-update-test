@@ -1,0 +1,7 @@
+#!/bin/bash
+# This script runs /scripts/linux-update from cron. Needed to run in terminal. Put you crontab -e job as a path to this script. The 'read -n1' at the end(bash read syntax), is to hold the window open.(read -n1 for bash syntax). environment is copied from the env scripts.
+env $(cat ~/scripts/cron_scripts/env-environment) /usr/bin/mate-terminal -e "bash -c \"source ~/.bashrc; clear; $HOME/scripts/linux-update 2>&1 | tee $HOME/scripts/cron_scripts/linux-update.log; /usr/bin/pluma $HOME/scripts/cron_scripts/linux-update.log\""
+
+
+# To keep terminal open
+#  echo; echo Press [ENTER] To Exit; read\""
