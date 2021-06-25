@@ -1,6 +1,6 @@
 [H[2J[3J[1;38;5;163m           ###########    Updating your system now   ###########[0m
 [1;38;5;179m
-06-25-2021 03:09:04 PM
+06-25-2021 03:12:39 PM
 Updating Linux debian 5.12.10-msi #1 SMP Mon Jun 14 11:38:34 CDT 2021 x86_64 GNU/Linux[0m
 [1;38;5;164mRunning as sudo. . .[0m
 [sudo] password for msifland: 
@@ -10,24 +10,24 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
 Hit:2 http://repo.steampowered.com/steam precise InRelease
-Hit:3 http://security.debian.org stable/updates InRelease
-Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:4 http://security.debian.org stable/updates InRelease
 Hit:5 https://repo.skype.com/deb stable InRelease
 Hit:6 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
 Hit:7 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:8 http://deb.debian.org/debian testing InRelease
-Hit:9 https://download.sublimetext.com apt/stable/ InRelease
-Hit:10 http://repo.sinew.in stable InRelease
-Hit:11 http://repository.spotify.com stable InRelease
-Get:12 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease [1,497 B]
-Hit:13 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:14 http://deb.debian.org/debian testing-updates InRelease
-Hit:15 http://www.deb-multimedia.org bullseye InRelease
-Hit:16 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Hit:17 http://deb.debian.org/debian-security testing-security InRelease
-Get:18 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Err:12 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease
+Hit:8 https://download.sublimetext.com apt/stable/ InRelease
+Hit:9 http://repo.sinew.in stable InRelease
+Get:10 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease [1,497 B]
+Hit:11 http://deb.debian.org/debian testing InRelease
+Hit:12 http://www.deb-multimedia.org bullseye InRelease
+Hit:13 http://repository.spotify.com stable InRelease
+Hit:14 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:15 http://deb.debian.org/debian testing-updates InRelease
+Get:16 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:17 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Err:10 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease
   The following signatures were invalid: EXPKEYSIG 2F7F0DA5FD5B64B9 home:strycore OBS Project <home:strycore@build.opensuse.org>
+Hit:18 http://deb.debian.org/debian-security testing-security InRelease
 Hit:19 http://deb.debian.org/debian stable InRelease
 Hit:20 http://deb.debian.org/debian stable-updates InRelease
 Hit:21 http://deb.debian.org/debian unstable InRelease
