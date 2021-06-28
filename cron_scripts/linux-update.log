@@ -1,52 +1,124 @@
-[H[2J[3J[1;38;5;163m           ###########    Updating your system now   ###########[0m
-[1;38;5;179m
-06-25-2021 03:25:49 PM
-Updating Linux debian 5.12.10-msi #1 SMP Mon Jun 14 11:38:34 CDT 2021 x86_64 GNU/Linux[0m
-[1;38;5;164mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;92m           ###########    Updating your system now   ###########[0m
+[1;38;5;246m
+06-28-2021 07:00:01 AM
+Updating Linux debian 5.12.13-msi #1 SMP Sat Jun 26 03:01:23 CDT 2021 x86_64 GNU/Linux[0m
+[1;38;5;237mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;163mUpdating sources and checking for app updates. . .[0m
+[1;38;5;106mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:2 http://repo.steampowered.com/steam precise InRelease
-Get:3 http://deb.debian.org/debian testing InRelease [150 kB]
-Hit:4 https://repo.skype.com/deb stable InRelease
-Hit:5 http://security.debian.org stable/updates InRelease
-Hit:6 http://repository.spotify.com stable InRelease
-Hit:7 https://download.sublimetext.com apt/stable/ InRelease
-Hit:8 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:9 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:10 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
-Hit:11 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:12 http://www.deb-multimedia.org bullseye InRelease
-Hit:13 http://repo.sinew.in stable InRelease
-Get:14 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease [1,497 B]
-Hit:15 http://deb.debian.org/debian-security testing-security InRelease
-Hit:16 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:17 http://deb.debian.org/debian stable InRelease
-Get:18 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Get:19 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
-Hit:20 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:21 http://deb.debian.org/debian unstable InRelease [161 kB]
-Err:14 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease
+Get:2 http://deb.debian.org/debian testing InRelease [150 kB]
+Hit:3 http://repo.steampowered.com/steam precise InRelease
+Get:4 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
+Hit:5 http://repository.spotify.com stable InRelease
+Hit:6 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:7 http://deb.debian.org/debian-security testing-security InRelease [44.1 kB]
+Hit:8 http://deb.debian.org/debian stable InRelease
+Get:9 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Get:10 http://security.debian.org stable/updates InRelease [65.4 kB]
+Hit:11 https://download.sublimetext.com apt/stable/ InRelease
+Get:12 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
+Get:13 http://deb.debian.org/debian unstable InRelease [161 kB]
+Hit:14 http://repo.sinew.in stable InRelease
+Get:15 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:16 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:17 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Hit:18 https://repo.skype.com/deb stable InRelease
+Get:19 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease [1,497 B]
+Get:20 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Get:21 http://deb.debian.org/debian testing/main Sources T-2021-06-28-0201.16-F-2021-06-28-0201.16.pdiff [2,517 B]
+Get:21 http://deb.debian.org/debian testing/main Sources T-2021-06-28-0201.16-F-2021-06-28-0201.16.pdiff [2,517 B]
+Get:22 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [417 B]
+Get:23 http://deb.debian.org/debian testing/main i386 Packages T-2021-06-28-0201.16-F-2021-06-28-0201.16.pdiff [9,964 B]
+Get:23 http://deb.debian.org/debian testing/main i386 Packages T-2021-06-28-0201.16-F-2021-06-28-0201.16.pdiff [9,964 B]
+Get:24 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [417 B]
+Get:25 http://deb.debian.org/debian testing/main amd64 Packages T-2021-06-28-0201.16-F-2021-06-28-0201.16.pdiff [10.0 kB]
+Get:25 http://deb.debian.org/debian testing/main amd64 Packages T-2021-06-28-0201.16-F-2021-06-28-0201.16.pdiff [10.0 kB]
+Get:26 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:27 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:28 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Hit:29 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:30 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Err:19 http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease
   The following signatures were invalid: EXPKEYSIG 2F7F0DA5FD5B64B9 home:strycore OBS Project <home:strycore@build.opensuse.org>
-Get:22 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:23 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:24 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian unstable/main Sources T-2021-06-25-2001.32-F-2021-06-25-2001.32.pdiff [1,016 B]
-Get:25 http://deb.debian.org/debian unstable/main Sources T-2021-06-25-2001.32-F-2021-06-25-2001.32.pdiff [1,016 B]
-Get:26 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-06-25-2001.32-F-2021-06-25-2001.32.pdiff [496 B]
-Get:26 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-06-25-2001.32-F-2021-06-25-2001.32.pdiff [496 B]
-Get:27 http://deb.debian.org/debian unstable/main i386 Packages T-2021-06-25-2001.32-F-2021-06-25-2001.32.pdiff [495 B]
-Get:27 http://deb.debian.org/debian unstable/main i386 Packages T-2021-06-25-2001.32-F-2021-06-25-2001.32.pdiff [495 B]
-Get:28 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,240 kB]
-Get:29 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,561 kB]
+Get:31 http://deb.debian.org/debian unstable/main Sources T-2021-06-28-0801.17-F-2021-06-28-0201.16.pdiff [484 B]
+Get:31 http://deb.debian.org/debian unstable/main Sources T-2021-06-28-0801.17-F-2021-06-28-0201.16.pdiff [484 B]
+Get:32 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-06-28-0801.17-F-2021-06-28-0201.16.pdiff [326 B]
+Get:32 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-06-28-0801.17-F-2021-06-28-0201.16.pdiff [326 B]
+Get:33 http://deb.debian.org/debian unstable/main i386 Packages T-2021-06-28-0801.17-F-2021-06-28-0201.16.pdiff [305 B]
+Get:33 http://deb.debian.org/debian unstable/main i386 Packages T-2021-06-28-0801.17-F-2021-06-28-0201.16.pdiff [305 B]
+Get:34 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,048 kB]
+Hit:35 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:36 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,119 kB]
+Get:37 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,595 kB]
+Get:38 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,558 kB]
+Get:39 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
+Get:40 http://www.deb-multimedia.org bullseye/main i386 Packages [123 kB]
+Get:41 http://www.deb-multimedia.org bullseye/main amd64 Packages [127 kB]
 Reading package lists...
 W: GPG error: http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease: The following signatures were invalid: EXPKEYSIG 2F7F0DA5FD5B64B9 home:strycore OBS Project <home:strycore@build.opensuse.org>
 E: The repository 'http://download.opensuse.org/repositories/home:/strycore/Debian_10 ./ InRelease' is not signed.
 
-[1;38;5;163mChecking for system upgrade. . .[0m
+[1;38;5;106mChecking for system upgrade. . .[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages will be upgraded:
+  e2fsprogs libcom-err2 libcom-err2:i386 libext2fs2 librist4 libss2 logsave
+  metasploit-framework
+8 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 252 MB of archives.
+After this operation, 10.2 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 logsave amd64 1.46.2-2 [74.9 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 libext2fs2 amd64 1.46.2-2 [257 kB]
+Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.51+20210628102532~1rapid7-1 [250 MB]
+Get:4 http://deb.debian.org/debian testing/main amd64 e2fsprogs amd64 1.46.2-2 [615 kB]
+Get:5 http://deb.debian.org/debian testing/main i386 libcom-err2 i386 1.46.2-2 [74.6 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 libcom-err2 amd64 1.46.2-2 [74.2 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 libss2 amd64 1.46.2-2 [78.8 kB]
+Get:8 http://www.deb-multimedia.org bullseye/main amd64 librist4 amd64 0.2.3-dmo1 [71.3 kB]
+apt-listchanges: Reading changelogs...
+Fetched 252 MB in 27s (9,383 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 573531 files and directories currently installed.)
+Preparing to unpack .../logsave_1.46.2-2_amd64.deb ...
+Unpacking logsave (1.46.2-2) over (1.46.2-1) ...
+Preparing to unpack .../libext2fs2_1.46.2-2_amd64.deb ...
+Unpacking libext2fs2:amd64 (1.46.2-2) over (1.46.2-1) ...
+Setting up libext2fs2:amd64 (1.46.2-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 573531 files and directories currently installed.)
+Preparing to unpack .../0-e2fsprogs_1.46.2-2_amd64.deb ...
+Unpacking e2fsprogs (1.46.2-2) over (1.46.2-1) ...
+Preparing to unpack .../1-libcom-err2_1.46.2-2_amd64.deb ...
+De-configuring libcom-err2:i386 (1.46.2-1) ...
+Unpacking libcom-err2:amd64 (1.46.2-2) over (1.46.2-1) ...
+Preparing to unpack .../2-libcom-err2_1.46.2-2_i386.deb ...
+Unpacking libcom-err2:i386 (1.46.2-2) over (1.46.2-1) ...
+Preparing to unpack .../3-librist4_0.2.3-dmo1_amd64.deb ...
+Unpacking librist4:amd64 (0.2.3-dmo1) over (0.2.2-dmo1) ...
+Preparing to unpack .../4-libss2_1.46.2-2_amd64.deb ...
+Unpacking libss2:amd64 (1.46.2-2) over (1.46.2-1) ...
+Preparing to unpack .../5-metasploit-framework_6.0.51+20210628102532~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.0.51+20210628102532~1rapid7-1) over (6.0.51+20210625102524~1rapid7-1) ...
+Setting up libcom-err2:amd64 (1.46.2-2) ...
+Setting up libcom-err2:i386 (1.46.2-2) ...
+Setting up metasploit-framework (6.0.51+20210628102532~1rapid7-1) ...
+Run msfconsole to get started
+Setting up librist4:amd64 (0.2.3-dmo1) ...
+Setting up libss2:amd64 (1.46.2-2) ...
+Setting up logsave (1.46.2-2) ...
+Setting up e2fsprogs (1.46.2-2) ...
+update-initramfs: deferring update (trigger activated)
+e2scrub_all.service is a disabled or a static unit not running, not starting it.
+Processing triggers for libc-bin (2.31-12) ...
+Processing triggers for man-db (2.9.4-2) ...
+Processing triggers for initramfs-tools (0.140) ...
+update-initramfs: Generating /boot/initrd.img-5.12.13-msi
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -56,15 +128,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
-[1;38;5;163mCleaning up system. . .[0m
+[1;38;5;106mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -89,10 +153,10 @@ Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;179mBacking up important files and apps. . .[0m
-[1;38;5;163mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;246mBacking up important files and apps. . .[0m
+[1;38;5;106mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;163mBacking up important config files. . .[0m
+[1;38;5;106mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -101,14 +165,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;163mBacking up crontab. . .[0m
+[1;38;5;106mBacking up crontab. . .[0m
 
-[1;38;5;163mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;106mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;179mUpdating local git repos. . .[0m
-[1;38;5;179mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;163mUpdating Projects. . .[0m
+[1;38;5;246mUpdating local git repos. . .[0m
+[1;38;5;246mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;106mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -116,7 +180,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;163mUpdating Documents. . .[0m
+[1;38;5;106mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -124,4 +188,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;163mUpdating scripts. . .[0m
+[1;38;5;106mUpdating scripts. . .[0m
