@@ -1,42 +1,54 @@
-[H[2J[3J[1;38;5;153m           ###########    Updating your system now   ###########[0m
-[1;38;5;221m
-07-26-2021 07:00:01 AM
-Updating Linux debian 5.13.4-msi #1 SMP Sat Jul 24 03:01:43 CDT 2021 x86_64 GNU/Linux[0m
-[1;38;5;95mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;87m           ###########    Updating your system now   ###########[0m
+[1;38;5;217m
+08-02-2021 07:00:01 AM
+Updating Linux debian 5.13.7-msi #1 SMP Sat Jul 31 03:01:36 CDT 2021 x86_64 GNU/Linux[0m
+[1;38;5;84mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;207mUpdating sources and checking for app updates. . .[0m
+[1;38;5;161mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:2 http://deb.debian.org/debian testing InRelease
+Hit:2 http://security.debian.org stable/updates InRelease
 Hit:3 http://repo.steampowered.com/steam precise InRelease
 Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
 Hit:6 https://download.sublimetext.com apt/stable/ InRelease
-Hit:7 http://deb.debian.org/debian testing-updates InRelease
-Hit:8 http://security.debian.org stable/updates InRelease
+Get:7 http://deb.debian.org/debian testing InRelease [154 kB]
+Hit:8 http://repository.spotify.com stable InRelease
 Hit:9 http://repo.sinew.in stable InRelease
-Hit:10 http://repository.spotify.com stable InRelease
-Hit:11 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:12 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [418 B]
-Hit:13 http://deb.debian.org/debian-security testing-security InRelease
-Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [417 B]
+Get:10 http://deb.debian.org/debian testing-updates InRelease [40.1 kB]
+Hit:11 http://deb.debian.org/debian-security testing-security InRelease
+Get:12 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:13 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:14 https://repo.skype.com/deb stable InRelease
 Hit:15 http://deb.debian.org/debian stable InRelease
-Hit:16 http://deb.debian.org/debian stable-updates InRelease
-Get:17 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Hit:18 http://deb.debian.org/debian unstable InRelease
-Hit:19 https://repo.skype.com/deb stable InRelease
-Hit:20 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:21 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Hit:22 http://www.deb-multimedia.org bullseye InRelease
-Fetched 7,252 B in 8s (941 B/s)
+Get:16 http://deb.debian.org/debian stable-updates InRelease [51.9 kB]
+Hit:17 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Get:18 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:19 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:21 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:22 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease [15.9 kB]
+Get:23 http://deb.debian.org/debian unstable/main Sources T-2021-08-02-0801.32-F-2021-08-02-0801.32.pdiff [406 B]
+Get:23 http://deb.debian.org/debian unstable/main Sources T-2021-08-02-0801.32-F-2021-08-02-0801.32.pdiff [406 B]
+Get:24 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic/main Sources [3,216 B]
+Get:25 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-08-02-0801.32-F-2021-08-02-0801.32.pdiff [476 B]
+Get:25 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-08-02-0801.32-F-2021-08-02-0801.32.pdiff [476 B]
+Get:26 http://deb.debian.org/debian unstable/main i386 Packages T-2021-08-02-0801.32-F-2021-08-02-0801.32.pdiff [474 B]
+Get:26 http://deb.debian.org/debian unstable/main i386 Packages T-2021-08-02-0801.32-F-2021-08-02-0801.32.pdiff [474 B]
+Get:27 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic/main amd64 Packages [2,860 B]
+Get:28 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic/main i386 Packages [2,860 B]
+Get:29 http://www.deb-multimedia.org bullseye InRelease [15.7 kB]
+Get:30 http://www.deb-multimedia.org bullseye/main i386 Packages [124 kB]
+Get:31 http://www.deb-multimedia.org bullseye/main amd64 Packages [128 kB]
+Fetched 898 kB in 10s (87.9 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+6 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;207mChecking for system upgrade. . .[0m
+[1;38;5;161mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -45,42 +57,42 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  libaom3 libaom3:i386 librist4 megasync metasploit-framework
-5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 269 MB of archives.
-After this operation, 791 kB of additional disk space will be used.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.55+20210726102548~1rapid7-1 [252 MB]
-Get:2 http://www.deb-multimedia.org bullseye/main i386 libaom3 i386 1:3.1.2-dmo1 [1,965 kB]
-Get:3 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ megasync 4.5.3-1.1 [13.2 MB]
-Get:4 http://www.deb-multimedia.org bullseye/main amd64 libaom3 amd64 1:3.1.2-dmo1 [2,068 kB]
-Get:5 http://www.deb-multimedia.org bullseye/main amd64 librist4 amd64 0.2.6-dmo1 [71.5 kB]
+  libasound2-plugins libasound2-plugins:i386 libbluray2 libdav1d5
+  libdav1d5:i386 metasploit-framework
+6 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 253 MB of archives.
+After this operation, 385 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.0.56+20210731174012~1rapid7-1 [252 MB]
+Get:2 http://www.deb-multimedia.org bullseye/main i386 libasound2-plugins i386 1:1.2.2-dmo4 [79.2 kB]
+Get:3 http://www.deb-multimedia.org bullseye/main amd64 libasound2-plugins amd64 1:1.2.2-dmo4 [76.6 kB]
+Get:4 http://www.deb-multimedia.org bullseye/main amd64 libbluray2 amd64 2:1.3.0-dmo3 [133 kB]
+Get:5 http://www.deb-multimedia.org bullseye/main i386 libdav1d5 i386 1:0.9.1-dmo1 [293 kB]
+Get:6 http://www.deb-multimedia.org bullseye/main amd64 libdav1d5 amd64 1:0.9.1-dmo1 [409 kB]
 apt-listchanges: Reading changelogs...
-Fetched 269 MB in 20s (13.6 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 644487 files and directories currently installed.)
-Preparing to unpack .../libaom3_1%3a3.1.2-dmo1_i386.deb ...
-De-configuring libaom3:amd64 (1:3.1.1-dmo2) ...
-Unpacking libaom3:i386 (1:3.1.2-dmo1) over (1:3.1.1-dmo2) ...
-Preparing to unpack .../libaom3_1%3a3.1.2-dmo1_amd64.deb ...
-Unpacking libaom3:amd64 (1:3.1.2-dmo1) over (1:3.1.1-dmo2) ...
-Preparing to unpack .../librist4_0.2.6-dmo1_amd64.deb ...
-Unpacking librist4:amd64 (0.2.6-dmo1) over (0.2.4-dmo1) ...
-Preparing to unpack .../megasync_4.5.3-1.1_amd64.deb ...
-Unpacking megasync (4.5.3-1.1) over (4.4.0-1.1) ...
-Preparing to unpack .../metasploit-framework_6.0.55+20210726102548~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.0.55+20210726102548~1rapid7-1) over (6.0.54+20210718102529~1rapid7-1) ...
-Setting up libaom3:amd64 (1:3.1.2-dmo1) ...
-Setting up libaom3:i386 (1:3.1.2-dmo1) ...
-Setting up megasync (4.5.3-1.1) ...
-fs.inotify.max_user_watches = 524288
-Setting up metasploit-framework (6.0.55+20210726102548~1rapid7-1) ...
+Fetched 253 MB in 31s (8,146 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 662170 files and directories currently installed.)
+Preparing to unpack .../0-libasound2-plugins_1%3a1.2.2-dmo4_i386.deb ...
+De-configuring libasound2-plugins:amd64 (1:1.2.2-dmo2) ...
+Unpacking libasound2-plugins:i386 (1:1.2.2-dmo4) over (1:1.2.2-dmo2) ...
+Preparing to unpack .../1-libasound2-plugins_1%3a1.2.2-dmo4_amd64.deb ...
+Unpacking libasound2-plugins:amd64 (1:1.2.2-dmo4) over (1:1.2.2-dmo2) ...
+Preparing to unpack .../2-libbluray2_2%3a1.3.0-dmo3_amd64.deb ...
+Unpacking libbluray2:amd64 (2:1.3.0-dmo3) over (2:1.3.0-dmo2) ...
+Preparing to unpack .../3-libdav1d5_1%3a0.9.1-dmo1_i386.deb ...
+De-configuring libdav1d5:amd64 (1:0.9.0-dmo1) ...
+Unpacking libdav1d5:i386 (1:0.9.1-dmo1) over (1:0.9.0-dmo1) ...
+Preparing to unpack .../4-libdav1d5_1%3a0.9.1-dmo1_amd64.deb ...
+Unpacking libdav1d5:amd64 (1:0.9.1-dmo1) over (1:0.9.0-dmo1) ...
+Preparing to unpack .../5-metasploit-framework_6.0.56+20210731174012~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.0.56+20210731174012~1rapid7-1) over (6.0.55+20210726102548~1rapid7-1) ...
+Setting up libasound2-plugins:amd64 (1:1.2.2-dmo4) ...
+Setting up libasound2-plugins:i386 (1:1.2.2-dmo4) ...
+Setting up metasploit-framework (6.0.56+20210731174012~1rapid7-1) ...
 Run msfconsole to get started
-Setting up librist4:amd64 (0.2.6-dmo1) ...
-Processing triggers for bamfdaemon (0.5.4-2) ...
-Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for desktop-file-utils (0.26-1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
+Setting up libdav1d5:amd64 (1:0.9.1-dmo1) ...
+Setting up libdav1d5:i386 (1:0.9.1-dmo1) ...
+Setting up libbluray2:amd64 (2:1.3.0-dmo3) ...
 Processing triggers for libc-bin (2.31-13) ...
-Processing triggers for mailcap (3.69) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -90,7 +102,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;207mCleaning up system. . .[0m
+[1;38;5;161mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -113,21 +125,16 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages will be REMOVED:
-  linux-image-5.10.0-7-amd64*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 0 B of additional disk space will be used.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 644513 files and directories currently installed.)
-Purging configuration files for linux-image-5.10.0-7-amd64 (5.10.40-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 removed '/home/msifland/.cache/thumbnails/normal/cfad236b715853f1784a6b81caa0ec8b.png'
 removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
 removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
 removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
 
-[1;38;5;221mBacking up important files and apps. . .[0m
-[1;38;5;207mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;217mBacking up important files and apps. . .[0m
+[1;38;5;161mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;207mBacking up important config files. . .[0m
+[1;38;5;161mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -136,14 +143,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;207mBacking up crontab. . .[0m
+[1;38;5;161mBacking up crontab. . .[0m
 
-[1;38;5;207mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;161mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;221mUpdating local git repos. . .[0m
-[1;38;5;221mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;207mUpdating Projects. . .[0m
+[1;38;5;217mUpdating local git repos. . .[0m
+[1;38;5;217mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;161mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -151,7 +158,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;207mUpdating Documents. . .[0m
+[1;38;5;161mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -159,4 +166,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;207mUpdating scripts. . .[0m
+[1;38;5;161mUpdating scripts. . .[0m
