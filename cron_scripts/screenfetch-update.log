@@ -2,9 +2,6 @@
 Downloading screenfetch latest and updating screenfetch to reflect my custom colors. . .
 
 Cloning into 'screenFetch'...
-fatal: unable to access 'https://github.com/KittyKatt/screenFetch/': Failed to connect to github.com port 443: Connection timed out
-/home/msifland/scripts/screenfetch-update: line 13: cd: /home/msifland/pkg_bkups/backups/screenFetch: No such file or directory
-[sudo] password for msifland: cp: cannot stat 'screenfetch-dev': No such file or directory
-Already updated.
+[sudo] password for msifland: Updating now. . .
 
 All is good.
