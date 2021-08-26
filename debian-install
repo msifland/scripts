@@ -10,9 +10,23 @@ fi
 INST_PTH="/mnt/deb-inst"
 echo
 echo
-echo "This script is set up to install Debian Mate. So be sure to select Mate Desktop when this time comes, along with any other various packages."
+echo "This script is set up to install Debian Mate from a full working linux distro. Make sure you have this script(debina-install) and the additional script(debian-install-continue) in the same directory.
+
+Be sure to select Mate Desktop when this time comes, along with any other various packages."
 echo
 sleep 1
+echo
+read -p "Are you ready to continue? " YNCON
+if [[ $YNCON =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo
+	echo "Ok, moving forward with install..."
+	sleep 1
+else
+	echo
+	echo "Ok, exiting script..."
+	sleep 1
+	exit
+fi
 
 # Unmounting all
 sudo umount -a
@@ -82,7 +96,7 @@ fi
 sleep 1
 
 echo
-read -p "Moving on to cfdisk to create and configure patitions. If creating separate boot partition it should be a minimum of 500M. Root partition should be minimun of 20G and the rest for home partition. Be sure to configure to 'dos'. Press [ENTER] to continue."
+read -p "Moving on to cfdisk to create and configure patitions. If creating separate boot partition it should be a minimum of 500M, 2G to be have extra kernels. Root partition should be minimun of 20G and the rest for home partition. Be sure to configure to 'dos'. Press [ENTER] to continue."
 sleep 1
 cfdisk $part_conf
 echo
