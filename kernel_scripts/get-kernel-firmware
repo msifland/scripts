@@ -13,14 +13,31 @@ cd linux-firmware
 sleep 1
 
 echo
-echo "Copying i915 to /lib/firmware. . ."
-sudo cp -rf i915 /lib/firmware
-sleep 1
+read -p "Would you like to copy i915 firmware files to /lib/firmware/? " YNI915
+echo
+if [[ $YNI915 =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo "Copying i915 to /lib/firmware. . ."
+	sudo cp -rf i915 /lib/firmware/
+	sleep 1
+else
+	echo
+	echo "Ok, not copying now..."
+	sleep 1
+fi
 
 echo
-echo "Copying nvidia to lib/firmware. . ."
-sudo cp -rf nvidia /lib/firmware
-sleep 1
+read -p "Would you like to copy nvidia firmware files to /lib/firmware/? " YNNVID
+echo
+if [[ $YNNVID =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo
+	echo "Copying nvidia to lib/firmware. . ."
+	sudo cp -rf nvidia /lib/firmware/
+	sleep 1
+else
+	echo
+	echo "Ok, not copying now..."
+	sleep 1
+fi
 
 cd ..
 rm -rf linux-firmware
