@@ -36,7 +36,7 @@ echo
 echo "${ILCOLOR2}We are going to see if there is a new kernel to build from main kernel source: kernel.org.${ILRESTORE}"
 sleep 1
 
-# Get and format websit info
+# Get and format websit info. Grepping "latest_link" is in page source for latest download. The rest is of this is for formatting.
 GET=$(wget -qO- https://www.kernel.org | grep -A1  "latest_link\">" | grep "<a href=" | sed -e 's:<a href="::' | sed -e 's:">*::' | sed -e "s:tar.xz.*:tar.xz:" | sed "s/^[ \t]*//")
 GET_VER=$(echo $GET | sed -e "s:.*linux-::" | sed -e "s:.tar.xz::")
 
