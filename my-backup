@@ -24,7 +24,6 @@ $HOME/.local
 $HOME/.profile
 $HOME/.ssh
 $HOME/.themes
-$HOME/.face
 $HOME/.xprofile
 $HOME/.Xresources
 $HOME/.bash*
