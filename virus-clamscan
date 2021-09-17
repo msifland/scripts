@@ -13,6 +13,16 @@ fi
 
 PSWD="spike"
 
+# Update virus definitions
+echo "Updating clamscan before run. . ."
+echo
+sleep 2
+echo $PSWD | sudo -S -v
+sudo killall freshclam
+sudo freshclam
+echo
+sleep 2
+
 EXCLUDE="--exclude-dir=^$HOME/roms
 --exclude-dir=^$HOME/.local/share/Trash
 --exclude-dir=^$HOME/Modules&Apps
@@ -55,7 +65,7 @@ function scan(){
 	echo
 	sleep 2
 
-		# List directories to include and exclude
+	# List directories to include and exclude
 	echo "Scanning: $INCLUDE"
 	echo
 	sleep 2
@@ -64,15 +74,6 @@ function scan(){
 	echo
 	sleep 2
 
-	# Update virus definitions
-	echo "Updating clamscan before run. . ."
-	echo
- 	sleep 2
-	echo $PSWD | sudo -S -v
-	sudo killall freshclam
-	sudo freshclam
-	echo
-	sleep 2
 
 	# Start scan
 	# Create folder to store viruses if not exist
