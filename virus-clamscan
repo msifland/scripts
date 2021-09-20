@@ -17,11 +17,7 @@ PSWD="spike"
 echo "Updating clamscan before run. . ."
 echo
 sleep 2
-echo $PSWD | sudo -S -v
-sudo killall freshclam
-sudo freshclam
-echo
-sleep 2
+$HOME/scripts/virus-freshclam
 
 EXCLUDE="--exclude-dir=^$HOME/roms
 --exclude-dir=^$HOME/.local/share/Trash

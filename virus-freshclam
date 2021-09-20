@@ -1,0 +1,13 @@
+#!/bin/bash
+
+PSWD="spike"
+
+# Update virus definitions
+sleep 2
+echo $PSWD | sudo -S -v
+sudo killall freshclam
+sudo freshclam
+echo
+sleep 2
+
+exit 0
