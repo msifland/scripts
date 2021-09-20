@@ -1,11 +1,70 @@
-[1;38;5;5m
+Updating clamscan before run. . .
+
+[sudo] password for msifland: Mon Sep 20 02:00:04 2021 -> ClamAV update process started at Mon Sep 20 02:00:04 2021
+Mon Sep 20 02:00:21 2021 -> ^Can't query current.cvd.clamav.net
+Mon Sep 20 02:00:21 2021 -> ^Invalid DNS reply. Falling back to HTTP mode.
+Mon Sep 20 02:00:21 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:21 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:21 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:21 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:21 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:21 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:00:26 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:26 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:26 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:26 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:26 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:26 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:00:31 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:31 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:31 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:31 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:31 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:31 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:00:36 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:36 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:36 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:36 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:36 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:36 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:00:41 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:41 2021 -> !remote_cvdhead: Download failed (6) Mon Sep 20 02:00:41 2021 -> ! Message: Couldn't resolve host name
+Mon Sep 20 02:00:41 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:41 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:41 2021 -> Giving up on https://database.clamav.net...
+Mon Sep 20 02:00:41 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:41 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:41 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:41 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:41 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:41 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:00:46 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:46 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:46 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:46 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:46 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:46 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:00:51 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:51 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:51 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:51 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:51 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:51 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:00:56 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:00:56 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 20 02:00:56 2021 -> ^ Message: Couldn't resolve host name
+Mon Sep 20 02:00:56 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:00:56 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:00:56 2021 -> Trying again in 5 secs...
+Mon Sep 20 02:01:01 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Sep 20 02:01:01 2021 -> !remote_cvdhead: Download failed (6) Mon Sep 20 02:01:01 2021 -> ! Message: Couldn't resolve host name
+Mon Sep 20 02:01:01 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon Sep 20 02:01:01 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon Sep 20 02:01:01 2021 -> Giving up on https://database.clamav.net...
+Mon Sep 20 02:01:01 2021 -> !Update failed for database: daily
+Mon Sep 20 02:01:01 2021 -> !Database update process failed: HTTP GET failed
+Mon Sep 20 02:01:01 2021 -> !Update failed.
+
+[1;38;5;183m
 Removing old build logs. . .
 
 [0m
-[1;38;5;5m
+[1;38;5;183m
 Start Time:
-Date: 09-17-21
-Time: 08:44:03 AM
+Date: 09-20-21
+Time: 02:01:05 AM
 
 Scanning: 
 /
@@ -26,13 +85,105 @@ Excluding:
 --exclude=.*metasploit-framework.*
 
 
-Updating clamscan before run. . .
-
-[sudo] password for msifland: freshclam: no process found
-Fri Sep 17 08:44:11 2021 -> ClamAV update process started at Fri Sep 17 08:44:11 2021
-Fri Sep 17 08:44:11 2021 -> daily.cld database is up-to-date (version: 26297, sigs: 1932985, f-level: 90, builder: sigmgr)
-Fri Sep 17 08:44:11 2021 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Fri Sep 17 08:44:11 2021 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
-
 Running clamscan to scan for viruses. . .
 
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8566686
+Engine version: 0.103.3
+Scanned directories: 64629
+Scanned files: 605523
+Infected files: 0
+Data scanned: 40552.32 MB
+Data read: 77668.50 MB (ratio 0.52:1)
+Time: 10786.475 sec (179 m 46 s)
+Start Date: 2021:09:20 02:01:13
+End Date:   2021:09:20 05:00:59
+
+
+End Time:
+Date: 09-20-21
+Time: 05:01:00 AM
+It took 2 hours 59 minutes 55 seconds to scan your system.
+
+
+[1;38;5;183m
+You can edit included and excluded files and folders by typing edit-virus-clamscan
+
+[0m
