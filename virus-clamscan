@@ -4,6 +4,21 @@
 COLOR="\033[1;38;5;$((RANDOM % 255+1))m"
 RESTORE='\033[0m'
 BUILDLOG="$HOME/infections/.last-run.txt"
+PSWD="spike"
+# Running entire script as sudo
+echo $PSWD | sudo -S -v
+
+# Checking if clamav is installed
+echo
+echo "Checking dependencies. . ."
+if ! dpkg --get-selections | grep -qw "clamav"; then
+	sudo apt install clamav
+else
+	echo
+	echo "clamav found."
+fi
+sleep 1
+
 if [[ ! -d "/home/msifland/infections" ]]; then
 	mkdir "/home/msifland/infections"
 fi
@@ -11,15 +26,15 @@ if [[ ! -f $BUILDLOG ]]; then
 	touch $BUILDLOG
 fi
 
-PSWD="spike"
-
 # Update virus definitions
 read -t 10 -p "Would you like to update virus definitions first(sudo freshclam)[y/n]? " frsh
 if [[ "$frsh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Updating clamscan before run. . ."
 	echo
-	sleep 2
-	$HOME/scripts/virus-freshclam
+	sleep 1
+	sudo killall freshclam
+	sudo freshclam
+	sleep 1
 else
 	echo -e "${COLOR}"
 	echo "Ok, not updating virus definitions now. . ."
@@ -90,7 +105,7 @@ function scan(){
 	echo "Running clamscan to scan for viruses. . ."
 	echo
  	sleep 2
-	sudo clamscan -r -i $EXCLUDE $INCLUDE --copy=$HOME/infections
+	clamscan -r -i $EXCLUDE $INCLUDE --copy=$HOME/infections
 	echo
 	echo
 
