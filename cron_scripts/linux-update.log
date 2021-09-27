@@ -1,246 +1,182 @@
-[H[2J[3J[1;38;5;158m           ###########    Updating your system now   ###########[0m
-[1;38;5;14m
-09-20-2021 07:00:01 AM
-Updating Linux debian 5.14.5-msi #1 SMP Sat Sep 18 03:01:23 CDT 2021 x86_64 GNU/Linux[0m
-[1;38;5;202mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;86m           ###########    Updating your system now   ###########[0m
+[1;38;5;86m
+09-27-2021 07:00:01 AM
+Updating Linux debian 5.14.7-msi #1 SMP Sat Sep 25 03:01:27 CDT 2021 x86_64 GNU/Linux[0m
+[1;38;5;110mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;182mUpdating sources and checking for app updates. . .[0m
+[1;38;5;92mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
-Get:2 http://deb.debian.org/debian testing InRelease [128 kB]
+Hit:1 http://repo.steampowered.com/steam precise InRelease
+Hit:2 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
 Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:4 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Get:5 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
-Hit:6 https://download.sublimetext.com apt/stable/ InRelease
-Hit:7 https://repo.skype.com/deb stable InRelease
-Hit:8 http://repository.spotify.com stable InRelease
-Hit:9 http://repo.sinew.in stable InRelease
-Hit:10 http://deb.anydesk.com all InRelease
-Hit:11 http://repo.steampowered.com/steam precise InRelease
+Get:4 http://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]
+Get:5 https://download.sublimetext.com apt/stable/ InRelease [2,536 B]
+Get:6 http://deb.debian.org/debian testing InRelease [128 kB]
+Get:7 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Get:8 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
+Hit:9 http://repository.spotify.com stable InRelease
+Hit:10 http://repo.sinew.in stable InRelease
+Hit:11 http://deb.anydesk.com all InRelease
 Get:12 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Hit:13 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:14 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Hit:15 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:16 http://security.debian.org/debian-security stable-security/main Sources [17.0 kB]
-Get:17 http://security.debian.org/debian-security stable-security/main amd64 Packages [32.6 kB]
-Get:18 http://security.debian.org/debian-security stable-security/main i386 Packages [32.6 kB]
-Get:19 http://security.debian.org/debian-security stable-security/main Translation-en [17.6 kB]
-Hit:20 http://deb.debian.org/debian stable InRelease
-Get:21 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Get:22 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:23 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:24 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian testing/contrib Sources.diff/Index [21.8 kB]
-Get:26 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:27 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:28 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:29 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [26.3 kB]
-Get:30 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [20.7 kB]
-Hit:31 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:32 http://deb.debian.org/debian testing/main Sources T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [34.1 kB]
-Get:32 http://deb.debian.org/debian testing/main Sources T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [34.1 kB]
-Get:33 http://deb.debian.org/debian testing/contrib Sources T-2021-09-19-0801.49-F-2021-09-19-0801.49.pdiff [44 B]
-Get:33 http://deb.debian.org/debian testing/contrib Sources T-2021-09-19-0801.49-F-2021-09-19-0801.49.pdiff [44 B]
-Get:34 http://deb.debian.org/debian testing/main i386 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [34.2 kB]
-Get:34 http://deb.debian.org/debian testing/main i386 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [34.2 kB]
-Get:35 http://deb.debian.org/debian testing/main amd64 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [34.1 kB]
-Get:35 http://deb.debian.org/debian testing/main amd64 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [34.1 kB]
-Get:36 http://deb.debian.org/debian testing/main Translation-en T-2021-09-20-0801.22-F-2021-09-19-1401.22.pdiff [1,481 B]
-Get:36 http://deb.debian.org/debian testing/main Translation-en T-2021-09-20-0801.22-F-2021-09-19-1401.22.pdiff [1,481 B]
-Get:37 http://deb.debian.org/debian testing/contrib amd64 Packages T-2021-09-19-1401.22-F-2021-09-19-1401.22.pdiff [221 B]
-Get:38 http://deb.debian.org/debian testing/contrib i386 Packages T-2021-09-19-1401.22-F-2021-09-19-1401.22.pdiff [221 B]
-Get:39 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:40 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
-Get:41 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:42 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:43 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:44 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:45 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
-Get:37 http://deb.debian.org/debian testing/contrib amd64 Packages T-2021-09-19-1401.22-F-2021-09-19-1401.22.pdiff [221 B]
-Get:38 http://deb.debian.org/debian testing/contrib i386 Packages T-2021-09-19-1401.22-F-2021-09-19-1401.22.pdiff [221 B]
-Get:46 http://deb.debian.org/debian unstable/main Sources T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [91.3 kB]
-Get:46 http://deb.debian.org/debian unstable/main Sources T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [91.3 kB]
-Get:47 http://deb.debian.org/debian unstable/non-free Sources T-2021-09-20-0203.11-F-2021-09-20-0203.11.pdiff [329 B]
-Get:47 http://deb.debian.org/debian unstable/non-free Sources T-2021-09-20-0203.11-F-2021-09-20-0203.11.pdiff [329 B]
-Get:48 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [103 kB]
-Get:48 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [103 kB]
-Get:49 http://deb.debian.org/debian unstable/main i386 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [100 kB]
-Get:49 http://deb.debian.org/debian unstable/main i386 Packages T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [100 kB]
-Get:50 http://deb.debian.org/debian unstable/main Translation-en T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [10.7 kB]
-Get:50 http://deb.debian.org/debian unstable/main Translation-en T-2021-09-20-0801.22-F-2021-09-19-0801.49.pdiff [10.7 kB]
-Get:51 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-09-20-0203.11-F-2021-09-20-0203.11.pdiff [220 B]
-Get:51 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-09-20-0203.11-F-2021-09-20-0203.11.pdiff [220 B]
-Get:52 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-09-20-0203.11-F-2021-09-20-0203.11.pdiff [220 B]
-Get:53 http://www.deb-multimedia.org bullseye InRelease [15.8 kB]
-Get:52 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-09-20-0203.11-F-2021-09-20-0203.11.pdiff [220 B]
-Get:54 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,176 kB]
-Get:55 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,529 kB]
-Get:56 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
-Get:57 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,402 kB]
-Get:58 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.5 kB]
-Get:59 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [18.2 kB]
-Get:60 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,250 kB]
-Get:61 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
-Get:62 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,639 kB]
-Get:63 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,602 kB]
-Fetched 32.6 MB in 12s (2,715 kB/s)
+Get:13 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [416 B]
+Get:14 http://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,096 B]
+Get:15 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Get:16 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [419 B]
+Err:16 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages
+  File has unexpected size (417 != 419). Mirror sync in progress? [IP: 23.75.205.67 80]
+  Hashes of expected file:
+   - Filesize:419 [weak]
+   - SHA256:9fdcfc2884af96026d96c8ba5abe930da30aeb7c465408a155c28234353c6506
+   - SHA1:9abd5be3ff1945dc187b980ede2a7b03455ceef8 [weak]
+   - MD5Sum:16a92a1eda8c8c88ecda5fc982c855e0 [weak]
+  Release file created at: Sun, 26 Sep 2021 11:11:19 +0000
+Get:17 http://security.debian.org/debian-security stable-security/main Sources [30.3 kB]
+Get:18 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Get:19 http://security.debian.org/debian-security stable-security/main amd64 Packages [41.0 kB]
+Get:20 http://security.debian.org/debian-security stable-security/main i386 Packages [41.0 kB]
+Get:21 http://security.debian.org/debian-security stable-security/main Translation-en [27.6 kB]
+Hit:22 http://deb.debian.org/debian stable InRelease
+Get:23 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:24 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:25 http://deb.debian.org/debian testing/non-free Sources.diff/Index [28.6 kB]
+Get:26 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:27 http://deb.debian.org/debian testing/contrib Sources.diff/Index [26.3 kB]
+Get:28 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:29 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:30 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:31 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [31.9 kB]
+Get:32 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [25.2 kB]
+Get:33 http://deb.debian.org/debian testing/contrib Translation-en.diff/Index [7,239 B]
+Get:34 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [24.1 kB]
+Get:35 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [24.1 kB]
+Hit:36 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:37 https://repo.skype.com/deb stable InRelease
+Get:38 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [8,361 B]
+Get:39 http://deb.debian.org/debian testing/non-free Sources T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [1,209 B]
+Get:39 http://deb.debian.org/debian testing/non-free Sources T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [1,209 B]
+Get:40 http://deb.debian.org/debian testing/main Sources T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [232 kB]
+Get:40 http://deb.debian.org/debian testing/main Sources T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [232 kB]
+Get:41 http://deb.debian.org/debian testing/contrib Sources T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [1,423 B]
+Get:41 http://deb.debian.org/debian testing/contrib Sources T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [1,423 B]
+Hit:42 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:43 http://deb.debian.org/debian testing/main amd64 Packages T-2021-09-27-0801.07-F-2021-09-23-0201.26.pdiff [340 kB]
+Get:43 http://deb.debian.org/debian testing/main amd64 Packages T-2021-09-27-0801.07-F-2021-09-23-0201.26.pdiff [340 kB]
+Get:44 http://deb.debian.org/debian testing/main i386 Packages T-2021-09-27-0801.07-F-2021-09-23-0201.26.pdiff [337 kB]
+Get:44 http://deb.debian.org/debian testing/main i386 Packages T-2021-09-27-0801.07-F-2021-09-23-0201.26.pdiff [337 kB]
+Get:45 http://deb.debian.org/debian testing/main Translation-en T-2021-09-27-0801.07-F-2021-09-23-0201.26.pdiff [19.3 kB]
+Get:46 http://deb.debian.org/debian testing/contrib amd64 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [3,717 B]
+Get:47 http://deb.debian.org/debian testing/contrib i386 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [2,588 B]
+Get:46 http://deb.debian.org/debian testing/contrib amd64 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [3,717 B]
+Get:45 http://deb.debian.org/debian testing/main Translation-en T-2021-09-27-0801.07-F-2021-09-23-0201.26.pdiff [19.3 kB]
+Get:47 http://deb.debian.org/debian testing/contrib i386 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [2,588 B]
+Get:48 http://deb.debian.org/debian testing/contrib Translation-en T-2021-09-27-0205.07-F-2021-09-25-2003.41.pdiff [84 B]
+Get:48 http://deb.debian.org/debian testing/contrib Translation-en T-2021-09-27-0205.07-F-2021-09-25-2003.41.pdiff [84 B]
+Get:49 http://deb.debian.org/debian testing/non-free i386 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [14.5 kB]
+Get:50 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:49 http://deb.debian.org/debian testing/non-free i386 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [14.5 kB]
+Get:51 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
+Get:52 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:53 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:54 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:55 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:56 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:57 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:58 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
+Get:59 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:60 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
+Get:61 http://deb.debian.org/debian unstable/contrib Translation-en.diff/Index [39.8 kB]
+Get:62 http://deb.debian.org/debian testing/non-free amd64 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [19.9 kB]
+Get:62 http://deb.debian.org/debian testing/non-free amd64 Packages T-2021-09-27-0205.07-F-2021-09-25-0201.33.pdiff [19.9 kB]
+Get:63 http://deb.debian.org/debian testing/non-free Translation-en T-2021-09-27-0205.07-F-2021-09-26-0803.34.pdiff [1,141 B]
+Get:63 http://deb.debian.org/debian testing/non-free Translation-en T-2021-09-27-0205.07-F-2021-09-26-0803.34.pdiff [1,141 B]
+Get:64 http://deb.debian.org/debian unstable/main Sources T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [178 kB]
+Get:64 http://deb.debian.org/debian unstable/main Sources T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [178 kB]
+Get:65 http://deb.debian.org/debian unstable/contrib Sources T-2021-09-26-1403.28-F-2021-09-22-2001.40.pdiff [1,315 B]
+Get:65 http://deb.debian.org/debian unstable/contrib Sources T-2021-09-26-1403.28-F-2021-09-22-2001.40.pdiff [1,315 B]
+Get:66 http://deb.debian.org/debian unstable/non-free Sources T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [3,627 B]
+Get:66 http://deb.debian.org/debian unstable/non-free Sources T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [3,627 B]
+Get:67 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [251 kB]
+Get:67 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [251 kB]
+Get:68 http://deb.debian.org/debian unstable/main i386 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [247 kB]
+Get:68 http://deb.debian.org/debian unstable/main i386 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [247 kB]
+Get:69 http://deb.debian.org/debian unstable/main Translation-en T-2021-09-27-0205.07-F-2021-09-22-2001.40.pdiff [5,577 B]
+Get:69 http://deb.debian.org/debian unstable/main Translation-en T-2021-09-27-0205.07-F-2021-09-22-2001.40.pdiff [5,577 B]
+Get:70 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [9,133 B]
+Get:71 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [17.5 kB]
+Get:72 http://www.deb-multimedia.org bullseye InRelease [15.8 kB]
+Get:73 http://deb.debian.org/debian unstable/non-free Translation-en T-2021-09-22-2001.40-F-2021-09-22-2001.40.pdiff [506 B]
+Get:74 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2021-09-26-1403.28-F-2021-09-23-1401.26.pdiff [3,446 B]
+Get:70 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [9,133 B]
+Get:71 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-09-27-0801.07-F-2021-09-22-2001.40.pdiff [17.5 kB]
+Get:73 http://deb.debian.org/debian unstable/non-free Translation-en T-2021-09-22-2001.40-F-2021-09-22-2001.40.pdiff [506 B]
+Get:74 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2021-09-26-1403.28-F-2021-09-23-1401.26.pdiff [3,446 B]
+Get:75 http://deb.debian.org/debian unstable/contrib i386 Packages T-2021-09-26-1403.28-F-2021-09-22-2001.40.pdiff [2,234 B]
+Get:75 http://deb.debian.org/debian unstable/contrib i386 Packages T-2021-09-26-1403.28-F-2021-09-22-2001.40.pdiff [2,234 B]
+Get:76 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
+Get:77 http://deb.debian.org/debian unstable/contrib Translation-en T-2021-09-23-1401.26-F-2021-09-23-1401.26.pdiff [74 B]
+Get:77 http://deb.debian.org/debian unstable/contrib Translation-en T-2021-09-23-1401.26-F-2021-09-23-1401.26.pdiff [74 B]
+Get:78 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,184 kB]
+Get:79 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,522 kB]
+Get:80 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,395 kB]
+Get:81 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
+Get:82 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.4 kB]
+Get:83 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [18.0 kB]
+Get:84 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,279 kB]
+Get:85 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,652 kB]
+Get:86 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,612 kB]
+Get:87 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [18.2 kB]
+Get:88 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [16.4 kB]
+Get:89 http://deb.debian.org/debian unstable/contrib DEP-11 48x48 Icons [50.1 kB]
+Get:90 http://deb.debian.org/debian unstable/contrib DEP-11 64x64 Icons [98.5 kB]
+Fetched 34.6 MB in 14s (2,487 kB/s)
 Reading package lists...
-Building dependency tree...
-Reading state information...
-25 packages can be upgraded. Run 'apt list --upgradable' to see them.
+E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/main/binary-amd64/Packages.gz  File has unexpected size (417 != 419). Mirror sync in progress? [IP: 23.75.205.67 80]
+   Hashes of expected file:
+    - Filesize:419 [weak]
+    - SHA256:9fdcfc2884af96026d96c8ba5abe930da30aeb7c465408a155c28234353c6506
+    - SHA1:9abd5be3ff1945dc187b980ede2a7b03455ceef8 [weak]
+    - MD5Sum:16a92a1eda8c8c88ecda5fc982c855e0 [weak]
+   Release file created at: Sun, 26 Sep 2021 11:11:19 +0000
+E: Some index files failed to download. They have been ignored, or old ones used instead.
 
-[1;38;5;182mChecking for system upgrade. . .[0m
+[1;38;5;92mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-Calculating upgrade...
-The following NEW packages will be installed:
-  libglvnd-core-dev
-The following packages will be upgraded:
-  alsa-topology-conf libegl-dev libegl1 libgl-dev libgl1 libgl1:i386
-  libgles-dev libgles1 libgles2 libglvnd-dev libglvnd0 libglvnd0:i386
-  libglx-dev libglx0 libglx0:i386 libgpgme11 libjs-underscore libopengl-dev
-  libopengl0 libsoundtouch1 libz3-4 libz3-4:i386 metasploit-framework
-  python3-gpg python3-pycurl
-25 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 274 MB of archives.
-After this operation, 206 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 alsa-topology-conf all 1.2.5.1-2 [15.2 kB]
-Get:2 http://deb.debian.org/debian testing/main amd64 libglx-dev amd64 1.3.4-2+b1 [16.9 kB]
-Get:3 http://deb.debian.org/debian testing/main amd64 libgl-dev amd64 1.3.4-2+b1 [101 kB]
-Get:4 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.7+20210918102530~1rapid7-1 [258 MB]
-Get:5 http://deb.debian.org/debian testing/main i386 libgl1 i386 1.3.4-2+b1 [85.1 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 libgl1 amd64 1.3.4-2+b1 [89.6 kB]
-Get:7 http://deb.debian.org/debian testing/main amd64 libglx0 amd64 1.3.4-2+b1 [36.5 kB]
-Get:8 http://deb.debian.org/debian testing/main i386 libglx0 i386 1.3.4-2+b1 [39.6 kB]
-Get:9 http://deb.debian.org/debian testing/main amd64 libopengl-dev amd64 1.3.4-2+b1 [6,428 B]
-Get:10 http://deb.debian.org/debian testing/main amd64 libopengl0 amd64 1.3.4-2+b1 [32.0 kB]
-Get:11 http://deb.debian.org/debian testing/main amd64 libgles-dev amd64 1.3.4-2+b1 [50.9 kB]
-Get:12 http://deb.debian.org/debian testing/main amd64 libegl-dev amd64 1.3.4-2+b1 [20.4 kB]
-Get:13 http://deb.debian.org/debian testing/main amd64 libglvnd-dev amd64 1.3.4-2+b1 [6,188 B]
-Get:14 http://deb.debian.org/debian testing/main amd64 libgles2 amd64 1.3.4-2+b1 [18.3 kB]
-Get:15 http://deb.debian.org/debian testing/main amd64 libgles1 amd64 1.3.4-2+b1 [13.2 kB]
-Get:16 http://deb.debian.org/debian testing/main amd64 libegl1 amd64 1.3.4-2+b1 [35.4 kB]
-Get:17 http://deb.debian.org/debian testing/main i386 libglvnd0 i386 1.3.4-2+b1 [44.2 kB]
-Get:18 http://deb.debian.org/debian testing/main amd64 libglvnd0 amd64 1.3.4-2+b1 [51.7 kB]
-Get:19 http://deb.debian.org/debian testing/main amd64 libglvnd-core-dev amd64 1.3.4-2+b1 [14.4 kB]
-Get:20 http://deb.debian.org/debian testing/main amd64 libgpgme11 amd64 1.16.0-1.1 [291 kB]
-Get:21 http://deb.debian.org/debian testing/main amd64 libjs-underscore all 1.9.1~dfsg-4 [100 kB]
-Get:22 http://deb.debian.org/debian testing/main amd64 libsoundtouch1 amd64 2.3.1+ds1-1+b1 [39.8 kB]
-Get:23 http://deb.debian.org/debian testing/main amd64 libz3-4 amd64 4.8.12-1+b1 [6,997 kB]
-Get:24 http://deb.debian.org/debian testing/main i386 libz3-4 i386 4.8.12-1+b1 [7,758 kB]
-Get:25 http://deb.debian.org/debian testing/main amd64 python3-gpg amd64 1.16.0-1.1 [356 kB]
-Get:26 http://deb.debian.org/debian testing/main amd64 python3-pycurl amd64 7.44.1-3 [69.8 kB]
-apt-listchanges: Reading changelogs...
-Fetched 274 MB in 25s (10.9 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 499004 files and directories currently installed.)
-Preparing to unpack .../00-alsa-topology-conf_1.2.5.1-2_all.deb ...
-Unpacking alsa-topology-conf (1.2.5.1-2) over (1.2.5.1-1) ...
-Preparing to unpack .../01-libglx-dev_1.3.4-2+b1_amd64.deb ...
-Unpacking libglx-dev:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../02-libgl-dev_1.3.4-2+b1_amd64.deb ...
-Unpacking libgl-dev:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../03-libgl1_1.3.4-2+b1_amd64.deb ...
-De-configuring libgl1:i386 (1.3.2-1) ...
-Unpacking libgl1:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../04-libgl1_1.3.4-2+b1_i386.deb ...
-Unpacking libgl1:i386 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../05-libglx0_1.3.4-2+b1_i386.deb ...
-De-configuring libglx0:amd64 (1.3.2-1) ...
-Unpacking libglx0:i386 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../06-libglx0_1.3.4-2+b1_amd64.deb ...
-Unpacking libglx0:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../07-libopengl-dev_1.3.4-2+b1_amd64.deb ...
-Unpacking libopengl-dev:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../08-libopengl0_1.3.4-2+b1_amd64.deb ...
-Unpacking libopengl0:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../09-libgles-dev_1.3.4-2+b1_amd64.deb ...
-Unpacking libgles-dev:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../10-libegl-dev_1.3.4-2+b1_amd64.deb ...
-Unpacking libegl-dev:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../11-libglvnd-dev_1.3.4-2+b1_amd64.deb ...
-Unpacking libglvnd-dev:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../12-libgles2_1.3.4-2+b1_amd64.deb ...
-Unpacking libgles2:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../13-libgles1_1.3.4-2+b1_amd64.deb ...
-Unpacking libgles1:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../14-libegl1_1.3.4-2+b1_amd64.deb ...
-Unpacking libegl1:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../15-libglvnd0_1.3.4-2+b1_amd64.deb ...
-De-configuring libglvnd0:i386 (1.3.2-1) ...
-Unpacking libglvnd0:amd64 (1.3.4-2+b1) over (1.3.2-1) ...
-Preparing to unpack .../16-libglvnd0_1.3.4-2+b1_i386.deb ...
-Unpacking libglvnd0:i386 (1.3.4-2+b1) over (1.3.2-1) ...
-Selecting previously unselected package libglvnd-core-dev:amd64.
-Preparing to unpack .../17-libglvnd-core-dev_1.3.4-2+b1_amd64.deb ...
-Unpacking libglvnd-core-dev:amd64 (1.3.4-2+b1) ...
-Preparing to unpack .../18-libgpgme11_1.16.0-1.1_amd64.deb ...
-Unpacking libgpgme11:amd64 (1.16.0-1.1) over (1.14.0-1+b2) ...
-Preparing to unpack .../19-libjs-underscore_1.9.1~dfsg-4_all.deb ...
-Unpacking libjs-underscore (1.9.1~dfsg-4) over (1.9.1~dfsg-3) ...
-Preparing to unpack .../20-libsoundtouch1_2.3.1+ds1-1+b1_amd64.deb ...
-Unpacking libsoundtouch1:amd64 (2.3.1+ds1-1+b1) over (2.2+ds1-2) ...
-Preparing to unpack .../21-libz3-4_4.8.12-1+b1_i386.deb ...
-De-configuring libz3-4:amd64 (4.8.10-1) ...
-Unpacking libz3-4:i386 (4.8.12-1+b1) over (4.8.10-1) ...
-Preparing to unpack .../22-libz3-4_4.8.12-1+b1_amd64.deb ...
-Unpacking libz3-4:amd64 (4.8.12-1+b1) over (4.8.10-1) ...
-Preparing to unpack .../23-python3-gpg_1.16.0-1.1_amd64.deb ...
-Unpacking python3-gpg (1.16.0-1.1) over (1.14.0-1+b2) ...
-Preparing to unpack .../24-python3-pycurl_7.44.1-3_amd64.deb ...
-Unpacking python3-pycurl (7.44.1-3) over (7.44.1-1) ...
-Preparing to unpack .../25-metasploit-framework_6.1.7+20210918102530~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.7+20210918102530~1rapid7-1) over (6.1.7+20210917102551~1rapid7-1) ...
-Setting up libglvnd-core-dev:amd64 (1.3.4-2+b1) ...
-Setting up libglvnd0:amd64 (1.3.4-2+b1) ...
-Setting up libglvnd0:i386 (1.3.4-2+b1) ...
-Setting up metasploit-framework (6.1.7+20210918102530~1rapid7-1) ...
-Run msfconsole to get started
-Setting up libgpgme11:amd64 (1.16.0-1.1) ...
-Setting up libopengl0:amd64 (1.3.4-2+b1) ...
-Setting up python3-pycurl (7.44.1-3) ...
-Setting up libz3-4:amd64 (4.8.12-1+b1) ...
-Setting up libz3-4:i386 (4.8.12-1+b1) ...
-Setting up libsoundtouch1:amd64 (2.3.1+ds1-1+b1) ...
-Setting up libgles2:amd64 (1.3.4-2+b1) ...
-Setting up python3-gpg (1.16.0-1.1) ...
-Setting up libgles1:amd64 (1.3.4-2+b1) ...
-Setting up alsa-topology-conf (1.2.5.1-2) ...
-Setting up libegl1:amd64 (1.3.4-2+b1) ...
-Setting up libopengl-dev:amd64 (1.3.4-2+b1) ...
-Setting up libjs-underscore (1.9.1~dfsg-4) ...
-Setting up libglx0:amd64 (1.3.4-2+b1) ...
-Setting up libglx0:i386 (1.3.4-2+b1) ...
-Setting up libgl1:amd64 (1.3.4-2+b1) ...
-Setting up libgl1:i386 (1.3.4-2+b1) ...
-Setting up libglx-dev:amd64 (1.3.4-2+b1) ...
-Setting up libgl-dev:amd64 (1.3.4-2+b1) ...
-Setting up libegl-dev:amd64 (1.3.4-2+b1) ...
-Setting up libgles-dev:amd64 (1.3.4-2+b1) ...
-Setting up libglvnd-dev:amd64 (1.3.4-2+b1) ...
-Processing triggers for libc-bin (2.31-17) ...
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-good:i386 (!= 1.18.4-dmo1) but 1.18.5-1 is installed
+ gstreamer1.0-plugins-good:i386 : Breaks: gstreamer1.0-plugins-good (!= 1.18.5-1) but 1.18.4-dmo1 is installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-good:i386 (!= 1.18.4-dmo1) but 1.18.5-1 is installed
+ gstreamer1.0-plugins-good:i386 : Breaks: gstreamer1.0-plugins-good (!= 1.18.5-1) but 1.18.4-dmo1 is installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
 
-[1;38;5;182mCleaning up system. . .[0m
+[1;38;5;92mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-good:i386 (!= 1.18.4-dmo1) but 1.18.5-1 is installed
+ gstreamer1.0-plugins-good:i386 : Breaks: gstreamer1.0-plugins-good (!= 1.18.5-1) but 1.18.4-dmo1 is installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -256,12 +192,19 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-good:i386 (!= 1.18.4-dmo1) but 1.18.5-1 is installed
+ gstreamer1.0-plugins-good:i386 : Breaks: gstreamer1.0-plugins-good (!= 1.18.5-1) but 1.18.4-dmo1 is installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
+removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
+removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
 
-[1;38;5;14mBacking up important files and apps. . .[0m
-[1;38;5;182mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;86mBacking up important files and apps. . .[0m
+[1;38;5;92mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;182mBacking up important config files. . .[0m
+[1;38;5;92mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -270,14 +213,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;182mBacking up crontab. . .[0m
+[1;38;5;92mBacking up crontab. . .[0m
 
-[1;38;5;182mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;92mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;14mUpdating local git repos. . .[0m
-[1;38;5;14mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;182mUpdating Projects. . .[0m
+[1;38;5;86mUpdating local git repos. . .[0m
+[1;38;5;86mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;92mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -285,7 +228,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;182mUpdating Documents. . .[0m
+[1;38;5;92mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -293,24 +236,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;182mUpdating scripts. . .[0m
-[master 9987fb2] auto commit
- 6 files changed, 23022 insertions(+), 22827 deletions(-)
- rewrite cron_scripts/linux-update.log (78%)
-To https://github.com/msifland/scripts
-   b190d7c..9987fb2  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;182mUpdating pkg_bkups. . .[0m
-[master 46103ac] auto commit
- 5 files changed, 8 insertions(+), 6 deletions(-)
-To https://github.com/msifland/pkg_bkups
-   2be06b4..46103ac  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;202mAll is good.[0m
-
-[1;38;5;14m
-09-20-2021 07:02:15 AM
-[1;38;5;14mIt took 2 minutes 14 seconds to run whole process.[0m
-[0m
+[1;38;5;92mUpdating scripts. . .[0m
