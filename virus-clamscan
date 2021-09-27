@@ -14,10 +14,18 @@ fi
 PSWD="spike"
 
 # Update virus definitions
-echo "Updating clamscan before run. . ."
-echo
-sleep 2
-$HOME/scripts/virus-freshclam
+read -t 10 -p "Would you like to update virus definitions first(sudo freshclam)[y/n]? " frsh
+if [[ "$frsh" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo "Updating clamscan before run. . ."
+	echo
+	sleep 2
+	$HOME/scripts/virus-freshclam
+else
+	echo -e "${COLOR}"
+	echo "Ok, not updating virus definitions now. . ."
+	echo -e "${RESTORE}"
+	sleep 2
+fi
 
 EXCLUDE="--exclude-dir=^$HOME/roms
 --exclude-dir=^$HOME/.local/share/Trash
