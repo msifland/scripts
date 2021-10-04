@@ -1,70 +1,18 @@
-Updating clamscan before run. . .
+[sudo] password for msifland: 
+Checking dependencies. . .
 
-[sudo] password for msifland: Mon Sep 27 02:00:05 2021 -> ClamAV update process started at Mon Sep 27 02:00:05 2021
-Mon Sep 27 02:00:22 2021 -> ^Can't query current.cvd.clamav.net
-Mon Sep 27 02:00:22 2021 -> ^Invalid DNS reply. Falling back to HTTP mode.
-Mon Sep 27 02:00:22 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:22 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:22 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:22 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:22 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:22 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:00:27 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:27 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:27 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:27 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:27 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:27 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:00:32 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:32 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:32 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:32 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:32 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:32 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:00:37 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:37 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:37 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:37 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:37 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:37 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:00:42 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:42 2021 -> !remote_cvdhead: Download failed (6) Mon Sep 27 02:00:42 2021 -> ! Message: Couldn't resolve host name
-Mon Sep 27 02:00:42 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:42 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:42 2021 -> Giving up on https://database.clamav.net...
-Mon Sep 27 02:00:42 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:42 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:42 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:42 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:42 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:42 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:00:47 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:47 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:47 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:47 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:47 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:47 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:00:52 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:52 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:52 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:52 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:52 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:52 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:00:57 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:00:57 2021 -> ^remote_cvdhead: Download failed (6) Mon Sep 27 02:00:57 2021 -> ^ Message: Couldn't resolve host name
-Mon Sep 27 02:00:57 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:00:57 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:00:57 2021 -> Trying again in 5 secs...
-Mon Sep 27 02:01:02 2021 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Mon Sep 27 02:01:02 2021 -> !remote_cvdhead: Download failed (6) Mon Sep 27 02:01:02 2021 -> ! Message: Couldn't resolve host name
-Mon Sep 27 02:01:02 2021 -> ^Failed to get daily database version information from server: https://database.clamav.net
-Mon Sep 27 02:01:02 2021 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
-Mon Sep 27 02:01:02 2021 -> Giving up on https://database.clamav.net...
-Mon Sep 27 02:01:02 2021 -> !Update failed for database: daily
-Mon Sep 27 02:01:02 2021 -> !Database update process failed: HTTP GET failed
-Mon Sep 27 02:01:02 2021 -> !Update failed.
-
-[1;38;5;83m
+clamav found.
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;45m
+Ok, not updating virus definitions now. . .
+[0m
+[1;38;5;45m
 Removing old build logs. . .
 
 [0m
-[1;38;5;83m
+[1;38;5;45m
 Start Time:
-Date: 09-27-21
-Time: 02:01:06 AM
+Date: 10-04-21
+Time: 02:15:17 AM
 
 Scanning: 
 /
@@ -165,25 +113,26 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8568637
+Known viruses: 8570595
 Engine version: 0.103.3
-Scanned directories: 65841
-Scanned files: 616180
+Scanned directories: 63652
+Scanned files: 624382
 Infected files: 0
-Data scanned: 41018.40 MB
-Data read: 78251.68 MB (ratio 0.52:1)
-Time: 10853.902 sec (180 m 53 s)
-Start Date: 2021:09:27 02:01:14
-End Date:   2021:09:27 05:02:08
+Total errors: 371
+Data scanned: 40603.52 MB
+Data read: 78005.87 MB (ratio 0.52:1)
+Time: 11005.411 sec (183 m 25 s)
+Start Date: 2021:10:04 02:15:25
+End Date:   2021:10:04 05:18:50
 
 
 End Time:
-Date: 09-27-21
-Time: 05:02:08 AM
-It took 3 hours 1 minutes 3 seconds to scan your system.
+Date: 10-04-21
+Time: 05:18:50 AM
+It took 3 hours 3 minutes 33 seconds to scan your system.
 
 
-[1;38;5;83m
+[1;38;5;45m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
