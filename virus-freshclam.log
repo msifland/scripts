@@ -1,1 +1,9 @@
-ERROR: /var/log/clamav/freshclam.log is locked by another process
+Mon Oct 11 02:00:01 2021 -> ClamAV update process started at Mon Oct 11 02:00:01 2021
+Mon Oct 11 02:00:01 2021 -> daily database available for update (local version: 26317, remote version: 26318)
+Mon Oct 11 02:00:02 2021 -> Testing database: '/var/lib/clamav/tmp.d7262380f6/clamav-a562ccb4d9c8d3eab21a9f13f93ed122.tmp-daily.cld' ...
+Mon Oct 11 02:00:06 2021 -> Database test passed.
+Mon Oct 11 02:00:08 2021 -> daily.cld updated (version: 26318, sigs: 1938389, f-level: 90, builder: raynman)
+Mon Oct 11 02:00:08 2021 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Mon Oct 11 02:00:08 2021 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+Mon Oct 11 02:00:08 2021 -> !NotifyClamd: No communication socket specified in /etc/clamav/clamd.conf
+Mon Oct 11 02:00:08 2021 -> !Can't send to clamd: Socket operation on non-socket
