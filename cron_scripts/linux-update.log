@@ -1,80 +1,73 @@
-[H[2J[3J[1;38;5;158m           ###########    Updating your system now   ###########[0m
-[1;38;5;214m
-11-01-2021 07:00:01 AM
-Updating Linux debian 5.14.15-msi #1 SMP Sat Oct 30 03:02:14 CDT 2021 x86_64 GNU/Linux[0m
-[1;38;5;31mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;164m           ###########    Updating your system now   ###########[0m
+[1;38;5;212m
+11-15-2021 07:00:01 AM
+Updating Linux debian 5.15.2-msi #1 SMP Sat Nov 13 03:01:15 CST 2021 x86_64 GNU/Linux[0m
+[1;38;5;192mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;223mUpdating sources and checking for app updates. . .[0m
+[1;38;5;71mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Get:1 http://deb.debian.org/debian testing InRelease [128 kB]
+Get:1 http://deb.debian.org/debian testing InRelease [129 kB]
 Hit:2 http://repo.steampowered.com/steam precise InRelease
-Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:4 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
-Hit:5 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:6 https://download.sublimetext.com apt/stable/ InRelease
-Get:7 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:3 http://security.debian.org/debian-security stable-security InRelease
+Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:6 https://repo.skype.com/deb stable InRelease
+Hit:7 https://download.sublimetext.com apt/stable/ InRelease
 Get:8 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
 Hit:9 http://repository.spotify.com stable InRelease
 Hit:10 http://repo.sinew.in stable InRelease
-Hit:11 http://deb.anydesk.com all InRelease
-Get:12 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Hit:13 http://deb.debian.org/debian stable InRelease
-Get:14 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:15 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:16 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:17 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:18 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:19 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Hit:20 https://repo.skype.com/deb stable InRelease
-Get:21 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Hit:22 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:11 http://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]
+Hit:12 http://deb.anydesk.com all InRelease
+Hit:13 http://deb.debian.org/debian-security testing-security InRelease
+Hit:14 http://deb.debian.org/debian stable InRelease
+Get:15 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:16 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Get:17 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:18 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:19 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Hit:21 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:22 http://deb.debian.org/debian testing/main Sources T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [386 B]
 Hit:23 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:24 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [417 B]
-Get:25 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [419 B]
-Get:26 http://security.debian.org/debian-security stable-security/main Sources [45.1 kB]
-Get:27 http://security.debian.org/debian-security stable-security/main amd64 Packages [80.3 kB]
-Get:28 http://security.debian.org/debian-security stable-security/main i386 Packages [80.3 kB]
-Get:29 http://deb.debian.org/debian testing/main Sources T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [30.5 kB]
-Get:30 http://security.debian.org/debian-security stable-security/main Translation-en [51.0 kB]
-Get:29 http://deb.debian.org/debian testing/main Sources T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [30.5 kB]
-Get:31 http://deb.debian.org/debian testing/main i386 Packages T-2021-11-01-0202.24-F-2021-10-31-1401.28.pdiff [46.4 kB]
-Get:31 http://deb.debian.org/debian testing/main i386 Packages T-2021-11-01-0202.24-F-2021-10-31-1401.28.pdiff [46.4 kB]
+Get:22 http://deb.debian.org/debian testing/main Sources T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [386 B]
+Get:24 http://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,075 B]
+Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [324 B]
+Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [324 B]
+Get:26 http://deb.debian.org/debian testing/main amd64 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [323 B]
+Get:26 http://deb.debian.org/debian testing/main amd64 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [323 B]
+Get:27 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:28 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:29 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:30 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:31 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
 Hit:32 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:33 http://deb.debian.org/debian testing/main amd64 Packages T-2021-11-01-0202.24-F-2021-10-31-1401.28.pdiff [49.0 kB]
-Get:33 http://deb.debian.org/debian testing/main amd64 Packages T-2021-11-01-0202.24-F-2021-10-31-1401.28.pdiff [49.0 kB]
-Get:34 http://deb.debian.org/debian testing/main Translation-en T-2021-11-01-0202.24-F-2021-10-31-1401.28.pdiff [3,267 B]
-Get:35 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:36 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:37 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:38 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:34 http://deb.debian.org/debian testing/main Translation-en T-2021-11-01-0202.24-F-2021-10-31-1401.28.pdiff [3,267 B]
-Get:39 http://deb.debian.org/debian unstable/main Sources T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [42.5 kB]
-Get:39 http://deb.debian.org/debian unstable/main Sources T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [42.5 kB]
-Get:40 http://deb.debian.org/debian unstable/main i386 Packages T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [42.5 kB]
-Get:40 http://deb.debian.org/debian unstable/main i386 Packages T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [42.5 kB]
-Get:41 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [43.0 kB]
-Get:41 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [43.0 kB]
-Get:42 http://deb.debian.org/debian unstable/main Translation-en T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [566 B]
-Get:42 http://deb.debian.org/debian unstable/main Translation-en T-2021-11-01-0802.04-F-2021-10-31-1401.28.pdiff [566 B]
-Get:43 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,221 kB]
-Get:44 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,508 kB]
-Get:45 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,295 kB]
-Get:46 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [17.9 kB]
-Get:47 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,302 kB]
-Get:48 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,670 kB]
-Get:49 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,603 kB]
-Get:50 http://www.deb-multimedia.org bullseye InRelease [15.8 kB]
-Get:51 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
-Get:52 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
-Fetched 32.4 MB in 15s (2,228 kB/s)
+Get:33 http://deb.debian.org/debian unstable/main Sources T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [5,021 B]
+Get:33 http://deb.debian.org/debian unstable/main Sources T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [5,021 B]
+Get:34 http://deb.debian.org/debian unstable/non-free Sources T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [649 B]
+Get:34 http://deb.debian.org/debian unstable/non-free Sources T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [649 B]
+Get:35 http://deb.debian.org/debian unstable/main i386 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [3,130 B]
+Get:35 http://deb.debian.org/debian unstable/main i386 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [3,130 B]
+Get:36 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [3,105 B]
+Get:36 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [3,105 B]
+Get:37 http://deb.debian.org/debian unstable/main Translation-en T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [135 B]
+Get:37 http://deb.debian.org/debian unstable/main Translation-en T-2021-11-15-0801.23-F-2021-11-15-0801.23.pdiff [135 B]
+Get:38 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,354 kB]
+Get:39 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [6,952 kB]
+Get:40 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [18.0 kB]
+Get:41 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,303 kB]
+Get:42 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,670 kB]
+Get:43 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,617 kB]
+Get:44 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [16.1 kB]
+Hit:45 http://www.deb-multimedia.org bullseye InRelease
+Fetched 26.8 MB in 13s (2,141 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+6 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;223mChecking for system upgrade. . .[0m
+[1;38;5;71mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -83,78 +76,20 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages have been kept back:
-  libpipewire-0.3-0 libpipewire-0.3-modules libspa-0.2-modules pipewire
-  pipewire-bin
+  asciidoc-base asciidoc-common libselinux1 libselinux1:i386 libselinux1-dev
 The following packages will be upgraded:
-  libv4l-0 libv4l-0:i386 libv4lconvert0 libv4lconvert0:i386 libwacom-bin
-  libwacom-common libwacom2 libwww-perl metasploit-framework sublime-text
-  x11-xserver-utils xserver-xorg-input-libinput
-12 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
-Need to get 275 MB of archives.
-After this operation, 1,097 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main i386 libv4l-0 i386 1.22.1-2 [111 kB]
-Get:2 http://deb.debian.org/debian testing/main amd64 libv4l-0 amd64 1.22.1-2 [110 kB]
-Get:3 http://deb.debian.org/debian testing/main amd64 libv4lconvert0 amd64 1.22.1-2 [143 kB]
-Get:4 http://deb.debian.org/debian testing/main i386 libv4lconvert0 i386 1.22.1-2 [145 kB]
-Get:5 http://deb.debian.org/debian testing/main amd64 libwacom2 amd64 1.12-1 [22.2 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 libwacom-common all 1.12-1 [52.9 kB]
-Get:7 http://deb.debian.org/debian testing/main amd64 libwacom-bin amd64 1.12-1 [15.3 kB]
-Get:8 http://deb.debian.org/debian testing/main amd64 libwww-perl all 6.58-1 [193 kB]
-Get:9 http://deb.debian.org/debian testing/main amd64 x11-xserver-utils amd64 7.7+9 [169 kB]
-Get:10 http://deb.debian.org/debian testing/main amd64 xserver-xorg-input-libinput amd64 1.2.0-1 [63.3 kB]
-Get:11 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.12+20211031102533~1rapid7-1 [258 MB]
-Get:12 https://download.sublimetext.com apt/stable/ sublime-text 4121 [16.3 MB]
+  metasploit-framework
+1 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+Need to get 258 MB of archives.
+After this operation, 275 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.15+20211114112541~1rapid7-1 [258 MB]
 apt-listchanges: Reading changelogs...
-Fetched 275 MB in 28s (9,702 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 518187 files and directories currently installed.)
-Preparing to unpack .../00-libv4l-0_1.22.1-2_amd64.deb ...
-De-configuring libv4l-0:i386 (1.20.0-4) ...
-Unpacking libv4l-0:amd64 (1.22.1-2) over (1.20.0-4) ...
-Preparing to unpack .../01-libv4l-0_1.22.1-2_i386.deb ...
-Unpacking libv4l-0:i386 (1.22.1-2) over (1.20.0-4) ...
-Preparing to unpack .../02-libv4lconvert0_1.22.1-2_i386.deb ...
-De-configuring libv4lconvert0:amd64 (1.20.0-4) ...
-Unpacking libv4lconvert0:i386 (1.22.1-2) over (1.20.0-4) ...
-Preparing to unpack .../03-libv4lconvert0_1.22.1-2_amd64.deb ...
-Unpacking libv4lconvert0:amd64 (1.22.1-2) over (1.20.0-4) ...
-Preparing to unpack .../04-libwacom2_1.12-1_amd64.deb ...
-Unpacking libwacom2:amd64 (1.12-1) over (1.11-1) ...
-Preparing to unpack .../05-libwacom-common_1.12-1_all.deb ...
-Unpacking libwacom-common (1.12-1) over (1.11-1) ...
-Preparing to unpack .../06-libwacom-bin_1.12-1_amd64.deb ...
-Unpacking libwacom-bin (1.12-1) over (1.11-1) ...
-Preparing to unpack .../07-libwww-perl_6.58-1_all.deb ...
-Unpacking libwww-perl (6.58-1) over (6.57-1) ...
-Preparing to unpack .../08-sublime-text_4121_amd64.deb ...
-Unpacking sublime-text (4121) over (4113) ...
-Preparing to unpack .../09-x11-xserver-utils_7.7+9_amd64.deb ...
-Unpacking x11-xserver-utils (7.7+9) over (7.7+8) ...
-Preparing to unpack .../10-xserver-xorg-input-libinput_1.2.0-1_amd64.deb ...
-Unpacking xserver-xorg-input-libinput (1.2.0-1) over (1.1.0-1) ...
-Preparing to unpack .../11-metasploit-framework_6.1.12+20211031102533~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.12+20211031102533~1rapid7-1) over (6.1.12+20211025102517~1rapid7-1) ...
-Setting up libwww-perl (6.58-1) ...
-Setting up sublime-text (4121) ...
-Setting up xserver-xorg-input-libinput (1.2.0-1) ...
-Setting up metasploit-framework (6.1.12+20211031102533~1rapid7-1) ...
+Fetched 258 MB in 26s (9,943 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554623 files and directories currently installed.)
+Preparing to unpack .../metasploit-framework_6.1.15+20211114112541~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.15+20211114112541~1rapid7-1) over (6.1.14+20211108112548~1rapid7-1) ...
+Setting up metasploit-framework (6.1.15+20211114112541~1rapid7-1) ...
 Run msfconsole to get started
-Setting up x11-xserver-utils (7.7+9) ...
-Setting up libv4lconvert0:amd64 (1.22.1-2) ...
-Setting up libv4lconvert0:i386 (1.22.1-2) ...
-Setting up libwacom-common (1.12-1) ...
-Setting up libv4l-0:amd64 (1.22.1-2) ...
-Setting up libv4l-0:i386 (1.22.1-2) ...
-Setting up libwacom2:amd64 (1.12-1) ...
-Setting up libwacom-bin (1.12-1) ...
-Processing triggers for mailcap (3.70) ...
-Processing triggers for bamfdaemon (0.5.4-2+b1) ...
-Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for desktop-file-utils (0.26-1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for libc-bin (2.32-4) ...
-Processing triggers for man-db (2.9.4-2) ...
-Processing triggers for udev (249.5-1) ...
-Processing triggers for menu (2.1.48) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -163,64 +98,73 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be REMOVED:
-  pipewire-media-session
+  asciidoc-doc libsepol1-dev
 The following NEW packages will be installed:
-  libwireplumber-0.4-0 pipewire-pulse wireplumber
+  libsepol-dev libsepol2
 The following packages will be upgraded:
-  libpipewire-0.3-0 libpipewire-0.3-modules libspa-0.2-modules pipewire
-  pipewire-bin
-5 upgraded, 3 newly installed, 1 to remove and 0 not upgraded.
-Need to get 1,737 kB of archives.
-After this operation, 630 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 libpipewire-0.3-modules amd64 0.3.39-3 [432 kB]
-Get:2 http://deb.debian.org/debian testing/main amd64 libpipewire-0.3-0 amd64 0.3.39-3 [245 kB]
-Get:3 http://deb.debian.org/debian testing/main amd64 libspa-0.2-modules amd64 0.3.39-3 [478 kB]
-Get:4 http://deb.debian.org/debian testing/main amd64 pipewire amd64 0.3.39-3 [11.2 kB]
-Get:5 http://deb.debian.org/debian testing/main amd64 pipewire-bin amd64 0.3.39-3 [292 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 libwireplumber-0.4-0 amd64 0.4.4-1 [218 kB]
-Get:7 http://deb.debian.org/debian testing/main amd64 pipewire-pulse amd64 0.3.39-3 [15.2 kB]
-Get:8 http://deb.debian.org/debian testing/main amd64 wireplumber amd64 0.4.4-1 [46.2 kB]
+  asciidoc-base asciidoc-common libselinux1 libselinux1:i386 libselinux1-dev
+5 upgraded, 2 newly installed, 2 to remove and 0 not upgraded.
+Need to get 1,176 kB of archives.
+After this operation, 508 kB disk space will be freed.
+Get:1 http://deb.debian.org/debian testing/main amd64 libsepol2 amd64 3.3-1 [278 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 libsepol-dev amd64 3.3-1 [351 kB]
+Get:3 http://deb.debian.org/debian testing/main amd64 libselinux1-dev amd64 3.3-1 [169 kB]
+Get:4 http://deb.debian.org/debian testing/main i386 libselinux1 i386 3.3-1 [93.0 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 libselinux1 amd64 3.3-1 [88.3 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 asciidoc-base all 10.0.2-1 [87.4 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 asciidoc-common all 10.0.2-1 [108 kB]
 apt-listchanges: Reading changelogs...
-Fetched 1,737 kB in 0s (3,715 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 518209 files and directories currently installed.)
-Removing pipewire-media-session (0.3.38-2) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 518201 files and directories currently installed.)
-Preparing to unpack .../0-libpipewire-0.3-modules_0.3.39-3_amd64.deb ...
-Unpacking libpipewire-0.3-modules:amd64 (0.3.39-3) over (0.3.38-2) ...
-Preparing to unpack .../1-libpipewire-0.3-0_0.3.39-3_amd64.deb ...
-Unpacking libpipewire-0.3-0:amd64 (0.3.39-3) over (0.3.38-2) ...
-Preparing to unpack .../2-libspa-0.2-modules_0.3.39-3_amd64.deb ...
-Unpacking libspa-0.2-modules:amd64 (0.3.39-3) over (0.3.38-2) ...
-Preparing to unpack .../3-pipewire_0.3.39-3_amd64.deb ...
-Unpacking pipewire:amd64 (0.3.39-3) over (0.3.38-2) ...
-Preparing to unpack .../4-pipewire-bin_0.3.39-3_amd64.deb ...
-Unpacking pipewire-bin (0.3.39-3) over (0.3.38-2) ...
-Selecting previously unselected package libwireplumber-0.4-0:amd64.
-Preparing to unpack .../5-libwireplumber-0.4-0_0.4.4-1_amd64.deb ...
-Unpacking libwireplumber-0.4-0:amd64 (0.4.4-1) ...
-Selecting previously unselected package pipewire-pulse.
-Preparing to unpack .../6-pipewire-pulse_0.3.39-3_amd64.deb ...
-Unpacking pipewire-pulse (0.3.39-3) ...
-Selecting previously unselected package wireplumber.
-Preparing to unpack .../7-wireplumber_0.4.4-1_amd64.deb ...
-Unpacking wireplumber (0.4.4-1) ...
-Setting up libspa-0.2-modules:amd64 (0.3.39-3) ...
-Setting up libpipewire-0.3-0:amd64 (0.3.39-3) ...
-Setting up libwireplumber-0.4-0:amd64 (0.4.4-1) ...
-Setting up libpipewire-0.3-modules:amd64 (0.3.39-3) ...
-Setting up pipewire-bin (0.3.39-3) ...
-Setting up pipewire:amd64 (0.3.39-3) ...
-Setting up wireplumber (0.4.4-1) ...
-Failed to preset unit, file /etc/systemd/user/pipewire-session-manager.service already exists and is a symlink to /lib/systemd/user/pipewire-media-session.service.
-Created symlink /etc/systemd/user/pipewire.service.wants/wireplumber.service → /usr/lib/systemd/user/wireplumber.service.
-/usr/bin/deb-systemd-helper: error: systemctl preset failed on wireplumber.service: No such file or directory
-Setting up pipewire-pulse (0.3.39-3) ...
-Created symlink /etc/systemd/user/default.target.wants/pipewire-pulse.service → /usr/lib/systemd/user/pipewire-pulse.service.
-Created symlink /etc/systemd/user/sockets.target.wants/pipewire-pulse.socket → /usr/lib/systemd/user/pipewire-pulse.socket.
+Fetched 1,176 kB in 0s (3,549 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554647 files and directories currently installed.)
+Removing asciidoc-doc (9.0.0~rc2-1) ...
+Selecting previously unselected package libsepol2:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554562 files and directories currently installed.)
+Preparing to unpack .../libsepol2_3.3-1_amd64.deb ...
+Unpacking libsepol2:amd64 (3.3-1) ...
+dpkg: libsepol1-dev:amd64: dependency problems, but removing anyway as you requested:
+ libselinux1-dev:amd64 depends on libsepol1-dev (>= 3.1).
+
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554564 files and directories currently installed.)
+Removing libsepol1-dev:amd64 (3.1-1) ...
+Selecting previously unselected package libsepol-dev:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554510 files and directories currently installed.)
+Preparing to unpack .../0-libsepol-dev_3.3-1_amd64.deb ...
+Unpacking libsepol-dev:amd64 (3.3-1) ...
+Preparing to unpack .../1-libselinux1-dev_3.3-1_amd64.deb ...
+Unpacking libselinux1-dev:amd64 (3.3-1) over (3.1-3+b1) ...
+Preparing to unpack .../2-libselinux1_3.3-1_amd64.deb ...
+De-configuring libselinux1:i386 (3.1-3+b1) ...
+Unpacking libselinux1:amd64 (3.3-1) over (3.1-3+b1) ...
+Preparing to unpack .../3-libselinux1_3.3-1_i386.deb ...
+Unpacking libselinux1:i386 (3.3-1) over (3.1-3+b1) ...
+Preparing to unpack .../4-asciidoc-base_10.0.2-1_all.deb ...
+Unpacking asciidoc-base (10.0.2-1) over (9.0.0~rc2-1) ...
+Preparing to unpack .../5-asciidoc-common_10.0.2-1_all.deb ...
+Unpacking asciidoc-common (10.0.2-1) over (9.0.0~rc2-1) ...
+Setting up asciidoc-common (10.0.2-1) ...
+Installing new version of config file /etc/asciidoc/asciidoc.conf ...
+Installing new version of config file /etc/asciidoc/docbook-xsl/asciidoc-docbook-xsl.txt ...
+Installing new version of config file /etc/asciidoc/docbook-xsl/htmlhelp.xsl ...
+Installing new version of config file /etc/asciidoc/docbook45.conf ...
+Installing new version of config file /etc/asciidoc/docbook5.conf ...
+Installing new version of config file /etc/asciidoc/help.conf ...
+Installing new version of config file /etc/asciidoc/xhtml11.conf ...
+Setting up libselinux1:amd64 (3.3-1) ...
+Setting up libselinux1:i386 (3.3-1) ...
+Setting up asciidoc-base (10.0.2-1) ...
+Installing new version of config file /etc/asciidoc/filters/code/code-filter.py ...
+Installing new version of config file /etc/asciidoc/filters/graphviz/graphviz2png.py ...
+Installing new version of config file /etc/asciidoc/filters/latex/latex2img.py ...
+Installing new version of config file /etc/asciidoc/filters/music/music2png.py ...
+Installing new version of config file /etc/asciidoc/filters/source/source-highlight-filter.conf ...
+Installing new version of config file /etc/asciidoc/filters/unwraplatex.py ...
+Setting up libsepol2:amd64 (3.3-1) ...
+Setting up libsepol-dev:amd64 (3.3-1) ...
+Setting up libselinux1-dev:amd64 (3.3-1) ...
 Processing triggers for man-db (2.9.4-2) ...
 Processing triggers for libc-bin (2.32-4) ...
 
-[1;38;5;223mCleaning up system. . .[0m
+[1;38;5;71mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -244,19 +188,17 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 The following packages will be REMOVED:
-  pipewire-media-session*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+  linux-image-5.14.0-2-amd64* vim-addon-manager*
+0 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
 After this operation, 0 B of additional disk space will be used.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 518288 files and directories currently installed.)
-Purging configuration files for pipewire-media-session (0.3.38-2) ...
-removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
-removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
-removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 554559 files and directories currently installed.)
+Purging configuration files for linux-image-5.14.0-2-amd64 (5.14.9-2) ...
+Purging configuration files for vim-addon-manager (0.5.10) ...
 
-[1;38;5;214mBacking up important files and apps. . .[0m
-[1;38;5;223mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;212mBacking up important files and apps. . .[0m
+[1;38;5;71mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;223mBacking up important config files. . .[0m
+[1;38;5;71mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -265,14 +207,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;223mBacking up crontab. . .[0m
+[1;38;5;71mBacking up crontab. . .[0m
 
-[1;38;5;223mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;71mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;214mUpdating local git repos. . .[0m
-[1;38;5;214mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;223mUpdating Projects. . .[0m
+[1;38;5;212mUpdating local git repos. . .[0m
+[1;38;5;212mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;71mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -280,7 +222,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;223mUpdating Documents. . .[0m
+[1;38;5;71mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -288,4 +230,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;223mUpdating scripts. . .[0m
+[1;38;5;71mUpdating scripts. . .[0m
