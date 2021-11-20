@@ -35,3 +35,14 @@ git add --all
 git commit -m 'auto commit'
 git push -u origin master
 sleep 1
+
+
+echo
+echo "${ILCOLOR1}Updating Modules-Apps. . .${ILRESTORE}"
+cd ~/Modules-Apps
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+cd

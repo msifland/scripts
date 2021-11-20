@@ -46,18 +46,27 @@ cd $HOME/pkg_bkups
 git stash
 git fetch
 git pull
+echo
 echo "$HOME/scripts"
 cd $HOME/scripts
 git stash
 git fetch
 git pull
+echo
 echo "$HOME/Documents"
 cd $HOME/Documents
 git stash
 git fetch
 git pull
+echo
 echo "$HOME/Projects"
 cd $HOME/Projects
+git stash
+git fetch
+git pull
+echo
+echo "$HOME/Modules-Apps"
+cd $HOME/Modules-Apps
 git stash
 git fetch
 git pull
