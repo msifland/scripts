@@ -11,7 +11,7 @@ Removing old build logs. . .
 [0m
 [1;38;5;100m
 Start Time:
-Date: 11-22-21
+Date: 11-29-21
 Time: 02:15:16 AM
 
 Scanning: 
@@ -113,23 +113,23 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8579047
+Known viruses: 8580277
 Engine version: 0.103.4
-Scanned directories: 60638
-Scanned files: 598919
+Scanned directories: 61869
+Scanned files: 609639
 Infected files: 0
-Total errors: 373
-Data scanned: 40584.43 MB
-Data read: 78152.01 MB (ratio 0.52:1)
-Time: 10590.299 sec (176 m 30 s)
-Start Date: 2021:11:22 02:15:25
-End Date:   2021:11:22 05:11:55
+Total errors: 372
+Data scanned: 41095.95 MB
+Data read: 78421.50 MB (ratio 0.52:1)
+Time: 10619.570 sec (176 m 59 s)
+Start Date: 2021:11:29 02:15:24
+End Date:   2021:11:29 05:12:24
 
 
 End Time:
-Date: 11-22-21
-Time: 05:11:55 AM
-It took 2 hours 56 minutes 39 seconds to scan your system.
+Date: 11-29-21
+Time: 05:12:24 AM
+It took 2 hours 57 minutes 8 seconds to scan your system.
 
 
 [1;38;5;100m

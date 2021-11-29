@@ -1,12 +1,12 @@
 [sudo] password for msifland: 
 
-11-22-2021 01:30:01 AM
+11-29-2021 01:30:01 AM
 
-[1;38;5;48mRemove old backups first. . .[0m
-/home/msifland/Dropbox/Backups/msifland-11-18-2021.tar.gz
+[1;38;5;103mRemove old backups first. . .[0m
+/home/msifland/Dropbox/Backups/msifland-11-25-2021.tar.gz
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 
-[1;38;5;48mBacking up:[0m
+[1;38;5;103mBacking up:[0m
 /home/msifland/Brother_Printer
 /home/msifland/Documents
 /home/msifland/Dropbox
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;48mTo /home/msifland/Dropbox/Backups/msifland-11-22-2021.tar.gz
+[1;38;5;103mTo /home/msifland/Dropbox/Backups/msifland-11-29-2021.tar.gz
 
 
 Excluding:[0m
@@ -69,26 +69,26 @@ Excluding:[0m
 /home/msifland/Dropbox/.dropbox.cache
 /home/msifland/Dropbox/.dropbox
 
-[1;38;5;48mBacking up now. . .[0m
+[1;38;5;103mBacking up now. . .[0m
 tar: Removing leading `/' from member names
 tar: Removing leading `/' from hard link targets
 tar: /home/msifland/Modules&Apps: Cannot stat: No such file or directory
 tar: Exiting with failure status due to previous errors
-[1;38;5;48mBackup finished
+[1;38;5;103mBackup finished
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-11-22-2021.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-11-22-2021.tar.gz
-[1;38;5;48mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
-total 1.9G
--rw-r--r-- 1 msifland msifland 546M Nov 19 01:30 msifland-11-19-2021.tar.gz
--rw-r--r-- 1 msifland msifland 546M Nov 20 01:45 msifland-11-20-2021.tar.gz
--rw-r--r-- 1 msifland msifland 377M Nov 21 01:43 msifland-11-21-2021.tar.gz
--rw-r--r-- 1 msifland msifland 378M Nov 22 01:30 msifland-11-22-2021.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K Nov 22 01:30 my_backup_log.txt
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-11-29-2021.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-11-29-2021.tar.gz
+[1;38;5;103mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
+total 1.5G
+-rw-r--r-- 1 msifland msifland 377M Nov 26 01:30 msifland-11-26-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 377M Nov 27 01:43 msifland-11-27-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 377M Nov 28 01:34 msifland-11-28-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 378M Nov 29 01:30 msifland-11-29-2021.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K Nov 29 01:30 my_backup_log.txt
 
-[1;38;5;48mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
+[1;38;5;103mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-11-22-2021 01:30:41 AM
-[1;38;5;48mIt took 0 minutes 40 seconds to run whole process.[0m
+11-29-2021 01:30:41 AM
+[1;38;5;103mIt took 0 minutes 40 seconds to run whole process.[0m
 

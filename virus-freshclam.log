@@ -1,4 +1,4 @@
-Mon Nov 22 02:00:01 2021 -> ClamAV update process started at Mon Nov 22 02:00:01 2021
-Mon Nov 22 02:00:01 2021 -> daily.cld database is up-to-date (version: 26360, sigs: 1946870, f-level: 90, builder: raynman)
-Mon Nov 22 02:00:01 2021 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon Nov 22 02:00:01 2021 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+Mon Nov 29 02:00:01 2021 -> ClamAV update process started at Mon Nov 29 02:00:01 2021
+Mon Nov 29 02:00:01 2021 -> daily.cld database is up-to-date (version: 26367, sigs: 1948111, f-level: 90, builder: raynman)
+Mon Nov 29 02:00:01 2021 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Mon Nov 29 02:00:01 2021 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
