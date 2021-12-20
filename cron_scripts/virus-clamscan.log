@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;125m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;42m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;125m
+[1;38;5;42m
 Removing old build logs. . .
 
 [0m
-[1;38;5;125m
+[1;38;5;42m
 Start Time:
-Date: 12-13-21
+Date: 12-20-21
 Time: 02:15:16 AM
 
 Scanning: 
@@ -35,11 +35,6 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -113,26 +108,26 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8582422
+Known viruses: 8584115
 Engine version: 0.103.4
-Scanned directories: 64610
-Scanned files: 634238
+Scanned directories: 60995
+Scanned files: 608163
 Infected files: 0
-Total errors: 372
-Data scanned: 41769.74 MB
-Data read: 79012.96 MB (ratio 0.53:1)
-Time: 10910.877 sec (181 m 50 s)
-Start Date: 2021:12:13 02:15:24
-End Date:   2021:12:13 05:17:15
+Total errors: 374
+Data scanned: 40782.30 MB
+Data read: 77796.04 MB (ratio 0.52:1)
+Time: 10516.699 sec (175 m 16 s)
+Start Date: 2021:12:20 02:15:24
+End Date:   2021:12:20 05:10:41
 
 
 End Time:
-Date: 12-13-21
-Time: 05:17:15 AM
-It took 3 hours 1 minutes 59 seconds to scan your system.
+Date: 12-20-21
+Time: 05:10:41 AM
+It took 2 hours 55 minutes 25 seconds to scan your system.
 
 
-[1;38;5;125m
+[1;38;5;42m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m

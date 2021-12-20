@@ -1,81 +1,46 @@
-[H[2J[3J[1;38;5;216m           ###########    Updating your system now   ###########[0m
-[1;38;5;125m
-12-13-2021 07:00:01 AM
-Updating Linux debian 5.15.7-msi #1 SMP Sat Dec 11 03:01:23 CST 2021 x86_64 GNU/Linux[0m
-[1;38;5;87mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;238m           ###########    Updating your system now   ###########[0m
+[1;38;5;22m
+12-20-2021 07:00:01 AM
+Updating Linux debian 5.15.10-msi #1 SMP Sat Dec 18 03:01:27 CST 2021 x86_64 GNU/Linux[0m
+[1;38;5;252mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;142mUpdating sources and checking for app updates. . .[0m
+[1;38;5;171mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://repo.steampowered.com/steam precise InRelease
-Get:2 http://deb.debian.org/debian testing InRelease [129 kB]
-Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:4 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
-Hit:5 https://repo.skype.com/deb stable InRelease
-Hit:6 http://security.debian.org/debian-security stable-security InRelease
-Hit:7 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:8 https://download.sublimetext.com apt/stable/ InRelease
-Get:9 http://repository.spotify.com stable InRelease [3,316 B]
-Hit:10 http://repo.sinew.in stable InRelease
-Hit:11 http://deb.anydesk.com all InRelease
-Get:12 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Get:13 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [418 B]
-Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [416 B]
-Hit:15 http://deb.debian.org/debian-security testing-security InRelease
-Hit:16 http://deb.debian.org/debian stable InRelease
-Get:17 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Err:9 http://repository.spotify.com stable InRelease
-  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 5E3C45D7B312C643
-Get:18 http://deb.debian.org/debian stable-updates InRelease [39.3 kB]
-Get:19 http://deb.debian.org/debian unstable InRelease [165 kB]
-Hit:20 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:21 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:22 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:23 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Hit:24 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:25 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:26 http://deb.debian.org/debian testing/main Sources T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [530 B]
-Get:26 http://deb.debian.org/debian testing/main Sources T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [530 B]
-Get:27 http://deb.debian.org/debian testing/main i386 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [292 B]
-Get:27 http://deb.debian.org/debian testing/main i386 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [292 B]
-Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [294 B]
-Get:29 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
-Get:30 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:31 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:32 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [294 B]
-Get:33 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:34 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
-Get:35 http://deb.debian.org/debian unstable/non-free Sources T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [31 B]
-Get:35 http://deb.debian.org/debian unstable/non-free Sources T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [31 B]
-Get:36 http://deb.debian.org/debian unstable/main Sources T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [3,276 B]
-Get:36 http://deb.debian.org/debian unstable/main Sources T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [3,276 B]
-Get:37 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [2,141 B]
-Get:37 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [2,141 B]
-Get:38 http://deb.debian.org/debian unstable/main i386 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [2,127 B]
-Get:38 http://deb.debian.org/debian unstable/main i386 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [2,127 B]
-Get:39 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [275 B]
-Get:39 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [275 B]
-Get:40 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [377 B]
-Get:40 http://deb.debian.org/debian unstable/non-free i386 Packages T-2021-12-13-0801.56-F-2021-12-13-0801.56.pdiff [377 B]
-Get:41 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,373 kB]
-Get:42 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [6,977 kB]
-Get:43 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,312 kB]
-Get:44 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,673 kB]
-Get:45 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,636 kB]
-Get:46 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [17.7 kB]
-Hit:47 http://www.deb-multimedia.org bullseye InRelease
-Fetched 27.0 MB in 12s (2,225 kB/s)
+Hit:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:3 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:5 http://deb.debian.org/debian testing InRelease
+Hit:6 https://repo.skype.com/deb stable InRelease
+Hit:7 https://download.sublimetext.com apt/stable/ InRelease
+Hit:8 http://security.debian.org/debian-security stable-security InRelease
+Hit:9 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:10 http://repository.spotify.com stable InRelease
+Hit:11 http://deb.debian.org/debian testing-updates InRelease
+Hit:12 http://repo.sinew.in stable InRelease
+Hit:13 http://deb.anydesk.com all InRelease
+Hit:14 http://deb.debian.org/debian-security testing-security InRelease
+Hit:15 http://deb.debian.org/debian stable InRelease
+Get:16 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:17 http://deb.debian.org/debian stable-updates InRelease
+Hit:18 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Err:13 http://deb.anydesk.com all InRelease
+  The following signatures were invalid: EXPKEYSIG 18DF3741CDFFDE29 philandro Software GmbH <info@philandro.com>
+Hit:19 http://deb.debian.org/debian unstable InRelease
+Hit:20 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Hit:21 http://www.deb-multimedia.org bullseye InRelease
+Fetched 2,461 B in 12s (197 B/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-6 packages can be upgraded. Run 'apt list --upgradable' to see them.
-W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://repository.spotify.com stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 5E3C45D7B312C643
-W: Failed to fetch http://repository.spotify.com/dists/stable/InRelease  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 5E3C45D7B312C643
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://deb.anydesk.com all InRelease: The following signatures were invalid: EXPKEYSIG 18DF3741CDFFDE29 philandro Software GmbH <info@philandro.com>
+W: Failed to fetch http://deb.anydesk.com/dists/all/InRelease  The following signatures were invalid: EXPKEYSIG 18DF3741CDFFDE29 philandro Software GmbH <info@philandro.com>
 W: Some index files failed to download. They have been ignored, or old ones used instead.
 
-[1;38;5;142mChecking for system upgrade. . .[0m
+[1;38;5;171mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -83,88 +48,29 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-Some packages could not be installed. This may mean that you have
-requested an impossible situation or if you are using the unstable
-distribution that some required packages have not yet been created
-or been moved out of Incoming.
-The following information may help to resolve the situation:
-
-The following packages have unmet dependencies:
- gnustep-base-runtime : Depends: gnustep-base-common (= 1.28.0-4) but 1.27.0-4 is to be installed
- libgnustep-base1.28 : Depends: gnustep-base-common (= 1.28.0-4) but 1.27.0-4 is to be installed
-E: Broken packages
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Calculating upgrade...
-The following packages will be REMOVED:
-  libgnustep-base1.27 libgsl25
-The following NEW packages will be installed:
-  libgnustep-base1.28 libgsl27
 The following packages will be upgraded:
-  gnustep-base-common gnustep-base-runtime inkscape libgslcblas0
-  metasploit-framework unar
-6 upgraded, 2 newly installed, 2 to remove and 0 not upgraded.
-Need to get 286 MB of archives.
-After this operation, 178 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 gnustep-base-runtime amd64 1.28.0-4 [454 kB]
-Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.20+20211213112600~1rapid7-1 [265 MB]
-Get:3 http://deb.debian.org/debian testing/main amd64 unar amd64 1.10.1-2+b7 [1,256 kB]
-Get:4 http://deb.debian.org/debian testing/main amd64 gnustep-base-common all 1.28.0-4 [311 kB]
-Get:5 http://deb.debian.org/debian testing/main amd64 libgnustep-base1.28 amd64 1.28.0-4 [1,587 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 inkscape amd64 1.1.1-2+b1 [16.8 MB]
-Get:7 http://deb.debian.org/debian testing/main amd64 libgslcblas0 amd64 2.7.1+dfsg-3 [104 kB]
-Get:8 http://deb.debian.org/debian testing/main amd64 libgsl27 amd64 2.7.1+dfsg-3 [946 kB]
+  metasploit-framework
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 265 MB of archives.
+After this operation, 220 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.21+20211219112552~1rapid7-1 [265 MB]
 apt-listchanges: Reading changelogs...
-Fetched 286 MB in 27s (10.5 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 544531 files and directories currently installed.)
-Preparing to unpack .../gnustep-base-runtime_1.28.0-4_amd64.deb ...
-Unpacking gnustep-base-runtime (1.28.0-4) over (1.27.0-4) ...
-Preparing to unpack .../unar_1.10.1-2+b7_amd64.deb ...
-Unpacking unar (1.10.1-2+b7) over (1.10.1-2+b6) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 544531 files and directories currently installed.)
-Removing libgnustep-base1.27 (1.27.0-4) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 544525 files and directories currently installed.)
-Preparing to unpack .../gnustep-base-common_1.28.0-4_all.deb ...
-Unpacking gnustep-base-common (1.28.0-4) over (1.27.0-4) ...
-Selecting previously unselected package libgnustep-base1.28.
-Preparing to unpack .../libgnustep-base1.28_1.28.0-4_amd64.deb ...
-Unpacking libgnustep-base1.28 (1.28.0-4) ...
-Preparing to unpack .../inkscape_1.1.1-2+b1_amd64.deb ...
-Unpacking inkscape (1.1.1-2+b1) over (1.1.1-2) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 544531 files and directories currently installed.)
-Removing libgsl25:amd64 (2.6+dfsg-2) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 544520 files and directories currently installed.)
-Preparing to unpack .../libgslcblas0_2.7.1+dfsg-3_amd64.deb ...
-Unpacking libgslcblas0:amd64 (2.7.1+dfsg-3) over (2.6+dfsg-2) ...
-Selecting previously unselected package libgsl27:amd64.
-Preparing to unpack .../libgsl27_2.7.1+dfsg-3_amd64.deb ...
-Unpacking libgsl27:amd64 (2.7.1+dfsg-3) ...
-Preparing to unpack .../metasploit-framework_6.1.20+20211213112600~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.20+20211213112600~1rapid7-1) over (6.1.18+20211204112530~1rapid7-1) ...
-Setting up libgslcblas0:amd64 (2.7.1+dfsg-3) ...
-Setting up libgsl27:amd64 (2.7.1+dfsg-3) ...
-Setting up metasploit-framework (6.1.20+20211213112600~1rapid7-1) ...
+Fetched 265 MB in 26s (10.2 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 496406 files and directories currently installed.)
+Preparing to unpack .../metasploit-framework_6.1.21+20211219112552~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.21+20211219112552~1rapid7-1) over (6.1.20+20211214112551~1rapid7-1) ...
+Setting up metasploit-framework (6.1.21+20211219112552~1rapid7-1) ...
 Run msfconsole to get started
-Setting up inkscape (1.1.1-2+b1) ...
-Setting up gnustep-base-common (1.28.0-4) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for libc-bin (2.32-5) ...
-Processing triggers for man-db (2.9.4-2) ...
-Processing triggers for sgml-base (1.30) ...
-Processing triggers for mailcap (3.70+nmu1) ...
-Processing triggers for bamfdaemon (0.5.4-2+b1) ...
-Rebuilding /usr/share/applications/bamf-2.index...
-Setting up libgnustep-base1.28 (1.28.0-4) ...
-Setting up gnustep-base-runtime (1.28.0-4) ...
-Setting up unar (1.10.1-2+b7) ...
-Processing triggers for libc-bin (2.32-5) ...
 
-[1;38;5;142mCleaning up system. . .[0m
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+[1;38;5;171mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -187,12 +93,18 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be REMOVED:
+  menu-xdg*
+0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+After this operation, 0 B of additional disk space will be used.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 496426 files and directories currently installed.)
+Purging configuration files for menu-xdg (0.7) ...
+Processing triggers for menu (2.1.49) ...
 
-[1;38;5;125mBacking up important files and apps. . .[0m
-[1;38;5;142mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;22mBacking up important files and apps. . .[0m
+[1;38;5;171mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;142mBacking up important config files. . .[0m
+[1;38;5;171mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -201,14 +113,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;142mBacking up crontab. . .[0m
+[1;38;5;171mBacking up crontab. . .[0m
 
-[1;38;5;142mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;171mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;125mUpdating local git repos. . .[0m
-[1;38;5;125mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;142mUpdating Projects. . .[0m
+[1;38;5;22mUpdating local git repos. . .[0m
+[1;38;5;22mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;171mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -216,7 +128,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;142mUpdating Documents. . .[0m
+[1;38;5;171mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -224,33 +136,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;142mUpdating scripts. . .[0m
-[master 1fe268b] auto commit
- 7 files changed, 33095 insertions(+), 33188 deletions(-)
- rewrite cron_scripts/linux-update.log (80%)
- rewrite virus-freshclam.log (75%)
-To https://github.com/msifland/scripts
-   c3ee0b4..1fe268b  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;142mUpdating pkg_bkups. . .[0m
-[master 4e68e71] auto commit
- 6 files changed, 39 insertions(+), 15 deletions(-)
-To https://github.com/msifland/pkg_bkups
-   1ff6829..4e68e71  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;142mUpdating Modules-Apps. . .[0m
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
-Everything up-to-date
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;87mAll is good.[0m
-
-[1;38;5;125m
-12-13-2021 07:02:10 AM
-[1;38;5;125mIt took 2 minutes 9 seconds to run whole process.[0m
-[0m
+[1;38;5;171mUpdating scripts. . .[0m
