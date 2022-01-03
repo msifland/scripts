@@ -1,62 +1,59 @@
-[H[2J[3J[1;38;5;33m           ###########    Updating your system now   ###########[0m
-[1;38;5;219m
-12-27-2021 07:00:01 AM
-Updating Linux debian 5.15.11-msi #1 SMP Sat Dec 25 03:01:40 CST 2021 x86_64 GNU/Linux[0m
-[1;38;5;100mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;223m           ###########    Updating your system now   ###########[0m
+[1;38;5;195m
+01-03-2022 07:00:01 AM
+Updating Linux debian 5.15.12-msi #1 SMP Sat Jan 1 03:01:21 CST 2022 x86_64 GNU/Linux[0m
+[1;38;5;225mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;114mUpdating sources and checking for app updates. . .[0m
+[1;38;5;71mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://repo.steampowered.com/steam precise InRelease
 Hit:2 http://security.debian.org/debian-security stable-security InRelease
-Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:4 https://download.sublimetext.com apt/stable/ InRelease
-Get:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:5 http://dl.google.com/linux/chrome/deb stable InRelease
 Hit:6 https://repo.skype.com/deb stable InRelease
-Get:7 http://deb.debian.org/debian testing InRelease [129 kB]
-Hit:8 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:7 https://download.sublimetext.com apt/stable/ InRelease
+Hit:8 http://repo.sinew.in stable InRelease
 Hit:9 http://repository.spotify.com stable InRelease
-Hit:10 http://repo.sinew.in stable InRelease
-Get:11 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Get:12 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [417 B]
+Hit:10 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:11 http://deb.debian.org/debian testing InRelease [129 kB]
+Get:12 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
 Hit:13 http://deb.debian.org/debian-security testing-security InRelease
-Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [413 B]
-Get:15 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Hit:16 http://deb.debian.org/debian stable InRelease
-Get:17 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:18 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:14 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:15 http://deb.debian.org/debian stable InRelease
+Get:16 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:17 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:18 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
 Get:19 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Hit:20 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:21 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:22 http://deb.debian.org/debian testing/main Sources T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [99 B]
-Get:22 http://deb.debian.org/debian testing/main Sources T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [99 B]
-Get:23 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:24 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:26 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Hit:27 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:28 http://deb.debian.org/debian unstable/main Sources T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [737 B]
-Get:28 http://deb.debian.org/debian unstable/main Sources T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [737 B]
-Get:29 http://deb.debian.org/debian unstable/main i386 Packages T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [1,556 B]
-Get:29 http://deb.debian.org/debian unstable/main i386 Packages T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [1,556 B]
-Get:30 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [1,559 B]
-Get:30 http://deb.debian.org/debian unstable/main amd64 Packages T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [1,559 B]
-Get:31 http://deb.debian.org/debian unstable/main Translation-en T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [129 B]
-Get:31 http://deb.debian.org/debian unstable/main Translation-en T-2021-12-27-0801.02-F-2021-12-27-0801.02.pdiff [129 B]
-Get:32 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,320 kB]
-Get:33 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,676 kB]
-Get:34 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,630 kB]
-Get:35 http://www.deb-multimedia.org bullseye InRelease [15.8 kB]
-Get:36 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
-Get:37 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
-Fetched 16.6 MB in 13s (1,313 kB/s)
+Get:20 http://deb.debian.org/debian testing/contrib Sources T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [53 B]
+Get:20 http://deb.debian.org/debian testing/contrib Sources T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [53 B]
+Get:21 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:22 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:23 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Hit:24 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:25 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:26 http://deb.debian.org/debian testing/main Sources T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [104 B]
+Get:26 http://deb.debian.org/debian testing/main Sources T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [104 B]
+Get:27 http://deb.debian.org/debian unstable/main Sources T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [4,629 B]
+Get:27 http://deb.debian.org/debian unstable/main Sources T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [4,629 B]
+Get:28 http://deb.debian.org/debian unstable/main i386 Packages T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [2,665 B]
+Get:28 http://deb.debian.org/debian unstable/main i386 Packages T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [2,665 B]
+Get:29 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [2,606 B]
+Get:29 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-01-03-0801.25-F-2022-01-03-0801.25.pdiff [2,606 B]
+Get:30 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,322 kB]
+Get:31 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,677 kB]
+Get:32 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,640 kB]
+Get:33 http://www.deb-multimedia.org bullseye InRelease [15.8 kB]
+Get:34 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
+Fetched 16.5 MB in 12s (1,349 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
 1 package can be upgraded. Run 'apt list --upgradable' to see it.
 
-[1;38;5;114mChecking for system upgrade. . .[0m
+[1;38;5;71mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -68,14 +65,14 @@ The following packages will be upgraded:
   metasploit-framework
 1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 265 MB of archives.
-After this operation, 76.8 kB disk space will be freed.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.22+20211227112541~1rapid7-1 [265 MB]
+After this operation, 710 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.23+20220102112535~1rapid7-1 [265 MB]
 apt-listchanges: Reading changelogs...
-Fetched 265 MB in 22s (12.2 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 514433 files and directories currently installed.)
-Preparing to unpack .../metasploit-framework_6.1.22+20211227112541~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.22+20211227112541~1rapid7-1) over (6.1.21+20211222112602~1rapid7-1) ...
-Setting up metasploit-framework (6.1.22+20211227112541~1rapid7-1) ...
+Fetched 265 MB in 32s (8,175 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 532489 files and directories currently installed.)
+Preparing to unpack .../metasploit-framework_6.1.23+20220102112535~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.23+20220102112535~1rapid7-1) over (6.1.22+20211227112541~1rapid7-1) ...
+Setting up metasploit-framework (6.1.23+20220102112535~1rapid7-1) ...
 Run msfconsole to get started
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
@@ -86,7 +83,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;114mCleaning up system. . .[0m
+[1;38;5;71mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -111,10 +108,10 @@ Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;219mBacking up important files and apps. . .[0m
-[1;38;5;114mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;195mBacking up important files and apps. . .[0m
+[1;38;5;71mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;114mBacking up important config files. . .[0m
+[1;38;5;71mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -123,14 +120,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;114mBacking up crontab. . .[0m
+[1;38;5;71mBacking up crontab. . .[0m
 
-[1;38;5;114mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;71mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;219mUpdating local git repos. . .[0m
-[1;38;5;219mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;114mUpdating Projects. . .[0m
+[1;38;5;195mUpdating local git repos. . .[0m
+[1;38;5;195mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;71mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -138,7 +135,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;114mUpdating Documents. . .[0m
+[1;38;5;71mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -146,4 +143,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;114mUpdating scripts. . .[0m
+[1;38;5;71mUpdating scripts. . .[0m
