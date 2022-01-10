@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;252m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;189m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;252m
+[1;38;5;189m
 Removing old build logs. . .
 
 [0m
-[1;38;5;252m
+[1;38;5;189m
 Start Time:
-Date: 01-03-22
-Time: 02:15:17 AM
+Date: 01-10-22
+Time: 02:15:16 AM
 
 Scanning: 
 /
@@ -30,7 +30,7 @@ Excluding:
 /sys
 /dev
 /proc
---exclude=.*metasploit-framework.*
+*metasploit-framework.*
 
 
 Running clamscan to scan for viruses. . .
@@ -108,26 +108,26 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8600097
+Known viruses: 8602546
 Engine version: 0.103.4
-Scanned directories: 63469
-Scanned files: 629820
+Scanned directories: 64697
+Scanned files: 640752
 Infected files: 0
-Total errors: 375
-Data scanned: 41481.79 MB
-Data read: 78841.24 MB (ratio 0.53:1)
-Time: 11197.947 sec (186 m 37 s)
-Start Date: 2022:01:03 02:15:25
-End Date:   2022:01:03 05:22:02
+Total errors: 374
+Data scanned: 41855.82 MB
+Data read: 79318.91 MB (ratio 0.53:1)
+Time: 10843.256 sec (180 m 43 s)
+Start Date: 2022:01:10 02:15:24
+End Date:   2022:01:10 05:16:07
 
 
 End Time:
-Date: 01-03-22
-Time: 05:22:03 AM
-It took 3 hours 6 minutes 46 seconds to scan your system.
+Date: 01-10-22
+Time: 05:16:08 AM
+It took 3 hours 0 minutes 52 seconds to scan your system.
 
 
-[1;38;5;252m
+[1;38;5;189m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m

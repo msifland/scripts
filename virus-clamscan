@@ -89,7 +89,7 @@ function scan(){
 	echo
 	sleep 2
 	echo "Excluding:"
-	echo "$EXCLUDE" | sed 's/--exclude-dir=^//g'
+	echo "$EXCLUDE" | sed 's/--exclude-dir=^//g' | sed 's/--exclude=.//g'
 	echo
 	sleep 2
 
