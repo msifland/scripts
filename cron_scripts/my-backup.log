@@ -1,12 +1,12 @@
 [sudo] password for msifland: 
 
-01-17-2022 01:30:01 AM
+01-24-2022 01:30:01 AM
 
-[1;38;5;34mRemove old backups first. . .[0m
-/home/msifland/Dropbox/Backups/msifland-01-13-2022.tar.gz
+[1;38;5;5mRemove old backups first. . .[0m
+/home/msifland/Dropbox/Backups/msifland-01-20-2022.tar.gz
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 
-[1;38;5;34mBacking up:[0m
+[1;38;5;5mBacking up:[0m
 /home/msifland/Brother_Printer
 /home/msifland/Documents
 /home/msifland/Dropbox
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;34mTo /home/msifland/Dropbox/Backups/msifland-01-17-2022.tar.gz
+[1;38;5;5mTo /home/msifland/Dropbox/Backups/msifland-01-24-2022.tar.gz
 
 
 Excluding:[0m
@@ -69,26 +69,26 @@ Excluding:[0m
 /home/msifland/Dropbox/.dropbox.cache
 /home/msifland/Dropbox/.dropbox
 
-[1;38;5;34mBacking up now. . .[0m
+[1;38;5;5mBacking up now. . .[0m
 tar: Removing leading `/' from member names
 tar: Removing leading `/' from hard link targets
 tar: /home/msifland/Modules&Apps: Cannot stat: No such file or directory
 tar: Exiting with failure status due to previous errors
-[1;38;5;34mBackup finished
+[1;38;5;5mBackup finished
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-01-17-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-01-17-2022.tar.gz
-[1;38;5;34mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-01-24-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-01-24-2022.tar.gz
+[1;38;5;5mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
 total 1.5G
--rw-r--r-- 1 msifland msifland 380M Jan 14 01:30 msifland-01-14-2022.tar.gz
--rw-r--r-- 1 msifland msifland 380M Jan 15 01:43 msifland-01-15-2022.tar.gz
--rw-r--r-- 1 msifland msifland 380M Jan 16 01:43 msifland-01-16-2022.tar.gz
--rw-r--r-- 1 msifland msifland 382M Jan 17 01:30 msifland-01-17-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K Jan 17 01:30 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 383M Jan 21 01:30 msifland-01-21-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 383M Jan 22 01:43 msifland-01-22-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 382M Jan 23 01:42 msifland-01-23-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 381M Jan 24 01:30 msifland-01-24-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K Jan 24 01:30 my_backup_log.txt
 
-[1;38;5;34mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
+[1;38;5;5mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-01-17-2022 01:30:41 AM
-[1;38;5;34mIt took 0 minutes 40 seconds to run whole process.[0m
+01-24-2022 01:30:42 AM
+[1;38;5;5mIt took 0 minutes 41 seconds to run whole process.[0m
 
