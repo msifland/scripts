@@ -1,9 +1,9 @@
 [sudo] password for msifland: 
 
-01-24-2022 01:30:01 AM
+01-27-2022 01:30:01 AM
 
 [1;38;5;5mRemove old backups first. . .[0m
-/home/msifland/Dropbox/Backups/msifland-01-20-2022.tar.gz
+/home/msifland/Dropbox/Backups/msifland-01-23-2022.tar.gz
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 
 [1;38;5;5mBacking up:[0m
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;5mTo /home/msifland/Dropbox/Backups/msifland-01-24-2022.tar.gz
+[1;38;5;5mTo /home/msifland/Dropbox/Backups/msifland-01-27-2022.tar.gz
 
 
 Excluding:[0m
@@ -78,17 +78,17 @@ tar: Exiting with failure status due to previous errors
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-01-24-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-01-24-2022.tar.gz
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-01-27-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-01-27-2022.tar.gz
 [1;38;5;5mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
 total 1.5G
--rw-r--r-- 1 msifland msifland 383M Jan 21 01:30 msifland-01-21-2022.tar.gz
--rw-r--r-- 1 msifland msifland 383M Jan 22 01:43 msifland-01-22-2022.tar.gz
--rw-r--r-- 1 msifland msifland 382M Jan 23 01:42 msifland-01-23-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 381M Jan 24 01:30 msifland-01-24-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K Jan 24 01:30 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 381M Jan 25 01:31 msifland-01-25-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 382M Jan 26 01:30 msifland-01-26-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 381M Jan 27 01:30 msifland-01-27-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K Jan 27 01:30 my_backup_log.txt
 
 [1;38;5;5mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-01-24-2022 01:30:42 AM
+01-27-2022 01:30:42 AM
 [1;38;5;5mIt took 0 minutes 41 seconds to run whole process.[0m
 
