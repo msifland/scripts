@@ -285,3 +285,34 @@ Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 [1;38;5;200mUpdating scripts. . .[0m
+[master 06e61a1] auto commit
+ 7 files changed, 32089 insertions(+), 32343 deletions(-)
+ rewrite cron_scripts/linux-update.log (88%)
+ rewrite virus-freshclam.log (75%)
+To https://github.com/msifland/scripts
+   2c9625d..06e61a1  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+[1;38;5;200mUpdating pkg_bkups. . .[0m
+[master ec1f7a5] auto commit
+ 8 files changed, 43 insertions(+), 17 deletions(-)
+ create mode 100644 apt.old-1/sources.list.d/google-chrome.list
+ create mode 100644 apt.old-1/trusted.gpg.d/google-chrome.gpg
+To https://github.com/msifland/pkg_bkups
+   a2a657a..ec1f7a5  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+[1;38;5;200mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+[1;38;5;198mAll is good.[0m
+
+[1;38;5;168m
+01-31-2022 07:03:02 AM
+[1;38;5;168mIt took 3 minutes 1 seconds to run whole process.[0m
+[0m
