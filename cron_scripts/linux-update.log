@@ -1,123 +1,125 @@
-[H[2J[3J[1;38;5;120m           ###########    Updating your system now   ###########[0m
-[1;38;5;5m
-01-24-2022 07:00:01 AM
-Updating Linux debian 5.16.2-msi #1 SMP PREEMPT Sat Jan 22 03:01:25 CST 2022 x86_64 GNU/Linux[0m
-[1;38;5;124mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;16m           ###########    Updating your system now   ###########[0m
+[1;38;5;168m
+01-31-2022 07:00:01 AM
+Updating Linux debian 5.16.3-msi #1 SMP PREEMPT Sat Jan 29 03:01:42 CST 2022 x86_64 GNU/Linux[0m
+[1;38;5;198mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;191mUpdating sources and checking for app updates. . .[0m
+[1;38;5;200mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Get:1 http://deb.debian.org/debian testing InRelease [129 kB]
-Get:2 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
-Hit:3 http://repo.steampowered.com/steam precise InRelease
-Hit:4 https://repo.skype.com/deb stable InRelease
-Hit:5 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:6 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:7 http://dl.google.com/linux/chrome/deb stable InRelease
-Hit:8 https://download.sublimetext.com apt/stable/ InRelease
-Get:9 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Hit:10 http://repo.sinew.in stable InRelease
-Hit:11 http://repository.spotify.com stable InRelease
-Get:12 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Hit:13 http://deb.debian.org/debian stable InRelease
-Get:14 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:15 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:16 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:17 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:18 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:19 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:20 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
-Get:21 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
-Get:22 http://deb.debian.org/debian testing/contrib Translation-en.diff/Index [47.6 kB]
-Get:23 http://security.debian.org/debian-security stable-security/main Sources [94.3 kB]
-Get:24 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Hit:25 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:26 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:27 http://deb.debian.org/debian testing/main Sources T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [44.1 kB]
-Get:28 http://security.debian.org/debian-security stable-security/main i386 Packages [113 kB]
-Get:27 http://deb.debian.org/debian testing/main Sources T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [44.1 kB]
-Get:29 http://deb.debian.org/debian testing/main amd64 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [52.6 kB]
-Get:29 http://deb.debian.org/debian testing/main amd64 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [52.6 kB]
-Get:30 http://security.debian.org/debian-security stable-security/main amd64 Packages [113 kB]
-Get:31 http://deb.debian.org/debian testing/main i386 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [56.1 kB]
-Get:32 http://security.debian.org/debian-security stable-security/main Translation-en [73.2 kB]
-Get:31 http://deb.debian.org/debian testing/main i386 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [56.1 kB]
-Get:33 http://deb.debian.org/debian testing/main Translation-en T-2022-01-24-0201.57-F-2022-01-23-1401.44.pdiff [13.2 kB]
-Get:33 http://deb.debian.org/debian testing/main Translation-en T-2022-01-24-0201.57-F-2022-01-23-1401.44.pdiff [13.2 kB]
-Get:34 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-01-24-0201.57-F-2022-01-24-0201.57.pdiff [443 B]
-Get:34 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-01-24-0201.57-F-2022-01-24-0201.57.pdiff [443 B]
-Get:35 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-01-24-0201.57-F-2022-01-24-0201.57.pdiff [442 B]
-Get:36 http://deb.debian.org/debian testing/contrib Translation-en T-2022-01-24-0201.57-F-2022-01-24-0201.57.pdiff [345 B]
-Get:35 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-01-24-0201.57-F-2022-01-24-0201.57.pdiff [442 B]
-Get:36 http://deb.debian.org/debian testing/contrib Translation-en T-2022-01-24-0201.57-F-2022-01-24-0201.57.pdiff [345 B]
-Get:37 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:38 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
-Get:39 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
-Get:40 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:41 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:42 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:43 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
-Get:44 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:45 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
-Get:46 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
-Hit:47 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:48 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
-Get:49 http://deb.debian.org/debian unstable/main Sources T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [44.1 kB]
-Get:49 http://deb.debian.org/debian unstable/main Sources T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [44.1 kB]
-Get:50 http://deb.debian.org/debian unstable/non-free Sources T-2022-01-24-0201.57-F-2022-01-23-1401.44.pdiff [1,885 B]
-Get:50 http://deb.debian.org/debian unstable/non-free Sources T-2022-01-24-0201.57-F-2022-01-23-1401.44.pdiff [1,885 B]
-Get:51 http://deb.debian.org/debian unstable/contrib Sources T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [230 B]
-Get:51 http://deb.debian.org/debian unstable/contrib Sources T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [230 B]
-Get:52 http://deb.debian.org/debian unstable/main i386 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [56.6 kB]
-Get:53 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [54.9 kB]
-Get:54 http://deb.debian.org/debian unstable/main Translation-en T-2022-01-24-0201.57-F-2022-01-23-1401.44.pdiff [7,675 B]
-Get:52 http://deb.debian.org/debian unstable/main i386 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [56.6 kB]
-Get:53 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-01-24-0801.58-F-2022-01-23-1401.44.pdiff [54.9 kB]
-Get:54 http://deb.debian.org/debian unstable/main Translation-en T-2022-01-24-0201.57-F-2022-01-23-1401.44.pdiff [7,675 B]
-Get:55 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [1,173 B]
-Get:55 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [1,173 B]
-Get:56 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-01-23-2002.02-F-2022-01-23-1401.44.pdiff [1,176 B]
-Get:56 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-01-23-2002.02-F-2022-01-23-1401.44.pdiff [1,176 B]
-Get:57 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-01-23-2002.02-F-2022-01-23-1401.44.pdiff [283 B]
-Get:57 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-01-23-2002.02-F-2022-01-23-1401.44.pdiff [283 B]
-Get:58 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [333 B]
-Get:59 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [464 B]
-Get:58 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [333 B]
-Get:59 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-01-23-2002.02-F-2022-01-23-2002.02.pdiff [464 B]
-Get:60 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,195 kB]
-Get:61 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,429 kB]
-Get:62 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,160 kB]
-Get:63 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.1 kB]
-Get:64 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,343 kB]
-Get:65 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,642 kB]
-Get:66 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,629 kB]
-Get:67 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.3 kB]
-Get:68 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [14.7 kB]
-Hit:69 http://www.deb-multimedia.org bullseye InRelease
-Fetched 32.8 MB in 12s (2,630 kB/s)
+Hit:1 http://repo.steampowered.com/steam precise InRelease
+Hit:2 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:3 https://repo.skype.com/deb stable InRelease
+Get:4 http://deb.debian.org/debian testing InRelease [129 kB]
+Get:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Get:6 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
+Hit:7 https://download.sublimetext.com apt/stable/ InRelease
+Hit:8 http://repository.spotify.com stable InRelease
+Hit:9 http://repo.sinew.in stable InRelease
+Hit:10 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:11 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:12 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
+Get:13 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [417 B]
+Err:13 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages
+  File has unexpected size (418 != 417). Mirror sync in progress? [IP: 23.75.205.67 80]
+  Hashes of expected file:
+   - Filesize:417 [weak]
+   - SHA256:da866d35d71f522ac7268e61ec0e61373d33e54f90325041f1425d74d06a3698
+   - SHA1:fc7a1aaf94674707ea8103e8a3d3de0aade3b2c4 [weak]
+   - MD5Sum:a43ce5663cafa6daaaa81bfba2e91202 [weak]
+  Release file created at: Mon, 31 Jan 2022 12:18:29 +0000
+Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [419 B]
+Err:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages
+  
+Get:15 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Get:16 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Hit:17 http://deb.debian.org/debian stable InRelease
+Get:18 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:19 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:20 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:21 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:22 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:23 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:24 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:25 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:26 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:27 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [47.6 kB]
+Hit:28 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:29 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:30 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:31 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:32 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
+Get:33 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:34 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:35 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:36 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:37 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:38 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
+Get:39 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:40 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
+Get:41 http://deb.debian.org/debian testing/main Sources T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [30.8 kB]
+Get:41 http://deb.debian.org/debian testing/main Sources T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [30.8 kB]
+Get:42 http://deb.debian.org/debian testing/non-free Sources T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [1,044 B]
+Get:42 http://deb.debian.org/debian testing/non-free Sources T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [1,044 B]
+Get:43 http://deb.debian.org/debian testing/main amd64 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [41.9 kB]
+Get:43 http://deb.debian.org/debian testing/main amd64 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [41.9 kB]
+Get:44 http://deb.debian.org/debian testing/main i386 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [38.7 kB]
+Get:44 http://deb.debian.org/debian testing/main i386 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [38.7 kB]
+Get:45 http://deb.debian.org/debian testing/main Translation-en T-2022-01-31-0212.44-F-2022-01-30-2003.31.pdiff [6,934 B]
+Get:46 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [1,099 B]
+Get:47 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [1,106 B]
+Get:48 http://deb.debian.org/debian testing/non-free Translation-en T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [675 B]
+Get:48 http://deb.debian.org/debian testing/non-free Translation-en T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [675 B]
+Get:47 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [1,106 B]
+Get:49 http://deb.debian.org/debian unstable/non-free Sources T-2022-01-31-0809.33-F-2022-01-30-1410.41.pdiff [1,057 B]
+Get:45 http://deb.debian.org/debian testing/main Translation-en T-2022-01-31-0212.44-F-2022-01-30-2003.31.pdiff [6,934 B]
+Get:46 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-01-31-0212.44-F-2022-01-31-0212.44.pdiff [1,099 B]
+Get:49 http://deb.debian.org/debian unstable/non-free Sources T-2022-01-31-0809.33-F-2022-01-30-1410.41.pdiff [1,057 B]
+Get:50 http://deb.debian.org/debian unstable/main Sources T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [68.9 kB]
+Get:50 http://deb.debian.org/debian unstable/main Sources T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [68.9 kB]
+Get:51 http://deb.debian.org/debian unstable/contrib Sources T-2022-01-30-2003.31-F-2022-01-30-2003.31.pdiff [463 B]
+Get:51 http://deb.debian.org/debian unstable/contrib Sources T-2022-01-30-2003.31-F-2022-01-30-2003.31.pdiff [463 B]
+Get:52 http://deb.debian.org/debian unstable/main i386 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [69.7 kB]
+Get:52 http://deb.debian.org/debian unstable/main i386 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [69.7 kB]
+Get:53 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [82.2 kB]
+Get:54 http://deb.debian.org/debian unstable/main Translation-en T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [1,945 B]
+Get:53 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [82.2 kB]
+Get:54 http://deb.debian.org/debian unstable/main Translation-en T-2022-01-31-0809.33-F-2022-01-30-0803.48.pdiff [1,945 B]
+Get:55 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-01-30-2003.31-F-2022-01-30-2003.31.pdiff [692 B]
+Get:55 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-01-30-2003.31-F-2022-01-30-2003.31.pdiff [692 B]
+Get:56 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-01-31-0809.33-F-2022-01-30-2003.31.pdiff [822 B]
+Get:56 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-01-31-0809.33-F-2022-01-30-2003.31.pdiff [822 B]
+Get:57 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-01-30-2003.31-F-2022-01-30-2003.31.pdiff [675 B]
+Get:58 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-01-31-0212.44-F-2022-01-30-1410.41.pdiff [752 B]
+Get:59 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-01-31-0212.44-F-2022-01-30-1410.41.pdiff [399 B]
+Get:57 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-01-30-2003.31-F-2022-01-30-2003.31.pdiff [675 B]
+Get:58 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-01-31-0212.44-F-2022-01-30-1410.41.pdiff [752 B]
+Get:59 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-01-31-0212.44-F-2022-01-30-1410.41.pdiff [399 B]
+Get:60 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,197 kB]
+Get:61 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,440 kB]
+Get:62 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,181 kB]
+Get:63 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,347 kB]
+Get:64 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,653 kB]
+Get:65 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,643 kB]
+Get:66 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.2 kB]
+Get:67 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [14.7 kB]
+Get:68 http://www.deb-multimedia.org bullseye InRelease [17.8 kB]
+Get:69 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
+Get:70 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
+Fetched 32.8 MB in 13s (2,498 kB/s)
 Reading package lists...
-Building dependency tree...
-Reading state information...
-53 packages can be upgraded. Run 'apt list --upgradable' to see them.
-W: Target Packages (main/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Packages (main/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Translations (main/i18n/Translation-en_US) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Translations (main/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11 (main/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11 (main/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11-icons-small (main/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11-icons (main/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Packages (main/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Packages (main/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Translations (main/i18n/Translation-en_US) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Translations (main/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11 (main/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11 (main/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11-icons-small (main/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11-icons (main/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
+E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/main/binary-amd64/Packages.gz  File has unexpected size (418 != 417). Mirror sync in progress? [IP: 23.75.205.67 80]
+   Hashes of expected file:
+    - Filesize:417 [weak]
+    - SHA256:da866d35d71f522ac7268e61ec0e61373d33e54f90325041f1425d74d06a3698
+    - SHA1:fc7a1aaf94674707ea8103e8a3d3de0aade3b2c4 [weak]
+    - MD5Sum:a43ce5663cafa6daaaa81bfba2e91202 [weak]
+   Release file created at: Mon, 31 Jan 2022 12:18:29 +0000
+E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/main/binary-i386/Packages.gz  
+E: Some index files failed to download. They have been ignored, or old ones used instead.
 
-[1;38;5;191mChecking for system upgrade. . .[0m
+[1;38;5;200mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -125,310 +127,75 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages were automatically installed and are no longer required:
-  linux-headers-5.15.0-2-amd64 linux-headers-5.15.0-2-common
-  linux-image-5.15.0-2-amd64
-Use 'sudo apt autoremove' to remove them.
-The following NEW packages will be installed:
-  linux-headers-5.15.0-3-amd64 linux-headers-5.15.0-3-common
-  linux-image-5.15.0-3-amd64 pahole
 The following packages have been kept back:
   libllvm12:i386
 The following packages will be upgraded:
-  chromium chromium-common chromium-sandbox dwarves ethtool
-  gir1.2-javascriptcoregtk-4.0 gir1.2-nm-1.0 gir1.2-webkit2-4.0
-  gstreamer1.0-plugins-good gstreamer1.0-plugins-good:i386 hplip hplip-data
-  libc-bin libc-dev-bin libc-devtools libc-l10n libc6 libc6:i386 libc6-dev
-  libc6-dev-i386 libc6-dev-x32 libc6-i386 libc6-x32 libcpupower1 libfstrm0
-  libgpg-error-l10n libgpg-error0 libgpg-error0:i386 libhpmud0
-  libjavascriptcoregtk-4.0-18 libnm0 libopenh264-6 libopenh264-6:i386
-  liborc-0.4-0 liborc-0.4-0:i386 libsane-hpaio libwebkit2gtk-4.0-37
-  linux-compiler-gcc-11-x86 linux-headers-amd64 linux-image-amd64
-  linux-kbuild-5.15 linux-perf linux-perf-5.15 locales metasploit-framework
-  network-manager printer-driver-hpcups printer-driver-postscript-hp
-  ruby-minitest xscreensaver xscreensaver-data xscreensaver-data-extra
-52 upgraded, 4 newly installed, 0 to remove and 1 not upgraded.
-Need to get 473 MB of archives.
-After this operation, 440 MB of additional disk space will be used.
-Get:1 http://security.debian.org/debian-security stable-security/main amd64 chromium amd64 97.0.4692.99-1~deb11u2 [60.0 MB]
-Get:2 http://deb.debian.org/debian testing/main amd64 libc6-i386 amd64 2.33-3 [2,636 kB]
-Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.27+20220121112623~1rapid7-1 [266 MB]
-Get:4 http://deb.debian.org/debian testing/main amd64 libc-devtools amd64 2.33-3 [250 kB]
-Get:5 http://deb.debian.org/debian testing/main amd64 libc-dev-bin amd64 2.33-3 [242 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 libc6-dev amd64 2.33-3 [2,276 kB]
-Get:7 http://deb.debian.org/debian testing/main amd64 libc6-dev-i386 amd64 2.33-3 [1,820 kB]
-Get:8 http://deb.debian.org/debian testing/main amd64 libc6-dev-x32 amd64 2.33-3 [1,902 kB]
-Get:9 http://deb.debian.org/debian testing/main amd64 libc6-x32 amd64 2.33-3 [2,675 kB]
-Get:10 http://deb.debian.org/debian testing/main i386 libc6 i386 2.33-3 [2,786 kB]
-Get:11 http://deb.debian.org/debian testing/main amd64 libc6 amd64 2.33-3 [2,831 kB]
-Get:12 http://deb.debian.org/debian testing/main amd64 libc-bin amd64 2.33-3 [829 kB]
-Get:13 http://deb.debian.org/debian testing/main amd64 libgpg-error-l10n all 1.43-3 [110 kB]
-Get:14 http://deb.debian.org/debian testing/main i386 libgpg-error0 i386 1.43-3 [87.3 kB]
-Get:15 http://deb.debian.org/debian testing/main amd64 libgpg-error0 amd64 1.43-3 [82.2 kB]
-Get:16 http://deb.debian.org/debian testing/main amd64 libc-l10n all 2.33-3 [864 kB]
-Get:17 http://deb.debian.org/debian testing/main amd64 locales all 2.33-3 [4,089 kB]
-Get:18 http://deb.debian.org/debian testing/main amd64 pahole amd64 1.22-2 [210 kB]
-Get:19 http://deb.debian.org/debian testing/main amd64 dwarves all 1.22-2 [9,448 B]
-Get:20 http://deb.debian.org/debian testing/main amd64 ethtool amd64 1:5.16-1 [193 kB]
-Get:21 http://deb.debian.org/debian testing/main amd64 gir1.2-webkit2-4.0 amd64 2.34.4-1 [116 kB]
-Get:22 http://deb.debian.org/debian testing/main amd64 libwebkit2gtk-4.0-37 amd64 2.34.4-1 [14.1 MB]
-Get:23 http://deb.debian.org/debian testing/main amd64 gir1.2-javascriptcoregtk-4.0 amd64 2.34.4-1 [62.2 kB]
-Get:24 http://deb.debian.org/debian testing/main amd64 libjavascriptcoregtk-4.0-18 amd64 2.34.4-1 [6,320 kB]
-Get:25 http://deb.debian.org/debian testing/main amd64 liborc-0.4-0 amd64 1:0.4.32-2 [192 kB]
-Get:26 http://deb.debian.org/debian testing/main i386 liborc-0.4-0 i386 1:0.4.32-2 [206 kB]
-Get:27 http://deb.debian.org/debian testing/main i386 gstreamer1.0-plugins-good i386 1.18.5-2 [3,252 kB]
-Get:28 http://deb.debian.org/debian testing/main amd64 gstreamer1.0-plugins-good amd64 1.18.5-2 [3,192 kB]
-Get:29 http://deb.debian.org/debian testing/main amd64 network-manager amd64 1.34.0-2 [3,134 kB]
-Get:30 http://deb.debian.org/debian testing/main amd64 libnm0 amd64 1.34.0-2 [454 kB]
-Get:31 http://deb.debian.org/debian testing/main amd64 gir1.2-nm-1.0 amd64 1.34.0-2 [104 kB]
-Get:32 http://deb.debian.org/debian testing/main amd64 printer-driver-postscript-hp amd64 3.21.12+dfsg0-1 [1,230 kB]
-Get:33 http://deb.debian.org/debian testing/main amd64 libsane-hpaio amd64 3.21.12+dfsg0-1 [214 kB]
-Get:34 http://deb.debian.org/debian testing/main amd64 hplip amd64 3.21.12+dfsg0-1 [283 kB]
-Get:35 http://deb.debian.org/debian testing/main amd64 libhpmud0 amd64 3.21.12+dfsg0-1 [189 kB]
-Get:36 http://deb.debian.org/debian testing/main amd64 hplip-data all 3.21.12+dfsg0-1 [6,757 kB]
-Get:37 http://deb.debian.org/debian testing/main amd64 printer-driver-hpcups amd64 3.21.12+dfsg0-1 [353 kB]
-Get:38 http://deb.debian.org/debian testing/main amd64 libcpupower1 amd64 5.15.15-1 [405 kB]
-Get:39 http://deb.debian.org/debian testing/main amd64 libfstrm0 amd64 0.6.1-1 [21.6 kB]
-Get:40 http://deb.debian.org/debian testing/main amd64 libopenh264-6 amd64 2.1.1+dfsg-2 [377 kB]
-Get:41 http://deb.debian.org/debian testing/main i386 libopenh264-6 i386 2.1.1+dfsg-2 [392 kB]
-Get:42 http://deb.debian.org/debian testing/main amd64 linux-compiler-gcc-11-x86 amd64 5.15.15-1 [397 kB]
-Get:43 http://deb.debian.org/debian testing/main amd64 linux-headers-5.15.0-3-common all 5.15.15-1 [9,166 kB]
-Get:44 http://deb.debian.org/debian testing/main amd64 linux-kbuild-5.15 amd64 5.15.15-1 [642 kB]
-Get:45 http://deb.debian.org/debian testing/main amd64 linux-headers-5.15.0-3-amd64 amd64 5.15.15-1 [913 kB]
-Get:46 http://deb.debian.org/debian testing/main amd64 linux-headers-amd64 amd64 5.15.15-1 [1,176 B]
-Get:47 http://deb.debian.org/debian testing/main amd64 linux-image-5.15.0-3-amd64 amd64 5.15.15-1 [64.1 MB]
-Get:48 http://security.debian.org/debian-security stable-security/main amd64 chromium-sandbox amd64 97.0.4692.99-1~deb11u2 [117 kB]
-Get:49 http://security.debian.org/debian-security stable-security/main amd64 chromium-common amd64 97.0.4692.99-1~deb11u2 [1,570 kB]
-Get:50 http://deb.debian.org/debian testing/main amd64 linux-image-amd64 amd64 5.15.15-1 [1,476 B]
-Get:51 http://deb.debian.org/debian testing/main amd64 linux-perf amd64 5.15.15-1 [1,120 B]
-Get:52 http://deb.debian.org/debian testing/main amd64 linux-perf-5.15 amd64 5.15.15-1 [2,308 kB]
-Get:53 http://deb.debian.org/debian testing/main amd64 ruby-minitest all 5.13.0-2 [57.3 kB]
-Get:54 http://deb.debian.org/debian testing/main amd64 xscreensaver-data amd64 6.02+dfsg1-2 [391 kB]
-Get:55 http://deb.debian.org/debian testing/main amd64 xscreensaver amd64 6.02+dfsg1-2 [807 kB]
-Get:56 http://deb.debian.org/debian testing/main amd64 xscreensaver-data-extra amd64 6.02+dfsg1-2 [1,402 kB]
+  hwloc libatk-adaptor libatk-bridge2.0-0 libatk-bridge2.0-dev libflite1
+  libhwloc-plugins libhwloc15 libwww-perl metasploit-framework
+  papirus-icon-theme ruby-rubygems thunderbird
+12 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Need to get 351 MB of archives.
+After this operation, 231 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 libhwloc15 amd64 2.7.0-2 [155 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 hwloc amd64 2.7.0-2 [219 kB]
+Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.28+20220128112600~1rapid7-1 [266 MB]
+Get:4 http://deb.debian.org/debian testing/main amd64 libatk-bridge2.0-dev amd64 2.38.0-3 [10.0 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 libatk-bridge2.0-0 amd64 2.38.0-3 [64.7 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 libatk-adaptor amd64 2.38.0-3 [19.7 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 libflite1 amd64 2.2-3 [12.8 MB]
+Get:8 http://deb.debian.org/debian testing/main amd64 libhwloc-plugins amd64 2.7.0-2 [21.8 kB]
+Get:9 http://deb.debian.org/debian testing/main amd64 libwww-perl all 6.61-1 [193 kB]
+Get:10 http://deb.debian.org/debian testing/main amd64 papirus-icon-theme all 20220101-2 [21.0 MB]
+Get:11 http://deb.debian.org/debian testing/main amd64 ruby-rubygems all 3.3.5-2 [289 kB]
+Get:12 http://deb.debian.org/debian testing/main amd64 thunderbird amd64 1:91.5.1-1+b1 [49.9 MB]
 apt-listchanges: Reading changelogs...
-Preconfiguring packages ...
-Fetched 473 MB in 36s (13.1 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 496041 files and directories currently installed.)
-Preparing to unpack .../0-libc6-i386_2.33-3_amd64.deb ...
-Unpacking libc6-i386 (2.33-3) over (2.33-2) ...
-Replaced by files in installed package libc6:i386 (2.33-2) ...
-Preparing to unpack .../1-libc-devtools_2.33-3_amd64.deb ...
-Unpacking libc-devtools (2.33-3) over (2.33-2) ...
-Preparing to unpack .../2-libc-dev-bin_2.33-3_amd64.deb ...
-Unpacking libc-dev-bin (2.33-3) over (2.33-2) ...
-Preparing to unpack .../3-libc6-dev_2.33-3_amd64.deb ...
-Unpacking libc6-dev:amd64 (2.33-3) over (2.33-2) ...
-Preparing to unpack .../4-libc6-dev-i386_2.33-3_amd64.deb ...
-Unpacking libc6-dev-i386 (2.33-3) over (2.33-2) ...
-Preparing to unpack .../5-libc6-dev-x32_2.33-3_amd64.deb ...
-Unpacking libc6-dev-x32 (2.33-3) over (2.33-2) ...
-Preparing to unpack .../6-libc6-x32_2.33-3_amd64.deb ...
-Unpacking libc6-x32 (2.33-3) over (2.33-2) ...
-Preparing to unpack .../7-libc6_2.33-3_amd64.deb ...
-De-configuring libc6:i386 (2.33-2), to allow configuration of libc6:amd64 (2.33-2) ...
-Unpacking libc6:amd64 (2.33-3) over (2.33-2) ...
-Preparing to unpack .../8-libc6_2.33-3_i386.deb ...
-Unpacking libc6:i386 (2.33-3) over (2.33-2) ...
-Preparing to unpack .../9-libc-bin_2.33-3_amd64.deb ...
-Unpacking libc-bin (2.33-3) over (2.33-2) ...
-Setting up libc6:amd64 (2.33-3) ...
-Setting up libc-bin (2.33-3) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 496041 files and directories currently installed.)
-Preparing to unpack .../00-libgpg-error-l10n_1.43-3_all.deb ...
-Unpacking libgpg-error-l10n (1.43-3) over (1.43-1) ...
-Preparing to unpack .../01-libgpg-error0_1.43-3_amd64.deb ...
-De-configuring libgpg-error0:i386 (1.43-1), to allow configuration of libgpg-error0:amd64 (1.43-1) ...
-Unpacking libgpg-error0:amd64 (1.43-3) over (1.43-1) ...
-Preparing to unpack .../02-libgpg-error0_1.43-3_i386.deb ...
-Unpacking libgpg-error0:i386 (1.43-3) over (1.43-1) ...
-Preparing to unpack .../03-libc-l10n_2.33-3_all.deb ...
-Unpacking libc-l10n (2.33-3) over (2.33-2) ...
-Preparing to unpack .../04-locales_2.33-3_all.deb ...
-Unpacking locales (2.33-3) over (2.33-2) ...
-Preparing to unpack .../05-chromium_97.0.4692.99-1~deb11u2_amd64.deb ...
-Unpacking chromium (97.0.4692.99-1~deb11u2) over (97.0.4692.71-0.1~deb11u1) ...
-Preparing to unpack .../06-chromium-sandbox_97.0.4692.99-1~deb11u2_amd64.deb ...
-Unpacking chromium-sandbox (97.0.4692.99-1~deb11u2) over (97.0.4692.71-0.1~deb11u1) ...
-Preparing to unpack .../07-chromium-common_97.0.4692.99-1~deb11u2_amd64.deb ...
-Unpacking chromium-common (97.0.4692.99-1~deb11u2) over (97.0.4692.71-0.1~deb11u1) ...
-Selecting previously unselected package pahole.
-Preparing to unpack .../08-pahole_1.22-2_amd64.deb ...
-Unpacking pahole (1.22-2) ...
-Replacing files in old package dwarves (1.20-1) ...
-Preparing to unpack .../09-dwarves_1.22-2_all.deb ...
-Unpacking dwarves (1.22-2) over (1.20-1) ...
-Preparing to unpack .../10-ethtool_1%3a5.16-1_amd64.deb ...
-Unpacking ethtool (1:5.16-1) over (1:5.15-1) ...
-Preparing to unpack .../11-gir1.2-webkit2-4.0_2.34.4-1_amd64.deb ...
-Unpacking gir1.2-webkit2-4.0:amd64 (2.34.4-1) over (2.34.3-1) ...
-Preparing to unpack .../12-libwebkit2gtk-4.0-37_2.34.4-1_amd64.deb ...
-Unpacking libwebkit2gtk-4.0-37:amd64 (2.34.4-1) over (2.34.3-1) ...
-Preparing to unpack .../13-gir1.2-javascriptcoregtk-4.0_2.34.4-1_amd64.deb ...
-Unpacking gir1.2-javascriptcoregtk-4.0:amd64 (2.34.4-1) over (2.34.3-1) ...
-Preparing to unpack .../14-libjavascriptcoregtk-4.0-18_2.34.4-1_amd64.deb ...
-Unpacking libjavascriptcoregtk-4.0-18:amd64 (2.34.4-1) over (2.34.3-1) ...
-Preparing to unpack .../15-liborc-0.4-0_1%3a0.4.32-2_i386.deb ...
-De-configuring liborc-0.4-0:amd64 (1:0.4.32-1), to allow configuration of liborc-0.4-0:i386 (1:0.4.32-1) ...
-Unpacking liborc-0.4-0:i386 (1:0.4.32-2) over (1:0.4.32-1) ...
-Preparing to unpack .../16-liborc-0.4-0_1%3a0.4.32-2_amd64.deb ...
-Unpacking liborc-0.4-0:amd64 (1:0.4.32-2) over (1:0.4.32-1) ...
-Preparing to unpack .../17-gstreamer1.0-plugins-good_1.18.5-2_amd64.deb ...
-De-configuring gstreamer1.0-plugins-good:i386 (1.18.5-1+b1), to allow configuration of gstreamer1.0-plugins-good:amd64 (1.18.5-1+b1) ...
-Unpacking gstreamer1.0-plugins-good:amd64 (1.18.5-2) over (1.18.5-1+b1) ...
-Preparing to unpack .../18-gstreamer1.0-plugins-good_1.18.5-2_i386.deb ...
-Unpacking gstreamer1.0-plugins-good:i386 (1.18.5-2) over (1.18.5-1+b1) ...
-Preparing to unpack .../19-network-manager_1.34.0-2_amd64.deb ...
-Unpacking network-manager (1.34.0-2) over (1.34.0-1) ...
-Preparing to unpack .../20-libnm0_1.34.0-2_amd64.deb ...
-Unpacking libnm0:amd64 (1.34.0-2) over (1.34.0-1) ...
-Preparing to unpack .../21-gir1.2-nm-1.0_1.34.0-2_amd64.deb ...
-Unpacking gir1.2-nm-1.0:amd64 (1.34.0-2) over (1.34.0-1) ...
-Preparing to unpack .../22-printer-driver-postscript-hp_3.21.12+dfsg0-1_amd64.deb ...
-Unpacking printer-driver-postscript-hp (3.21.12+dfsg0-1) over (3.21.8+dfsg0-2) ...
-Preparing to unpack .../23-libsane-hpaio_3.21.12+dfsg0-1_amd64.deb ...
-Unpacking libsane-hpaio:amd64 (3.21.12+dfsg0-1) over (3.21.8+dfsg0-2) ...
-Preparing to unpack .../24-hplip_3.21.12+dfsg0-1_amd64.deb ...
-Unpacking hplip (3.21.12+dfsg0-1) over (3.21.8+dfsg0-2) ...
-Preparing to unpack .../25-libhpmud0_3.21.12+dfsg0-1_amd64.deb ...
-Unpacking libhpmud0:amd64 (3.21.12+dfsg0-1) over (3.21.8+dfsg0-2) ...
-Preparing to unpack .../26-hplip-data_3.21.12+dfsg0-1_all.deb ...
-Unpacking hplip-data (3.21.12+dfsg0-1) over (3.21.8+dfsg0-2) ...
-Preparing to unpack .../27-printer-driver-hpcups_3.21.12+dfsg0-1_amd64.deb ...
-Unpacking printer-driver-hpcups (3.21.12+dfsg0-1) over (3.21.8+dfsg0-2) ...
-Preparing to unpack .../28-libcpupower1_5.15.15-1_amd64.deb ...
-Unpacking libcpupower1 (5.15.15-1) over (5.15.5-2) ...
-Preparing to unpack .../29-libfstrm0_0.6.1-1_amd64.deb ...
-Unpacking libfstrm0:amd64 (0.6.1-1) over (0.6.0-1+b1) ...
-Preparing to unpack .../30-libopenh264-6_2.1.1+dfsg-2_i386.deb ...
-De-configuring libopenh264-6:amd64 (2.1.1-dmo1), to allow configuration of libopenh264-6:i386 (2.1.1-dmo1) ...
-Unpacking libopenh264-6:i386 (2.1.1+dfsg-2) over (2.1.1-dmo1) ...
-Preparing to unpack .../31-libopenh264-6_2.1.1+dfsg-2_amd64.deb ...
-Unpacking libopenh264-6:amd64 (2.1.1+dfsg-2) over (2.1.1-dmo1) ...
-Preparing to unpack .../32-linux-compiler-gcc-11-x86_5.15.15-1_amd64.deb ...
-Unpacking linux-compiler-gcc-11-x86 (5.15.15-1) over (5.15.5-2) ...
-Selecting previously unselected package linux-headers-5.15.0-3-common.
-Preparing to unpack .../33-linux-headers-5.15.0-3-common_5.15.15-1_all.deb ...
-Unpacking linux-headers-5.15.0-3-common (5.15.15-1) ...
-Preparing to unpack .../34-linux-kbuild-5.15_5.15.15-1_amd64.deb ...
-Unpacking linux-kbuild-5.15 (5.15.15-1) over (5.15.5-2) ...
-Selecting previously unselected package linux-headers-5.15.0-3-amd64.
-Preparing to unpack .../35-linux-headers-5.15.0-3-amd64_5.15.15-1_amd64.deb ...
-Unpacking linux-headers-5.15.0-3-amd64 (5.15.15-1) ...
-Preparing to unpack .../36-linux-headers-amd64_5.15.15-1_amd64.deb ...
-Unpacking linux-headers-amd64 (5.15.15-1) over (5.15.5-2) ...
-Selecting previously unselected package linux-image-5.15.0-3-amd64.
-Preparing to unpack .../37-linux-image-5.15.0-3-amd64_5.15.15-1_amd64.deb ...
-Unpacking linux-image-5.15.0-3-amd64 (5.15.15-1) ...
-Preparing to unpack .../38-linux-image-amd64_5.15.15-1_amd64.deb ...
-Unpacking linux-image-amd64 (5.15.15-1) over (5.15.5-2) ...
-Preparing to unpack .../39-linux-perf_5.15.15-1_amd64.deb ...
-Unpacking linux-perf (5.15.15-1) over (5.15.5-2) ...
-Preparing to unpack .../40-linux-perf-5.15_5.15.15-1_amd64.deb ...
-Unpacking linux-perf-5.15 (5.15.15-1) over (5.15.5-2) ...
-Preparing to unpack .../41-ruby-minitest_5.13.0-2_all.deb ...
-Unpacking ruby-minitest (5.13.0-2) over (5.13.0-1) ...
-Preparing to unpack .../42-xscreensaver-data_6.02+dfsg1-2_amd64.deb ...
-Unpacking xscreensaver-data (6.02+dfsg1-2) over (5.45+dfsg1-2) ...
-Preparing to unpack .../43-xscreensaver_6.02+dfsg1-2_amd64.deb ...
-Unpacking xscreensaver (6.02+dfsg1-2) over (5.45+dfsg1-2) ...
-Preparing to unpack .../44-xscreensaver-data-extra_6.02+dfsg1-2_amd64.deb ...
-Unpacking xscreensaver-data-extra (6.02+dfsg1-2) over (5.45+dfsg1-2) ...
-Preparing to unpack .../45-metasploit-framework_6.1.27+20220121112623~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.27+20220121112623~1rapid7-1) over (6.1.26+20220116112606~1rapid7-1) ...
-Setting up linux-compiler-gcc-11-x86 (5.15.15-1) ...
-Setting up libc-l10n (2.33-3) ...
-Setting up xscreensaver-data (6.02+dfsg1-2) ...
-Installing new version of config file /etc/X11/app-defaults/XScreenSaver-nogl ...
-Setting up libgpg-error0:amd64 (1.43-3) ...
-Setting up libfstrm0:amd64 (0.6.1-1) ...
-Setting up hplip-data (3.21.12+dfsg0-1) ...
-Setting up libjavascriptcoregtk-4.0-18:amd64 (2.34.4-1) ...
-Setting up gir1.2-javascriptcoregtk-4.0:amd64 (2.34.4-1) ...
-Setting up metasploit-framework (6.1.27+20220121112623~1rapid7-1) ...
+Fetched 351 MB in 29s (12.2 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 514234 files and directories currently installed.)
+Preparing to unpack .../00-libhwloc15_2.7.0-2_amd64.deb ...
+Unpacking libhwloc15:amd64 (2.7.0-2) over (2.7.0-1) ...
+Preparing to unpack .../01-hwloc_2.7.0-2_amd64.deb ...
+Unpacking hwloc (2.7.0-2) over (2.7.0-1) ...
+Preparing to unpack .../02-libatk-bridge2.0-dev_2.38.0-3_amd64.deb ...
+Unpacking libatk-bridge2.0-dev:amd64 (2.38.0-3) over (2.38.0-2) ...
+Preparing to unpack .../03-libatk-bridge2.0-0_2.38.0-3_amd64.deb ...
+Unpacking libatk-bridge2.0-0:amd64 (2.38.0-3) over (2.38.0-2) ...
+Preparing to unpack .../04-libatk-adaptor_2.38.0-3_amd64.deb ...
+Unpacking libatk-adaptor:amd64 (2.38.0-3) over (2.38.0-2) ...
+Preparing to unpack .../05-libflite1_2.2-3_amd64.deb ...
+Unpacking libflite1:amd64 (2.2-3) over (2.2-2) ...
+Preparing to unpack .../06-libhwloc-plugins_2.7.0-2_amd64.deb ...
+Unpacking libhwloc-plugins:amd64 (2.7.0-2) over (2.7.0-1) ...
+Preparing to unpack .../07-libwww-perl_6.61-1_all.deb ...
+Unpacking libwww-perl (6.61-1) over (6.60-1) ...
+Preparing to unpack .../08-papirus-icon-theme_20220101-2_all.deb ...
+Unpacking papirus-icon-theme (20220101-2) over (20220101-1) ...
+Preparing to unpack .../09-ruby-rubygems_3.3.5-2_all.deb ...
+Unpacking ruby-rubygems (3.3.5-2) over (3.2.27-3) ...
+Preparing to unpack .../10-thunderbird_1%3a91.5.1-1+b1_amd64.deb ...
+Unpacking thunderbird (1:91.5.1-1+b1) over (1:91.5.0-2) ...
+Preparing to unpack .../11-metasploit-framework_6.1.28+20220128112600~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.28+20220128112600~1rapid7-1) over (6.1.27+20220127112605.git.2.ee68373~1rapid7-1) ...
+Setting up libwww-perl (6.61-1) ...
+Setting up ruby-rubygems (3.3.5-2) ...
+Setting up metasploit-framework (6.1.28+20220128112600~1rapid7-1) ...
 Run msfconsole to get started
-Setting up locales (2.33-3) ...
-Generating locales (this might take a while)...
-  en_US.UTF-8... done
-Generation complete.
-Setting up linux-perf-5.15 (5.15.15-1) ...
-Setting up chromium-sandbox (97.0.4692.99-1~deb11u2) ...
-Setting up printer-driver-postscript-hp (3.21.12+dfsg0-1) ...
-Setting up libcpupower1 (5.15.15-1) ...
-Setting up linux-image-5.15.0-3-amd64 (5.15.15-1) ...
-I: /vmlinuz.old is now a symlink to boot/vmlinuz-5.15.0-2-amd64
-I: /initrd.img.old is now a symlink to boot/initrd.img-5.15.0-2-amd64
-I: /vmlinuz is now a symlink to boot/vmlinuz-5.15.0-3-amd64
-I: /initrd.img is now a symlink to boot/initrd.img-5.15.0-3-amd64
-/etc/kernel/postinst.d/initramfs-tools:
-update-initramfs: Generating /boot/initrd.img-5.15.0-3-amd64
-/etc/kernel/postinst.d/zz-update-grub:
-Generating grub configuration file ...
-Found theme: /boot/grub/themes/Elegant-Grub(install-with-grub-customizer/theme.txt
-Found background image: /usr/share/images/desktop-base/desktop-grub.png
-Found linux image: /boot/vmlinuz-5.16.2-msi
-Found initrd image: /boot/initrd.img-5.16.2-msi
-Found linux image: /boot/vmlinuz-5.16.0-msi
-Found initrd image: /boot/initrd.img-5.16.0-msi
-Found linux image: /boot/vmlinuz-5.15.0-3-amd64
-Found initrd image: /boot/initrd.img-5.15.0-3-amd64
-Found linux image: /boot/vmlinuz-5.15.0-2-amd64
-Found initrd image: /boot/initrd.img-5.15.0-2-amd64
-done
-Setting up libc6-x32 (2.33-3) ...
-Setting up ruby-minitest (5.13.0-2) ...
-Setting up linux-perf (5.15.15-1) ...
-Setting up linux-kbuild-5.15 (5.15.15-1) ...
-Setting up liborc-0.4-0:amd64 (1:0.4.32-2) ...
-Setting up pahole (1.22-2) ...
-Setting up libnm0:amd64 (1.34.0-2) ...
-Setting up xscreensaver-data-extra (6.02+dfsg1-2) ...
-Setting up libc6:i386 (2.33-3) ...
-Setting up linux-headers-5.15.0-3-common (5.15.15-1) ...
-Setting up libopenh264-6:amd64 (2.1.1+dfsg-2) ...
-Setting up libopenh264-6:i386 (2.1.1+dfsg-2) ...
-Setting up xscreensaver (6.02+dfsg1-2) ...
-Setting up libc6-i386 (2.33-3) ...
-Setting up chromium-common (97.0.4692.99-1~deb11u2) ...
-Setting up chromium (97.0.4692.99-1~deb11u2) ...
-Setting up gir1.2-nm-1.0:amd64 (1.34.0-2) ...
-Setting up libc-dev-bin (2.33-3) ...
-Setting up libgpg-error-l10n (1.43-3) ...
-Setting up libhpmud0:amd64 (3.21.12+dfsg0-1) ...
-Setting up libsane-hpaio:amd64 (3.21.12+dfsg0-1) ...
-Installing new version of config file /etc/hp/hplip.conf ...
-Setting up libc-devtools (2.33-3) ...
-Setting up ethtool (1:5.16-1) ...
-Setting up libgpg-error0:i386 (1.43-3) ...
-Setting up gstreamer1.0-plugins-good:amd64 (1.18.5-2) ...
-Setting up network-manager (1.34.0-2) ...
-Setting up linux-headers-5.15.0-3-amd64 (5.15.15-1) ...
-Setting up linux-image-amd64 (5.15.15-1) ...
-Setting up liborc-0.4-0:i386 (1:0.4.32-2) ...
-Setting up dwarves (1.22-2) ...
-Setting up libwebkit2gtk-4.0-37:amd64 (2.34.4-1) ...
-Setting up libc6-dev:amd64 (2.33-3) ...
-Setting up printer-driver-hpcups (3.21.12+dfsg0-1) ...
-Setting up hplip (3.21.12+dfsg0-1) ...
-Creating/updating hplip user account...
-Setting up gir1.2-webkit2-4.0:amd64 (2.34.4-1) ...
-Setting up libc6-dev-i386 (2.33-3) ...
-Setting up linux-headers-amd64 (5.15.15-1) ...
-Setting up gstreamer1.0-plugins-good:i386 (1.18.5-2) ...
-Setting up libc6-dev-x32 (2.33-3) ...
-Processing triggers for menu (2.1.49) ...
+Setting up papirus-icon-theme (20220101-2) ...
+Setting up libatk-bridge2.0-0:amd64 (2.38.0-3) ...
+Setting up libhwloc15:amd64 (2.7.0-2) ...
+Setting up hwloc (2.7.0-2) ...
+Setting up libflite1:amd64 (2.2-3) ...
+Setting up thunderbird (1:91.5.1-1+b1) ...
+Skipping profile in /etc/apparmor.d/disable: usr.bin.thunderbird
+Setting up libatk-adaptor:amd64 (2.38.0-3) ...
+Setting up libatk-bridge2.0-dev:amd64 (2.38.0-3) ...
+Setting up libhwloc-plugins:amd64 (2.7.0-2) ...
 Processing triggers for mailcap (3.70+nmu1) ...
-Processing triggers for fontconfig (2.13.1-4.2) ...
 Processing triggers for bamfdaemon (0.5.4-2+b1) ...
 Rebuilding /usr/share/applications/bamf-2.index...
 Processing triggers for desktop-file-utils (0.26-1) ...
 Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for cups (2.3.3op2-7) ...
-Updating PPD files for hpcups ...
-Updating PPD files for postscript-hp ...
-Processing triggers for libc-bin (2.33-3) ...
+Processing triggers for libc-bin (2.33-5) ...
 Processing triggers for man-db (2.9.4-4) ...
-Processing triggers for dbus (1.12.20-3) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -436,47 +203,18 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following package was automatically installed and is no longer required:
-  linux-headers-5.15.0-2-common
-Use 'sudo apt autoremove' to remove it.
-The following packages will be REMOVED:
-  linux-headers-5.15.0-2-amd64 linux-image-5.15.0-2-amd64
 The following packages have been kept back:
   libllvm12:i386
-0 upgraded, 0 newly installed, 2 to remove and 1 not upgraded.
-After this operation, 382 MB disk space will be freed.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 517007 files and directories currently installed.)
-Removing linux-headers-5.15.0-2-amd64 (5.15.5-2) ...
-Removing linux-image-5.15.0-2-amd64 (5.15.5-2) ...
-I: /vmlinuz.old is now a symlink to boot/vmlinuz-5.16.2-msi
-I: /initrd.img.old is now a symlink to boot/initrd.img-5.16.2-msi
-/etc/kernel/postrm.d/initramfs-tools:
-update-initramfs: Deleting /boot/initrd.img-5.15.0-2-amd64
-/etc/kernel/postrm.d/zz-update-grub:
-Generating grub configuration file ...
-Found theme: /boot/grub/themes/Elegant-Grub(install-with-grub-customizer/theme.txt
-Found background image: /usr/share/images/desktop-base/desktop-grub.png
-Found linux image: /boot/vmlinuz-5.16.2-msi
-Found initrd image: /boot/initrd.img-5.16.2-msi
-Found linux image: /boot/vmlinuz-5.16.0-msi
-Found initrd image: /boot/initrd.img-5.16.0-msi
-Found linux image: /boot/vmlinuz-5.15.0-3-amd64
-Found initrd image: /boot/initrd.img-5.15.0-3-amd64
-done
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 
-[1;38;5;191mCleaning up system. . .[0m
+[1;38;5;200mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages will be REMOVED:
-  linux-headers-5.15.0-2-common
-0 upgraded, 0 newly installed, 1 to remove and 1 not upgraded.
-After this operation, 54.8 MB disk space will be freed.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 505863 files and directories currently installed.)
-Removing linux-headers-5.15.0-2-common (5.15.5-2) ...
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -486,31 +224,35 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-W: Target Packages (main/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Packages (main/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Translations (main/i18n/Translation-en_US) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target Translations (main/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11 (main/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11 (main/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11-icons-small (main/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
-W: Target DEP-11-icons (main/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list:41 and /etc/apt/sources.list.d/google-chrome.list:3
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages will be REMOVED:
-  linux-image-5.15.0-2-amd64*
-0 upgraded, 0 newly installed, 1 to remove and 1 not upgraded.
-After this operation, 0 B of additional disk space will be used.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 496107 files and directories currently installed.)
-Purging configuration files for linux-image-5.15.0-2-amd64 (5.15.5-2) ...
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+removed '/home/msifland/.cache/thumbnails/normal/04c5763d6b94d67a71c1cc2946850c03.png'
+removed '/home/msifland/.cache/thumbnails/normal/1629b41e61167f51069e50fed8067d33.png'
+removed '/home/msifland/.cache/thumbnails/normal/2a24f437171c2a0b3dab25649a307c99.png'
+removed '/home/msifland/.cache/thumbnails/normal/3e9d31e4169d5ce5ebb9d199e6bc4d36.png'
+removed '/home/msifland/.cache/thumbnails/normal/47aae06be40c529edfa270508dd70ffe.png'
+removed '/home/msifland/.cache/thumbnails/normal/51ac72454998a04840adb71ad28fee62.png'
+removed '/home/msifland/.cache/thumbnails/normal/5b749e0c59b0db5bd18c3965ef3fa374.png'
+removed '/home/msifland/.cache/thumbnails/normal/645384d37e209b4c7142d7953564cd20.png'
+removed '/home/msifland/.cache/thumbnails/normal/6b73bbcd49086e16d373c88d05cdd3e8.png'
+removed '/home/msifland/.cache/thumbnails/normal/85bb2b458f11cf26642206487725ae24.png'
+removed '/home/msifland/.cache/thumbnails/normal/a0607c6988bc8d6100246a4a9d79507d.png'
+removed '/home/msifland/.cache/thumbnails/normal/ad9572aa4aaa3f2c806168b8c06cdee5.png'
+removed '/home/msifland/.cache/thumbnails/normal/b1fa1686d52ffdd58f36419b22a91090.png'
+removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
+removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
+removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
+removed '/home/msifland/.cache/thumbnails/normal/fc0a969c18718d0306830e4bcd59cd2f.png'
 
-[1;38;5;5mBacking up important files and apps. . .[0m
-[1;38;5;191mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;168mBacking up important files and apps. . .[0m
+[1;38;5;200mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;191mBacking up important config files. . .[0m
+[1;38;5;200mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -519,14 +261,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;191mBacking up crontab. . .[0m
+[1;38;5;200mBacking up crontab. . .[0m
 
-[1;38;5;191mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;200mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;5mUpdating local git repos. . .[0m
-[1;38;5;5mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;191mUpdating Projects. . .[0m
+[1;38;5;168mUpdating local git repos. . .[0m
+[1;38;5;168mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;200mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -534,7 +276,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;191mUpdating Documents. . .[0m
+[1;38;5;200mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -542,35 +284,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;191mUpdating scripts. . .[0m
-[master 4538321] auto commit
- 7 files changed, 32303 insertions(+), 31876 deletions(-)
- rewrite cron_scripts/linux-update.log (61%)
- rewrite virus-freshclam.log (75%)
-To https://github.com/msifland/scripts
-   bcf1e89..4538321  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;191mUpdating pkg_bkups. . .[0m
-[master f3bea80] auto commit
- 8 files changed, 42 insertions(+), 22 deletions(-)
- create mode 100644 apt/sources.list.d/google-chrome.list
- create mode 100644 apt/trusted.gpg.d/google-chrome.gpg
-To https://github.com/msifland/pkg_bkups
-   5b67eee..f3bea80  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;191mUpdating Modules-Apps. . .[0m
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
-Everything up-to-date
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-[1;38;5;124mAll is good.[0m
-
-[1;38;5;5m
-01-24-2022 07:05:14 AM
-[1;38;5;5mIt took 5 minutes 13 seconds to run whole process.[0m
-[0m
+[1;38;5;200mUpdating scripts. . .[0m
