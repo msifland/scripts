@@ -1,65 +1,42 @@
-[H[2J[3J[1;38;5;9m           ###########    Updating your system now   ###########[0m
-[1;38;5;226m
-02-07-2022 07:00:01 AM
-Updating Linux debian 5.16.5-msi #1 SMP PREEMPT Sat Feb 5 03:01:56 CST 2022 x86_64 GNU/Linux[0m
-[1;38;5;139mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;44m           ###########    Updating your system now   ###########[0m
+[1;38;5;169m
+02-14-2022 07:00:02 AM
+Updating Linux debian 5.16.9-msi #1 SMP PREEMPT Sat Feb 12 03:01:25 CST 2022 x86_64 GNU/Linux[0m
+[1;38;5;121mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;229mUpdating sources and checking for app updates. . .[0m
+[1;38;5;77mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Hit:1 http://repo.steampowered.com/steam precise InRelease
-Hit:2 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:4 http://security.debian.org/debian-security stable-security InRelease
-Hit:5 https://download.sublimetext.com apt/stable/ InRelease
-Get:6 http://deb.debian.org/debian testing InRelease [129 kB]
+Hit:2 http://deb.debian.org/debian testing InRelease
+Get:3 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
+Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:6 https://download.sublimetext.com apt/stable/ InRelease
 Hit:7 https://repo.skype.com/deb stable InRelease
-Hit:8 http://repo.sinew.in stable InRelease
-Hit:9 http://repository.spotify.com stable InRelease
-Hit:10 https://dl.google.com/linux/chrome/deb stable InRelease
-Get:11 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Get:12 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Hit:13 http://deb.debian.org/debian-security testing-security InRelease
-Hit:14 http://deb.debian.org/debian stable InRelease
+Hit:8 http://deb.debian.org/debian testing-updates InRelease
+Hit:9 http://repo.sinew.in stable InRelease
+Hit:10 http://repository.spotify.com stable InRelease
+Hit:11 https://dl.google.com/linux/chrome/deb stable InRelease
+Get:12 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Get:13 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [416 B]
+Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [418 B]
 Hit:15 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:16 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:17 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:18 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:19 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:20 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Hit:21 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:22 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:23 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:24 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:26 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:27 http://deb.debian.org/debian testing/main Sources T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [272 B]
-Get:27 http://deb.debian.org/debian testing/main Sources T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [272 B]
-Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [285 B]
-Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [285 B]
-Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [284 B]
-Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [284 B]
-Get:30 http://deb.debian.org/debian unstable/main Sources T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [6,400 B]
-Get:30 http://deb.debian.org/debian unstable/main Sources T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [6,400 B]
-Get:31 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [6,063 B]
-Get:31 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [6,063 B]
-Get:32 http://deb.debian.org/debian unstable/main i386 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [12.6 kB]
-Get:32 http://deb.debian.org/debian unstable/main i386 Packages T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [12.6 kB]
-Get:33 http://deb.debian.org/debian unstable/main Translation-en T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [1,309 B]
-Get:33 http://deb.debian.org/debian unstable/main Translation-en T-2022-02-07-0806.38-F-2022-02-07-0806.38.pdiff [1,309 B]
-Get:34 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,201 kB]
-Get:35 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,348 kB]
-Get:36 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,654 kB]
-Get:37 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,652 kB]
-Hit:38 http://www.deb-multimedia.org bullseye InRelease
-Fetched 20.7 MB in 10s (2,148 kB/s)
+Hit:16 http://deb.debian.org/debian stable InRelease
+Hit:17 http://deb.debian.org/debian stable-updates InRelease
+Hit:18 http://deb.debian.org/debian unstable InRelease
+Get:19 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Hit:20 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:21 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Hit:22 http://www.deb-multimedia.org bullseye InRelease
+Fetched 87.0 kB in 12s (7,296 B/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-1 package can be upgraded. Run 'apt list --upgradable' to see it.
+5 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;229mChecking for system upgrade. . .[0m
+[1;38;5;77mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -67,18 +44,20 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following packages have been kept back:
+  librygel-renderer-2.6-2 librygel-server-2.6-2 rygel rygel-tracker
 The following packages will be upgraded:
   metasploit-framework
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+1 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
 Need to get 266 MB of archives.
-After this operation, 0 B of additional disk space will be used.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.29+20220206112545~1rapid7-1 [266 MB]
+After this operation, 78.8 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.30+20220214112634~1rapid7-1 [266 MB]
 apt-listchanges: Reading changelogs...
-Fetched 266 MB in 27s (9,965 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 541075 files and directories currently installed.)
-Preparing to unpack .../metasploit-framework_6.1.29+20220206112545~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.29+20220206112545~1rapid7-1) over (6.1.29+20220205112555~1rapid7-1) ...
-Setting up metasploit-framework (6.1.29+20220206112545~1rapid7-1) ...
+Fetched 266 MB in 29s (9,039 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561348 files and directories currently installed.)
+Preparing to unpack .../metasploit-framework_6.1.30+20220214112634~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.30+20220214112634~1rapid7-1) over (6.1.29+20220206112545~1rapid7-1) ...
+Setting up metasploit-framework (6.1.30+20220214112634~1rapid7-1) ...
 Run msfconsole to get started
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
@@ -87,9 +66,60 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be REMOVED:
+  libgupnp-av-1.0-2 libgupnp-dlna-2.0-3
+The following NEW packages will be installed:
+  libgupnp-av-1.0-3 libgupnp-dlna-2.0-4
+The following packages will be upgraded:
+  librygel-renderer-2.6-2 librygel-server-2.6-2 rygel rygel-tracker
+4 upgraded, 2 newly installed, 2 to remove and 0 not upgraded.
+Need to get 1,042 kB of archives.
+After this operation, 17.4 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 librygel-renderer-2.6-2 amd64 0.40.3-1+b1 [58.9 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 rygel-tracker amd64 0.40.3-1+b1 [72.4 kB]
+Get:3 http://deb.debian.org/debian testing/main amd64 rygel amd64 0.40.3-1+b1 [573 kB]
+Get:4 http://deb.debian.org/debian testing/main amd64 librygel-server-2.6-2 amd64 0.40.3-1+b1 [205 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 libgupnp-av-1.0-3 amd64 0.14.0-3 [75.0 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 libgupnp-dlna-2.0-4 amd64 0.12.0-3 [57.1 kB]
+apt-listchanges: Reading changelogs...
+Fetched 1,042 kB in 0s (3,420 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561355 files and directories currently installed.)
+Preparing to unpack .../librygel-renderer-2.6-2_0.40.3-1+b1_amd64.deb ...
+Unpacking librygel-renderer-2.6-2:amd64 (0.40.3-1+b1) over (0.40.3-1) ...
+Preparing to unpack .../rygel-tracker_0.40.3-1+b1_amd64.deb ...
+Unpacking rygel-tracker (0.40.3-1+b1) over (0.40.3-1) ...
+Preparing to unpack .../rygel_0.40.3-1+b1_amd64.deb ...
+Unpacking rygel (0.40.3-1+b1) over (0.40.3-1) ...
+Preparing to unpack .../librygel-server-2.6-2_0.40.3-1+b1_amd64.deb ...
+Unpacking librygel-server-2.6-2:amd64 (0.40.3-1+b1) over (0.40.3-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561357 files and directories currently installed.)
+Removing libgupnp-av-1.0-2 (0.12.11-3) ...
+Selecting previously unselected package libgupnp-av-1.0-3.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561347 files and directories currently installed.)
+Preparing to unpack .../libgupnp-av-1.0-3_0.14.0-3_amd64.deb ...
+Unpacking libgupnp-av-1.0-3 (0.14.0-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561357 files and directories currently installed.)
+Removing libgupnp-dlna-2.0-3 (0.10.5-4) ...
+Selecting previously unselected package libgupnp-dlna-2.0-4.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561332 files and directories currently installed.)
+Preparing to unpack .../libgupnp-dlna-2.0-4_0.12.0-3_amd64.deb ...
+Unpacking libgupnp-dlna-2.0-4 (0.12.0-3) ...
+Setting up libgupnp-dlna-2.0-4 (0.12.0-3) ...
+Setting up libgupnp-av-1.0-3 (0.14.0-3) ...
+Setting up librygel-server-2.6-2:amd64 (0.40.3-1+b1) ...
+Setting up librygel-renderer-2.6-2:amd64 (0.40.3-1+b1) ...
+Setting up rygel (0.40.3-1+b1) ...
+Setting up rygel-tracker (0.40.3-1+b1) ...
+Processing triggers for bamfdaemon (0.5.4-2+b1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libc-bin (2.33-5) ...
+Processing triggers for man-db (2.10.0-2) ...
+Processing triggers for mailcap (3.70+nmu1) ...
+Processing triggers for rygel (0.40.3-1+b1) ...
 
-[1;38;5;229mCleaning up system. . .[0m
+[1;38;5;77mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -113,37 +143,11 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-removed '/home/msifland/.cache/thumbnails/normal/054d21a26679c0b74709a20900099897.png'
-removed '/home/msifland/.cache/thumbnails/normal/09f1504d05158fc1bda5ffeab595f3c9.png'
-removed '/home/msifland/.cache/thumbnails/normal/0ac8e0ec9e9058dae6f5459fdc3f6d3d.png'
-removed '/home/msifland/.cache/thumbnails/normal/1fcf3086b43e60fa475efbf04c63f636.png'
-removed '/home/msifland/.cache/thumbnails/normal/28e86718892cae23e58f35490c680569.png'
-removed '/home/msifland/.cache/thumbnails/normal/29a4820489875801509298f6fd45bb8b.png'
-removed '/home/msifland/.cache/thumbnails/normal/34b8c142ee0194a8253d4242a29fbd1d.png'
-removed '/home/msifland/.cache/thumbnails/normal/45b51adc3ea00aa1a26c4c27addaaab0.png'
-removed '/home/msifland/.cache/thumbnails/normal/6245d46f85e10954466a186b283167c1.png'
-removed '/home/msifland/.cache/thumbnails/normal/820b076b47e8773d40cecdcb90fddc6d.png'
-removed '/home/msifland/.cache/thumbnails/normal/8781342f6e6ebaffd457329c55117c1b.png'
-removed '/home/msifland/.cache/thumbnails/normal/92d636afc4dac8506525199aaad6c9dd.png'
-removed '/home/msifland/.cache/thumbnails/normal/a3bdb1d628c0c69c3f973cd635cbc2ba.png'
-removed '/home/msifland/.cache/thumbnails/normal/c2dceefa87e382f2f7b1676194871ac9.png'
-removed '/home/msifland/.cache/thumbnails/normal/c4d4c459cc45172d6be90f3db2cf890e.png'
-removed '/home/msifland/.cache/thumbnails/normal/cb2e44f83833a458e3c9b1e461058123.png'
-removed '/home/msifland/.cache/thumbnails/normal/cf815be9f3f48f32fd02930fd27a6ec9.png'
-removed '/home/msifland/.cache/thumbnails/normal/cffcc405a90cd139d5afdaf106da27ca.png'
-removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
-removed '/home/msifland/.cache/thumbnails/normal/d8182a56793347b078bcf05e9ea621c5.png'
-removed '/home/msifland/.cache/thumbnails/normal/dbc624367e74420416b03b2d078a5fcc.png'
-removed '/home/msifland/.cache/thumbnails/normal/dd7aa0d72deea6f6f4ffc76aea392f7d.png'
-removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
-removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
-removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/1c98d0aa59f68f9fd311b505d0da0fd4.png'
-removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
 
-[1;38;5;226mBacking up important files and apps. . .[0m
-[1;38;5;229mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;169mBacking up important files and apps. . .[0m
+[1;38;5;77mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;229mBacking up important config files. . .[0m
+[1;38;5;77mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -152,14 +156,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;229mBacking up crontab. . .[0m
+[1;38;5;77mBacking up crontab. . .[0m
 
-[1;38;5;229mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;77mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;226mUpdating local git repos. . .[0m
-[1;38;5;226mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;229mUpdating Projects. . .[0m
+[1;38;5;169mUpdating local git repos. . .[0m
+[1;38;5;169mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;77mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -167,7 +171,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;229mUpdating Documents. . .[0m
+[1;38;5;77mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -175,4 +179,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;229mUpdating scripts. . .[0m
+[1;38;5;77mUpdating scripts. . .[0m
