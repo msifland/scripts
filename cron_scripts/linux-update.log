@@ -1,42 +1,110 @@
-[H[2J[3J[1;38;5;44m           ###########    Updating your system now   ###########[0m
-[1;38;5;169m
-02-14-2022 07:00:02 AM
-Updating Linux debian 5.16.9-msi #1 SMP PREEMPT Sat Feb 12 03:01:25 CST 2022 x86_64 GNU/Linux[0m
-[1;38;5;121mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;11m           ###########    Updating your system now   ###########[0m
+[1;38;5;131m
+02-21-2022 07:00:01 AM
+Updating Linux debian 5.16.10-msi #1 SMP PREEMPT Sat Feb 19 03:01:41 CST 2022 x86_64 GNU/Linux[0m
+[1;38;5;43mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;77mUpdating sources and checking for app updates. . .[0m
+[1;38;5;32mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://repo.steampowered.com/steam precise InRelease
-Hit:2 http://deb.debian.org/debian testing InRelease
-Get:3 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
+Get:1 http://deb.debian.org/debian testing InRelease [129 kB]
+Get:2 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
+Get:3 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
 Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
-Hit:6 https://download.sublimetext.com apt/stable/ InRelease
-Hit:7 https://repo.skype.com/deb stable InRelease
-Hit:8 http://deb.debian.org/debian testing-updates InRelease
-Hit:9 http://repo.sinew.in stable InRelease
-Hit:10 http://repository.spotify.com stable InRelease
+Hit:5 https://download.sublimetext.com apt/stable/ InRelease
+Get:6 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
+Hit:7 http://repository.spotify.com stable InRelease
+Get:8 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Hit:9 https://repo.skype.com/deb stable InRelease
+Hit:10 http://repo.sinew.in stable InRelease
 Hit:11 https://dl.google.com/linux/chrome/deb stable InRelease
-Get:12 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Get:13 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [416 B]
-Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [418 B]
-Hit:15 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:16 http://deb.debian.org/debian stable InRelease
-Hit:17 http://deb.debian.org/debian stable-updates InRelease
-Hit:18 http://deb.debian.org/debian unstable InRelease
-Get:19 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
-Hit:20 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:21 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Hit:22 http://www.deb-multimedia.org bullseye InRelease
-Fetched 87.0 kB in 12s (7,296 B/s)
+Hit:12 http://deb.debian.org/debian stable InRelease
+Hit:13 http://repo.steampowered.com/steam precise InRelease
+Get:14 https://mega.nz/linux/MEGAsync/Debian_10.0 ./ InRelease [2,461 B]
+Get:15 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:16 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [417 B]
+Get:17 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [416 B]
+Get:18 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:19 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:21 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:22 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:23 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:24 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:25 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
+Get:26 http://deb.debian.org/debian testing/contrib Translation-en.diff/Index [55.5 kB]
+Get:27 http://deb.debian.org/debian testing/main Sources T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [50.1 kB]
+Get:27 http://deb.debian.org/debian testing/main Sources T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [50.1 kB]
+Get:28 http://deb.debian.org/debian testing/contrib Sources T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [746 B]
+Get:28 http://deb.debian.org/debian testing/contrib Sources T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [746 B]
+Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [77.5 kB]
+Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [77.5 kB]
+Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [78.1 kB]
+Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [78.1 kB]
+Get:31 http://deb.debian.org/debian testing/main Translation-en T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [21.2 kB]
+Get:32 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [461 B]
+Get:33 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [459 B]
+Get:34 http://deb.debian.org/debian testing/contrib Translation-en T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [192 B]
+Get:35 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:36 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:37 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:38 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:39 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:40 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Hit:41 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:42 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:43 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:34 http://deb.debian.org/debian testing/contrib Translation-en T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [192 B]
+Get:33 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [459 B]
+Get:31 http://deb.debian.org/debian testing/main Translation-en T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [21.2 kB]
+Get:32 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-02-21-0201.25-F-2022-02-21-0201.25.pdiff [461 B]
+Get:44 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:45 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
+Get:46 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
+Get:47 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:48 http://deb.debian.org/debian unstable/contrib Translation-en.diff/Index [63.3 kB]
+Get:49 http://deb.debian.org/debian unstable/main Sources T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [36.5 kB]
+Get:49 http://deb.debian.org/debian unstable/main Sources T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [36.5 kB]
+Get:50 http://deb.debian.org/debian unstable/non-free Sources T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:50 http://deb.debian.org/debian unstable/non-free Sources T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:51 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [39.7 kB]
+Get:51 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [39.7 kB]
+Get:52 http://deb.debian.org/debian unstable/main i386 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [40.1 kB]
+Get:52 http://deb.debian.org/debian unstable/main i386 Packages T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [40.1 kB]
+Get:53 http://deb.debian.org/debian unstable/main Translation-en T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [2,161 B]
+Get:53 http://deb.debian.org/debian unstable/main Translation-en T-2022-02-21-0801.31-F-2022-02-20-1402.40.pdiff [2,161 B]
+Get:54 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-02-20-2001.34-F-2022-02-20-1402.40.pdiff [474 B]
+Get:55 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-02-20-2001.34-F-2022-02-20-1402.40.pdiff [474 B]
+Get:54 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-02-20-2001.34-F-2022-02-20-1402.40.pdiff [474 B]
+Get:55 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-02-20-2001.34-F-2022-02-20-1402.40.pdiff [474 B]
+Get:56 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-02-20-2001.34-F-2022-02-20-1402.40.pdiff [262 B]
+Get:57 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:58 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:59 http://deb.debian.org/debian unstable/contrib Translation-en T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:56 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-02-20-2001.34-F-2022-02-20-1402.40.pdiff [262 B]
+Get:57 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:58 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:59 http://deb.debian.org/debian unstable/contrib Translation-en T-2022-02-20-2001.34-F-2022-02-20-2001.34.pdiff [31 B]
+Get:60 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,200 kB]
+Get:61 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,452 kB]
+Get:62 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,203 kB]
+Get:63 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.3 kB]
+Get:64 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,368 kB]
+Get:65 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,690 kB]
+Get:66 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,701 kB]
+Get:67 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.2 kB]
+Get:68 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [14.7 kB]
+Get:69 http://www.deb-multimedia.org bullseye InRelease [17.8 kB]
+Get:70 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
+Get:71 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
+Fetched 32.9 MB in 12s (2,687 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+39 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;77mChecking for system upgrade. . .[0m
+[1;38;5;32mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -44,21 +112,15 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages have been kept back:
-  librygel-renderer-2.6-2 librygel-server-2.6-2 rygel rygel-tracker
-The following packages will be upgraded:
-  metasploit-framework
-1 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
-Need to get 266 MB of archives.
-After this operation, 78.8 kB of additional disk space will be used.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.30+20220214112634~1rapid7-1 [266 MB]
-apt-listchanges: Reading changelogs...
-Fetched 266 MB in 29s (9,039 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561348 files and directories currently installed.)
-Preparing to unpack .../metasploit-framework_6.1.30+20220214112634~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.30+20220214112634~1rapid7-1) over (6.1.29+20220206112545~1rapid7-1) ...
-Setting up metasploit-framework (6.1.30+20220214112634~1rapid7-1) ...
-Run msfconsole to get started
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ libwacom9 : Depends: libwacom-common (= 2.0.0-2) but 1.12-1 is to be installed
+E: Broken packages
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -66,88 +128,263 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following package was automatically installed and is no longer required:
+  fwupd-unsigned
+Use 'sudo apt autoremove' to remove it.
 The following packages will be REMOVED:
-  libgupnp-av-1.0-2 libgupnp-dlna-2.0-3
+  libwacom2
 The following NEW packages will be installed:
-  libgupnp-av-1.0-3 libgupnp-dlna-2.0-4
+  libwacom9 pkexec polkitd
 The following packages will be upgraded:
-  librygel-renderer-2.6-2 librygel-server-2.6-2 rygel rygel-tracker
-4 upgraded, 2 newly installed, 2 to remove and 0 not upgraded.
-Need to get 1,042 kB of archives.
-After this operation, 17.4 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 librygel-renderer-2.6-2 amd64 0.40.3-1+b1 [58.9 kB]
-Get:2 http://deb.debian.org/debian testing/main amd64 rygel-tracker amd64 0.40.3-1+b1 [72.4 kB]
-Get:3 http://deb.debian.org/debian testing/main amd64 rygel amd64 0.40.3-1+b1 [573 kB]
-Get:4 http://deb.debian.org/debian testing/main amd64 librygel-server-2.6-2 amd64 0.40.3-1+b1 [205 kB]
-Get:5 http://deb.debian.org/debian testing/main amd64 libgupnp-av-1.0-3 amd64 0.14.0-3 [75.0 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 libgupnp-dlna-2.0-4 amd64 0.12.0-3 [57.1 kB]
+  fwupd gir1.2-polkit-1.0 gvfs gvfs-backends gvfs-common gvfs-daemons
+  gvfs-libs libfwupd2 libfwupdplugin5 libinput-bin libinput10 libmuffin0
+  libmutter-9-0 libnetfilter-conntrack3 libpipewire-0.3-0
+  libpipewire-0.3-common libpipewire-0.3-modules libpolkit-agent-1-0
+  libpolkit-gobject-1-0 libspa-0.2-modules libvulkan1 libvulkan1:i386
+  libwacom-bin libwacom-common libxml2 libxml2:i386 libxml2-dev libxml2-utils
+  metasploit-framework netcat-openbsd pipewire pipewire-bin pipewire-pulse
+  policykit-1 rsyslog tracker-extract tracker-miner-fs usb.ids
+  vulkan-tools:i386
+39 upgraded, 3 newly installed, 1 to remove and 0 not upgraded.
+Need to get 279 MB of archives.
+After this operation, 466 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 libwacom-bin amd64 2.0.0-2 [15.5 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 libmutter-9-0 amd64 41.3-3 [1,297 kB]
+Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.31+20220221112541~1rapid7-1 [266 MB]
+Get:4 http://deb.debian.org/debian testing/main amd64 libmuffin0 amd64 5.2.0-2+b1 [1,171 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 libinput10 amd64 1.19.3-2 [125 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 libinput-bin amd64 1.19.3-2 [26.4 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 libwacom-common all 2.0.0-2 [54.6 kB]
+Get:8 http://deb.debian.org/debian testing/main amd64 libwacom9 amd64 2.0.0-2 [22.2 kB]
+Get:9 http://deb.debian.org/debian testing/main amd64 pipewire-pulse amd64 0.3.47-1 [14.7 kB]
+Get:10 http://deb.debian.org/debian testing/main amd64 libpipewire-0.3-modules amd64 0.3.47-1 [488 kB]
+Get:11 http://deb.debian.org/debian testing/main amd64 libpipewire-0.3-0 amd64 0.3.47-1 [260 kB]
+Get:12 http://deb.debian.org/debian testing/main amd64 libspa-0.2-modules amd64 0.3.47-1 [501 kB]
+Get:13 http://deb.debian.org/debian testing/main amd64 pipewire amd64 0.3.47-1 [12.3 kB]
+Get:14 http://deb.debian.org/debian testing/main amd64 pipewire-bin amd64 0.3.47-1 [299 kB]
+Get:15 http://deb.debian.org/debian testing/main amd64 rsyslog amd64 8.2202.0-1 [715 kB]
+Get:16 http://deb.debian.org/debian testing/main amd64 fwupd amd64 1.7.5-3 [2,645 kB]
+Get:17 http://deb.debian.org/debian testing/main amd64 libfwupdplugin5 amd64 1.7.5-3 [182 kB]
+Get:18 http://deb.debian.org/debian testing/main amd64 libfwupd2 amd64 1.7.5-3 [104 kB]
+Get:19 http://deb.debian.org/debian testing/main amd64 policykit-1 amd64 0.105-32 [16.4 kB]
+Get:20 http://deb.debian.org/debian testing/main amd64 polkitd amd64 0.105-32 [89.1 kB]
+Get:21 http://deb.debian.org/debian testing/main amd64 pkexec amd64 0.105-32 [28.3 kB]
+Get:22 http://deb.debian.org/debian testing/main amd64 gir1.2-polkit-1.0 amd64 0.105-32 [21.2 kB]
+Get:23 http://deb.debian.org/debian testing/main amd64 libpolkit-agent-1-0 amd64 0.105-32 [29.1 kB]
+Get:24 http://deb.debian.org/debian testing/main amd64 libpolkit-gobject-1-0 amd64 0.105-32 [49.6 kB]
+Get:25 http://deb.debian.org/debian testing/main amd64 gvfs-backends amd64 1.48.1-4 [379 kB]
+Get:26 http://deb.debian.org/debian testing/main amd64 gvfs amd64 1.48.1-4 [137 kB]
+Get:27 http://deb.debian.org/debian testing/main amd64 gvfs-daemons amd64 1.48.1-4 [141 kB]
+Get:28 http://deb.debian.org/debian testing/main amd64 gvfs-libs amd64 1.48.1-4 [119 kB]
+Get:29 http://deb.debian.org/debian testing/main amd64 gvfs-common all 1.48.1-4 [496 kB]
+Get:30 http://deb.debian.org/debian testing/main amd64 libxml2-dev amd64 2.9.12+dfsg-6 [795 kB]
+Get:31 http://deb.debian.org/debian testing/main i386 libxml2 i386 2.9.12+dfsg-6 [733 kB]
+Get:32 http://deb.debian.org/debian testing/main amd64 libxml2 amd64 2.9.12+dfsg-6 [701 kB]
+Get:33 http://deb.debian.org/debian testing/main amd64 libnetfilter-conntrack3 amd64 1.0.9-1 [42.0 kB]
+Get:34 http://deb.debian.org/debian testing/main amd64 libpipewire-0.3-common all 0.3.47-1 [62.9 kB]
+Get:35 http://deb.debian.org/debian testing/main amd64 libvulkan1 amd64 1.3.204.0-1 [113 kB]
+Get:36 http://deb.debian.org/debian testing/main i386 libvulkan1 i386 1.3.204.0-1 [122 kB]
+Get:37 http://deb.debian.org/debian testing/main amd64 libxml2-utils amd64 2.9.12+dfsg-6 [110 kB]
+Get:38 http://deb.debian.org/debian testing/main amd64 netcat-openbsd amd64 1.218-4 [42.8 kB]
+Get:39 http://deb.debian.org/debian testing/main amd64 tracker-miner-fs amd64 3.1.3-4 [72.8 kB]
+Get:40 http://deb.debian.org/debian testing/main amd64 tracker-extract amd64 3.1.3-4 [706 kB]
+Get:41 http://deb.debian.org/debian testing/main amd64 usb.ids all 2022.02.15-1 [205 kB]
+Get:42 http://deb.debian.org/debian testing/main i386 vulkan-tools i386 1.3.204.0+dfsg1-1 [240 kB]
 apt-listchanges: Reading changelogs...
-Fetched 1,042 kB in 0s (3,420 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561355 files and directories currently installed.)
-Preparing to unpack .../librygel-renderer-2.6-2_0.40.3-1+b1_amd64.deb ...
-Unpacking librygel-renderer-2.6-2:amd64 (0.40.3-1+b1) over (0.40.3-1) ...
-Preparing to unpack .../rygel-tracker_0.40.3-1+b1_amd64.deb ...
-Unpacking rygel-tracker (0.40.3-1+b1) over (0.40.3-1) ...
-Preparing to unpack .../rygel_0.40.3-1+b1_amd64.deb ...
-Unpacking rygel (0.40.3-1+b1) over (0.40.3-1) ...
-Preparing to unpack .../librygel-server-2.6-2_0.40.3-1+b1_amd64.deb ...
-Unpacking librygel-server-2.6-2:amd64 (0.40.3-1+b1) over (0.40.3-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561357 files and directories currently installed.)
-Removing libgupnp-av-1.0-2 (0.12.11-3) ...
-Selecting previously unselected package libgupnp-av-1.0-3.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561347 files and directories currently installed.)
-Preparing to unpack .../libgupnp-av-1.0-3_0.14.0-3_amd64.deb ...
-Unpacking libgupnp-av-1.0-3 (0.14.0-3) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561357 files and directories currently installed.)
-Removing libgupnp-dlna-2.0-3 (0.10.5-4) ...
-Selecting previously unselected package libgupnp-dlna-2.0-4.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 561332 files and directories currently installed.)
-Preparing to unpack .../libgupnp-dlna-2.0-4_0.12.0-3_amd64.deb ...
-Unpacking libgupnp-dlna-2.0-4 (0.12.0-3) ...
-Setting up libgupnp-dlna-2.0-4 (0.12.0-3) ...
-Setting up libgupnp-av-1.0-3 (0.14.0-3) ...
-Setting up librygel-server-2.6-2:amd64 (0.40.3-1+b1) ...
-Setting up librygel-renderer-2.6-2:amd64 (0.40.3-1+b1) ...
-Setting up rygel (0.40.3-1+b1) ...
-Setting up rygel-tracker (0.40.3-1+b1) ...
-Processing triggers for bamfdaemon (0.5.4-2+b1) ...
-Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for desktop-file-utils (0.26-1) ...
+Fetched 279 MB in 24s (11.9 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 577712 files and directories currently installed.)
+Preparing to unpack .../libwacom-bin_2.0.0-2_amd64.deb ...
+Unpacking libwacom-bin (2.0.0-2) over (1.12-1) ...
+Preparing to unpack .../libmutter-9-0_41.3-3_amd64.deb ...
+Unpacking libmutter-9-0:amd64 (41.3-3) over (41.3-1+b1) ...
+Preparing to unpack .../libmuffin0_5.2.0-2+b1_amd64.deb ...
+Unpacking libmuffin0 (5.2.0-2+b1) over (5.2.0-2) ...
+Preparing to unpack .../libinput10_1.19.3-2_amd64.deb ...
+Unpacking libinput10:amd64 (1.19.3-2) over (1.19.3-1) ...
+Preparing to unpack .../libinput-bin_1.19.3-2_amd64.deb ...
+Unpacking libinput-bin (1.19.3-2) over (1.19.3-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 577710 files and directories currently installed.)
+Removing libwacom2:amd64 (1.12-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 577707 files and directories currently installed.)
+Preparing to unpack .../00-libwacom-common_2.0.0-2_all.deb ...
+Unpacking libwacom-common (2.0.0-2) over (1.12-1) ...
+Selecting previously unselected package libwacom9:amd64.
+Preparing to unpack .../01-libwacom9_2.0.0-2_amd64.deb ...
+Unpacking libwacom9:amd64 (2.0.0-2) ...
+Preparing to unpack .../02-pipewire-pulse_0.3.47-1_amd64.deb ...
+Unpacking pipewire-pulse (0.3.47-1) over (0.3.45-2) ...
+Preparing to unpack .../03-libpipewire-0.3-modules_0.3.47-1_amd64.deb ...
+Unpacking libpipewire-0.3-modules:amd64 (0.3.47-1) over (0.3.45-2) ...
+Preparing to unpack .../04-libpipewire-0.3-0_0.3.47-1_amd64.deb ...
+Unpacking libpipewire-0.3-0:amd64 (0.3.47-1) over (0.3.45-2) ...
+Preparing to unpack .../05-libspa-0.2-modules_0.3.47-1_amd64.deb ...
+Unpacking libspa-0.2-modules:amd64 (0.3.47-1) over (0.3.45-2) ...
+Preparing to unpack .../06-pipewire_0.3.47-1_amd64.deb ...
+Unpacking pipewire:amd64 (0.3.47-1) over (0.3.45-2) ...
+Preparing to unpack .../07-pipewire-bin_0.3.47-1_amd64.deb ...
+Unpacking pipewire-bin (0.3.47-1) over (0.3.45-2) ...
+Preparing to unpack .../08-rsyslog_8.2202.0-1_amd64.deb ...
+Unpacking rsyslog (8.2202.0-1) over (8.2112.0-2+b1) ...
+Preparing to unpack .../09-fwupd_1.7.5-3_amd64.deb ...
+Unpacking fwupd (1.7.5-3) over (1.7.4-2) ...
+Preparing to unpack .../10-libfwupdplugin5_1.7.5-3_amd64.deb ...
+Unpacking libfwupdplugin5:amd64 (1.7.5-3) over (1.7.4-2) ...
+Preparing to unpack .../11-libfwupd2_1.7.5-3_amd64.deb ...
+Unpacking libfwupd2:amd64 (1.7.5-3) over (1.7.4-2) ...
+Preparing to unpack .../12-policykit-1_0.105-32_amd64.deb ...
+Unpacking policykit-1 (0.105-32) over (0.105-31.1+b1) ...
+dpkg: warning: unable to delete old directory '/etc/polkit-1/localauthority.conf.d': Directory not empty
+dpkg: warning: unable to delete old directory '/etc/polkit-1': Directory not empty
+Selecting previously unselected package polkitd.
+Preparing to unpack .../13-polkitd_0.105-32_amd64.deb ...
+Unpacking polkitd (0.105-32) ...
+Selecting previously unselected package pkexec.
+Preparing to unpack .../14-pkexec_0.105-32_amd64.deb ...
+Unpacking pkexec (0.105-32) ...
+Preparing to unpack .../15-gir1.2-polkit-1.0_0.105-32_amd64.deb ...
+Unpacking gir1.2-polkit-1.0 (0.105-32) over (0.105-31.1+b1) ...
+Preparing to unpack .../16-libpolkit-agent-1-0_0.105-32_amd64.deb ...
+Unpacking libpolkit-agent-1-0:amd64 (0.105-32) over (0.105-31.1+b1) ...
+Preparing to unpack .../17-libpolkit-gobject-1-0_0.105-32_amd64.deb ...
+Unpacking libpolkit-gobject-1-0:amd64 (0.105-32) over (0.105-31.1+b1) ...
+Preparing to unpack .../18-gvfs-backends_1.48.1-4_amd64.deb ...
+Unpacking gvfs-backends (1.48.1-4) over (1.48.1-2) ...
+Preparing to unpack .../19-gvfs_1.48.1-4_amd64.deb ...
+Unpacking gvfs:amd64 (1.48.1-4) over (1.48.1-2) ...
+Preparing to unpack .../20-gvfs-daemons_1.48.1-4_amd64.deb ...
+Unpacking gvfs-daemons (1.48.1-4) over (1.48.1-2) ...
+Preparing to unpack .../21-gvfs-libs_1.48.1-4_amd64.deb ...
+Unpacking gvfs-libs:amd64 (1.48.1-4) over (1.48.1-2) ...
+Preparing to unpack .../22-gvfs-common_1.48.1-4_all.deb ...
+Unpacking gvfs-common (1.48.1-4) over (1.48.1-2) ...
+Preparing to unpack .../23-libxml2-dev_2.9.12+dfsg-6_amd64.deb ...
+Unpacking libxml2-dev:amd64 (2.9.12+dfsg-6) over (2.9.12+dfsg-5+b1) ...
+Preparing to unpack .../24-libxml2_2.9.12+dfsg-6_amd64.deb ...
+De-configuring libxml2:i386 (2.9.12+dfsg-5+b1), to allow configuration of libxml2:amd64 (2.9.12+dfsg-5+b1) ...
+Unpacking libxml2:amd64 (2.9.12+dfsg-6) over (2.9.12+dfsg-5+b1) ...
+Preparing to unpack .../25-libxml2_2.9.12+dfsg-6_i386.deb ...
+Unpacking libxml2:i386 (2.9.12+dfsg-6) over (2.9.12+dfsg-5+b1) ...
+Preparing to unpack .../26-libnetfilter-conntrack3_1.0.9-1_amd64.deb ...
+Unpacking libnetfilter-conntrack3:amd64 (1.0.9-1) over (1.0.8-3) ...
+Preparing to unpack .../27-libpipewire-0.3-common_0.3.47-1_all.deb ...
+Unpacking libpipewire-0.3-common (0.3.47-1) over (0.3.45-2) ...
+Preparing to unpack .../28-libvulkan1_1.3.204.0-1_i386.deb ...
+De-configuring libvulkan1:amd64 (1.2.198.1-2), to allow configuration of libvulkan1:i386 (1.2.198.1-2) ...
+Unpacking libvulkan1:i386 (1.3.204.0-1) over (1.2.198.1-2) ...
+Preparing to unpack .../29-libvulkan1_1.3.204.0-1_amd64.deb ...
+Unpacking libvulkan1:amd64 (1.3.204.0-1) over (1.2.198.1-2) ...
+Preparing to unpack .../30-libxml2-utils_2.9.12+dfsg-6_amd64.deb ...
+Unpacking libxml2-utils (2.9.12+dfsg-6) over (2.9.12+dfsg-5+b1) ...
+Preparing to unpack .../31-netcat-openbsd_1.218-4_amd64.deb ...
+Unpacking netcat-openbsd (1.218-4) over (1.218-3) ...
+Preparing to unpack .../32-tracker-miner-fs_3.1.3-4_amd64.deb ...
+Unpacking tracker-miner-fs (3.1.3-4) over (3.1.3-1) ...
+Preparing to unpack .../33-tracker-extract_3.1.3-4_amd64.deb ...
+Unpacking tracker-extract (3.1.3-4) over (3.1.3-1) ...
+Preparing to unpack .../34-usb.ids_2022.02.15-1_all.deb ...
+Unpacking usb.ids (2022.02.15-1) over (2021.12.24-1) ...
+Preparing to unpack .../35-vulkan-tools_1.3.204.0+dfsg1-1_i386.deb ...
+Unpacking vulkan-tools:i386 (1.3.204.0+dfsg1-1) over (1.2.198.0+dfsg1-1) ...
+Preparing to unpack .../36-metasploit-framework_6.1.31+20220221112541~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.31+20220221112541~1rapid7-1) over (6.1.30+20220214112634~1rapid7-1) ...
+Setting up libpipewire-0.3-common (0.3.47-1) ...
+Setting up libfwupd2:amd64 (1.7.5-3) ...
+Setting up rsyslog (8.2202.0-1) ...
+Setting up netcat-openbsd (1.218-4) ...
+Setting up metasploit-framework (6.1.31+20220221112541~1rapid7-1) ...
+Run msfconsole to get started
+Setting up libspa-0.2-modules:amd64 (0.3.47-1) ...
+Setting up libpipewire-0.3-0:amd64 (0.3.47-1) ...
+Setting up usb.ids (2022.02.15-1) ...
+Setting up libvulkan1:amd64 (1.3.204.0-1) ...
+Setting up libvulkan1:i386 (1.3.204.0-1) ...
+Setting up libnetfilter-conntrack3:amd64 (1.0.9-1) ...
+Setting up libfwupdplugin5:amd64 (1.7.5-3) ...
+Setting up gvfs-common (1.48.1-4) ...
+Setting up libxml2:amd64 (2.9.12+dfsg-6) ...
+Setting up libxml2:i386 (2.9.12+dfsg-6) ...
+Setting up libpolkit-gobject-1-0:amd64 (0.105-32) ...
+Setting up libwacom-common (2.0.0-2) ...
+Setting up tracker-extract (3.1.3-4) ...
+Setting up libwacom9:amd64 (2.0.0-2) ...
+Setting up vulkan-tools:i386 (1.3.204.0+dfsg1-1) ...
+Setting up libinput-bin (1.19.3-2) ...
+Setting up libpipewire-0.3-modules:amd64 (0.3.47-1) ...
+Setting up libxml2-dev:amd64 (2.9.12+dfsg-6) ...
+Setting up gvfs-libs:amd64 (1.48.1-4) ...
+Setting up libwacom-bin (2.0.0-2) ...
+Setting up libmuffin0 (5.2.0-2+b1) ...
+Setting up libpolkit-agent-1-0:amd64 (0.105-32) ...
+Setting up libxml2-utils (2.9.12+dfsg-6) ...
+Setting up fwupd (1.7.5-3) ...
+fwupd-offline-update.service is a disabled or a static unit not running, not starting it.
+fwupd-refresh.service is a disabled or a static unit not running, not starting it.
+fwupd.service is a disabled or a static unit not running, not starting it.
+Setting up polkitd (0.105-32) ...
+Setting up libinput10:amd64 (1.19.3-2) ...
+Setting up pkexec (0.105-32) ...
+Setting up pipewire-bin (0.3.47-1) ...
+Setting up gvfs-daemons (1.48.1-4) ...
+Setting up libmutter-9-0:amd64 (41.3-3) ...
+Setting up gir1.2-polkit-1.0 (0.105-32) ...
+Setting up pipewire:amd64 (0.3.47-1) ...
+Setting up policykit-1 (0.105-32) ...
+Setting up gvfs:amd64 (1.48.1-4) ...
+Setting up gvfs-backends (1.48.1-4) ...
+Setting up pipewire-pulse (0.3.47-1) ...
+Processing triggers for dbus (1.12.20-3) ...
+Processing triggers for udev (250.3-2) ...
 Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for libc-bin (2.33-5) ...
-Processing triggers for man-db (2.10.0-2) ...
-Processing triggers for mailcap (3.70+nmu1) ...
-Processing triggers for rygel (0.40.3-1+b1) ...
+Processing triggers for libglib2.0-0:amd64 (2.70.4-1) ...
+Processing triggers for libglib2.0-0:i386 (2.70.4-1) ...
+Processing triggers for libc-bin (2.33-6) ...
+Processing triggers for man-db (2.10.1-1) ...
+Setting up tracker-miner-fs (3.1.3-4) ...
 
-[1;38;5;77mCleaning up system. . .[0m
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
+[1;38;5;32mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
+The following packages will be REMOVED:
+  fwupd-unsigned
+0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+After this operation, 82.9 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 577646 files and directories currently installed.)
+Removing fwupd-unsigned (1:1.2-3) ...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;169mBacking up important files and apps. . .[0m
-[1;38;5;77mCreating list of apps, and copying repos from /etc/apt. . .[0m
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-[1;38;5;77mBacking up important config files. . .[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  linux-image-5.15.0-3-amd64*
+0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+After this operation, 0 B of additional disk space will be used.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 577642 files and directories currently installed.)
+Purging configuration files for linux-image-5.15.0-3-amd64 (5.15.15-2) ...
+removed '/home/msifland/.cache/thumbnails/normal/0ac8e0ec9e9058dae6f5459fdc3f6d3d.png'
+removed '/home/msifland/.cache/thumbnails/normal/34b8c142ee0194a8253d4242a29fbd1d.png'
+removed '/home/msifland/.cache/thumbnails/normal/3611b79c438dd28a6c4684d86193f9ed.png'
+removed '/home/msifland/.cache/thumbnails/normal/b4ac4cacb65a97d37b6fe25008b85e01.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
+
+[1;38;5;131mBacking up important files and apps. . .[0m
+[1;38;5;32mCreating list of apps, and copying repos from /etc/apt. . .[0m
+
+[1;38;5;32mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -156,14 +393,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;77mBacking up crontab. . .[0m
+[1;38;5;32mBacking up crontab. . .[0m
 
-[1;38;5;77mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;32mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;169mUpdating local git repos. . .[0m
-[1;38;5;169mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;77mUpdating Projects. . .[0m
+[1;38;5;131mUpdating local git repos. . .[0m
+[1;38;5;131mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;32mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -171,7 +408,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;77mUpdating Documents. . .[0m
+[1;38;5;32mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -179,4 +416,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
-[1;38;5;77mUpdating scripts. . .[0m
+[1;38;5;32mUpdating scripts. . .[0m
