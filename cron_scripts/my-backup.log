@@ -79,16 +79,20 @@ tar: Exiting with failure status due to previous errors
 Making sure ownership is correct. . .[0m
 
 Changing ownership of /home/msifland/Dropbox/Backups/msifland-03-13-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-03-13-2022.tar.gz
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-03-14-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-03-14-2022.tar.gz
 [1;38;5;117mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
 total 1.6G
 -rw-r--r-- 1 msifland msifland 386M Mar 11 01:30 msifland-03-11-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 385M Mar 12 01:45 msifland-03-12-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 385M Mar 13 01:45 msifland-03-13-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 386M Mar 14 01:31 msifland-03-14-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.5K Mar 14 01:31 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 3.1K Mar 14 13:02 my_backup_log.txt
 
 [1;38;5;117mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
+
+03-14-2022 01:02:49 PM
+[1;38;5;117mIt took 32 minutes 48 seconds to run whole process.[0m
+
+dit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
 03-14-2022 01:31:36 AM
 [1;38;5;117mIt took 1 minutes 34 seconds to run whole process.[0m
