@@ -1,85 +1,66 @@
-[H[2J[3J[1;38;5;78m           ###########    Updating your system now   ###########[0m
-[1;38;5;117m
-03-14-2022 07:00:01 AM
-Updating Linux debian 5.16.14-msi #1 SMP PREEMPT Sat Mar 12 03:01:39 CST 2022 x86_64 GNU/Linux[0m
-[1;38;5;171mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;236m           ###########    Updating your system now   ###########[0m
+[1;38;5;185m
+03-21-2022 07:00:01 AM
+Updating Linux debian 5.16.15-msi #1 SMP PREEMPT Sat Mar 19 03:01:55 CDT 2022 x86_64 GNU/Linux[0m
+[1;38;5;241mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;38mUpdating sources and checking for app updates. . .[0m
+[1;38;5;58mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Get:1 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
 Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
-Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:4 http://deb.debian.org/debian testing InRelease [130 kB]
-Hit:5 https://repo.skype.com/deb stable InRelease
-Hit:6 https://download.sublimetext.com apt/stable/ InRelease
+Hit:3 https://download.sublimetext.com apt/stable/ InRelease
+Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:5 http://deb.debian.org/debian testing InRelease [130 kB]
+Get:6 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [418 B]
 Hit:7 http://repository.spotify.com stable InRelease
-Get:8 http://security.debian.org/debian-security stable-security/main Sources [109 kB]
+Get:8 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [418 B]
 Hit:9 http://repo.sinew.in stable InRelease
-Hit:10 https://dl.google.com/linux/chrome/deb stable InRelease
-Get:11 http://security.debian.org/debian-security stable-security/main i386 Packages [121 kB]
-Get:12 http://security.debian.org/debian-security stable-security/main amd64 Packages [121 kB]
-Get:13 http://security.debian.org/debian-security stable-security/main Translation-en [77.5 kB]
-Hit:14 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:15 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [417 B]
-Get:16 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [416 B]
-Get:17 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Hit:18 http://repo.steampowered.com/steam precise InRelease
-Get:19 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Get:20 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
-Hit:21 http://deb.debian.org/debian stable InRelease
-Get:22 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:23 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:24 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:26 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:27 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:28 http://deb.debian.org/debian testing/main Sources T-2022-03-14-0806.31-F-2022-03-13-2012.20.pdiff [46.0 kB]
-Get:28 http://deb.debian.org/debian testing/main Sources T-2022-03-14-0806.31-F-2022-03-13-2012.20.pdiff [46.0 kB]
-Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-03-14-0806.31-F-2022-03-13-2012.20.pdiff [49.0 kB]
-Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-03-14-0806.31-F-2022-03-13-2012.20.pdiff [49.0 kB]
-Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2022-03-14-0806.31-F-2022-03-13-2012.20.pdiff [49.6 kB]
-Get:31 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:32 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2022-03-14-0806.31-F-2022-03-13-2012.20.pdiff [49.6 kB]
-Get:33 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:34 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Hit:35 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:36 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:37 http://deb.debian.org/debian testing/main Translation-en T-2022-03-14-0806.31-F-2022-03-14-0204.01.pdiff [7,484 B]
-Get:37 http://deb.debian.org/debian testing/main Translation-en T-2022-03-14-0806.31-F-2022-03-14-0204.01.pdiff [7,484 B]
-Get:38 http://deb.debian.org/debian unstable/main Sources T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [49.2 kB]
-Get:38 http://deb.debian.org/debian unstable/main Sources T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [49.2 kB]
-Get:39 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [156 kB]
-Get:39 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [156 kB]
-Get:40 http://deb.debian.org/debian unstable/main i386 Packages T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [145 kB]
-Get:40 http://deb.debian.org/debian unstable/main i386 Packages T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [145 kB]
-Get:41 http://deb.debian.org/debian unstable/main Translation-en T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [6,997 B]
-Get:41 http://deb.debian.org/debian unstable/main Translation-en T-2022-03-14-0806.31-F-2022-03-13-1415.31.pdiff [6,997 B]
-Get:42 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,207 kB]
-Get:43 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,457 kB]
-Get:44 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,147 kB]
-Get:45 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,366 kB]
-Get:46 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,672 kB]
-Get:47 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,605 kB]
-Hit:48 http://www.deb-multimedia.org bullseye InRelease
-Fetched 32.4 MB in 12s (2,616 kB/s)
+Get:10 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
+Get:11 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
+Get:12 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Hit:13 http://deb.debian.org/debian stable InRelease
+Get:14 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:15 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:16 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:17 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:18 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:19 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Hit:20 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:21 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:22 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:23 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:24 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:25 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:26 http://deb.debian.org/debian testing/main Sources T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [377 B]
+Get:26 http://deb.debian.org/debian testing/main Sources T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [377 B]
+Get:27 http://deb.debian.org/debian testing/main i386 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [4,139 B]
+Get:27 http://deb.debian.org/debian testing/main i386 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [4,139 B]
+Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [4,136 B]
+Get:28 http://deb.debian.org/debian testing/main amd64 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [4,136 B]
+Get:29 http://deb.debian.org/debian testing/main Translation-en T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [56 B]
+Get:29 http://deb.debian.org/debian testing/main Translation-en T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [56 B]
+Get:30 http://deb.debian.org/debian unstable/main Sources T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [1,889 B]
+Get:30 http://deb.debian.org/debian unstable/main Sources T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [1,889 B]
+Get:31 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [2,722 B]
+Get:31 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [2,722 B]
+Get:32 http://deb.debian.org/debian unstable/main i386 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [2,679 B]
+Get:32 http://deb.debian.org/debian unstable/main i386 Packages T-2022-03-21-0803.09-F-2022-03-21-0803.09.pdiff [2,679 B]
+Get:33 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,197 kB]
+Get:34 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,365 kB]
+Get:35 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,673 kB]
+Get:36 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,610 kB]
+Get:37 http://www.deb-multimedia.org bullseye InRelease [17.8 kB]
+Get:38 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
+Get:39 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
+Fetched 21.0 MB in 11s (1,884 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-15 packages can be upgraded. Run 'apt list --upgradable' to see them.
-W: http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: https://dl.winehq.org/wine-builds/debian/dists/sid/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: https://download.sublimetext.com/apt/stable/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: http://repo.sinew.in/dists/stable/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: http://ppa.launchpad.net/openshot.developers/ppa/ubuntu/dists/bionic/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: http://repo.steampowered.com/steam/dists/precise/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: https://mega.nz/linux/repo/Debian_10.0/./InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: http://ppa.launchpad.net/snwh/pulp/ubuntu/dists/bionic/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-W: http://ppa.launchpad.net/papirus/papirus/ubuntu/dists/bionic/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+13 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;38mChecking for system upgrade. . .[0m
+[1;38;5;58mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -87,89 +68,77 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following package was automatically installed and is no longer required:
+  gcc-10-base:i386
+Use 'sudo apt autoremove' to remove it.
+The following packages have been kept back:
+  libayatana-appindicator3-1
 The following packages will be upgraded:
-  adwaita-icon-theme binutils binutils-common binutils-dev
-  binutils-x86-64-linux-gnu firefox-esr gir1.2-gdesktopenums-3.0
-  gsettings-desktop-schemas libbdplus0 libbinutils libctf-nobfd0 libctf0
-  mate-tweak megasync metasploit-framework
-15 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 353 MB of archives.
-After this operation, 597 kB disk space will be freed.
-Get:1 http://deb.debian.org/debian testing/main amd64 adwaita-icon-theme all 42~really41.0-1 [10.8 MB]
-Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.34+20220314102557~1rapid7-1 [262 MB]
-Get:3 https://mega.nz/linux/repo/Debian_10.0 ./ megasync 4.6.5-2.1 [13.1 MB]
-Get:4 http://deb.debian.org/debian testing/main amd64 binutils-dev amd64 2.38-3 [3,932 kB]
-Get:5 http://deb.debian.org/debian testing/main amd64 libctf0 amd64 2.38-3 [93.6 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 libctf-nobfd0 amd64 2.38-3 [156 kB]
-Get:7 http://deb.debian.org/debian testing/main amd64 binutils-x86-64-linux-gnu amd64 2.38-3 [2,078 kB]
-Get:8 http://deb.debian.org/debian testing/main amd64 libbinutils amd64 2.38-3 [585 kB]
-Get:9 http://deb.debian.org/debian testing/main amd64 binutils amd64 2.38-3 [62.9 kB]
-Get:10 http://deb.debian.org/debian testing/main amd64 binutils-common amd64 2.38-3 [2,304 kB]
-Get:11 http://deb.debian.org/debian testing/main amd64 firefox-esr amd64 91.7.0esr-1 [57.4 MB]
-Get:12 http://deb.debian.org/debian testing/main amd64 gir1.2-gdesktopenums-3.0 amd64 42~rc-1 [11.1 kB]
-Get:13 http://deb.debian.org/debian testing/main amd64 gsettings-desktop-schemas all 42~rc-1 [618 kB]
-Get:14 http://deb.debian.org/debian testing/main amd64 libbdplus0 amd64 0.2.0-1 [51.7 kB]
-Get:15 http://deb.debian.org/debian testing/main amd64 mate-tweak all 22.04.4-1 [137 kB]
+  curl libcurl3-gnutls libcurl4 libcurl4:i386 libpython3.9 libpython3.9-dev
+  libpython3.9-minimal libpython3.9-stdlib metasploit-framework python3.9
+  python3.9-dev python3.9-minimal
+12 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Need to get 275 MB of archives.
+After this operation, 106 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 python3.9-dev amd64 3.9.11-1 [508 kB]
+Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.35+20220321102602~1rapid7-1 [262 MB]
+Get:3 http://deb.debian.org/debian testing/main amd64 libpython3.9-dev amd64 3.9.11-1 [4,237 kB]
+Get:4 http://deb.debian.org/debian testing/main amd64 libpython3.9 amd64 3.9.11-1 [1,705 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 python3.9 amd64 3.9.11-1 [491 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 libpython3.9-stdlib amd64 3.9.11-1 [1,683 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 python3.9-minimal amd64 3.9.11-1 [1,937 kB]
+Get:8 http://deb.debian.org/debian testing/main amd64 libpython3.9-minimal amd64 3.9.11-1 [803 kB]
+Get:9 http://deb.debian.org/debian testing/main amd64 curl amd64 7.81.0-1+b1 [287 kB]
+Get:10 http://deb.debian.org/debian testing/main i386 libcurl4 i386 7.81.0-1+b1 [390 kB]
+Get:11 http://deb.debian.org/debian testing/main amd64 libcurl4 amd64 7.81.0-1+b1 [358 kB]
+Get:12 http://deb.debian.org/debian testing/main amd64 libcurl3-gnutls amd64 7.81.0-1+b1 [354 kB]
 apt-listchanges: Reading changelogs...
-Fetched 353 MB in 28s (12.5 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 633687 files and directories currently installed.)
-Preparing to unpack .../00-adwaita-icon-theme_42~really41.0-1_all.deb ...
-Unpacking adwaita-icon-theme (42~really41.0-1) over (41.0-1) ...
-Preparing to unpack .../01-binutils-dev_2.38-3_amd64.deb ...
-Unpacking binutils-dev (2.38-3) over (2.38-2) ...
-Preparing to unpack .../02-libctf0_2.38-3_amd64.deb ...
-Unpacking libctf0:amd64 (2.38-3) over (2.38-2) ...
-Preparing to unpack .../03-libctf-nobfd0_2.38-3_amd64.deb ...
-Unpacking libctf-nobfd0:amd64 (2.38-3) over (2.38-2) ...
-Preparing to unpack .../04-binutils-x86-64-linux-gnu_2.38-3_amd64.deb ...
-Unpacking binutils-x86-64-linux-gnu (2.38-3) over (2.38-2) ...
-Preparing to unpack .../05-libbinutils_2.38-3_amd64.deb ...
-Unpacking libbinutils:amd64 (2.38-3) over (2.38-2) ...
-Preparing to unpack .../06-binutils_2.38-3_amd64.deb ...
-Unpacking binutils (2.38-3) over (2.38-2) ...
-Preparing to unpack .../07-binutils-common_2.38-3_amd64.deb ...
-Unpacking binutils-common:amd64 (2.38-3) over (2.38-2) ...
-Preparing to unpack .../08-firefox-esr_91.7.0esr-1_amd64.deb ...
-Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
-Unpacking firefox-esr (91.7.0esr-1) over (91.5.0esr-1) ...
-Preparing to unpack .../09-gir1.2-gdesktopenums-3.0_42~rc-1_amd64.deb ...
-Unpacking gir1.2-gdesktopenums-3.0:amd64 (42~rc-1) over (42~beta-1) ...
-Preparing to unpack .../10-gsettings-desktop-schemas_42~rc-1_all.deb ...
-Unpacking gsettings-desktop-schemas (42~rc-1) over (42~beta-1) ...
-Preparing to unpack .../11-libbdplus0_0.2.0-1_amd64.deb ...
-Unpacking libbdplus0:amd64 (0.2.0-1) over (0.1.2-3) ...
-Preparing to unpack .../12-mate-tweak_22.04.4-1_all.deb ...
-Unpacking mate-tweak (22.04.4-1) over (22.04.3-1) ...
-Preparing to unpack .../13-megasync_4.6.5-2.1_amd64.deb ...
-Unpacking megasync (4.6.5-2.1) over (4.6.3-5.1) ...
-Preparing to unpack .../14-metasploit-framework_6.1.34+20220314102557~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.34+20220314102557~1rapid7-1) over (6.1.33+20220307112559~1rapid7-1) ...
-Setting up gsettings-desktop-schemas (42~rc-1) ...
-Setting up mate-tweak (22.04.4-1) ...
-Setting up megasync (4.6.5-2.1) ...
-fs.inotify.max_user_watches = 524288
-Setting up binutils-common:amd64 (2.38-3) ...
-Setting up libctf-nobfd0:amd64 (2.38-3) ...
-Setting up metasploit-framework (6.1.34+20220314102557~1rapid7-1) ...
+Fetched 275 MB in 23s (11.9 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 649740 files and directories currently installed.)
+Preparing to unpack .../00-python3.9-dev_3.9.11-1_amd64.deb ...
+Unpacking python3.9-dev (3.9.11-1) over (3.9.10-2) ...
+Preparing to unpack .../01-libpython3.9-dev_3.9.11-1_amd64.deb ...
+Unpacking libpython3.9-dev:amd64 (3.9.11-1) over (3.9.10-2) ...
+Preparing to unpack .../02-libpython3.9_3.9.11-1_amd64.deb ...
+Unpacking libpython3.9:amd64 (3.9.11-1) over (3.9.10-2) ...
+Preparing to unpack .../03-python3.9_3.9.11-1_amd64.deb ...
+Unpacking python3.9 (3.9.11-1) over (3.9.10-2) ...
+Preparing to unpack .../04-libpython3.9-stdlib_3.9.11-1_amd64.deb ...
+Unpacking libpython3.9-stdlib:amd64 (3.9.11-1) over (3.9.10-2) ...
+Preparing to unpack .../05-python3.9-minimal_3.9.11-1_amd64.deb ...
+Unpacking python3.9-minimal (3.9.11-1) over (3.9.10-2) ...
+Preparing to unpack .../06-libpython3.9-minimal_3.9.11-1_amd64.deb ...
+Unpacking libpython3.9-minimal:amd64 (3.9.11-1) over (3.9.10-2) ...
+Preparing to unpack .../07-curl_7.81.0-1+b1_amd64.deb ...
+Unpacking curl (7.81.0-1+b1) over (7.81.0-1) ...
+Preparing to unpack .../08-libcurl4_7.81.0-1+b1_amd64.deb ...
+De-configuring libcurl4:i386 (7.81.0-1), to allow configuration of libcurl4:amd64 (7.81.0-1) ...
+Unpacking libcurl4:amd64 (7.81.0-1+b1) over (7.81.0-1) ...
+Preparing to unpack .../09-libcurl4_7.81.0-1+b1_i386.deb ...
+Unpacking libcurl4:i386 (7.81.0-1+b1) over (7.81.0-1) ...
+Preparing to unpack .../10-libcurl3-gnutls_7.81.0-1+b1_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.81.0-1+b1) over (7.81.0-1) ...
+Preparing to unpack .../11-metasploit-framework_6.1.35+20220321102602~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.35+20220321102602~1rapid7-1) over (6.1.34+20220314102557~1rapid7-1) ...
+Setting up libpython3.9-minimal:amd64 (3.9.11-1) ...
+Setting up libcurl3-gnutls:amd64 (7.81.0-1+b1) ...
+Setting up metasploit-framework (6.1.35+20220321102602~1rapid7-1) ...
 Run msfconsole to get started
-Setting up gir1.2-gdesktopenums-3.0:amd64 (42~rc-1) ...
-Setting up adwaita-icon-theme (42~really41.0-1) ...
-Setting up libbdplus0:amd64 (0.2.0-1) ...
-Setting up libbinutils:amd64 (2.38-3) ...
-Setting up firefox-esr (91.7.0esr-1) ...
-Setting up libctf0:amd64 (2.38-3) ...
-Setting up binutils-x86-64-linux-gnu (2.38-3) ...
-Setting up binutils (2.38-3) ...
-Setting up binutils-dev (2.38-3) ...
-Processing triggers for mailcap (3.70+nmu1) ...
+Setting up libcurl4:amd64 (7.81.0-1+b1) ...
+Setting up libcurl4:i386 (7.81.0-1+b1) ...
+Setting up curl (7.81.0-1+b1) ...
+Setting up python3.9-minimal (3.9.11-1) ...
+Setting up libpython3.9-stdlib:amd64 (3.9.11-1) ...
+Setting up libpython3.9:amd64 (3.9.11-1) ...
+Setting up python3.9 (3.9.11-1) ...
+Setting up libpython3.9-dev:amd64 (3.9.11-1) ...
+Setting up python3.9-dev (3.9.11-1) ...
 Processing triggers for bamfdaemon (0.5.6+repack-1) ...
 Rebuilding /usr/share/applications/bamf-2.index...
 Processing triggers for desktop-file-utils (0.26-1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for libglib2.0-0:amd64 (2.70.4-1) ...
-Processing triggers for libglib2.0-0:i386 (2.70.4-1) ...
 Processing triggers for libc-bin (2.33-7) ...
 Processing triggers for man-db (2.10.1-1) ...
+Processing triggers for mailcap (3.70+nmu1) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -177,25 +146,29 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages were automatically installed and are no longer required:
+  gcc-10-base:i386 libindicator3-7
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  gir1.2-appindicator3-0.1 libappindicator3-1
+The following packages will be upgraded:
+  libayatana-appindicator3-1
+1 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
+Need to get 25.5 kB of archives.
+After this operation, 164 kB disk space will be freed.
+Get:1 http://deb.debian.org/debian testing/main amd64 libayatana-appindicator3-1 amd64 0.5.90-7 [25.5 kB]
+apt-listchanges: Reading changelogs...
+Fetched 25.5 kB in 0s (117 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 649761 files and directories currently installed.)
+Removing gir1.2-appindicator3-0.1:amd64 (0.4.92-8) ...
+Removing libappindicator3-1:amd64 (0.4.92-8) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 649748 files and directories currently installed.)
+Preparing to unpack .../libayatana-appindicator3-1_0.5.90-7_amd64.deb ...
+Unpacking libayatana-appindicator3-1 (0.5.90-7) over (0.5.90-5) ...
+Setting up libayatana-appindicator3-1 (0.5.90-7) ...
+Processing triggers for libc-bin (2.33-7) ...
 
-[1;38;5;38mCleaning up system. . .[0m
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
+[1;38;5;58mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -203,16 +176,39 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 The following packages will be REMOVED:
-  linux-image-5.16.0-3-amd64*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 0 B of additional disk space will be used.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 633730 files and directories currently installed.)
-Purging configuration files for linux-image-5.16.0-3-amd64 (5.16.11-1) ...
+  gcc-10-base:i386 libindicator3-7
+0 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
+After this operation, 380 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 649747 files and directories currently installed.)
+Removing gcc-10-base:i386 (10.3.0-14) ...
+Removing libindicator3-7:amd64 (0.5.0-4) ...
+Processing triggers for libc-bin (2.33-7) ...
 
-[1;38;5;117mBacking up important files and apps. . .[0m
-[1;38;5;38mCreating list of apps, and copying repos from /etc/apt. . .[0m
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-[1;38;5;38mBacking up important config files. . .[0m
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
+removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
+removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/1c98d0aa59f68f9fd311b505d0da0fd4.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
+
+[1;38;5;185mBacking up important files and apps. . .[0m
+[1;38;5;58mCreating list of apps, and copying repos from /etc/apt. . .[0m
+
+[1;38;5;58mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -221,14 +217,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;38mBacking up crontab. . .[0m
+[1;38;5;58mBacking up crontab. . .[0m
 
-[1;38;5;38mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;58mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;117mUpdating local git repos. . .[0m
-[1;38;5;117mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;38mUpdating Projects. . .[0m
+[1;38;5;185mUpdating local git repos. . .[0m
+[1;38;5;185mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;58mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -236,7 +232,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;38mUpdating Documents. . .[0m
+[1;38;5;58mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -244,33 +240,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;38mUpdating scripts. . .[0m
-[master e6b818d] auto commit
- 7 files changed, 31524 insertions(+), 31646 deletions(-)
- rewrite cron_scripts/linux-update.log (77%)
- rewrite virus-freshclam.log (75%)
-To https://github.com/msifland/scripts
-   6701df2..e6b818d  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;38mUpdating pkg_bkups. . .[0m
-[master f0fd2d2] auto commit
- 10 files changed, 31 insertions(+), 18 deletions(-)
-To https://github.com/msifland/pkg_bkups
-   8b633c1..f0fd2d2  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;38mUpdating Modules-Apps. . .[0m
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
-Everything up-to-date
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;171mAll is good.[0m
-
-[1;38;5;117m
-03-14-2022 07:02:41 AM
-[1;38;5;117mIt took 2 minutes 40 seconds to run whole process.[0m
-[0m
+[1;38;5;58mUpdating scripts. . .[0m
