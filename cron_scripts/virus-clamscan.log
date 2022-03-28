@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;175m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;146m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;175m
+[1;38;5;146m
 Removing old build logs. . .
 
 [0m
-[1;38;5;175m
+[1;38;5;146m
 Start Time:
-Date: 03-21-22
-Time: 02:15:16 AM
+Date: 03-28-22
+Time: 02:15:17 AM
 
 Scanning: 
 /
@@ -108,26 +108,26 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8608469
+Known viruses: 8608944
 Engine version: 0.103.5
-Scanned directories: 72505
-Scanned files: 696970
+Scanned directories: 73745
+Scanned files: 708011
 Infected files: 0
-Total errors: 385
-Data scanned: 45420.84 MB
-Data read: 83684.33 MB (ratio 0.54:1)
-Time: 12251.695 sec (204 m 11 s)
-Start Date: 2022:03:21 02:15:24
-End Date:   2022:03:21 05:39:36
+Total errors: 386
+Data scanned: 45770.62 MB
+Data read: 84163.68 MB (ratio 0.54:1)
+Time: 12620.173 sec (210 m 20 s)
+Start Date: 2022:03:28 02:15:25
+End Date:   2022:03:28 05:45:45
 
 
 End Time:
-Date: 03-21-22
-Time: 05:39:36 AM
-It took 3 hours 24 minutes 20 seconds to scan your system.
+Date: 03-28-22
+Time: 05:45:45 AM
+It took 3 hours 30 minutes 28 seconds to scan your system.
 
 
-[1;38;5;175m
+[1;38;5;146m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
