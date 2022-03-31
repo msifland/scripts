@@ -181,3 +181,47 @@ Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
 [1;38;5;75mUpdating scripts. . .[0m
+[master dc29e5a] auto commit
+ 7 files changed, 33603 insertions(+), 33648 deletions(-)
+ rewrite cron_scripts/linux-update.log (78%)
+ rewrite virus-freshclam.log (75%)
+To https://github.com/msifland/scripts
+   29782c8..dc29e5a  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;75mUpdating pkg_bkups. . .[0m
+[master de0a911] auto commit
+ 21 files changed, 85 insertions(+), 106 deletions(-)
+ rewrite apt.old-1/sources.list (63%)
+ delete mode 100644 apt.old-1/sources.list.d/google-chrome.list
+ delete mode 100644 apt.old-1/trusted.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/deb-multimedia-keyring.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-bullseye-automatic.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-bullseye-security-automatic.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-bullseye-stable.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-buster-automatic.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-buster-security-automatic.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-buster-stable.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-stretch-automatic.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-stretch-security-automatic.gpg
+ delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-stretch-stable.gpg
+ rewrite apt.old-1/trusted.gpg~ (100%)
+ rename {apt.old-1 => apt.old}/trusted.gpg.d/google-chrome.gpg (100%)
+To https://github.com/msifland/pkg_bkups
+   6667587..de0a911  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;75mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;106mAll is good.[0m
+
+[1;38;5;93m
+03-28-2022 07:02:07 AM
+[1;38;5;93mIt took 2 minutes 6 seconds to run whole process.[0m
+[0m
