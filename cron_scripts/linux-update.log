@@ -1,61 +1,88 @@
-[H[2J[3J[1;38;5;155m           ###########    Updating your system now   ###########[0m
-[1;38;5;93m
-03-28-2022 07:00:01 AM
-Updating Linux debian 5.17.0-msi #1 SMP PREEMPT Sat Mar 26 03:01:41 CDT 2022 x86_64 GNU/Linux[0m
-[1;38;5;106mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;189m           ###########    Updating your system now   ###########[0m
+[1;38;5;244m
+04-04-2022 07:00:01 AM
+Updating Linux debian 5.17.1-msi #1 SMP PREEMPT Sat Apr 2 03:01:55 CDT 2022 x86_64 GNU/Linux[0m
+[1;38;5;13mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;75mUpdating sources and checking for app updates. . .[0m
+[1;38;5;68mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Get:1 http://deb.debian.org/debian testing InRelease [130 kB]
-Get:2 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
-Hit:3 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:1 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
+Hit:2 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
 Hit:4 https://download.sublimetext.com apt/stable/ InRelease
-Hit:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Get:6 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Hit:7 http://repository.spotify.com stable InRelease
-Hit:8 http://repo.sinew.in stable InRelease
-Hit:9 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:10 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Hit:11 http://deb.debian.org/debian stable InRelease
-Get:12 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
-Get:13 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:14 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:15 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:16 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:17 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Hit:18 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:19 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:20 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:21 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:22 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:23 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:24 http://deb.debian.org/debian testing/main Sources T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [3,427 B]
-Get:24 http://deb.debian.org/debian testing/main Sources T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [3,427 B]
-Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [6,984 B]
-Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [6,984 B]
-Get:26 http://deb.debian.org/debian testing/main amd64 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [7,165 B]
-Get:26 http://deb.debian.org/debian testing/main amd64 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [7,165 B]
-Get:27 http://deb.debian.org/debian unstable/main Sources T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [7,142 B]
-Get:27 http://deb.debian.org/debian unstable/main Sources T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [7,142 B]
-Get:28 http://deb.debian.org/debian unstable/main i386 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [9,054 B]
-Get:28 http://deb.debian.org/debian unstable/main i386 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [9,054 B]
-Get:29 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [13.4 kB]
-Get:29 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [13.4 kB]
-Get:30 http://deb.debian.org/debian unstable/main Translation-en T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [138 B]
-Get:30 http://deb.debian.org/debian unstable/main Translation-en T-2022-03-28-0813.24-F-2022-03-28-0813.24.pdiff [138 B]
-Get:31 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,365 kB]
-Get:32 http://www.deb-multimedia.org bullseye InRelease [17.8 kB]
-Get:33 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
-Get:34 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
-Fetched 5,584 kB in 11s (494 kB/s)
+Get:5 http://security.debian.org/debian-security stable-security/main Sources [110 kB]
+Hit:6 http://repository.spotify.com stable InRelease
+Hit:7 http://repo.sinew.in stable InRelease
+Get:8 http://security.debian.org/debian-security stable-security/main amd64 Packages [124 kB]
+Get:9 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
+Hit:10 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:11 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:12 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:13 http://deb.debian.org/debian testing InRelease [130 kB]
+Get:14 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
+Get:15 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Hit:16 http://deb.debian.org/debian stable InRelease
+Get:17 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:18 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:19 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:21 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:22 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:23 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:24 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:25 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:26 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [63.3 kB]
+Get:27 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:28 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:29 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:30 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:31 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:32 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
+Get:33 http://deb.debian.org/debian testing/main Sources T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [16.1 kB]
+Get:33 http://deb.debian.org/debian testing/main Sources T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [16.1 kB]
+Get:34 http://deb.debian.org/debian testing/non-free Sources T-2022-04-04-0803.45-F-2022-04-04-0203.00.pdiff [874 B]
+Get:34 http://deb.debian.org/debian testing/non-free Sources T-2022-04-04-0803.45-F-2022-04-04-0203.00.pdiff [874 B]
+Hit:35 http://www.deb-multimedia.org bullseye InRelease
+Get:36 http://deb.debian.org/debian testing/main amd64 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [22.4 kB]
+Get:36 http://deb.debian.org/debian testing/main amd64 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [22.4 kB]
+Get:37 http://deb.debian.org/debian testing/main i386 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [22.0 kB]
+Get:37 http://deb.debian.org/debian testing/main i386 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [22.0 kB]
+Get:38 http://deb.debian.org/debian testing/main Translation-en T-2022-04-04-0803.45-F-2022-04-03-1403.26.pdiff [1,734 B]
+Get:38 http://deb.debian.org/debian testing/main Translation-en T-2022-04-04-0803.45-F-2022-04-03-1403.26.pdiff [1,734 B]
+Get:39 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-04-04-0203.00-F-2022-04-04-0203.00.pdiff [742 B]
+Get:40 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-04-04-0203.00-F-2022-04-04-0203.00.pdiff [743 B]
+Get:41 http://deb.debian.org/debian testing/non-free Translation-en T-2022-04-04-0203.00-F-2022-04-04-0203.00.pdiff [312 B]
+Get:41 http://deb.debian.org/debian testing/non-free Translation-en T-2022-04-04-0203.00-F-2022-04-04-0203.00.pdiff [312 B]
+Get:42 http://deb.debian.org/debian unstable/main Sources T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [43.2 kB]
+Get:43 http://deb.debian.org/debian unstable/main i386 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [36.0 kB]
+Get:39 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-04-04-0203.00-F-2022-04-04-0203.00.pdiff [742 B]
+Get:40 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-04-04-0203.00-F-2022-04-04-0203.00.pdiff [743 B]
+Get:42 http://deb.debian.org/debian unstable/main Sources T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [43.2 kB]
+Get:43 http://deb.debian.org/debian unstable/main i386 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [36.0 kB]
+Get:44 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [36.6 kB]
+Get:44 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-04-04-0803.45-F-2022-04-03-0801.34.pdiff [36.6 kB]
+Get:45 http://deb.debian.org/debian unstable/main Translation-en T-2022-04-04-0203.00-F-2022-04-03-0801.34.pdiff [3,895 B]
+Get:45 http://deb.debian.org/debian unstable/main Translation-en T-2022-04-04-0203.00-F-2022-04-03-0801.34.pdiff [3,895 B]
+Get:46 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-04-04-0203.00-F-2022-04-03-1403.26.pdiff [855 B]
+Get:46 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-04-04-0203.00-F-2022-04-03-1403.26.pdiff [855 B]
+Get:47 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-04-04-0203.00-F-2022-04-03-1403.26.pdiff [832 B]
+Get:47 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-04-04-0203.00-F-2022-04-03-1403.26.pdiff [832 B]
+Get:48 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,149 kB]
+Get:49 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,426 kB]
+Get:50 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,106 kB]
+Get:51 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,360 kB]
+Get:52 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,668 kB]
+Get:53 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,612 kB]
+Get:54 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [15.5 kB]
+Fetched 32.1 MB in 17s (1,873 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-8 packages can be upgraded. Run 'apt list --upgradable' to see them.
+25 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;75mChecking for system upgrade. . .[0m
+[1;38;5;68mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -64,48 +91,132 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  cpp-10 gcc-10 gcc-10-base gcc-10-multilib lib32gcc-10-dev libgcc-10-dev
-  libx32gcc-10-dev metasploit-framework
-8 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 295 MB of archives.
-After this operation, 82.9 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 gcc-10-multilib amd64 10.3.0-15 [1,020 B]
-Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.36+20220326102556~1rapid7-1 [262 MB]
-Get:3 http://deb.debian.org/debian testing/main amd64 libx32gcc-10-dev amd64 10.3.0-15 [1,965 kB]
-Get:4 http://deb.debian.org/debian testing/main amd64 gcc-10 amd64 10.3.0-15 [17.1 MB]
-Get:5 http://deb.debian.org/debian testing/main amd64 libgcc-10-dev amd64 10.3.0-15 [2,324 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 lib32gcc-10-dev amd64 10.3.0-15 [2,178 kB]
-Get:7 http://deb.debian.org/debian testing/main amd64 cpp-10 amd64 10.3.0-15 [8,572 kB]
-Get:8 http://deb.debian.org/debian testing/main amd64 gcc-10-base amd64 10.3.0-15 [206 kB]
+  apt apt-utils chromium chromium-common chromium-sandbox
+  gnome-settings-daemon-common libapt-pkg6.0 libatk-wrapper-java
+  libatk-wrapper-java-jni libexpat1 libexpat1:i386 libexpat1-dev libglib2.0-0
+  libglib2.0-0:i386 libglib2.0-bin libglib2.0-dev libglib2.0-dev-bin
+  libgsf-1-114 libgsf-1-common libgsf-bin libnma-common libnma0
+  metasploit-framework network-manager-gnome printer-driver-escpr
+25 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 364 MB of archives.
+After this operation, 49.4 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 libapt-pkg6.0 amd64 2.4.4 [1,029 kB]
+Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.37+20220402102534~1rapid7-1 [286 MB]
+Get:3 http://deb.debian.org/debian testing/main amd64 apt amd64 2.4.4 [1,496 kB]
+Get:4 http://deb.debian.org/debian testing/main amd64 apt-utils amd64 2.4.4 [446 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 chromium amd64 100.0.4896.60-1 [61.9 MB]
+Get:6 http://deb.debian.org/debian testing/main amd64 chromium-sandbox amd64 100.0.4896.60-1 [120 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 chromium-common amd64 100.0.4896.60-1 [4,802 kB]
+Get:8 http://deb.debian.org/debian testing/main amd64 libexpat1-dev amd64 2.4.8-1 [159 kB]
+Get:9 http://deb.debian.org/debian testing/main i386 libexpat1 i386 2.4.8-1 [110 kB]
+Get:10 http://deb.debian.org/debian testing/main amd64 libexpat1 amd64 2.4.8-1 [109 kB]
+Get:11 http://deb.debian.org/debian testing/main amd64 libglib2.0-dev amd64 2.72.0-1+b1 [1,623 kB]
+Get:12 http://deb.debian.org/debian testing/main amd64 libglib2.0-dev-bin amd64 2.72.0-1+b1 [186 kB]
+Get:13 http://deb.debian.org/debian testing/main amd64 libglib2.0-bin amd64 2.72.0-1+b1 [147 kB]
+Get:14 http://deb.debian.org/debian testing/main i386 libglib2.0-0 i386 2.72.0-1+b1 [1,492 kB]
+Get:15 http://deb.debian.org/debian testing/main amd64 libglib2.0-0 amd64 2.72.0-1+b1 [1,426 kB]
+Get:16 http://deb.debian.org/debian testing/main amd64 gnome-settings-daemon-common all 42.1-2 [626 kB]
+Get:17 http://deb.debian.org/debian testing/main amd64 libatk-wrapper-java all 0.40.0-1 [65.1 kB]
+Get:18 http://deb.debian.org/debian testing/main amd64 libatk-wrapper-java-jni amd64 0.40.0-1 [56.8 kB]
+Get:19 http://deb.debian.org/debian testing/main amd64 libgsf-1-common all 1.14.49-1 [162 kB]
+Get:20 http://deb.debian.org/debian testing/main amd64 libgsf-1-114 amd64 1.14.49-1 [161 kB]
+Get:21 http://deb.debian.org/debian testing/main amd64 libgsf-bin amd64 1.14.49-1 [78.0 kB]
+Get:22 http://deb.debian.org/debian testing/main amd64 libnma0 amd64 1.8.36-1 [96.2 kB]
+Get:23 http://deb.debian.org/debian testing/main amd64 libnma-common all 1.8.36-1 [146 kB]
+Get:24 http://deb.debian.org/debian testing/main amd64 network-manager-gnome amd64 1.26.0-1 [919 kB]
+Get:25 http://deb.debian.org/debian testing/main amd64 printer-driver-escpr amd64 1.7.17-3 [307 kB]
 apt-listchanges: Reading changelogs...
-Fetched 295 MB in 25s (11.9 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 668302 files and directories currently installed.)
-Preparing to unpack .../0-gcc-10-multilib_10.3.0-15_amd64.deb ...
-Unpacking gcc-10-multilib (10.3.0-15) over (10.3.0-14) ...
-Preparing to unpack .../1-libx32gcc-10-dev_10.3.0-15_amd64.deb ...
-Unpacking libx32gcc-10-dev (10.3.0-15) over (10.3.0-14) ...
-Preparing to unpack .../2-gcc-10_10.3.0-15_amd64.deb ...
-Unpacking gcc-10 (10.3.0-15) over (10.3.0-14) ...
-Preparing to unpack .../3-libgcc-10-dev_10.3.0-15_amd64.deb ...
-Unpacking libgcc-10-dev:amd64 (10.3.0-15) over (10.3.0-14) ...
-Preparing to unpack .../4-lib32gcc-10-dev_10.3.0-15_amd64.deb ...
-Unpacking lib32gcc-10-dev (10.3.0-15) over (10.3.0-14) ...
-Preparing to unpack .../5-cpp-10_10.3.0-15_amd64.deb ...
-Unpacking cpp-10 (10.3.0-15) over (10.3.0-14) ...
-Preparing to unpack .../6-gcc-10-base_10.3.0-15_amd64.deb ...
-Unpacking gcc-10-base:amd64 (10.3.0-15) over (10.3.0-14) ...
-Preparing to unpack .../7-metasploit-framework_6.1.36+20220326102556~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.36+20220326102556~1rapid7-1) over (6.1.35+20220321102602~1rapid7-1) ...
-Setting up metasploit-framework (6.1.36+20220326102556~1rapid7-1) ...
+Fetched 364 MB in 29s (12.4 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 686865 files and directories currently installed.)
+Preparing to unpack .../libapt-pkg6.0_2.4.4_amd64.deb ...
+Unpacking libapt-pkg6.0:amd64 (2.4.4) over (2.4.3) ...
+Setting up libapt-pkg6.0:amd64 (2.4.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 686865 files and directories currently installed.)
+Preparing to unpack .../archives/apt_2.4.4_amd64.deb ...
+Unpacking apt (2.4.4) over (2.4.3) ...
+Setting up apt (2.4.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 686865 files and directories currently installed.)
+Preparing to unpack .../00-apt-utils_2.4.4_amd64.deb ...
+Unpacking apt-utils (2.4.4) over (2.4.3) ...
+Preparing to unpack .../01-chromium_100.0.4896.60-1_amd64.deb ...
+Unpacking chromium (100.0.4896.60-1) over (99.0.4844.84-1) ...
+Preparing to unpack .../02-chromium-sandbox_100.0.4896.60-1_amd64.deb ...
+Unpacking chromium-sandbox (100.0.4896.60-1) over (99.0.4844.84-1) ...
+Preparing to unpack .../03-chromium-common_100.0.4896.60-1_amd64.deb ...
+Unpacking chromium-common (100.0.4896.60-1) over (99.0.4844.84-1) ...
+Preparing to unpack .../04-libexpat1-dev_2.4.8-1_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.4.8-1) over (2.4.7-1) ...
+Preparing to unpack .../05-libexpat1_2.4.8-1_amd64.deb ...
+De-configuring libexpat1:i386 (2.4.7-1), to allow configuration of libexpat1:amd64 (2.4.7-1) ...
+Unpacking libexpat1:amd64 (2.4.8-1) over (2.4.7-1) ...
+Preparing to unpack .../06-libexpat1_2.4.8-1_i386.deb ...
+Unpacking libexpat1:i386 (2.4.8-1) over (2.4.7-1) ...
+Preparing to unpack .../07-libglib2.0-dev_2.72.0-1+b1_amd64.deb ...
+Unpacking libglib2.0-dev:amd64 (2.72.0-1+b1) over (2.72.0-1) ...
+Preparing to unpack .../08-libglib2.0-dev-bin_2.72.0-1+b1_amd64.deb ...
+Unpacking libglib2.0-dev-bin (2.72.0-1+b1) over (2.72.0-1) ...
+Preparing to unpack .../09-libglib2.0-bin_2.72.0-1+b1_amd64.deb ...
+Unpacking libglib2.0-bin (2.72.0-1+b1) over (2.72.0-1) ...
+Preparing to unpack .../10-libglib2.0-0_2.72.0-1+b1_amd64.deb ...
+De-configuring libglib2.0-0:i386 (2.72.0-1), to allow configuration of libglib2.0-0:amd64 (2.72.0-1) ...
+Unpacking libglib2.0-0:amd64 (2.72.0-1+b1) over (2.72.0-1) ...
+Preparing to unpack .../11-libglib2.0-0_2.72.0-1+b1_i386.deb ...
+Unpacking libglib2.0-0:i386 (2.72.0-1+b1) over (2.72.0-1) ...
+Preparing to unpack .../12-gnome-settings-daemon-common_42.1-2_all.deb ...
+Unpacking gnome-settings-daemon-common (42.1-2) over (41.0-4) ...
+Preparing to unpack .../13-libatk-wrapper-java_0.40.0-1_all.deb ...
+Unpacking libatk-wrapper-java (0.40.0-1) over (0.38.0-5) ...
+Preparing to unpack .../14-libatk-wrapper-java-jni_0.40.0-1_amd64.deb ...
+Unpacking libatk-wrapper-java-jni:amd64 (0.40.0-1) over (0.38.0-5) ...
+Preparing to unpack .../15-libgsf-1-common_1.14.49-1_all.deb ...
+Unpacking libgsf-1-common (1.14.49-1) over (1.14.47-1) ...
+Preparing to unpack .../16-libgsf-1-114_1.14.49-1_amd64.deb ...
+Unpacking libgsf-1-114:amd64 (1.14.49-1) over (1.14.47-1+b1) ...
+Preparing to unpack .../17-libgsf-bin_1.14.49-1_amd64.deb ...
+Unpacking libgsf-bin (1.14.49-1) over (1.14.47-1+b1) ...
+Preparing to unpack .../18-libnma0_1.8.36-1_amd64.deb ...
+Unpacking libnma0:amd64 (1.8.36-1) over (1.8.34-1) ...
+Preparing to unpack .../19-libnma-common_1.8.36-1_all.deb ...
+Unpacking libnma-common (1.8.36-1) over (1.8.34-1) ...
+Preparing to unpack .../20-network-manager-gnome_1.26.0-1_amd64.deb ...
+Unpacking network-manager-gnome (1.26.0-1) over (1.24.0-2) ...
+Preparing to unpack .../21-printer-driver-escpr_1.7.17-3_amd64.deb ...
+Unpacking printer-driver-escpr (1.7.17-3) over (1.7.17-2) ...
+Preparing to unpack .../22-metasploit-framework_6.1.37+20220402102534~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.37+20220402102534~1rapid7-1) over (6.1.36+20220330102555~1rapid7-1) ...
+Setting up libexpat1:amd64 (2.4.8-1) ...
+Setting up libexpat1:i386 (2.4.8-1) ...
+Setting up libgsf-1-common (1.14.49-1) ...
+Setting up apt-utils (2.4.4) ...
+Setting up gnome-settings-daemon-common (42.1-2) ...
+Setting up libglib2.0-0:amd64 (2.72.0-1+b1) ...
+Setting up libglib2.0-0:i386 (2.72.0-1+b1) ...
+Setting up libglib2.0-bin (2.72.0-1+b1) ...
+Setting up printer-driver-escpr (1.7.17-3) ...
+Setting up metasploit-framework (6.1.37+20220402102534~1rapid7-1) ...
 Run msfconsole to get started
-Setting up gcc-10-base:amd64 (10.3.0-15) ...
-Setting up lib32gcc-10-dev (10.3.0-15) ...
-Setting up cpp-10 (10.3.0-15) ...
-Setting up libx32gcc-10-dev (10.3.0-15) ...
-Setting up libgcc-10-dev:amd64 (10.3.0-15) ...
-Setting up gcc-10 (10.3.0-15) ...
-Setting up gcc-10-multilib (10.3.0-15) ...
+Setting up chromium-sandbox (100.0.4896.60-1) ...
+Setting up libgsf-1-114:amd64 (1.14.49-1) ...
+Setting up libexpat1-dev:amd64 (2.4.8-1) ...
+Setting up libgsf-bin (1.14.49-1) ...
+Setting up libnma-common (1.8.36-1) ...
+Setting up chromium-common (100.0.4896.60-1) ...
+Setting up chromium (100.0.4896.60-1) ...
+Setting up libatk-wrapper-java (0.40.0-1) ...
+Setting up libglib2.0-dev-bin (2.72.0-1+b1) ...
+Setting up libnma0:amd64 (1.8.36-1) ...
+Setting up libatk-wrapper-java-jni:amd64 (0.40.0-1) ...
+Setting up libglib2.0-dev:amd64 (2.72.0-1+b1) ...
+Setting up network-manager-gnome (1.26.0-1) ...
 Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1) ...
+Processing triggers for bamfdaemon (0.5.6+repack-1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for cups (2.4.1op1-2) ...
+Updating PPD files for escpr ...
+Processing triggers for libc-bin (2.33-7) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -115,7 +226,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;75mCleaning up system. . .[0m
+[1;38;5;68mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -138,17 +249,12 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages will be REMOVED:
-  linux-image-5.16.0-4-amd64*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 0 B of additional disk space will be used.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 668306 files and directories currently installed.)
-Purging configuration files for linux-image-5.16.0-4-amd64 (5.16.12-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;93mBacking up important files and apps. . .[0m
-[1;38;5;75mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;244mBacking up important files and apps. . .[0m
+[1;38;5;68mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;75mBacking up important config files. . .[0m
+[1;38;5;68mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -157,14 +263,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;75mBacking up crontab. . .[0m
+[1;38;5;68mBacking up crontab. . .[0m
 
-[1;38;5;75mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;68mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;93mUpdating local git repos. . .[0m
-[1;38;5;93mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;75mUpdating Projects. . .[0m
+[1;38;5;244mUpdating local git repos. . .[0m
+[1;38;5;244mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;68mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -172,7 +278,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;75mUpdating Documents. . .[0m
+[1;38;5;68mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -180,48 +286,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;75mUpdating scripts. . .[0m
-[master dc29e5a] auto commit
- 7 files changed, 33603 insertions(+), 33648 deletions(-)
- rewrite cron_scripts/linux-update.log (78%)
- rewrite virus-freshclam.log (75%)
-To https://github.com/msifland/scripts
-   29782c8..dc29e5a  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;75mUpdating pkg_bkups. . .[0m
-[master de0a911] auto commit
- 21 files changed, 85 insertions(+), 106 deletions(-)
- rewrite apt.old-1/sources.list (63%)
- delete mode 100644 apt.old-1/sources.list.d/google-chrome.list
- delete mode 100644 apt.old-1/trusted.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/deb-multimedia-keyring.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-bullseye-automatic.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-bullseye-security-automatic.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-bullseye-stable.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-buster-automatic.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-buster-security-automatic.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-buster-stable.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-stretch-automatic.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-stretch-security-automatic.gpg
- delete mode 100644 apt.old-1/trusted.gpg.d/debian-archive-stretch-stable.gpg
- rewrite apt.old-1/trusted.gpg~ (100%)
- rename {apt.old-1 => apt.old}/trusted.gpg.d/google-chrome.gpg (100%)
-To https://github.com/msifland/pkg_bkups
-   6667587..de0a911  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;75mUpdating Modules-Apps. . .[0m
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
-Everything up-to-date
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;106mAll is good.[0m
-
-[1;38;5;93m
-03-28-2022 07:02:07 AM
-[1;38;5;93mIt took 2 minutes 6 seconds to run whole process.[0m
-[0m
+[1;38;5;68mUpdating scripts. . .[0m
