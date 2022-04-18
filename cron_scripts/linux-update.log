@@ -1,37 +1,70 @@
-[H[2J[3J[1;38;5;12m           ###########    Updating your system now   ###########[0m
-[1;38;5;219m
-04-11-2022 07:00:01 AM
-Updating Linux debian 5.17.2-msi #1 SMP PREEMPT Sat Apr 9 03:01:36 CDT 2022 x86_64 GNU/Linux[0m
-[1;38;5;157mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;229m           ###########    Updating your system now   ###########[0m
+[1;38;5;158m
+04-18-2022 07:00:01 AM
+Updating Linux debian 5.17.3-msi #1 SMP PREEMPT Sat Apr 16 03:02:00 CDT 2022 x86_64 GNU/Linux[0m
+[1;38;5;205mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;176mUpdating sources and checking for app updates. . .[0m
+[1;38;5;222mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://security.debian.org/debian-security stable-security InRelease
-Hit:2 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:4 https://download.sublimetext.com apt/stable/ InRelease
-Hit:5 http://deb.debian.org/debian testing InRelease
-Hit:6 http://repository.spotify.com stable InRelease
-Hit:7 http://repo.sinew.in stable InRelease
-Hit:8 http://deb.debian.org/debian testing-updates InRelease
-Hit:9 http://deb.debian.org/debian-security testing-security InRelease
-Get:10 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
-Hit:11 http://deb.debian.org/debian stable InRelease
-Hit:12 http://deb.debian.org/debian stable-updates InRelease
-Hit:13 http://deb.debian.org/debian unstable InRelease
-Hit:14 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:15 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:16 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Hit:17 http://www.deb-multimedia.org bullseye InRelease
-Fetched 2,981 B in 10s (306 B/s)
+Get:1 http://deb.debian.org/debian testing InRelease [130 kB]
+Hit:2 http://security.debian.org/debian-security stable-security InRelease
+Hit:3 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:5 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:6 https://download.sublimetext.com apt/stable/ InRelease
+Hit:7 http://repository.spotify.com stable InRelease
+Get:8 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
+Hit:9 http://repo.sinew.in stable InRelease
+Hit:10 http://deb.debian.org/debian-security testing-security InRelease
+Get:11 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
+Hit:12 http://deb.debian.org/debian stable InRelease
+Get:13 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:14 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:15 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:16 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:17 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:18 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:19 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:21 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Hit:22 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:23 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:24 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:25 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:26 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:27 http://deb.debian.org/debian testing/non-free Sources T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [285 B]
+Get:27 http://deb.debian.org/debian testing/non-free Sources T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [285 B]
+Get:28 http://deb.debian.org/debian testing/main Sources T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [29.8 kB]
+Get:28 http://deb.debian.org/debian testing/main Sources T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [29.8 kB]
+Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [33.9 kB]
+Get:29 http://deb.debian.org/debian testing/main i386 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [33.9 kB]
+Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [34.7 kB]
+Get:30 http://deb.debian.org/debian testing/main amd64 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [34.7 kB]
+Get:31 http://deb.debian.org/debian testing/main Translation-en T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [5,036 B]
+Get:31 http://deb.debian.org/debian testing/main Translation-en T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [5,036 B]
+Get:32 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [4,208 B]
+Get:33 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [4,439 B]
+Get:34 http://deb.debian.org/debian unstable/main Sources T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [8,303 B]
+Get:35 http://deb.debian.org/debian unstable/main i386 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [7,454 B]
+Get:35 http://deb.debian.org/debian unstable/main i386 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [7,454 B]
+Get:32 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [4,208 B]
+Get:36 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [7,343 B]
+Get:33 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-04-18-0201.52-F-2022-04-18-0201.52.pdiff [4,439 B]
+Get:34 http://deb.debian.org/debian unstable/main Sources T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [8,303 B]
+Get:36 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-04-18-0801.38-F-2022-04-18-0201.52.pdiff [7,343 B]
+Get:37 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,394 kB]
+Get:38 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,689 kB]
+Get:39 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,643 kB]
+Hit:40 http://www.deb-multimedia.org bullseye InRelease
+Fetched 16.9 MB in 11s (1,539 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+16 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;176mChecking for system upgrade. . .[0m
+[1;38;5;222mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -39,122 +72,98 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following NEW packages will be installed:
+  libosinfo-l10n
 The following packages will be upgraded:
-  firefox-esr libnspr4 libnss3 libperl-dev libperl5.34 librist4
-  metasploit-framework openjdk-11-jre openjdk-11-jre-headless openssh-client
-  openssh-server openssh-sftp-server perl perl-base perl-doc perl-modules-5.34
-  wpasupplicant
-17 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 287 MB/404 MB of archives.
-After this operation, 2,577 kB of additional disk space will be used.
-Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.38+20220410102532~1rapid7-1 [287 MB]
+  chromium chromium-common chromium-sandbox cups-browsed cups-filters
+  cups-filters-core-drivers installation-report libcupsfilters1 libevent-2.1-7
+  libfontembed1 libjs-sphinxdoc libosinfo-1.0-0 metasploit-framework
+  python3-sphinx sphinx-common usb-modeswitch-data
+16 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 357 MB of archives.
+After this operation, 633 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 libcupsfilters1 amd64 1.28.15-1 [146 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 cups-browsed amd64 1.28.15-1 [162 kB]
+Get:3 http://deb.debian.org/debian testing/main amd64 chromium amd64 100.0.4896.127-1 [61.9 MB]
+Get:4 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.39+20220417102536~1rapid7-1 [287 MB]
+Get:5 http://deb.debian.org/debian testing/main amd64 chromium-sandbox amd64 100.0.4896.127-1 [120 kB]
+Get:6 http://deb.debian.org/debian testing/main amd64 chromium-common amd64 100.0.4896.127-1 [4,802 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 libevent-2.1-7 amd64 2.1.12-stable-4 [186 kB]
+Get:8 http://deb.debian.org/debian testing/main amd64 cups-filters-core-drivers amd64 1.28.15-1 [226 kB]
+Get:9 http://deb.debian.org/debian testing/main amd64 libfontembed1 amd64 1.28.15-1 [75.6 kB]
+Get:10 http://deb.debian.org/debian testing/main amd64 cups-filters amd64 1.28.15-1 [592 kB]
+Get:11 http://deb.debian.org/debian testing/main amd64 installation-report all 2.80 [20.3 kB]
+Get:12 http://deb.debian.org/debian testing/main amd64 python3-sphinx all 4.5.0-3 [540 kB]
+Get:13 http://deb.debian.org/debian testing/main amd64 sphinx-common all 4.5.0-3 [638 kB]
+Get:14 http://deb.debian.org/debian testing/main amd64 libjs-sphinxdoc all 4.5.0-3 [142 kB]
+Get:15 http://deb.debian.org/debian testing/main amd64 libosinfo-l10n all 1.10.0-1 [176 kB]
+Get:16 http://deb.debian.org/debian testing/main amd64 libosinfo-1.0-0 amd64 1.10.0-1 [226 kB]
+Get:17 http://deb.debian.org/debian testing/main amd64 usb-modeswitch-data all 20191128-5 [47.9 kB]
 apt-listchanges: Reading changelogs...
-apt-listchanges: News
----------------------
-
-openssh (1:9.0p1-1) unstable; urgency=medium
-
-  OpenSSH 9.0 includes a number of changes that may affect existing
-  configurations:
-
-   * This release switches scp(1) from using the legacy scp/rcp protocol to
-     using the SFTP protocol by default.
-
-     Legacy scp/rcp performs wildcard expansion of remote filenames (e.g.
-     "scp host:* .") through the remote shell. This has the side effect of
-     requiring double quoting of shell meta-characters in file names
-     included on scp(1) command-lines, otherwise they could be interpreted
-     as shell commands on the remote side.
-
-     This creates one area of potential incompatibility: scp(1) when using
-     the SFTP protocol no longer requires this finicky and brittle quoting,
-     and attempts to use it may cause transfers to fail. We consider the
-     removal of the need for double-quoting shell characters in file names
-     to be a benefit and do not intend to introduce bug-compatibility for
-     legacy scp/rcp in scp(1) when using the SFTP protocol.
-
-     Another area of potential incompatibility relates to the use of remote
-     paths relative to other user's home directories, for example - "scp
-     host:~user/file /tmp". The SFTP protocol has no native way to expand a
-     ~user path. However, sftp-server(8) in OpenSSH 8.7 and later support a
-     protocol extension "expand-path@openssh.com" to support this.
-
-     In case of incompatibility, the scp(1) client may be instructed to use
-     the legacy scp/rcp using the -O flag.
-
- -- Colin Watson <cjwatson@debian.org>  Sat, 09 Apr 2022 14:14:10 +0100
-
-apt-listchanges: Mailing root: apt-listchanges: news for debian
-Preconfiguring packages ...
-Fetched 287 MB in 26s (11.0 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 705138 files and directories currently installed.)
-Preparing to unpack .../libperl-dev_5.34.0-4_amd64.deb ...
-Unpacking libperl-dev:amd64 (5.34.0-4) over (5.34.0-3) ...
-Preparing to unpack .../libperl5.34_5.34.0-4_amd64.deb ...
-Unpacking libperl5.34:amd64 (5.34.0-4) over (5.34.0-3) ...
-Preparing to unpack .../perl_5.34.0-4_amd64.deb ...
-Unpacking perl (5.34.0-4) over (5.34.0-3) ...
-Preparing to unpack .../perl-base_5.34.0-4_amd64.deb ...
-Unpacking perl-base (5.34.0-4) over (5.34.0-3) ...
-Setting up perl-base (5.34.0-4) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 705138 files and directories currently installed.)
-Preparing to unpack .../00-perl-modules-5.34_5.34.0-4_all.deb ...
-Unpacking perl-modules-5.34 (5.34.0-4) over (5.34.0-3) ...
-Preparing to unpack .../01-openssh-sftp-server_1%3a9.0p1-1_amd64.deb ...
-Unpacking openssh-sftp-server (1:9.0p1-1) over (1:8.9p1-3) ...
-Preparing to unpack .../02-openssh-server_1%3a9.0p1-1_amd64.deb ...
-Unpacking openssh-server (1:9.0p1-1) over (1:8.9p1-3) ...
-Preparing to unpack .../03-openssh-client_1%3a9.0p1-1_amd64.deb ...
-Unpacking openssh-client (1:9.0p1-1) over (1:8.9p1-3) ...
-Preparing to unpack .../04-libnspr4_2%3a4.33-1_amd64.deb ...
-Unpacking libnspr4:amd64 (2:4.33-1) over (2:4.32-3) ...
-Preparing to unpack .../05-libnss3_2%3a3.77-1_amd64.deb ...
-Unpacking libnss3:amd64 (2:3.77-1) over (2:3.75-1) ...
-Preparing to unpack .../06-firefox-esr_91.8.0esr-1_amd64.deb ...
-Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
-Unpacking firefox-esr (91.8.0esr-1) over (91.7.0esr-1) ...
-Preparing to unpack .../07-librist4_0.2.7+dfsg-1_amd64.deb ...
-Unpacking librist4:amd64 (0.2.7+dfsg-1) over (0.2.6+dfsg-3) ...
-Preparing to unpack .../08-openjdk-11-jre_11.0.14.1+1-1_amd64.deb ...
-Unpacking openjdk-11-jre:amd64 (11.0.14.1+1-1) over (11.0.14+9-1) ...
-Preparing to unpack .../09-openjdk-11-jre-headless_11.0.14.1+1-1_amd64.deb ...
-Unpacking openjdk-11-jre-headless:amd64 (11.0.14.1+1-1) over (11.0.14+9-1) ...
-Preparing to unpack .../10-perl-doc_5.34.0-4_all.deb ...
-Leaving 'diversion of /usr/bin/perldoc to /usr/bin/perldoc.stub by perl-doc'
-Unpacking perl-doc (5.34.0-4) over (5.34.0-3) ...
-Preparing to unpack .../11-wpasupplicant_2%3a2.10-8_amd64.deb ...
-Unpacking wpasupplicant (2:2.10-8) over (2:2.9.0-23) ...
-Preparing to unpack .../12-metasploit-framework_6.1.38+20220410102532~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.38+20220410102532~1rapid7-1) over (6.1.37+20220402102534~1rapid7-1) ...
-Setting up openssh-client (1:9.0p1-1) ...
-Setting up metasploit-framework (6.1.38+20220410102532~1rapid7-1) ...
+Fetched 357 MB in 32s (11.3 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 723564 files and directories currently installed.)
+Preparing to unpack .../00-libcupsfilters1_1.28.15-1_amd64.deb ...
+Unpacking libcupsfilters1:amd64 (1.28.15-1) over (1.28.14-1) ...
+Preparing to unpack .../01-cups-browsed_1.28.15-1_amd64.deb ...
+Unpacking cups-browsed (1.28.15-1) over (1.28.14-1) ...
+Preparing to unpack .../02-chromium_100.0.4896.127-1_amd64.deb ...
+Unpacking chromium (100.0.4896.127-1) over (100.0.4896.88-1) ...
+Preparing to unpack .../03-chromium-sandbox_100.0.4896.127-1_amd64.deb ...
+Unpacking chromium-sandbox (100.0.4896.127-1) over (100.0.4896.88-1) ...
+Preparing to unpack .../04-chromium-common_100.0.4896.127-1_amd64.deb ...
+Unpacking chromium-common (100.0.4896.127-1) over (100.0.4896.88-1) ...
+Preparing to unpack .../05-libevent-2.1-7_2.1.12-stable-4_amd64.deb ...
+Unpacking libevent-2.1-7:amd64 (2.1.12-stable-4) over (2.1.12-stable-3) ...
+Preparing to unpack .../06-cups-filters-core-drivers_1.28.15-1_amd64.deb ...
+Unpacking cups-filters-core-drivers (1.28.15-1) over (1.28.14-1) ...
+Preparing to unpack .../07-libfontembed1_1.28.15-1_amd64.deb ...
+Unpacking libfontembed1:amd64 (1.28.15-1) over (1.28.14-1) ...
+Preparing to unpack .../08-cups-filters_1.28.15-1_amd64.deb ...
+Unpacking cups-filters (1.28.15-1) over (1.28.14-1) ...
+Preparing to unpack .../09-installation-report_2.80_all.deb ...
+Unpacking installation-report (2.80) over (2.79) ...
+Preparing to unpack .../10-python3-sphinx_4.5.0-3_all.deb ...
+Unpacking python3-sphinx (4.5.0-3) over (4.5.0-1) ...
+Preparing to unpack .../11-sphinx-common_4.5.0-3_all.deb ...
+Unpacking sphinx-common (4.5.0-3) over (4.5.0-1) ...
+Preparing to unpack .../12-libjs-sphinxdoc_4.5.0-3_all.deb ...
+Unpacking libjs-sphinxdoc (4.5.0-3) over (4.5.0-1) ...
+Selecting previously unselected package libosinfo-l10n.
+Preparing to unpack .../13-libosinfo-l10n_1.10.0-1_all.deb ...
+Unpacking libosinfo-l10n (1.10.0-1) ...
+Preparing to unpack .../14-libosinfo-1.0-0_1.10.0-1_amd64.deb ...
+Unpacking libosinfo-1.0-0:amd64 (1.10.0-1) over (1.8.0-1) ...
+Preparing to unpack .../15-usb-modeswitch-data_20191128-5_all.deb ...
+Unpacking usb-modeswitch-data (20191128-5) over (20191128-4) ...
+Preparing to unpack .../16-metasploit-framework_6.1.39+20220417102536~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.39+20220417102536~1rapid7-1) over (6.1.38+20220410102532~1rapid7-1) ...
+Setting up libfontembed1:amd64 (1.28.15-1) ...
+Setting up installation-report (2.80) ...
+Setting up metasploit-framework (6.1.39+20220417102536~1rapid7-1) ...
 Run msfconsole to get started
-Setting up perl-modules-5.34 (5.34.0-4) ...
-Setting up librist4:amd64 (0.2.7+dfsg-1) ...
-Setting up wpasupplicant (2:2.10-8) ...
-Installing new version of config file /etc/dbus-1/system.d/wpa_supplicant.conf ...
-Setting up libnspr4:amd64 (2:4.33-1) ...
-Setting up openssh-sftp-server (1:9.0p1-1) ...
-Setting up libperl5.34:amd64 (5.34.0-4) ...
-Setting up openssh-server (1:9.0p1-1) ...
-rescue-ssh.target is a disabled or a static unit not running, not starting it.
-ssh.socket is a disabled or a static unit not running, not starting it.
-Setting up libnss3:amd64 (2:3.77-1) ...
-Setting up perl (5.34.0-4) ...
-Setting up firefox-esr (91.8.0esr-1) ...
-Setting up openjdk-11-jre-headless:amd64 (11.0.14.1+1-1) ...
-Setting up perl-doc (5.34.0-4) ...
-Setting up libperl-dev:amd64 (5.34.0-4) ...
-Setting up openjdk-11-jre:amd64 (11.0.14.1+1-1) ...
-Processing triggers for man-db (2.10.2-1) ...
-Processing triggers for dbus (1.14.0-1) ...
-Processing triggers for mailcap (3.70+nmu1) ...
+Setting up chromium-sandbox (100.0.4896.127-1) ...
+Setting up usb-modeswitch-data (20191128-5) ...
+Setting up libevent-2.1-7:amd64 (2.1.12-stable-4) ...
+Setting up libjs-sphinxdoc (4.5.0-3) ...
+Setting up chromium-common (100.0.4896.127-1) ...
+Setting up chromium (100.0.4896.127-1) ...
+Setting up libcupsfilters1:amd64 (1.28.15-1) ...
+Setting up libosinfo-l10n (1.10.0-1) ...
+Setting up cups-browsed (1.28.15-1) ...
+Setting up cups-filters-core-drivers (1.28.15-1) ...
+Setting up libosinfo-1.0-0:amd64 (1.10.0-1) ...
+Setting up sphinx-common (4.5.0-3) ...
+Setting up cups-filters (1.28.15-1) ...
+Setting up python3-sphinx (4.5.0-3) ...
 Processing triggers for bamfdaemon (0.5.6+repack-1) ...
 Rebuilding /usr/share/applications/bamf-2.index...
 Processing triggers for desktop-file-utils (0.26-1) ...
 Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for cups (2.4.1op1-2) ...
+Updating PPD files for cups-filters ...
 Processing triggers for libc-bin (2.33-7) ...
-Processing triggers for ufw (0.36.1-4) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -164,7 +173,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;176mCleaning up system. . .[0m
+[1;38;5;222mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -187,17 +196,12 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages will be REMOVED:
-  linux-image-5.16.0-5-amd64*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 0 B of additional disk space will be used.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 705318 files and directories currently installed.)
-Purging configuration files for linux-image-5.16.0-5-amd64 (5.16.14-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;219mBacking up important files and apps. . .[0m
-[1;38;5;176mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;158mBacking up important files and apps. . .[0m
+[1;38;5;222mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;176mBacking up important config files. . .[0m
+[1;38;5;222mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -206,14 +210,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;176mBacking up crontab. . .[0m
+[1;38;5;222mBacking up crontab. . .[0m
 
-[1;38;5;176mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;222mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;219mUpdating local git repos. . .[0m
-[1;38;5;219mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;176mUpdating Projects. . .[0m
+[1;38;5;158mUpdating local git repos. . .[0m
+[1;38;5;158mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;222mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -221,7 +225,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;176mUpdating Documents. . .[0m
+[1;38;5;222mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -229,4 +233,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;176mUpdating scripts. . .[0m
+[1;38;5;222mUpdating scripts. . .[0m
