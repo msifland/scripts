@@ -216,3 +216,33 @@ Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
 [1;38;5;31mUpdating scripts. . .[0m
+[master b252a9e] auto commit
+ 8 files changed, 31392 insertions(+), 31545 deletions(-)
+ rewrite virus-freshclam.log (75%)
+To https://github.com/msifland/scripts
+   5133d24..b252a9e  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;31mUpdating pkg_bkups. . .[0m
+[master cf1aa5a] auto commit
+ 6 files changed, 19 insertions(+), 15 deletions(-)
+ delete mode 100644 apt.old-1/apt.conf.d/01autoremove-kernels
+ delete mode 160000 backups/screenFetch
+To https://github.com/msifland/pkg_bkups
+   6d2ba4e..cf1aa5a  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;31mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;145mAll is good.[0m
+
+[1;38;5;177m
+05-02-2022 07:02:46 AM
+[1;38;5;177mIt took 2 minutes 45 seconds to run whole process.[0m
+[0m
