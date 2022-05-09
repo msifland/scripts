@@ -1,4 +1,56 @@
-Mon May  2 02:00:01 2022 -> ClamAV update process started at Mon May  2 02:00:01 2022
-Mon May  2 02:00:01 2022 -> daily.cld database is up-to-date (version: 26528, sigs: 1982802, f-level: 90, builder: raynman)
-Mon May  2 02:00:01 2022 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon May  2 02:00:01 2022 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+Mon May  9 02:00:01 2022 -> ClamAV update process started at Mon May  9 02:00:01 2022
+Mon May  9 02:00:01 2022 -> ^Can't query current.cvd.clamav.net
+Mon May  9 02:00:01 2022 -> ^Invalid DNS reply. Falling back to HTTP mode.
+Mon May  9 02:00:01 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:01 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:01 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:01 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:01 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:01 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:06 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:06 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:06 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:06 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:06 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:06 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:11 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:11 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:11 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:11 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:11 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:11 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:16 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:16 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:16 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:16 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:16 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:16 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:21 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:21 2022 -> !remote_cvdhead: Download failed (6) Mon May  9 02:00:21 2022 -> ! Message: Couldn't resolve host name
+Mon May  9 02:00:21 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:21 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:21 2022 -> Giving up on https://database.clamav.net...
+Mon May  9 02:00:21 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:21 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:21 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:21 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:21 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:21 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:26 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:26 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:26 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:26 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:26 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:26 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:31 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:31 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:31 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:31 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:31 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:31 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:36 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:36 2022 -> ^remote_cvdhead: Download failed (6) Mon May  9 02:00:36 2022 -> ^ Message: Couldn't resolve host name
+Mon May  9 02:00:36 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:36 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:36 2022 -> Trying again in 5 secs...
+Mon May  9 02:00:41 2022 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon May  9 02:00:41 2022 -> !remote_cvdhead: Download failed (6) Mon May  9 02:00:41 2022 -> ! Message: Couldn't resolve host name
+Mon May  9 02:00:41 2022 -> ^Failed to get daily database version information from server: https://database.clamav.net
+Mon May  9 02:00:41 2022 -> !check_for_new_database_version: Failed to find daily database using server https://database.clamav.net.
+Mon May  9 02:00:41 2022 -> Giving up on https://database.clamav.net...
+Mon May  9 02:00:41 2022 -> !Update failed for database: daily
+Mon May  9 02:00:41 2022 -> !Database update process failed: HTTP GET failed
+Mon May  9 02:00:41 2022 -> !Update failed.
