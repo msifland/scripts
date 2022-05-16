@@ -1,122 +1,85 @@
-[H[2J[3J[1;38;5;172m           ###########    Updating your system now   ###########[0m
-[1;38;5;50m
-05-09-2022 07:00:02 AM
-Updating Linux debian 5.17.5-msi #1 SMP PREEMPT Sat Apr 30 03:01:35 CDT 2022 x86_64 GNU/Linux[0m
-[1;38;5;13mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;251m           ###########    Updating your system now   ###########[0m
+[1;38;5;135m
+05-16-2022 07:00:01 AM
+Updating Linux debian 5.17.7-msi #1 SMP PREEMPT Sat May 14 03:01:40 CDT 2022 x86_64 GNU/Linux[0m
+[1;38;5;74mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;94mUpdating sources and checking for app updates. . .[0m
+[1;38;5;175mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Ign:1 http://security.debian.org/debian-security stable-security InRelease
-Ign:2 http://repository.spotify.com stable InRelease
-Ign:3 http://deb.debian.org/debian testing InRelease
-Ign:4 http://repo.sinew.in stable InRelease
-Ign:5 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Ign:6 https://dl.winehq.org/wine-builds/debian sid InRelease
-Ign:7 https://download.sublimetext.com apt/stable/ InRelease
-Ign:8 http://deb.debian.org/debian testing-updates InRelease
-Ign:9 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Ign:10 http://deb.debian.org/debian-security testing-security InRelease
-Ign:11 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Ign:12 http://deb.debian.org/debian stable InRelease
-Ign:13 http://www.deb-multimedia.org bullseye InRelease
-Ign:14 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease
-Ign:15 http://deb.debian.org/debian stable-updates InRelease
-Ign:16 http://deb.debian.org/debian unstable InRelease
-Ign:17 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Ign:3 http://deb.debian.org/debian testing InRelease
-Ign:1 http://security.debian.org/debian-security stable-security InRelease
-Ign:13 http://www.deb-multimedia.org bullseye InRelease
-Ign:4 http://repo.sinew.in stable InRelease
-Ign:5 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Ign:2 http://repository.spotify.com stable InRelease
-Ign:6 https://dl.winehq.org/wine-builds/debian sid InRelease
-Ign:7 https://download.sublimetext.com apt/stable/ InRelease
-Ign:8 http://deb.debian.org/debian testing-updates InRelease
-Ign:9 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Ign:14 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease
-Ign:17 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Ign:10 http://deb.debian.org/debian-security testing-security InRelease
-Ign:11 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Ign:12 http://deb.debian.org/debian stable InRelease
-Ign:15 http://deb.debian.org/debian stable-updates InRelease
-Ign:16 http://deb.debian.org/debian unstable InRelease
-Ign:3 http://deb.debian.org/debian testing InRelease
-Ign:1 http://security.debian.org/debian-security stable-security InRelease
-Ign:13 http://www.deb-multimedia.org bullseye InRelease
-Ign:4 http://repo.sinew.in stable InRelease
-Ign:5 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Ign:2 http://repository.spotify.com stable InRelease
-Ign:6 https://dl.winehq.org/wine-builds/debian sid InRelease
-Ign:7 https://download.sublimetext.com apt/stable/ InRelease
-Ign:8 http://deb.debian.org/debian testing-updates InRelease
-Ign:9 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Ign:17 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Ign:14 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease
-Ign:10 http://deb.debian.org/debian-security testing-security InRelease
-Ign:11 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Ign:12 http://deb.debian.org/debian stable InRelease
-Ign:15 http://deb.debian.org/debian stable-updates InRelease
-Ign:16 http://deb.debian.org/debian unstable InRelease
-Err:3 http://deb.debian.org/debian testing InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:1 http://security.debian.org/debian-security stable-security InRelease
-  Temporary failure resolving 'security.debian.org'
-Err:13 http://www.deb-multimedia.org bullseye InRelease
-  Temporary failure resolving 'www.deb-multimedia.org'
-Err:4 http://repo.sinew.in stable InRelease
-  Temporary failure resolving 'repo.sinew.in'
-Err:2 http://repository.spotify.com stable InRelease
-  Temporary failure resolving 'repository.spotify.com'
-Err:6 https://dl.winehq.org/wine-builds/debian sid InRelease
-  Temporary failure resolving 'dl.winehq.org'
-Err:7 https://download.sublimetext.com apt/stable/ InRelease
-  Temporary failure resolving 'download.sublimetext.com'
-Err:14 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease
-  Temporary failure resolving 'mega.nz'
-Err:8 http://deb.debian.org/debian testing-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:5 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-  Temporary failure resolving 'ppa.launchpad.net'
-Err:17 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-  Temporary failure resolving 'downloads.metasploit.com'
-Err:9 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-  Temporary failure resolving 'ppa.launchpad.net'
-Err:10 http://deb.debian.org/debian-security testing-security InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:11 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-  Temporary failure resolving 'ppa.launchpad.net'
-Err:12 http://deb.debian.org/debian stable InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:15 http://deb.debian.org/debian stable-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:16 http://deb.debian.org/debian unstable InRelease
-  Temporary failure resolving 'deb.debian.org'
+Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:2 https://dl.winehq.org/wine-builds/debian sid InRelease
+Get:3 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
+Get:4 http://deb.debian.org/debian testing InRelease [130 kB]
+Hit:5 https://download.sublimetext.com apt/stable/ InRelease
+Hit:6 http://repository.spotify.com stable InRelease
+Get:7 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
+Hit:8 http://repo.sinew.in stable InRelease
+Get:9 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Hit:10 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:11 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
+Hit:12 http://deb.debian.org/debian stable InRelease
+Get:13 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:14 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:15 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:16 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:17 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:18 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:19 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:21 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:22 http://deb.debian.org/debian testing/non-free Sources T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [423 B]
+Get:22 http://deb.debian.org/debian testing/non-free Sources T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [423 B]
+Get:23 http://deb.debian.org/debian testing/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [11.7 kB]
+Get:23 http://deb.debian.org/debian testing/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [11.7 kB]
+Get:24 http://deb.debian.org/debian testing/main amd64 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
+Get:24 http://deb.debian.org/debian testing/main amd64 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
+Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
+Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
+Get:26 http://deb.debian.org/debian testing/main Translation-en T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [2,147 B]
+Get:26 http://deb.debian.org/debian testing/main Translation-en T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [2,147 B]
+Get:27 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [760 B]
+Get:28 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:29 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:27 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [760 B]
+Get:30 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:31 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:32 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
+Get:33 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
+Hit:34 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:35 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:36 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [766 B]
+Get:36 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [766 B]
+Get:37 http://deb.debian.org/debian unstable/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [34.3 kB]
+Get:37 http://deb.debian.org/debian unstable/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [34.3 kB]
+Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [118 kB]
+Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [118 kB]
+Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [114 kB]
+Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [114 kB]
+Get:40 http://deb.debian.org/debian unstable/main Translation-en T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [3,767 B]
+Get:41 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [2,421 B]
+Get:42 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [3,212 B]
+Get:40 http://deb.debian.org/debian unstable/main Translation-en T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [3,767 B]
+Get:41 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [2,421 B]
+Get:42 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [3,212 B]
+Get:43 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,211 kB]
+Get:44 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.1 kB]
+Get:45 http://deb.debian.org/debian testing/non-free DEP-11 48x48 Icons [739 B]
+Get:46 http://deb.debian.org/debian testing/non-free DEP-11 64x64 Icons [23.4 kB]
+Get:47 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,385 kB]
+Get:48 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,687 kB]
+Get:49 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,640 kB]
+Get:50 http://deb.debian.org/debian unstable/non-free DEP-11 48x48 Icons [29 B]
+Get:51 http://deb.debian.org/debian unstable/non-free DEP-11 64x64 Icons [21.1 kB]
+Hit:52 http://www.deb-multimedia.org bullseye InRelease
+Fetched 21.6 MB in 12s (1,832 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-1 package can be upgraded. Run 'apt list --upgradable' to see it.
-W: Failed to fetch http://deb.debian.org/debian/dists/testing/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/testing-updates/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian-security/dists/testing-security/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/stable/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/stable-updates/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://security.debian.org/debian-security/dists/stable-security/InRelease  Temporary failure resolving 'security.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/unstable/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://www.deb-multimedia.org/dists/bullseye/InRelease  Temporary failure resolving 'www.deb-multimedia.org'
-W: Failed to fetch http://repo.sinew.in/dists/stable/InRelease  Temporary failure resolving 'repo.sinew.in'
-W: Failed to fetch http://ppa.launchpad.net/openshot.developers/ppa/ubuntu/dists/bionic/InRelease  Temporary failure resolving 'ppa.launchpad.net'
-W: Failed to fetch http://ppa.launchpad.net/snwh/pulp/ubuntu/dists/bionic/InRelease  Temporary failure resolving 'ppa.launchpad.net'
-W: Failed to fetch http://ppa.launchpad.net/papirus/papirus/ubuntu/dists/bionic/InRelease  Temporary failure resolving 'ppa.launchpad.net'
-W: Failed to fetch http://repository.spotify.com/dists/stable/InRelease  Temporary failure resolving 'repository.spotify.com'
-W: Failed to fetch https://dl.winehq.org/wine-builds/debian/dists/sid/InRelease  Temporary failure resolving 'dl.winehq.org'
-W: Failed to fetch https://download.sublimetext.com/apt/stable/InRelease  Temporary failure resolving 'download.sublimetext.com'
-W: Failed to fetch https://mega.nz/linux/repo/Debian_10.0/./InRelease  Temporary failure resolving 'mega.nz'
-W: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/dists/lucid/InRelease  Temporary failure resolving 'downloads.metasploit.com'
-W: Some index files failed to download. They have been ignored, or old ones used instead.
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;94mChecking for system upgrade. . .[0m
+[1;38;5;175mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -125,17 +88,27 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  metasploit-framework
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 287 MB of archives.
-After this operation, 4,096 B of additional disk space will be used.
-Ign:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-Ign:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-Ign:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-Err:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-  Temporary failure resolving 'downloads.metasploit.com'
-E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/pool/main/m/metasploit-framework/metasploit-framework_6.1.42%2b20220507102519%7e1rapid7-1_amd64.deb  Temporary failure resolving 'downloads.metasploit.com'
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+  libwireplumber-0.4-0 metasploit-framework wireplumber
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 288 MB of archives.
+After this operation, 732 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 wireplumber amd64 0.4.10-1 [73.8 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 libwireplumber-0.4-0 amd64 0.4.10-1 [240 kB]
+Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.43+20220515102550~1rapid7-1 [287 MB]
+apt-listchanges: Reading changelogs...
+Fetched 288 MB in 28s (10.2 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 509301 files and directories currently installed.)
+Preparing to unpack .../wireplumber_0.4.10-1_amd64.deb ...
+Unpacking wireplumber (0.4.10-1) over (0.4.9-1) ...
+Preparing to unpack .../libwireplumber-0.4-0_0.4.10-1_amd64.deb ...
+Unpacking libwireplumber-0.4-0:amd64 (0.4.10-1) over (0.4.9-1) ...
+Preparing to unpack .../metasploit-framework_6.1.43+20220515102550~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.43+20220515102550~1rapid7-1) over (6.1.42+20220506132752~1rapid7-1) ...
+Setting up libwireplumber-0.4-0:amd64 (0.4.10-1) ...
+Setting up metasploit-framework (6.1.43+20220515102550~1rapid7-1) ...
+Run msfconsole to get started
+Setting up wireplumber (0.4.10-1) ...
+Processing triggers for libc-bin (2.33-7) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -143,27 +116,16 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  metasploit-framework
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 287 MB of archives.
-After this operation, 4,096 B of additional disk space will be used.
-Ign:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-Ign:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-Ign:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-Err:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.42+20220507102519~1rapid7-1
-  Temporary failure resolving 'downloads.metasploit.com'
-E: Failed to fetch http://downloads.metasploit.com/data/releases/metasploit-framework/apt/pool/main/m/metasploit-framework/metasploit-framework_6.1.42%2b20220507102519%7e1rapid7-1_amd64.deb  Temporary failure resolving 'downloads.metasploit.com'
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;94mCleaning up system. . .[0m
+[1;38;5;175mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -179,13 +141,12 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
-removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;50mBacking up important files and apps. . .[0m
-[1;38;5;94mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;135mBacking up important files and apps. . .[0m
+[1;38;5;175mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;94mBacking up important config files. . .[0m
+[1;38;5;175mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -194,25 +155,27 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;94mBacking up crontab. . .[0m
+[1;38;5;175mBacking up crontab. . .[0m
 
-[1;38;5;94mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;175mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;50mUpdating local git repos. . .[0m
-[1;38;5;50mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;94mUpdating Projects. . .[0m
+[1;38;5;135mUpdating local git repos. . .[0m
+[1;38;5;135mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;175mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-fatal: unable to access 'https://github.com/msifland/Projects.git/': Could not resolve host: github.com
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
 
-[1;38;5;94mUpdating Documents. . .[0m
+[1;38;5;175mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-fatal: unable to access 'https://github.com/msifland/Documents.git/': Could not resolve host: github.com
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
 
-[1;38;5;94mUpdating scripts. . .[0m
+[1;38;5;175mUpdating scripts. . .[0m
