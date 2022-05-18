@@ -1,9 +1,9 @@
 [sudo] password for msifland: 
 
-05-16-2022 01:30:01 AM
+05-18-2022 01:30:03 AM
 
 [1;38;5;135mRemove old backups first. . .[0m
-/home/msifland/Dropbox/Backups/msifland-05-12-2022.tar.gz
+/home/msifland/Dropbox/Backups/msifland-05-14-2022.tar.gz
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 
 [1;38;5;135mBacking up:[0m
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;135mTo /home/msifland/Dropbox/Backups/msifland-05-16-2022.tar.gz
+[1;38;5;135mTo /home/msifland/Dropbox/Backups/msifland-05-18-2022.tar.gz
 
 
 Excluding:[0m
@@ -78,17 +78,17 @@ tar: Exiting with failure status due to previous errors
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-05-16-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-05-16-2022.tar.gz
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-05-18-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-05-18-2022.tar.gz
 [1;38;5;135mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
-total 1.6G
--rw-r--r-- 1 msifland msifland 392M May 13 01:30 msifland-05-13-2022.tar.gz
--rw-r--r-- 1 msifland msifland 383M May 14 01:36 msifland-05-14-2022.tar.gz
+total 1.5G
 -rw-r--r-- 1 msifland msifland 383M May 15 01:36 msifland-05-15-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 383M May 16 01:30 msifland-05-16-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K May 16 01:30 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 384M May 17 01:30 msifland-05-17-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 384M May 18 01:35 msifland-05-18-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K May 18 01:35 my_backup_log.txt
 
 [1;38;5;135mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-05-16-2022 01:30:40 AM
-[1;38;5;135mIt took 0 minutes 39 seconds to run whole process.[0m
+05-18-2022 01:35:10 AM
+[1;38;5;135mIt took 5 minutes 7 seconds to run whole process.[0m
 
