@@ -2,9 +2,9 @@
 
 # Dependencies: program mkgmap, osmium. Also a mkgmap, gmt, and mkgmap-splitter folder downloaded from source.
 # Switching to map directory and display what maps we are downloading
-
+DEVICE="/media/msifland/GARMIN"
 function build_map(){
-	shopt -s casematch
+	shopt -u nocasematch
 	### Log date and time
 	echo -e ${ILCOLOR1}
 	DATE_START=$(date +"%s")
@@ -222,18 +222,18 @@ function build_map(){
 		echo
 		echo "${ILCOLOR1}Checking for Garmin Device. . .${ILRESTORE}"
 		sleep 1
-		if [[ -d "/media/msifland/D216-4B4C" ]]; then
+		if [[ -d "$DEVICE" ]]; then
 			echo "Garming device found. . ."
 			echo
 			sleep 1
-			if [[ -f /media/msifland/D216-4B4C/Garmin/my_se_gmapsupp.img ]];then
+			if [[ -f "$DEVICE"/Garmin/my_se_gmapsupp.img ]];then
 				echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-				rm -rf /media/msifland/D216-4B4C/Garmin/my_se_gmapsupp.img
+				rm -rf "$DEVICE"/Garmin/my_se_gmapsupp.img
 				echo
 				sleep 1
 			fi
 			echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-			rsync --progress --verbose $HOME/maps/my_se_gmapsupp.img /media/msifland/D216-4B4C/Garmin/my_se_gmapsupp.img
+			rsync --progress --verbose $HOME/maps/my_se_gmapsupp.img "$DEVICE"/Garmin/my_se_gmapsupp.img
 		else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
@@ -271,7 +271,7 @@ function build_map(){
 function garmin_check(){
 	shopt -s nocasematch
 	sleep 1
-	if [[ -d "/media/msifland/D216-4B4C" ]]; then
+	if [[ -d "/"$DEVICE"" ]]; then
 		echo "Garmin device found. . ."
 		echo
 		sleep 1
@@ -304,4 +304,5 @@ echo
 chck=""
 
 # Call check function.
-garmin_check
+#garmin_check
+build_map
