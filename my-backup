@@ -43,10 +43,8 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/maps/*.img
 --exclude=$HOME/maps/*.old
 --exclude=$HOME/maps/Combine
---exclude=$HOME/maps/US_Midwest
---exclude=$HOME/maps/US_South
 --exclude=$HOME/maps/downloads
---exclude=$HOME/maps/tennessee
+--exclude=$HOME/maps/Garmin_Maps_Removed_From_Device
 --exclude=$HOME/.config/chrome-remote-desktop
 --exclude=$HOME/.config/chromium
 --exclude=$HOME/.config/google-chrome
