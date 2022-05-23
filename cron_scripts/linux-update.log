@@ -1,85 +1,78 @@
-[H[2J[3J[1;38;5;251m           ###########    Updating your system now   ###########[0m
-[1;38;5;135m
-05-16-2022 07:00:01 AM
-Updating Linux debian 5.17.7-msi #1 SMP PREEMPT Sat May 14 03:01:40 CDT 2022 x86_64 GNU/Linux[0m
-[1;38;5;74mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;202m           ###########    Updating your system now   ###########[0m
+[1;38;5;173m
+05-23-2022 07:00:02 AM
+Updating Linux debian 5.17.9-msi #1 SMP PREEMPT Sat May 21 03:01:55 CDT 2022 x86_64 GNU/Linux[0m
+[1;38;5;166mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;175mUpdating sources and checking for app updates. . .[0m
+[1;38;5;201mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:1 http://security.debian.org/debian-security stable-security InRelease
 Hit:2 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:3 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
-Get:4 http://deb.debian.org/debian testing InRelease [130 kB]
-Hit:5 https://download.sublimetext.com apt/stable/ InRelease
-Hit:6 http://repository.spotify.com stable InRelease
-Get:7 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Hit:8 http://repo.sinew.in stable InRelease
-Get:9 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Hit:10 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:11 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
-Hit:12 http://deb.debian.org/debian stable InRelease
-Get:13 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:14 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:15 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
-Get:16 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:17 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:18 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:19 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:20 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
-Get:21 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:22 http://deb.debian.org/debian testing/non-free Sources T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [423 B]
-Get:22 http://deb.debian.org/debian testing/non-free Sources T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [423 B]
-Get:23 http://deb.debian.org/debian testing/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [11.7 kB]
-Get:23 http://deb.debian.org/debian testing/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [11.7 kB]
-Get:24 http://deb.debian.org/debian testing/main amd64 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
-Get:24 http://deb.debian.org/debian testing/main amd64 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
-Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
-Get:25 http://deb.debian.org/debian testing/main i386 Packages T-2022-05-16-0227.58-F-2022-05-15-2012.16.pdiff [14.5 kB]
-Get:26 http://deb.debian.org/debian testing/main Translation-en T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [2,147 B]
-Get:26 http://deb.debian.org/debian testing/main Translation-en T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [2,147 B]
-Get:27 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [760 B]
-Get:28 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:29 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:27 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [760 B]
-Get:30 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:31 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:32 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
-Get:33 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
-Hit:34 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:35 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:36 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [766 B]
-Get:36 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-05-16-0227.58-F-2022-05-16-0227.58.pdiff [766 B]
-Get:37 http://deb.debian.org/debian unstable/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [34.3 kB]
-Get:37 http://deb.debian.org/debian unstable/main Sources T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [34.3 kB]
-Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [118 kB]
-Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [118 kB]
-Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [114 kB]
-Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [114 kB]
-Get:40 http://deb.debian.org/debian unstable/main Translation-en T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [3,767 B]
-Get:41 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [2,421 B]
-Get:42 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [3,212 B]
-Get:40 http://deb.debian.org/debian unstable/main Translation-en T-2022-05-16-0823.27-F-2022-05-15-2012.16.pdiff [3,767 B]
-Get:41 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [2,421 B]
-Get:42 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-05-16-0823.27-F-2022-05-16-0227.58.pdiff [3,212 B]
-Get:43 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,211 kB]
-Get:44 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.1 kB]
-Get:45 http://deb.debian.org/debian testing/non-free DEP-11 48x48 Icons [739 B]
-Get:46 http://deb.debian.org/debian testing/non-free DEP-11 64x64 Icons [23.4 kB]
-Get:47 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,385 kB]
-Get:48 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,687 kB]
-Get:49 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,640 kB]
-Get:50 http://deb.debian.org/debian unstable/non-free DEP-11 48x48 Icons [29 B]
-Get:51 http://deb.debian.org/debian unstable/non-free DEP-11 64x64 Icons [21.1 kB]
-Hit:52 http://www.deb-multimedia.org bullseye InRelease
-Fetched 21.6 MB in 12s (1,832 kB/s)
+Get:3 http://deb.debian.org/debian testing InRelease [130 kB]
+Hit:4 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:5 http://repository.spotify.com stable InRelease
+Hit:6 https://download.sublimetext.com apt/stable/ InRelease
+Get:7 http://repo.sinew.in stable InRelease [3,216 B]
+Get:8 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
+Hit:9 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Get:10 http://repo.sinew.in stable/main i386 Packages [3,083 B]
+Hit:11 http://deb.debian.org/debian-security testing-security InRelease
+Get:12 http://repo.sinew.in stable/main amd64 Packages [5,698 B]
+Get:13 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
+Hit:14 http://deb.debian.org/debian stable InRelease
+Get:15 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Hit:16 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Get:17 http://deb.debian.org/debian unstable InRelease [165 kB]
+Get:18 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Hit:19 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Get:20 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,218 kB]
+Get:21 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,524 kB]
+Get:22 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,260 kB]
+Get:23 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.1 kB]
+Get:24 http://deb.debian.org/debian testing/contrib DEP-11 48x48 Icons [46.4 kB]
+Get:25 http://deb.debian.org/debian testing/contrib DEP-11 64x64 Icons [93.2 kB]
+Get:26 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.4 kB]
+Get:27 http://deb.debian.org/debian testing/non-free DEP-11 48x48 Icons [3,135 B]
+Get:28 http://deb.debian.org/debian testing/non-free DEP-11 64x64 Icons [26.8 kB]
+Get:29 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:30 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:31 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:32 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:33 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:34 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:35 http://deb.debian.org/debian testing/main Sources T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [47 B]
+Get:35 http://deb.debian.org/debian testing/main Sources T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [47 B]
+Get:36 http://deb.debian.org/debian unstable/main Sources T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [2,894 B]
+Get:36 http://deb.debian.org/debian unstable/main Sources T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [2,894 B]
+Get:37 http://deb.debian.org/debian unstable/non-free Sources T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [31 B]
+Get:37 http://deb.debian.org/debian unstable/non-free Sources T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [31 B]
+Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [4,854 B]
+Get:38 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [4,854 B]
+Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [4,285 B]
+Get:39 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [4,285 B]
+Get:40 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [5,799 B]
+Get:40 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [5,799 B]
+Get:41 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [329 B]
+Get:41 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-05-23-0810.14-F-2022-05-23-0810.14.pdiff [329 B]
+Get:42 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,399 kB]
+Get:43 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,732 kB]
+Get:44 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,729 kB]
+Get:45 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.1 kB]
+Get:46 http://deb.debian.org/debian unstable/non-free DEP-11 48x48 Icons [3,135 B]
+Get:47 http://deb.debian.org/debian unstable/non-free DEP-11 64x64 Icons [26.8 kB]
+Get:48 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [15.6 kB]
+Get:49 http://deb.debian.org/debian unstable/contrib DEP-11 48x48 Icons [48.1 kB]
+Get:50 http://deb.debian.org/debian unstable/contrib DEP-11 64x64 Icons [95.5 kB]
+Hit:51 http://www.deb-multimedia.org bullseye InRelease
+Fetched 32.1 MB in 12s (2,620 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
 
-[1;38;5;175mChecking for system upgrade. . .[0m
+[1;38;5;201mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -88,27 +81,18 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  libwireplumber-0.4-0 metasploit-framework wireplumber
-3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 288 MB of archives.
-After this operation, 732 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 wireplumber amd64 0.4.10-1 [73.8 kB]
-Get:2 http://deb.debian.org/debian testing/main amd64 libwireplumber-0.4-0 amd64 0.4.10-1 [240 kB]
-Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.43+20220515102550~1rapid7-1 [287 MB]
+  metasploit-framework
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 287 MB of archives.
+After this operation, 50.2 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.1.44+20220520102558~1rapid7-1 [287 MB]
 apt-listchanges: Reading changelogs...
-Fetched 288 MB in 28s (10.2 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 509301 files and directories currently installed.)
-Preparing to unpack .../wireplumber_0.4.10-1_amd64.deb ...
-Unpacking wireplumber (0.4.10-1) over (0.4.9-1) ...
-Preparing to unpack .../libwireplumber-0.4-0_0.4.10-1_amd64.deb ...
-Unpacking libwireplumber-0.4-0:amd64 (0.4.10-1) over (0.4.9-1) ...
-Preparing to unpack .../metasploit-framework_6.1.43+20220515102550~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.1.43+20220515102550~1rapid7-1) over (6.1.42+20220506132752~1rapid7-1) ...
-Setting up libwireplumber-0.4-0:amd64 (0.4.10-1) ...
-Setting up metasploit-framework (6.1.43+20220515102550~1rapid7-1) ...
+Fetched 287 MB in 25s (11.4 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 532424 files and directories currently installed.)
+Preparing to unpack .../metasploit-framework_6.1.44+20220520102558~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.1.44+20220520102558~1rapid7-1) over (6.1.43+20220518102628~1rapid7-1) ...
+Setting up metasploit-framework (6.1.44+20220520102558~1rapid7-1) ...
 Run msfconsole to get started
-Setting up wireplumber (0.4.10-1) ...
-Processing triggers for libc-bin (2.33-7) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -118,7 +102,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;175mCleaning up system. . .[0m
+[1;38;5;201mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -142,11 +126,29 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+removed '/home/msifland/.cache/thumbnails/normal/40ff9b12061ac4cadb1ce8311decc056.png'
+removed '/home/msifland/.cache/thumbnails/normal/9c36bcaa10d1d1c7b92ffecb678fe92a.png'
+removed '/home/msifland/.cache/thumbnails/normal/a75f0843fc931ad236898e4a6e3d0144.png'
+removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
+removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
+removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
+removed '/home/msifland/.cache/thumbnails/normal/f5772d55e7dd1998ba0f056a04d3eb4d.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/029f7c0d35f33ddb4a2df353f2d11f31.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/1c98d0aa59f68f9fd311b505d0da0fd4.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/1de383f7ad7461f98ce8239737eaa94d.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/66e8bf3cf9a0b6d5993be3d601c6ad43.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/8110a2c74e1598d0c559d76972c4a4c2.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/98473c54ec8d35074ccea486121bd474.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/bcab7d0c4cb75007d83582f9404552e3.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/cdee1685f21b594e51036f1da00de4e5.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/d8fee7cb6be0a8357162b6445cf4ae3e.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
+removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/fcde08065a349d6ecf05fddbba96c65c.png'
 
-[1;38;5;135mBacking up important files and apps. . .[0m
-[1;38;5;175mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;173mBacking up important files and apps. . .[0m
+[1;38;5;201mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;175mBacking up important config files. . .[0m
+[1;38;5;201mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -155,14 +157,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;175mBacking up crontab. . .[0m
+[1;38;5;201mBacking up crontab. . .[0m
 
-[1;38;5;175mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;201mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;135mUpdating local git repos. . .[0m
-[1;38;5;135mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;175mUpdating Projects. . .[0m
+[1;38;5;173mUpdating local git repos. . .[0m
+[1;38;5;173mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;201mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -170,7 +172,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;175mUpdating Documents. . .[0m
+[1;38;5;201mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -178,35 +180,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;175mUpdating scripts. . .[0m
-[master 641c975] auto commit
- 8 files changed, 43415 insertions(+), 326 deletions(-)
- rewrite cron_scripts/kernel-check.log (96%)
- rewrite cron_scripts/linux-update.log (87%)
- rewrite virus-freshclam.log (100%)
-To https://github.com/msifland/scripts
-   c24d5bf..641c975  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;175mUpdating pkg_bkups. . .[0m
-[master 6e7989c] auto commit
- 3 files changed, 12 insertions(+), 32 deletions(-)
- delete mode 160000 backups/screenFetch
-To https://github.com/msifland/pkg_bkups
-   2d99491..6e7989c  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;175mUpdating Modules-Apps. . .[0m
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
-Everything up-to-date
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;74mAll is good.[0m
-
-[1;38;5;135m
-05-16-2022 07:01:53 AM
-[1;38;5;135mIt took 1 minutes 52 seconds to run whole process.[0m
-[0m
+[1;38;5;201mUpdating scripts. . .[0m

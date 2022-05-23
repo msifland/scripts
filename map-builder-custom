@@ -1,0 +1,128 @@
+#!/bin/bash
+
+cd $HOME/maps
+DEVICE="/media/msifland/GARMIN"
+echo
+echo "${ILCOLOR1}This scripts allows you to build a custom state map for your garmin device...${ILRESTORE}"
+sleep 1
+
+echo
+echo -n "Type the State name you would like to build?[regions can also be built like this - us-south, us-midwest, us-northeast, and us-west] "
+read STATE
+sleep 1
+### Log date and time
+DATE_START=$(date +"%s")
+echo "Build Start Time:"
+DATE=$(date +"%m-%d-%y")
+echo "Date: $DATE"
+TIME=$(date +"%r")
+echo "Time: $TIME"
+echo
+
+echo
+echo "${ILCOLOR1}Starting process of downloading and building Garmin map of Geofarik maps:${ILRESTORE} "$STATE
+sleep 1
+if [[ $STATE = us* ]]; then
+	URL="http://download.geofabrik.de/north-america/"
+else
+	URL="http://download.geofabrik.de/north-america/us/"
+fi
+# Create directories if they don't exist.
+	if [[ ! -d "$HOME/maps" ]]; then
+	mkdir "$HOME/maps"
+	fi
+	if [[ ! -d "$HOME/maps/Combine" ]]; then
+	mkdir "$HOME/maps/Combine"
+fi
+if [[ ! -d "$HOME/maps/downloads" ]]; then
+		mkdir "$HOME/maps/downloads"
+	else
+		rm -rf $HOME/maps/downloads/*
+fi
+if [[ -f $HOME/maps/"$STATE"_latest_gmapsupp.img.old ]]; then
+	rm -rf $HOME/maps/"$STATE"_latest_gmapsupp.img.old
+fi
+if [[ -f "$HOME/maps/"$STATE"_latest_gmapsupp.img" ]]; then
+	mv $HOME/maps/"$STATE"_latest_gmapsupp.img $HOME/maps/"$STATE"_latest_gmapsupp.img.old
+fi
+
+echo
+echo "${ILCOLOR1}Downloading map...${ILRESTORE}"
+sleep 1
+echo
+wget -O $HOME/maps/downloads/"$STATE"_latest.osm.pbf $URL/$STATE-latest.osm.pbf
+echo
+
+
+# Formatting for faster and better processing.
+echo
+echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
+sleep 1
+osmconvert --drop-version $HOME/maps/downloads/"$STATE"_latest.osm.pbf -o=$HOME/maps/Combine/"$STATE"_latest.o5m
+
+cd $HOME/maps/Combine
+echo
+echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
+sleep 1
+mkgmap-splitter $HOME/maps/Combine/"$STATE"_latest.o5m --max-nodes=800000 --output=xml
+
+echo
+echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
+sleep 1
+mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/osm_new.typ
+
+echo
+
+if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
+	echo
+	echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to $STATE_gmapsupp.img...${ILRESTORE}"
+	sleep 1
+	mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/"$STATE"_latest_gmapsupp.img
+	sleep 1
+
+	echo
+	echo "${ILCOLOR1}Checking for Garmin Device. . .${ILRESTORE}"
+	sleep 1
+	if [[ -d $DEVICE ]]; then
+		echo "Garming device found. . ."
+		echo
+		sleep 1
+		if [[ -f "$DEVICE"/Garmin/"$STATE"_latest_gmapsupp.img ]];then
+			echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
+			rm -rf "$DEVICE"/Garmin/"$STATE"_latest_gmapsupp.img
+			echo
+			sleep 1
+		fi
+		echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
+		rsync --progress --verbose $HOME/maps/"$STATE"_latest_gmapsupp.img /media/msifland/GARMIN/Garmin/"$STATE"-latest_gmapsupp.img
+	else
+		echo
+		echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
+	fi
+	sleep 1
+	# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
+	echo
+	echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
+	sleep 1
+	rm -rf $HOME/maps/Combine/*
+	rm -rf $HOME/maps/*.osm.pbf
+else
+		echo
+		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"
+fi
+
+echo
+echo "${ILCOLOR1}Finished."
+sleep 1
+echo "Build End Time:"
+DATE=$(date +"%m-%d-%y")
+echo "Date: $DATE"
+TIME=$(date +"%r")
+echo "Time: $TIME"
+DATE_END=$(date +"%s")
+DIFF=$(($DATE_END - $DATE_START))
+echo "It took $(($DIFF / 3600 )) hours $((($DIFF % 3600) / 60)) minutes $(($DIFF % 60)) seconds to build."
+echo -e "${RESTORE}"
+
+cd $HOME
+exit
