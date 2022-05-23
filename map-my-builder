@@ -36,9 +36,9 @@ function build_map(){
 	if [[ ! -d "$HOME/maps/Combine" ]]; then
 	mkdir "$HOME/maps/Combine"
 	fi
-	if [[ -f "$HOME/maps/my_se_gmapsupp.img" ]]; then
-		rm -rf $HOME/maps/my_se_gmapsupp.img.old
-		mv $HOME/maps/my_se_gmapsupp.img $HOME/maps/my_se_gmapsupp.img.old
+	if [[ -f "$HOME/maps/my_map_gmapsupp.img" ]]; then
+		rm -rf $HOME/maps/my_map_gmapsupp.img.old
+		mv $HOME/maps/my_map_gmapsupp.img $HOME/maps/my_map_gmapsupp.img.old
 	fi
 	if [[ ! -d "$HOME/maps/downloads" ]]; then
 		mkdir "$HOME/maps/downloads"
@@ -176,35 +176,28 @@ function build_map(){
 	while [ $ACTSZ -lt $MINSZ ]; do
 		wget -O $HOME/maps/downloads/florida_latest.osm.pbf http://download.geofabrik.de/north-america/us/florida-latest.osm.pbf
 	done
-	#state-state-dummy
-	#wget -O $HOME/maps/downloads/state-dummy_latest.osm.pbf http://download.geofabrik.de/north-america/us/state-dummy-latest.osm.pbf
-	#FILE="$HOME/maps/downloads/state-dummy_latest.osm.pbf"
-	#ACTSZ=$(wc -c <"$FILE")
-	#while [ $ACTSZ -lt $MINSZ ]; do
-	#	wget -O $HOME/maps/downloads/state-dummy_latest.osm.pbf http://download.geofabrik.de/north-america/us/state-dummy-latest.osm.pbf
-	#done
-
+	
 	# Use osmium program to combine the above downloaded maps into one .osm.pbf file. This is needed because of the individual file ID numbers.
 	echo
 	echo "${ILCOLOR1}Combining osm.pbf files using osmium...${ILRESTORE}"
 	sleep 1
-	osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/Combine/my_se.osm.pbf
+	osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/Combine/my_map.osm.pbf
 
 	# Formatting for faster and better processing.
 	echo
 	echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
 	sleep 1
 	cd $HOME/maps/Combine
-	osmconvert --drop-version $HOME/maps/Combine/my_se.osm.pbf -o=$HOME/maps/Combine/my_se.o5m
+	osmconvert --drop-version $HOME/maps/Combine/my_map.osm.pbf -o=$HOME/maps/Combine/my_map.o5m
 
 	# Splitting the file with mkgmap program for managable conversion of size.
 	echo
 	echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 	sleep 1
-	mkgmap-splitter $HOME/maps/Combine/my_se.o5m --max-nodes=800000 --output=xml
+	mkgmap-splitter $HOME/maps/Combine/my_map.o5m --max-nodes=800000 --output=xml
 	# Different ways to run, messes up sometimes, these are run without the osmconver command above.
-	#mkgmap-splitter $HOME/maps/Combine/my_se.osm.pbf --max-threads=2 --max-nodes=800000 --output=xml
-	#java -jar /home/msifland/maps/splitter-r592/splitter.jar $HOME/maps/Combine/my_se.osm.pbf --max-nodes=800000 --output=xml
+	#mkgmap-splitter $HOME/maps/Combine/my_map.osm.pbf --max-threads=2 --max-nodes=800000 --output=xml
+	#java -jar /home/msifland/maps/splitter-r592/splitter.jar $HOME/maps/Combine/my_map.osm.pbf --max-nodes=800000 --output=xml
 
 	# Re-combing all split files into one Garmin .img file.
 	echo
@@ -216,7 +209,7 @@ function build_map(){
 	if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
 		echo
 		echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to us_se_mw_gmapsupp.img...${ILRESTORE}"
-		mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/my_se_gmapsupp.img
+		mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/my_map_gmapsupp.img
 		sleep 1
 
 		echo
@@ -226,14 +219,14 @@ function build_map(){
 			echo "Garming device found. . ."
 			echo
 			sleep 1
-			if [[ -f "$DEVICE"/Garmin/my_se_gmapsupp.img ]];then
+			if [[ -f "$DEVICE"/Garmin/my_map_gmapsupp.img ]];then
 				echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-				rm -rf "$DEVICE"/Garmin/my_se_gmapsupp.img
+				rm -rf "$DEVICE"/Garmin/my_map_gmapsupp.img
 				echo
 				sleep 1
 			fi
 			echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-			rsync --progress --verbose $HOME/maps/my_se_gmapsupp.img "$DEVICE"/Garmin/my_se_gmapsupp.img
+			rsync --progress --verbose $HOME/maps/my_map_gmapsupp.img "$DEVICE"/Garmin/my_map_gmapsupp.img
 		else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
@@ -267,7 +260,7 @@ function build_map(){
 	cd $HOME
 	exit
 }
-
+<<comment
 function garmin_check(){
 	shopt -s nocasematch
 	sleep 1
@@ -291,17 +284,17 @@ function garmin_check(){
 		fi
 	fi
 }
-
+comment
 ########## Start Process #############
 # Check if device is connected and don't run until it is, unless 'b' is typed for bypass.
 echo
 echo "Running My Map Builder for Garmin devices. . ."
 sleep 1
 echo
-echo "Checking if Garmin device is connected. . ."
-sleep 1
-echo 
-chck=""
+#echo "Checking if Garmin device is connected. . ."
+#sleep 1
+#echo 
+#chck=""
 
 # Call check function.
 #garmin_check

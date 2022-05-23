@@ -32,16 +32,17 @@ function build_map(){
 	fi
 	cd $HOME/maps
 
-	# Downloading maps from geofabrik.
-	echo
-	echo "${ILCOLOR1}Downloading maps...${ILRESTORE}"
-	sleep 1
-	echo
-
 	# Error handling variable for file size errors.
 	FILE=""
 	MINSZ=100000
 
+# South
+	cd $HOME/maps
+	# Downloading maps from geofabrik.
+	echo
+	echo "${ILCOLOR1}Downloading South Region...${ILRESTORE}"
+	sleep 1
+	echo
 	# South
 	wget -O $HOME/maps/downloads/us_south_latest.osm.pbf http://download.geofabrik.de/north-america/us-south-latest.osm.pbf
 	FILE="$HOME/maps/downloads/us_south_latest.osm.pbf"
@@ -49,30 +50,6 @@ function build_map(){
 	while [ $ACTSZ -lt $MINSZ ]; do
 		wget -O $HOME/maps/downloads/us_south_latest.osm.pbf http://download.geofabrik.de/north-america/us-south-latest.osm.pbf
 	done
-	# Midwest
-	wget -O $HOME/maps/downloads/us_midwest_latest.osm.pbf http://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf
-	FILE="$HOME/maps/downloads/us_midwest_latest.osm.pbf"
-	ACTSZ=$(wc -c <"$FILE")
-	while [ $ACTSZ -lt $MINSZ ]; do
-		wget -O $HOME/maps/downloads/us_midwest_latest.osm.pbf http://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf
-	done
-	# Northeast
-	wget -O $HOME/maps/downloads/us_northeast_latest.osm.pbf http://download.geofabrik.de/north-america/us-northeast-latest.osm.pbf
-	FILE="$HOME/maps/downloads/us_northeast_latest.osm.pbf"
-	ACTSZ=$(wc -c <"$FILE")
-	while [ $ACTSZ -lt $MINSZ ]; do
-		wget -O $HOME/maps/downloads/us_northeast_latest.osm.pbf http://download.geofabrik.de/north-america/us-northeast-latest.osm.pbf
-	done
-	# West
-	wget -O $HOME/maps/downloads/us_west_latest.osm.pbf http://download.geofabrik.de/north-america/us-west-latest.osm.pbf
-	FILE="$HOME/maps/downloads/us_west_latest.osm.pbf"
-	ACTSZ=$(wc -c <"$FILE")
-	while [ $ACTSZ -lt $MINSZ ]; do
-		wget -O $HOME/maps/downloads/us_west_latest.osm.pbf http://download.geofabrik.de/north-america/us-west-latest.osm.pbf
-	done
-
-# South
-	cd $HOME/maps
 # Build South
 	# Formatting for faster and better processing.
 	echo
@@ -143,6 +120,18 @@ function build_map(){
 
 # Midwest
 	cd $HOME/maps
+	# Downloading maps from geofabrik.
+	echo
+	echo "${ILCOLOR1}Downloading Midwest Region...${ILRESTORE}"
+	sleep 1
+	echo
+	# Midwest
+	wget -O $HOME/maps/downloads/us_midwest_latest.osm.pbf http://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf
+	FILE="$HOME/maps/downloads/us_midwest_latest.osm.pbf"
+	ACTSZ=$(wc -c <"$FILE")
+	while [ $ACTSZ -lt $MINSZ ]; do
+		wget -O $HOME/maps/downloads/us_midwest_latest.osm.pbf http://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf
+	done
 # Build midwest
 	# Formatting for faster and better processing.
 	echo
@@ -213,6 +202,18 @@ function build_map(){
 
 # Northeast
 	cd $HOME/maps
+	# Downloading maps from geofabrik.
+	echo
+	echo "${ILCOLOR1}Downloading Northeast Region...${ILRESTORE}"
+	sleep 1
+	echo
+	# Northeast
+	wget -O $HOME/maps/downloads/us_northeast_latest.osm.pbf http://download.geofabrik.de/north-america/us-northeast-latest.osm.pbf
+	FILE="$HOME/maps/downloads/us_northeast_latest.osm.pbf"
+	ACTSZ=$(wc -c <"$FILE")
+	while [ $ACTSZ -lt $MINSZ ]; do
+		wget -O $HOME/maps/downloads/us_northeast_latest.osm.pbf http://download.geofabrik.de/north-america/us-northeast-latest.osm.pbf
+	done	
 # Build northeast
 	# Formatting for faster and better processing.
 	echo
@@ -283,6 +284,18 @@ function build_map(){
 
 # West
 	cd $HOME/maps
+	# Downloading maps from geofabrik.
+	echo
+	echo "${ILCOLOR1}Downloading West Region...${ILRESTORE}"
+	sleep 1
+	echo
+	# West
+	wget -O $HOME/maps/downloads/us_west_latest.osm.pbf http://download.geofabrik.de/north-america/us-west-latest.osm.pbf
+	FILE="$HOME/maps/downloads/us_west_latest.osm.pbf"
+	ACTSZ=$(wc -c <"$FILE")
+	while [ $ACTSZ -lt $MINSZ ]; do
+		wget -O $HOME/maps/downloads/us_west_latest.osm.pbf http://download.geofabrik.de/north-america/us-west-latest.osm.pbf
+	done
 # Build west
 	# Formatting for faster and better processing.
 	echo

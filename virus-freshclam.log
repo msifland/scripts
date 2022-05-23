@@ -1,7 +1,4 @@
-Mon May 16 02:00:01 2022 -> ClamAV update process started at Mon May 16 02:00:01 2022
-Mon May 16 02:00:01 2022 -> ^Your ClamAV installation is OUTDATED!
-Mon May 16 02:00:01 2022 -> ^Local version: 0.103.5 Recommended version: 0.103.6
-Mon May 16 02:00:01 2022 -> DON'T PANIC! Read https://docs.clamav.net/manual/Installing.html
-Mon May 16 02:00:01 2022 -> daily.cld database is up-to-date (version: 26542, sigs: 1984424, f-level: 90, builder: raynman)
-Mon May 16 02:00:01 2022 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon May 16 02:00:01 2022 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+Mon May 23 02:00:01 2022 -> ClamAV update process started at Mon May 23 02:00:01 2022
+Mon May 23 02:00:01 2022 -> daily.cld database is up-to-date (version: 26549, sigs: 1984556, f-level: 90, builder: raynman)
+Mon May 23 02:00:01 2022 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Mon May 23 02:00:01 2022 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
