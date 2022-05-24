@@ -1,0 +1,27 @@
+#!/bin/bash
+# This is a bash script.
+# Put your description below this line and code below that.
+# 
+echo
+echo "Downloading latest version of mkgmap-splitter. . ."
+sleep 1
+cd $HOME
+cd $HOME/maps
+# Setting variable formats for download.
+URL=https://www.mkgmap.org.uk
+GET=$(wget -qO- https://www.mkgmap.org.uk/download/splitter.html | grep "href: current" | sed -e 's:<a href="::' | sed -e 's:".*::')
+FILEDL=$(echo $URL$GET | tr -d ' ')
+
+# Removing old folder.
+rm -rf *splitter*
+# Downloading zip file.
+wget $FILEDL
+# Finding and isolation zip file to unzip into maps folder.
+NEW_FILE=$(ls $HOME/maps | grep "zip")
+7z x $NEW_FILE
+# Remove downloaded zip file after unzipping.
+rm -fr *.zip
+# Finging and renaming new unzipped forlder to proper name.
+MV_FILE=$(ls $HOME/maps | grep "splitter")
+mv $MV_FILE splitter
+cd $HOME

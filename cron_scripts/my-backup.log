@@ -1,9 +1,9 @@
 [sudo] password for msifland: 
 
-05-23-2022 01:30:01 AM
+05-24-2022 01:30:01 AM
 
 [1;38;5;173mRemove old backups first. . .[0m
-/home/msifland/Dropbox/Backups/msifland-05-19-2022.tar.gz
+/home/msifland/Dropbox/Backups/msifland-05-20-2022.tar.gz
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 
 [1;38;5;173mBacking up:[0m
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;173mTo /home/msifland/Dropbox/Backups/msifland-05-23-2022.tar.gz
+[1;38;5;173mTo /home/msifland/Dropbox/Backups/msifland-05-24-2022.tar.gz
 
 
 Excluding:[0m
@@ -76,17 +76,17 @@ tar: Exiting with failure status due to previous errors
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-05-23-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-05-23-2022.tar.gz
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-05-24-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-05-24-2022.tar.gz
 [1;38;5;173mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
 total 1.6G
--rw-r--r-- 1 msifland msifland 386M May 20 01:37 msifland-05-20-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 391M May 21 01:36 msifland-05-21-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 390M May 22 01:36 msifland-05-22-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 390M May 23 01:30 msifland-05-23-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K May 23 01:30 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 391M May 24 01:31 msifland-05-24-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K May 24 01:31 my_backup_log.txt
 
 [1;38;5;173mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-05-23-2022 01:30:39 AM
-[1;38;5;173mIt took 0 minutes 38 seconds to run whole process.[0m
+05-24-2022 01:31:14 AM
+[1;38;5;173mIt took 1 minutes 13 seconds to run whole process.[0m
 
