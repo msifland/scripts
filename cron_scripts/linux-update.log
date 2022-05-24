@@ -181,3 +181,52 @@ Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
 [1;38;5;201mUpdating scripts. . .[0m
+[master 1f4e461] auto commit
+ 13 files changed, 32150 insertions(+), 32160 deletions(-)
+ rewrite cron_scripts/linux-update.log (74%)
+ delete mode 100755 cron_scripts/map-us-builder-run
+ rewrite cron_scripts/screenfetch-update.log (71%)
+ create mode 100755 map-builder-custom
+ delete mode 100755 unused_scripts/map-builder-custom
+ rename map-us-builder => unused_scripts/map-us-builder (97%)
+ rewrite virus-freshclam.log (83%)
+To https://github.com/msifland/scripts
+   4ef386e..1f4e461  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;201mUpdating pkg_bkups. . .[0m
+warning: adding embedded git repository: backups/screenFetch
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> backups/screenFetch
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached backups/screenFetch
+hint: 
+hint: See "git help submodule" for more information.
+[master be07960] auto commit
+ 5 files changed, 32 insertions(+), 6 deletions(-)
+ create mode 160000 backups/screenFetch
+To https://github.com/msifland/pkg_bkups
+   d3323da..be07960  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;201mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;166mAll is good.[0m
+
+[1;38;5;173m
+05-23-2022 07:01:53 AM
+[1;38;5;173mIt took 1 minutes 51 seconds to run whole process.[0m
+[0m

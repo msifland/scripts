@@ -53,23 +53,27 @@ echo
 wget -O $HOME/maps/downloads/"$STATE"_latest.osm.pbf $URL/$STATE-latest.osm.pbf
 echo
 
-
+<<comment
 # Formatting for faster and better processing.
 echo
 echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
 sleep 1
 osmconvert --drop-version $HOME/maps/downloads/"$STATE"_latest.osm.pbf -o=$HOME/maps/Combine/"$STATE"_latest.o5m
-
+comment
 cd $HOME/maps/Combine
 echo
 echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 sleep 1
-mkgmap-splitter $HOME/maps/Combine/"$STATE"_latest.o5m --max-nodes=800000 --output=xml
+#java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/Combine/"$STATE"_latest.o5m --max-nodes=800000 --output=xml
+
+#This is with not converting to .o5m
+mv $HOME/maps/downloads/"$STATE"_latest.osm.pbf $HOME/maps/Combine/"$STATE"_latest.osm.pbf
+java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/Combine/"$STATE"_latest.osm.pbf --max-nodes=800000 --output=xml
 
 echo
 echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 sleep 1
-mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/osm_new.typ
+java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/osm_new.typ
 
 echo
 

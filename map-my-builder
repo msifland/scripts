@@ -182,28 +182,28 @@ function build_map(){
 	echo "${ILCOLOR1}Combining osm.pbf files using osmium...${ILRESTORE}"
 	sleep 1
 	osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/Combine/my_map.osm.pbf
-
+	cd $HOME/maps/Combine
+<<comment
 	# Formatting for faster and better processing.
 	echo
 	echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
 	sleep 1
-	cd $HOME/maps/Combine
 	osmconvert --drop-version $HOME/maps/Combine/my_map.osm.pbf -o=$HOME/maps/Combine/my_map.o5m
-
+comment
 	# Splitting the file with mkgmap program for managable conversion of size.
 	echo
 	echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 	sleep 1
-	mkgmap-splitter $HOME/maps/Combine/my_map.o5m --max-nodes=800000 --output=xml
-	# Different ways to run, messes up sometimes, these are run without the osmconver command above.
-	#mkgmap-splitter $HOME/maps/Combine/my_map.osm.pbf --max-threads=2 --max-nodes=800000 --output=xml
-	#java -jar /home/msifland/maps/splitter-r592/splitter.jar $HOME/maps/Combine/my_map.osm.pbf --max-nodes=800000 --output=xml
+	#mkgmap-splitter $HOME/maps/Combine/my_map.o5m --max-nodes=800000 --output=xml
+	# Different ways to run, messes up sometimes, these are run without the osmconvert command above.
+	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/Combine/my_map.osm.pbf --max-nodes=800000 --output=xml
 
 	# Re-combing all split files into one Garmin .img file.
 	echo
 	echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 	sleep 1
-	mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
+	#mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
+	java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
 
 	# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
 	if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
