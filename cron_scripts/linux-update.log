@@ -1,90 +1,37 @@
-[H[2J[3J[1;38;5;148m           ###########    Updating your system now   ###########[0m
-[1;38;5;205m
-05-30-2022 07:00:01 AM
-Updating Linux debian 5.18.0-msi #1 SMP PREEMPT_DYNAMIC Sat May 28 03:02:02 CDT 2022 x86_64 GNU/Linux[0m
-[1;38;5;197mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;3m           ###########    Updating your system now   ###########[0m
+[1;38;5;105m
+06-06-2022 07:00:02 AM
+Updating Linux debian 5.18.1-msi #1 SMP PREEMPT_DYNAMIC Sat Jun 4 03:01:35 CDT 2022 x86_64 GNU/Linux[0m
+[1;38;5;140mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;235mUpdating sources and checking for app updates. . .[0m
+[1;38;5;26mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Get:1 http://security.debian.org/debian-security stable-security InRelease [44.1 kB]
-Get:2 http://deb.debian.org/debian testing InRelease [130 kB]
-Hit:3 http://repository.spotify.com stable InRelease
-Hit:4 https://dl.winehq.org/wine-builds/debian sid InRelease
-Get:5 http://security.debian.org/debian-security stable-security/main Sources [123 kB]
-Get:6 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease [3,956 B]
-Hit:7 https://download.sublimetext.com apt/stable/ InRelease
-Get:8 http://security.debian.org/debian-security stable-security/main amd64 Packages [152 kB]
-Hit:9 http://repo.sinew.in stable InRelease
-Get:10 http://security.debian.org/debian-security stable-security/main i386 Packages [151 kB]
-Get:11 http://security.debian.org/debian-security stable-security/main Translation-en [94.9 kB]
-Get:12 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Get:13 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 Packages [418 B]
-Get:14 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main i386 Packages [418 B]
-Get:15 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
-Get:16 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
-Hit:17 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Hit:18 http://deb.debian.org/debian stable InRelease
-Hit:19 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Get:20 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Hit:21 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:22 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:23 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
-Get:24 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:26 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:27 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:28 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:29 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
-Get:30 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:31 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:32 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:33 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
-Get:34 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
-Get:35 http://deb.debian.org/debian testing/contrib Sources T-2022-05-29-0808.31-F-2022-05-29-0808.31.pdiff [43 B]
-Get:35 http://deb.debian.org/debian testing/contrib Sources T-2022-05-29-0808.31-F-2022-05-29-0808.31.pdiff [43 B]
-Get:36 http://deb.debian.org/debian testing/main Sources T-2022-05-30-0802.10-F-2022-05-29-1403.41.pdiff [46.3 kB]
-Get:36 http://deb.debian.org/debian testing/main Sources T-2022-05-30-0802.10-F-2022-05-29-1403.41.pdiff [46.3 kB]
-Get:37 http://deb.debian.org/debian testing/main amd64 Packages T-2022-05-30-0802.10-F-2022-05-29-1403.41.pdiff [39.5 kB]
-Get:37 http://deb.debian.org/debian testing/main amd64 Packages T-2022-05-30-0802.10-F-2022-05-29-1403.41.pdiff [39.5 kB]
-Get:38 http://deb.debian.org/debian testing/main i386 Packages T-2022-05-30-0802.10-F-2022-05-29-1403.41.pdiff [39.1 kB]
-Get:38 http://deb.debian.org/debian testing/main i386 Packages T-2022-05-30-0802.10-F-2022-05-29-1403.41.pdiff [39.1 kB]
-Get:39 http://deb.debian.org/debian testing/main Translation-en T-2022-05-30-0205.38-F-2022-05-29-1403.41.pdiff [3,552 B]
-Get:39 http://deb.debian.org/debian testing/main Translation-en T-2022-05-30-0205.38-F-2022-05-29-1403.41.pdiff [3,552 B]
-Get:40 http://deb.debian.org/debian unstable/main Sources T-2022-05-30-0802.10-F-2022-05-29-0808.31.pdiff [42.0 kB]
-Get:41 http://deb.debian.org/debian unstable/contrib Sources T-2022-05-29-2006.40-F-2022-05-29-1403.41.pdiff [255 B]
-Get:42 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-30-0802.10-F-2022-05-29-0808.31.pdiff [64.4 kB]
-Get:42 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-05-30-0802.10-F-2022-05-29-0808.31.pdiff [64.4 kB]
-Get:43 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-30-0802.10-F-2022-05-29-0808.31.pdiff [63.3 kB]
-Get:44 http://deb.debian.org/debian unstable/main Translation-en T-2022-05-29-2006.40-F-2022-05-29-0808.31.pdiff [5,517 B]
-Get:40 http://deb.debian.org/debian unstable/main Sources T-2022-05-30-0802.10-F-2022-05-29-0808.31.pdiff [42.0 kB]
-Get:41 http://deb.debian.org/debian unstable/contrib Sources T-2022-05-29-2006.40-F-2022-05-29-1403.41.pdiff [255 B]
-Get:43 http://deb.debian.org/debian unstable/main i386 Packages T-2022-05-30-0802.10-F-2022-05-29-0808.31.pdiff [63.3 kB]
-Get:44 http://deb.debian.org/debian unstable/main Translation-en T-2022-05-29-2006.40-F-2022-05-29-0808.31.pdiff [5,517 B]
-Get:45 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-05-29-2006.40-F-2022-05-29-1403.41.pdiff [205 B]
-Get:45 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-05-29-2006.40-F-2022-05-29-1403.41.pdiff [205 B]
-Get:46 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-05-29-2006.40-F-2022-05-29-1403.41.pdiff [205 B]
-Get:46 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-05-29-2006.40-F-2022-05-29-1403.41.pdiff [205 B]
-Get:47 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,222 kB]
-Get:48 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,525 kB]
-Get:49 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,261 kB]
-Get:50 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.1 kB]
-Get:51 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.1 kB]
-Get:52 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,402 kB]
-Get:53 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,731 kB]
-Get:54 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,727 kB]
-Get:55 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [15.6 kB]
-Get:56 http://www.deb-multimedia.org bullseye InRelease [18.5 kB]
-Get:57 http://www.deb-multimedia.org bullseye/main amd64 Packages [129 kB]
-Get:58 http://www.deb-multimedia.org bullseye/main i386 Packages [126 kB]
-Fetched 33.2 MB in 13s (2,478 kB/s)
+Hit:2 https://dl.winehq.org/wine-builds/debian sid InRelease
+Hit:3 http://deb.debian.org/debian testing InRelease
+Hit:4 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
+Hit:5 https://download.sublimetext.com apt/stable/ InRelease
+Hit:6 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
+Hit:7 http://repository.spotify.com stable InRelease
+Hit:8 http://repo.sinew.in stable InRelease
+Hit:9 http://deb.debian.org/debian testing-updates InRelease
+Get:10 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Hit:11 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
+Hit:12 http://deb.debian.org/debian stable InRelease
+Get:13 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
+Hit:14 http://deb.debian.org/debian stable-updates InRelease
+Hit:15 http://deb.debian.org/debian unstable InRelease
+Hit:16 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
+Hit:17 http://www.deb-multimedia.org bullseye InRelease
+Fetched 82.7 kB in 11s (7,516 B/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
 
-[1;38;5;235mChecking for system upgrade. . .[0m
+[1;38;5;26mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -93,109 +40,18 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  anacron dblatex dblatex-doc gcr gnome-keyring gnome-keyring-pkcs11
-  libgck-1-0 libgcr-base-3-1 libgcr-ui-3-1 libpam-gnome-keyring
-  libvisual-0.4-0 libvisual-0.4-0:i386 libvulkan1 libvulkan1:i386
-  metasploit-framework python3-pexpect seahorse
-17 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 294 MB of archives.
-After this operation, 440 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 anacron amd64 2.3-32 [35.3 kB]
-Get:2 http://deb.debian.org/debian testing/main amd64 dblatex-doc all 0.3.12py3-2 [1,337 kB]
-Get:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.2.1+20220530102714~1rapid7-1 [288 MB]
-Get:4 http://deb.debian.org/debian testing/main amd64 dblatex all 0.3.12py3-2 [371 kB]
-Get:5 http://deb.debian.org/debian testing/main amd64 gcr amd64 3.41.0-4 [283 kB]
-Get:6 http://deb.debian.org/debian testing/main amd64 libgcr-ui-3-1 amd64 3.41.0-4 [144 kB]
-Get:7 http://deb.debian.org/debian testing/main amd64 libgcr-base-3-1 amd64 3.41.0-4 [210 kB]
-Get:8 http://deb.debian.org/debian testing/main amd64 libgck-1-0 amd64 3.41.0-4 [87.7 kB]
-Get:9 http://deb.debian.org/debian testing/main amd64 gnome-keyring-pkcs11 amd64 42.1-1 [327 kB]
-Get:10 http://deb.debian.org/debian testing/main amd64 gnome-keyring amd64 42.1-1 [1,035 kB]
-Get:11 http://deb.debian.org/debian testing/main amd64 libpam-gnome-keyring amd64 42.1-1 [323 kB]
-Get:12 http://deb.debian.org/debian testing/main i386 libvisual-0.4-0 i386 0.4.0-18 [142 kB]
-Get:13 http://deb.debian.org/debian testing/main amd64 libvisual-0.4-0 amd64 0.4.0-18 [134 kB]
-Get:14 http://deb.debian.org/debian testing/main amd64 libvulkan1 amd64 1.3.211.0-1 [118 kB]
-Get:15 http://deb.debian.org/debian testing/main i386 libvulkan1 i386 1.3.211.0-1 [127 kB]
-Get:16 http://deb.debian.org/debian testing/main amd64 python3-pexpect all 4.8.0-3 [55.0 kB]
-Get:17 http://deb.debian.org/debian testing/main amd64 seahorse amd64 42.0-1 [1,186 kB]
+  metasploit-framework
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 288 MB of archives.
+After this operation, 53.2 kB of additional disk space will be used.
+Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.2.2+20220605102733~1rapid7-1 [288 MB]
 apt-listchanges: Reading changelogs...
-Fetched 294 MB in 23s (12.9 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 555715 files and directories currently installed.)
-Preparing to unpack .../00-anacron_2.3-32_amd64.deb ...
-Unpacking anacron (2.3-32) over (2.3-31+b1) ...
-dpkg: warning: unable to delete old directory '/usr/lib/systemd/system': Directory not empty
-Preparing to unpack .../01-dblatex-doc_0.3.12py3-2_all.deb ...
-Unpacking dblatex-doc (0.3.12py3-2) over (0.3.12py3-1) ...
-Preparing to unpack .../02-dblatex_0.3.12py3-2_all.deb ...
-Unpacking dblatex (0.3.12py3-2) over (0.3.12py3-1) ...
-Preparing to unpack .../03-gcr_3.41.0-4_amd64.deb ...
-Unpacking gcr (3.41.0-4) over (3.40.0-4) ...
-Preparing to unpack .../04-libgcr-ui-3-1_3.41.0-4_amd64.deb ...
-Unpacking libgcr-ui-3-1:amd64 (3.41.0-4) over (3.40.0-4) ...
-Preparing to unpack .../05-libgcr-base-3-1_3.41.0-4_amd64.deb ...
-Unpacking libgcr-base-3-1:amd64 (3.41.0-4) over (3.40.0-4) ...
-Preparing to unpack .../06-libgck-1-0_3.41.0-4_amd64.deb ...
-Unpacking libgck-1-0:amd64 (3.41.0-4) over (3.40.0-4) ...
-Preparing to unpack .../07-gnome-keyring-pkcs11_42.1-1_amd64.deb ...
-Unpacking gnome-keyring-pkcs11:amd64 (42.1-1) over (40.0-3) ...
-Preparing to unpack .../08-gnome-keyring_42.1-1_amd64.deb ...
-Unpacking gnome-keyring (42.1-1) over (40.0-3) ...
-Preparing to unpack .../09-libpam-gnome-keyring_42.1-1_amd64.deb ...
-Unpacking libpam-gnome-keyring:amd64 (42.1-1) over (40.0-3) ...
-Preparing to unpack .../10-libvisual-0.4-0_0.4.0-18_i386.deb ...
-De-configuring libvisual-0.4-0:amd64 (0.4.0-17), to allow configuration of libvisual-0.4-0:i386 (0.4.0-18) ...
-Unpacking libvisual-0.4-0:i386 (0.4.0-18) over (0.4.0-17) ...
-Preparing to unpack .../11-libvisual-0.4-0_0.4.0-18_amd64.deb ...
-Unpacking libvisual-0.4-0:amd64 (0.4.0-18) over (0.4.0-17) ...
-Preparing to unpack .../12-libvulkan1_1.3.211.0-1_amd64.deb ...
-De-configuring libvulkan1:i386 (1.3.204.1-2), to allow configuration of libvulkan1:amd64 (1.3.211.0-1) ...
-Unpacking libvulkan1:amd64 (1.3.211.0-1) over (1.3.204.1-2) ...
-Preparing to unpack .../13-libvulkan1_1.3.211.0-1_i386.deb ...
-Unpacking libvulkan1:i386 (1.3.211.0-1) over (1.3.204.1-2) ...
-Preparing to unpack .../14-python3-pexpect_4.8.0-3_all.deb ...
-Unpacking python3-pexpect (4.8.0-3) over (4.8.0-2) ...
-Preparing to unpack .../15-seahorse_42.0-1_amd64.deb ...
-Unpacking seahorse (42.0-1) over (41.0-2+b1) ...
-Preparing to unpack .../16-metasploit-framework_6.2.1+20220530102714~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.2.1+20220530102714~1rapid7-1) over (6.1.44+20220524132408~1rapid7-1) ...
-Setting up anacron (2.3-32) ...
-Setting up libvisual-0.4-0:amd64 (0.4.0-18) ...
-Setting up libvisual-0.4-0:i386 (0.4.0-18) ...
-Setting up dblatex-doc (0.3.12py3-2) ...
-Setting up dblatex (0.3.12py3-2) ...
-Setting up metasploit-framework (6.2.1+20220530102714~1rapid7-1) ...
+Fetched 288 MB in 24s (11.8 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 524626 files and directories currently installed.)
+Preparing to unpack .../metasploit-framework_6.2.2+20220605102733~1rapid7-1_amd64.deb ...
+Unpacking metasploit-framework (6.2.2+20220605102733~1rapid7-1) over (6.2.1+20220530102714~1rapid7-1) ...
+Setting up metasploit-framework (6.2.2+20220605102733~1rapid7-1) ...
 Run msfconsole to get started
-Setting up python3-pexpect (4.8.0-3) ...
-Setting up libvulkan1:amd64 (1.3.211.0-1) ...
-Setting up libvulkan1:i386 (1.3.211.0-1) ...
-Setting up gnome-keyring-pkcs11:amd64 (42.1-1) ...
-Setting up libgck-1-0:amd64 (3.41.0-4) ...
-Setting up libgcr-base-3-1:amd64 (3.41.0-4) ...
-Setting up libpam-gnome-keyring:amd64 (42.1-1) ...
-Setting up libgcr-ui-3-1:amd64 (3.41.0-4) ...
-Setting up gcr (3.41.0-4) ...
-Created symlink /etc/systemd/user/graphical-session-pre.target.wants/gcr-ssh-agent.service → /usr/lib/systemd/user/gcr-ssh-agent.service.
-Created symlink /etc/systemd/user/sockets.target.wants/gcr-ssh-agent.socket → /usr/lib/systemd/user/gcr-ssh-agent.socket.
-Processing triggers for libglib2.0-0:amd64 (2.72.1-1) ...
-Processing triggers for libglib2.0-0:i386 (2.72.1-1) ...
-Processing triggers for mate-menus (1.26.0-3) ...
-Processing triggers for libc-bin (2.33-7) ...
-Processing triggers for man-db (2.10.2-1) ...
-Processing triggers for tex-common (6.17) ...
-Running mktexlsr. This may take some time... done.
-Processing triggers for shared-mime-info (2.2-1) ...
-Processing triggers for sgml-base (1.30) ...
-Processing triggers for mailcap (3.70+nmu1) ...
-Processing triggers for bamfdaemon (0.5.6+repack-1) ...
-Rebuilding /usr/share/applications/bamf-2.index...
-Processing triggers for desktop-file-utils (0.26-1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Setting up gnome-keyring (42.1-1) ...
-Installing new version of config file /etc/xdg/autostart/gnome-keyring-pkcs11.desktop ...
-Installing new version of config file /etc/xdg/autostart/gnome-keyring-secrets.desktop ...
-Installing new version of config file /etc/xdg/autostart/gnome-keyring-ssh.desktop ...
-Created symlink /etc/systemd/user/graphical-session-pre.target.wants/gnome-keyring-daemon.service → /usr/lib/systemd/user/gnome-keyring-daemon.service.
-Created symlink /etc/systemd/user/sockets.target.wants/gnome-keyring-daemon.socket → /usr/lib/systemd/user/gnome-keyring-daemon.socket.
-Setting up seahorse (42.0-1) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -205,7 +61,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;235mCleaning up system. . .[0m
+[1;38;5;26mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -230,14 +86,17 @@ Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 removed '/home/msifland/.cache/thumbnails/normal/a75f0843fc931ad236898e4a6e3d0144.png'
+removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
+removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
+removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
 removed '/home/msifland/.cache/thumbnails/normal/f5772d55e7dd1998ba0f056a04d3eb4d.png'
 removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/1c98d0aa59f68f9fd311b505d0da0fd4.png'
 removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
 
-[1;38;5;205mBacking up important files and apps. . .[0m
-[1;38;5;235mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;105mBacking up important files and apps. . .[0m
+[1;38;5;26mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;235mBacking up important config files. . .[0m
+[1;38;5;26mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -246,14 +105,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;235mBacking up crontab. . .[0m
+[1;38;5;26mBacking up crontab. . .[0m
 
-[1;38;5;235mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;26mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;205mUpdating local git repos. . .[0m
-[1;38;5;205mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;235mUpdating Projects. . .[0m
+[1;38;5;105mUpdating local git repos. . .[0m
+[1;38;5;105mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;26mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -261,7 +120,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;235mUpdating Documents. . .[0m
+[1;38;5;26mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -269,4 +128,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;235mUpdating scripts. . .[0m
+[1;38;5;26mUpdating scripts. . .[0m
