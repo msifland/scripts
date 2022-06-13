@@ -3,6 +3,14 @@
 # Dependencies: program mkgmap, osmium. Also a mkgmap, gmt, and mkgmap-splitter folder downloaded from source.
 # Switching to map directory and display what maps we are downloading
 DEVICE="/media/msifland/GARMIN"
+
+# MAP_NAME should be the name of the .typ file you use.
+TYP_FILE="velo"
+MAP_NAME="my_$TYP_FILE"
+if [[ ! -d "$HOME/maps" ]]; then
+		mkdir "$HOME/maps"
+fi
+
 function build_map(){
 	shopt -u nocasematch
 	### Log date and time
@@ -16,38 +24,63 @@ function build_map(){
 	echo -e ${ILRESTORE}
 
 	echo
-	echo "${ILCOLOR1}Starting process of downloading and building Garmin map of the following Geofarik maps:"
-
-	# Get list of maps that are downloading based on download section below, starting at a certain line number.
-	# Alternate method using loop.
-	#SRCH=$(tail -n +50 $HOME/scripts/map_my_builder | grep '#state-')
-	#for i in $SRCH; do
-	#	echo $i | sed 's:#state-::g' | sed 's:state-dummy::'
-	#done
-	# One-liner method.
-	tail -n +50 $HOME/scripts/map-my-builder | awk '/#state-/' | sed 's:#state-::g' | sed 's:state-dummy::g'
-	echo -e ${ILRESTORE}
 	sleep 1
 
+	echo "${ILCOLOR1}Current .typ file being used is ${ILCOLOR2}$TYP_FILE.typ
+${ILCOLOR1}Here is a list of available .typ files on your system:${ILRESTORE}"
+	TYP_DIR="$HOME/maps/*.typ"
+	for i in $TYP_DIR; do
+		q="$(basename -- $i)"
+		echo "$q"
+	done
+	sleep 1
+	echo
+	read -t 120 -p "Would you like to change the .typ file used?
+${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}$TYP_FILE.typ${ILRESTORE}[y/N]: " chng_typ
+	sleep 1
+	echo
+	if [[ $chng_typ =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		read -p "Pick a .typ file from the list above and then type it WITHOUT .typ extention: " typ_name
+		if test -f "$HOME/maps/$typ_name.typ"; then
+			TYP_FILE="$typ_name"
+			sleep 1
+			echo
+			echo "${ILCOLOR1}Okay running with ${ILCOLOR3}$TYP_FILE.typ"
+			sleep 1
+		else
+			echo
+			echo "${ILCOLOR1}Files does not exist. Check spelling next time. Continuing with last run .typ file - ${ILCOLOR2}$TYP_FILE.typ"
+			sleep 1
+		fi
+	else
+		echo
+		echo "${ILCOLOR1}Okay, running with current .typ file - ${ILCOLOR2}$TYP_FILE.typ"
+		echo
+		sleep 1
+	fi
+
+	echo "${ILCOLOR1}Starting process of downloading and building Garmin map of the following Geofarik maps:${ILRESTORE}"
+	tail -n +50 $HOME/scripts/map-my-builder | awk '/#state-/' | sed 's:#state-::g' | sed 's:state-dummy::g' | sed 's:tail.*::g'
+	echo
+	sleep 1
+	echo "${ILCOLOR1}Checking directories and Cleaning up files...${ILRESTORE}"
 	# Create directories if they don't exist.
-	if [[ ! -d "$HOME/maps" ]]; then
-	mkdir "$HOME/maps"
+	if [[ ! -d "$HOME/maps/completed_maps" ]]; then
+		mkdir "$HOME/maps/completed_maps"
 	fi
-	if [[ ! -d "$HOME/maps/Combine" ]]; then
-	mkdir "$HOME/maps/Combine"
-	fi
-	if [[ -f "$HOME/maps/my_map_gmapsupp.img" ]]; then
-		rm -rf $HOME/maps/my_map_gmapsupp.img.old
-		mv $HOME/maps/my_map_gmapsupp.img $HOME/maps/my_map_gmapsupp.img.old
+	if [[ ! -d "$HOME/maps/combine" ]]; then
+		mkdir "$HOME/maps/combine"
+	else
+		rm -rf $HOME/maps/combine/*
 	fi
 	if [[ ! -d "$HOME/maps/downloads" ]]; then
 		mkdir "$HOME/maps/downloads"
 	else
 		rm -rf $HOME/maps/downloads/*
 	fi
-	cd $HOME/maps
-
+	
 	# Downloading maps from geofabrik.
+	cd $HOME/maps
 	echo
 	echo "${ILCOLOR1}Downloading maps...${ILRESTORE}"
 	sleep 1
@@ -181,35 +214,44 @@ function build_map(){
 	echo
 	echo "${ILCOLOR1}Combining osm.pbf files using osmium...${ILRESTORE}"
 	sleep 1
-	osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/Combine/my_map.osm.pbf
-	cd $HOME/maps/Combine
+	osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/combine/"$MAP_NAME".osm.pbf
+	cd $HOME/maps/combine
+
 <<comment
-	# Formatting for faster and better processing.
+#Commented this out becasue I'm unsure that a conversion to o5m really makes any difference in size or speed
+	# Formatting to .o5m for faster and better processing.
 	echo
 	echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
 	sleep 1
-	osmconvert --drop-version $HOME/maps/Combine/my_map.osm.pbf -o=$HOME/maps/Combine/my_map.o5m
+	osmconvert --drop-version $HOME/maps/combine/"$MAP_NAME".osm.pbf -o=$HOME/maps/combine/"$MAP_NAME".o5m
 comment
+
 	# Splitting the file with mkgmap program for managable conversion of size.
 	echo
 	echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 	sleep 1
-	#mkgmap-splitter $HOME/maps/Combine/my_map.o5m --max-nodes=800000 --output=xml
-	# Different ways to run, messes up sometimes, these are run without the osmconvert command above.
-	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/Combine/my_map.osm.pbf --max-nodes=800000 --output=xml
+	#mkgmap-splitter $HOME/maps/combine/"$MAP_NAME".o5m --max-nodes=800000 --output=xml
+	# Different ways to run, messes up sometimes, these are run without the osmconvert command above, and with mkgmpa and splitter downloaded directly form website instead of installing with apt. Always get this latest versons this was. See script files "mkgmp-check and mkgmap-splitter-check.
+	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/combine/"$MAP_NAME".osm.pbf --max-nodes=800000 --output=xml
 
 	# Re-combing all split files into one Garmin .img file.
 	echo
 	echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 	sleep 1
 	#mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
-	java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
+	java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/"$TYP_FILE".typ
 
 	# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
-	if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
+	if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 		echo
-		echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to us_se_mw_gmapsupp.img...${ILRESTORE}"
-		mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/my_map_gmapsupp.img
+		echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and renaming to "$MAP_NAME"_gmapsupp.img...${ILRESTORE}"
+		# Nameing and removing previous images in folder "completed_maps".
+		if [[ -f "$HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img" ]]; then
+			rm -rf $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img.old
+			mv $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img.old
+		fi
+		# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
+		mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img
 		sleep 1
 
 		echo
@@ -219,26 +261,18 @@ comment
 			echo "Garming device found. . ."
 			echo
 			sleep 1
-			if [[ -f "$DEVICE"/Garmin/my_map_gmapsupp.img ]];then
+			if [[ -f "$DEVICE"/Garmin/"$MAP_NAME"_gmapsupp.img ]];then
 				echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-				rm -rf "$DEVICE"/Garmin/my_map_gmapsupp.img
+				rm -rf "$DEVICE"/Garmin/my*.*
 				echo
 				sleep 1
 			fi
 			echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-			rsync --progress --verbose $HOME/maps/my_map_gmapsupp.img "$DEVICE"/Garmin/my_map_gmapsupp.img
+			rsync --progress --verbose $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img "$DEVICE"/Garmin/"$MAP_NAME"_gmapsupp.img
 		else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
 		fi
-		sleep 1
-
-		# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
-		echo
-		echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
-		sleep 1
-		rm -rf $HOME/maps/Combine/*
-		rm -rf $HOME/maps/*.osm.pbf
 	else
 		echo
 		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"
@@ -288,7 +322,7 @@ comment
 ########## Start Process #############
 # Check if device is connected and don't run until it is, unless 'b' is typed for bypass.
 echo
-echo "Running My Map Builder for Garmin devices. . ."
+echo "${ILCOLOR1}Running My Map Builder for Garmin devices. . .${ILRESTORE}"
 sleep 1
 echo
 #echo "Checking if Garmin device is connected. . ."
