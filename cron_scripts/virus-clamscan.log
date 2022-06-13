@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;118m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;95m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;118m
+[1;38;5;95m
 Removing old build logs. . .
 
 [0m
-[1;38;5;118m
+[1;38;5;95m
 Start Time:
-Date: 06-06-22
+Date: 06-13-22
 Time: 02:15:16 AM
 
 Scanning: 
@@ -106,268 +106,268 @@ LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanni
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 /usr/lib/i386-linux-gnu/wine-development/wmplayer.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/wmplayer.exe: copied to '/home/msifland/infections/wmplayer.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/wmplayer.exe: copied to '/home/msifland/infections/wmplayer.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/fc.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/fc.exe: copied to '/home/msifland/infections/fc.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/fc.exe: copied to '/home/msifland/infections/fc.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/wevtutil.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/wevtutil.exe: copied to '/home/msifland/infections/wevtutil.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/wevtutil.exe: copied to '/home/msifland/infections/wevtutil.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/ngen.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/ngen.exe: copied to '/home/msifland/infections/ngen.exe.017'
+/usr/lib/i386-linux-gnu/wine-development/ngen.exe: copied to '/home/msifland/infections/ngen.exe.019'
 /usr/lib/i386-linux-gnu/wine-development/regasm.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/regasm.exe: copied to '/home/msifland/infections/regasm.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/regasm.exe: copied to '/home/msifland/infections/regasm.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/powershell.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/powershell.exe: copied to '/home/msifland/infections/powershell.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/powershell.exe: copied to '/home/msifland/infections/powershell.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/xcopy.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/xcopy.exe: copied to '/home/msifland/infections/xcopy.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/xcopy.exe: copied to '/home/msifland/infections/xcopy.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/taskkill.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/taskkill.exe: copied to '/home/msifland/infections/taskkill.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/taskkill.exe: copied to '/home/msifland/infections/taskkill.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/subst.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/subst.exe: copied to '/home/msifland/infections/subst.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/subst.exe: copied to '/home/msifland/infections/subst.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/find.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/find.exe: copied to '/home/msifland/infections/find.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/find.exe: copied to '/home/msifland/infections/find.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/sc.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/sc.exe: copied to '/home/msifland/infections/sc.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/sc.exe: copied to '/home/msifland/infections/sc.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/sdbinst.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/sdbinst.exe: copied to '/home/msifland/infections/sdbinst.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/sdbinst.exe: copied to '/home/msifland/infections/sdbinst.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/presentationfontcache.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/presentationfontcache.exe: copied to '/home/msifland/infections/presentationfontcache.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/presentationfontcache.exe: copied to '/home/msifland/infections/presentationfontcache.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/cmd.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/cmd.exe: copied to '/home/msifland/infections/cmd.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/cmd.exe: copied to '/home/msifland/infections/cmd.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/netsh.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/netsh.exe: copied to '/home/msifland/infections/netsh.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/netsh.exe: copied to '/home/msifland/infections/netsh.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/explorer.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/explorer.exe: copied to '/home/msifland/infections/explorer.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/explorer.exe: copied to '/home/msifland/infections/explorer.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/netstat.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/netstat.exe: copied to '/home/msifland/infections/netstat.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/netstat.exe: copied to '/home/msifland/infections/netstat.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/iexplore.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/iexplore.exe: copied to '/home/msifland/infections/iexplore.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/iexplore.exe: copied to '/home/msifland/infections/iexplore.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/dpnsvr.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/dpnsvr.exe: copied to '/home/msifland/infections/dpnsvr.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/dpnsvr.exe: copied to '/home/msifland/infections/dpnsvr.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/arp.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/arp.exe: copied to '/home/msifland/infections/arp.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/arp.exe: copied to '/home/msifland/infections/arp.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/dism.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/dism.exe: copied to '/home/msifland/infections/dism.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/dism.exe: copied to '/home/msifland/infections/dism.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/fsutil.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/fsutil.exe: copied to '/home/msifland/infections/fsutil.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/fsutil.exe: copied to '/home/msifland/infections/fsutil.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/rpcss.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/rpcss.exe: copied to '/home/msifland/infections/rpcss.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/rpcss.exe: copied to '/home/msifland/infections/rpcss.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/wmic.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/wmic.exe: copied to '/home/msifland/infections/wmic.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/wmic.exe: copied to '/home/msifland/infections/wmic.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/shutdown.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/shutdown.exe: copied to '/home/msifland/infections/shutdown.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/shutdown.exe: copied to '/home/msifland/infections/shutdown.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/winedevice.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/winedevice.exe: copied to '/home/msifland/infections/winedevice.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/winedevice.exe: copied to '/home/msifland/infections/winedevice.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/servicemodelreg.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/servicemodelreg.exe: copied to '/home/msifland/infections/servicemodelreg.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/servicemodelreg.exe: copied to '/home/msifland/infections/servicemodelreg.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/start.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/start.exe: copied to '/home/msifland/infections/start.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/start.exe: copied to '/home/msifland/infections/start.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/systeminfo.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/systeminfo.exe: copied to '/home/msifland/infections/systeminfo.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/systeminfo.exe: copied to '/home/msifland/infections/systeminfo.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/regsvcs.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/regsvcs.exe: copied to '/home/msifland/infections/regsvcs.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/regsvcs.exe: copied to '/home/msifland/infections/regsvcs.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/tasklist.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/tasklist.exe: copied to '/home/msifland/infections/tasklist.exe.015'
+/usr/lib/i386-linux-gnu/wine-development/tasklist.exe: copied to '/home/msifland/infections/tasklist.exe.017'
 /usr/lib/i386-linux-gnu/wine-development/winmgmt.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/winmgmt.exe: copied to '/home/msifland/infections/winmgmt.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/winmgmt.exe: copied to '/home/msifland/infections/winmgmt.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/whoami.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/whoami.exe: copied to '/home/msifland/infections/whoami.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/whoami.exe: copied to '/home/msifland/infections/whoami.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/schtasks.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/schtasks.exe: copied to '/home/msifland/infections/schtasks.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/schtasks.exe: copied to '/home/msifland/infections/schtasks.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/conhost.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/conhost.exe: copied to '/home/msifland/infections/conhost.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/conhost.exe: copied to '/home/msifland/infections/conhost.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/findstr.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/findstr.exe: copied to '/home/msifland/infections/findstr.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/findstr.exe: copied to '/home/msifland/infections/findstr.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/dxdiag.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/dxdiag.exe: copied to '/home/msifland/infections/dxdiag.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/dxdiag.exe: copied to '/home/msifland/infections/dxdiag.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/svchost.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/svchost.exe: copied to '/home/msifland/infections/svchost.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/svchost.exe: copied to '/home/msifland/infections/svchost.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/msidb.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/msidb.exe: copied to '/home/msifland/infections/msidb.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/msidb.exe: copied to '/home/msifland/infections/msidb.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/uninstaller.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/uninstaller.exe: copied to '/home/msifland/infections/uninstaller.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/uninstaller.exe: copied to '/home/msifland/infections/uninstaller.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/mofcomp.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/mofcomp.exe: copied to '/home/msifland/infections/mofcomp.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/mofcomp.exe: copied to '/home/msifland/infections/mofcomp.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/winemsibuilder.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/winemsibuilder.exe: copied to '/home/msifland/infections/winemsibuilder.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/winemsibuilder.exe: copied to '/home/msifland/infections/winemsibuilder.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/attrib.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/attrib.exe: copied to '/home/msifland/infections/attrib.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/attrib.exe: copied to '/home/msifland/infections/attrib.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/regini.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/regini.exe: copied to '/home/msifland/infections/regini.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/regini.exe: copied to '/home/msifland/infections/regini.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/reg.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/reg.exe: copied to '/home/msifland/infections/reg.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/reg.exe: copied to '/home/msifland/infections/reg.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/rundll32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/rundll32.exe: copied to '/home/msifland/infections/rundll32.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/rundll32.exe: copied to '/home/msifland/infections/rundll32.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/wusa.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/wusa.exe: copied to '/home/msifland/infections/wusa.exe.009'
+/usr/lib/i386-linux-gnu/wine-development/wusa.exe: copied to '/home/msifland/infections/wusa.exe.011'
 /usr/lib/i386-linux-gnu/wine-development/winemine.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/winemine.exe: copied to '/home/msifland/infections/winemine.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/winemine.exe: copied to '/home/msifland/infections/winemine.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/termsv.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/termsv.exe: copied to '/home/msifland/infections/termsv.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/termsv.exe: copied to '/home/msifland/infections/termsv.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/aspnet_regiis.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/aspnet_regiis.exe: copied to '/home/msifland/infections/aspnet_regiis.exe.017'
+/usr/lib/i386-linux-gnu/wine-development/aspnet_regiis.exe: copied to '/home/msifland/infections/aspnet_regiis.exe.019'
 /usr/lib/i386-linux-gnu/wine-development/net.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/net.exe: copied to '/home/msifland/infections/net.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/net.exe: copied to '/home/msifland/infections/net.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/cabarc.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/cabarc.exe: copied to '/home/msifland/infections/cabarc.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/cabarc.exe: copied to '/home/msifland/infections/cabarc.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/extrac32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/extrac32.exe: copied to '/home/msifland/infections/extrac32.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/extrac32.exe: copied to '/home/msifland/infections/extrac32.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/plugplay.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/plugplay.exe: copied to '/home/msifland/infections/plugplay.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/plugplay.exe: copied to '/home/msifland/infections/plugplay.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/msinfo32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/msinfo32.exe: copied to '/home/msifland/infections/msinfo32.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/msinfo32.exe: copied to '/home/msifland/infections/msinfo32.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/wscript.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/wscript.exe: copied to '/home/msifland/infections/wscript.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/wscript.exe: copied to '/home/msifland/infections/wscript.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/cscript.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/cscript.exe: copied to '/home/msifland/infections/cscript.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/cscript.exe: copied to '/home/msifland/infections/cscript.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/regsvr32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/regsvr32.exe: copied to '/home/msifland/infections/regsvr32.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/regsvr32.exe: copied to '/home/msifland/infections/regsvr32.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/regedit.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/regedit.exe: copied to '/home/msifland/infections/regedit.exe.006'
+/usr/lib/i386-linux-gnu/wine-development/regedit.exe: copied to '/home/msifland/infections/regedit.exe.008'
 /usr/lib/i386-linux-gnu/wine-development/chcp.com: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/i386-linux-gnu/wine-development/chcp.com: copied to '/home/msifland/infections/chcp.com.006'
+/usr/lib/i386-linux-gnu/wine-development/chcp.com: copied to '/home/msifland/infections/chcp.com.008'
 /usr/lib/x86_64-linux-gnu/wine-development/wmplayer.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/wmplayer.exe: copied to '/home/msifland/infections/wmplayer.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/wmplayer.exe: copied to '/home/msifland/infections/wmplayer.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/fc.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/fc.exe: copied to '/home/msifland/infections/fc.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/fc.exe: copied to '/home/msifland/infections/fc.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/wevtutil.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/wevtutil.exe: copied to '/home/msifland/infections/wevtutil.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/wevtutil.exe: copied to '/home/msifland/infections/wevtutil.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/ngen.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/ngen.exe: copied to '/home/msifland/infections/ngen.exe.018'
+/usr/lib/x86_64-linux-gnu/wine-development/ngen.exe: copied to '/home/msifland/infections/ngen.exe.020'
 /usr/lib/x86_64-linux-gnu/wine-development/regasm.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/regasm.exe: copied to '/home/msifland/infections/regasm.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/regasm.exe: copied to '/home/msifland/infections/regasm.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/powershell.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/powershell.exe: copied to '/home/msifland/infections/powershell.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/powershell.exe: copied to '/home/msifland/infections/powershell.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/xcopy.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/xcopy.exe: copied to '/home/msifland/infections/xcopy.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/xcopy.exe: copied to '/home/msifland/infections/xcopy.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/taskkill.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/taskkill.exe: copied to '/home/msifland/infections/taskkill.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/taskkill.exe: copied to '/home/msifland/infections/taskkill.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/subst.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/subst.exe: copied to '/home/msifland/infections/subst.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/subst.exe: copied to '/home/msifland/infections/subst.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/find.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/find.exe: copied to '/home/msifland/infections/find.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/find.exe: copied to '/home/msifland/infections/find.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/sc.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/sc.exe: copied to '/home/msifland/infections/sc.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/sc.exe: copied to '/home/msifland/infections/sc.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/sdbinst.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/sdbinst.exe: copied to '/home/msifland/infections/sdbinst.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/sdbinst.exe: copied to '/home/msifland/infections/sdbinst.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/presentationfontcache.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/presentationfontcache.exe: copied to '/home/msifland/infections/presentationfontcache.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/presentationfontcache.exe: copied to '/home/msifland/infections/presentationfontcache.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/cmd.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/cmd.exe: copied to '/home/msifland/infections/cmd.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/cmd.exe: copied to '/home/msifland/infections/cmd.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/netsh.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/netsh.exe: copied to '/home/msifland/infections/netsh.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/netsh.exe: copied to '/home/msifland/infections/netsh.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/explorer.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/explorer.exe: copied to '/home/msifland/infections/explorer.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/explorer.exe: copied to '/home/msifland/infections/explorer.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/netstat.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/netstat.exe: copied to '/home/msifland/infections/netstat.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/netstat.exe: copied to '/home/msifland/infections/netstat.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/iexplore.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/iexplore.exe: copied to '/home/msifland/infections/iexplore.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/iexplore.exe: copied to '/home/msifland/infections/iexplore.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/dpnsvr.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/dpnsvr.exe: copied to '/home/msifland/infections/dpnsvr.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/dpnsvr.exe: copied to '/home/msifland/infections/dpnsvr.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/arp.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/arp.exe: copied to '/home/msifland/infections/arp.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/arp.exe: copied to '/home/msifland/infections/arp.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/dism.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/dism.exe: copied to '/home/msifland/infections/dism.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/dism.exe: copied to '/home/msifland/infections/dism.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/fsutil.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/fsutil.exe: copied to '/home/msifland/infections/fsutil.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/fsutil.exe: copied to '/home/msifland/infections/fsutil.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/rpcss.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/rpcss.exe: copied to '/home/msifland/infections/rpcss.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/rpcss.exe: copied to '/home/msifland/infections/rpcss.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/wmic.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/wmic.exe: copied to '/home/msifland/infections/wmic.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/wmic.exe: copied to '/home/msifland/infections/wmic.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/shutdown.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/shutdown.exe: copied to '/home/msifland/infections/shutdown.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/shutdown.exe: copied to '/home/msifland/infections/shutdown.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/winedevice.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/winedevice.exe: copied to '/home/msifland/infections/winedevice.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/winedevice.exe: copied to '/home/msifland/infections/winedevice.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/servicemodelreg.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/servicemodelreg.exe: copied to '/home/msifland/infections/servicemodelreg.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/servicemodelreg.exe: copied to '/home/msifland/infections/servicemodelreg.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/start.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/start.exe: copied to '/home/msifland/infections/start.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/start.exe: copied to '/home/msifland/infections/start.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/systeminfo.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/systeminfo.exe: copied to '/home/msifland/infections/systeminfo.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/systeminfo.exe: copied to '/home/msifland/infections/systeminfo.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/regsvcs.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/regsvcs.exe: copied to '/home/msifland/infections/regsvcs.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/regsvcs.exe: copied to '/home/msifland/infections/regsvcs.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/tasklist.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/tasklist.exe: copied to '/home/msifland/infections/tasklist.exe.016'
+/usr/lib/x86_64-linux-gnu/wine-development/tasklist.exe: copied to '/home/msifland/infections/tasklist.exe.018'
 /usr/lib/x86_64-linux-gnu/wine-development/winmgmt.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/winmgmt.exe: copied to '/home/msifland/infections/winmgmt.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/winmgmt.exe: copied to '/home/msifland/infections/winmgmt.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/whoami.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/whoami.exe: copied to '/home/msifland/infections/whoami.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/whoami.exe: copied to '/home/msifland/infections/whoami.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/schtasks.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/schtasks.exe: copied to '/home/msifland/infections/schtasks.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/schtasks.exe: copied to '/home/msifland/infections/schtasks.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/conhost.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/conhost.exe: copied to '/home/msifland/infections/conhost.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/conhost.exe: copied to '/home/msifland/infections/conhost.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/findstr.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/findstr.exe: copied to '/home/msifland/infections/findstr.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/findstr.exe: copied to '/home/msifland/infections/findstr.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/dxdiag.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/dxdiag.exe: copied to '/home/msifland/infections/dxdiag.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/dxdiag.exe: copied to '/home/msifland/infections/dxdiag.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/svchost.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/svchost.exe: copied to '/home/msifland/infections/svchost.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/svchost.exe: copied to '/home/msifland/infections/svchost.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/msidb.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/msidb.exe: copied to '/home/msifland/infections/msidb.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/msidb.exe: copied to '/home/msifland/infections/msidb.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/uninstaller.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/uninstaller.exe: copied to '/home/msifland/infections/uninstaller.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/uninstaller.exe: copied to '/home/msifland/infections/uninstaller.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/mofcomp.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/mofcomp.exe: copied to '/home/msifland/infections/mofcomp.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/mofcomp.exe: copied to '/home/msifland/infections/mofcomp.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/winemsibuilder.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/winemsibuilder.exe: copied to '/home/msifland/infections/winemsibuilder.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/winemsibuilder.exe: copied to '/home/msifland/infections/winemsibuilder.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/attrib.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/attrib.exe: copied to '/home/msifland/infections/attrib.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/attrib.exe: copied to '/home/msifland/infections/attrib.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/regini.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/regini.exe: copied to '/home/msifland/infections/regini.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/regini.exe: copied to '/home/msifland/infections/regini.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/reg.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/reg.exe: copied to '/home/msifland/infections/reg.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/reg.exe: copied to '/home/msifland/infections/reg.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/rundll32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/rundll32.exe: copied to '/home/msifland/infections/rundll32.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/rundll32.exe: copied to '/home/msifland/infections/rundll32.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/wusa.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/wusa.exe: copied to '/home/msifland/infections/wusa.exe.010'
+/usr/lib/x86_64-linux-gnu/wine-development/wusa.exe: copied to '/home/msifland/infections/wusa.exe.012'
 /usr/lib/x86_64-linux-gnu/wine-development/winemine.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/winemine.exe: copied to '/home/msifland/infections/winemine.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/winemine.exe: copied to '/home/msifland/infections/winemine.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/termsv.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/termsv.exe: copied to '/home/msifland/infections/termsv.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/termsv.exe: copied to '/home/msifland/infections/termsv.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/aspnet_regiis.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/aspnet_regiis.exe: copied to '/home/msifland/infections/aspnet_regiis.exe.018'
+/usr/lib/x86_64-linux-gnu/wine-development/aspnet_regiis.exe: copied to '/home/msifland/infections/aspnet_regiis.exe.020'
 /usr/lib/x86_64-linux-gnu/wine-development/net.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/net.exe: copied to '/home/msifland/infections/net.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/net.exe: copied to '/home/msifland/infections/net.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/cabarc.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/cabarc.exe: copied to '/home/msifland/infections/cabarc.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/cabarc.exe: copied to '/home/msifland/infections/cabarc.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/extrac32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/extrac32.exe: copied to '/home/msifland/infections/extrac32.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/extrac32.exe: copied to '/home/msifland/infections/extrac32.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/plugplay.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/plugplay.exe: copied to '/home/msifland/infections/plugplay.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/plugplay.exe: copied to '/home/msifland/infections/plugplay.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/msinfo32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/msinfo32.exe: copied to '/home/msifland/infections/msinfo32.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/msinfo32.exe: copied to '/home/msifland/infections/msinfo32.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/wscript.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/wscript.exe: copied to '/home/msifland/infections/wscript.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/wscript.exe: copied to '/home/msifland/infections/wscript.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/cscript.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/cscript.exe: copied to '/home/msifland/infections/cscript.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/cscript.exe: copied to '/home/msifland/infections/cscript.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/regsvr32.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/regsvr32.exe: copied to '/home/msifland/infections/regsvr32.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/regsvr32.exe: copied to '/home/msifland/infections/regsvr32.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/regedit.exe: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/regedit.exe: copied to '/home/msifland/infections/regedit.exe.007'
+/usr/lib/x86_64-linux-gnu/wine-development/regedit.exe: copied to '/home/msifland/infections/regedit.exe.009'
 /usr/lib/x86_64-linux-gnu/wine-development/chcp.com: Win.Malware.Cerbu-9950095-0 FOUND
-/usr/lib/x86_64-linux-gnu/wine-development/chcp.com: copied to '/home/msifland/infections/chcp.com.007'
+/usr/lib/x86_64-linux-gnu/wine-development/chcp.com: copied to '/home/msifland/infections/chcp.com.009'
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8617620
+Known viruses: 8617877
 Engine version: 0.103.6
-Scanned directories: 65044
-Scanned files: 649030
+Scanned directories: 67356
+Scanned files: 670037
 Infected files: 120
-Total errors: 387
-Data scanned: 51829.56 MB
-Data read: 112733.68 MB (ratio 0.46:1)
-Time: 14089.105 sec (234 m 49 s)
-Start Date: 2022:06:06 02:15:24
-End Date:   2022:06:06 06:10:13
+Total errors: 390
+Data scanned: 66093.57 MB
+Data read: 168881.07 MB (ratio 0.39:1)
+Time: 15342.024 sec (255 m 42 s)
+Start Date: 2022:06:13 02:15:24
+End Date:   2022:06:13 06:31:06
 
 
 End Time:
-Date: 06-06-22
-Time: 06:10:13 AM
-It took 3 hours 54 minutes 57 seconds to scan your system.
+Date: 06-13-22
+Time: 06:31:06 AM
+It took 4 hours 15 minutes 50 seconds to scan your system.
 
 
-[1;38;5;118m
+[1;38;5;95m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m

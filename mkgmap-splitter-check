@@ -6,6 +6,9 @@ echo
 echo "Downloading latest version of mkgmap-splitter. . ."
 sleep 1
 cd $HOME
+if [[ ! -d "$HOME/maps" ]]; then
+	mkdir "$HOME/maps"
+fi
 cd $HOME/maps
 # Setting variable formats for download.
 URL=https://www.mkgmap.org.uk
