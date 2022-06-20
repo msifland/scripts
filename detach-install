@@ -22,8 +22,8 @@ fi
 
 if [[ $MAKEY = "y" ]] && [[ $CMAKEY = "y" ]]; then
 echo "Now installing 'detach'. . ."
-echo "cd $HOME/'Modules&Apps'"
-cd $HOME/'Modules&Apps'
+echo "cd $HOME/'Modules-Apps'"
+cd $HOME/'Modules-Apps'
 sleep 1
 
 echo

@@ -1,12 +1,12 @@
 [sudo] password for msifland: 
 
-06-13-2022 01:30:01 AM
+06-18-2022 01:30:01 AM
 
-[1;38;5;30mRemove old backups first. . .[0m
-/home/msifland/Dropbox/Backups/msifland-06-09-2022.tar.gz
+[1;38;5;250mRemove old backups first. . .[0m
+/home/msifland/Dropbox/Backups/msifland-06-14-2022.tar.gz
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 
-[1;38;5;30mBacking up:[0m
+[1;38;5;250mBacking up:[0m
 /home/msifland/Brother_Printer
 /home/msifland/Documents
 /home/msifland/Dropbox
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;30mTo /home/msifland/Dropbox/Backups/msifland-06-13-2022.tar.gz
+[1;38;5;250mTo /home/msifland/Dropbox/Backups/msifland-06-18-2022.tar.gz
 
 
 Excluding:[0m
@@ -67,13 +67,13 @@ Excluding:[0m
 /home/msifland/Dropbox/.dropbox.cache
 /home/msifland/Dropbox/.dropbox
 
-[1;38;5;30mBacking up now. . .[0m
+[1;38;5;250mBacking up now. . .[0m
 tar: Removing leading `/' from member names
 tar: Removing leading `/' from hard link targets
 tar: /home/msifland/Modules&Apps: Cannot stat: No such file or directory
 tar: Exiting with failure status due to previous errors
-[1;38;5;30mBackup finished
+[1;38;5;250mBackup finished
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-06-10-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-06-10-2022.tar.gz
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-06-18-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-06-18-2022.tar.gz
