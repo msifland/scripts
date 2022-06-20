@@ -42,7 +42,7 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/.cache/at-spi*
 --exclude=$HOME/maps/*.img
 --exclude=$HOME/maps/*.old
---exclude=$HOME/maps/Combine
+--exclude=$HOME/maps/combine
 --exclude=$HOME/maps/downloads
 --exclude=$HOME/maps/Garmin_Maps_Removed_From_Device
 --exclude=$HOME/.config/chrome-remote-desktop

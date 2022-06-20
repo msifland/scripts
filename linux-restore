@@ -42,6 +42,7 @@ echo $PW | sudo -S sudo apt -y autoremove
 echo $PW | sudo -S sudo apt -y clean
 echo $PW | sudo -S sudo apt -y autoclean
 echo $PW | sudo -S sudo apt -y purge
+echo $PW | sudo -S sudo apt -y autopurge
 
 
 # This should be in a different script for restoring the list.
