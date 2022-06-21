@@ -6,25 +6,34 @@ echo
 echo "Installing ble.sh(bash syntax highlighting. . ."
 sleep 1
 
-if [[ ! -d $HOME/"Modules&Apps" ]]; then
-	mkdir $HOME/"Modules&Apps"
+if [[ ! -d $HOME/"Modules-Apps" ]]; then
+	mkdir $HOME/"Modules-Apps"
 fi
-cd $HOME/"Modules&Apps"
+if [[ ! -d $HOME/"Modules-Apps"/ble.sh ]]; then
+	mkdir $HOME/"Modules-Apps"/ble.sh
+fi
+cd $HOME/"Modules-Apps"/ble.sh
 git clone https://github.com/akinomyoga/ble.sh.git
 cd ble.sh
+if ! dpkg --get-selections | awk '{print $1}' | grep -xq "make"; then
+	echo
+	echo "gmake not found, installing now. . ."
+	sleep 1
+	echo "spike" | sudo -S apt install -y gmake
+fi
 make
 source out/ble.sh
 make INSDIR="$HOME/.local/share/blesh" install
 sleep 1
 
 echo
-echo "If not already done, add the folling lines to your .bashrc file. The first section is to be added after 'export TERM' line in your .bashrc file. The second section is to be added the bottom of your .bashrc file.
+echo 'If not already done, add the folling lines to your .bashrc file. The first section is to be added after 'export TERM' line in your .bashrc file. The second section is to be added the bottom of your .bashrc file.
 
 # blesh, bash syntax highlighting.
 [[ \$- == *i* ]] && source \"\$HOME/.local/share/blesh/ble.sh\" --attach=none
 
 
 # blesh, bash syntax highlighting.
-((_ble_bash)) && ble-attach"
+[[ ${BLE_VERSION-} ]] && ble-attach'
 
 cd
