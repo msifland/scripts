@@ -1,0 +1,9 @@
+#!/bin/bash
+# This is a bash script.
+# Put your description below this line and code below that.
+# 
+echo
+echo "Updating ble.sh(bash syntax highlighting. . ."
+sleep 1
+
+bash $HOME/.local/share/blesh/ble.sh --update

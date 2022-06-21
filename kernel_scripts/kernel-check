@@ -72,7 +72,19 @@ if version_gt "$GET_VER" "$CURNT"; then
 
 	echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 	echo 'spike' | sudo -S apt build-dep -y linux
-	echo 'spike' | sudo -S apt install ncurses-dev fakeroot
+	if ! dpkg --get-selections | awk '{print $1}' | grep -xq "ncurses-dev"; then
+		echo
+		echo "ncurses-dev not found, installing now. . ."
+		sleep 1
+		echo "spike" | sudo -S apt install -y ncurses-dev
+	fi
+	if ! dpkg --get-selections | awk '{print $1}' | grep -xq "fakeroot"; then
+		echo
+		echo "fakeroot not found, installing now. . ."
+		sleep 1
+		echo "spike" | sudo -S apt install -y fakeroot
+	fi
+	
 	cd linux-"$GET_VER"
 	echo
 
