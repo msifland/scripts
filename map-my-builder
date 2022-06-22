@@ -33,7 +33,7 @@ ${ILCOLOR1}Here is a list of available .typ files on your system:${ILRESTORE}"
 		q="$(basename -- $i)"
 		echo "$q"
 	done
-	sleep 1
+	sleep 2
 	echo
 	read -t 120 -p "Would you like to change the .typ file used?
 ${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}$TYP_FILE.typ${ILRESTORE}[y/N]: " chng_typ
@@ -59,9 +59,6 @@ ${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}
 		sleep 1
 	fi
 
-	echo "${ILCOLOR1}Starting process of downloading and building Garmin map of the following Geofarik maps:${ILRESTORE}"
-	tail -n +50 $HOME/scripts/map-my-builder | awk '/#state-/' | sed 's:#state-::g' | sed 's:state-dummy::g' | sed 's:tail.*::g'
-	echo
 	sleep 1
 	echo "${ILCOLOR1}Checking directories and Cleaning up files...${ILRESTORE}"
 	# Create directories if they don't exist.
@@ -78,6 +75,36 @@ ${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}
 	else
 		rm -rf $HOME/maps/downloads/*
 	fi
+
+	# Check dependencies and download latest versions of mkgmap and mkgmap-splitter
+	sleep 1
+	echo
+	echo "${ILCOLOR1}Downloading latest version of mkgmap and mkgmap-splitter. . .${ILRESTORE}"
+	echo
+	$HOME/scripts/mkgmap-check
+	echo
+	echo
+	$HOME/scripts/mkgmap-splitter-check
+	echo
+	echo
+	echo "${ILCOLOR1}Checking dependencies for osmimum-tool and python3-pyosmium. . .${ILRESTORE}"
+	echo
+	if ! dpkg --get-selections | grep "osmium-tool"; then
+		echo "spike" | sudo -S apt install osmium-tool
+	else
+		echo
+		echo "osmium-tool already installed."
+	fi
+	echo
+	sleep 1
+	if ! dpkg --get-selections | grep "python3-pyosmium"; then
+		echo "spike" | sudo -S apt install python3-pyosmium
+	else
+		echo
+		echo "python3-pyosmium already installed."
+	fi
+	echo
+	sleep 1
 	
 	# Downloading maps from geofabrik.
 	cd $HOME/maps
@@ -85,7 +112,10 @@ ${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}
 	echo "${ILCOLOR1}Downloading maps...${ILRESTORE}"
 	sleep 1
 	echo
-
+	sleep 1
+	echo "${ILCOLOR1}Starting process of downloading and building Garmin map of the following Geofarik maps:${ILRESTORE}"
+	tail -n +50 $HOME/scripts/map-my-builder | awk '/#state-/' | sed 's:#state-::g' | sed 's:state-dummy::g' | sed 's:tail.*::g'
+	echo
 	# Error handling variable for file size errors.
 	FILE=""
 	MINSZ=100000
@@ -209,7 +239,7 @@ ${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}
 	while [ $ACTSZ -lt $MINSZ ]; do
 		wget -O $HOME/maps/downloads/florida_latest.osm.pbf http://download.geofabrik.de/north-america/us/florida-latest.osm.pbf
 	done
-	
+
 	# Use osmium program to combine the above downloaded maps into one .osm.pbf file. This is needed because of the individual file ID numbers.
 	echo
 	echo "${ILCOLOR1}Combining osm.pbf files using osmium...${ILRESTORE}"

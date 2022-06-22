@@ -1,6 +1,6 @@
 [sudo] password for msifland: 
 
-06-21-2022 01:30:02 AM
+06-22-2022 01:30:01 AM
 
 [1;38;5;29mRemove old backups first. . .[0m
 ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
@@ -33,7 +33,7 @@ ls /home/msifland/Dropbox/Backups/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;29mTo /home/msifland/Dropbox/Backups/msifland-06-21-2022.tar.gz
+[1;38;5;29mTo /home/msifland/Dropbox/Backups/msifland-06-22-2022.tar.gz
 
 
 Excluding:[0m
@@ -75,15 +75,16 @@ tar: Exiting with failure status due to previous errors
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Backups/msifland-06-21-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-06-21-2022.tar.gz
+Changing ownership of /home/msifland/Dropbox/Backups/msifland-06-22-2022.tar.gz from root:root to msifland:msifland. . .sudo chown msifland:msifland /home/msifland/Dropbox/Backups/msifland-06-22-2022.tar.gz
 [1;38;5;29mShowing files in /home/msifland/Dropbox/Backups/ . . .[0m
-total 795M
+total 1.2G
 -rw-r--r-- 1 msifland msifland 396M Jun 19 07:42 msifland-06-19-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 399M Jun 21 01:37 msifland-06-21-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.2K Jun 21 01:37 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 400M Jun 22 01:31 msifland-06-22-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.2K Jun 22 01:31 my_backup_log.txt
 
 [1;38;5;29mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-06-21-2022 01:37:25 AM
-[1;38;5;29mIt took 7 minutes 23 seconds to run whole process.[0m
+06-22-2022 01:31:13 AM
+[1;38;5;29mIt took 1 minutes 12 seconds to run whole process.[0m
 
