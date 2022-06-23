@@ -1,16 +1,6 @@
 #!/bin/bash
 
-# Dependencies: program mkgmap, osmium. Also a mkgmap, gmt, and mkgmap-splitter folder downloaded from source.
-# Switching to map directory and display what maps we are downloading
-DEVICE="/media/msifland/GARMIN"
-
-# MAP_NAME should be the name of the .typ file you use.
-TYP_FILE="velo"
-MAP_NAME="my_$TYP_FILE"
-if [[ ! -d "$HOME/maps" ]]; then
-		mkdir "$HOME/maps"
-fi
-
+# Function to start download and build.
 function build_map(){
 	shopt -u nocasematch
 	### Log date and time
@@ -57,23 +47,6 @@ ${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}
 		echo "${ILCOLOR1}Okay, running with current .typ file - ${ILCOLOR2}$TYP_FILE.typ"
 		echo
 		sleep 1
-	fi
-
-	sleep 1
-	echo "${ILCOLOR1}Checking directories and Cleaning up files...${ILRESTORE}"
-	# Create directories if they don't exist.
-	if [[ ! -d "$HOME/maps/completed_maps" ]]; then
-		mkdir "$HOME/maps/completed_maps"
-	fi
-	if [[ ! -d "$HOME/maps/combine" ]]; then
-		mkdir "$HOME/maps/combine"
-	else
-		rm -rf $HOME/maps/combine/*
-	fi
-	if [[ ! -d "$HOME/maps/downloads" ]]; then
-		mkdir "$HOME/maps/downloads"
-	else
-		rm -rf $HOME/maps/downloads/*
 	fi
 
 	# Check dependencies and download latest versions of mkgmap and mkgmap-splitter
@@ -264,7 +237,7 @@ comment
 	# Different ways to run, messes up sometimes, these are run without the osmconvert command above, and with mkgmpa and splitter downloaded directly form website instead of installing with apt. Always get this latest versons this was. See script files "mkgmp-check and mkgmap-splitter-check.
 	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/combine/"$MAP_NAME".osm.pbf --max-nodes=800000 --output=xml
 
-	# Re-combing all split files into one Garmin .img file.
+	# Re-combining all split files into one Garmin .img file.
 	echo
 	echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 	sleep 1
@@ -302,7 +275,14 @@ comment
 		else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
-		fi
+		fi		
+		# Only clean up if a gmappsupp.img was created. Leave files for troubleshooting if .img was NOT created.
+		echo
+		sleep 1
+		echo "${ILCOLOR1}Cleaning up files. . .${ILRESTORE}"
+		rm -rf $HOME/maps/downloads/*
+		rm -rf $HOME/maps/combine/*
+		sleep 1
 	else
 		echo
 		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"
@@ -324,42 +304,40 @@ comment
 	cd $HOME
 	exit
 }
-<<comment
-function garmin_check(){
-	shopt -s nocasematch
-	sleep 1
-	if [[ -d "/"$DEVICE"" ]]; then
-		echo "Garmin device found. . ."
-		echo
-		sleep 1
-		# Call build function.
-		build_map
-	else
-		if [[ ! "$chck" = "b" ]]; then
-			read -t 10 -p "No Garmin device found, checking again in 10 seconds. [B] for bypass. . . " chck; echo
-			# Loop back to this function when no device found.
-			garmin_check
-		else
-			echo
-			echo "Ok, bypassing device check. . ."
-			sleep 1
-			# Call build function.
-			build_map
-		fi
-	fi
-}
-comment
+
+# Dependencies: program mkgmap, osmium. Also a mkgmap, gmt, and mkgmap-splitter folder downloaded from source.
+
 ########## Start Process #############
-# Check if device is connected and don't run until it is, unless 'b' is typed for bypass.
 echo
 echo "${ILCOLOR1}Running My Map Builder for Garmin devices. . .${ILRESTORE}"
 sleep 1
 echo
-#echo "Checking if Garmin device is connected. . ."
-#sleep 1
-#echo 
-#chck=""
+# Switching to maps directory.
+cd $HOME/maps
+# Define variables.
+DEVICE="/media/msifland/GARMIN"
+# MAP_NAME should be the name of the .typ file you use.
+TYP_FILE="velo"
+MAP_NAME="my_$TYP_FILE"
+echo "${ILCOLOR1}Checking directories and Cleaning up files...${ILRESTORE}"
+echo
+# Create directories if they don't exist.
+if [[ ! -d "$HOME/maps" ]]; then
+	mkdir "$HOME/maps"
+fi
+if [[ ! -d "$HOME/maps/completed_maps" ]]; then
+	mkdir "$HOME/maps/completed_maps"
+fi
+if [[ ! -d "$HOME/maps/combine" ]]; then
+	mkdir "$HOME/maps/combine"
+else
+	rm -rf $HOME/maps/combine/*
+fi
+if [[ ! -d "$HOME/maps/downloads" ]]; then
+	mkdir "$HOME/maps/downloads"
+else
+	rm -rf $HOME/maps/downloads/*
+fi
 
-# Call check function.
-#garmin_check
+# Call build_map function to start the process.
 build_map
