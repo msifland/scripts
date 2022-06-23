@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Dependencies: program mkgmap, osmium. Also a mkgmap, gmt, and mkgmap-splitter folder downloaded from source.
-# Switching to map directory and display what maps we are downloading
-DEVICE="/media/msifland/GARMIN"
+# Function to start download and build.
 function build_map(){
 	shopt -u nocasematch
 	### Log date and time
@@ -14,27 +12,76 @@ function build_map(){
 	TIME=$(date +"%r")
 	echo "Time: $TIME"
 	echo -e ${ILRESTORE}
+	sleep 1
 
+	echo "${ILCOLOR1}Current .typ file being used is ${ILCOLOR2}$TYP_FILE.typ
+${ILCOLOR1}Here is a list of available .typ files on your system:${ILRESTORE}"
+	TYP_DIR="$HOME/maps/*.typ"
+	for i in $TYP_DIR; do
+		q="$(basename -- $i)"
+		echo "$q"
+	done
+	sleep 2
 	echo
-	echo "${ILCOLOR1}Downloading US Map from Geofabrik.com:"
-
-	# Create directories if they don't exist.
-	if [[ ! -d "$HOME/maps" ]]; then
-		mkdir "$HOME/maps"
-	fi
-	if [[ ! -d "$HOME/maps/Combine" ]]; then
-		mkdir "$HOME/maps/Combine"
-	fi
-	if [[ ! -d "$HOME/maps/downloads" ]]; then
-		mkdir "$HOME/maps/downloads"
+	read -t 120 -p "Would you like to change the .typ file used?
+${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}$TYP_FILE.typ${ILRESTORE}[y/N]: " chng_typ
+	sleep 1
+	echo
+	if [[ $chng_typ =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		read -p "Pick a .typ file from the list above and then type it WITHOUT .typ extention: " typ_name
+		if test -f "$HOME/maps/$typ_name.typ"; then
+			TYP_FILE="$typ_name"
+			sleep 1
+			echo
+			echo "${ILCOLOR1}Okay running with ${ILCOLOR3}$TYP_FILE.typ"
+			sleep 1
+		else
+			echo
+			echo "${ILCOLOR1}Files does not exist. Check spelling next time. Continuing with last run .typ file - ${ILCOLOR2}$TYP_FILE.typ"
+			sleep 1
+		fi
 	else
-		rm -rf $HOME/maps/downloads/*
+		echo
+		echo "${ILCOLOR1}Okay, running with current .typ file - ${ILCOLOR2}$TYP_FILE.typ"
+		echo
+		sleep 1
 	fi
-	cd $HOME/maps
-
+	echo
+	
+	# Check dependencies and download latest versions of mkgmap and mkgmap-splitter
+	sleep 1
+	echo
+	echo "${ILCOLOR1}Downloading latest version of mkgmap and mkgmap-splitter. . .${ILRESTORE}"
+	echo
+	$HOME/scripts/mkgmap-check
+	echo
+	echo
+	$HOME/scripts/mkgmap-splitter-check
+	echo
+	echo
+	echo "${ILCOLOR1}Checking dependencies for osmimum-tool and python3-pyosmium. . .${ILRESTORE}"
+	echo
+	if ! dpkg --get-selections | grep "osmium-tool"; then
+		echo "spike" | sudo -S apt install osmium-tool
+	else
+		echo
+		echo "osmium-tool already installed."
+	fi
+	echo
+	sleep 1
+	if ! dpkg --get-selections | grep "python3-pyosmium"; then
+		echo "spike" | sudo -S apt install python3-pyosmium
+	else
+		echo
+		echo "python3-pyosmium already installed."
+	fi
+	echo
+	sleep 1
 	# Error handling variable for file size errors.
 	FILE=""
 	MINSZ=100000
+	echo
+	echo "${ILCOLOR1}Downloading US Map from Geofabrik.com:"
 
 # South
 	cd $HOME/maps
@@ -42,48 +89,38 @@ function build_map(){
 	echo
 	echo "${ILCOLOR1}Downloading South Region...${ILRESTORE}"
 	sleep 1
-	echo
-	# South
 	wget -O $HOME/maps/downloads/us_south_latest.osm.pbf http://download.geofabrik.de/north-america/us-south-latest.osm.pbf
 	FILE="$HOME/maps/downloads/us_south_latest.osm.pbf"
 	ACTSZ=$(wc -c <"$FILE")
 	while [ $ACTSZ -lt $MINSZ ]; do
 		wget -O $HOME/maps/downloads/us_south_latest.osm.pbf http://download.geofabrik.de/north-america/us-south-latest.osm.pbf
 	done
+	mv $HOME/maps/downloads/us_south_latest.osm.pbf $HOME/maps/combine/"$MAP_NAME"_us_south.osm.pbf
 # Build South
-	# Formatting for faster and better processing.
-	echo
-	echo "${ILCOLOR1}Converting us_south_latest.osm.pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
-	sleep 1
-	osmconvert --drop-version $HOME/maps/downloads/us_south_latest.osm.pbf -o=$HOME/maps/Combine/us_south_latest.o5m
-	cd $HOME/maps/Combine
-
+	cd $HOME/maps/combine
 	# Splitting the file with mkgmap program for managable conversion of size.
 	echo
 	echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 	sleep 1
-	mkgmap-splitter $HOME/maps/Combine/us_south_latest.o5m --max-nodes=800000 --output=xml
-	# Different ways to run, messes up sometimes, these are run without the osmconver command above.
-	#mkgmap-splitter $HOME/maps/Combine/us_south_latest.osm.pbf --max-threads=2 --max-nodes=800000 --output=xml
-	#java -jar /home/msifland/maps/splitter-r592/splitter.jar $HOME/maps/Combine/us_south_latest.osm.pbf --max-nodes=800000 --output=xml
+	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/combine/"$MAP_NAME"_us_south.osm.pbf --max-nodes=800000 --output=xml
 
-	# Re-combing all split files into one Garmin .img file.
+	# Re-combining all split files into one Garmin .img file.
 	echo
 	echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 	sleep 1
-	mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
+	java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/"$TYP_FILE".typ
 
-	# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
-	if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
-		if [[ -f "$HOME/maps/us_south_latest_gmapsupp.img.old" ]]; then
-			rm -rf $HOME/maps/us_south_latest_gmapsupp.img.old
-		fi
-		if [[ -f "$HOME/maps/us_south_latest_gmapsupp.img" ]]; then
-			mv $HOME/maps/us_south_latest_gmapsupp.img $HOME/maps/us_south_latest_gmapsupp.img.old
-		fi
+# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
+	if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 		echo
-		echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to us_south_gmapsupp.img...${ILRESTORE}"
-		mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/us_south_latest_gmapsupp.img
+		echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and renaming to "$MAP_NAME"_us_south_gmapsupp.img...${ILRESTORE}"
+		# Nameing and removing previous images in folder "completed_maps".
+		if [[ -f "$HOME/maps/completed_maps/"$MAP_NAME"_us_south_gmapsupp.img" ]]; then
+			rm -rf $HOME/maps/completed_maps/"$MAP_NAME"_us_south_gmapsupp.img.old
+			mv $HOME/maps/completed_maps/"$MAP_NAME"_us_south_gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_south_gmapsupp.img.old
+		fi
+		# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
+		mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_south_gmapsupp.img
 		sleep 1
 
 		echo
@@ -93,26 +130,24 @@ function build_map(){
 			echo "Garming device found. . ."
 			echo
 			sleep 1
-			if [[ -f "$DEVICE"/Garmin/us_south_latest_gmapsupp.img ]];then
+			if [[ -f "$DEVICE"/Garmin/"$MAP_NAME"_us_south_gmapsupp.img ]];then
 				echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-				rm -rf "$DEVICE"/Garmin/us_south_latest_gmapsupp.img
+				rm -rf "$DEVICE"/Garmin/"$MAP_NAME"_us_south_gmapsupp.img
 				echo
 				sleep 1
 			fi
 			echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-			rsync --progress --verbose $HOME/maps/us_south_latest_gmapsupp.img "$DEVICE"/Garmin/us_south_latest_gmapsupp.img
+			rsync --progress --verbose $HOME/maps/completed_maps/"$MAP_NAME"_us_south_gmapsupp.img "$DEVICE"/Garmin/"$MAP_NAME"_us_south_gmapsupp.img
 		else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
 		fi
-		sleep 1
-
-		# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
-		echo
-		echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
-		sleep 1
-		rm -rf $HOME/maps/Combine/*
-		rm -rf $HOME/maps/*.osm.pbf
+			# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
+			echo
+			echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
+			sleep 1
+			rm -rf $HOME/maps/combine/*
+			rm -rf $HOME/maps/downloads/*
 	else
 		echo
 		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"
@@ -124,48 +159,38 @@ function build_map(){
 	echo
 	echo "${ILCOLOR1}Downloading Midwest Region...${ILRESTORE}"
 	sleep 1
-	echo
-	# Midwest
 	wget -O $HOME/maps/downloads/us_midwest_latest.osm.pbf http://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf
 	FILE="$HOME/maps/downloads/us_midwest_latest.osm.pbf"
 	ACTSZ=$(wc -c <"$FILE")
 	while [ $ACTSZ -lt $MINSZ ]; do
 		wget -O $HOME/maps/downloads/us_midwest_latest.osm.pbf http://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf
 	done
-# Build midwest
-	# Formatting for faster and better processing.
-	echo
-	echo "${ILCOLOR1}Converting us_midwest_latest.osm.pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
-	sleep 1
-	osmconvert --drop-version $HOME/maps/downloads/us_midwest_latest.osm.pbf -o=$HOME/maps/Combine/us_midwest_latest.o5m
-	cd $HOME/maps/Combine
-
+	mv $HOME/maps/downloads/us_midwest_latest.osm.pbf $HOME/maps/combine/"$MAP_NAME"_us_midwest.osm.pbf
+# Build Midwest
+	cd $HOME/maps/combine
 	# Splitting the file with mkgmap program for managable conversion of size.
 	echo
 	echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 	sleep 1
-	mkgmap-splitter $HOME/maps/Combine/us_midwest_latest.o5m --max-nodes=800000 --output=xml
-	# Different ways to run, messes up sometimes, these are run without the osmconver command above.
-	#mkgmap-splitter $HOME/maps/Combine/us_midwest_latest.osm.pbf --max-threads=2 --max-nodes=800000 --output=xml
-	#java -jar /home/msifland/maps/splitter-r592/splitter.jar $HOME/maps/Combine/us_midwest_latest.osm.pbf --max-nodes=800000 --output=xml
+	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/combine/"$MAP_NAME"_us_midwest.osm.pbf --max-nodes=800000 --output=xml
 
-	# Re-combing all split files into one Garmin .img file.
+	# Re-combining all split files into one Garmin .img file.
 	echo
 	echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 	sleep 1
-	mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
+	java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/"$TYP_FILE".typ
 
-	# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
-	if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
-		if [[ -f "$HOME/maps/us_midwest_latest_gmapsupp.img.old" ]]; then
-			rm -rf $HOME/maps/us_midwest_latest_gmapsupp.img.old
-		fi
-		if [[ -f "$HOME/maps/us_midwest_latest_gmapsupp.img" ]]; then
-			mv $HOME/maps/us_midwest_latest_gmapsupp.img $HOME/maps/us_midwest_latest_gmapsupp.img.old
-		fi
+# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
+	if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 		echo
-		echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to us_midwest_gmapsupp.img...${ILRESTORE}"
-		mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/us_midwest_latest_gmapsupp.img
+		echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and renaming to "$MAP_NAME"_us_midwest_gmapsupp.img...${ILRESTORE}"
+		# Nameing and removing previous images in folder "completed_maps".
+		if [[ -f "$HOME/maps/completed_maps/"$MAP_NAME"_us_midwest_gmapsupp.img" ]]; then
+			rm -rf $HOME/maps/completed_maps/"$MAP_NAME"_us_midwest_gmapsupp.img.old
+			mv $HOME/maps/completed_maps/"$MAP_NAME"_us_midwest_gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_midwest_gmapsupp.img.old
+		fi
+		# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
+		mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_midwest_gmapsupp.img
 		sleep 1
 
 		echo
@@ -175,26 +200,24 @@ function build_map(){
 			echo "Garming device found. . ."
 			echo
 			sleep 1
-			if [[ -f "$DEVICE"/Garmin/us_midwest_latest_gmapsupp.img ]];then
+			if [[ -f "$DEVICE"/Garmin/"$MAP_NAME"_us_midwest_gmapsupp.img ]];then
 				echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-				rm -rf "$DEVICE"/Garmin/us_midwest_latest_gmapsupp.img
+				rm -rf "$DEVICE"/Garmin/"$MAP_NAME"_us_midwest_gmapsupp.img
 				echo
 				sleep 1
 			fi
 			echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-			rsync --progress --verbose $HOME/maps/us_midwest_latest_gmapsupp.img "$DEVICE"/Garmin/us_midwest_latest_gmapsupp.img
+			rsync --progress --verbose $HOME/maps/completed_maps/"$MAP_NAME"_us_midwest_gmapsupp.img "$DEVICE"/Garmin/"$MAP_NAME"_us_midwest_gmapsupp.img
 		else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
 		fi
-		sleep 1
-
-		# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
-		echo
-		echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
-		sleep 1
-		rm -rf $HOME/maps/Combine/*
-		rm -rf $HOME/maps/*.osm.pbf
+			# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
+			echo
+			echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
+			sleep 1
+			rm -rf $HOME/maps/combine/*
+			rm -rf $HOME/maps/downloads/*
 	else
 		echo
 		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"
@@ -206,48 +229,38 @@ function build_map(){
 	echo
 	echo "${ILCOLOR1}Downloading Northeast Region...${ILRESTORE}"
 	sleep 1
-	echo
-	# Northeast
 	wget -O $HOME/maps/downloads/us_northeast_latest.osm.pbf http://download.geofabrik.de/north-america/us-northeast-latest.osm.pbf
 	FILE="$HOME/maps/downloads/us_northeast_latest.osm.pbf"
 	ACTSZ=$(wc -c <"$FILE")
 	while [ $ACTSZ -lt $MINSZ ]; do
 		wget -O $HOME/maps/downloads/us_northeast_latest.osm.pbf http://download.geofabrik.de/north-america/us-northeast-latest.osm.pbf
-	done	
-# Build northeast
-	# Formatting for faster and better processing.
-	echo
-	echo "${ILCOLOR1}Converting us_northeast_latest.osm.pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
-	sleep 1
-	osmconvert --drop-version $HOME/maps/downloads/us_northeast_latest.osm.pbf -o=$HOME/maps/Combine/us_northeast_latest.o5m
-	cd $HOME/maps/Combine
-
+	done
+	mv $HOME/maps/downloads/us_northeast_latest.osm.pbf $HOME/maps/combine/"$MAP_NAME"_us_northeast.osm.pbf
+# Build Northeast
+	cd $HOME/maps/combine
 	# Splitting the file with mkgmap program for managable conversion of size.
 	echo
 	echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 	sleep 1
-	mkgmap-splitter $HOME/maps/Combine/us_northeast_latest.o5m --max-nodes=800000 --output=xml
-	# Different ways to run, messes up sometimes, these are run without the osmconver command above.
-	#mkgmap-splitter $HOME/maps/Combine/us_northeast_latest.osm.pbf --max-threads=2 --max-nodes=800000 --output=xml
-	#java -jar /home/msifland/maps/splitter-r592/splitter.jar $HOME/maps/Combine/us_northeast_latest.osm.pbf --max-nodes=800000 --output=xml
+	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/combine/"$MAP_NAME"_us_northeast.osm.pbf --max-nodes=800000 --output=xml
 
-	# Re-combing all split files into one Garmin .img file.
+	# Re-combining all split files into one Garmin .img file.
 	echo
 	echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 	sleep 1
-	mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
+	java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/"$TYP_FILE".typ
 
-	# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
-	if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
-		if [[ -f "$HOME/maps/us_northeast_latest_gmapsupp.img.old" ]]; then
-			rm -rf $HOME/maps/us_northeast_latest_gmapsupp.img.old
-		fi
-		if [[ -f "$HOME/maps/us_northeast_latest_gmapsupp.img" ]]; then
-			mv $HOME/maps/us_northeast_latest_gmapsupp.img $HOME/maps/us_northeast_latest_gmapsupp.img.old
-		fi
+# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
+	if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 		echo
-		echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to us_northeast_gmapsupp.img...${ILRESTORE}"
-		mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/us_northeast_latest_gmapsupp.img
+		echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and renaming to "$MAP_NAME"_us_northeast_gmapsupp.img...${ILRESTORE}"
+		# Nameing and removing previous images in folder "completed_maps".
+		if [[ -f "$HOME/maps/completed_maps/"$MAP_NAME"_us_northeast_gmapsupp.img" ]]; then
+			rm -rf $HOME/maps/completed_maps/"$MAP_NAME"_us_northeast_gmapsupp.img.old
+			mv $HOME/maps/completed_maps/"$MAP_NAME"_us_northeast_gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_northeast_gmapsupp.img.old
+		fi
+		# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
+		mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_northeast_gmapsupp.img
 		sleep 1
 
 		echo
@@ -257,26 +270,24 @@ function build_map(){
 			echo "Garming device found. . ."
 			echo
 			sleep 1
-			if [[ -f "$DEVICE"/Garmin/us_northeast_latest_gmapsupp.img ]];then
+			if [[ -f "$DEVICE"/Garmin/"$MAP_NAME"_us_northeast_gmapsupp.img ]];then
 				echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-				rm -rf "$DEVICE"/Garmin/us_northeast_latest_gmapsupp.img
+				rm -rf "$DEVICE"/Garmin/"$MAP_NAME"_us_northeast_gmapsupp.img
 				echo
 				sleep 1
 			fi
 			echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-			rsync --progress --verbose $HOME/maps/us_northeast_latest_gmapsupp.img "$DEVICE"/Garmin/us_northeast_latest_gmapsupp.img
-		else
+			rsync --progress --verbose $HOME/maps/completed_maps/"$MAP_NAME"_us_northeast_gmapsupp.img "$DEVICE"/Garmin/"$MAP_NAME"_us_northeast_gmapsupp.img
+			else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
 		fi
-		sleep 1
-
-		# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
-		echo
-		echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
-		sleep 1
-		rm -rf $HOME/maps/Combine/*
-		rm -rf $HOME/maps/*.osm.pbf
+			# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
+			echo
+			echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
+			sleep 1
+			rm -rf $HOME/maps/combine/*
+			rm -rf $HOME/maps/downloads/*	
 	else
 		echo
 		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"
@@ -288,48 +299,38 @@ function build_map(){
 	echo
 	echo "${ILCOLOR1}Downloading West Region...${ILRESTORE}"
 	sleep 1
-	echo
-	# West
 	wget -O $HOME/maps/downloads/us_west_latest.osm.pbf http://download.geofabrik.de/north-america/us-west-latest.osm.pbf
 	FILE="$HOME/maps/downloads/us_west_latest.osm.pbf"
 	ACTSZ=$(wc -c <"$FILE")
 	while [ $ACTSZ -lt $MINSZ ]; do
 		wget -O $HOME/maps/downloads/us_west_latest.osm.pbf http://download.geofabrik.de/north-america/us-west-latest.osm.pbf
 	done
-# Build west
-	# Formatting for faster and better processing.
-	echo
-	echo "${ILCOLOR1}Converting us_west_latest.osm.pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
-	sleep 1
-	osmconvert --drop-version $HOME/maps/downloads/us_west_latest.osm.pbf -o=$HOME/maps/Combine/us_west_latest.o5m
-	cd $HOME/maps/Combine
-
+	mv $HOME/maps/downloads/us_west_latest.osm.pbf $HOME/maps/combine/"$MAP_NAME"_us_west.osm.pbf
+# Build West
+	cd $HOME/maps/combine
 	# Splitting the file with mkgmap program for managable conversion of size.
 	echo
 	echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 	sleep 1
-	mkgmap-splitter $HOME/maps/Combine/us_west_latest.o5m --max-nodes=800000 --output=xml
-	# Different ways to run, messes up sometimes, these are run without the osmconver command above.
-	#mkgmap-splitter $HOME/maps/Combine/us_west_latest.osm.pbf --max-threads=2 --max-nodes=800000 --output=xml
-	#java -jar /home/msifland/maps/splitter-r592/splitter.jar $HOME/maps/Combine/us_west_latest.osm.pbf --max-nodes=800000 --output=xml
+	java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/combine/"$MAP_NAME"_us_west.osm.pbf --max-nodes=800000 --output=xml
 
-	# Re-combing all split files into one Garmin .img file.
+	# Re-combining all split files into one Garmin .img file.
 	echo
 	echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
 	sleep 1
-	mkgmap --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/my_custom.typ
+	java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/"$TYP_FILE".typ
 
-	# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
-	if [[ -f $HOME/maps/Combine/gmapsupp.img ]]; then
-		if [[ -f "$HOME/maps/us_west_latest_gmapsupp.img.old" ]]; then
-			rm -rf $HOME/maps/us_west_latest_gmapsupp.img.old
-		fi
-		if [[ -f "$HOME/maps/us_west_latest_gmapsupp.img" ]]; then
-			mv $HOME/maps/us_west_latest_gmapsupp.img $HOME/maps/us_west_latest_gmapsupp.img.old
-		fi
+# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
+	if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 		echo
-		echo "${ILCOLOR1}Moving gmapsupp.img to Maps folder and renaming to us_west_gmapsupp.img...${ILRESTORE}"
-		mv $HOME/maps/Combine/gmapsupp.img $HOME/maps/us_west_latest_gmapsupp.img
+		echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and renaming to "$MAP_NAME"_us_west_gmapsupp.img...${ILRESTORE}"
+		# Nameing and removing previous images in folder "completed_maps".
+		if [[ -f "$HOME/maps/completed_maps/"$MAP_NAME"_us_west_gmapsupp.img" ]]; then
+			rm -rf $HOME/maps/completed_maps/"$MAP_NAME"_us_west_gmapsupp.img.old
+			mv $HOME/maps/completed_maps/"$MAP_NAME"_us_west_gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_west_gmapsupp.img.old
+		fi
+		# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
+		mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_us_west_gmapsupp.img
 		sleep 1
 
 		echo
@@ -339,26 +340,24 @@ function build_map(){
 			echo "Garming device found. . ."
 			echo
 			sleep 1
-			if [[ -f "$DEVICE"/Garmin/us_west_latest_gmapsupp.img ]];then
+			if [[ -f "$DEVICE"/Garmin/"$MAP_NAME"_us_west_gmapsupp.img ]];then
 				echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-				rm -rf "$DEVICE"/Garmin/us_west_latest_gmapsupp.img
+				rm -rf "$DEVICE"/Garmin/"$MAP_NAME"_us_west_gmapsupp.img
 				echo
 				sleep 1
 			fi
 			echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-			rsync --progress --verbose $HOME/maps/us_west_latest_gmapsupp.img "$DEVICE"/Garmin/us_west_latest_gmapsupp.img
+			rsync --progress --verbose $HOME/maps/completed_maps/"$MAP_NAME"_us_west_gmapsupp.img "$DEVICE"/Garmin/"$MAP_NAME"_us_west_gmapsupp.img
 		else
 			echo
 			echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
 		fi
-		sleep 1
-
 		# Only clean up files if map.img was created successfully. 	Don't delete so a manual re-run can be done for error checking.
 		echo
 		echo "${ILCOLOR1}Cleaning up files...${ILRESTORE}"
 		sleep 1
-		rm -rf $HOME/maps/Combine/*
-		rm -rf $HOME/maps/*.osm.pbf
+		rm -rf $HOME/maps/combine/*
+		rm -rf $HOME/maps/downloads/*	
 	else
 		echo
 		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"
@@ -380,31 +379,8 @@ function build_map(){
 	cd $HOME
 	exit
 }
-<<Comment
-function garmin_check(){
-	shopt -s nocasematch
-	sleep 1
-	if [[ -d "/"$DEVICE"" ]]; then
-		echo "Garmin device found. . ."
-		echo
-		sleep 1
-		# Call build function.
-		build_map
-	else
-		if [[ ! "$chck" = "b" ]]; then
-			read -t 10 -p "No Garmin device found, checking again in 10 seconds. [B] for bypass. . . " chck; echo
-			# Loop back to this function when no device found.
-			garmin_check
-		else
-			echo
-			echo "Ok, bypassing device check. . ."
-			sleep 1
-			# Call build function.
-			build_map
-		fi
-	fi
-}
-Comment
+
+# Dependencies: program mkgmap, osmium. Also a mkgmap, gmt, and mkgmap-splitter folder downloaded from source.
 
 ########## Start Process #############
 # Check if device is connected and don't run until it is, unless 'b' is typed for bypass.
@@ -412,11 +388,32 @@ echo
 echo "Running My US Map Builder for Garmin devices. . ."
 sleep 1
 echo
-#echo "Checking if Garmin device is connected. . ."
-#sleep 1
-#echo 
-#chck=""
+# Switching to map directory.
+cd $HOME/maps
+# Define variables.
+DEVICE="/media/msifland/GARMIN"
+# MAP_NAME should be the name of the .typ file you use.
+TYP_FILE="velo"
+MAP_NAME="my_$TYP_FILE"
+echo "${ILCOLOR1}Checking directories and Cleaning up files...${ILRESTORE}"
+echo
+# Create directories if they don't exist.
+if [[ ! -d "$HOME/maps" ]]; then
+	mkdir "$HOME/maps"
+fi
+if [[ ! -d "$HOME/maps/completed_maps" ]]; then
+	mkdir "$HOME/maps/completed_maps"
+fi
+if [[ ! -d "$HOME/maps/combine" ]]; then
+	mkdir "$HOME/maps/combine"
+else
+	rm -rf $HOME/maps/combine/*
+fi
+if [[ ! -d "$HOME/maps/downloads" ]]; then
+	mkdir "$HOME/maps/downloads"
+else
+	rm -rf $HOME/maps/downloads/*
+fi
 
-# Call check function.
-#garmin_check
+# Call build_map function to start the process.
 build_map
