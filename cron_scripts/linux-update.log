@@ -1,63 +1,159 @@
-[H[2J[3J[1;38;5;173m           ###########    Updating your system now   ###########[0m
-[1;38;5;30m
-06-13-2022 07:00:01 AM
-Updating Linux debian 5.18.3-msi #1 SMP PREEMPT_DYNAMIC Sat Jun 11 03:02:45 CDT 2022 x86_64 GNU/Linux[0m
-[1;38;5;158mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;41m           ###########    Updating your system now   ###########[0m
+[1;38;5;72m
+06-27-2022 07:00:01 AM
+Updating Linux debian 5.18.6-msi #1 SMP PREEMPT_DYNAMIC Wed Jun 22 14:05:57 CDT 2022 x86_64 GNU/Linux[0m
+[1;38;5;45mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;3mUpdating sources and checking for app updates. . .[0m
+[1;38;5;222mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://security.debian.org/debian-security stable-security InRelease
-Get:2 http://deb.debian.org/debian testing InRelease [130 kB]
-Hit:3 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
-Hit:4 https://download.sublimetext.com apt/stable/ InRelease
-Hit:5 http://repository.spotify.com stable InRelease
-Hit:6 http://repo.sinew.in stable InRelease
-Get:7 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
-Hit:8 https://dl.winehq.org/wine-builds/debian sid InRelease
-Hit:9 http://deb.debian.org/debian-security testing-security InRelease
-Get:10 https://mega.nz/linux/repo/Debian_10.0 ./ InRelease [2,981 B]
-Hit:11 http://deb.debian.org/debian stable InRelease
-Hit:12 http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic InRelease
-Get:13 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
-Get:14 http://deb.debian.org/debian unstable InRelease [165 kB]
-Get:15 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:16 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:17 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Hit:18 http://ppa.launchpad.net/snwh/pulp/ubuntu bionic InRelease
-Hit:19 http://ppa.launchpad.net/papirus/papirus/ubuntu bionic InRelease
-Get:20 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:21 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
-Get:22 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:23 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:24 http://deb.debian.org/debian testing/main Sources T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [313 B]
-Get:24 http://deb.debian.org/debian testing/main Sources T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [313 B]
-Get:25 http://deb.debian.org/debian testing/main amd64 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [1,388 B]
-Get:25 http://deb.debian.org/debian testing/main amd64 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [1,388 B]
-Get:26 http://deb.debian.org/debian testing/main i386 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [1,378 B]
-Get:26 http://deb.debian.org/debian testing/main i386 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [1,378 B]
-Get:27 http://deb.debian.org/debian unstable/main Sources T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [8,628 B]
-Get:27 http://deb.debian.org/debian unstable/main Sources T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [8,628 B]
-Get:28 http://deb.debian.org/debian unstable/contrib Sources T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [703 B]
-Get:28 http://deb.debian.org/debian unstable/contrib Sources T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [703 B]
-Get:29 http://deb.debian.org/debian unstable/main i386 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [3,580 B]
-Get:29 http://deb.debian.org/debian unstable/main i386 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [3,580 B]
-Get:30 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [3,626 B]
-Get:30 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-06-13-0803.04-F-2022-06-13-0803.04.pdiff [3,626 B]
-Get:31 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,268 kB]
-Get:32 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [6,761 kB]
-Get:33 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,419 kB]
-Get:34 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,736 kB]
-Get:35 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,728 kB]
-Hit:36 http://www.deb-multimedia.org bullseye InRelease
-Fetched 26.8 MB in 12s (2,228 kB/s)
+Ign:1 http://linux.dropbox.com/debian sid InRelease
+Get:2 http://ftp.us.debian.org/debian testing InRelease [130 kB]
+Hit:3 http://linux.dropbox.com/debian sid Release
+Hit:4 https://dl.winehq.org/wine-builds/debian bullseye InRelease
+Get:5 http://ftp.debian.org/debian buster-backports InRelease [46.7 kB]
+Hit:6 https://repo.skype.com/deb stable InRelease
+Get:7 http://deb.debian.org/debian testing InRelease [130 kB]
+Get:8 https://download.sublimetext.com apt/stable/ InRelease [2,536 B]
+Get:10 http://ftp.us.debian.org/debian testing-updates InRelease [36.8 kB]
+Get:11 http://security.debian.org/debian-security testing-security InRelease [35.6 kB]
+Get:12 https://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]
+Hit:13 http://repository.spotify.com stable InRelease
+Get:15 http://deb.debian.org/debian testing-updates InRelease [36.8 kB]
+Get:16 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease [2,464 B]
+Get:17 http://ftp.us.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:14 https://apt.llvm.org/unstable llvm-toolchain InRelease [6,827 B]
+Get:18 http://deb.debian.org/debian-security testing-security InRelease [35.6 kB]
+Get:19 http://deb.debian.org/debian unstable InRelease [165 kB]
+Hit:20 http://deb.debian.org/debian stable InRelease
+Hit:21 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
+Get:22 https://mega.nz/linux/repo/Debian_11 ./ InRelease [2,959 B]
+Get:23 http://deb.debian.org/debian stable-updates InRelease [39.4 kB]
+Get:24 https://packages.cisofy.com/community/lynis/deb stable InRelease [11.4 kB]
+Get:25 http://ftp.us.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:26 http://ftp.us.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:27 http://ftp.us.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:28 http://ftp.us.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:29 http://ftp.us.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:30 http://ftp.us.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
+Get:31 http://ftp.us.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:32 http://ftp.us.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:33 http://ftp.us.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:34 http://ftp.us.debian.org/debian testing/non-free Translation-en.diff/Index [63.3 kB]
+Hit:35 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
+Get:36 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:37 http://ftp.us.debian.org/debian testing/main Sources T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [97.8 kB]
+Get:38 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [324 B]
+Get:39 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [651 B]
+Get:40 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [128 kB]
+Get:37 http://ftp.us.debian.org/debian testing/main Sources T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [97.8 kB]
+Get:39 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [651 B]
+Get:38 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [324 B]
+Get:41 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [126 kB]
+Get:40 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [128 kB]
+Get:42 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:43 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:44 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:45 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:46 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:47 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:48 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:49 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [63.3 kB]
+Get:50 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:51 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
+Get:52 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-06-27-0208.42-F-2022-06-25-0204.44.pdiff [17.9 kB]
+Get:53 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:54 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:55 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,164 B]
+Get:56 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,466 B]
+Get:57 http://ftp.us.debian.org/debian testing/non-free Translation-en T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [337 B]
+Get:57 http://ftp.us.debian.org/debian testing/non-free Translation-en T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [337 B]
+Get:56 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,466 B]
+Get:55 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,164 B]
+Get:54 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:53 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:52 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-06-27-0208.42-F-2022-06-25-0204.44.pdiff [17.9 kB]
+Get:41 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [126 kB]
+Get:58 http://deb.debian.org/debian testing/contrib Sources T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [324 B]
+Get:59 http://deb.debian.org/debian testing/main Sources T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [97.8 kB]
+Get:60 http://ftp.us.debian.org/debian testing/main amd64 DEP-11 Metadata [4,243 kB]
+Get:61 http://ftp.us.debian.org/debian testing/main DEP-11 48x48 Icons [3,521 kB]
+Get:62 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,096 B]
+Get:59 http://deb.debian.org/debian testing/main Sources T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [97.8 kB]
+Get:58 http://deb.debian.org/debian testing/contrib Sources T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [324 B]
+Get:63 http://deb.debian.org/debian testing/non-free Sources T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [651 B]
+Get:63 http://deb.debian.org/debian testing/non-free Sources T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [651 B]
+Get:64 http://ftp.us.debian.org/debian testing/main DEP-11 64x64 Icons [7,233 kB]
+Get:65 http://deb.debian.org/debian testing/main amd64 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [128 kB]
+Get:65 http://deb.debian.org/debian testing/main amd64 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [128 kB]
+Get:66 https://apt.llvm.org/unstable llvm-toolchain/main Sources [2,385 B]
+Get:67 http://deb.debian.org/debian testing/main i386 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [126 kB]
+Get:68 https://apt.llvm.org/unstable llvm-toolchain/main amd64 Packages [19.9 kB]
+Get:69 https://apt.llvm.org/unstable llvm-toolchain/main i386 Packages [17.5 kB]
+Get:67 http://deb.debian.org/debian testing/main i386 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [126 kB]
+Get:70 http://ftp.us.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.2 kB]
+Get:71 http://deb.debian.org/debian testing/main Translation-en T-2022-06-27-0208.42-F-2022-06-25-0204.44.pdiff [17.9 kB]
+Get:71 http://deb.debian.org/debian testing/main Translation-en T-2022-06-27-0208.42-F-2022-06-25-0204.44.pdiff [17.9 kB]
+Get:72 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,466 B]
+Get:73 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,164 B]
+Get:74 http://deb.debian.org/debian testing/non-free Translation-en T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [337 B]
+Get:75 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:72 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,466 B]
+Get:73 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [4,164 B]
+Get:76 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:77 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:78 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:79 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
+Get:80 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:81 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:74 http://deb.debian.org/debian testing/non-free Translation-en T-2022-06-27-0208.42-F-2022-06-27-0208.42.pdiff [337 B]
+Get:75 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:82 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:83 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
+Get:84 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:85 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:76 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-06-26-0207.59-F-2022-06-26-0207.59.pdiff [375 B]
+Get:86 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:87 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
+Get:88 http://deb.debian.org/debian unstable/non-free Sources T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [2,214 B]
+Get:88 http://deb.debian.org/debian unstable/non-free Sources T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [2,214 B]
+Get:89 http://deb.debian.org/debian unstable/main Sources T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [110 kB]
+Get:89 http://deb.debian.org/debian unstable/main Sources T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [110 kB]
+Get:90 http://deb.debian.org/debian unstable/contrib Sources T-2022-06-26-2009.24-F-2022-06-24-2010.09.pdiff [396 B]
+Get:90 http://deb.debian.org/debian unstable/contrib Sources T-2022-06-26-2009.24-F-2022-06-24-2010.09.pdiff [396 B]
+Get:91 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [129 kB]
+Get:91 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [129 kB]
+Get:92 http://deb.debian.org/debian unstable/main i386 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [105 kB]
+Get:92 http://deb.debian.org/debian unstable/main i386 Packages T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [105 kB]
+Get:93 http://deb.debian.org/debian unstable/main Translation-en T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [9,377 B]
+Get:93 http://deb.debian.org/debian unstable/main Translation-en T-2022-06-27-0805.49-F-2022-06-24-2010.09.pdiff [9,377 B]
+Get:94 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-06-26-2009.24-F-2022-06-24-2010.09.pdiff [218 B]
+Get:94 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-06-26-2009.24-F-2022-06-24-2010.09.pdiff [218 B]
+Get:95 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-06-26-2009.24-F-2022-06-24-2010.09.pdiff [218 B]
+Get:96 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [21.3 kB]
+Get:97 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [10.0 kB]
+Get:98 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [2,377 B]
+Get:95 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-06-26-2009.24-F-2022-06-24-2010.09.pdiff [218 B]
+Get:96 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [21.3 kB]
+Get:97 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [10.0 kB]
+Get:98 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-06-26-1402.47-F-2022-06-24-2010.09.pdiff [2,377 B]
+Get:99 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,243 kB]
+Get:100 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,521 kB]
+Get:101 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,233 kB]
+Get:102 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.2 kB]
+Get:103 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,427 kB]
+Get:104 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,706 kB]
+Get:105 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,689 kB]
+Get:106 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [15.6 kB]
+Get:107 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.3 kB]
+Fetched 49.9 MB in 15s (3,381 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-4 packages can be upgraded. Run 'apt list --upgradable' to see them.
+51 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;3mChecking for system upgrade. . .[0m
+[1;38;5;222mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -65,38 +161,258 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following NEW packages will be installed:
+  libstd-rust-1.59
 The following packages will be upgraded:
-  chromium chromium-common chromium-sandbox metasploit-framework
-4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 356 MB of archives.
-After this operation, 2,206 kB of additional disk space will be used.
-Get:1 http://deb.debian.org/debian testing/main amd64 chromium amd64 102.0.5005.115-1 [63.1 MB]
-Get:2 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main amd64 metasploit-framework amd64 6.2.3+20220612102558~1rapid7-1 [288 MB]
-Get:3 http://deb.debian.org/debian testing/main amd64 chromium-sandbox amd64 102.0.5005.115-1 [122 kB]
-Get:4 http://deb.debian.org/debian testing/main amd64 chromium-common amd64 102.0.5005.115-1 [4,834 kB]
+  chromium chromium-common chromium-sandbox gir1.2-gst-plugins-base-1.0
+  grub-customizer gstreamer1.0-gl gstreamer1.0-plugins-bad
+  gstreamer1.0-plugins-base gstreamer1.0-plugins-base:i386
+  gstreamer1.0-plugins-ugly gstreamer1.0-x gstreamer1.0-x:i386 libdeflate-dev
+  libdeflate0 libdeflate0:i386 libges-1.0-0 libgnutls30 libgnutls30:i386
+  libgstreamer-gl1.0-0 libgstreamer-plugins-bad1.0-0
+  libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-0:i386
+  libinput-bin libinput10 libjs-sphinxdoc libnss-systemd libopenjp2-7
+  libopenjp2-7:i386 libpam-systemd libstd-rust-dev libsystemd-shared
+  libsystemd0 libsystemd0:i386 libudev-dev libudev1 libudev1:i386 libvulkan1
+  libvulkan1:i386 pinentry-curses pinentry-gnome3 pinentry-qt playonlinux
+  python3-pyqt5 python3-pyqt5.sip python3-sphinx rustc sphinx-common systemd
+  systemd-sysv systemd-timesyncd udev
+51 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 167 MB of archives.
+After this operation, 81.9 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 systemd-timesyncd amd64 251.2-6 [143 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 libsystemd-shared amd64 251.2-6 [1,689 kB]
+Get:3 http://deb.debian.org/debian testing/main amd64 libnss-systemd amd64 251.2-6 [238 kB]
+Get:4 http://deb.debian.org/debian testing/main amd64 libpam-systemd amd64 251.2-6 [303 kB]
+Get:5 http://deb.debian.org/debian testing/main amd64 systemd amd64 251.2-6 [3,120 kB]
+Get:6 http://deb.debian.org/debian testing/main i386 libsystemd0 i386 251.2-6 [430 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 libsystemd0 amd64 251.2-6 [410 kB]
+Get:8 http://deb.debian.org/debian testing/main amd64 systemd-sysv amd64 251.2-6 [123 kB]
+Get:9 http://deb.debian.org/debian testing/main i386 libgnutls30 i386 3.7.6-2 [1,403 kB]
+Get:10 http://deb.debian.org/debian testing/main amd64 libgnutls30 amd64 3.7.6-2 [1,397 kB]
+Get:11 http://deb.debian.org/debian testing/main amd64 libudev-dev amd64 251.2-6 [133 kB]
+Get:12 http://deb.debian.org/debian testing/main amd64 udev amd64 251.2-6 [1,656 kB]
+Get:13 http://deb.debian.org/debian testing/main i386 libudev1 i386 251.2-6 [187 kB]
+Get:14 http://deb.debian.org/debian testing/main amd64 libudev1 amd64 251.2-6 [183 kB]
+Get:15 http://deb.debian.org/debian testing/main amd64 chromium amd64 103.0.5060.53-1 [64.0 MB]
+Get:16 http://deb.debian.org/debian testing/main amd64 chromium-sandbox amd64 103.0.5060.53-1 [122 kB]
+Get:17 http://deb.debian.org/debian testing/main amd64 chromium-common amd64 103.0.5060.53-1 [4,839 kB]
+Get:18 http://deb.debian.org/debian testing/main i386 libopenjp2-7 i386 2.5.0-1 [196 kB]
+Get:19 http://deb.debian.org/debian testing/main amd64 libopenjp2-7 amd64 2.5.0-1 [189 kB]
+Get:20 http://deb.debian.org/debian testing/main i386 libgstreamer-plugins-base1.0-0 i386 1.20.3-2 [2,299 kB]
+Get:21 http://deb.debian.org/debian testing/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.20.3-2 [2,271 kB]
+Get:22 http://deb.debian.org/debian testing/main amd64 libgstreamer-gl1.0-0 amd64 1.20.3-2 [1,599 kB]
+Get:23 http://deb.debian.org/debian testing/main amd64 gir1.2-gst-plugins-base-1.0 amd64 1.20.3-2 [1,508 kB]
+Get:24 http://deb.debian.org/debian testing/main amd64 grub-customizer amd64 5.1.0-4 [678 kB]
+Get:25 http://deb.debian.org/debian testing/main amd64 gstreamer1.0-gl amd64 1.20.3-2 [1,528 kB]
+Get:26 http://deb.debian.org/debian testing/main amd64 gstreamer1.0-plugins-ugly amd64 1.20.3-1 [401 kB]
+Get:27 http://deb.debian.org/debian testing/main amd64 gstreamer1.0-plugins-bad amd64 1.20.3-1 [4,610 kB]
+Get:28 http://deb.debian.org/debian testing/main amd64 gstreamer1.0-plugins-base amd64 1.20.3-2 [2,076 kB]
+Get:29 http://deb.debian.org/debian testing/main i386 gstreamer1.0-plugins-base i386 1.20.3-2 [2,089 kB]
+Get:30 http://deb.debian.org/debian testing/main amd64 libgstreamer-plugins-bad1.0-0 amd64 1.20.3-1 [2,558 kB]
+Get:31 http://deb.debian.org/debian testing/main amd64 gstreamer1.0-x amd64 1.20.3-2 [1,492 kB]
+Get:32 http://deb.debian.org/debian testing/main i386 gstreamer1.0-x i386 1.20.3-2 [1,494 kB]
+Get:33 http://deb.debian.org/debian testing/main amd64 libdeflate-dev amd64 1.12-1 [56.7 kB]
+Get:34 http://deb.debian.org/debian testing/main i386 libdeflate0 i386 1.12-1 [59.9 kB]
+Get:35 http://deb.debian.org/debian testing/main amd64 libdeflate0 amd64 1.12-1 [71.6 kB]
+Get:36 http://deb.debian.org/debian testing/main amd64 libges-1.0-0 amd64 1.20.3-1 [558 kB]
+Get:37 http://deb.debian.org/debian testing/main amd64 libinput-bin amd64 1.21.0-1 [26.2 kB]
+Get:38 http://deb.debian.org/debian testing/main amd64 libinput10 amd64 1.21.0-1 [127 kB]
+Get:39 http://deb.debian.org/debian testing/main amd64 python3-sphinx all 4.5.0-4 [540 kB]
+Get:40 http://deb.debian.org/debian testing/main amd64 sphinx-common all 4.5.0-4 [638 kB]
+Get:41 http://deb.debian.org/debian testing/main amd64 libjs-sphinxdoc all 4.5.0-4 [142 kB]
+Get:42 http://deb.debian.org/debian testing/main amd64 libstd-rust-1.59 amd64 1.59.0+dfsg1-2 [18.5 MB]
+Get:43 http://deb.debian.org/debian testing/main amd64 rustc amd64 1.59.0+dfsg1-2 [3,579 kB]
+Get:44 http://deb.debian.org/debian testing/main amd64 libstd-rust-dev amd64 1.59.0+dfsg1-2 [33.5 MB]
+Get:45 http://deb.debian.org/debian testing/main i386 libvulkan1 i386 1.3.216.0-1 [128 kB]
+Get:46 http://deb.debian.org/debian testing/main amd64 libvulkan1 amd64 1.3.216.0-1 [121 kB]
+Get:47 http://deb.debian.org/debian testing/main amd64 pinentry-curses amd64 1.2.0-2 [76.7 kB]
+Get:48 http://deb.debian.org/debian testing/main amd64 pinentry-gnome3 amd64 1.2.0-2 [78.9 kB]
+Get:49 http://deb.debian.org/debian testing/main amd64 pinentry-qt amd64 1.2.0-2 [103 kB]
+Get:50 http://deb.debian.org/debian testing/contrib amd64 playonlinux all 4.3.4-3 [956 kB]
+Get:51 http://deb.debian.org/debian testing/main amd64 python3-pyqt5.sip amd64 12.11.0-1 [69.7 kB]
+Get:52 http://deb.debian.org/debian testing/main amd64 python3-pyqt5 amd64 5.15.7+dfsg-1 [2,489 kB]
 apt-listchanges: Reading changelogs...
-Fetched 356 MB in 33s (10.9 MB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 551626 files and directories currently installed.)
-Preparing to unpack .../chromium_102.0.5005.115-1_amd64.deb ...
-Unpacking chromium (102.0.5005.115-1) over (101.0.4951.64-1) ...
-Preparing to unpack .../chromium-sandbox_102.0.5005.115-1_amd64.deb ...
-Unpacking chromium-sandbox (102.0.5005.115-1) over (101.0.4951.64-1) ...
-Preparing to unpack .../chromium-common_102.0.5005.115-1_amd64.deb ...
-Unpacking chromium-common (102.0.5005.115-1) over (101.0.4951.64-1) ...
-Preparing to unpack .../metasploit-framework_6.2.3+20220612102558~1rapid7-1_amd64.deb ...
-Unpacking metasploit-framework (6.2.3+20220612102558~1rapid7-1) over (6.2.2+20220605102733~1rapid7-1) ...
-Setting up metasploit-framework (6.2.3+20220612102558~1rapid7-1) ...
-Run msfconsole to get started
-Setting up chromium-sandbox (102.0.5005.115-1) ...
-Setting up chromium-common (102.0.5005.115-1) ...
-Setting up chromium (102.0.5005.115-1) ...
-Processing triggers for bamfdaemon (0.5.6+repack-1) ...
-Rebuilding /usr/share/applications/bamf-2.index...
+Fetched 167 MB in 9s (18.4 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 467937 files and directories currently installed.)
+Preparing to unpack .../0-systemd-timesyncd_251.2-6_amd64.deb ...
+Unpacking systemd-timesyncd (251.2-6) over (251.2-5) ...
+Preparing to unpack .../1-libsystemd-shared_251.2-6_amd64.deb ...
+Unpacking libsystemd-shared:amd64 (251.2-6) over (251.2-5) ...
+Preparing to unpack .../2-libnss-systemd_251.2-6_amd64.deb ...
+Unpacking libnss-systemd:amd64 (251.2-6) over (251.2-5) ...
+Preparing to unpack .../3-libpam-systemd_251.2-6_amd64.deb ...
+Unpacking libpam-systemd:amd64 (251.2-6) over (251.2-5) ...
+Preparing to unpack .../4-systemd_251.2-6_amd64.deb ...
+Unpacking systemd (251.2-6) over (251.2-5) ...
+Preparing to unpack .../5-libsystemd0_251.2-6_amd64.deb ...
+De-configuring libsystemd0:i386 (251.2-5), to allow configuration of libsystemd0:amd64 (251.2-6) ...
+Unpacking libsystemd0:amd64 (251.2-6) over (251.2-5) ...
+Preparing to unpack .../6-libsystemd0_251.2-6_i386.deb ...
+Unpacking libsystemd0:i386 (251.2-6) over (251.2-5) ...
+Setting up libsystemd-shared:amd64 (251.2-6) ...
+Setting up libsystemd0:amd64 (251.2-6) ...
+Setting up systemd (251.2-6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 467936 files and directories currently installed.)
+Preparing to unpack .../00-systemd-sysv_251.2-6_amd64.deb ...
+Unpacking systemd-sysv (251.2-6) over (251.2-5) ...
+Preparing to unpack .../01-libgnutls30_3.7.6-2_amd64.deb ...
+De-configuring libgnutls30:i386 (3.7.4-2), to allow configuration of libgnutls30:amd64 (3.7.6-2) ...
+Unpacking libgnutls30:amd64 (3.7.6-2) over (3.7.4-2) ...
+Preparing to unpack .../02-libgnutls30_3.7.6-2_i386.deb ...
+Unpacking libgnutls30:i386 (3.7.6-2) over (3.7.4-2) ...
+Preparing to unpack .../03-libudev-dev_251.2-6_amd64.deb ...
+Unpacking libudev-dev:amd64 (251.2-6) over (251.2-5) ...
+Preparing to unpack .../04-udev_251.2-6_amd64.deb ...
+Unpacking udev (251.2-6) over (251.2-5) ...
+Preparing to unpack .../05-libudev1_251.2-6_amd64.deb ...
+De-configuring libudev1:i386 (251.2-5), to allow configuration of libudev1:amd64 (251.2-6) ...
+Unpacking libudev1:amd64 (251.2-6) over (251.2-5) ...
+Preparing to unpack .../06-libudev1_251.2-6_i386.deb ...
+Unpacking libudev1:i386 (251.2-6) over (251.2-5) ...
+Preparing to unpack .../07-chromium_103.0.5060.53-1_amd64.deb ...
+Unpacking chromium (103.0.5060.53-1) over (102.0.5005.115-1) ...
+Preparing to unpack .../08-chromium-sandbox_103.0.5060.53-1_amd64.deb ...
+Unpacking chromium-sandbox (103.0.5060.53-1) over (102.0.5005.115-1) ...
+Preparing to unpack .../09-chromium-common_103.0.5060.53-1_amd64.deb ...
+Unpacking chromium-common (103.0.5060.53-1) over (102.0.5005.115-1) ...
+Preparing to unpack .../10-libopenjp2-7_2.5.0-1_amd64.deb ...
+De-configuring libopenjp2-7:i386 (2.4.0-6), to allow configuration of libopenjp2-7:amd64 (2.5.0-1) ...
+Unpacking libopenjp2-7:amd64 (2.5.0-1) over (2.4.0-6) ...
+Preparing to unpack .../11-libopenjp2-7_2.5.0-1_i386.deb ...
+Unpacking libopenjp2-7:i386 (2.5.0-1) over (2.4.0-6) ...
+Preparing to unpack .../12-libgstreamer-plugins-base1.0-0_1.20.3-2_amd64.deb ...
+De-configuring libgstreamer-plugins-base1.0-0:i386 (1.20.3-1), to allow configuration of libgstreamer-plugins-base1.0-0:amd64 (1.20.3-2) ...
+Unpacking libgstreamer-plugins-base1.0-0:amd64 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../13-libgstreamer-plugins-base1.0-0_1.20.3-2_i386.deb ...
+Unpacking libgstreamer-plugins-base1.0-0:i386 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../14-libgstreamer-gl1.0-0_1.20.3-2_amd64.deb ...
+Unpacking libgstreamer-gl1.0-0:amd64 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../15-gir1.2-gst-plugins-base-1.0_1.20.3-2_amd64.deb ...
+Unpacking gir1.2-gst-plugins-base-1.0:amd64 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../16-grub-customizer_5.1.0-4_amd64.deb ...
+Unpacking grub-customizer (5.1.0-4) over (5.1.0-3+b1) ...
+Preparing to unpack .../17-gstreamer1.0-gl_1.20.3-2_amd64.deb ...
+Unpacking gstreamer1.0-gl:amd64 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../18-gstreamer1.0-plugins-ugly_1.20.3-1_amd64.deb ...
+Unpacking gstreamer1.0-plugins-ugly:amd64 (1.20.3-1) over (1.20.2-1+b1) ...
+Preparing to unpack .../19-gstreamer1.0-plugins-bad_1.20.3-1_amd64.deb ...
+Unpacking gstreamer1.0-plugins-bad:amd64 (1.20.3-1) over (1.20.2-1+b1) ...
+Preparing to unpack .../20-gstreamer1.0-plugins-base_1.20.3-2_i386.deb ...
+De-configuring gstreamer1.0-plugins-base:amd64 (1.20.3-1), to allow configuration of gstreamer1.0-plugins-base:i386 (1.20.3-2) ...
+Unpacking gstreamer1.0-plugins-base:i386 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../21-gstreamer1.0-plugins-base_1.20.3-2_amd64.deb ...
+Unpacking gstreamer1.0-plugins-base:amd64 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../22-libgstreamer-plugins-bad1.0-0_1.20.3-1_amd64.deb ...
+Unpacking libgstreamer-plugins-bad1.0-0:amd64 (1.20.3-1) over (1.20.2-1+b1) ...
+Preparing to unpack .../23-gstreamer1.0-x_1.20.3-2_i386.deb ...
+De-configuring gstreamer1.0-x:amd64 (1.20.3-1), to allow configuration of gstreamer1.0-x:i386 (1.20.3-2) ...
+Unpacking gstreamer1.0-x:i386 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../24-gstreamer1.0-x_1.20.3-2_amd64.deb ...
+Unpacking gstreamer1.0-x:amd64 (1.20.3-2) over (1.20.3-1) ...
+Preparing to unpack .../25-libdeflate-dev_1.12-1_amd64.deb ...
+Unpacking libdeflate-dev:amd64 (1.12-1) over (1.10-2) ...
+Preparing to unpack .../26-libdeflate0_1.12-1_amd64.deb ...
+De-configuring libdeflate0:i386 (1.10-2), to allow configuration of libdeflate0:amd64 (1.12-1) ...
+Unpacking libdeflate0:amd64 (1.12-1) over (1.10-2) ...
+Preparing to unpack .../27-libdeflate0_1.12-1_i386.deb ...
+Unpacking libdeflate0:i386 (1.12-1) over (1.10-2) ...
+Preparing to unpack .../28-libges-1.0-0_1.20.3-1_amd64.deb ...
+Unpacking libges-1.0-0 (1.20.3-1) over (1.20.2-1) ...
+Preparing to unpack .../29-libinput-bin_1.21.0-1_amd64.deb ...
+Unpacking libinput-bin (1.21.0-1) over (1.20.1-1) ...
+Preparing to unpack .../30-libinput10_1.21.0-1_amd64.deb ...
+Unpacking libinput10:amd64 (1.21.0-1) over (1.20.1-1) ...
+Preparing to unpack .../31-python3-sphinx_4.5.0-4_all.deb ...
+Unpacking python3-sphinx (4.5.0-4) over (4.5.0-3) ...
+Preparing to unpack .../32-sphinx-common_4.5.0-4_all.deb ...
+Unpacking sphinx-common (4.5.0-4) over (4.5.0-3) ...
+Preparing to unpack .../33-libjs-sphinxdoc_4.5.0-4_all.deb ...
+Unpacking libjs-sphinxdoc (4.5.0-4) over (4.5.0-3) ...
+Selecting previously unselected package libstd-rust-1.59:amd64.
+Preparing to unpack .../34-libstd-rust-1.59_1.59.0+dfsg1-2_amd64.deb ...
+Unpacking libstd-rust-1.59:amd64 (1.59.0+dfsg1-2) ...
+Preparing to unpack .../35-rustc_1.59.0+dfsg1-2_amd64.deb ...
+Unpacking rustc (1.59.0+dfsg1-2) over (1.58.1+dfsg1-1) ...
+Preparing to unpack .../36-libstd-rust-dev_1.59.0+dfsg1-2_amd64.deb ...
+Unpacking libstd-rust-dev:amd64 (1.59.0+dfsg1-2) over (1.58.1+dfsg1-1) ...
+Preparing to unpack .../37-libvulkan1_1.3.216.0-1_i386.deb ...
+De-configuring libvulkan1:amd64 (1.3.211.0-1), to allow configuration of libvulkan1:i386 (1.3.216.0-1) ...
+Unpacking libvulkan1:i386 (1.3.216.0-1) over (1.3.211.0-1) ...
+Preparing to unpack .../38-libvulkan1_1.3.216.0-1_amd64.deb ...
+Unpacking libvulkan1:amd64 (1.3.216.0-1) over (1.3.211.0-1) ...
+Preparing to unpack .../39-pinentry-curses_1.2.0-2_amd64.deb ...
+Unpacking pinentry-curses (1.2.0-2) over (1.2.0-1) ...
+Preparing to unpack .../40-pinentry-gnome3_1.2.0-2_amd64.deb ...
+Unpacking pinentry-gnome3 (1.2.0-2) over (1.2.0-1) ...
+Preparing to unpack .../41-pinentry-qt_1.2.0-2_amd64.deb ...
+Unpacking pinentry-qt (1.2.0-2) over (1.2.0-1) ...
+Preparing to unpack .../42-playonlinux_4.3.4-3_all.deb ...
+Unpacking playonlinux (4.3.4-3) over (4.3.4-2) ...
+Preparing to unpack .../43-python3-pyqt5.sip_12.11.0-1_amd64.deb ...
+Unpacking python3-pyqt5.sip (12.11.0-1) over (12.10.1-1) ...
+Preparing to unpack .../44-python3-pyqt5_5.15.7+dfsg-1_amd64.deb ...
+Unpacking python3-pyqt5 (5.15.7+dfsg-1) over (5.15.6+dfsg-1+b3) ...
+Setting up pinentry-curses (1.2.0-2) ...
+Setting up systemd-sysv (251.2-6) ...
+Setting up playonlinux (4.3.4-3) ...
+Setting up libdeflate0:amd64 (1.12-1) ...
+Setting up libdeflate0:i386 (1.12-1) ...
+Setting up libnss-systemd:amd64 (251.2-6) ...
+Setting up libgstreamer-plugins-base1.0-0:amd64 (1.20.3-2) ...
+Setting up libgstreamer-plugins-base1.0-0:i386 (1.20.3-2) ...
+Setting up pinentry-qt (1.2.0-2) ...
+Setting up grub-customizer (5.1.0-4) ...
+Setting up chromium-sandbox (103.0.5060.53-1) ...
+Setting up libsystemd0:i386 (251.2-6) ...
+Setting up libgstreamer-plugins-bad1.0-0:amd64 (1.20.3-1) ...
+Setting up libgstreamer-gl1.0-0:amd64 (1.20.3-2) ...
+Setting up libgnutls30:amd64 (3.7.6-2) ...
+Setting up libgnutls30:i386 (3.7.6-2) ...
+Setting up gstreamer1.0-plugins-base:amd64 (1.20.3-2) ...
+Setting up gstreamer1.0-plugins-base:i386 (1.20.3-2) ...
+Setting up libstd-rust-1.59:amd64 (1.59.0+dfsg1-2) ...
+Setting up pinentry-gnome3 (1.2.0-2) ...
+Setting up systemd-timesyncd (251.2-6) ...
+Setting up libjs-sphinxdoc (4.5.0-4) ...
+Setting up libvulkan1:amd64 (1.3.216.0-1) ...
+Setting up libvulkan1:i386 (1.3.216.0-1) ...
+Setting up libudev1:amd64 (251.2-6) ...
+Setting up libudev1:i386 (251.2-6) ...
+Setting up python3-pyqt5.sip (12.11.0-1) ...
+Setting up libpam-systemd:amd64 (251.2-6) ...
+Setting up libopenjp2-7:amd64 (2.5.0-1) ...
+Setting up libopenjp2-7:i386 (2.5.0-1) ...
+Setting up gstreamer1.0-plugins-ugly:amd64 (1.20.3-1) ...
+Setting up chromium-common (103.0.5060.53-1) ...
+Setting up chromium (103.0.5060.53-1) ...
+Setting up libdeflate-dev:amd64 (1.12-1) ...
+Setting up python3-pyqt5 (5.15.7+dfsg-1) ...
+Setting up gstreamer1.0-gl:amd64 (1.20.3-2) ...
+Setting up gstreamer1.0-x:amd64 (1.20.3-2) ...
+Setting up gstreamer1.0-x:i386 (1.20.3-2) ...
+Setting up gir1.2-gst-plugins-base-1.0:amd64 (1.20.3-2) ...
+Setting up libinput-bin (1.21.0-1) ...
+Setting up libstd-rust-dev:amd64 (1.59.0+dfsg1-2) ...
+Setting up gstreamer1.0-plugins-bad:amd64 (1.20.3-1) ...
+Setting up sphinx-common (4.5.0-4) ...
+Setting up udev (251.2-6) ...
+Setting up libudev-dev:amd64 (251.2-6) ...
+Setting up rustc (1.59.0+dfsg1-2) ...
+Setting up libges-1.0-0 (1.20.3-1) ...
+Setting up python3-sphinx (4.5.0-4) ...
+Setting up libinput10:amd64 (1.21.0-1) ...
 Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for initramfs-tools (0.141) ...
+update-initramfs: Generating /boot/initrd.img-5.18.6-msi
 Processing triggers for hicolor-icon-theme (0.17-2) ...
 Processing triggers for mate-menus (1.26.0-3) ...
+Processing triggers for libc-bin (2.33-7) ...
 Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for dbus (1.14.0-1) ...
 Processing triggers for mailcap (3.70+nmu1) ...
+Processing triggers for bamfdaemon (0.5.6+repack-1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -106,7 +422,7 @@ Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;3mCleaning up system. . .[0m
+[1;38;5;222mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -129,74 +445,12 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages will be REMOVED:
-  crda*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 0 B of additional disk space will be used.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 551480 files and directories currently installed.)
-Purging configuration files for crda (4.14+git20191112.9856751-1) ...
-removed '/home/msifland/.cache/thumbnails/normal/02cfbad52df233d204b78adf62cb6443.png'
-removed '/home/msifland/.cache/thumbnails/normal/054d21a26679c0b74709a20900099897.png'
-removed '/home/msifland/.cache/thumbnails/normal/055be0648c1cc03438f2d87a2338f028.png'
-removed '/home/msifland/.cache/thumbnails/normal/09d175d25e355e6cbee1ce46b6451a97.png'
-removed '/home/msifland/.cache/thumbnails/normal/09f1504d05158fc1bda5ffeab595f3c9.png'
-removed '/home/msifland/.cache/thumbnails/normal/1da1197363b07c96fa1bad64a4ed47e9.png'
-removed '/home/msifland/.cache/thumbnails/normal/1fcf3086b43e60fa475efbf04c63f636.png'
-removed '/home/msifland/.cache/thumbnails/normal/201344dc52f1dfe7cae6386468753400.png'
-removed '/home/msifland/.cache/thumbnails/normal/20410c64cb2c532e70be98cddb8b464d.png'
-removed '/home/msifland/.cache/thumbnails/normal/248bc347cec97697a589a72af0dcd7fa.png'
-removed '/home/msifland/.cache/thumbnails/normal/25f5d6e3c28e50abfe28736e3dffdf34.png'
-removed '/home/msifland/.cache/thumbnails/normal/25ff9a22a4433c22aaf836be2cbd0262.png'
-removed '/home/msifland/.cache/thumbnails/normal/28e86718892cae23e58f35490c680569.png'
-removed '/home/msifland/.cache/thumbnails/normal/29a4820489875801509298f6fd45bb8b.png'
-removed '/home/msifland/.cache/thumbnails/normal/29f2c314508aa246416ecd6ec3a733a6.png'
-removed '/home/msifland/.cache/thumbnails/normal/306205b958d52a86cb5d7c1129e5345d.png'
-removed '/home/msifland/.cache/thumbnails/normal/3c70b0e870d4a25ad8cbe1f896ca7a36.png'
-removed '/home/msifland/.cache/thumbnails/normal/45b51adc3ea00aa1a26c4c27addaaab0.png'
-removed '/home/msifland/.cache/thumbnails/normal/4edd54c83217b921c381e421bb90c1a9.png'
-removed '/home/msifland/.cache/thumbnails/normal/4f243ebbe6aada142949366768bfc3f3.png'
-removed '/home/msifland/.cache/thumbnails/normal/5ecfbbcc807ae9bf0edd9d46c1a41ca5.png'
-removed '/home/msifland/.cache/thumbnails/normal/5f97cf751b3260b024e51037cab238c6.png'
-removed '/home/msifland/.cache/thumbnails/normal/6245d46f85e10954466a186b283167c1.png'
-removed '/home/msifland/.cache/thumbnails/normal/685f762481bcadf28601b559f4d2400b.png'
-removed '/home/msifland/.cache/thumbnails/normal/6d0e1e3bd21e03ccbb246bcf10f2a389.png'
-removed '/home/msifland/.cache/thumbnails/normal/6de3c52a598fa934182acae7207525f3.png'
-removed '/home/msifland/.cache/thumbnails/normal/748ec0a81fcab6f3aa79a3eb4e778015.png'
-removed '/home/msifland/.cache/thumbnails/normal/79317c62d3811e871411af784d4729cc.png'
-removed '/home/msifland/.cache/thumbnails/normal/7c3bec19e68b98ffcd2eebb242449d99.png'
-removed '/home/msifland/.cache/thumbnails/normal/820b076b47e8773d40cecdcb90fddc6d.png'
-removed '/home/msifland/.cache/thumbnails/normal/8781342f6e6ebaffd457329c55117c1b.png'
-removed '/home/msifland/.cache/thumbnails/normal/8e3b142404727925a64438bf3ac2b081.png'
-removed '/home/msifland/.cache/thumbnails/normal/92d636afc4dac8506525199aaad6c9dd.png'
-removed '/home/msifland/.cache/thumbnails/normal/9581d5baab208c0da07153500d9c23c1.png'
-removed '/home/msifland/.cache/thumbnails/normal/a3bdb1d628c0c69c3f973cd635cbc2ba.png'
-removed '/home/msifland/.cache/thumbnails/normal/a3fa750d98dcde0ed6a260770b0d2859.png'
-removed '/home/msifland/.cache/thumbnails/normal/a75f0843fc931ad236898e4a6e3d0144.png'
-removed '/home/msifland/.cache/thumbnails/normal/acdfc5127ec47346219bc65adb02b1c9.png'
-removed '/home/msifland/.cache/thumbnails/normal/b80b6fa7a6467f478549478a31e40750.png'
-removed '/home/msifland/.cache/thumbnails/normal/b8d8760d4e3c9a5cf00501b266f42f96.png'
-removed '/home/msifland/.cache/thumbnails/normal/b99c547a1eff2acabcc20276ffbe8efe.png'
-removed '/home/msifland/.cache/thumbnails/normal/c2dceefa87e382f2f7b1676194871ac9.png'
-removed '/home/msifland/.cache/thumbnails/normal/c4d4c459cc45172d6be90f3db2cf890e.png'
-removed '/home/msifland/.cache/thumbnails/normal/c7039ed5402bce4a8f10e99750721e7b.png'
-removed '/home/msifland/.cache/thumbnails/normal/cb2e44f83833a458e3c9b1e461058123.png'
-removed '/home/msifland/.cache/thumbnails/normal/cf815be9f3f48f32fd02930fd27a6ec9.png'
-removed '/home/msifland/.cache/thumbnails/normal/cffcc405a90cd139d5afdaf106da27ca.png'
-removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
-removed '/home/msifland/.cache/thumbnails/normal/d8182a56793347b078bcf05e9ea621c5.png'
-removed '/home/msifland/.cache/thumbnails/normal/dbc624367e74420416b03b2d078a5fcc.png'
-removed '/home/msifland/.cache/thumbnails/normal/dd7aa0d72deea6f6f4ffc76aea392f7d.png'
-removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
-removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
-removed '/home/msifland/.cache/thumbnails/normal/f5772d55e7dd1998ba0f056a04d3eb4d.png'
-removed '/home/msifland/.cache/thumbnails/normal/fe84e6fde79a01fec117e902e9e9f8e8.png'
-removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/1c98d0aa59f68f9fd311b505d0da0fd4.png'
-removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;30mBacking up important files and apps. . .[0m
-[1;38;5;3mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;72mBacking up important files and apps. . .[0m
+[1;38;5;222mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;3mBacking up important config files. . .[0m
+[1;38;5;222mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -205,14 +459,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;3mBacking up crontab. . .[0m
+[1;38;5;222mBacking up crontab. . .[0m
 
-[1;38;5;3mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;222mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;30mUpdating local git repos. . .[0m
-[1;38;5;30mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;3mUpdating Projects. . .[0m
+[1;38;5;72mUpdating local git repos. . .[0m
+[1;38;5;72mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;222mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -220,7 +474,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;3mUpdating Documents. . .[0m
+[1;38;5;222mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -228,32 +482,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;3mUpdating scripts. . .[0m
-[master fa3b845] auto commit
- 11 files changed, 39274 insertions(+), 39111 deletions(-)
- rewrite virus-freshclam.log (75%)
-To https://github.com/msifland/scripts
-   9d65591..fa3b845  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;3mUpdating pkg_bkups. . .[0m
-[master 41c5369] auto commit
- 3 files changed, 88 insertions(+), 13 deletions(-)
-To https://github.com/msifland/pkg_bkups
-   a63adc0..41c5369  master -> master
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;3mUpdating Modules-Apps. . .[0m
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
-Everything up-to-date
-branch 'master' set up to track 'origin/master'.
-
-[1;38;5;158mAll is good.[0m
-
-[1;38;5;30m
-06-13-2022 07:02:29 AM
-[1;38;5;30mIt took 2 minutes 28 seconds to run whole process.[0m
-[0m
+[1;38;5;222mUpdating scripts. . .[0m
