@@ -1,4 +1,38 @@
 
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
-Already up to date.
+From https://github.com/akinomyoga/ble.sh
+   1e19a67..11aa4ab  master     -> origin/master
+Updating 1e19a67..11aa4ab
+Fast-forward
+ .gitignore               |   2 +
+ GNUmakefile              |   2 +-
+ ble.pp                   |  27 +-
+ blerc                    |   9 +-
+ docs/ChangeLog.md        |   6 +-
+ lib/core-complete-def.sh |   2 +-
+ lib/core-debug-def.sh    |  10 +
+ lib/core-debug.sh        | 628 +++++++++++++++++++++++++++++++++++++++++++++++
+ lib/core-syntax-def.sh   |   2 +-
+ lib/test-util.sh         |  11 +-
+ make_command.sh          |   1 +
+ memo/D1782.test.sh       |  39 +++
+ memo/D1824.xtrace.sh     |  11 +
+ note.txt                 |  80 ++++++
+ src/edit.sh              |  25 +-
+ src/history.sh           |   2 +-
+ src/util.sh              | 113 +--------
+ 17 files changed, 845 insertions(+), 125 deletions(-)
+ create mode 100644 lib/core-debug-def.sh
+ create mode 100644 lib/core-debug.sh
+ create mode 100644 memo/D1782.test.sh
+ create mode 100755 memo/D1824.xtrace.sh
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT=out/ble.dep DEPENDENCIES_TARGET=out/ble.sh FULLVER=0.4.0-devel3 \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp -p lib/core-debug.sh out/lib/core-debug.sh
+bash make_command.sh install "out/lib/core-debug.sh" "/home/msifland/.local/share/blesh/lib/core-debug.sh"
+cp -p lib/test-util.sh out/lib/test-util.sh
+bash make_command.sh install "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
+cp -p docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
