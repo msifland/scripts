@@ -68,13 +68,13 @@ if [[ ! -d "$DEST/apt.old-4" ]]; then
 fi
 
 # Rename pkgs.txt lists to keep 5 copies
-if [[ -f $DEST/pkgs.txt.old ]]; then
+if [[ -f $DEST/pkgs.txt.old-3 ]]; then
 	mv $DEST/pkgs.txt.old-3 $DEST/pkgs.txt.old-4
 fi
-if [[ -f $DEST/pkgs.txt.old ]]; then
+if [[ -f $DEST/pkgs.txt.old-2 ]]; then
 	mv $DEST/pkgs.txt.old-2 $DEST/pkgs.txt.old-3
 fi
-if [[ -f $DEST/pkgs.txt.old ]]; then
+if [[ -f $DEST/pkgs.txt.old-1 ]]; then
 	mv $DEST/pkgs.txt.old-1 $DEST/pkgs.txt.old-2
 fi
 if [[ -f $DEST/pkgs.txt ]]; then
