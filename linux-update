@@ -78,15 +78,15 @@ dpkg --get-selections | awk '{print $1}' > $DEST/pkgs.txt
 if ls $DEST/apt.old-4/* > /dev/null 2>&1; then
 	rm -rf $DEST/apt.old-4/*
 fi
-if ls $DEST/apt.old/* > /dev/null 2>&1; then
+if ls $DEST/apt.old-3/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt.old-3/* $DEST/apt.old-4/
 	rm -rf $DEST/apt.old/*
 fi
-if ls $DEST/apt.old/* > /dev/null 2>&1; then
+if ls $DEST/apt.old-2/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt.old-2/* $DEST/apt.old-3/
 	rm -rf $DEST/apt.old/*
 fi
-if ls $DEST/apt.old/* > /dev/null 2>&1; then
+if ls $DEST/apt.old-1/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt.old-1/* $DEST/apt.old-2/
 	rm -rf $DEST/apt.old/*
 fi
