@@ -54,11 +54,17 @@ fi
 if [[ ! -d "$DEST/apt" ]]; then
 	mkdir "$DEST/apt"
 fi
-if [[ ! -d "$DEST/apt.old" ]]; then
-	mkdir "$DEST/apt.old"
-fi
 if [[ ! -d "$DEST/apt.old-1" ]]; then
 	mkdir "$DEST/apt.old-1"
+fi
+if [[ ! -d "$DEST/apt.old-2" ]]; then
+	mkdir "$DEST/apt.old-2"
+fi
+if [[ ! -d "$DEST/apt.old-3" ]]; then
+	mkdir "$DEST/apt.old-3"
+fi
+if [[ ! -d "$DEST/apt.old-4" ]]; then
+	mkdir "$DEST/apt.old-4"
 fi
 
 # Rename .old lists to .old-1
@@ -80,15 +86,15 @@ if ls $DEST/apt.old-4/* > /dev/null 2>&1; then
 fi
 if ls $DEST/apt.old-3/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt.old-3/* $DEST/apt.old-4/
-	rm -rf $DEST/apt.old/*
+	rm -rf $DEST/apt.old-3/*
 fi
 if ls $DEST/apt.old-2/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt.old-2/* $DEST/apt.old-3/
-	rm -rf $DEST/apt.old/*
+	rm -rf $DEST/apt.old-2/*
 fi
 if ls $DEST/apt.old-1/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt.old-1/* $DEST/apt.old-2/
-	rm -rf $DEST/apt.old/*
+	rm -rf $DEST/apt.old-1/*
 fi
 if ls $DEST/apt/* > /dev/null 2>&1; then
 	cp -rf $DEST/apt/* $DEST/apt.old-1/
