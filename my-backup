@@ -9,7 +9,7 @@ $HOME/Documents
 $HOME/Dropbox
 $HOME/GrubThemes
 $HOME/maps
-$HOME/Modules&Apps
+$HOME/Modules-Apps
 $HOME/pkg_bkups
 $HOME/Projects
 $HOME/scripts
@@ -45,6 +45,7 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/maps/combine
 --exclude=$HOME/maps/downloads
 --exclude=$HOME/maps/Garmin_Maps_Removed_From_Device
+--exclude=$HOME/Modules-Apps/.git
 --exclude=$HOME/.config/chrome-remote-desktop
 --exclude=$HOME/.config/chromium
 --exclude=$HOME/.config/google-chrome
@@ -82,18 +83,21 @@ function backup(){
 	# Remove old backups if more than 2
 	echo "${ILCOLOR2}Remove old backups first. . .${ILRESTORE}"
 	sleep 2
-	RMV_FLS=$(ls $DEST/* -t | sed -e '1,4d')
+<<comment
+	RMV_FLS=$(ls $DEST/* -t | sed -e '1,5d')
 	for fle in $RMV_FLS
 	do 
 		echo $fle
 		sleep .25
 	done
-	echo "ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f"
+comment
+	echo "ls $DEST/* -t | sed -e '1,5d' | xargs -d '\n' rm -f"
+	ls $DEST/* -t | sed -e '1,5d'
 	if [[ ! -d "$DEST" ]]; then
 		mkdir $DEST
 	else
 		if ls $DEST/* 1> /dev/null 2>&1; then
-			ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f
+			ls $DEST/* -t | sed -e '1,5d' | xargs -d '\n' rm -f
 		fi
 	fi
 	echo
