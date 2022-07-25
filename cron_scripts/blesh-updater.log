@@ -2,116 +2,35 @@
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
 From https://github.com/akinomyoga/ble.sh
-   11aa4ab..14f3c81  master      -> origin/master
-   742777e..7153250  v0.3-master -> origin/v0.3-master
+   14f3c81..1c7f7a1  master     -> origin/master
 Fetching submodule contrib
 From https://github.com/akinomyoga/blesh-contrib
-   eb17c73..9ca11da  master     -> origin/master
-Updating 11aa4ab..14f3c81
+   9ca11da..4345a10  master     -> origin/master
+Updating 14f3c81..1c7f7a1
 Fast-forward
- archive/layer/adapter.sh               |   2 +-
- ble.pp                                 |  19 +-
- contrib                                |   2 +-
- docs/ChangeLog.md                      |  25 +-
- keymap/vi.sh                           | 165 ++++++------
- keymap/vi_test.sh                      |   2 +-
- lib/core-cmdspec.sh                    |   2 +-
- lib/core-complete.sh                   | 102 +++++---
- lib/core-debug.sh                      |  35 +--
- lib/core-syntax.sh                     |  46 ++--
- lib/core-test.sh                       |  12 +-
- lib/init-bind.sh                       |   4 +
- lib/test-canvas.sh                     |  76 +++---
- lib/test-util.sh                       |  32 +--
- make_command.sh                        |  18 +-
- memo/D1440.suppress-locale-error.sh    |  10 +-
- memo/D1831.bashrc                      |  13 +
- memo/D1831.history                     |  10 +
- memo/D1838.bashrc                      |  49 ++++
- memo/benchmark/201508-type.sh          |  72 ++++++
- memo/benchmark/201512-fork.sh          |  11 +
- memo/benchmark/201512-setvalue.sh      |  71 ++++++
- memo/benchmark/201711-arithmetic.sh    |   7 +-
- memo/benchmark/201808-loopvar-array.sh |  51 ++++
- memo/benchmark/201809-test.sh          | 186 ++++++++++++++
- memo/benchmark/201902-sort.sh          | 218 ++++++++++++++++
- memo/benchmark/201903-builtin-echo.sh  |  49 ++++
- memo/benchmark/201903-mapfile.sh       |  13 +-
- memo/benchmark/201903-string-build.sh  |  70 ++++++
- memo/benchmark/array-access.sh         |   7 +-
- memo/benchmark/array-is-array.sh       |   8 +-
- memo/benchmark/array-reverse.sh        |  11 +-
- memo/benchmark/array.sh                |   7 +-
- memo/benchmark/benchmark.txt           | 384 ++++++++++++++++++++++++++++
- memo/benchmark/string-split-lines.sh   | 118 +++++++++
- memo/benchmark/string-split-words.sh   | 104 ++++++++
- note.txt                               | 445 +++++++++++++++++++++++++++++++++
- src/benchmark.sh                       |   7 +-
- src/canvas.sh                          |  98 ++++----
- src/color.sh                           |  30 +--
- src/decode.sh                          |  29 ++-
- src/edit.sh                            | 177 ++++++-------
- src/history.sh                         | 241 +++++++++++++-----
- src/util.sh                            | 207 ++++++++-------
- 44 files changed, 2663 insertions(+), 582 deletions(-)
- create mode 100644 memo/D1831.bashrc
- create mode 100644 memo/D1831.history
- create mode 100644 memo/D1838.bashrc
- create mode 100755 memo/benchmark/201508-type.sh
- create mode 100755 memo/benchmark/201512-fork.sh
- create mode 100755 memo/benchmark/201512-setvalue.sh
- mode change 100644 => 100755 memo/benchmark/201711-arithmetic.sh
- create mode 100755 memo/benchmark/201808-loopvar-array.sh
- create mode 100755 memo/benchmark/201809-test.sh
- create mode 100755 memo/benchmark/201902-sort.sh
- create mode 100755 memo/benchmark/201903-builtin-echo.sh
- mode change 100644 => 100755 memo/benchmark/201903-mapfile.sh
- create mode 100755 memo/benchmark/201903-string-build.sh
- mode change 100644 => 100755 memo/benchmark/array-access.sh
- mode change 100644 => 100755 memo/benchmark/array-is-array.sh
- mode change 100644 => 100755 memo/benchmark/array-reverse.sh
- mode change 100644 => 100755 memo/benchmark/array.sh
- create mode 100644 memo/benchmark/benchmark.txt
- create mode 100755 memo/benchmark/string-split-lines.sh
- create mode 100755 memo/benchmark/string-split-words.sh
-Submodule path 'contrib': checked out '9ca11dab1160f078dd819e4cd9ae634294e4202b'
+ blerc                |  75 ++++++++++++++++-----
+ contrib              |   2 +-
+ docs/ChangeLog.md    |  18 +++--
+ keymap/emacs.sh      |  87 ++++++++++++++++++-------
+ keymap/vi.sh         | 140 +++++++++++++++++++++++++--------------
+ lib/core-complete.sh |  29 +++++++--
+ note.txt             | 181 ++++++++++++++++++++++++++++++++++++++++++++++++++-
+ src/edit.sh          |   4 +-
+ src/util.sh          |  59 ++++++++++++++---
+ 9 files changed, 479 insertions(+), 116 deletions(-)
+Submodule path 'contrib': checked out '4345a10a9484250fe9a4f83259c21e05c20a7153'
 DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT=out/ble.dep DEPENDENCIES_TARGET=out/ble.sh FULLVER=0.4.0-devel3 \
   /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
 bash make_command.sh install "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp -p keymap/emacs.sh out/keymap/emacs.sh
+bash make_command.sh install "out/keymap/emacs.sh" "/home/msifland/.local/share/blesh/keymap/emacs.sh"
 cp -p keymap/vi.sh out/keymap/vi.sh
 bash make_command.sh install "out/keymap/vi.sh" "/home/msifland/.local/share/blesh/keymap/vi.sh"
-cp -p keymap/vi_test.sh out/keymap/vi_test.sh
-bash make_command.sh install "out/keymap/vi_test.sh" "/home/msifland/.local/share/blesh/keymap/vi_test.sh"
-cp -p lib/init-bind.sh out/lib/init-bind.sh
-bash make_command.sh install "out/lib/init-bind.sh" "/home/msifland/.local/share/blesh/lib/init-bind.sh"
 cp -p lib/core-complete.sh out/lib/core-complete.sh
 bash make_command.sh install "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
-/usr/bin/gawk -f make/mwg_pp.awk lib/core-syntax.sh > out/lib/core-syntax.sh
-bash make_command.sh install "out/lib/core-syntax.sh" "/home/msifland/.local/share/blesh/lib/core-syntax.sh"
-cp -p lib/core-test.sh out/lib/core-test.sh
-bash make_command.sh install "out/lib/core-test.sh" "/home/msifland/.local/share/blesh/lib/core-test.sh"
-cp -p lib/core-cmdspec.sh out/lib/core-cmdspec.sh
-bash make_command.sh install "out/lib/core-cmdspec.sh" "/home/msifland/.local/share/blesh/lib/core-cmdspec.sh"
-cp -p lib/core-debug.sh out/lib/core-debug.sh
-bash make_command.sh install "out/lib/core-debug.sh" "/home/msifland/.local/share/blesh/lib/core-debug.sh"
-cp -p lib/test-util.sh out/lib/test-util.sh
-bash make_command.sh install "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
-/usr/bin/gawk -f make/mwg_pp.awk lib/test-canvas.sh > out/lib/test-canvas.sh
-bash make_command.sh install "out/lib/test-canvas.sh" "/home/msifland/.local/share/blesh/lib/test-canvas.sh"
-mkdir -p out/contrib/integration
-cp -p contrib/fzf-completion.bash out/contrib/fzf-completion.bash
-bash make_command.sh install "out/contrib/fzf-completion.bash" "/home/msifland/.local/share/blesh/contrib/fzf-completion.bash"
-cp -p contrib/fzf-initialize.bash out/contrib/fzf-initialize.bash
-bash make_command.sh install "out/contrib/fzf-initialize.bash" "/home/msifland/.local/share/blesh/contrib/fzf-initialize.bash"
-cp -p contrib/prompt-elapsed.bash out/contrib/prompt-elapsed.bash
-bash make_command.sh install "out/contrib/prompt-elapsed.bash" "/home/msifland/.local/share/blesh/contrib/prompt-elapsed.bash"
-cp -p contrib/prompt-git.bash out/contrib/prompt-git.bash
-bash make_command.sh install "out/contrib/prompt-git.bash" "/home/msifland/.local/share/blesh/contrib/prompt-git.bash"
-cp -p contrib/config/execmark.bash out/contrib/config/execmark.bash
-bash make_command.sh install "out/contrib/config/execmark.bash" "/home/msifland/.local/share/blesh/contrib/config/execmark.bash"
-cp -p contrib/integration/zoxide.bash out/contrib/integration/zoxide.bash
-bash make_command.sh install "out/contrib/integration/zoxide.bash" "/home/msifland/.local/share/blesh/contrib/integration/zoxide.bash"
 cp -p docs/ChangeLog.md out/doc/ChangeLog.md
 bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
+cp -p contrib/README-ja.md out/doc/contrib/README-ja.md
+bash make_command.sh install "out/doc/contrib/README-ja.md" "/home/msifland/.local/share/blesh/doc/contrib/README-ja.md"
 cp -p contrib/README.md out/doc/contrib/README.md
 bash make_command.sh install "out/doc/contrib/README.md" "/home/msifland/.local/share/blesh/doc/contrib/README.md"
