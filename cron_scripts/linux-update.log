@@ -1461,3 +1461,34 @@ Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
 [1;38;5;54mUpdating scripts. . .[0m
+[master 5f29877] auto commit
+ 9 files changed, 41673 insertions(+), 41572 deletions(-)
+ rewrite cron_scripts/blesh-updater.log (85%)
+ rewrite cron_scripts/linux-update.log (92%)
+ create mode 100755 now
+ rewrite virus-freshclam.log (75%)
+To https://github.com/msifland/scripts
+   596b2cf..5f29877  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;54mUpdating pkg_bkups. . .[0m
+[master 3030063] auto commit
+ 4 files changed, 21 insertions(+), 3 deletions(-)
+To https://github.com/msifland/pkg_bkups
+   b63f870..3030063  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;54mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;251mAll is good.[0m
+
+[1;38;5;108m
+07-25-2022 07:08:54 AM
+[1;38;5;108mIt took 8 minutes 53 seconds to run whole process.[0m
+[0m
