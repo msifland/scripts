@@ -130,7 +130,7 @@ if version_gt "$GET_VER" "$CURNT"; then
 	echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
 
 	# This section is for if you are using nvidia drivers.
-<< Comment
+
 	# Build nvidia-kernel at boot
 	if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
 		sudo apt -y install module-assistant
@@ -138,7 +138,7 @@ if version_gt "$GET_VER" "$CURNT"; then
 
 	# If using nvidia drivers.
 	$HOME/scripts/kernel_scripts/nvidia-build
-Comment
+
 		
 	# Reboot to new kernel
 	cd ..

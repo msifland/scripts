@@ -18,23 +18,26 @@ sleep 1
 echo $PW | sudo -S -v
 echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
-
+if ! dpkg --get-selections | awk '{print $1}' | grep -xq "nala"; then
+	echo "spike" | sudo -S apt -y install nala
+fi
 # Run script
-sudo apt update -y
+sudo nala update -y
 sleep 1
 
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
-sudo apt upgrade -y
-sudo apt full-upgrade -y
+sudo nala upgrade -y
+#sudo apt full-upgrade -y
 sleep 1
 
 echo
 echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
-sudo apt autoremove -y
-sudo apt clean -y
-sudo apt autoclean -y
-sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
+sudo nala autopurge -y
+sudo nala autoremove -y
+sudo nala clean -y
+#sudo apt autoclean -y
+sudo nala purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
 rm -v -f ~/.cache/thumbnails/*/*.png ~/.thumbnails/*/*.png
 rm -v -f ~/.cache/thumbnails/*/*/*.png ~/.thumbnails/*/*/*.png
 sleep 1
