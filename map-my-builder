@@ -60,24 +60,10 @@ ${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}
 	$HOME/scripts/mkgmap-splitter-check
 	echo
 	echo
-	echo "${ILCOLOR1}Checking dependencies for osmimum-tool and python3-pyosmium. . .${ILRESTORE}"
-	echo
-	if ! dpkg --get-selections | grep -q "osmium-tool"; then
-		echo "spike" | sudo -S apt install osmium-tool
-	else
-		echo
-		echo "osmium-tool already installed."
-	fi
-	echo
 	sleep 1
-	if ! dpkg --get-selections | grep -q "python3-pyosmium"; then
-		echo "spike" | sudo -S apt install python3-pyosmium
-	else
-		echo
-		echo "python3-pyosmium already installed."
-	fi
-	echo
-	sleep 1
+	echo "Checking dependencies. . ."
+	echo "spike" | sudo -S apt install -y python3-pyosmium osmium-tool gmt gmt-dcw gmt-gshhg ghostscript gdal-bin graphicsmagick ffmpeg
+
 	
 	# Downloading maps from geofabrik.
 	cd $HOME/maps
