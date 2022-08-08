@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;96m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;217m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;96m
+[1;38;5;217m
 Removing old build logs. . .
 
 [0m
-[1;38;5;96m
+[1;38;5;217m
 Start Time:
-Date: 08-01-22
+Date: 08-08-22
 Time: 02:15:16 AM
 
 Scanning: 
@@ -66,31 +66,8 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 /home/msifland/tmp/Variety_Images/flickr_text_debian_/51219772142_83f39be69a_o.png: Img.Packed.PngContainsDownloadCmd-6786216-1 FOUND
-/home/msifland/tmp/Variety_Images/flickr_text_debian_/51219772142_83f39be69a_o.png: copied to '/home/msifland/infections/51219772142_83f39be69a_o.png.001'
-
------------ SCAN SUMMARY -----------
-Known viruses: 8624578
-Engine version: 0.103.6
-Scanned directories: 74183
-Scanned files: 731144
-Infected files: 1
-Total errors: 304
-Data scanned: 73072.16 MB
-Data read: 155143.64 MB (ratio 0.47:1)
-Time: 16930.008 sec (282 m 10 s)
-Start Date: 2022:08:01 02:15:24
-End Date:   2022:08:01 06:57:34
-
-
-End Time:
-Date: 08-01-22
-Time: 06:57:34 AM
-It took 4 hours 42 minutes 18 seconds to scan your system.
-
-
-[1;38;5;96m
-You can edit included and excluded files and folders by typing edit-virus-clamscan
-
-[0m
+/home/msifland/tmp/Variety_Images/flickr_text_debian_/51219772142_83f39be69a_o.png: copied to '/home/msifland/infections/51219772142_83f39be69a_o.png.002'
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes

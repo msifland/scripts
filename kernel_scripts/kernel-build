@@ -120,7 +120,7 @@ if test $FOR_INST; then
 		echo "${ILCOLOR2}Local version from .config file:${ILRESTORE} $CONF_VER"
 		echo
 		
-		read -p "  Leave blank for same as STABLE. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
+		read -p "Add custom tag to kernel name. Leave blank for same as STABLE. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
 		scripts/config --disable DEBUG_INFO
 
@@ -160,16 +160,17 @@ if test $FOR_INST; then
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
 		echo
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
-
-<< Comment
+		sleep 1
+		# This section is for if you are using nvidia drivers.
 		# Build nvidia-kernel at boot
 		if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
-			sudo apt -y install module-assistant
+			echo 'spike' | sudo -S apt -y install module-assistant
 		fi
-
+		echo
+		echo "On reboot, nvidia drivers will be built and installed." 
 		# If using nvidia drivers.
 		$HOME/scripts/kernel_scripts/nvidia-build
-Comment
+		$HOME/scripts/kernel_scripts/get-kernel-firmware
 
 else
 	echo

@@ -100,7 +100,7 @@ for j in $FOR_REM; do
 		# Modules
 		REM3=" "$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:-image-:-modules-:g' | sed 's:-unsigned::g')
 		# For removeing nvidia module-assistant build
-		#REM4=$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image-::g' | sed 's:-unsigned::g')
+		REM4=$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image-::g' | sed 's:-unsigned::g')
 		REM5=$(grep "^$j. linux" $KERN_FILE | sed "s:$j. ::g" | sed 's:linux-image:initrd.img:g' | sed 's: ::g')
 	fi
 
@@ -167,43 +167,16 @@ for j in $FOR_REM; do
 	fi
 	sleep 1
 
-<< Comment
 	# Removing module-assistant nvidia build.
 	if dpkg --get-selections | grep -wq "nvidia-legacy-390xx-kernel-$REM4"; then
 		echo
 		echo "Removing modules built by module-assistant for nvidia drivers. . ."
 		sleep 1
-		sudo apt purge nvidia-legacy-390xx-kernel-"$REM4"
+		sudo apt -y purge nvidia-legacy-390xx-kernel-"$REM4"
 	fi
-Comment
 done
-<<Comment
-# /var/lib/initramfs-tools files. This is where the system reads and tries to create a boot image from.
-echo
-echo "${ILCOLOR1}Also showing kernel info from /var/lib/initramfs-tools. This folder is where the system tries to create kernels from. If there are extra kernels listed there, delete them manually.${ILRESTORE}"
-sleep 1
-echo
-VAR_LIB_KERNS=$(ls /var/lib/initramfs-tools | tac)
-for v in $VAR_LIB_KERNS; do
-	echo $v
-	sleep .5
-done
-echo
-read -p "Would you like to delete any extra files?[y/n]: " del_ext
-if [[ $del_ext =~ ^[yY][eE][sS]|[yY]$ ]]; then
-	echo
-	read -p "Type the full name of file to delete(not path). Mutiple files separtated by a space: " del_inits
-	IFS=' ' read -a del_inits_array <<< "${del_inits}"
-	for n in "${del_inits_array[@]}"; do
-		echo "sudo rm -rf /var/lib/initramfs-tools/$n"
-		sudo rm -rf /var/lib/initramfs-tools/"$n"
-	done
-else
-	echo
-	echo "Ok not deleting anything in /var/lib/initramfs-tools."
-fi
-sleep 3
-Comment
+
+# Check for errors.
 if [ $? -eq 0 ]; then
 	echo
 	echo "${ILCOLOR3}All is good.${ILRESTORE}"
