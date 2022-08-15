@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;217m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;76m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;217m
+[1;38;5;76m
 Removing old build logs. . .
 
 [0m
-[1;38;5;217m
+[1;38;5;76m
 Start Time:
-Date: 08-08-22
+Date: 08-15-22
 Time: 02:15:16 AM
 
 Scanning: 
@@ -68,6 +68,3 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-/home/msifland/tmp/Variety_Images/flickr_text_debian_/51219772142_83f39be69a_o.png: Img.Packed.PngContainsDownloadCmd-6786216-1 FOUND
-/home/msifland/tmp/Variety_Images/flickr_text_debian_/51219772142_83f39be69a_o.png: copied to '/home/msifland/infections/51219772142_83f39be69a_o.png.002'
-LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
