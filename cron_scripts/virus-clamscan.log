@@ -68,3 +68,28 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 LibClamAV Warning: PNG: Unexpected early end-of-file.
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8633618
+Engine version: 0.103.7
+Scanned directories: 76839
+Scanned files: 768271
+Infected files: 0
+Total errors: 350
+Data scanned: 91098.35 MB
+Data read: 184331.67 MB (ratio 0.49:1)
+Time: 17932.060 sec (298 m 52 s)
+Start Date: 2022:09:12 02:15:25
+End Date:   2022:09:12 07:14:17
+
+
+End Time:
+Date: 09-12-22
+Time: 07:14:17 AM
+It took 4 hours 59 minutes 0 seconds to scan your system.
+
+
+[1;38;5;66m
+You can edit included and excluded files and folders by typing edit-virus-clamscan
+
+[0m
