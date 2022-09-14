@@ -1,4 +1,48 @@
 
 Updating ble.sh(bash syntax highlighting. . .
+ble.sh may become very slow because this is a debug version of Bash
+  (version '5.2.0(1)-rc2', release status: 'rc2').
+  We recommend using ble.sh with a release version of Bash.
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
-Already up to date.
+From https://github.com/akinomyoga/ble.sh
+   793dfad..39efcf9  master     -> origin/master
+ * [new branch]      citest     -> origin/citest
+Updating 793dfad..39efcf9
+Fast-forward
+ ble.pp                                |    4 +-
+ contrib                               |    2 +-
+ docs/ChangeLog.md                     |   39 +-
+ keymap/emacs.sh                       |    2 +-
+ keymap/vi.sh                          |   10 +-
+ lib/core-complete.sh                  |   63 +-
+ lib/core-syntax.sh                    |    2 +-
+ lib/init-msleep.sh                    |    2 +-
+ lib/test-util.sh                      |    3 +-
+ make_command.sh                       |   30 +-
+ memo/D1867.recursiveTrapWA-stub.patch |   82 +++
+ note.txt                              |  665 +++++++++++++++++----
+ src/color.sh                          |    2 +-
+ src/decode.sh                         |    7 +
+ src/def.sh                            |   10 +-
+ src/edit.sh                           |  162 +++---
+ src/history.sh                        |   10 +-
+ src/util.hook.sh                      | 1029 +++++++++++++++++++++++++++++++++
+ src/util.sh                           |  958 +-----------------------------
+ 19 files changed, 1919 insertions(+), 1163 deletions(-)
+ create mode 100644 memo/D1867.recursiveTrapWA-stub.patch
+ create mode 100644 src/util.hook.sh
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT=out/ble.dep DEPENDENCIES_TARGET=out/ble.sh FULLVER=0.4.0-devel3 \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp -p keymap/emacs.sh out/keymap/emacs.sh
+bash make_command.sh install "out/keymap/emacs.sh" "/home/msifland/.local/share/blesh/keymap/emacs.sh"
+cp -p keymap/vi.sh out/keymap/vi.sh
+bash make_command.sh install "out/keymap/vi.sh" "/home/msifland/.local/share/blesh/keymap/vi.sh"
+cp -p lib/core-complete.sh out/lib/core-complete.sh
+bash make_command.sh install "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
+/usr/bin/gawk -f make/mwg_pp.awk lib/core-syntax.sh > out/lib/core-syntax.sh
+bash make_command.sh install "out/lib/core-syntax.sh" "/home/msifland/.local/share/blesh/lib/core-syntax.sh"
+cp -p lib/test-util.sh out/lib/test-util.sh
+bash make_command.sh install "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
+cp -p docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
