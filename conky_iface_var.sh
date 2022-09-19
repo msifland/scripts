@@ -13,10 +13,10 @@
 # File adapter type name and set variable. Search for line with 'state UP' cut at delimiter ':' then show field 2 and remove ':'.
 # I find this to be the best example as it does not produce duplicates to cut with 'sort -u'.
 cd $HOME
-IFACE=$(ip link show | grep "state UP" | cut -d':' -f2 | sed 's#:##')
+IFACE=$(ip link show | grep "state UP" | cut -d':' -f2 | sed 's#:##' | tr -d " ")
 echo $IFACE
 # Search conky file for adapter that is listed and set variable.
-CONKY_NET=$(grep -o -P '(?<=wireless_essid ).*(?=})' .conkyrc | sed 's:}${endif::g')
+CONKY_NET=$(grep -o -P '(?<=wireless_essid ) [^ ]*' .conkyrc | tr -d " ")
 
 # This section is looking for wireless connection, if it's there it creates a file for the the .conkyrc to search if_existing then display the wireless info.
 HAS_WIRELESS=$(ip link show | grep "wl*")
