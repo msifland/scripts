@@ -44,7 +44,7 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/maps/*.old
 --exclude=$HOME/maps/combine
 --exclude=$HOME/maps/downloads
---exclude=$HOME/maps/Garmin_Maps_Removed_From_Device
+--exclude=$HOME/maps/Garmin_Maps_Removed_From_Device/
 --exclude=$HOME/Modules-Apps/.git
 --exclude=$HOME/.config/chrome-remote-desktop
 --exclude=$HOME/.config/chromium
@@ -58,13 +58,10 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/.local/share/Steam
 --exclude=$HOME/.local/share/Trash
 --exclude=$HOME/.local/share/data
---exclude=$HOME/Dropbox/Android
---exclude=$HOME/Dropbox/Backups
---exclude=$HOME/Dropbox/.dropbox.cache
---exclude=$HOME/Dropbox/.dropbox"
+--exclude=$HOME/Dropbox/"
 
 # Destination of Backup.
-DEST="$HOME/Dropbox/Backups"
+DEST="$HOME/Dropbox/Linux/Backups"
 
 # Create archive filename.
 DAY=$(date +%m-%d-%Y)
@@ -132,14 +129,14 @@ comment
 	echo "Making sure ownership is correct. . .${ILRESTORE}"
 	echo
 	sleep 1
-	for ROOT_FILE in $(find $HOME/Dropbox/Backups/* -type f -user root); do
+	for ROOT_FILE in $(find $HOME/Dropbox/Linux/Backups/* -type f -user root); do
 		echo "Changing ownership of $ROOT_FILE from root:root to msifland:msifland. . .sudo chown msifland:msifland $ROOT_FILE"
 		sudo chown msifland:msifland $ROOT_FILE
 		sleep 1
 	done
 
 	# Long listing of files in $DEST to check file sizes.
-	echo "${ILCOLOR2}Showing files in $HOME/Dropbox/Backups/ . . .${ILRESTORE}"
+	echo "${ILCOLOR2}Showing files in $HOME/Dropbox/Linux/Backups/ . . .${ILRESTORE}"
 	ls -lh $DEST
 	echo
 	sleep 1
@@ -158,5 +155,5 @@ comment
 }
 
 # Call funtion to backup
-backup | tee $HOME/Dropbox/Backups/my_backup_log.txt
+backup | tee $HOME/Dropbox/Linux/Backups/my_backup_log.txt
 exit 0
