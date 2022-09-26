@@ -138,6 +138,8 @@ for j in $FOR_REM; do
 			sleep 1
 			echo "sudo rm -rf /lib/modules/$m_file"
 			sudo rm -rf /lib/modules/"$m_file"
+			echo "sudo rm -rf /usr/lib/debug/lib/modules/$m_file"
+			sudo rm -rf /usr/lib/debug/lib/modules/"$m_file"
 			if [ $? -ne 0 ]; then
 				echo
 				echo "Not removed, check path and remove manyally. . ."

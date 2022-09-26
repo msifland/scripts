@@ -1,0 +1,63 @@
+#!/bin/bash
+# This script will empty root trash.
+# Set up sudo and explanation.
+echo
+echo "${ILCOLOR1}Emptying $HOME/.local/share/Trash. . .${ILRESTORE}"
+sleep 1
+
+# Trash folder variable
+LOCAL_TRASH="$HOME/.local/share/Trash"
+echo
+
+if test -d "$LOCAL_TRASH"; then
+	echo "${ILCOLOR2}All files and folders inside Trash folder:${ILCOLOR3}"
+	sleep 1
+	# Showing files.
+	 find "$LOCAL_TRASH/" #-maxdepth 1
+	sleep 1
+	echo
+	# Checking if files dir actually has files or is empty.
+	if ls -A "$LOCAL_TRASH/files" > /dev/null 2>&1; then
+		echo
+		# Set 'n' as default for question of deleting.
+		yn_del="n"
+		read -p "${ILCOLOR1}Deleting ALL contents of /root/.local/share/Trash. Are you sure[y/N]?${ILRESTORE} " yn_del
+		sleep 1
+		if [[ "$yn_del" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			echo
+			echo "${ILCOLOR2}Deleting now. . .${ILRESTORE}"
+			echo
+			sleep 1
+			# Run and test if any files were left behing.
+			if rm -rfv "$LOCAL_TRASH"; then
+				echo
+				echo "${ILCOLOR2}All went well, exiting now. . .${ILRESTORE}"
+				sleep 1
+				exit
+			else
+				# If file left behind then open in file manager.
+				echo
+				echo "${ILCOLOR3}It looks like some files were left behind, opening file explorer as root to check manually. . .${ILRESTORE}"
+				sleep 1
+				 xdg-open "$LOCAL_TRASH"
+				exit
+		fi
+		# Rest is error handling and exiting.
+		else
+			echo
+			echo "${ILCOLOR2}Exiting now. . .${ILRESTORE}"
+			sleep 1
+			exit
+		fi
+	else
+		echo
+		echo "${ILCOLOR2}Nothing in $LOCAL_TRASH, exiting now. . .${ILRESTORE}"
+		sleep 1
+		exit
+	fi
+else
+	echo
+	echo "${ILCOLOR2}Nothing in $LOCAL_TRASH, exiting now. . .${ILRESTORE}"
+	sleep 1
+	exit
+fi
