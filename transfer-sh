@@ -14,9 +14,9 @@ if [[ -f $FILE ]]; then
 	# Show output address to file download.
 	echo $OUTPUT
 	# Create dropbox links for launchable file and text to URL.
-	LN=$HOME/Dropbox/Transfer-sh
-	read -t 25 -p "What Transfer-sh directory would you like to put the files in? Dropbox/Transfer-sh/<your directory>" TRANS_DIR
-	LNK=$HOME/Dropbox/Transfer-sh/$TRANS_DIR
+	LN=$HOME/Dropbox/Linux/Transfer-sh
+	read -t 25 -p "What Transfer-sh directory would you like to put the files in? Dropbox/Linux/Transfer-sh/<your directory>" TRANS_DIR
+	LNK=$HOME/Dropbox/Linux/Transfer-sh/$TRANS_DIR
 	LNK_CUT=$(readlink -f $LNK | sed 's:/home/msifland/::')
 	echo "Putting files in $LNK_CUT"
 	LINK=$LNK/$FILE_END.desktop
