@@ -5,28 +5,39 @@ ble.sh may become very slow because this is a debug version of Bash
   We recommend using ble.sh with a release version of Bash.
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
 From https://github.com/akinomyoga/ble.sh
-   39efcf9..49e55f4  master     -> origin/master
-Updating 39efcf9..49e55f4
+   49e55f4..c5ddacc  master     -> origin/master
+Updating 49e55f4..c5ddacc
 Fast-forward
- blerc                                          |  17 +-
- docs/ChangeLog.md                              |  33 +-
- lib/core-complete.sh                           |  34 +-
- make/canvas.c2w.list-ucsver-detection-codes.sh |  31 ++
- make_command.sh                                |  23 +-
- note.txt                                       | 188 ++++++-
- src/canvas.GraphemeClusterBreak.sh             | 209 +++----
- src/canvas.c2w.sh                              | 744 +++++++++++++------------
- src/canvas.emoji.sh                            |  39 +-
- src/canvas.sh                                  |  10 +-
- src/color.sh                                   |  54 +-
- src/edit.sh                                    |  10 +-
- src/history.sh                                 |  38 +-
- src/util.hook.sh                               |   2 +-
- 14 files changed, 867 insertions(+), 565 deletions(-)
+ .github/workflows/build.yml        |  18 +++
+ .github/workflows/test.yml         |  24 ++++
+ .gitignore                         |   7 +-
+ ble.pp                             |   6 +-
+ lib/core-complete.sh               |   2 +-
+ lib/test-canvas.sh                 | 107 ++++++++++------
+ lib/test-main.sh                   |  11 +-
+ lib/test-util.sh                   |  25 ++--
+ make_command.sh                    |  76 +++++++-----
+ memo/D1881/pr227-measure.sh        |  46 +++++++
+ memo/D1881/pr227-plot.gp           |  84 +++++++++++++
+ memo/D1881/pr227-plot.sh           |  50 ++++++++
+ note.txt                           | 106 ++++++++++++++++
+ src/benchmark.sh                   |  11 +-
+ src/canvas.GraphemeClusterBreak.sh |  74 ++++++------
+ src/canvas.sh                      | 242 ++++++++++++++++++++++++++++++++-----
+ src/util.sh                        |  45 ++++---
+ 17 files changed, 762 insertions(+), 172 deletions(-)
+ create mode 100644 .github/workflows/test.yml
+ create mode 100755 memo/D1881/pr227-measure.sh
+ create mode 100755 memo/D1881/pr227-plot.gp
+ create mode 100755 memo/D1881/pr227-plot.sh
 DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT=out/ble.dep DEPENDENCIES_TARGET=out/ble.sh FULLVER=0.4.0-devel3 \
   /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
 bash make_command.sh install "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
 cp -p lib/core-complete.sh out/lib/core-complete.sh
 bash make_command.sh install "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
-cp -p docs/ChangeLog.md out/doc/ChangeLog.md
-bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
+cp -p lib/test-main.sh out/lib/test-main.sh
+bash make_command.sh install "out/lib/test-main.sh" "/home/msifland/.local/share/blesh/lib/test-main.sh"
+cp -p lib/test-util.sh out/lib/test-util.sh
+bash make_command.sh install "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
+/usr/bin/gawk -f make/mwg_pp.awk lib/test-canvas.sh > out/lib/test-canvas.sh
+bash make_command.sh install "out/lib/test-canvas.sh" "/home/msifland/.local/share/blesh/lib/test-canvas.sh"

@@ -1,0 +1,5 @@
+#!/bin/bash
+# This is a bash script.
+# Put your description below this line and code below that.
+# 
+mate-terminal -e "/bin/bash -c 'sudo /usr/bin/caja; exit'"

@@ -176,6 +176,10 @@ for j in $FOR_REM; do
 		sleep 1
 		sudo apt -y purge nvidia-legacy-390xx-kernel-"$REM4"
 	fi
+	if ls /usr/src/ | grep -q  nvidia-legacy-390xx-kernel-"$REM4"; then
+		echo "sudo rm -rf /usr/src/nvidia-legacy-390xx-kernel-$REM4*.*"
+		sudo rm -rf /usr/src/nvidia-legacy-390xx-kernel-"$REM4"*.*
+	fi
 done
 
 # Check for errors.
