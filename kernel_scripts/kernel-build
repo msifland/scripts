@@ -40,7 +40,7 @@ fi
 echo "" > $KERN_FILE
 
 # Set kernel version number to look for.
-VER="6"
+VER="5"
 read -p "Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
 if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $VER"
@@ -120,7 +120,7 @@ if test $FOR_INST; then
 		echo "${ILCOLOR2}Local version from .config file:${ILRESTORE} $CONF_VER"
 		echo
 		
-		read -p "Add custom tag to kernel name. Leave blank for same as STABLE. A dash will be appended before custom version.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
+		read -p "Add custom tag to kernel name. Leave blank for same as STABLE. A dash will be appended before custom version name.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
 		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
 		scripts/config --disable DEBUG_INFO
 

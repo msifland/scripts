@@ -44,7 +44,7 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/maps/*.old
 --exclude=$HOME/maps/combine
 --exclude=$HOME/maps/downloads
---exclude=$HOME/maps/Garmin_Maps_Removed_From_Device/
+--exclude=$HOME/maps/Garmin_Maps_Removed_From_Device
 --exclude=$HOME/Modules-Apps/.git
 --exclude=$HOME/.config/chrome-remote-desktop
 --exclude=$HOME/.config/chromium
@@ -58,7 +58,7 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/.local/share/Steam
 --exclude=$HOME/.local/share/Trash
 --exclude=$HOME/.local/share/data
---exclude=$HOME/Dropbox/"
+--exclude=$HOME/Dropbox"
 
 # Destination of Backup.
 DEST="$HOME/Dropbox/Linux/Backups"
@@ -130,7 +130,9 @@ comment
 	echo
 	sleep 1
 	for ROOT_FILE in $(find $HOME/Dropbox/Linux/Backups/* -type f -user root); do
-		echo "Changing ownership of $ROOT_FILE from root:root to msifland:msifland. . .sudo chown msifland:msifland $ROOT_FILE"
+		echo "Changing ownership of $ROOT_FILE from root:root to msifland:msifland. . ."
+		sleep 1
+		echo "sudo chown msifland:msifland $ROOT_FILE"
 		sudo chown msifland:msifland $ROOT_FILE
 		sleep 1
 	done
