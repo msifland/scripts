@@ -40,7 +40,7 @@ fi
 echo "" > $KERN_FILE
 
 # Set kernel version number to look for.
-VER="5"
+VER="6"
 read -p "Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
 if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
 	echo "OK, keeping current version of $VER"
