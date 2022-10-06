@@ -5,39 +5,40 @@ ble.sh may become very slow because this is a debug version of Bash
   We recommend using ble.sh with a release version of Bash.
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
 From https://github.com/akinomyoga/ble.sh
-   49e55f4..c5ddacc  master     -> origin/master
-Updating 49e55f4..c5ddacc
+   c5ddacc..a144ffa  master      -> origin/master
+   8912d81..4f14f7a  v0.3-master -> origin/v0.3-master
+Fetching submodule contrib
+From https://github.com/akinomyoga/blesh-contrib
+   54da9e3..1230c29  master     -> origin/master
+Updating c5ddacc..a144ffa
 Fast-forward
- .github/workflows/build.yml        |  18 +++
- .github/workflows/test.yml         |  24 ++++
- .gitignore                         |   7 +-
- ble.pp                             |   6 +-
- lib/core-complete.sh               |   2 +-
- lib/test-canvas.sh                 | 107 ++++++++++------
- lib/test-main.sh                   |  11 +-
- lib/test-util.sh                   |  25 ++--
- make_command.sh                    |  76 +++++++-----
- memo/D1881/pr227-measure.sh        |  46 +++++++
- memo/D1881/pr227-plot.gp           |  84 +++++++++++++
- memo/D1881/pr227-plot.sh           |  50 ++++++++
- note.txt                           | 106 ++++++++++++++++
- src/benchmark.sh                   |  11 +-
- src/canvas.GraphemeClusterBreak.sh |  74 ++++++------
- src/canvas.sh                      | 242 ++++++++++++++++++++++++++++++++-----
- src/util.sh                        |  45 ++++---
- 17 files changed, 762 insertions(+), 172 deletions(-)
- create mode 100644 .github/workflows/test.yml
- create mode 100755 memo/D1881/pr227-measure.sh
- create mode 100755 memo/D1881/pr227-plot.gp
- create mode 100755 memo/D1881/pr227-plot.sh
+ ble.pp                          |  16 +++---
+ contrib                         |   2 +-
+ docs/ChangeLog.md               |  40 +++++++++++---
+ lib/core-complete-def.sh        |   2 +-
+ lib/core-complete.sh            |   4 +-
+ lib/core-syntax.sh              |   4 +-
+ lib/test-util.sh                | 115 ++++++++++++++++++++++++++++++++++++++--
+ make_command.sh                 |   3 +-
+ memo/D1882-test-util-newfunc.sh |  11 ++++
+ note.txt                        |  83 ++++++++++++++++++++++++++++-
+ src/benchmark.sh                |  21 ++++----
+ src/canvas.sh                   |   6 +--
+ src/edit.sh                     |  16 +++---
+ src/util.sh                     |  45 +++++++++-------
+ 14 files changed, 300 insertions(+), 68 deletions(-)
+ create mode 100755 memo/D1882-test-util-newfunc.sh
+Submodule path 'contrib': checked out '1230c29ef57e797a34c1f5beb23cdbe6aa01ae27'
 DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT=out/ble.dep DEPENDENCIES_TARGET=out/ble.sh FULLVER=0.4.0-devel3 \
   /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
 bash make_command.sh install "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
 cp -p lib/core-complete.sh out/lib/core-complete.sh
 bash make_command.sh install "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
-cp -p lib/test-main.sh out/lib/test-main.sh
-bash make_command.sh install "out/lib/test-main.sh" "/home/msifland/.local/share/blesh/lib/test-main.sh"
+/usr/bin/gawk -f make/mwg_pp.awk lib/core-syntax.sh > out/lib/core-syntax.sh
+bash make_command.sh install "out/lib/core-syntax.sh" "/home/msifland/.local/share/blesh/lib/core-syntax.sh"
 cp -p lib/test-util.sh out/lib/test-util.sh
 bash make_command.sh install "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
-/usr/bin/gawk -f make/mwg_pp.awk lib/test-canvas.sh > out/lib/test-canvas.sh
-bash make_command.sh install "out/lib/test-canvas.sh" "/home/msifland/.local/share/blesh/lib/test-canvas.sh"
+cp -p contrib/prompt-git.bash out/contrib/prompt-git.bash
+bash make_command.sh install "out/contrib/prompt-git.bash" "/home/msifland/.local/share/blesh/contrib/prompt-git.bash"
+cp -p docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
