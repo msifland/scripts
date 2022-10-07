@@ -6,31 +6,31 @@
 /usr/bin/xterm -hold -e "bash -c \"source ~/.bashrc; clear
 echo Running update git repos to this system in 10 seconds. Do NOT run linux-usb-update until this runs. . .
 sleep 1
-echo \"$HOME/pkg_bkups\"
+echo $HOME/pkg_bkups
 cd $HOME/pkg_bkups
 git stash
 git fetch
 git pull
 echo
-echo \"$HOME/scripts\"
+echo $HOME/scripts
 cd $HOME/scripts
 git stash
 git fetch
 git pull
 echo
-echo \"$HOME/Documents\"
+echo $HOME/Documents
 cd $HOME/Documents
 git stash
 git fetch
 git pull
 echo
-echo \"$HOME/Projects\"
+echo $HOME/Projects
 cd $HOME/Projects
 git stash
 git fetch
 git pull
 echo
-echo \"$HOME/Modules-Apps\"
+echo $HOME/Modules-Apps
 cd $HOME/Modules-Apps
 git stash
 git fetch
