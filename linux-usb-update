@@ -43,7 +43,7 @@ echo
 echo "${ILCOLOR2}Backing up important files and apps. . .${ILRESTORE}"
 echo "${ILCOLOR1}Creating list of apps, and copying repos from /etc/apt. . .${ILRESTORE}"
 # Set backups folders and files, and only keep 3 of each.
-DEST="$HOME/pkg_bkups"
+DEST="$HOME/usb_pkg_bkups"
 if [[ ! -d "$DEST" ]]; then
 	mkdir $DEST
 else
@@ -98,7 +98,15 @@ echo "Updating $file"
 cp -f $file $HOME/
 sleep .25
 done
-cp $HOME/.xprofile $HOME/pkg_bkups/backups/
+cp $HOME/.xprofile $DEST/backups
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating usb_pkg_bkups. . .${ILRESTORE}"
+cd ~/usb_pkg_bkups
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
 sleep 1
 
 echo
