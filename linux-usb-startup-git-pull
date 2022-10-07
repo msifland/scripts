@@ -1,0 +1,40 @@
+#!/bin/bash
+# Put this script in $HOME/.config/autostart on linux-usb installation.
+#This scripts updates git repos when the device starts. 
+#
+
+/usr/bin/xterm -hold -e "bash -c \"source ~/.bashrc; clear
+echo \"Running update git repos to this system in 10 seconds. . .\"
+sleep 10
+echo \"$HOME/pkg_bkups\"
+cd $HOME/pkg_bkups
+git stash
+git fetch
+git pull
+echo
+echo \"$HOME/scripts\"
+cd $HOME/scripts
+git stash
+git fetch
+git pull
+echo
+echo \"$HOME/Documents\"
+cd $HOME/Documents
+git stash
+git fetch
+git pull
+echo
+echo \"$HOME/Projects\"
+cd $HOME/Projects
+git stash
+git fetch
+git pull
+echo
+echo \"$HOME/Modules-Apps\"
+cd $HOME/Modules-Apps
+git stash
+git fetch
+git pull
+echo
+echo
+cd\""
