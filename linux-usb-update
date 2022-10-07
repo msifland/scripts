@@ -98,6 +98,7 @@ echo "Updating $file"
 cp -f $file $HOME/
 sleep .25
 done
+echo "${ILCOLOR1}Backing up .xprofile. . .${ILRESTORE}"
 cp $HOME/.xprofile $DEST/backups
 sleep 1
 
