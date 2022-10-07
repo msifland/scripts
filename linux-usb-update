@@ -98,6 +98,7 @@ echo "Updating $file"
 cp -f $file $HOME/
 sleep .25
 done
+cp $HOME/.xprofile $HOME/pkg_bkups/backups/
 sleep 1
 
 echo
