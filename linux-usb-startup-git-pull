@@ -1,5 +1,5 @@
 #!/bin/bash
-# Put this script in $HOME/.config/autostart on linux-usb installation.
+# Put this script in $HOME/.config/autostart by add a starup app, or converting to a .desktop app, on linux-usb installation.
 #This scripts updates git repos when the device starts. 
 #
 
