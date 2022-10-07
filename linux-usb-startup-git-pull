@@ -10,7 +10,7 @@ echo $HOME/pkg_bkups
 cd $HOME/pkg_bkups
 git stash
 git fetch
-git pull
+git pull origin master
 sleep 1
 echo
 echo $HOME/scripts
