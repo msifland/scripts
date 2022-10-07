@@ -4,8 +4,8 @@
 #
 
 /usr/bin/xterm -hold -e "bash -c \"source ~/.bashrc; clear
-echo \"Running update git repos to this system in 10 seconds. Do NOT run linux-usb-update until this runs. . .\"
-sleep 10
+echo Running update git repos to this system in 10 seconds. Do NOT run linux-usb-update until this runs. . .
+sleep 1
 echo \"$HOME/pkg_bkups\"
 cd $HOME/pkg_bkups
 git stash
@@ -36,5 +36,5 @@ git stash
 git fetch
 git pull
 echo
-echo
+echo Okay to close this window now.
 cd\""
