@@ -1,6 +1,8 @@
 #!/bin/bash
-# Put this script in $HOME/.config/autostart by add a starup app, or converting to a .desktop app, on linux-usb installation.
-#This scripts updates git repos when the device starts. 
+# Calling this from alias: linux-usb-update. Alias needs to be put in .bashrc: alias linux-usb-update="clear; echo \"Running alias for 'linux-usb-startup-git-pull'\"; sleep 1; $HOME/scripts/linux-usb-startup-git-pull"
+# It updated files before running actual script: scripts/linux-usb-update.
+# This is for the usb linux installation on flash drive.
+# This scripts updates git repos when the device starts. 
 #
 if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xterm"; then
 	sudo apt install xterm
@@ -44,8 +46,8 @@ git fetch
 git pull
 sleep 1
 echo
-echo All done, closing in 3 seconds and running script: linux-usb-update. . .
-sleep 3
+echo All done, closing in 5 seconds and running script: linux-usb-update. . .
+sleep 5
 cd\""
 
 $HOME/scripts/linux-usb-update
