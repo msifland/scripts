@@ -3,7 +3,7 @@
 # Put your code below this line.
 echo
 echo
-echo "${ILCOLOR2}This updates the Sublime Text .desktop file in /usr/share/applications/sublime_text.desktop so Sublime opens files in new window.${ILRESTORE}"
+echo "This updates the Sublime Text .desktop file in /usr/share/applications/sublime_text.desktop so Sublime opens files in new window."
 echo
 sleep 1
 # Set file variables.
@@ -27,7 +27,5 @@ else
 	sleep 1
 #fi
 fi
-# Write Kate file modification date to kate-date file.
-echo "${ILCOLOR2}Done!!!${ILRESTORE}"
 sleep 1
 exit
