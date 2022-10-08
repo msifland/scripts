@@ -7,7 +7,7 @@ if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xterm"; then
 fi
 /usr/bin/xterm -e "bash -c \"source ~/.bashrc; clear
 echo Running update git repos to this system. . .
-sleep 1
+sleep 2
 echo $HOME/pkg_bkups
 cd $HOME/pkg_bkups
 git stash
@@ -45,4 +45,5 @@ sleep 1
 echo
 cd\""
 
+sleep 3
 $HOME/scripts/linux-usb-update
