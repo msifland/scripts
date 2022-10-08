@@ -2,5 +2,8 @@
 # This is a blank bash script document.
 # Put your code below this line.
 sleep 60
+if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xterm"; then
+	sudo apt install xterm
+fi
 cd
 env $(cat ~/scripts/cron_scripts/env-environment) /usr/bin/xterm -e "bash -c \"source ~/.bashrc; clear; $HOME/scripts/conky-check\""
