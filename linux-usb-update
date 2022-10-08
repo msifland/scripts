@@ -1,6 +1,7 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
+# Updating git repos first
 
 clear
 echo "${ILCOLOR4}           ###########    Updating your USB system now   ###########${ILRESTORE}"
@@ -10,9 +11,6 @@ tm_wh_start=$(date +"%s")
 sleep 1
 echo "Updating $(uname --all)${ILRESTORE}"
 sleep 1
-
-# Updating git repos first
-$HOME/scripts/linux-usb-startup-git-pull
 
 # Password to run as sudo.
 PW="spike"
