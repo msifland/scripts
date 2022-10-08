@@ -43,7 +43,6 @@ git fetch
 git pull
 sleep 1
 echo
-echo Okay to close this window now.
 cd\""
 
 $HOME/scripts/linux-usb-update
