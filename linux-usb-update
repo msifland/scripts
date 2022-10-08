@@ -11,6 +11,9 @@ sleep 1
 echo "Updating $(uname --all)${ILRESTORE}"
 sleep 1
 
+# Updating git repos first
+$HOME/scripts/linux-usb-startup-git-pull
+
 # Password to run as sudo.
 PW="spike"
 echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
