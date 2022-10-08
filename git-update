@@ -45,4 +45,12 @@ git commit -m 'auto commit'
 git push -u origin master
 sleep 1
 
+echo
+echo "${ILCOLOR1}Dowloading usb_pkg_bkups. . .${ILRESTORE}"
+cd ~/usb_pkg_bkups
+git stash
+git fetch
+git pull
+sleep 1
+
 cd
