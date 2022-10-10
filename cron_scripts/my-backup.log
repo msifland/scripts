@@ -1,10 +1,10 @@
 [sudo] password for msifland: 
 
-10-08-2022 01:30:01 AM
+10-10-2022 01:30:01 AM
 
 [1;38;5;59mRemove old backups first. . .[0m
 ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm -f
-/home/msifland/Dropbox/Linux/Backups/msifland-10-03-2022.tar.gz
+/home/msifland/Dropbox/Linux/Backups/msifland-10-05-2022.tar.gz
 
 [1;38;5;59mBacking up:[0m
 /home/msifland/Brother_Printer
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm 
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;59mTo /home/msifland/Dropbox/Linux/Backups/msifland-10-08-2022.tar.gz
+[1;38;5;59mTo /home/msifland/Dropbox/Linux/Backups/msifland-10-10-2022.tar.gz
 
 
 Excluding:[0m
@@ -72,19 +72,19 @@ tar: Removing leading `/' from hard link targets
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-10-08-2022.tar.gz from root:root to msifland:msifland. . .
-sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-10-08-2022.tar.gz
+Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-10-10-2022.tar.gz from root:root to msifland:msifland. . .
+sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-10-10-2022.tar.gz
 [1;38;5;59mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
 total 3.1G
--rw-r--r-- 1 msifland msifland 625M Oct  4 01:38 msifland-10-04-2022.tar.gz
--rw-r--r-- 1 msifland msifland 626M Oct  5 01:30 msifland-10-05-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 626M Oct  6 01:30 msifland-10-06-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 635M Oct  7 01:39 msifland-10-07-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 632M Oct  8 01:30 msifland-10-08-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K Oct  8 01:30 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 632M Oct  9 01:30 msifland-10-09-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 632M Oct 10 01:30 msifland-10-10-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K Oct 10 01:30 my_backup_log.txt
 
 [1;38;5;59mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-10-08-2022 01:30:50 AM
-[1;38;5;59mIt took 0 minutes 49 seconds to run whole process.[0m
+10-10-2022 01:30:52 AM
+[1;38;5;59mIt took 0 minutes 51 seconds to run whole process.[0m
 
