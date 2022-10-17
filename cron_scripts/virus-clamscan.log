@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;21m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;103m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;21m
+[1;38;5;103m
 Removing old build logs. . .
 
 [0m
-[1;38;5;21m
+[1;38;5;103m
 Start Time:
-Date: 10-10-22
-Time: 02:15:16 AM
+Date: 10-17-22
+Time: 02:15:17 AM
 
 Scanning: 
 /
@@ -68,31 +68,31 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 /home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: Win.Malware.Agent-6428008-0 FOUND
-/home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: copied to '/home/msifland/infections/HEU_KMS_Activator_v7.8.8.exe'
+/home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: copied to '/home/msifland/infections/HEU_KMS_Activator_v7.8.8.exe.001'
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8639477
+Known viruses: 8640327
 Engine version: 0.103.7
-Scanned directories: 72632
-Scanned files: 745817
+Scanned directories: 74767
+Scanned files: 760692
 Infected files: 1
-Total errors: 356
-Data scanned: 57052.86 MB
-Data read: 130874.65 MB (ratio 0.44:1)
-Time: 15247.948 sec (254 m 7 s)
-Start Date: 2022:10:10 02:15:24
-End Date:   2022:10:10 06:29:32
+Total errors: 355
+Data scanned: 61336.33 MB
+Data read: 136679.20 MB (ratio 0.45:1)
+Time: 16643.948 sec (277 m 23 s)
+Start Date: 2022:10:17 02:15:25
+End Date:   2022:10:17 06:52:49
 
 
 End Time:
-Date: 10-10-22
-Time: 06:29:32 AM
-It took 4 hours 14 minutes 16 seconds to scan your system.
+Date: 10-17-22
+Time: 06:52:49 AM
+It took 4 hours 37 minutes 32 seconds to scan your system.
 
 
-[1;38;5;21m
+[1;38;5;103m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
