@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;176m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;169m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;176m
+[1;38;5;169m
 Removing old build logs. . .
 
 [0m
-[1;38;5;176m
+[1;38;5;169m
 Start Time:
-Date: 10-24-22
-Time: 02:15:17 AM
+Date: 10-31-22
+Time: 02:15:16 AM
 
 Scanning: 
 /
@@ -68,31 +68,6 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 /home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: Win.Malware.Agent-6428008-0 FOUND
-/home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: copied to '/home/msifland/infections/HEU_KMS_Activator_v7.8.8.exe.002'
+/home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: copied to '/home/msifland/infections/HEU_KMS_Activator_v7.8.8.exe.003'
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-
------------ SCAN SUMMARY -----------
-Known viruses: 8640937
-Engine version: 0.103.7
-Scanned directories: 76957
-Scanned files: 776193
-Infected files: 1
-Total errors: 349
-Data scanned: 65852.28 MB
-Data read: 149235.69 MB (ratio 0.44:1)
-Time: 16860.760 sec (281 m 0 s)
-Start Date: 2022:10:24 02:15:25
-End Date:   2022:10:24 06:56:25
-
-
-End Time:
-Date: 10-24-22
-Time: 06:56:25 AM
-It took 4 hours 41 minutes 8 seconds to scan your system.
-
-
-[1;38;5;176m
-You can edit included and excluded files and folders by typing edit-virus-clamscan
-
-[0m
