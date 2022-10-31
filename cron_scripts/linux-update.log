@@ -1,192 +1,190 @@
-[H[2J[3J[1;38;5;140m           ###########    Updating your system now   ###########[0m
-[1;38;5;77m
-10-24-2022 07:00:01 AM
-Updating Linux debian 6.0.3-msi #1 SMP PREEMPT_DYNAMIC Sat Oct 22 03:02:28 CDT 2022 x86_64 GNU/Linux[0m
+[H[2J[3J[1;38;5;71m           ###########    Updating your system now   ###########[0m
+[1;38;5;92m
+10-31-2022 07:00:02 AM
+Updating Linux debian 6.0.5-msi #1 SMP PREEMPT_DYNAMIC Sat Oct 29 03:01:59 CDT 2022 x86_64 GNU/Linux[0m
 [1;38;5;48mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;139mUpdating sources and checking for app updates. . .[0m
+[1;38;5;50mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Get:1 http://ftp.debian.org/debian buster-backports InRelease [51.4 kB]
-Get:2 https://dl.winehq.org/wine-builds/debian bullseye InRelease [8,045 B]
-Hit:3 https://repo.skype.com/deb stable InRelease
-Get:4 http://deb.debian.org/debian testing InRelease [164 kB]
-Hit:5 https://download.sublimetext.com apt/stable/ InRelease
-Get:6 http://security.debian.org/debian-security testing-security InRelease [48.0 kB]
-Get:7 http://ftp.us.debian.org/debian testing InRelease [164 kB]
-Hit:9 http://repository.spotify.com stable InRelease
-Get:10 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease [2,464 B]
-Get:11 https://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]
-Ign:12 http://linux.dropbox.com/debian sid InRelease
-Get:13 http://ftp.us.debian.org/debian testing-updates InRelease [49.6 kB]
-Hit:14 http://linux.dropbox.com/debian sid Release
-Get:15 http://deb.debian.org/debian testing-updates InRelease [49.6 kB]
+Get:2 http://deb.debian.org/debian testing InRelease [164 kB]
+Ign:3 http://linux.dropbox.com/debian sid InRelease
+Get:4 http://security.debian.org/debian-security testing-security InRelease [48.0 kB]
+Hit:5 http://linux.dropbox.com/debian sid Release
+Get:6 http://ftp.us.debian.org/debian testing InRelease [164 kB]
+Hit:7 http://repository.spotify.com stable InRelease
+Hit:9 https://repo.skype.com/deb stable InRelease
+Hit:10 https://dl.winehq.org/wine-builds/debian bullseye InRelease
+Hit:11 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
+Get:12 https://download.sublimetext.com apt/stable/ InRelease [2,536 B]
+Get:13 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease [2,464 B]
+Get:14 http://deb.debian.org/debian testing-updates InRelease [49.6 kB]
+Get:15 http://ftp.us.debian.org/debian testing-updates InRelease [49.6 kB]
+Get:16 https://dl.google.com/linux/chrome/deb stable InRelease [1,811 B]
 Get:8 http://kali.download/kali kali-rolling InRelease [30.6 kB]
-Get:16 https://dl.winehq.org/wine-builds/debian bullseye/main i386 Packages [552 kB]
-Get:18 https://mega.nz/linux/repo/Debian_11 ./ InRelease [2,959 B]
-Get:19 https://dl.winehq.org/wine-builds/debian bullseye/main amd64 Packages [542 kB]
-Get:20 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
-Get:21 http://deb.debian.org/debian unstable InRelease [161 kB]
-Hit:22 http://deb.debian.org/debian stable InRelease
+Get:18 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
+Get:19 http://deb.debian.org/debian unstable InRelease [161 kB]
+Hit:20 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
+Hit:21 http://deb.debian.org/debian stable InRelease
+Get:22 https://mega.nz/linux/repo/Debian_11 ./ InRelease [2,959 B]
 Get:23 http://deb.debian.org/debian stable-updates InRelease [44.1 kB]
-Get:24 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
-Get:25 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:26 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:24 http://ftp.debian.org/debian buster-backports/main Sources.diff/Index [27.8 kB]
+Get:25 http://ftp.debian.org/debian buster-backports/main i386 Packages.diff/Index [27.8 kB]
+Get:26 http://ftp.debian.org/debian buster-backports/main amd64 Packages.diff/Index [27.8 kB]
 Get:17 https://apt.llvm.org/unstable llvm-toolchain InRelease [6,827 B]
-Get:27 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:28 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:29 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:30 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:31 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
-Get:32 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [63.3 kB]
-Get:33 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
-Hit:34 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
-Hit:35 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
-Get:36 https://packages.cisofy.com/community/lynis/deb stable InRelease [11.4 kB]
-Get:37 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,113 B]
-Get:38 http://deb.debian.org/debian testing/contrib Translation-en.diff/Index [63.3 kB]
-Get:39 http://ftp.us.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
-Get:41 http://ftp.us.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:42 http://deb.debian.org/debian testing/non-free Sources T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [3,312 B]
-Get:43 http://deb.debian.org/debian testing/main Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [357 kB]
-Get:44 http://ftp.us.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
-Get:45 http://ftp.us.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:46 http://ftp.us.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:47 http://ftp.us.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:48 http://ftp.us.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
-Get:49 http://ftp.us.debian.org/debian testing/contrib Translation-en.diff/Index [63.3 kB]
-Get:50 http://ftp.us.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
-Get:51 http://ftp.us.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:52 http://ftp.us.debian.org/debian testing/non-free Translation-en.diff/Index [63.3 kB]
-Get:53 http://deb.debian.org/debian testing/contrib Sources T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [851 B]
-Get:54 http://deb.debian.org/debian testing/main i386 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [425 kB]
-Get:55 http://deb.debian.org/debian testing/main amd64 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [432 kB]
-Get:56 http://deb.debian.org/debian testing/main Translation-en T-2022-10-24-0204.28-F-2022-10-17-1403.49.pdiff [29.5 kB]
-Get:57 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [16.2 kB]
-Get:58 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [7,338 B]
-Get:59 http://deb.debian.org/debian testing/non-free Translation-en T-2022-10-23-0203.13-F-2022-10-18-1407.57.pdiff [1,750 B]
-Get:60 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [525 B]
-Get:43 http://deb.debian.org/debian testing/main Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [357 kB]
-Get:42 http://deb.debian.org/debian testing/non-free Sources T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [3,312 B]
-Get:60 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [525 B]
-Get:59 http://deb.debian.org/debian testing/non-free Translation-en T-2022-10-23-0203.13-F-2022-10-18-1407.57.pdiff [1,750 B]
-Get:58 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [7,338 B]
-Get:57 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [16.2 kB]
-Get:56 http://deb.debian.org/debian testing/main Translation-en T-2022-10-24-0204.28-F-2022-10-17-1403.49.pdiff [29.5 kB]
-Get:55 http://deb.debian.org/debian testing/main amd64 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [432 kB]
-Get:54 http://deb.debian.org/debian testing/main i386 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [425 kB]
-Get:53 http://deb.debian.org/debian testing/contrib Sources T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [851 B]
-Get:61 http://kali.download/kali kali-rolling/main Sources [15.0 MB]
-Get:62 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [851 B]
-Get:62 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [851 B]
-Get:63 http://ftp.us.debian.org/debian testing/main Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [357 kB]
-Get:64 https://mega.nz/linux/repo/Debian_11 ./ Packages [2,688 B]
-Get:65 http://deb.debian.org/debian testing/contrib Translation-en T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [246 B]
-Get:65 http://deb.debian.org/debian testing/contrib Translation-en T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [246 B]
-Get:66 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,216 kB]
-Get:67 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [3,312 B]
-Get:68 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [432 kB]
-Get:63 http://ftp.us.debian.org/debian testing/main Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [357 kB]
-Get:67 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [3,312 B]
-Get:69 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,382 kB]
-Get:70 https://apt.llvm.org/unstable llvm-toolchain/main Sources [2,391 B]
-Get:71 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [425 kB]
-Get:68 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [432 kB]
-Get:72 https://apt.llvm.org/unstable llvm-toolchain/main amd64 Packages [20.2 kB]
-Get:73 https://apt.llvm.org/unstable llvm-toolchain/main i386 Packages [17.3 kB]
-Get:74 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,065 kB]
-Get:75 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.7 kB]
-Get:76 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.1 kB]
-Get:77 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:28 http://ftp.debian.org/debian buster-backports/main Sources 2022-10-24-1405.29.pdiff [4,635 B]
+Get:29 https://packages.cisofy.com/community/lynis/deb stable InRelease [11.4 kB]
+Get:30 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:31 http://ftp.debian.org/debian buster-backports/main i386 Packages 2022-10-24-2013.01.pdiff [15.5 kB]
+Get:28 http://ftp.debian.org/debian buster-backports/main Sources 2022-10-24-1405.29.pdiff [4,635 B]
+Get:31 http://ftp.debian.org/debian buster-backports/main i386 Packages 2022-10-24-2013.01.pdiff [15.5 kB]
+Get:32 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:33 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:34 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:35 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:36 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:37 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:38 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:39 http://deb.debian.org/debian testing/non-free Translation-en.diff/Index [63.3 kB]
+Get:40 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
+Get:41 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:42 http://deb.debian.org/debian testing/contrib Translation-en.diff/Index [63.3 kB]
+Get:43 http://ftp.debian.org/debian buster-backports/main amd64 Packages 2022-10-25-0205.59.pdiff [15.4 kB]
+Get:43 http://ftp.debian.org/debian buster-backports/main amd64 Packages 2022-10-25-0205.59.pdiff [15.4 kB]
+Get:44 http://deb.debian.org/debian testing/main Sources T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [303 kB]
+Get:44 http://deb.debian.org/debian testing/main Sources T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [303 kB]
+Get:45 http://ftp.us.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:46 http://deb.debian.org/debian testing/non-free Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [2,106 B]
+Get:46 http://deb.debian.org/debian testing/non-free Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [2,106 B]
+Get:47 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,118 B]
+Get:48 http://kali.download/kali kali-rolling/non-free Sources [131 kB]
+Get:49 http://ftp.us.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:50 http://deb.debian.org/debian testing/contrib Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,028 B]
+Get:50 http://deb.debian.org/debian testing/contrib Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,028 B]
+Get:51 http://ftp.us.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:52 http://kali.download/kali kali-rolling/contrib Sources [73.5 kB]
+Get:53 http://kali.download/kali kali-rolling/main Sources [15.0 MB]
+Get:54 http://kali.download/kali kali-rolling/main i386 Packages [18.5 MB]
+Get:55 http://kali.download/kali kali-rolling/main amd64 Packages [18.7 MB]
+Get:56 http://kali.download/kali kali-rolling/non-free i386 Packages [190 kB]
+Get:57 http://kali.download/kali kali-rolling/non-free amd64 Packages [234 kB]
+Get:58 http://kali.download/kali kali-rolling/contrib i386 Packages [97.7 kB]
+Get:59 http://kali.download/kali kali-rolling/contrib amd64 Packages [111 kB]
+Get:60 http://deb.debian.org/debian testing/main i386 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [502 kB]
+Get:61 http://deb.debian.org/debian testing/main amd64 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [506 kB]
+Get:62 http://deb.debian.org/debian testing/main Translation-en T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [29.1 kB]
+Get:63 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [14.5 kB]
+Get:64 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [18.7 kB]
+Get:65 http://deb.debian.org/debian testing/non-free Translation-en T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,001 B]
+Get:66 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,111 B]
+Get:67 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,216 B]
+Get:68 http://deb.debian.org/debian testing/contrib Translation-en T-2022-10-27-0212.13-F-2022-10-26-0210.09.pdiff [372 B]
+Get:69 http://ftp.us.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:70 http://ftp.us.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:71 http://ftp.us.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:72 http://ftp.us.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
+Get:73 http://ftp.us.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:74 http://ftp.us.debian.org/debian testing/contrib Translation-en.diff/Index [63.3 kB]
+Get:75 http://ftp.us.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:76 http://ftp.us.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:77 http://ftp.us.debian.org/debian testing/non-free Translation-en.diff/Index [63.3 kB]
+Get:68 http://deb.debian.org/debian testing/contrib Translation-en T-2022-10-27-0212.13-F-2022-10-26-0210.09.pdiff [372 B]
+Get:67 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,216 B]
+Get:66 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,111 B]
+Get:65 http://deb.debian.org/debian testing/non-free Translation-en T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,001 B]
+Get:64 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [18.7 kB]
+Get:63 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [14.5 kB]
+Get:62 http://deb.debian.org/debian testing/main Translation-en T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [29.1 kB]
+Get:60 http://deb.debian.org/debian testing/main i386 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [502 kB]
+Get:61 http://deb.debian.org/debian testing/main amd64 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [506 kB]
 Get:78 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
-Get:79 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
-Get:80 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:81 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:82 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:83 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-10-24-0204.28-F-2022-10-17-1403.49.pdiff [29.5 kB]
-Get:84 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [525 B]
-Get:85 http://ftp.us.debian.org/debian testing/contrib Translation-en T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [246 B]
-Get:86 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [7,338 B]
-Get:87 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [16.2 kB]
-Get:88 http://ftp.us.debian.org/debian testing/non-free Translation-en T-2022-10-23-0203.13-F-2022-10-18-1407.57.pdiff [1,750 B]
-Get:71 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [425 kB]
-Get:83 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-10-24-0204.28-F-2022-10-17-1403.49.pdiff [29.5 kB]
-Get:84 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [525 B]
-Get:85 http://ftp.us.debian.org/debian testing/contrib Translation-en T-2022-10-20-0203.06-F-2022-10-20-0203.06.pdiff [246 B]
-Get:86 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [7,338 B]
-Get:88 http://ftp.us.debian.org/debian testing/non-free Translation-en T-2022-10-23-0203.13-F-2022-10-18-1407.57.pdiff [1,750 B]
-Get:87 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-10-24-0204.28-F-2022-10-18-1407.57.pdiff [16.2 kB]
-Get:89 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
-Get:90 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
-Get:91 http://ftp.us.debian.org/debian testing/main amd64 DEP-11 Metadata [4,216 kB]
-Get:92 http://deb.debian.org/debian unstable/contrib Translation-en.diff/Index [63.3 kB]
-Get:93 http://kali.download/kali kali-rolling/contrib Sources [73.9 kB]
-Get:94 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
-Get:95 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
-Get:96 http://kali.download/kali kali-rolling/non-free Sources [131 kB]
-Get:97 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
-Get:98 http://deb.debian.org/debian stable-updates/main Sources.diff/Index [14.0 kB]
-Get:99 http://deb.debian.org/debian stable-updates/main i386 Packages.diff/Index [14.0 kB]
-Get:100 http://deb.debian.org/debian stable-updates/main amd64 Packages.diff/Index [14.0 kB]
-Get:101 http://deb.debian.org/debian stable-updates/main Translation-en.diff/Index [6,117 B]
-Get:102 http://kali.download/kali kali-rolling/main amd64 Packages [18.7 MB]
-Get:103 http://deb.debian.org/debian unstable/main Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [397 kB]
-Get:104 http://deb.debian.org/debian unstable/contrib Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [2,163 B]
-Get:103 http://deb.debian.org/debian unstable/main Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [397 kB]
-Get:104 http://deb.debian.org/debian unstable/contrib Sources T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [2,163 B]
-Get:105 http://kali.download/kali kali-rolling/main i386 Packages [18.5 MB]
-Get:106 http://deb.debian.org/debian unstable/non-free Sources T-2022-10-24-0803.49-F-2022-10-17-2006.44.pdiff [8,507 B]
-Get:106 http://deb.debian.org/debian unstable/non-free Sources T-2022-10-24-0803.49-F-2022-10-17-2006.44.pdiff [8,507 B]
-Get:107 http://deb.debian.org/debian unstable/main i386 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [638 kB]
-Get:108 http://kali.download/kali kali-rolling/non-free i386 Packages [190 kB]
-Get:109 http://kali.download/kali kali-rolling/non-free amd64 Packages [234 kB]
-Get:110 http://kali.download/kali kali-rolling/contrib amd64 Packages [111 kB]
-Get:107 http://deb.debian.org/debian unstable/main i386 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [638 kB]
-Get:111 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [715 kB]
-Get:111 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [715 kB]
-Get:112 http://deb.debian.org/debian unstable/main Translation-en T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [25.6 kB]
-Get:113 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-10-23-2011.04-F-2022-10-19-1430.30.pdiff [2,538 B]
-Get:112 http://deb.debian.org/debian unstable/main Translation-en T-2022-10-24-0803.49-F-2022-10-17-1403.49.pdiff [25.6 kB]
-Get:113 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-10-23-2011.04-F-2022-10-19-1430.30.pdiff [2,538 B]
-Get:114 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-10-23-2011.04-F-2022-10-17-1403.49.pdiff [1,829 B]
-Get:114 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-10-23-2011.04-F-2022-10-17-1403.49.pdiff [1,829 B]
-Get:115 http://ftp.us.debian.org/debian testing/main DEP-11 48x48 Icons [3,382 kB]
-Get:116 http://deb.debian.org/debian unstable/contrib Translation-en T-2022-10-18-0809.29-F-2022-10-18-0809.29.pdiff [31 B]
-Get:117 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-10-23-2011.04-F-2022-10-18-0208.03.pdiff [31.5 kB]
-Get:118 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-10-23-2011.04-F-2022-10-18-0208.03.pdiff [20.8 kB]
-Get:116 http://deb.debian.org/debian unstable/contrib Translation-en T-2022-10-18-0809.29-F-2022-10-18-0809.29.pdiff [31 B]
-Get:118 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-10-23-2011.04-F-2022-10-18-0208.03.pdiff [20.8 kB]
-Get:117 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-10-23-2011.04-F-2022-10-18-0208.03.pdiff [31.5 kB]
-Get:119 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-10-23-0804.02-F-2022-10-18-0208.03.pdiff [1,934 B]
-Get:119 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-10-23-0804.02-F-2022-10-18-0208.03.pdiff [1,934 B]
-Get:120 http://deb.debian.org/debian stable-updates/main Sources T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [1,848 B]
-Get:120 http://deb.debian.org/debian stable-updates/main Sources T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [1,848 B]
-Get:121 http://deb.debian.org/debian stable-updates/main i386 Packages T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [10.4 kB]
-Get:121 http://deb.debian.org/debian stable-updates/main i386 Packages T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [10.4 kB]
-Get:122 http://deb.debian.org/debian stable-updates/main amd64 Packages T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [9,785 B]
-Get:122 http://deb.debian.org/debian stable-updates/main amd64 Packages T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [9,785 B]
-Get:123 http://ftp.us.debian.org/debian testing/main DEP-11 64x64 Icons [7,065 kB]
-Get:124 http://deb.debian.org/debian stable-updates/main Translation-en T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [2,494 B]
-Get:124 http://deb.debian.org/debian stable-updates/main Translation-en T-2022-10-21-2017.32-F-2022-10-21-2017.32.pdiff [2,494 B]
-Get:125 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,386 kB]
-Get:126 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,566 kB]
-Get:127 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,504 kB]
+Get:79 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [2,106 B]
+Get:79 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [2,106 B]
+Get:80 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:81 https://apt.llvm.org/unstable llvm-toolchain/main Sources [2,393 B]
+Get:82 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:83 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:84 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:85 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:86 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:87 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
+Get:88 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:89 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:90 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
+Get:91 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,028 B]
+Get:92 http://ftp.us.debian.org/debian testing/main Sources T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [303 kB]
+Get:93 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [502 kB]
+Get:94 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [506 kB]
+Get:95 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [29.1 kB]
+Get:96 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,111 B]
+Get:97 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,216 B]
+Get:98 http://ftp.us.debian.org/debian testing/contrib Translation-en T-2022-10-27-0212.13-F-2022-10-26-0210.09.pdiff [372 B]
+Get:99 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [14.5 kB]
+Get:100 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [18.7 kB]
+Get:100 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [18.7 kB]
+Get:91 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,028 B]
+Get:92 http://ftp.us.debian.org/debian testing/main Sources T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [303 kB]
+Get:93 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [502 kB]
+Get:94 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [506 kB]
+Get:95 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-10-31-0805.42-F-2022-10-26-0210.09.pdiff [29.1 kB]
+Get:96 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,111 B]
+Get:97 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,216 B]
+Get:98 http://ftp.us.debian.org/debian testing/contrib Translation-en T-2022-10-27-0212.13-F-2022-10-26-0210.09.pdiff [372 B]
+Get:99 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [14.5 kB]
+Get:101 https://apt.llvm.org/unstable llvm-toolchain/main amd64 Packages [20.2 kB]
+Get:102 http://ftp.us.debian.org/debian testing/non-free Translation-en T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,001 B]
+Get:102 http://ftp.us.debian.org/debian testing/non-free Translation-en T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [1,001 B]
+Get:103 http://ftp.us.debian.org/debian testing/main amd64 DEP-11 Metadata [4,213 kB]
+Get:104 https://apt.llvm.org/unstable llvm-toolchain/main i386 Packages [17.3 kB]
+Get:105 http://deb.debian.org/debian unstable/contrib Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [851 B]
+Get:105 http://deb.debian.org/debian unstable/contrib Sources T-2022-10-31-0203.51-F-2022-10-26-0210.09.pdiff [851 B]
+Get:106 http://deb.debian.org/debian unstable/main Sources T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [408 kB]
+Get:106 http://deb.debian.org/debian unstable/main Sources T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [408 kB]
+Get:107 http://deb.debian.org/debian unstable/non-free Sources T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [6,371 B]
+Get:107 http://deb.debian.org/debian unstable/non-free Sources T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [6,371 B]
+Get:108 http://deb.debian.org/debian unstable/main i386 Packages T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [510 kB]
+Get:109 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [523 kB]
+Get:110 http://ftp.us.debian.org/debian testing/main DEP-11 48x48 Icons [3,386 kB]
+Get:111 http://deb.debian.org/debian unstable/main Translation-en T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [26.4 kB]
+Get:108 http://deb.debian.org/debian unstable/main i386 Packages T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [510 kB]
+Get:109 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [523 kB]
+Get:111 http://deb.debian.org/debian unstable/main Translation-en T-2022-10-31-0805.42-F-2022-10-24-1405.29.pdiff [26.4 kB]
+Get:112 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-10-31-0203.51-F-2022-10-25-0803.25.pdiff [1,310 B]
+Get:112 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-10-31-0203.51-F-2022-10-25-0803.25.pdiff [1,310 B]
+Get:113 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-10-31-0203.51-F-2022-10-25-0803.25.pdiff [1,322 B]
+Get:113 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-10-31-0203.51-F-2022-10-25-0803.25.pdiff [1,322 B]
+Get:114 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-10-31-0805.42-F-2022-10-24-2013.01.pdiff [30.0 kB]
+Get:114 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-10-31-0805.42-F-2022-10-24-2013.01.pdiff [30.0 kB]
+Get:115 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-10-31-0805.42-F-2022-10-24-2013.01.pdiff [18.2 kB]
+Get:116 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-10-31-0805.42-F-2022-10-24-2013.01.pdiff [5,481 B]
+Get:115 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-10-31-0805.42-F-2022-10-24-2013.01.pdiff [18.2 kB]
+Get:116 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-10-31-0805.42-F-2022-10-24-2013.01.pdiff [5,481 B]
+Get:117 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,213 kB]
+Get:118 http://ftp.us.debian.org/debian testing/main DEP-11 64x64 Icons [7,072 kB]
+Get:119 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,386 kB]
+Get:120 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,072 kB]
+Get:121 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.5 kB]
+Get:122 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [14.6 kB]
+Get:123 http://deb.debian.org/debian testing/contrib DEP-11 48x48 Icons [44.3 kB]
+Get:124 http://deb.debian.org/debian testing/contrib DEP-11 64x64 Icons [85.9 kB]
+Get:125 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,389 kB]
+Get:126 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,568 kB]
+Get:127 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,509 kB]
 Get:128 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [15.1 kB]
-Get:129 http://deb.debian.org/debian unstable/contrib DEP-11 48x48 Icons [46.0 kB]
-Get:130 http://deb.debian.org/debian unstable/contrib DEP-11 64x64 Icons [88.3 kB]
-Get:131 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.8 kB]
-Get:132 http://deb.debian.org/debian unstable/non-free DEP-11 48x48 Icons [3,142 B]
-Get:133 http://deb.debian.org/debian unstable/non-free DEP-11 64x64 Icons [30.8 kB]
-Get:134 http://ftp.us.debian.org/debian testing/contrib amd64 DEP-11 Metadata [15.1 kB]
-Get:135 http://ftp.us.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.7 kB]
-Fetched 107 MB in 17s (6,148 kB/s)
+Get:129 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.9 kB]
+Get:130 http://ftp.us.debian.org/debian testing/contrib amd64 DEP-11 Metadata [14.6 kB]
+Get:131 http://ftp.us.debian.org/debian testing/contrib DEP-11 48x48 Icons [44.3 kB]
+Get:132 http://ftp.us.debian.org/debian testing/contrib DEP-11 64x64 Icons [85.9 kB]
+Get:133 http://ftp.us.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.5 kB]
+Fetched 106 MB in 32s (3,341 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-488 packages can be upgraded. Run 'apt list --upgradable' to see them.
+653 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;139mChecking for system upgrade. . .[0m
+[1;38;5;50mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -194,263 +192,355 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following package was automatically installed and is no longer required:
-  libstd-rust-1.60
-Use 'sudo apt autoremove' to remove it.
+The following packages were automatically installed and are no longer required:
+  libflac8 libflac8:i386 libstd-rust-1.60 linux-headers-5.19.0-2-amd64
+  linux-headers-5.19.0-2-common linux-image-5.19.0-2-amd64 linux-kbuild-5.19
+Use 'sudo apt autoremove' to remove them.
 The following NEW packages will be installed:
-  fonts-texgyre-math libalglib3.19 libclang-cpp14 libcurl3-nss libduktape207
-  libgit2-1.5 libstd-rust-1.61 llvm-14 llvm-14-dev llvm-14-linker-tools
-  llvm-14-runtime llvm-14-tools polkitd-pkla postgresql-15
-  postgresql-client-15
+  fonts-texgyre-math libabsl20220623:i386 libalglib3.19 libavif15
+  libavif15:i386 libclang-cpp14 libcurl3-nss libde265-0:i386 libduktape207
+  libflac12 libflac12:i386 libgav1-1 libgav1-1:i386 libgit2-1.5 libheif1:i386
+  libperl5.36 libperl5.36:i386 libstd-rust-1.61 libyuv0 libyuv0:i386
+  linux-compiler-gcc-12-x86 linux-headers-6.0.0-2-amd64
+  linux-headers-6.0.0-2-common linux-image-6.0.0-2-amd64 linux-kbuild-6.0
+  llvm-14 llvm-14-dev llvm-14-linker-tools llvm-14-runtime llvm-14-tools
+  perl-modules-5.36 polkitd-pkla postgresql-15 postgresql-client-15
 The following packages have been kept back:
+  dvisvgm ghostscript gimp libgs9-common libspectre1
   virtualbox-guest-additions-iso
 The following packages will be upgraded:
   accountsservice anacron apache2 apache2-bin apache2-data apache2-doc
-  apache2-utils apparmor apt apt-utils asciidoctor avahi-autoipd avahi-daemon
-  avahi-utils binfmt-support binutils binutils-common binutils-dev
-  binutils-x86-64-linux-gnu bluez bluez-obexd bsdextrautils bsdutils
-  caja-extensions-common caja-image-converter caja-open-terminal caja-sendto
-  caja-wallpaper chromium chromium-common chromium-sandbox clamav
-  clamav-freshclam coinor-libclp1 console-setup console-setup-linux cron cups
-  cups-browsed cups-bsd cups-client cups-core-drivers cups-daemon cups-filters
+  apache2-utils apparmor apt apt-utils asciidoctor audacious-plugins
+  avahi-autoipd avahi-daemon avahi-utils binfmt-support binutils
+  binutils-common binutils-dev binutils-x86-64-linux-gnu blueman bluez
+  bluez-obexd bsdextrautils bsdutils caja-extensions-common
+  caja-image-converter caja-open-terminal caja-sendto caja-wallpaper chromium
+  chromium-common chromium-sandbox clamav clamav-freshclam coinor-libclp1
+  console-setup console-setup-linux cron cups cups-browsed cups-bsd
+  cups-client cups-core-drivers cups-daemon cups-filters
   cups-filters-core-drivers cups-ipp-utils cups-ppdc debhelper dh-dkms dirmngr
-  dkms dmsetup dnsmasq-base e2fsprogs eject fdisk firebird3.0-server-core
+  distro-info-data dkms dmsetup dnsmasq-base e2fsprogs eject ethtool fdisk
+  firebird3.0-common firebird3.0-common-doc firebird3.0-server-core
   firebird3.0-utils firefox-esr fonts-texgyre fonts-urw-base35 fonts-wine
-  freerdp2-x11 fwupd gcr gdbm-l10n gdisk gir1.2-ggit-1.0 gir1.2-nm-1.0
+  freerdp2-x11 fuse3 fwupd gcr gdbm-l10n gdisk gir1.2-ggit-1.0 gir1.2-nm-1.0
   gir1.2-packagekitglib-1.0 gir1.2-polkit-1.0 gir1.2-soup-2.4 gnome-keyring
   gnome-keyring-pkcs11 gnome-settings-daemon-common gnupg gnupg-l10n
   gnupg-utils gnupg2 gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm
-  gpgv graphicsmagick gsfonts haveged hdparm hwdata ifupdown intltool-debian
-  iproute2 isc-dhcp-client isc-dhcp-common kbd keyboard-configuration kmod
+  gpgv graphicsmagick graphviz gsfonts gstreamer1.0-gtk3
+  gstreamer1.0-plugins-good gstreamer1.0-plugins-good:i386
+  gstreamer1.0-pulseaudio haveged hdparm hwdata hydra hydra-gtk ifupdown
+  imagemagick imagemagick-6.q16 inetutils-telnet install-info
+  intel-media-va-driver intel-media-va-driver:i386 intltool-debian iproute2
+  isc-dhcp-client isc-dhcp-common kbd kbuild keyboard-configuration kmod
   libabsl20220623 libaccountsservice0 libalgorithm-c3-perl
   libalgorithm-diff-xs-perl libalgorithm-merge-perl libann0
   libapache2-mod-dnssd libapparmor1 libapt-pkg6.0 libaudit-dev libaudit1
   libauthen-sasl-perl libavahi-client3 libavahi-client3:i386
   libavahi-common-data libavahi-common-data:i386 libavahi-common3
   libavahi-common3:i386 libavahi-core7 libavahi-glib1 libavahi-gobject0
-  libavahi-ui-gtk3-0 libbinutils libblkid-dev libblkid1 libblkid1:i386
-  libblockdev-crypto2 libblockdev-fs2 libblockdev-loop2 libblockdev-part-err2
-  libblockdev-part2 libblockdev-swap2 libblockdev-utils2 libblockdev2
-  libbluetooth3 libbrlapi0.8 libc-bin libc-dev-bin libc-devtools libc-l10n
-  libc6 libc6:i386 libc6-dev libc6-dev-i386 libc6-dev-x32 libc6-i386 libc6-x32
-  libcairo-perl libclamav9 libcom-err2 libcom-err2:i386 libctf-nobfd0 libctf0
-  libcups2 libcups2:i386 libcupsfilters1 libcupsimage2 libde265-0
-  libdebhelper-perl libdevel-globaldestruction-perl libdevmapper1.02.1
-  libdigest-hmac-perl libdigest-perl-md5-perl libdynaloader-functions-perl
-  libebml5 libedit2 libedit2:i386 libemail-date-format-perl
-  libencode-locale-perl liberror-perl libext2fs2 libextutils-depends-perl
-  libfbclient2 libfdisk1 libfile-which-perl libfluidsynth3 libfont-afm-perl
-  libfontembed1 libfreerdp-client2-2 libfreerdp2-2 libfuse2 libfwupd2
-  libgck-1-0 libgcr-base-3-1 libgcr-ui-3-1 libgdbm-compat4
-  libgdbm-compat4:i386 libgdbm6 libgdbm6:i386 libgit2-glib-1.0-0 libglib2.0-0
-  libglib2.0-0:i386 libglib2.0-bin libglib2.0-data libglib2.0-dev
+  libavahi-ui-gtk3-0 libayatana-indicator3-7 libb-hooks-op-check-perl
+  libbdplus0 libbinutils libbit-vector-perl libblkid-dev libblkid1
+  libblkid1:i386 libblockdev-crypto2 libblockdev-fs2 libblockdev-loop2
+  libblockdev-part-err2 libblockdev-part2 libblockdev-swap2 libblockdev-utils2
+  libblockdev2 libbluetooth3 libbrlapi0.8 libbson-1.0-0 libc-bin libc-dev-bin
+  libc-devtools libc-l10n libc6 libc6:i386 libc6-dev libc6-dev-i386
+  libc6-dev-x32 libc6-i386 libc6-x32 libcairo-gobject-perl libcairo-perl
+  libcdt5 libcgraph6 libclamav9 libclass-c3-xs-perl libclass-xsaccessor-perl
+  libclone-perl libcom-err2 libcom-err2:i386 libcommon-sense-perl libcpupower1
+  libctf-nobfd0 libctf0 libcups2 libcups2:i386 libcupsfilters1 libcupsimage2
+  libdate-calc-xs-perl libde265-0 libdebhelper-perl libdevel-callchecker-perl
+  libdevel-caller-perl libdevel-globaldestruction-perl libdevel-lexalias-perl
+  libdevmapper1.02.1 libdigest-hmac-perl libdigest-perl-md5-perl
+  libdynaloader-functions-perl libebml5 libedit2 libedit2:i386
+  libemail-date-format-perl libencode-locale-perl liberror-perl libexpat1
+  libexpat1:i386 libexpat1-dev libext2fs2 libextutils-depends-perl libfaad2
+  libfbclient2 libfdisk1 libffi-dev libffi8 libffi8:i386
+  libfile-fcntllock-perl libfile-which-perl libflite1 libfluidsynth3
+  libfont-afm-perl libfontembed1 libfreerdp-client2-2 libfreerdp2-2 libfuse2
+  libfuse3-3 libfwupd2 libgck-1-0 libgcr-base-3-1 libgcr-ui-3-1 libgd3
+  libgd3:i386 libgdbm-compat4 libgdbm-compat4:i386 libgdbm6 libgdbm6:i386
+  libgimp2.0 libgit2-glib-1.0-0 libglib-object-introspection-perl libglib-perl
+  libglib2.0-0 libglib2.0-0:i386 libglib2.0-bin libglib2.0-data libglib2.0-dev
   libglib2.0-dev-bin libglu1-mesa libglu1-mesa:i386 libgnutls30
   libgnutls30:i386 libgpm2 libgpm2:i386 libgprofng0 libgraphicsmagick-q16-3
-  libgspell-1-2 libgspell-1-common libgtk3-perl libhavege2 libhtml-parser-perl
-  libhtml-tagset-perl libhttp-message-perl libib-util libical3 libiec61883-0
-  libiec61883-0:i386 libipc-shareable-perl libipc-system-simple-perl
-  libjson-perl libkmod2 libksba8 libldb2 liblerc-dev liblerc4 liblerc4:i386
-  liblirc-client0 libltc11 libmariadb3 libmateweather-common libmateweather1
-  libmatroska7 libmediainfo0v5 libmfx1 libmime-charset-perl libmime-types-perl
-  libmm-glib0 libmount-dev libmount1 libmount1:i386 libmysofa1 libnftables1
-  libnghttp2-14 libnghttp2-14:i386 libnm0 libnm0:i386 libnss-systemd
-  libnumber-compare-perl libole-storage-lite-perl libopencore-amrnb0
-  libopencore-amrnb0:i386 libopencore-amrwb0 libopencore-amrwb0:i386
-  libpackagekit-glib2-18 libpam-gnome-keyring libpam-modules
+  libgspell-1-2 libgspell-1-common libgtk3-perl libgvc6 libgvpr2 libhavege2
+  libhtml-parser-perl libhtml-tagset-perl libhttp-message-perl libib-util
+  libical3 libiec61883-0 libiec61883-0:i386 libigdgmm12 libigdgmm12:i386
+  libimage-magick-q16-perl libipc-shareable-perl libipc-system-simple-perl
+  libjson-perl libjson-xs-perl libkmod2 libksba8 liblab-gamut1 libldap-2.5-0
+  libldap-2.5-0:i386 libldb2 liblerc-dev liblerc4 liblerc4:i386
+  liblirc-client0 liblocale-gettext-perl liblrdf0 libltc11 libmagick++-6.q16-8
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  libmariadb3 libmateweather-common libmateweather1 libmatroska7
+  libmediainfo0v5 libmemcached11 libmfx1 libmime-charset-perl
+  libmime-types-perl libmm-glib0 libmongoc-1.0-0 libmount-dev libmount1
+  libmount1:i386 libmysofa1 libnet-dbus-perl libnet-libidn-perl
+  libnet-ssleay-perl libnftables1 libnghttp2-14 libnghttp2-14:i386 libnm0
+  libnm0:i386 libnss-systemd libnumber-compare-perl libole-storage-lite-perl
+  libopencore-amrnb0 libopencore-amrnb0:i386 libopencore-amrwb0
+  libopencore-amrwb0:i386 libopenmpt0 libpackage-stash-xs-perl
+  libpackagekit-glib2-18 libpadwalker-perl libpam-gnome-keyring libpam-modules
   libpam-modules-bin libpam-runtime libpam-systemd libpam0g
-  libparams-util-perl libparse-recdescent-perl libpipewire-0.3-0
+  libparams-classify-perl libparams-util-perl libparse-recdescent-perl
+  libpathplan4 libpcaudio0 libperl-dev libpipewire-0.3-0
   libpipewire-0.3-modules libpolkit-agent-1-0 libpolkit-gobject-1-0 libpopt0
-  libpq5 libpulse-mainloop-glib0 libpulse0 libpulse0:i386 libpulsedsp
-  libpython3.10 libpython3.10-dev libpython3.10-minimal libpython3.10-stdlib
-  librav1e0 librav1e0:i386 librubberband2 librust-anyhow-dev
+  libpq5 libprocps8 libpulse-mainloop-glib0 libpulse0 libpulse0:i386
+  libpulsedsp libpython3.10 libpython3.10-dev libpython3.10-minimal
+  libpython3.10-stdlib libqt5concurrent5 libqt5core5a libqt5dbus5
+  libqt5designer5 libqt5gui5 libqt5help5 libqt5multimedia5 libqt5network5
+  libqt5opengl5 libqt5positioning5 libqt5printsupport5 libqt5qml5
+  libqt5qmlmodels5 libqt5qmlworkerscript5 libqt5quick5 libqt5quickwidgets5
+  libqt5sql5 libqt5sql5-mysql libqt5sql5-sqlite libqt5svg5 libqt5test5
+  libqt5webchannel5 libqt5webengine-data libqt5webenginecore5
+  libqt5webenginewidgets5 libqt5widgets5 libqt5x11extras5 libqt5xml5 librav1e0
+  librav1e0:i386 libref-util-xs-perl librubberband2 librust-anyhow-dev
   librust-atk-sys-dev librust-cairo-sys-rs-dev librust-cfg-expr-dev
   librust-gdk-pixbuf-sys-dev librust-gdk-sys-dev librust-gio-sys-dev
   librust-glib-sys-dev librust-gobject-sys-dev librust-pango-sys-dev
-  librust-serde-dev librust-system-deps-dev librust-thiserror-dev
-  librust-thiserror-impl-dev librust-version-compare-dev librygel-core-2.6-2
-  librygel-db-2.6-2 librygel-renderer-2.6-2 librygel-server-2.6-2 libsane
-  libsane:i386 libsane1 libsane1:i386 libsensors-config libsensors5
-  libsensors5:i386 libsgmls-perl libsmartcols1 libsmbclient libsndio7.0
+  librust-quote+proc-macro-dev librust-quote-dev librust-serde-dev
+  librust-system-deps-dev librust-thiserror-dev librust-thiserror-impl-dev
+  librust-version-compare-dev librygel-core-2.6-2 librygel-db-2.6-2
+  librygel-renderer-2.6-2 librygel-server-2.6-2 libsane libsane:i386 libsane1
+  libsane1:i386 libsensors-config libsensors5 libsensors5:i386 libsgmls-perl
+  libsmartcols1 libsmbclient libsndfile1 libsndfile1:i386 libsndio7.0
   libsndio7.0:i386 libsnmp40 libsnmp40:i386 libsord-0-0 libsoup-3.0-0
   libsoup-3.0-common libsoup-gnome2.4-1 libsoup2.4-1 libsoup2.4-1:i386
   libsoup2.4-common libspa-0.2-modules libspeechd2
   libspreadsheet-writeexcel-perl libss2 libssl-dev libssl3 libssl3:i386
-  libstd-rust-dev libstemmer0d libsub-exporter-progressive-perl
-  libsub-install-perl libsub-override-perl libsystemd-shared libsystemd0
-  libsystemd0:i386 libtext-glob-perl libtheora0 libtheora0:i386
-  libtie-ixhash-perl libtry-tiny-perl libudev-dev libudev1 libudev1:i386
-  libudisks2-0 libupower-glib3 liburi-perl libuuid1 libuuid1:i386 libva-drm2
-  libva-drm2:i386 libva-glx2:i386 libva-wayland2 libva-x11-2 libva-x11-2:i386
-  libva2 libva2:i386 libvlc-bin libvlc5 libvlccore9 libwbclient0 libwinpr2-2
-  libwireplumber-0.4-0 libx11-protocol-perl libxml-sax-base-perl
-  libxsettings-client0 libxstring-perl libz-mingw-w64 libzvbi-common libzvbi0
-  libzvbi0:i386 libzxingcore1 lm-sensors locales logrotate logsave man-db
-  mate-polkit mate-polkit-common megasync modemmanager mount mythes-en-us
-  netbase netcat-openbsd network-manager nftables openssh-client
-  openssh-server openssh-sftp-server openssl osinfo-db packagekit
-  packagekit-tools pci.ids pinentry-curses pinentry-gnome3 pinentry-qt
-  pipewire pipewire-bin pipewire-pulse pkexec policykit-1 polkitd postfix
-  postgresql postgresql-client-common postgresql-common powertop
-  pulseaudio-utils python-apt-common python3-apt python3-brlapi python3-bs4
-  python3-cairo python3-cffi-backend python3-distro python3-distro-info
-  python3-snowballstemmer python3-tz python3-webencodings python3-xdg
-  python3.10 python3.10-dev python3.10-minimal qmapshack rfkill rsync rsyslog
-  rtkit ruby-asciidoctor runit-helper rustc rygel rygel-tracker samba-libs
-  sane-utils sddm sddm-theme-debian-maui seahorse sgmlspl snapd
+  libstd-rust-dev libstemmer0d libstring-crc32-perl
+  libsub-exporter-progressive-perl libsub-identify-perl libsub-install-perl
+  libsub-name-perl libsub-override-perl libsvn1 libsystemd-shared libsystemd0
+  libsystemd0:i386 libtext-charwidth-perl libtext-glob-perl libtext-iconv-perl
+  libtheora0 libtheora0:i386 libtie-ixhash-perl libtry-tiny-perl libudev-dev
+  libudev1 libudev1:i386 libudisks2-0 libunicode-linebreak-perl
+  libunicode-map-perl libunicode-string-perl libupower-glib3 liburi-perl
+  libuuid1 libuuid1:i386 libva-drm2 libva-drm2:i386 libva-glx2:i386
+  libva-wayland2 libva-x11-2 libva-x11-2:i386 libva2 libva2:i386
+  libvariable-magic-perl libvlc-bin libvlc5 libvlccore9 libwbclient0
+  libwinpr2-2 libwireplumber-0.4-0 libx11-protocol-perl libxml-libxml-perl
+  libxml-parser-perl libxml-sax-base-perl libxsettings-client0 libxstring-perl
+  libz-mingw-w64 libzbar0 libzvbi-common libzvbi0 libzvbi0:i386 libzxingcore1
+  linux-headers-amd64 linux-image-amd64 linux-perf lm-sensors locales login
+  logrotate logsave lsb-release man-db manpages manpages-dev mate-polkit
+  mate-polkit-common mate-tweak megasync modemmanager mount mythes-en-us
+  netbase netcat-openbsd nethogs network-manager nftables
+  nvidia-legacy-390xx-alternative nvidia-legacy-390xx-kernel-source
+  nvidia-legacy-390xx-kernel-support openssh-client openssh-server
+  openssh-sftp-server openssl osinfo-db packagekit packagekit-tools passwd
+  pci.ids perl perl-base perl-doc perl-tk pinentry-curses pinentry-gnome3
+  pinentry-qt pipewire pipewire-bin pipewire-pulse pkexec policykit-1 polkitd
+  postfix postgresql postgresql-14 postgresql-client-14
+  postgresql-client-common postgresql-common powertop procps pulseaudio-utils
+  python-apt-common python3-apt python3-brlapi python3-bs4 python3-cairo
+  python3-cffi-backend python3-distro python3-distro-info
+  python3-pkg-resources python3-pyqt5 python3-roman python3-setuptools
+  python3-snowballstemmer python3-speechd python3-tz python3-webencodings
+  python3-xdg python3-xlib python3.10 python3.10-dev python3.10-minimal
+  qmapshack qml-module-qtquick2 qt5-gtk-platformtheme quilt rfkill rsync
+  rsyslog rtkit ruby-asciidoctor runit-helper rustc rygel rygel-tracker
+  samba-libs sane-utils sddm sddm-theme-debian-maui seahorse sgmlspl snapd
   speech-dispatcher speech-dispatcher-audio-plugins
   speech-dispatcher-espeak-ng sudo sysstat systemd systemd-sysv
   systemd-timesyncd tex-common tex-gyre thunderbird tracker-extract
-  tracker-miner-fs transmission-gtk tzdata udev udisks2 ufw upower usrmerge
-  util-linux util-linux-extra util-linux-locales uuid-dev uuid-runtime
-  va-driver-all va-driver-all:i386 vlc vlc-bin vlc-data vlc-l10n
+  tracker-miner-fs transmission-gtk tzdata udev udisks2 ufw
+  unattended-upgrades upower usrmerge util-linux util-linux-extra
+  util-linux-locales uuid-dev uuid-runtime va-driver-all va-driver-all:i386
+  vim vim-tiny vlc vlc-bin vlc-data vlc-l10n vlc-plugin-access-extra
+  vlc-plugin-base vlc-plugin-notify vlc-plugin-qt vlc-plugin-samba
+  vlc-plugin-skins2 vlc-plugin-video-output vlc-plugin-video-splitter
+  vlc-plugin-visualization wayland-protocols wireplumber wpasupplicant
+  xbitmaps xbrlapi xdg-desktop-portal xscreensaver xscreensaver-data
+  xscreensaver-data-extra xterm xxd
+The following packages will be DOWNGRADED:
+  linux-libc-dev
+647 upgraded, 34 newly installed, 1 downgraded, 0 to remove and 6 not upgraded.
+E: Packages were downgraded and -y was used without --allow-downgrades.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages were automatically installed and are no longer required:
+  libflac8 libflac8:i386 libgs9-common libstd-rust-1.60
+  linux-headers-5.19.0-2-common linux-kbuild-5.19
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  libgs9 linux-headers-5.19.0-2-amd64 linux-image-5.19.0-2-amd64
+The following NEW packages will be installed:
+  fonts-texgyre-math libabsl20220623:i386 libalglib3.19 libavif15
+  libavif15:i386 libclang-cpp14 libcurl3-nss libde265-0:i386 libduktape207
+  libflac12 libflac12:i386 libgav1-1 libgav1-1:i386 libgit2-1.5 libgs-common
+  libgs10 libgs10-common libheif1:i386 libperl5.36 libperl5.36:i386
+  libstd-rust-1.61 libyuv0 libyuv0:i386 linux-compiler-gcc-12-x86
+  linux-headers-6.0.0-2-amd64 linux-headers-6.0.0-2-common
+  linux-image-6.0.0-2-amd64 linux-kbuild-6.0 llvm-14 llvm-14-dev
+  llvm-14-linker-tools llvm-14-runtime llvm-14-tools perl-modules-5.36
+  polkitd-pkla postgresql-15 postgresql-client-15
+The following packages will be upgraded:
+  accountsservice anacron apache2 apache2-bin apache2-data apache2-doc
+  apache2-utils apparmor apt apt-utils asciidoctor audacious-plugins
+  avahi-autoipd avahi-daemon avahi-utils binfmt-support binutils
+  binutils-common binutils-dev binutils-x86-64-linux-gnu blueman bluez
+  bluez-obexd bsdextrautils bsdutils caja-extensions-common
+  caja-image-converter caja-open-terminal caja-sendto caja-wallpaper chromium
+  chromium-common chromium-sandbox clamav clamav-freshclam coinor-libclp1
+  console-setup console-setup-linux cron cups cups-browsed cups-bsd
+  cups-client cups-core-drivers cups-daemon cups-filters
+  cups-filters-core-drivers cups-ipp-utils cups-ppdc debhelper dh-dkms dirmngr
+  distro-info-data dkms dmsetup dnsmasq-base dvisvgm e2fsprogs eject ethtool
+  fdisk firebird3.0-common firebird3.0-common-doc firebird3.0-server-core
+  firebird3.0-utils firefox-esr fonts-texgyre fonts-urw-base35 fonts-wine
+  freerdp2-x11 fuse3 fwupd gcr gdbm-l10n gdisk ghostscript gimp
+  gir1.2-ggit-1.0 gir1.2-nm-1.0 gir1.2-packagekitglib-1.0 gir1.2-polkit-1.0
+  gir1.2-soup-2.4 gnome-keyring gnome-keyring-pkcs11
+  gnome-settings-daemon-common gnupg gnupg-l10n gnupg-utils gnupg2 gpg
+  gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm gpgv graphicsmagick
+  graphviz gsfonts gstreamer1.0-gtk3 gstreamer1.0-plugins-good
+  gstreamer1.0-plugins-good:i386 gstreamer1.0-pulseaudio haveged hdparm hwdata
+  hydra hydra-gtk ifupdown imagemagick imagemagick-6.q16 inetutils-telnet
+  install-info intel-media-va-driver intel-media-va-driver:i386
+  intltool-debian iproute2 isc-dhcp-client isc-dhcp-common kbd kbuild
+  keyboard-configuration kmod libabsl20220623 libaccountsservice0
+  libalgorithm-c3-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+  libann0 libapache2-mod-dnssd libapparmor1 libapt-pkg6.0 libaudit-dev
+  libaudit1 libauthen-sasl-perl libavahi-client3 libavahi-client3:i386
+  libavahi-common-data libavahi-common-data:i386 libavahi-common3
+  libavahi-common3:i386 libavahi-core7 libavahi-glib1 libavahi-gobject0
+  libavahi-ui-gtk3-0 libayatana-indicator3-7 libb-hooks-op-check-perl
+  libbdplus0 libbinutils libbit-vector-perl libblkid-dev libblkid1
+  libblkid1:i386 libblockdev-crypto2 libblockdev-fs2 libblockdev-loop2
+  libblockdev-part-err2 libblockdev-part2 libblockdev-swap2 libblockdev-utils2
+  libblockdev2 libbluetooth3 libbrlapi0.8 libbson-1.0-0 libc-bin libc-dev-bin
+  libc-devtools libc-l10n libc6 libc6:i386 libc6-dev libc6-dev-i386
+  libc6-dev-x32 libc6-i386 libc6-x32 libcairo-gobject-perl libcairo-perl
+  libcdt5 libcgraph6 libclamav9 libclass-c3-xs-perl libclass-xsaccessor-perl
+  libclone-perl libcom-err2 libcom-err2:i386 libcommon-sense-perl libcpupower1
+  libctf-nobfd0 libctf0 libcups2 libcups2:i386 libcupsfilters1 libcupsimage2
+  libdate-calc-xs-perl libde265-0 libdebhelper-perl libdevel-callchecker-perl
+  libdevel-caller-perl libdevel-globaldestruction-perl libdevel-lexalias-perl
+  libdevmapper1.02.1 libdigest-hmac-perl libdigest-perl-md5-perl
+  libdynaloader-functions-perl libebml5 libedit2 libedit2:i386
+  libemail-date-format-perl libencode-locale-perl liberror-perl libexpat1
+  libexpat1:i386 libexpat1-dev libext2fs2 libextutils-depends-perl libfaad2
+  libfbclient2 libfdisk1 libffi-dev libffi8 libffi8:i386
+  libfile-fcntllock-perl libfile-which-perl libflite1 libfluidsynth3
+  libfont-afm-perl libfontembed1 libfreerdp-client2-2 libfreerdp2-2 libfuse2
+  libfuse3-3 libfwupd2 libgck-1-0 libgcr-base-3-1 libgcr-ui-3-1 libgd3
+  libgd3:i386 libgdbm-compat4 libgdbm-compat4:i386 libgdbm6 libgdbm6:i386
+  libgimp2.0 libgit2-glib-1.0-0 libglib-object-introspection-perl libglib-perl
+  libglib2.0-0 libglib2.0-0:i386 libglib2.0-bin libglib2.0-data libglib2.0-dev
+  libglib2.0-dev-bin libglu1-mesa libglu1-mesa:i386 libgnutls30
+  libgnutls30:i386 libgpm2 libgpm2:i386 libgprofng0 libgraphicsmagick-q16-3
+  libgs9-common libgspell-1-2 libgspell-1-common libgtk3-perl libgvc6 libgvpr2
+  libhavege2 libhtml-parser-perl libhtml-tagset-perl libhttp-message-perl
+  libib-util libical3 libiec61883-0 libiec61883-0:i386 libigdgmm12
+  libigdgmm12:i386 libimage-magick-q16-perl libipc-shareable-perl
+  libipc-system-simple-perl libjson-perl libjson-xs-perl libkmod2 libksba8
+  liblab-gamut1 libldap-2.5-0 libldap-2.5-0:i386 libldb2 liblerc-dev liblerc4
+  liblerc4:i386 liblirc-client0 liblocale-gettext-perl liblrdf0 libltc11
+  libmagick++-6.q16-8 libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra
+  libmagickwand-6.q16-6 libmariadb3 libmateweather-common libmateweather1
+  libmatroska7 libmediainfo0v5 libmemcached11 libmfx1 libmime-charset-perl
+  libmime-types-perl libmm-glib0 libmongoc-1.0-0 libmount-dev libmount1
+  libmount1:i386 libmysofa1 libnet-dbus-perl libnet-libidn-perl
+  libnet-ssleay-perl libnftables1 libnghttp2-14 libnghttp2-14:i386 libnm0
+  libnm0:i386 libnss-systemd libnumber-compare-perl libole-storage-lite-perl
+  libopencore-amrnb0 libopencore-amrnb0:i386 libopencore-amrwb0
+  libopencore-amrwb0:i386 libopenmpt0 libpackage-stash-xs-perl
+  libpackagekit-glib2-18 libpadwalker-perl libpam-gnome-keyring libpam-modules
+  libpam-modules-bin libpam-runtime libpam-systemd libpam0g
+  libparams-classify-perl libparams-util-perl libparse-recdescent-perl
+  libpathplan4 libpcaudio0 libperl-dev libpipewire-0.3-0
+  libpipewire-0.3-modules libpolkit-agent-1-0 libpolkit-gobject-1-0 libpopt0
+  libpq5 libprocps8 libpulse-mainloop-glib0 libpulse0 libpulse0:i386
+  libpulsedsp libpython3.10 libpython3.10-dev libpython3.10-minimal
+  libpython3.10-stdlib libqt5concurrent5 libqt5core5a libqt5dbus5
+  libqt5designer5 libqt5gui5 libqt5help5 libqt5multimedia5 libqt5network5
+  libqt5opengl5 libqt5positioning5 libqt5printsupport5 libqt5qml5
+  libqt5qmlmodels5 libqt5qmlworkerscript5 libqt5quick5 libqt5quickwidgets5
+  libqt5sql5 libqt5sql5-mysql libqt5sql5-sqlite libqt5svg5 libqt5test5
+  libqt5webchannel5 libqt5webengine-data libqt5webenginecore5
+  libqt5webenginewidgets5 libqt5widgets5 libqt5x11extras5 libqt5xml5 librav1e0
+  librav1e0:i386 libref-util-xs-perl librubberband2 librust-anyhow-dev
+  librust-atk-sys-dev librust-cairo-sys-rs-dev librust-cfg-expr-dev
+  librust-gdk-pixbuf-sys-dev librust-gdk-sys-dev librust-gio-sys-dev
+  librust-glib-sys-dev librust-gobject-sys-dev librust-pango-sys-dev
+  librust-quote+proc-macro-dev librust-quote-dev librust-serde-dev
+  librust-system-deps-dev librust-thiserror-dev librust-thiserror-impl-dev
+  librust-version-compare-dev librygel-core-2.6-2 librygel-db-2.6-2
+  librygel-renderer-2.6-2 librygel-server-2.6-2 libsane libsane:i386 libsane1
+  libsane1:i386 libsensors-config libsensors5 libsensors5:i386 libsgmls-perl
+  libsmartcols1 libsmbclient libsndfile1 libsndfile1:i386 libsndio7.0
+  libsndio7.0:i386 libsnmp40 libsnmp40:i386 libsord-0-0 libsoup-3.0-0
+  libsoup-3.0-common libsoup-gnome2.4-1 libsoup2.4-1 libsoup2.4-1:i386
+  libsoup2.4-common libspa-0.2-modules libspectre1 libspeechd2
+  libspreadsheet-writeexcel-perl libss2 libssl-dev libssl3 libssl3:i386
+  libstd-rust-dev libstemmer0d libstring-crc32-perl
+  libsub-exporter-progressive-perl libsub-identify-perl libsub-install-perl
+  libsub-name-perl libsub-override-perl libsvn1 libsystemd-shared libsystemd0
+  libsystemd0:i386 libtext-charwidth-perl libtext-glob-perl libtext-iconv-perl
+  libtheora0 libtheora0:i386 libtie-ixhash-perl libtry-tiny-perl libudev-dev
+  libudev1 libudev1:i386 libudisks2-0 libunicode-linebreak-perl
+  libunicode-map-perl libunicode-string-perl libupower-glib3 liburi-perl
+  libuuid1 libuuid1:i386 libva-drm2 libva-drm2:i386 libva-glx2:i386
+  libva-wayland2 libva-x11-2 libva-x11-2:i386 libva2 libva2:i386
+  libvariable-magic-perl libvlc-bin libvlc5 libvlccore9 libwbclient0
+  libwinpr2-2 libwireplumber-0.4-0 libx11-protocol-perl libxml-libxml-perl
+  libxml-parser-perl libxml-sax-base-perl libxsettings-client0 libxstring-perl
+  libz-mingw-w64 libzbar0 libzvbi-common libzvbi0 libzvbi0:i386 libzxingcore1
+  linux-headers-amd64 linux-image-amd64 linux-perf lm-sensors locales login
+  logrotate logsave lsb-release man-db manpages manpages-dev mate-polkit
+  mate-polkit-common mate-tweak megasync modemmanager mount mythes-en-us
+  netbase netcat-openbsd nethogs network-manager nftables
+  nvidia-legacy-390xx-alternative nvidia-legacy-390xx-kernel-source
+  nvidia-legacy-390xx-kernel-support openssh-client openssh-server
+  openssh-sftp-server openssl osinfo-db packagekit packagekit-tools passwd
+  pci.ids perl perl-base perl-doc perl-tk pinentry-curses pinentry-gnome3
+  pinentry-qt pipewire pipewire-bin pipewire-pulse pkexec policykit-1 polkitd
+  postfix postgresql postgresql-14 postgresql-client-14
+  postgresql-client-common postgresql-common powertop procps pulseaudio-utils
+  python-apt-common python3-apt python3-brlapi python3-bs4 python3-cairo
+  python3-cffi-backend python3-distro python3-distro-info
+  python3-pkg-resources python3-pyqt5 python3-roman python3-setuptools
+  python3-snowballstemmer python3-speechd python3-tz python3-webencodings
+  python3-xdg python3-xlib python3.10 python3.10-dev python3.10-minimal
+  qmapshack qml-module-qtquick2 qt5-gtk-platformtheme quilt rfkill rsync
+  rsyslog rtkit ruby-asciidoctor runit-helper rustc rygel rygel-tracker
+  samba-libs sane-utils sddm sddm-theme-debian-maui seahorse sgmlspl snapd
+  speech-dispatcher speech-dispatcher-audio-plugins
+  speech-dispatcher-espeak-ng sudo sysstat systemd systemd-sysv
+  systemd-timesyncd tex-common tex-gyre thunderbird tracker-extract
+  tracker-miner-fs transmission-gtk tzdata udev udisks2 ufw
+  unattended-upgrades upower usrmerge util-linux util-linux-extra
+  util-linux-locales uuid-dev uuid-runtime va-driver-all va-driver-all:i386
+  vim vim-tiny virtualbox-guest-additions-iso vlc vlc-bin vlc-data vlc-l10n
   vlc-plugin-access-extra vlc-plugin-base vlc-plugin-notify vlc-plugin-qt
   vlc-plugin-samba vlc-plugin-skins2 vlc-plugin-video-output
   vlc-plugin-video-splitter vlc-plugin-visualization wayland-protocols
   wireplumber wpasupplicant xbitmaps xbrlapi xdg-desktop-portal xscreensaver
-  xscreensaver-data xscreensaver-data-extra xterm
+  xscreensaver-data xscreensaver-data-extra xterm xxd
 The following packages will be DOWNGRADED:
   linux-libc-dev
-487 upgraded, 15 newly installed, 1 downgraded, 0 to remove and 1 not upgraded.
+653 upgraded, 37 newly installed, 1 downgraded, 3 to remove and 0 not upgraded.
 E: Packages were downgraded and -y was used without --allow-downgrades.
 
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Calculating upgrade...
-The following package was automatically installed and is no longer required:
-  libstd-rust-1.60
-Use 'sudo apt autoremove' to remove it.
-The following NEW packages will be installed:
-  fonts-texgyre-math libalglib3.19 libclang-cpp14 libcurl3-nss libduktape207
-  libgit2-1.5 libstd-rust-1.61 llvm-14 llvm-14-dev llvm-14-linker-tools
-  llvm-14-runtime llvm-14-tools polkitd-pkla postgresql-15
-  postgresql-client-15
-The following packages will be upgraded:
-  accountsservice anacron apache2 apache2-bin apache2-data apache2-doc
-  apache2-utils apparmor apt apt-utils asciidoctor avahi-autoipd avahi-daemon
-  avahi-utils binfmt-support binutils binutils-common binutils-dev
-  binutils-x86-64-linux-gnu bluez bluez-obexd bsdextrautils bsdutils
-  caja-extensions-common caja-image-converter caja-open-terminal caja-sendto
-  caja-wallpaper chromium chromium-common chromium-sandbox clamav
-  clamav-freshclam coinor-libclp1 console-setup console-setup-linux cron cups
-  cups-browsed cups-bsd cups-client cups-core-drivers cups-daemon cups-filters
-  cups-filters-core-drivers cups-ipp-utils cups-ppdc debhelper dh-dkms dirmngr
-  dkms dmsetup dnsmasq-base e2fsprogs eject fdisk firebird3.0-server-core
-  firebird3.0-utils firefox-esr fonts-texgyre fonts-urw-base35 fonts-wine
-  freerdp2-x11 fwupd gcr gdbm-l10n gdisk gir1.2-ggit-1.0 gir1.2-nm-1.0
-  gir1.2-packagekitglib-1.0 gir1.2-polkit-1.0 gir1.2-soup-2.4 gnome-keyring
-  gnome-keyring-pkcs11 gnome-settings-daemon-common gnupg gnupg-l10n
-  gnupg-utils gnupg2 gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm
-  gpgv graphicsmagick gsfonts haveged hdparm hwdata ifupdown intltool-debian
-  iproute2 isc-dhcp-client isc-dhcp-common kbd keyboard-configuration kmod
-  libabsl20220623 libaccountsservice0 libalgorithm-c3-perl
-  libalgorithm-diff-xs-perl libalgorithm-merge-perl libann0
-  libapache2-mod-dnssd libapparmor1 libapt-pkg6.0 libaudit-dev libaudit1
-  libauthen-sasl-perl libavahi-client3 libavahi-client3:i386
-  libavahi-common-data libavahi-common-data:i386 libavahi-common3
-  libavahi-common3:i386 libavahi-core7 libavahi-glib1 libavahi-gobject0
-  libavahi-ui-gtk3-0 libbinutils libblkid-dev libblkid1 libblkid1:i386
-  libblockdev-crypto2 libblockdev-fs2 libblockdev-loop2 libblockdev-part-err2
-  libblockdev-part2 libblockdev-swap2 libblockdev-utils2 libblockdev2
-  libbluetooth3 libbrlapi0.8 libc-bin libc-dev-bin libc-devtools libc-l10n
-  libc6 libc6:i386 libc6-dev libc6-dev-i386 libc6-dev-x32 libc6-i386 libc6-x32
-  libcairo-perl libclamav9 libcom-err2 libcom-err2:i386 libctf-nobfd0 libctf0
-  libcups2 libcups2:i386 libcupsfilters1 libcupsimage2 libde265-0
-  libdebhelper-perl libdevel-globaldestruction-perl libdevmapper1.02.1
-  libdigest-hmac-perl libdigest-perl-md5-perl libdynaloader-functions-perl
-  libebml5 libedit2 libedit2:i386 libemail-date-format-perl
-  libencode-locale-perl liberror-perl libext2fs2 libextutils-depends-perl
-  libfbclient2 libfdisk1 libfile-which-perl libfluidsynth3 libfont-afm-perl
-  libfontembed1 libfreerdp-client2-2 libfreerdp2-2 libfuse2 libfwupd2
-  libgck-1-0 libgcr-base-3-1 libgcr-ui-3-1 libgdbm-compat4
-  libgdbm-compat4:i386 libgdbm6 libgdbm6:i386 libgit2-glib-1.0-0 libglib2.0-0
-  libglib2.0-0:i386 libglib2.0-bin libglib2.0-data libglib2.0-dev
-  libglib2.0-dev-bin libglu1-mesa libglu1-mesa:i386 libgnutls30
-  libgnutls30:i386 libgpm2 libgpm2:i386 libgprofng0 libgraphicsmagick-q16-3
-  libgspell-1-2 libgspell-1-common libgtk3-perl libhavege2 libhtml-parser-perl
-  libhtml-tagset-perl libhttp-message-perl libib-util libical3 libiec61883-0
-  libiec61883-0:i386 libipc-shareable-perl libipc-system-simple-perl
-  libjson-perl libkmod2 libksba8 libldb2 liblerc-dev liblerc4 liblerc4:i386
-  liblirc-client0 libltc11 libmariadb3 libmateweather-common libmateweather1
-  libmatroska7 libmediainfo0v5 libmfx1 libmime-charset-perl libmime-types-perl
-  libmm-glib0 libmount-dev libmount1 libmount1:i386 libmysofa1 libnftables1
-  libnghttp2-14 libnghttp2-14:i386 libnm0 libnm0:i386 libnss-systemd
-  libnumber-compare-perl libole-storage-lite-perl libopencore-amrnb0
-  libopencore-amrnb0:i386 libopencore-amrwb0 libopencore-amrwb0:i386
-  libpackagekit-glib2-18 libpam-gnome-keyring libpam-modules
-  libpam-modules-bin libpam-runtime libpam-systemd libpam0g
-  libparams-util-perl libparse-recdescent-perl libpipewire-0.3-0
-  libpipewire-0.3-modules libpolkit-agent-1-0 libpolkit-gobject-1-0 libpopt0
-  libpq5 libpulse-mainloop-glib0 libpulse0 libpulse0:i386 libpulsedsp
-  libpython3.10 libpython3.10-dev libpython3.10-minimal libpython3.10-stdlib
-  librav1e0 librav1e0:i386 librubberband2 librust-anyhow-dev
-  librust-atk-sys-dev librust-cairo-sys-rs-dev librust-cfg-expr-dev
-  librust-gdk-pixbuf-sys-dev librust-gdk-sys-dev librust-gio-sys-dev
-  librust-glib-sys-dev librust-gobject-sys-dev librust-pango-sys-dev
-  librust-serde-dev librust-system-deps-dev librust-thiserror-dev
-  librust-thiserror-impl-dev librust-version-compare-dev librygel-core-2.6-2
-  librygel-db-2.6-2 librygel-renderer-2.6-2 librygel-server-2.6-2 libsane
-  libsane:i386 libsane1 libsane1:i386 libsensors-config libsensors5
-  libsensors5:i386 libsgmls-perl libsmartcols1 libsmbclient libsndio7.0
-  libsndio7.0:i386 libsnmp40 libsnmp40:i386 libsord-0-0 libsoup-3.0-0
-  libsoup-3.0-common libsoup-gnome2.4-1 libsoup2.4-1 libsoup2.4-1:i386
-  libsoup2.4-common libspa-0.2-modules libspeechd2
-  libspreadsheet-writeexcel-perl libss2 libssl-dev libssl3 libssl3:i386
-  libstd-rust-dev libstemmer0d libsub-exporter-progressive-perl
-  libsub-install-perl libsub-override-perl libsystemd-shared libsystemd0
-  libsystemd0:i386 libtext-glob-perl libtheora0 libtheora0:i386
-  libtie-ixhash-perl libtry-tiny-perl libudev-dev libudev1 libudev1:i386
-  libudisks2-0 libupower-glib3 liburi-perl libuuid1 libuuid1:i386 libva-drm2
-  libva-drm2:i386 libva-glx2:i386 libva-wayland2 libva-x11-2 libva-x11-2:i386
-  libva2 libva2:i386 libvlc-bin libvlc5 libvlccore9 libwbclient0 libwinpr2-2
-  libwireplumber-0.4-0 libx11-protocol-perl libxml-sax-base-perl
-  libxsettings-client0 libxstring-perl libz-mingw-w64 libzvbi-common libzvbi0
-  libzvbi0:i386 libzxingcore1 lm-sensors locales logrotate logsave man-db
-  mate-polkit mate-polkit-common megasync modemmanager mount mythes-en-us
-  netbase netcat-openbsd network-manager nftables openssh-client
-  openssh-server openssh-sftp-server openssl osinfo-db packagekit
-  packagekit-tools pci.ids pinentry-curses pinentry-gnome3 pinentry-qt
-  pipewire pipewire-bin pipewire-pulse pkexec policykit-1 polkitd postfix
-  postgresql postgresql-client-common postgresql-common powertop
-  pulseaudio-utils python-apt-common python3-apt python3-brlapi python3-bs4
-  python3-cairo python3-cffi-backend python3-distro python3-distro-info
-  python3-snowballstemmer python3-tz python3-webencodings python3-xdg
-  python3.10 python3.10-dev python3.10-minimal qmapshack rfkill rsync rsyslog
-  rtkit ruby-asciidoctor runit-helper rustc rygel rygel-tracker samba-libs
-  sane-utils sddm sddm-theme-debian-maui seahorse sgmlspl snapd
-  speech-dispatcher speech-dispatcher-audio-plugins
-  speech-dispatcher-espeak-ng sudo sysstat systemd systemd-sysv
-  systemd-timesyncd tex-common tex-gyre thunderbird tracker-extract
-  tracker-miner-fs transmission-gtk tzdata udev udisks2 ufw upower usrmerge
-  util-linux util-linux-extra util-linux-locales uuid-dev uuid-runtime
-  va-driver-all va-driver-all:i386 virtualbox-guest-additions-iso vlc vlc-bin
-  vlc-data vlc-l10n vlc-plugin-access-extra vlc-plugin-base vlc-plugin-notify
-  vlc-plugin-qt vlc-plugin-samba vlc-plugin-skins2 vlc-plugin-video-output
-  vlc-plugin-video-splitter vlc-plugin-visualization wayland-protocols
-  wireplumber wpasupplicant xbitmaps xbrlapi xdg-desktop-portal xscreensaver
-  xscreensaver-data xscreensaver-data-extra xterm
-The following packages will be DOWNGRADED:
-  linux-libc-dev
-488 upgraded, 15 newly installed, 1 downgraded, 0 to remove and 0 not upgraded.
-E: Packages were downgraded and -y was used without --allow-downgrades.
-
-[1;38;5;139mCleaning up system. . .[0m
+[1;38;5;50mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 488 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 653 not upgraded.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 488 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 653 not upgraded.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -466,17 +556,12 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 488 not upgraded.
-removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
-removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
-removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
-removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/1c98d0aa59f68f9fd311b505d0da0fd4.png'
-removed '/home/msifland/.cache/thumbnails/fail/mate-thumbnail-factory/f0406f1cbb041bc9fc65fbece1f3be81.png'
+0 upgraded, 0 newly installed, 0 to remove and 653 not upgraded.
 
-[1;38;5;77mBacking up important files and apps. . .[0m
-[1;38;5;139mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;92mBacking up important files and apps. . .[0m
+[1;38;5;50mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;139mBacking up important config files. . .[0m
+[1;38;5;50mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -485,14 +570,14 @@ Backup up .conkyrc.bak
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;139mBacking up crontab. . .[0m
+[1;38;5;50mBacking up crontab. . .[0m
 
-[1;38;5;139mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;50mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;77mUpdating local git repos. . .[0m
-[1;38;5;77mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;139mUpdating Projects. . .[0m
+[1;38;5;92mUpdating local git repos. . .[0m
+[1;38;5;92mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;50mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -500,7 +585,7 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;139mUpdating Documents. . .[0m
+[1;38;5;50mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -508,4 +593,4 @@ nothing to commit, working tree clean
 Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
-[1;38;5;139mUpdating scripts. . .[0m
+[1;38;5;50mUpdating scripts. . .[0m
