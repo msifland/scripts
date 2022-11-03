@@ -44,7 +44,7 @@ fi
 
 EXCLUDE="--exclude-dir=^$HOME/roms
 --exclude-dir=^$HOME/.local/share/Trash
---exclude-dir=^$HOME/Modules&Apps
+--exclude-dir=^$HOME/Modules-Apps
 --exclude-dir=^$HOME/infections
 --exclude-dir=^$HOME/GarminExpress
 --exclude-dir=^$HOME/.wine
