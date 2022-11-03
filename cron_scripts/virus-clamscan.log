@@ -71,3 +71,28 @@ LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanni
 /home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: copied to '/home/msifland/infections/HEU_KMS_Activator_v7.8.8.exe.003'
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8641580
+Engine version: 0.103.7
+Scanned directories: 79094
+Scanned files: 791347
+Infected files: 1
+Total errors: 349
+Data scanned: 71917.04 MB
+Data read: 155349.39 MB (ratio 0.46:1)
+Time: 17548.107 sec (292 m 28 s)
+Start Date: 2022:10:31 02:15:24
+End Date:   2022:10:31 07:07:52
+
+
+End Time:
+Date: 10-31-22
+Time: 07:07:52 AM
+It took 4 hours 52 minutes 36 seconds to scan your system.
+
+
+[1;38;5;169m
+You can edit included and excluded files and folders by typing edit-virus-clamscan
+
+[0m
