@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;169m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;128m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;169m
+[1;38;5;128m
 Removing old build logs. . .
 
 [0m
-[1;38;5;169m
+[1;38;5;128m
 Start Time:
-Date: 10-31-22
+Date: 11-14-22
 Time: 02:15:16 AM
 
 Scanning: 
@@ -21,7 +21,7 @@ Scanning:
 Excluding:
 /home/msifland/roms
 /home/msifland/.local/share/Trash
-/home/msifland/Modules&Apps
+/home/msifland/Modules-Apps
 /home/msifland/infections
 /home/msifland/GarminExpress
 /home/msifland/.wine
@@ -68,31 +68,35 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
 /home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: Win.Malware.Agent-6428008-0 FOUND
-/home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: copied to '/home/msifland/infections/HEU_KMS_Activator_v7.8.8.exe.003'
+/home/msifland/Downloads/last-arch-backup-msifland-01-19-2018/home/msifland/Modules&Apps/HEU_KMS_Activator_v7.8.8.exe: copied to '/home/msifland/infections/HEU_KMS_Activator_v7.8.8.exe.004'
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8641580
+Known viruses: 8642752
 Engine version: 0.103.7
-Scanned directories: 79094
-Scanned files: 791347
+Scanned directories: 75814
+Scanned files: 769552
 Infected files: 1
-Total errors: 349
-Data scanned: 71917.04 MB
-Data read: 155349.39 MB (ratio 0.46:1)
-Time: 17548.107 sec (292 m 28 s)
-Start Date: 2022:10:31 02:15:24
-End Date:   2022:10:31 07:07:52
+Total errors: 373
+Data scanned: 63427.54 MB
+Data read: 143927.64 MB (ratio 0.44:1)
+Time: 17232.844 sec (287 m 12 s)
+Start Date: 2022:11:14 02:15:24
+End Date:   2022:11:14 07:02:37
 
 
 End Time:
-Date: 10-31-22
-Time: 07:07:52 AM
-It took 4 hours 52 minutes 36 seconds to scan your system.
+Date: 11-14-22
+Time: 07:02:37 AM
+It took 4 hours 47 minutes 21 seconds to scan your system.
 
 
-[1;38;5;169m
+[1;38;5;128m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
