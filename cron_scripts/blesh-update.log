@@ -2,5 +2,34 @@
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
 From https://github.com/akinomyoga/ble.sh
- * [new branch]      gh246      -> origin/gh246
-Already up to date.
+   a144ffa..0c6291f  master     -> origin/master
+Fetching submodule contrib
+From https://github.com/akinomyoga/blesh-contrib
+   1230c29..e102241  master     -> origin/master
+Updating a144ffa..0c6291f
+Fast-forward
+ GNUmakefile       |   7 ++-
+ README-ja_JP.md   |   1 +
+ README.md         |   1 +
+ ble.pp            |  10 +++-
+ contrib           |   2 +-
+ docs/ChangeLog.md |  12 ++--
+ lib/test-main.sh  |  22 +++----
+ make/mwg_pp.awk   |  11 +++-
+ note.txt          | 176 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/benchmark.sh  |  56 ++++++++++-------
+ 10 files changed, 256 insertions(+), 42 deletions(-)
+Submodule path 'contrib': checked out 'e102241466dfda8cf3e7efb6891e223102e0b2a9'
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT=out/ble.dep DEPENDENCIES_TARGET=out/ble.sh FULLVER=0.4.0-devel3 \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp -p lib/test-main.sh out/lib/test-main.sh
+bash make_command.sh install "out/lib/test-main.sh" "/home/msifland/.local/share/blesh/lib/test-main.sh"
+cp -p contrib/fzf-completion.bash out/contrib/fzf-completion.bash
+bash make_command.sh install "out/contrib/fzf-completion.bash" "/home/msifland/.local/share/blesh/contrib/fzf-completion.bash"
+cp -p README.md out/doc/README.md
+bash make_command.sh install "out/doc/README.md" "/home/msifland/.local/share/blesh/doc/README.md"
+cp -p README-ja_JP.md out/doc/README-ja_JP.md
+bash make_command.sh install "out/doc/README-ja_JP.md" "/home/msifland/.local/share/blesh/doc/README-ja_JP.md"
+cp -p docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"

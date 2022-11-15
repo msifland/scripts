@@ -1,0 +1,13 @@
+#!/bin/bash
+# This script should be set up to run from "Startup Applications" in control panel.
+# Run rustdesk and detach it from script. "&" detaches from script or terminal.
+/usr/bin/rustdesk &
+
+# Check for dcepency "xdotool".
+if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xdotool"; then
+		echo "spike" | sudo -S apt install -y xdotool
+	fi
+
+# Run command to search for visible(open) windows by app name and minimze.
+sleep 10
+xdotool search --onlyvisible --classname --sync rustdesk windowminimize
