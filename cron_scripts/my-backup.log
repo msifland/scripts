@@ -1,12 +1,12 @@
 [sudo] password for msifland: 
 
-11-15-2022 01:30:01 AM
+11-19-2022 01:30:01 AM
 
-[1;38;5;101mRemove old backups first. . .[0m
+[1;38;5;97mRemove old backups first. . .[0m
 ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm -f
-/home/msifland/Dropbox/Linux/Backups/msifland-11-03-2022.tar.gz
+/home/msifland/Dropbox/Linux/Backups/msifland-11-06-2022.tar.gz
 
-[1;38;5;101mBacking up:[0m
+[1;38;5;97mBacking up:[0m
 /home/msifland/Brother_Printer
 /home/msifland/Documents
 /home/msifland/Dropbox
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm 
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;101mTo /home/msifland/Dropbox/Linux/Backups/msifland-11-15-2022.tar.gz
+[1;38;5;97mTo /home/msifland/Dropbox/Linux/Backups/msifland-11-19-2022.tar.gz
 
 
 Excluding:[0m
@@ -65,26 +65,26 @@ Excluding:[0m
 /home/msifland/.local/share/data
 /home/msifland/Dropbox
 
-[1;38;5;101mBacking up now. . .[0m
+[1;38;5;97mBacking up now. . .[0m
 tar: Removing leading `/' from member names
 tar: Removing leading `/' from hard link targets
-[1;38;5;101mBackup finished
+[1;38;5;97mBackup finished
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-11-15-2022.tar.gz from root:root to msifland:msifland. . .
-sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-11-15-2022.tar.gz
-[1;38;5;101mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
-total 3.1G
--rw-r--r-- 1 msifland msifland 625M Nov  4 01:31 msifland-11-04-2022.tar.gz
--rw-r--r-- 1 msifland msifland 633M Nov  5 01:30 msifland-11-05-2022.tar.gz
--rw-r--r-- 1 msifland msifland 618M Nov  6 01:39 msifland-11-06-2022.tar.gz
+Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-11-19-2022.tar.gz from root:root to msifland:msifland. . .
+sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-11-19-2022.tar.gz
+[1;38;5;97mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
+total 4.5G
 -rw-r--r-- 1 msifland msifland 617M Nov 14 01:39 msifland-11-14-2022.tar.gz
 -rw-r--r-- 1 msifland msifland 619M Nov 15 01:38 msifland-11-15-2022.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K Nov 15 01:38 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 623M Nov 16 01:39 msifland-11-16-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 635M Nov 18 01:40 msifland-11-18-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.1G Nov 19 01:42 msifland-11-19-2022.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K Nov 19 07:19 my_backup_log.txt
 
-[1;38;5;101mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
+[1;38;5;97mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-11-15-2022 01:38:44 AM
-[1;38;5;101mIt took 8 minutes 43 seconds to run whole process.[0m
+11-19-2022 07:19:39 AM
+[1;38;5;97mIt took 49 minutes 38 seconds to run whole process.[0m
 
