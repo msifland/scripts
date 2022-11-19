@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo
-echo "${ILCOLOR1}This scripts allows you to build a custom state map for your garmin device...${ILRESTORE}"
+echo "${ILCOLOR1}This scripts allows you to build a custom state, states, or regions map for your garmin device...${ILRESTORE}"
 sleep 1
 
 # Create directories if they don't exist.
@@ -21,9 +21,15 @@ fi
 if [[ ! -d "$HOME/maps/completed_maps" ]]; then
 	mkdir "$HOME/maps/completed_maps"
 fi
+if [[ ! -d "$HOME/maps/tmp" ]]; then
+	mkdir "$HOME/maps/tmp"
+else
+	echo
+	rm -rf $HOME/maps/tmp/*
+fi
+
 cd $HOME/maps
-TYP_FILE="velo"
-DEVICE="/media/msifland/GARMIN"
+TYP_FILE="xgarmin-buildings"
 
 # Check dependencies and download latest versions of mkgmap and mkgmap-splitter
 sleep 1
@@ -37,65 +43,28 @@ $HOME/scripts/mkgmap-splitter-check
 echo
 echo
 echo "${ILCOLOR1}Checking dependencies for java, osmium-tool, and python3-pyosmium. . .${ILRESTORE}"
-echo
 if ! dpkg --get-selections | grep -q "osmium-tool"; then
 	echo "spike" | sudo -S apt install osmium-tool
 else
-	echo
 	echo "osmium-tool already installed."
 fi
-echo
 sleep 1
 if ! dpkg --get-selections | grep -q "python3-pyosmium"; then
 	echo "spike" | sudo -S apt install python3-pyosmium
 else
-	echo
 	echo "python3-pyosmium already installed."
 fi
+sleep 1
 if ! dpkg --get-selections | grep -q "jdk"; then
 	echo "spike" | sudo -S apt install default-jdk
 else
-	echo
-	echo "jave already installed."
-echo
-sleep 1
-
-echo
-echo -n "Type the State name you would like to build?[regions can also be built like this - us-south, us-midwest, us-northeast, and us-west] "
-read STATE
-sleep 1
-
-echo "${ILCOLOR1}Current .typ file being used is ${ILCOLOR2}$TYP_FILE.typ
-${ILCOLOR1}Here is a list of available .typ files on your system:${ILRESTORE}"
-TYP_DIR="$HOME/maps/*.typ"
-for i in $TYP_DIR; do
-	q="$(basename -- $i)"
-	echo "$q"
-done
-sleep 1
-echo
-read -t 120 -p "Would you like to change the .typ file used?
-${ILCOLOR1}You have 2 minutes to decide, then running current .typ - ${ILCOLOR2}$TYP_FILE.typ${ILRESTORE}[y/N]: " chng_typ
-sleep 1
-echo
-if [[ $chng_typ =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	read -p "Pick a .typ file from the list above and then type it ${ILCOLOR3}WITHOUT${ILRESTORE} .typ extention: " typ_name
-	if test -f "$HOME/maps/$typ_name.typ"; then
-		TYP_FILE="$typ_name"
-		sleep 1
-		echo
-		echo "${ILCOLOR1}Okay running with ${ILCOLOR3}$TYP_FILE.typ"
-		sleep 1
-	else
-		echo
-		echo "${ILCOLOR1}Files does not exist. Check spelling next time. Continuing with last run .typ file - ${ILCOLOR2}$TYP_FILE.typ"
-		sleep 1
-	fi
-else
-	echo
-	echo "${ILCOLOR1}Okay, running with last used .typ file - ${ILCOLOR3}$TYP_FILE.typ"
-		sleep 1
+	echo "java already installed."
 fi
+sleep 1
+
+echo
+echo -n "Type the State name, or names that you would like to build? If typing multiple state put a space in between each state. "
+read STATE
 
 ### Log date and time
 DATE_START=$(date +"%s")
@@ -107,8 +76,21 @@ echo "Time: $TIME"
 echo
 sleep 1
 
+# Create file to hold states listed above.
+STATES_FILE="$HOME/maps/tmp/states"
+if [[ ! -f "$STATES_FILE" ]]; then
+	touch $STATES_FILE
+fi
+echo $STATE > $STATES_FILE
+# Replace spaces with with newlines in file.
+sed -i 's/\s\+/\n/g' $STATES_FILE
+# Loop through for each state listed in file and download.
+while IFS="" read -r p || [ -n "$p" ]; do 
+	STATE="$p"
+sleep 1
+
 echo
-echo "${ILCOLOR1}Starting process of downloading and building Garmin map of Geofarik maps:${ILRESTORE} "$STATE
+echo "${ILCOLOR1}Downloading map file: ${ILRESTORE}"$STATE
 sleep 1
 if [[ $STATE = us* ]]; then
 	URL="http://download.geofabrik.de/north-america/"
@@ -116,36 +98,33 @@ else
 	URL="http://download.geofabrik.de/north-america/us/"
 fi
 
-echo
-echo "${ILCOLOR1}Downloading map...${ILRESTORE}"
-sleep 1
-echo
 wget -O $HOME/maps/downloads/"$STATE"_latest.osm.pbf $URL/$STATE-latest.osm.pbf
 echo
+done < $STATES_FILE
 
-<<comment
-# Formatting for faster and better processing.
-echo
-echo "${ILCOLOR1}Converting .pbf file to .o5m for faster formatting using osmconvert...${ILRESTORE}"
-sleep 1
-osmconvert --drop-version $HOME/maps/downloads/"$STATE"_latest.osm.pbf -o=$HOME/maps/combine/"$STATE"_latest.o5m
-comment
-cd $HOME/maps/combine
+# Download cities file and bounds file.
+wget -O $HOME/maps/downloads/US.zip http://download.geonames.org/export/dump/US.zip
+wget -O $HOME/maps/downloads/bounds-latest.zip http://osm.thkukuk.de/data/bounds-latest.zip
+
+# Merge and split files.
 echo
 echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 sleep 1
+STATE=$(cat "$STATES_FILE" | tr -d '[:space:]')
+osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/combine/"$STATE".osm.pbf
+#Move files to combine folder and split to include city data
+mv $HOME/maps/downloads/*.zip $HOME/maps/combine/
+cd $HOME/maps/combine
+java -jar $HOME/maps/splitter/splitter.jar --mapid=77770001 --output=xml --geonames-file=US.zip $HOME/maps/combine/*.osm.pbf
 
-# Split file
-mv $HOME/maps/downloads/"$STATE"_latest.osm.pbf $HOME/maps/combine/"$STATE"_latest.osm.pbf
-java -jar $HOME/maps/splitter/splitter.jar $HOME/maps/combine/"$STATE"_latest.osm.pbf --max-nodes=800000 --output=xml
-
+# Create Garmin image file.
 echo
-echo "${ILCOLOR1}Creating img, this will take a while...${ILRESTORE}"
+echo "${ILCOLOR1}Creating img with $TYP_FILE, this will take a while. . .${ILRESTORE}"
 sleep 1
-java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=2000 --route --gmapsupp *.osm.gz $HOME/maps/"$TYP_FILE".typ
-
+java -jar $HOME/maps/mkgmap/mkgmap.jar --style-file=$HOME/maps/styles/mine  --family-id=7777 --family-name=My-Maps --series-name=My-Maps-Tennessee --area-name=Tennessee --product-id=1 --country-name="United States" --country-abbr=USA --product-id=1 --index --bounds=bounds-latest.zip --route --housenumbers --process-destination --process-exits --gmapi -c template.args --gmapsupp *.osm.gz $HOME/maps/"$TYP_FILE".typ 
 echo
 
+# Look for image file and move it and rename it.
 if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 	echo
 	echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and renaming to $STATE_gmapsupp.img...${ILRESTORE}"
@@ -159,31 +138,13 @@ if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 	mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$STATE"_latest_gmapsupp.img
 	sleep 1
 
-	echo
-	echo "${ILCOLOR1}Checking for Garmin Device. . .${ILRESTORE}"
-	sleep 1
-	if [[ -d $DEVICE ]]; then
-		echo "Garming device found. . ."
-		echo
-		sleep 1
-		if [[ -f "$DEVICE"/Garmin/"$STATE"_latest_gmapsupp.img ]];then
-			echo "${ILCOLOR1}Removing old map from device. . .${ILRESTORE}"
-			rm -rf "$DEVICE"/Garmin/"$STATE"_latest_gmapsupp.img
-			echo
-			sleep 1
-		fi
-		echo "${ILCOLOR1}Copying new map to Garmin device. . .${ILRESTORE}"
-		rsync --progress --verbose $HOME/maps/completed_maps/"$STATE"_latest_gmapsupp.img /media/msifland/GARMIN/Garmin/"$STATE"-latest_gmapsupp.img
-	else
-		echo
-		echo "${ILCOLOR1}No Garmin Device found. Copy manually later.${ILRESTORE}"
-	fi
 	# Cleaan up files only if a gmap image was created. Keep for troublshooting if .img was NOT created.
 	echo
 	echo "${ILCOLOR1}Cleaning up files. . .${ILRESTORE}"
 	sleep 1
 	rm -rf $HOME/maps/combine/*
 	rm -rf $HOME/maps/downloads/*
+	rm -rf $HOME/maps/tmp/*
 else
 		echo
 		echo "${ILCOLOR1}No map file was created, check for errors...${ILRESTORE}"

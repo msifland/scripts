@@ -9,6 +9,9 @@ cd $HOME
 if [[ ! -d "$HOME/maps" ]]; then
 	mkdir "$HOME/maps"
 fi
+if ! dpkg --get-selections | grep -q "p7zip"; then
+	echo "spike" | sudo -S apt install p7zip-full
+fi
 cd $HOME/maps
 # Setting variable formats for download.
 URL=https://www.mkgmap.org.uk
