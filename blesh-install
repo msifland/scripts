@@ -19,7 +19,14 @@ if ! dpkg --get-selections | awk '{print $1}' | grep -xq "make"; then
 	echo
 	echo "gmake not found. gmake is make in Ubuntu. Running command 'sudo ln -s /usr/bin/make /usr/bin/gmake"
 	sleep 1
+	echo "spike" | sudo -S apt install make
 	echo "spike" | sudo -S ln -s /usr/bin/make /usr/bin/gmake
+fi
+if ! dpkg --get-selections | awk '{print $1}' | grep -xq "gawk"; then
+	echo
+	echo "Gawk not found, installing now. . ."
+	sleep 1
+	echo "spike" | sudo -S apt install gawk
 fi
 make
 source out/ble.sh
