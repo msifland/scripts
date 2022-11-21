@@ -45,12 +45,15 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/maps/combine
 --exclude=$HOME/maps/downloads
 --exclude=$HOME/maps/Garmin_Maps_Removed_From_Device
+--exclude=$HOME/mpas/tmp
+--exclude=$HOME/maps/completed_maps
 --exclude=$HOME/Modules-Apps/.git
 --exclude=$HOME/.config/chrome-remote-desktop
 --exclude=$HOME/.config/chromium
 --exclude=$HOME/.config/google-chrome
 --exclude=$HOME/.config/skypeforlinux
 --exclude=$HOME/.config/Code
+--exclude=$HOME/.config/variety/variety.log
 --exclude=$HOME/.local/share/applications
 --exclude=$HOME/.local/share/baloo
 --exclude=$HOME/.local/share/akonadi
