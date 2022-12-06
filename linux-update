@@ -25,8 +25,8 @@ sleep 1
 
 echo
 echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
-sudo apt upgrade -y
-sudo apt full-upgrade -y
+sudo apt upgrade -y --allow-downgrades
+sudo apt full-upgrade -y --allow-downgrades
 sleep 1
 
 echo

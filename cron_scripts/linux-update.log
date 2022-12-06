@@ -1,136 +1,188 @@
-[H[2J[3J[1;38;5;235m           ###########    Updating your system now   ###########[0m
-[1;38;5;97m
-11-21-2022 07:00:02 AM
-Updating Linux debian 6.0.9-msi #1 SMP PREEMPT_DYNAMIC Fri Nov 18 17:08:47 CST 2022 x86_64 GNU/Linux[0m
-[1;38;5;130mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;195m           ###########    Updating your system now   ###########[0m
+[1;38;5;3m
+12-05-2022 07:00:02 AM
+Updating Linux debian 6.0.11-msi #1 SMP PREEMPT_DYNAMIC Sat Dec 3 03:02:25 CST 2022 x86_64 GNU/Linux[0m
+[1;38;5;196mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;6mUpdating sources and checking for app updates. . .[0m
+[1;38;5;191mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Get:1 http://deb.debian.org/debian testing InRelease [164 kB]
-Get:2 http://ftp.us.debian.org/debian testing InRelease [164 kB]
-Ign:3 http://linux.dropbox.com/debian sid InRelease
-Hit:4 https://repo.skype.com/deb stable InRelease
+Get:1 http://ftp.debian.org/debian bullseye-backports InRelease [49.0 kB]
+Hit:2 https://repo.skype.com/deb stable InRelease
+Get:3 http://ftp.us.debian.org/debian testing InRelease [164 kB]
+Get:4 http://deb.debian.org/debian testing InRelease [164 kB]
 Get:5 http://security.debian.org/debian-security testing-security InRelease [48.0 kB]
-Get:6 http://ftp.debian.org/debian buster-backports InRelease [51.4 kB]
-Hit:7 https://dl.winehq.org/wine-builds/debian bullseye InRelease
-Hit:8 http://linux.dropbox.com/debian sid Release
-Get:9 http://security.debian.org/debian-security buster/updates InRelease [34.8 kB]
-Get:10 http://deb.debian.org/debian testing-updates InRelease [49.6 kB]
-Hit:11 http://repository.spotify.com stable InRelease
-Hit:12 https://download.sublimetext.com apt/stable/ InRelease
-Get:13 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
-Get:14 http://ftp.us.debian.org/debian testing-updates InRelease [49.6 kB]
-Hit:15 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:6 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
+Hit:7 https://dl.google.com/linux/chrome/deb stable InRelease
+Get:8 http://ftp.us.debian.org/debian testing-updates InRelease [49.6 kB]
+Get:9 http://deb.debian.org/debian testing-updates InRelease [49.6 kB]
+Get:10 http://security.debian.org/debian-security stable-security InRelease [48.4 kB]
+Get:11 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease [2,464 B]
+Hit:13 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
+Get:14 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
+Get:15 http://ftp.debian.org/debian bullseye-backports/main Sources.diff/Index [63.3 kB]
 Get:16 http://deb.debian.org/debian unstable InRelease [161 kB]
-Get:17 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease [2,464 B]
-Hit:19 http://deb.debian.org/debian stable InRelease
-Get:21 http://deb.debian.org/debian stable-updates InRelease [44.1 kB]
-Get:22 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:18 http://kali.download/kali kali-rolling InRelease [30.6 kB]
-Get:23 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
-Get:24 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:25 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:26 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:27 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
-Get:28 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
-Get:30 https://packages.cisofy.com/community/lynis/deb stable InRelease [11.4 kB]
-Get:31 https://mega.nz/linux/repo/Debian_11 ./ InRelease [2,959 B]
-Hit:32 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
-Hit:33 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
-Get:34 http://security.debian.org/debian-security buster/updates/main Sources [277 kB]
-Get:35 http://deb.debian.org/debian testing/main Sources T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [100 kB]
-Get:36 http://security.debian.org/debian-security buster/updates/main i386 Packages [396 kB]
-Get:37 http://security.debian.org/debian-security buster/updates/main amd64 Packages [397 kB]
-Get:35 http://deb.debian.org/debian testing/main Sources T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [100 kB]
-Get:29 https://apt.llvm.org/unstable llvm-toolchain InRelease [6,827 B]
-Get:38 http://deb.debian.org/debian testing/contrib Sources T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [584 B]
-Get:39 http://ftp.us.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
-Get:40 http://deb.debian.org/debian testing/main i386 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [143 kB]
-Get:38 http://deb.debian.org/debian testing/contrib Sources T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [584 B]
-Get:40 http://deb.debian.org/debian testing/main i386 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [143 kB]
-Get:41 http://deb.debian.org/debian testing/main amd64 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [148 kB]
-Get:42 http://deb.debian.org/debian testing/main Translation-en T-2022-11-21-0213.10-F-2022-11-20-0206.19.pdiff [6,031 B]
-Get:41 http://deb.debian.org/debian testing/main amd64 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [148 kB]
-Get:43 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [218 B]
-Get:44 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [442 B]
-Get:42 http://deb.debian.org/debian testing/main Translation-en T-2022-11-21-0213.10-F-2022-11-20-0206.19.pdiff [6,031 B]
-Get:44 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [442 B]
-Get:43 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [218 B]
-Get:45 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,252 kB]
-Get:46 http://ftp.us.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:47 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,403 kB]
-Get:48 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,104 kB]
-Get:49 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [14.6 kB]
-Get:50 http://ftp.us.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:51 http://ftp.us.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
-Get:52 http://ftp.us.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
-Get:53 http://ftp.us.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
-Get:54 http://ftp.us.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
-Get:55 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [584 B]
-Get:55 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [584 B]
-Get:56 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:57 http://ftp.us.debian.org/debian testing/main Sources T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [100 kB]
-Get:58 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [148 kB]
-Get:59 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [143 kB]
-Get:60 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-11-21-0213.10-F-2022-11-20-0206.19.pdiff [6,031 B]
-Get:61 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [218 B]
-Get:62 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [442 B]
-Get:57 http://ftp.us.debian.org/debian testing/main Sources T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [100 kB]
-Get:58 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [148 kB]
-Get:59 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [143 kB]
-Get:60 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-11-21-0213.10-F-2022-11-20-0206.19.pdiff [6,031 B]
-Get:61 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [218 B]
-Get:62 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-11-20-0206.19-F-2022-11-20-0206.19.pdiff [442 B]
-Get:63 http://deb.debian.org/debian unstable/contrib Sources.diff/Index [63.3 kB]
-Get:64 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:65 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
-Get:66 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:67 http://deb.debian.org/debian unstable/contrib amd64 Packages.diff/Index [63.3 kB]
-Get:68 http://deb.debian.org/debian unstable/contrib i386 Packages.diff/Index [63.3 kB]
-Get:69 http://ftp.us.debian.org/debian testing/main amd64 DEP-11 Metadata [4,252 kB]
-Get:70 http://ftp.us.debian.org/debian testing/main DEP-11 48x48 Icons [3,403 kB]
-Get:71 http://ftp.us.debian.org/debian testing/main DEP-11 64x64 Icons [7,104 kB]
-Get:72 http://ftp.us.debian.org/debian testing/contrib amd64 DEP-11 Metadata [14.6 kB]
-Get:73 http://kali.download/kali kali-rolling/contrib Sources [74.3 kB]
-Get:74 http://deb.debian.org/debian unstable/main Sources T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [167 kB]
-Get:75 http://kali.download/kali kali-rolling/main Sources [15.1 MB]
-Get:74 http://deb.debian.org/debian unstable/main Sources T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [167 kB]
-Get:76 https://apt.llvm.org/unstable llvm-toolchain/main Sources [2,419 B]
-Get:77 https://apt.llvm.org/unstable llvm-toolchain/main i386 Packages [17.8 kB]
-Get:78 http://deb.debian.org/debian unstable/contrib Sources T-2022-11-20-2012.52-F-2022-11-20-0206.19.pdiff [1,568 B]
-Get:78 http://deb.debian.org/debian unstable/contrib Sources T-2022-11-20-2012.52-F-2022-11-20-0206.19.pdiff [1,568 B]
-Get:79 https://apt.llvm.org/unstable llvm-toolchain/main amd64 Packages [20.7 kB]
-Get:80 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [161 kB]
-Get:80 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [161 kB]
-Get:81 http://kali.download/kali kali-rolling/non-free Sources [132 kB]
-Get:82 http://kali.download/kali kali-rolling/main i386 Packages [18.6 MB]
-Get:83 http://deb.debian.org/debian unstable/main i386 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [145 kB]
-Get:83 http://deb.debian.org/debian unstable/main i386 Packages T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [145 kB]
-Get:84 http://kali.download/kali kali-rolling/main amd64 Packages [18.8 MB]
-Get:85 http://deb.debian.org/debian unstable/main Translation-en T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [6,695 B]
-Get:86 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-11-20-2012.52-F-2022-11-20-0206.19.pdiff [592 B]
-Get:85 http://deb.debian.org/debian unstable/main Translation-en T-2022-11-21-0804.32-F-2022-11-20-0206.19.pdiff [6,695 B]
-Get:86 http://deb.debian.org/debian unstable/contrib amd64 Packages T-2022-11-20-2012.52-F-2022-11-20-0206.19.pdiff [592 B]
-Get:87 http://kali.download/kali kali-rolling/non-free i386 Packages [192 kB]
-Get:88 http://kali.download/kali kali-rolling/non-free amd64 Packages [237 kB]
-Get:89 http://kali.download/kali kali-rolling/contrib i386 Packages [98.7 kB]
-Get:90 http://kali.download/kali kali-rolling/contrib amd64 Packages [111 kB]
-Get:91 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-11-20-2012.52-F-2022-11-20-0206.19.pdiff [591 B]
-Get:91 http://deb.debian.org/debian unstable/contrib i386 Packages T-2022-11-20-2012.52-F-2022-11-20-0206.19.pdiff [591 B]
-Get:92 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,406 kB]
-Get:93 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,565 kB]
-Get:94 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,503 kB]
-Get:95 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [15.1 kB]
-Get:96 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [19.9 kB]
-Fetched 103 MB in 16s (6,534 kB/s)
+Get:17 http://ftp.debian.org/debian bullseye-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:18 http://ftp.debian.org/debian bullseye-backports/main i386 Packages.diff/Index [63.3 kB]
+Get:19 http://ftp.debian.org/debian bullseye-backports/main Translation-en.diff/Index [63.3 kB]
+Get:20 https://mega.nz/linux/repo/Debian_11 ./ InRelease [2,959 B]
+Hit:21 http://deb.debian.org/debian stable InRelease
+Get:22 http://deb.debian.org/debian stable-updates InRelease [44.1 kB]
+Get:23 http://deb.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:24 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:25 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:12 https://apt.llvm.org/unstable llvm-toolchain InRelease [6,827 B]
+Get:26 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:27 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:28 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:29 http://deb.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:30 http://deb.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:31 http://deb.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
+Get:32 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:33 http://ftp.debian.org/debian bullseye-backports/main Sources T-2022-12-04-2006.21-F-2022-12-04-0205.35.pdiff [1,653 B]
+Get:34 http://ftp.debian.org/debian bullseye-backports/main amd64 Packages T-2022-12-04-2006.21-F-2022-12-04-0205.35.pdiff [4,582 B]
+Get:35 http://ftp.debian.org/debian bullseye-backports/main i386 Packages T-2022-12-04-2006.21-F-2022-12-04-0205.35.pdiff [4,574 B]
+Get:36 https://packages.cisofy.com/community/lynis/deb stable InRelease [11.4 kB]
+Get:35 http://ftp.debian.org/debian bullseye-backports/main i386 Packages T-2022-12-04-2006.21-F-2022-12-04-0205.35.pdiff [4,574 B]
+Get:33 http://ftp.debian.org/debian bullseye-backports/main Sources T-2022-12-04-2006.21-F-2022-12-04-0205.35.pdiff [1,653 B]
+Get:34 http://ftp.debian.org/debian bullseye-backports/main amd64 Packages T-2022-12-04-2006.21-F-2022-12-04-0205.35.pdiff [4,582 B]
+Get:37 http://ftp.us.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:38 http://ftp.debian.org/debian bullseye-backports/main Translation-en T-2022-12-04-2006.21-F-2022-12-04-2006.21.pdiff [194 B]
+Get:38 http://ftp.debian.org/debian bullseye-backports/main Translation-en T-2022-12-04-2006.21-F-2022-12-04-2006.21.pdiff [194 B]
+Get:39 http://deb.debian.org/debian testing/non-free Sources T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [468 B]
+Get:39 http://deb.debian.org/debian testing/non-free Sources T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [468 B]
+Get:40 http://deb.debian.org/debian testing/contrib Sources T-2022-12-05-0203.20-F-2022-12-05-0203.20.pdiff [465 B]
+Get:40 http://deb.debian.org/debian testing/contrib Sources T-2022-12-05-0203.20-F-2022-12-05-0203.20.pdiff [465 B]
+Get:41 http://security.debian.org/debian-security stable-security/main Sources [172 kB]
+Get:42 http://security.debian.org/debian-security stable-security/main i386 Packages [207 kB]
+Get:43 http://security.debian.org/debian-security stable-security/main amd64 Packages [208 kB]
+Get:44 http://security.debian.org/debian-security stable-security/main Translation-en [135 kB]
+Get:45 http://deb.debian.org/debian testing/main Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [186 kB]
+Get:45 http://deb.debian.org/debian testing/main Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [186 kB]
+Get:46 http://deb.debian.org/debian testing/main amd64 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [367 kB]
+Get:46 http://deb.debian.org/debian testing/main amd64 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [367 kB]
+Get:47 https://apt.llvm.org/unstable llvm-toolchain/main Sources [2,419 B]
+Get:48 http://deb.debian.org/debian testing/main i386 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [366 kB]
+Get:49 https://apt.llvm.org/unstable llvm-toolchain/main i386 Packages [17.7 kB]
+Get:50 https://apt.llvm.org/unstable llvm-toolchain/main amd64 Packages [20.7 kB]
+Get:48 http://deb.debian.org/debian testing/main i386 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [366 kB]
+Get:51 http://deb.debian.org/debian testing/main Translation-en T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [42.6 kB]
+Get:51 http://deb.debian.org/debian testing/main Translation-en T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [42.6 kB]
+Get:52 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [679 B]
+Get:53 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [633 B]
+Get:54 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [606 B]
+Get:55 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [609 B]
+Get:56 http://deb.debian.org/debian unstable/non-free Sources.diff/Index [63.3 kB]
+Get:57 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:58 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:59 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:60 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:61 http://deb.debian.org/debian unstable/non-free amd64 Packages.diff/Index [63.3 kB]
+Get:55 http://deb.debian.org/debian testing/contrib amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [609 B]
+Get:52 http://deb.debian.org/debian testing/non-free amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [679 B]
+Get:53 http://deb.debian.org/debian testing/non-free i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [633 B]
+Get:54 http://deb.debian.org/debian testing/contrib i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [606 B]
+Get:62 http://deb.debian.org/debian unstable/non-free i386 Packages.diff/Index [63.3 kB]
+Get:63 http://deb.debian.org/debian unstable/non-free Translation-en.diff/Index [63.3 kB]
+Get:64 http://deb.debian.org/debian unstable/non-free Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [3,090 B]
+Get:64 http://deb.debian.org/debian unstable/non-free Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [3,090 B]
+Get:65 http://deb.debian.org/debian unstable/main Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [88.7 kB]
+Get:65 http://deb.debian.org/debian unstable/main Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [88.7 kB]
+Get:66 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [79.5 kB]
+Get:66 http://deb.debian.org/debian unstable/main amd64 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [79.5 kB]
+Get:67 http://deb.debian.org/debian unstable/main i386 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [84.9 kB]
+Get:67 http://deb.debian.org/debian unstable/main i386 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [84.9 kB]
+Get:68 http://deb.debian.org/debian unstable/main Translation-en T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [2,500 B]
+Get:68 http://deb.debian.org/debian unstable/main Translation-en T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [2,500 B]
+Get:69 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-12-04-0803.21-F-2022-12-04-0803.21.pdiff [4,807 B]
+Get:70 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-12-04-0803.21-F-2022-12-04-0803.21.pdiff [5,112 B]
+Get:71 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-12-04-0803.21-F-2022-12-04-0803.21.pdiff [482 B]
+Get:69 http://deb.debian.org/debian unstable/non-free amd64 Packages T-2022-12-04-0803.21-F-2022-12-04-0803.21.pdiff [4,807 B]
+Get:70 http://deb.debian.org/debian unstable/non-free i386 Packages T-2022-12-04-0803.21-F-2022-12-04-0803.21.pdiff [5,112 B]
+Get:71 http://deb.debian.org/debian unstable/non-free Translation-en T-2022-12-04-0803.21-F-2022-12-04-0803.21.pdiff [482 B]
+Get:72 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,237 kB]
+Get:73 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,416 kB]
+Get:74 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,094 kB]
+Get:75 http://deb.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.9 kB]
+Get:76 http://deb.debian.org/debian testing/contrib amd64 DEP-11 Metadata [14.6 kB]
+Get:77 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,410 kB]
+Get:78 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,582 kB]
+Get:79 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,526 kB]
+Get:80 http://deb.debian.org/debian unstable/contrib amd64 DEP-11 Metadata [15.2 kB]
+Get:81 http://deb.debian.org/debian unstable/non-free amd64 DEP-11 Metadata [20.0 kB]
+Ign:82 https://download.sublimetext.com apt/stable/ InRelease
+Ign:83 https://dl.winehq.org/wine-builds/debian bullseye InRelease
+Ign:84 http://http.kali.org/kali kali-rolling InRelease
+Ign:85 http://linux.dropbox.com/debian sid InRelease
+Ign:86 http://repository.spotify.com stable InRelease
+Ign:82 https://download.sublimetext.com apt/stable/ InRelease
+Ign:83 https://dl.winehq.org/wine-builds/debian bullseye InRelease
+Ign:84 http://http.kali.org/kali kali-rolling InRelease
+Ign:85 http://linux.dropbox.com/debian sid InRelease
+Ign:86 http://repository.spotify.com stable InRelease
+Ign:82 https://download.sublimetext.com apt/stable/ InRelease
+Ign:83 https://dl.winehq.org/wine-builds/debian bullseye InRelease
+Ign:84 http://http.kali.org/kali kali-rolling InRelease
+Ign:85 http://linux.dropbox.com/debian sid InRelease
+Ign:86 http://repository.spotify.com stable InRelease
+Get:87 http://ftp.us.debian.org/debian testing/non-free Sources.diff/Index [63.3 kB]
+Get:88 http://ftp.us.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:89 http://ftp.us.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:90 http://ftp.us.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:91 http://ftp.us.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:92 http://ftp.us.debian.org/debian testing/contrib i386 Packages.diff/Index [63.3 kB]
+Get:93 http://ftp.us.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:94 http://ftp.us.debian.org/debian testing/non-free i386 Packages.diff/Index [63.3 kB]
+Get:95 http://ftp.us.debian.org/debian testing/non-free amd64 Packages.diff/Index [63.3 kB]
+Err:84 http://http.kali.org/kali kali-rolling InRelease
+  Could not connect to http.kali.org:80 (192.99.200.113), connection timed out
+Err:82 https://download.sublimetext.com apt/stable/ InRelease
+  Could not connect to download.sublimetext.com:443 (104.236.0.104), connection timed out
+Err:85 http://linux.dropbox.com/debian sid InRelease
+  Could not connect to linux.dropbox.com:80 (18.64.236.35), connection timed out Could not connect to linux.dropbox.com:80 (18.64.236.97), connection timed out Could not connect to linux.dropbox.com:80 (18.64.236.76), connection timed out Could not connect to linux.dropbox.com:80 (18.64.236.63), connection timed out
+Err:86 http://repository.spotify.com stable InRelease
+  Could not connect to repository.spotify.com:80 (13.32.224.131), connection timed out Could not connect to repository.spotify.com:80 (13.32.224.14), connection timed out Could not connect to repository.spotify.com:80 (13.32.224.117), connection timed out Could not connect to repository.spotify.com:80 (13.32.224.158), connection timed out
+Err:83 https://dl.winehq.org/wine-builds/debian bullseye InRelease
+  Could not connect to dl.winehq.org:443 (151.101.206.217), connection timed out
+Get:96 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-12-05-0203.20-F-2022-12-05-0203.20.pdiff [465 B]
+Get:96 http://ftp.us.debian.org/debian testing/contrib Sources T-2022-12-05-0203.20-F-2022-12-05-0203.20.pdiff [465 B]
+Get:97 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [468 B]
+Get:97 http://ftp.us.debian.org/debian testing/non-free Sources T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [468 B]
+Get:98 http://ftp.us.debian.org/debian testing/main Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [186 kB]
+Get:98 http://ftp.us.debian.org/debian testing/main Sources T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [186 kB]
+Get:99 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [366 kB]
+Get:99 http://ftp.us.debian.org/debian testing/main i386 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [366 kB]
+Get:100 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [367 kB]
+Get:100 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [367 kB]
+Get:101 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [42.6 kB]
+Get:101 http://ftp.us.debian.org/debian testing/main Translation-en T-2022-12-05-0808.48-F-2022-12-04-0205.35.pdiff [42.6 kB]
+Get:102 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [606 B]
+Get:102 http://ftp.us.debian.org/debian testing/contrib i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [606 B]
+Get:103 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [609 B]
+Get:103 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [609 B]
+Get:104 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [633 B]
+Get:104 http://ftp.us.debian.org/debian testing/non-free i386 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [633 B]
+Get:105 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [679 B]
+Get:105 http://ftp.us.debian.org/debian testing/non-free amd64 Packages T-2022-12-05-0203.20-F-2022-12-04-0205.35.pdiff [679 B]
+Get:106 http://ftp.us.debian.org/debian testing/main amd64 DEP-11 Metadata [4,237 kB]
+Get:107 http://ftp.us.debian.org/debian testing/main DEP-11 48x48 Icons [3,416 kB]
+Get:108 http://ftp.us.debian.org/debian testing/main DEP-11 64x64 Icons [7,094 kB]
+Get:109 http://ftp.us.debian.org/debian testing/contrib amd64 DEP-11 Metadata [14.6 kB]
+Get:110 http://ftp.us.debian.org/debian testing/non-free amd64 DEP-11 Metadata [19.9 kB]
+Fetched 51.0 MB in 46s (1,102 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-148 packages can be upgraded. Run 'apt list --upgradable' to see them.
+184 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: Failed to fetch http://http.kali.org/kali/dists/kali-rolling/InRelease  Could not connect to http.kali.org:80 (192.99.200.113), connection timed out
+W: Failed to fetch https://download.sublimetext.com/apt/stable/InRelease  Could not connect to download.sublimetext.com:443 (104.236.0.104), connection timed out
+W: Failed to fetch http://linux.dropbox.com/debian/dists/sid/InRelease  Could not connect to linux.dropbox.com:80 (18.64.236.35), connection timed out Could not connect to linux.dropbox.com:80 (18.64.236.97), connection timed out Could not connect to linux.dropbox.com:80 (18.64.236.76), connection timed out Could not connect to linux.dropbox.com:80 (18.64.236.63), connection timed out
+W: Failed to fetch http://repository.spotify.com/dists/stable/InRelease  Could not connect to repository.spotify.com:80 (13.32.224.131), connection timed out Could not connect to repository.spotify.com:80 (13.32.224.14), connection timed out Could not connect to repository.spotify.com:80 (13.32.224.117), connection timed out Could not connect to repository.spotify.com:80 (13.32.224.158), connection timed out
+W: Failed to fetch https://dl.winehq.org/wine-builds/debian/dists/bullseye/InRelease  Could not connect to dl.winehq.org:443 (151.101.206.217), connection timed out
+W: Some index files failed to download. They have been ignored, or old ones used instead.
 
-[1;38;5;6mChecking for system upgrade. . .[0m
+[1;38;5;191mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -138,52 +190,56 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following package was automatically installed and is no longer required:
-  libgeos3.11.0
-Use 'sudo apt autoremove' to remove it.
+The following packages were automatically installed and are no longer required:
+  linux-headers-6.0.0-4-amd64 linux-headers-6.0.0-4-common
+  linux-image-6.0.0-4-amd64 nvidia-legacy-390xx-kernel-6.0.9-msi
+Use 'sudo apt autoremove' to remove them.
 The following NEW packages will be installed:
-  libgeos3.11.1
+  linux-headers-6.0.0-5-amd64 linux-headers-6.0.0-5-common
+  linux-image-6.0.0-5-amd64
 The following packages will be upgraded:
-  analog at-spi2-common at-spi2-core caja-seahorse cron cron-daemon-common
-  firefox-esr fonts-opensymbol gir1.2-atk-1.0 gir1.2-atspi-2.0
-  gir1.2-gdkpixbuf-2.0 gir1.2-gst-plugins-base-1.0 gir1.2-gtk-3.0
-  gstreamer1.0-gl gstreamer1.0-plugins-base gstreamer1.0-plugins-base:i386
-  gstreamer1.0-x gstreamer1.0-x:i386 gtk-update-icon-cache krb5-locales
-  libatk-adaptor libatk-bridge2.0-0 libatk-bridge2.0-dev libatk1.0-0
-  libatk1.0-dev libatspi2.0-0 libatspi2.0-dev libbotan-2-19 libcrypt-dev
-  libcrypt1 libcrypt1:i386 libdbus-glib-1-2 libdebuginfod-common
-  libdebuginfod1 libdw-dev libdw1 libdw1:i386 libelf-dev libelf1 libelf1:i386
-  libfido2-1 libgail-3-0 libgdk-pixbuf-2.0-0 libgdk-pixbuf-2.0-0:i386
-  libgdk-pixbuf-2.0-dev libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common
-  libgeos-c1v5 libgpg-error-l10n libgpg-error0 libgpg-error0:i386
-  libgssapi-krb5-2 libgssapi-krb5-2:i386 libgstreamer-gl1.0-0
-  libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-0:i386
-  libgtk-3-0 libgtk-3-bin libgtk-3-common libgtk-3-dev libgtk-4-1 libgtk-4-bin
-  libgtk-4-common libhttp-message-perl libk5crypto3 libk5crypto3:i386
-  libkrb5-3 libkrb5-3:i386 libkrb5support0 libkrb5support0:i386 libksba8
-  libldb2 liblibreoffice-java libmarco-private2 libnftnl11 libnss3
-  libnss3:i386 libparted-fs-resize0 libparted2 libpipewire-0.3-0
-  libpipewire-0.3-common libpipewire-0.3-modules librdf0 libreoffice-base
-  libreoffice-base-core libreoffice-base-drivers libreoffice-calc
-  libreoffice-common libreoffice-core libreoffice-draw libreoffice-gtk3
-  libreoffice-help-common libreoffice-help-en-us libreoffice-impress
-  libreoffice-java-common libreoffice-math libreoffice-report-builder
-  libreoffice-report-builder-bin libreoffice-sdbc-firebird
-  libreoffice-sdbc-hsqldb libreoffice-sdbc-mysql libreoffice-sdbc-postgresql
-  libreoffice-style-colibre libreoffice-writer librust-arbitrary-dev
-  librust-derive-arbitrary-dev libsmbclient libspa-0.2-modules libuno-cppu3
-  libuno-cppuhelpergcc3-3 libuno-purpenvhelpergcc3-3 libuno-sal3
-  libuno-salhelpergcc3-3 libunoloader-java libutf8proc2 libwbclient0
-  libxmlsec1 libxmlsec1-nss libxmlsec1-openssl man-db marco marco-common
-  open-vm-tools open-vm-tools-desktop parted pipewire pipewire-bin
-  pipewire-pulse python3-dbus python3-sphinx-rtd-theme python3-uno
-  python3-xapp qpdfview qpdfview-djvu-plugin qpdfview-pdf-poppler-plugin
-  qpdfview-ps-plugin qpdfview-translations samba-libs sphinx-rtd-theme-common
-  thunderbird uno-libs-private ure ure-java xserver-common xserver-xephyr
-  xserver-xorg-core xserver-xorg-legacy xvfb
+  acl apache2 apache2-bin apache2-data apache2-doc apache2-utils
+  binfmt-support blueman cmake cmake-data cracklib-runtime cron
+  cron-daemon-common debconf debconf-i18n dh-dkms dh-python
+  dh-strip-nondeterminism dkms docutils-common fonts-opensymbol freerdp2-x11
+  gir1.2-gtk-3.0 graphviz gtk-update-icon-cache iputils-ping kazam libacl1
+  libasound2 libasound2:i386 libasound2-data libatopology2 libc-bin
+  libc-dev-bin libc-devtools libc-l10n libc6 libc6:i386 libc6-dev
+  libc6-dev-i386 libc6-dev-x32 libc6-i386 libc6-x32 libcdt5 libcgraph6
+  libcpupower1 libcrack2 libcryptsetup12 libdevel-callchecker-perl
+  libfile-homedir-perl libfile-stripnondeterminism-perl libfreerdp-client2-2
+  libfreerdp2-2 libfyba0 libgail-3-0 libglib2.0-0 libglib2.0-0:i386
+  libglib2.0-bin libglib2.0-data libglib2.0-dev libglib2.0-dev-bin libgtk-3-0
+  libgtk-3-bin libgtk-3-common libgtk-3-dev libgvc6 libgvpr2 libhdf5-103-1
+  libhdf5-hl-100 liblab-gamut1 libldb2 liblibreoffice-java libllvm15
+  libllvm15:i386 libnewt-dev libnewt0.52 libnss-systemd libopenh264-7
+  libpam-systemd libpathplan4 libqt5concurrent5 libqt5core5a libqt5dbus5
+  libqt5gui5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5sql5
+  libqt5sql5-mysql libqt5sql5-sqlite libqt5test5 libqt5widgets5 libqt5xml5
+  libreoffice-base libreoffice-base-core libreoffice-base-drivers
+  libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw
+  libreoffice-gtk3 libreoffice-help-common libreoffice-help-en-us
+  libreoffice-impress libreoffice-java-common libreoffice-math
+  libreoffice-report-builder libreoffice-report-builder-bin
+  libreoffice-sdbc-firebird libreoffice-sdbc-hsqldb libreoffice-sdbc-mysql
+  libreoffice-sdbc-postgresql libreoffice-style-colibre libreoffice-writer
+  librubberband2 libsidplayfp6 libsmbclient libsoundtouch1 libsvn1
+  libsystemd-shared libsystemd0 libsystemd0:i386 libtcl8.6 libtk8.6
+  libtss2-esys-3.0.2-0 libtss2-mu0 libtss2-sys1 libtss2-tcti-cmd0
+  libtss2-tcti-device0 libtss2-tcti-mssim0 libtss2-tcti-swtpm0 libudev-dev
+  libudev1 libudev1:i386 libuno-cppu3 libuno-cppuhelpergcc3-3
+  libuno-purpenvhelpergcc3-3 libuno-sal3 libuno-salhelpergcc3-3
+  libunoloader-java libwbclient0 libwinpr2-2 libxml-parser-perl libzvbi-common
+  libzvbi0 libzvbi0:i386 linux-compiler-gcc-12-x86 linux-headers-amd64
+  linux-image-amd64 linux-kbuild-6.0 linux-perf locales net-tools osinfo-db
+  pci.ids python-apt-common python3-apt python3-bs4 python3-certifi
+  python3-debconf python3-docutils python3-ptyprocess python3-pyudev
+  python3-tomli python3-uno qbittorrent qt5-gtk-platformtheme samba-libs snapd
+  systemd systemd-sysv systemd-timesyncd tcl8.6 tk8.6 udev uno-libs-private
+  ure ure-java vim vim-tiny whiptail xdg-desktop-portal-gtk xterm xxd
 The following packages will be DOWNGRADED:
   linux-libc-dev
-148 upgraded, 1 newly installed, 1 downgraded, 0 to remove and 0 not upgraded.
+184 upgraded, 3 newly installed, 1 downgraded, 0 to remove and 0 not upgraded.
 E: Packages were downgraded and -y was used without --allow-downgrades.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
@@ -193,68 +249,81 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following package was automatically installed and is no longer required:
-  libgeos3.11.0
+  linux-headers-6.0.0-4-common
 Use 'sudo apt autoremove' to remove it.
+The following packages will be REMOVED:
+  linux-headers-6.0.0-4-amd64 linux-image-6.0.0-4-amd64
+  nvidia-legacy-390xx-kernel-6.0.9-msi
 The following NEW packages will be installed:
-  libgeos3.11.1
+  linux-headers-6.0.0-5-amd64 linux-headers-6.0.0-5-common
+  linux-image-6.0.0-5-amd64
 The following packages will be upgraded:
-  analog at-spi2-common at-spi2-core caja-seahorse cron cron-daemon-common
-  firefox-esr fonts-opensymbol gir1.2-atk-1.0 gir1.2-atspi-2.0
-  gir1.2-gdkpixbuf-2.0 gir1.2-gst-plugins-base-1.0 gir1.2-gtk-3.0
-  gstreamer1.0-gl gstreamer1.0-plugins-base gstreamer1.0-plugins-base:i386
-  gstreamer1.0-x gstreamer1.0-x:i386 gtk-update-icon-cache krb5-locales
-  libatk-adaptor libatk-bridge2.0-0 libatk-bridge2.0-dev libatk1.0-0
-  libatk1.0-dev libatspi2.0-0 libatspi2.0-dev libbotan-2-19 libcrypt-dev
-  libcrypt1 libcrypt1:i386 libdbus-glib-1-2 libdebuginfod-common
-  libdebuginfod1 libdw-dev libdw1 libdw1:i386 libelf-dev libelf1 libelf1:i386
-  libfido2-1 libgail-3-0 libgdk-pixbuf-2.0-0 libgdk-pixbuf-2.0-0:i386
-  libgdk-pixbuf-2.0-dev libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common
-  libgeos-c1v5 libgpg-error-l10n libgpg-error0 libgpg-error0:i386
-  libgssapi-krb5-2 libgssapi-krb5-2:i386 libgstreamer-gl1.0-0
-  libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-0:i386
-  libgtk-3-0 libgtk-3-bin libgtk-3-common libgtk-3-dev libgtk-4-1 libgtk-4-bin
-  libgtk-4-common libhttp-message-perl libk5crypto3 libk5crypto3:i386
-  libkrb5-3 libkrb5-3:i386 libkrb5support0 libkrb5support0:i386 libksba8
-  libldb2 liblibreoffice-java libmarco-private2 libnftnl11 libnss3
-  libnss3:i386 libparted-fs-resize0 libparted2 libpipewire-0.3-0
-  libpipewire-0.3-common libpipewire-0.3-modules librdf0 libreoffice-base
-  libreoffice-base-core libreoffice-base-drivers libreoffice-calc
-  libreoffice-common libreoffice-core libreoffice-draw libreoffice-gtk3
-  libreoffice-help-common libreoffice-help-en-us libreoffice-impress
-  libreoffice-java-common libreoffice-math libreoffice-report-builder
-  libreoffice-report-builder-bin libreoffice-sdbc-firebird
-  libreoffice-sdbc-hsqldb libreoffice-sdbc-mysql libreoffice-sdbc-postgresql
-  libreoffice-style-colibre libreoffice-writer librust-arbitrary-dev
-  librust-derive-arbitrary-dev libsmbclient libspa-0.2-modules libuno-cppu3
-  libuno-cppuhelpergcc3-3 libuno-purpenvhelpergcc3-3 libuno-sal3
-  libuno-salhelpergcc3-3 libunoloader-java libutf8proc2 libwbclient0
-  libxmlsec1 libxmlsec1-nss libxmlsec1-openssl man-db marco marco-common
-  open-vm-tools open-vm-tools-desktop parted pipewire pipewire-bin
-  pipewire-pulse python3-dbus python3-sphinx-rtd-theme python3-uno
-  python3-xapp qpdfview qpdfview-djvu-plugin qpdfview-pdf-poppler-plugin
-  qpdfview-ps-plugin qpdfview-translations samba-libs sphinx-rtd-theme-common
-  thunderbird uno-libs-private ure ure-java xserver-common xserver-xephyr
-  xserver-xorg-core xserver-xorg-legacy xvfb
+  acl apache2 apache2-bin apache2-data apache2-doc apache2-utils
+  binfmt-support blueman cmake cmake-data cracklib-runtime cron
+  cron-daemon-common debconf debconf-i18n dh-dkms dh-python
+  dh-strip-nondeterminism dkms docutils-common fonts-opensymbol freerdp2-x11
+  gir1.2-gtk-3.0 graphviz gtk-update-icon-cache iputils-ping kazam libacl1
+  libasound2 libasound2:i386 libasound2-data libatopology2 libc-bin
+  libc-dev-bin libc-devtools libc-l10n libc6 libc6:i386 libc6-dev
+  libc6-dev-i386 libc6-dev-x32 libc6-i386 libc6-x32 libcdt5 libcgraph6
+  libcpupower1 libcrack2 libcryptsetup12 libdevel-callchecker-perl
+  libfile-homedir-perl libfile-stripnondeterminism-perl libfreerdp-client2-2
+  libfreerdp2-2 libfyba0 libgail-3-0 libglib2.0-0 libglib2.0-0:i386
+  libglib2.0-bin libglib2.0-data libglib2.0-dev libglib2.0-dev-bin libgtk-3-0
+  libgtk-3-bin libgtk-3-common libgtk-3-dev libgvc6 libgvpr2 libhdf5-103-1
+  libhdf5-hl-100 liblab-gamut1 libldb2 liblibreoffice-java libllvm15
+  libllvm15:i386 libnewt-dev libnewt0.52 libnss-systemd libopenh264-7
+  libpam-systemd libpathplan4 libqt5concurrent5 libqt5core5a libqt5dbus5
+  libqt5gui5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5sql5
+  libqt5sql5-mysql libqt5sql5-sqlite libqt5test5 libqt5widgets5 libqt5xml5
+  libreoffice-base libreoffice-base-core libreoffice-base-drivers
+  libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw
+  libreoffice-gtk3 libreoffice-help-common libreoffice-help-en-us
+  libreoffice-impress libreoffice-java-common libreoffice-math
+  libreoffice-report-builder libreoffice-report-builder-bin
+  libreoffice-sdbc-firebird libreoffice-sdbc-hsqldb libreoffice-sdbc-mysql
+  libreoffice-sdbc-postgresql libreoffice-style-colibre libreoffice-writer
+  librubberband2 libsidplayfp6 libsmbclient libsoundtouch1 libsvn1
+  libsystemd-shared libsystemd0 libsystemd0:i386 libtcl8.6 libtk8.6
+  libtss2-esys-3.0.2-0 libtss2-mu0 libtss2-sys1 libtss2-tcti-cmd0
+  libtss2-tcti-device0 libtss2-tcti-mssim0 libtss2-tcti-swtpm0 libudev-dev
+  libudev1 libudev1:i386 libuno-cppu3 libuno-cppuhelpergcc3-3
+  libuno-purpenvhelpergcc3-3 libuno-sal3 libuno-salhelpergcc3-3
+  libunoloader-java libwbclient0 libwinpr2-2 libxml-parser-perl libzvbi-common
+  libzvbi0 libzvbi0:i386 linux-compiler-gcc-12-x86 linux-headers-amd64
+  linux-image-amd64 linux-kbuild-6.0 linux-perf locales net-tools osinfo-db
+  pci.ids python-apt-common python3-apt python3-bs4 python3-certifi
+  python3-debconf python3-docutils python3-ptyprocess python3-pyudev
+  python3-tomli python3-uno qbittorrent qt5-gtk-platformtheme samba-libs snapd
+  systemd systemd-sysv systemd-timesyncd tcl8.6 tk8.6 udev uno-libs-private
+  ure ure-java vim vim-tiny whiptail xdg-desktop-portal-gtk xterm xxd
 The following packages will be DOWNGRADED:
   linux-libc-dev
-148 upgraded, 1 newly installed, 1 downgraded, 0 to remove and 0 not upgraded.
+184 upgraded, 3 newly installed, 1 downgraded, 3 to remove and 0 not upgraded.
 E: Packages were downgraded and -y was used without --allow-downgrades.
 
-[1;38;5;6mCleaning up system. . .[0m
+[1;38;5;191mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 148 not upgraded.
+The following packages will be REMOVED:
+  nvidia-legacy-390xx-kernel-6.0.9-msi*
+0 upgraded, 0 newly installed, 1 to remove and 184 not upgraded.
+After this operation, 68.2 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 720073 files and directories currently installed.)
+Removing nvidia-legacy-390xx-kernel-6.0.9-msi (390.154-2+6.0.9-msi-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 720059 files and directories currently installed.)
+Purging configuration files for nvidia-legacy-390xx-kernel-6.0.9-msi (390.154-2+6.0.9-msi-1) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 148 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -270,12 +339,15 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 148 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 184 not upgraded.
+removed '/home/msifland/.cache/thumbnails/normal/d1b14211aad84d9a25c07a5b4b5a6d07.png'
+removed '/home/msifland/.cache/thumbnails/normal/eabda8c950d231e5dc7104a2f1b3110a.png'
+removed '/home/msifland/.cache/thumbnails/normal/f0cef3288e2e9c20ce3dc6681ac4ea31.png'
 
-[1;38;5;97mBacking up important files and apps. . .[0m
-[1;38;5;6mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;3mBacking up important files and apps. . .[0m
+[1;38;5;191mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;6mBacking up important config files. . .[0m
+[1;38;5;191mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -285,60 +357,55 @@ Backup up .nanorc
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;6mBacking up crontab. . .[0m
+[1;38;5;191mBacking up crontab. . .[0m
 
-[1;38;5;6mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;191mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;97mUpdating local git repos. . .[0m
-[1;38;5;97mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;6mUpdating Projects. . .[0m
+[1;38;5;3mUpdating local git repos. . .[0m
+[1;38;5;3mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;191mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-Everything up-to-date
-branch 'master' set up to track 'origin/master'.
+fatal: unable to access 'https://github.com/msifland/Projects.git/': Failed to connect to github.com port 443 after 129559 ms: Couldn't connect to server
 
-[1;38;5;6mUpdating Documents. . .[0m
+[1;38;5;191mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-Everything up-to-date
-branch 'master' set up to track 'origin/master'.
+fatal: unable to access 'https://github.com/msifland/Documents.git/': Failed to connect to github.com port 443 after 129912 ms: Couldn't connect to server
 
-[1;38;5;6mUpdating scripts. . .[0m
-[master c0eeda4] auto commit
- 4 files changed, 344 insertions(+), 10745 deletions(-)
- rewrite cron_scripts/linux-update.log (99%)
+[1;38;5;191mUpdating scripts. . .[0m
+[master b6e0f40] auto commit
+ 9 files changed, 5061146 insertions(+), 104575 deletions(-)
+ rewrite cron_scripts/linux-update.log (88%)
  rewrite virus-freshclam.log (75%)
-To https://github.com/msifland/scripts
-   d4bfde4..c0eeda4  master -> master
-branch 'master' set up to track 'origin/master'.
+fatal: unable to access 'https://github.com/msifland/scripts/': Failed to connect to github.com port 443 after 129910 ms: Couldn't connect to server
 
-[1;38;5;6mUpdating pkg_bkups. . .[0m
-[master dc4734a] auto commit
- 4 files changed, 76 insertions(+), 27 deletions(-)
-To https://github.com/msifland/pkg_bkups
-   c8e1e81..dc4734a  master -> master
-branch 'master' set up to track 'origin/master'.
+[1;38;5;191mUpdating pkg_bkups. . .[0m
+[master 1e588f8] auto commit
+ 5 files changed, 14 insertions(+), 12 deletions(-)
+ delete mode 160000 backups/screenFetch
+fatal: unable to access 'https://github.com/msifland/pkg_bkups/': Failed to connect to github.com port 443 after 129755 ms: Couldn't connect to server
 
-[1;38;5;6mUpdating Modules-Apps. . .[0m
+[1;38;5;191mUpdating Modules-Apps. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-Everything up-to-date
-branch 'master' set up to track 'origin/master'.
+fatal: unable to access 'https://github.com/msifland/Modules-Apps.git/': Failed to connect to github.com port 443 after 25 ms: Couldn't connect to server
 
-[1;38;5;6mDowloading usb_pkg_bkups. . .[0m
+[1;38;5;191mDowloading usb_pkg_bkups. . .[0m
 No local changes to save
-Already up to date.
+fatal: unable to access 'https://github.com/msifland/usb_pkg_bkups.git/': Failed to connect to github.com port 443 after 130703 ms: Couldn't connect to server
+fatal: unable to access 'https://github.com/msifland/usb_pkg_bkups.git/': Failed to connect to github.com port 443 after 130984 ms: Couldn't connect to server
 
-[1;38;5;130mAll is good.[0m
+[1;38;5;196mAll is good.[0m
 
-[1;38;5;97m
-11-21-2022 07:01:08 AM
-[1;38;5;97mIt took 1 minutes 6 seconds to run whole process.[0m
+[1;38;5;3m
+12-05-2022 07:15:19 AM
+[1;38;5;3mIt took 15 minutes 17 seconds to run whole process.[0m
 [0m
