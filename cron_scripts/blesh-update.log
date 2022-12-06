@@ -1,4 +1,78 @@
 
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
-Already up to date.
+From https://github.com/akinomyoga/ble.sh
+   43c6d4b..88e74cc  master     -> origin/master
+Fetching submodule contrib
+From https://github.com/akinomyoga/blesh-contrib
+   e102241..a2c0ee0  master     -> origin/master
+Updating 43c6d4b..88e74cc
+Fast-forward
+ .github/ISSUE_TEMPLATE/00_T1-bug_report.md |   5 +-
+ .github/ISSUE_TEMPLATE/01_T1-bug_report.md |   5 +-
+ GNUmakefile                                |  16 +-
+ README-ja_JP.md                            |   2 +-
+ README.md                                  |   2 +-
+ ble.pp                                     |   5 +-
+ blerc => blerc.template                    |  50 ++++++
+ contrib                                    |   2 +-
+ docs/ChangeLog.md                          |  13 +-
+ lib/core-complete-def.sh                   |   1 +
+ lib/core-complete.sh                       |  14 +-
+ lib/core-decode.vi_imap-rlfunc.txt         |   2 +-
+ lib/test-canvas.sh                         |  23 ++-
+ memo/D1894/.gitignore                      |   8 +
+ memo/D1894/bashrc                          |  10 ++
+ memo/D1894/bashrc2                         |   6 +
+ memo/D1894/bashrc3                         |  16 ++
+ memo/D1894/blerc                           |   6 +
+ memo/D1894/starship-left.toml              | 156 +++++++++++++++++
+ memo/D1894/starship-original.toml          | 167 ++++++++++++++++++
+ memo/D1894/starship-right.toml             | 155 +++++++++++++++++
+ memo/D1894/starship.toml                   | 169 ++++++++++++++++++
+ memo/D1895.bashrc                          |  25 +++
+ memo/D1899/bashrc.gh244                    |   3 +
+ memo/D1899/blerc.gh244                     |   4 +
+ note.txt                                   | 268 ++++++++++++++++++++++++++---
+ src/canvas.sh                              |   6 +-
+ src/color.sh                               |   2 +
+ src/decode.sh                              |   4 +-
+ src/edit.sh                                |  12 +-
+ 30 files changed, 1103 insertions(+), 54 deletions(-)
+ rename blerc => blerc.template (95%)
+ create mode 100644 memo/D1894/.gitignore
+ create mode 100644 memo/D1894/bashrc
+ create mode 100644 memo/D1894/bashrc2
+ create mode 100644 memo/D1894/bashrc3
+ create mode 100644 memo/D1894/blerc
+ create mode 100644 memo/D1894/starship-left.toml
+ create mode 100644 memo/D1894/starship-original.toml
+ create mode 100644 memo/D1894/starship-right.toml
+ create mode 100644 memo/D1894/starship.toml
+ create mode 100644 memo/D1895.bashrc
+ create mode 100644 memo/D1899/bashrc.gh244
+ create mode 100644 memo/D1899/blerc.gh244
+Submodule path 'contrib': checked out 'a2c0ee084d5eb144d543ff03a7530e9f7d306631'
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
+  FULLVER=0.4.0-devel3 \
+  BUILD_GIT_VERSION="git version 2.35.1" \
+  BUILD_MAKE_VERSION="GNU Make 4.3" \
+  BUILD_GAWK_VERSION="GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)" \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp -p lib/core-complete.sh out/lib/core-complete.sh
+bash make_command.sh install "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
+cp -p lib/core-decode.vi_imap-rlfunc.txt out/lib/core-decode.vi_imap-rlfunc.txt
+bash make_command.sh install "out/lib/core-decode.vi_imap-rlfunc.txt" "/home/msifland/.local/share/blesh/lib/core-decode.vi_imap-rlfunc.txt"
+/usr/bin/gawk -f make/mwg_pp.awk lib/test-canvas.sh > out/lib/test-canvas.sh
+bash make_command.sh install "out/lib/test-canvas.sh" "/home/msifland/.local/share/blesh/lib/test-canvas.sh"
+cp -p contrib/colorglass.bash out/contrib/colorglass.bash
+bash make_command.sh install "out/contrib/colorglass.bash" "/home/msifland/.local/share/blesh/contrib/colorglass.bash"
+cp -p README.md out/doc/README.md
+bash make_command.sh install "out/doc/README.md" "/home/msifland/.local/share/blesh/doc/README.md"
+cp -p README-ja_JP.md out/doc/README-ja_JP.md
+bash make_command.sh install "out/doc/README-ja_JP.md" "/home/msifland/.local/share/blesh/doc/README-ja_JP.md"
+cp -p docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
+cp -p contrib/README.md out/doc/contrib/README.md
+bash make_command.sh install "out/doc/contrib/README.md" "/home/msifland/.local/share/blesh/doc/contrib/README.md"

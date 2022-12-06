@@ -112,7 +112,7 @@ echo
 echo "${ILCOLOR1}Splitting file...${ILRESTORE}"
 sleep 1
 # Format $STATES variable for nameing .img file, with dashes in between each state.
-STATE=$(cat "$STATES_FILE" | sed -r 's/\s+/-/g')
+STATE=$(cat "$STATES_FILE" | sed -n -e 'H;${x;s/\n/-/g;s/^-//;p;}')
 # Add below command to above, removing sed command, for no spaces or dashes in between each state name. 
 #tr -d '[:space:]')
 osmium merge $HOME/maps/downloads/*.osm.pbf -v -O -o $HOME/maps/combine/"$STATE".osm.pbf
