@@ -93,7 +93,7 @@ sleep 1
 echo
 echo "${ILCOLOR1}Updating important files from github. . .${ILRESTORE}"
 sleep 1
-RC_ARR=($HOME/pkg_bkups/backups/.bashrc $HOME/pkg_bkups/backups/.bash_profile $HOME/pkg_bkups/backups/.blerc $HOME/pkg_bkups/backups/.conkyrc $HOME/pkg_bkups/.nanord $HOME/pkg_bkups/backups/.Xresources)
+RC_ARR=($HOME/pkg_bkups/backups/.bashrc $HOME/pkg_bkups/backups/.bash_profile $HOME/pkg_bkups/backups/.blerc $HOME/pkg_bkups/backups/.conkyrc $HOME/pkg_bkups/.nanorc $HOME/pkg_bkups/backups/.Xresources)
 for file in ${RC_ARR[@]}; do
 echo "Updating $file"
 cp -f $file $HOME/
