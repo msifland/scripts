@@ -67,6 +67,8 @@ echo
 echo "${ILCOLOR3}Chroot'ing now. . .${ILRESTORE}"
 sleep 1
 echo "To log into a user, instead of root, type: exec su - [USER NAME]"
+echo "Don't foget to type 'bash' to execute bash profile."
+echo "When loging out, type exit twice if you've typed bash to start."
 echo "sudo chroot /mnt/chroot /bin/bash"
 sudo chroot /mnt/chroot /bin/bash
 
