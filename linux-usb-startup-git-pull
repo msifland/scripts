@@ -7,7 +7,7 @@
 if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xterm"; then
 	sudo apt install xterm
 fi
-/usr/bin/xterm -e "bash -c \"source ~/.bashrc; clear
+#/usr/bin/xterm -e "bash -c \"source ~/.bashrc; clear
 echo Running update git repos to this system. . .
 echo
 sleep 2
