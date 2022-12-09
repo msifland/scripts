@@ -1,6 +1,18 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
+echo "Creating directories. . ."
+if [[ ! -d /mnt/chroot ]]; then
+	echo
+	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
+	sudo mkdir /mnt/chroot
+else
+	echo
+	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
+	sudo rm -rf /mnt/chroot/*
+fi
+sleep 1
+
 echo
 echo "${ILCOLOR3}Mounting a folder for full chroot.${ILRESTORE}"
 echo
@@ -15,8 +27,8 @@ read -p "${ILCOLOR3}Type device in which you would like to mount the main file s
 sleep 1
 
 echo
-echo "Mounting with: sudo mount $MNT_DVC /mnt"
-sudo mount $MNT_DVC /mnt
+echo "Mounting with: sudo mount $MNT_DVC /mnt/chroot"
+sudo mount $MNT_DVC /mnt/chroot
 sleep 1
 
 function dev_mnt(){
@@ -28,8 +40,8 @@ if [[ ! $MNT_DVC2 = "" ]]; then
 	echo
 	read -p "${ILCOLOR3}What folder to mount $MNT_DVC2 to(ex. home, boot, etc.)${ILRESTORE} " MNT_DVC2_FLDR
 	sleep 1
-	echo "Mounting with: sudo mount $MNT_DVC2 \"/mnt/$MNT_DVC2_FLDR\""
-	sudo mount "$MNT_DVC2" "/mnt/$MNT_DVC2_FLDR"
+	echo "Mounting with: sudo mount $MNT_DVC2 \"/mnt/chroot/$MNT_DVC2_FLDR\""
+	sudo mount "$MNT_DVC2" "/mnt/chroot/$MNT_DVC2_FLDR"
 	sleep 1
 	dev_mnt
 else
@@ -42,20 +54,62 @@ dev_mnt
 
 echo
 echo "${ILCOLOR3}Mounting other needed drives to /mnt.${ILRESTORE}"
-echo "for i in /dev /dev/pts /proc /sys; do sudo mount -B $i /mnt$i; done"
-for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+echo "for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt/chroot$i; done"
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt/chroot$i; done
 sleep 1
 
 echo
 echo "Adding resolv.conf for connection with: sudo cp /etc/resolv.conf /mnt/etc/"
-sudo cp /etc/resolv.conf /mnt/etc/
+sudo cp /etc/resolv.conf /mnt/chroot/etc/
+cp
 sleep 1
 
 echo
 echo "${ILCOLOR3}Chroot'ing now. . .${ILRESTORE}"
-echo "sudo chroot /mnt"
-sudo chroot /mnt
+echo "sudo chroot /mnt/chroot"
+sudo chroot /mnt/chroot /bin/bash -x << 'EOF'
+su -
+echo
+echo "Selecting a user to login too. . ."
+sleep 1
+
+echo
+echo "Showing users. . ."
+sleep 1
+for usr in $(ls /home); do
+        echo $usr
+        sleep .25
+done | sed 's:lost+found::g'
+sleep 1
+
+echo
+read -p "Please select a username from list above: " usr_nme
+sleep 1
+
+echo
+echo "Running command: exec su - $usr_nme"
+sleep 1
+echo "After command has run and user is logged in, type: 'bash' to load custom bash profile."
+sleep 2
+exec su - $usr_nme && /bin/bash
+EOF
 
 echo
 echo "${ILCOLOR3}Exiting script. . .${ILRESTORE}"
+sleep 1 
+
+echo
+echo "Unmounting drives. . ."
+sudo umount -f /mnt/chroot/dev/pts
+sudo umount -f /mnt/chroot/dev
+sudo umount -f /mnt/chroot/proc
+sudo umount -f /mnt/chroot/sys
+sudo umount -f /mnt/chroot/run
+sudo umount -f /mnt/chroot/boot
+sudo umount -f /mnt/chroot/home
+sudo umount -f /mnt/chroot
+sleep 1
+
+echo
+echo "All done!"
 sleep 1
