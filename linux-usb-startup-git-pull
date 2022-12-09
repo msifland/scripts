@@ -46,8 +46,8 @@ git fetch
 git pull
 sleep 1
 echo
-echo All done, closing in 5 seconds and running script: linux-usb-update. . .
+echo All done, in 5 seconds and running script: linux-usb-update. . .
 sleep 5
-cd\""
+cd
 
 $HOME/scripts/linux-usb-update
