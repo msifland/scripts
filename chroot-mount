@@ -61,38 +61,14 @@ sleep 1
 echo
 echo "Adding resolv.conf for connection with: sudo cp /etc/resolv.conf /mnt/etc/"
 sudo cp /etc/resolv.conf /mnt/chroot/etc/
-cp
 sleep 1
 
 echo
 echo "${ILCOLOR3}Chroot'ing now. . .${ILRESTORE}"
-echo "sudo chroot /mnt/chroot"
-sudo chroot /mnt/chroot /bin/bash -x << 'EOF'
-su -
-echo
-echo "Selecting a user to login too. . ."
 sleep 1
-
-echo
-echo "Showing users. . ."
-sleep 1
-for usr in $(ls /home); do
-        echo $usr
-        sleep .25
-done | sed 's:lost+found::g'
-sleep 1
-
-echo
-read -p "Please select a username from list above: " usr_nme
-sleep 1
-
-echo
-echo "Running command: exec su - $usr_nme"
-sleep 1
-echo "After command has run and user is logged in, type: 'bash' to load custom bash profile."
-sleep 2
-exec su - $usr_nme && /bin/bash
-EOF
+echo "To log into a user, instead of root, type: exec su - [USER NAME]"
+echo "sudo chroot /mnt/chroot /bin/bash"
+sudo chroot /mnt/chroot /bin/bash
 
 echo
 echo "${ILCOLOR3}Exiting script. . .${ILRESTORE}"
