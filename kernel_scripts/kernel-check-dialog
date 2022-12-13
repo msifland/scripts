@@ -73,9 +73,20 @@ Would you like to install it?" 10 50; then
 		tar -xf linux-"$GET_VER".tar.xz
 		echo
 
-		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
-		echo 'spike' | sudo -S apt build-dep -y linux
-		echo 'spike' | sudo -S apt install ncurses-dev fakeroot
+	echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
+	echo 'spike' | sudo -S apt build-dep -y linux
+	if ! dpkg --get-selections | awk '{print $1}' | grep -xq "ncurses-dev"; then
+		echo
+		echo "ncurses-dev not found, installing now. . ."
+		sleep 1
+		echo "spike" | sudo -S apt install -y ncurses-dev
+	fi
+	if ! dpkg --get-selections | awk '{print $1}' | grep -xq "fakeroot"; then
+		echo
+		echo "fakeroot not found, installing now. . ."
+		sleep 1
+		echo "spike" | sudo -S apt install -y fakeroot
+	fi
 		cd linux-"$GET_VER"
 		echo
 
@@ -85,7 +96,7 @@ Would you like to install it?" 10 50; then
 		echo
 
 		# This section is if you want to add an option the choose a local verson name to append to kernel version.
-<< Comment
+
 		echo "${ILCOLOR2}Append to Kernel Number for Local Version name.
     Current running kernel:${ILRESTORE} $(uname -r)"
 		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
@@ -101,8 +112,9 @@ Would you like to install it?" 10 50; then
 		if [[ "$LOC_VER" = "0" ]]; then
 			sed -i "s:CONFIG_LOCALVERSION=.*:CONFIG_LOCALVERSION=\"\":g" .config
 		fi
-Comment
 
+<< Comment
+		# This is if you want to append 'msi' automatically.
 		scripts/config --disable DEBUG_INFO
 		echo "${ILCOLOR2}Appending '-msi' to kernel version to show as custom built kernel."
 		# This is local version appended to kernel
@@ -110,6 +122,7 @@ Comment
 		echo "sed -i \"/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"$LOC_VER\"" .config
 		sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"$LOC_VER\"" .config
 		sleep 1
+Comment
 
 		echo
 		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
@@ -138,41 +151,19 @@ Comment
 		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
 		echo
 		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
-
-<< Comment
-		# Build perf package
-		export WORK_DIR="$WORK_DIR"
-		export GET="$GET_VER"
-		sleep 1
-		echo
-		echo "${ILCOLOR2}Now building perf package(Linux-tools). . .${ILRESTORE}"
-
-		# Copy script to current directory to build.
-		cp $HOME/scripts/kernel_scripts/perf-build $WORK_DIR/linux-$GET_VER/perf-build
-		cd $WORK_DIR/linux-$GET_VER
-		sed -i "s:VERSION=\"\":VERSION=\"$GET_VER\":g" perf-build		
-		xterm -e "bash -c \"cd $WORK_DIR/linux-$GET_VER; ./perf-build; echo; echo;\""
-		cd ..
-		echo 'spike' | sudo -S apt purge -y "linux-perf*"
-		echo 'spike' | sudo -S dpkg -i --force-all $HOME/tmp/perf-package/*.deb
-		if ls $HOME/tmp/perf-package/*.deb >/dev/null 2>&1; then
-			cp $HOME/tmp/perf-package/*.deb $HOME/tmp/kernel_storage
-		fi
-		if [[ -d $HOME/tmp/perf-package ]]; then
-			rm -rf $HOME/tmp/perf-package
-		fi
-Comment
-
+		
 		# This section is for if you are using nvidia drivers.
-<< Comment
 		# Build nvidia-kernel at boot
-		if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
-			sudo apt -y install module-assistant
-		fi
-
-		# If using nvidia drivers.
-		$HOME/scripts/kernel_scripts/nvidia-build
-Comment
+		#3if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
+		#	echo 'spike' | sudo -S apt -y install module-assistant
+		#fi
+		#echo
+		#echo "On reboot, nvidia drivers will be built and installed." 
+		#$HOME/scripts/kernel_scripts/nvidia-build
+		echo
+		echo "Running script: get-kernel-firmware. . ."
+		$HOME/scripts/kernel_scripts/get-kernel-firmware
+		sleep 1
 		
 		# Reboot to new kernel?
 		YNRBT="y"
