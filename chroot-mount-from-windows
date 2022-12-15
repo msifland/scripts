@@ -1,0 +1,45 @@
+#!/bin/bash
+
+$HOME/startusb.sh
+
+IP_ADR=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+
+
+if ! dpkg --get-selections | grep -q "usbip"; then
+	echo 'spike' | sudo -S apt install -y usbip
+fi
+if ! dpkg --get-selections | grep -q "usbutils"; then
+         echo 'spike' | sudo -S apt install -y usbip
+fi
+sleep 1
+
+echo
+read -p "Enter the busid from the Windows Shell that you shared[ex. 1-11, 1-9, etc.]: " BS_ID
+sleep 1
+
+echo
+echo "Attaching usb device to system with: sudo usbip attach --remote=$IP_ADR --busid=$BS_ID"
+sleep 5
+echo 'spike' | sudo -S usbip attach --remote="$IP_ADR" --busid="$BS_ID"
+
+echo
+echo "Show a list of attached devices to make sure the usb device attached correctly. . ."
+
+lsblk
+sleep 1
+
+echo
+echo "Running script: chroot-mount. . ."
+sleep 1
+
+$HOME/scripts/chroot-mount
+sleep 1
+
+echo
+echo "Detaching usb device from system with: sudo usbip detach --remote=$IP_ADR --busid=$BS_ID"
+sleep 1
+echo 'spike' | sudo -S usbip attach --remote="$IP_ADR" --busid="$BS_ID"
+
+echo
+echo "Ready to exit wsl. Close window when done."
+sleep 1
