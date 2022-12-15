@@ -1,222 +1,7 @@
 [sudo] password for msifland: 
 Purging old kernels. Here are the kernels on your system, newest first: 
 1. linux-image-6.1.0-msi
-2. linux-image-6.0.12-msi
-3. linux-image-6.0.11-msi
-4. linux-image-6.0.0-5-amd64
------> Currently running 6.0.12-msi
+2. linux-image-6.0.0-5-amd64
+-----> Currently running 6.1.0-msi
 
-Too many kernels on your system, removing some now. . .
-
-Kernels set to remove: 
-2. linux-image-6.0.12-msi
-3. linux-image-6.0.11-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following package was automatically installed and is no longer required:
-  nvidia-legacy-390xx-kernel-6.0.11-msi
-Use 'sudo apt autoremove' to remove it.
-The following packages will be REMOVED:
-  linux-image-6.0.12-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 489 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 692949 files and directories currently installed.)
-Removing linux-image-6.0.12-msi (6.0.12-msi-1) ...
-dkms: removing: virtualbox 6.1.38 (6.0.12-msi) (x86_64)
-Module virtualbox-6.1.38 for kernel 6.0.12-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.0.12-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.0.12-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.0.12-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod.........
-update-initramfs: Deleting /boot/initrd.img-6.0.12-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.1.0-msi
-Found initrd image: /boot/initrd.img-6.1.0-msi
-Found linux image: /boot/vmlinuz-6.0.11-msi
-Found initrd image: /boot/initrd.img-6.0.11-msi
-Found linux image: /boot/vmlinuz-6.0.0-5-amd64
-Found initrd image: /boot/initrd.img-6.0.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 688027 files and directories currently installed.)
-Purging configuration files for linux-image-6.0.12-msi (6.0.12-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.0.12-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 51.9 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 688027 files and directories currently installed.)
-Removing linux-headers-6.0.12-msi (6.0.12-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.0.12-msi
-E: Couldn't find any package by glob 'linux-modules-6.0.12-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.0.12-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.0.12-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.0.12-msi
-
-	No file /boot/initrd.img-6.0.12-msi
-
-Removing modules built by module-assistant for nvidia drivers. . .
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  nvidia-legacy-390xx-kernel-6.0.12-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 68.3 MB disk space will be freed.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 674410 files and directories currently installed.)
-Removing nvidia-legacy-390xx-kernel-6.0.12-msi (390.157-1+6.0.12-msi-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 674395 files and directories currently installed.)
-Purging configuration files for nvidia-legacy-390xx-kernel-6.0.12-msi (390.157-1+6.0.12-msi-1) ...
-sudo rm -rf /usr/src/nvidia-legacy-390xx-kernel-6.0.12-msi*.*
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.0.11-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 488 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 674395 files and directories currently installed.)
-Removing linux-image-6.0.11-msi (6.0.11-msi-1) ...
-dkms: removing: virtualbox 6.1.38 (6.0.11-msi) (x86_64)
-Module virtualbox-6.1.38 for kernel 6.0.11-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.0.11-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.0.11-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.0.11-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod........
-update-initramfs: Deleting /boot/initrd.img-6.0.11-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.1.0-msi
-Found initrd image: /boot/initrd.img-6.1.0-msi
-Found linux image: /boot/vmlinuz-6.0.0-5-amd64
-Found initrd image: /boot/initrd.img-6.0.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 669473 files and directories currently installed.)
-Purging configuration files for linux-image-6.0.11-msi (6.0.11-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following package was automatically installed and is no longer required:
-  nvidia-legacy-390xx-kernel-6.0.11-msi
-Use 'sudo apt autoremove' to remove it.
-The following packages will be REMOVED:
-  linux-headers-6.0.11-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 51.9 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 669473 files and directories currently installed.)
-Removing linux-headers-6.0.11-msi (6.0.11-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.0.11-msi
-E: Couldn't find any package by glob 'linux-modules-6.0.11-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.0.11-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.0.11-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.0.11-msi
-
-	No file /boot/initrd.img-6.0.11-msi
-
-Removing modules built by module-assistant for nvidia drivers. . .
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  nvidia-legacy-390xx-kernel-6.0.11-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 68.2 MB disk space will be freed.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 655856 files and directories currently installed.)
-Removing nvidia-legacy-390xx-kernel-6.0.11-msi (390.154-2+6.0.11-msi-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 655841 files and directories currently installed.)
-Purging configuration files for nvidia-legacy-390xx-kernel-6.0.11-msi (390.154-2+6.0.11-msi-1) ...
-sudo rm -rf /usr/src/nvidia-legacy-390xx-kernel-6.0.11-msi*.*
-
-All is good.
-
-
-Showing remaining kernles now on your system. . .
-linux-image-6.1.0-msi
-linux-image-6.0.0-5-amd64
------> Currently running 6.0.12-msi
-
+There are 2 kernels on your system, need more than 6 to auto-remove. Exiting now. . .
