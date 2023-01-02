@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;37m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;172m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;37m
+[1;38;5;172m
 Removing old build logs. . .
 
 [0m
-[1;38;5;37m
+[1;38;5;172m
 Start Time:
-Date: 12-19-22
+Date: 01-02-23
 Time: 02:15:16 AM
 
 Scanning: 
@@ -35,63 +35,38 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
-LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
-LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
-LibClamAV Warning: PNG: Unexpected early end-of-file.
-/home/msifland/tmp/Variety_Images/flickr_text_debian_/51219772142_83f39be69a_o.png: Img.Packed.PngContainsDownloadCmd-6786216-1 FOUND
-/home/msifland/tmp/Variety_Images/flickr_text_debian_/51219772142_83f39be69a_o.png: copied to '/home/msifland/infections/51219772142_83f39be69a_o.png.003'
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+LibClamAV Error: cli_loadinfo: Incorrect digital signature
+LibClamAV Error: cli_loadinfo: Problem parsing database at line 25
+LibClamAV Error: Can't load daily.info: Malformed database
+LibClamAV Error: cli_tgzload: Can't load daily.info
+LibClamAV Error: Can't load /var/lib/clamav/daily.cld: Malformed database
+LibClamAV Error: cli_loaddbdir(): error loading database /var/lib/clamav/daily.cld
+ERROR: Malformed database
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8646032
+Known viruses: 0
 Engine version: 0.103.7
-Scanned directories: 65048
-Scanned files: 674322
-Infected files: 1
-Total errors: 377
-Data scanned: 56997.64 MB
-Data read: 123308.37 MB (ratio 0.46:1)
-Time: 15306.684 sec (255 m 6 s)
-Start Date: 2022:12:19 02:15:24
-End Date:   2022:12:19 06:30:31
+Scanned directories: 0
+Scanned files: 0
+Infected files: 0
+Data scanned: 0.00 MB
+Data read: 0.00 MB (ratio 0.00:1)
+Time: 0.006 sec (0 m 0 s)
+Start Date: 2023:01:02 02:15:24
+End Date:   2023:01:02 02:15:24
 
 
 End Time:
-Date: 12-19-22
-Time: 06:30:31 AM
-It took 4 hours 15 minutes 15 seconds to scan your system.
+Date: 01-02-23
+Time: 02:15:24 AM
+It took 0 hours 0 minutes 8 seconds to scan your system.
 
 
-[1;38;5;37m
+[1;38;5;172m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
