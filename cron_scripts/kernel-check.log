@@ -1,9 +1,9 @@
-[1;38;5;215m
+[1;38;5;42m
 
-[1;38;5;215mWe are going to see if there is a new kernel to build from main kernel source: kernel.org.[0m
+[1;38;5;42mWe are going to see if there is a new kernel to build from main kernel source: kernel.org.[0m
 
-Newest stable kernel version available is [1;38;5;215m6.1[0m
-Latest kernel version installed is [1;38;5;215m6.1.0
+Newest stable kernel version available is [1;38;5;42m[0m
+Latest kernel version installed is [1;38;5;42m6.1.1
 [0m
-[1;38;5;215mYou already have the latest kernel.[0m
+[1;38;5;42mYou already have the latest kernel.[0m
 
