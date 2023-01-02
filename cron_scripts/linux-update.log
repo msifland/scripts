@@ -1588,38 +1588,38 @@ Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
 [1;38;5;131mUpdating scripts. . .[0m
-dency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+[master 51244f8] auto commit
+ 1 file changed, 107 insertions(+), 22 deletions(-)
+To https://github.com/msifland/scripts
+   d31c71d..51244f8  master -> master
+branch 'master' set up to track 'origin/master'.
 
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+[1;38;5;131mUpdating pkg_bkups. . .[0m
+[master d08dd41] auto commit
+ 3 files changed, 72 insertions(+), 29 deletions(-)
+To https://github.com/msifland/pkg_bkups
+   a56b067..d08dd41  master -> master
+branch 'master' set up to track 'origin/master'.
 
+[1;38;5;131mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
 
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+nothing to commit, working tree clean
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
 
-Reading package lists...
-Building dependency tree...
-Reading state information...
+[1;38;5;131mDowloading usb_pkg_bkups. . .[0m
+No local changes to save
+Already up to date.
 
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+[1;38;5;250mAll is good.[0m
 
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
-
-[1;38;5;42mBacking up important files and apps. . .[0m
-[1;38;5;131mCreating list of apps, and copying repos from /etc/apt. . .[0m
-
-[1;38;5;131mBacking up important config files. . .[0m
-Backup up .bashrc
-Backup up .bash_profile
-Backup up .blerc
-Backup up .conkyrc
-Backup up .conkyrc.bak
-Backup up .nanorc
-Backup up .xprofile
-Backup up .Xresources
+[1;38;5;42m
+01-02-2023 01:10:34 PM
+[1;38;5;42mIt took 10 minutes 33 seconds to run whole process.[0m
+[0m
+ckup up .Xresources
 
 [1;38;5;131mBacking up crontab. . .[0m
 
