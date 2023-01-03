@@ -30,6 +30,9 @@ if [[ ! -f $XPROF ]]; then
 fi
 cat > $XPROF << _EOF
 #!/bin/sh
+# The following two lines are for NVIDIA only(possibly for hdmi to work). Uncomment to use these lines.
+#xrandr --setprovideroutputsource NVIDIA-GO modesetting
+#xrandr --auto
 xrandr --newmode $MODELINE
 xrandr --addmode $DISP $MODERES
 xrandr --output $DISP --mode $MODERES
@@ -40,7 +43,7 @@ _EOF
 # Run .xprofile
 $XPROF
 
-# Check for .config/autostart file and create and make executable
+# Check for .config/autostart file and create.
 if [[ ! -f $AUTSTRT ]]; then
 	touch $AUTSTRT
 fi
