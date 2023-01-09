@@ -1,14 +1,4 @@
-Mon Jan  2 02:00:01 2023 -> ClamAV update process started at Mon Jan  2 02:00:01 2023
-Mon Jan  2 02:00:01 2023 -> ^FreshClam previously received error code 429 or 403 from the ClamAV Content Delivery Network (CDN).
-Mon Jan  2 02:00:01 2023 -> This means that you have been rate limited or blocked by the CDN.
-Mon Jan  2 02:00:01 2023 ->  1. Verify that you're running a supported ClamAV version.
-Mon Jan  2 02:00:01 2023 ->     See https://docs.clamav.net/faq/faq-eol.html for details.
-Mon Jan  2 02:00:01 2023 ->  2. Run FreshClam no more than once an hour to check for updates.
-Mon Jan  2 02:00:01 2023 ->     FreshClam should check DNS first to see if an update is needed.
-Mon Jan  2 02:00:01 2023 ->  3. If you have more than 10 hosts on your network attempting to download,
-Mon Jan  2 02:00:01 2023 ->     it is recommended that you set up a private mirror on your network using
-Mon Jan  2 02:00:01 2023 ->     cvdupdate (https://pypi.org/project/cvdupdate/) to save bandwidth on the
-Mon Jan  2 02:00:01 2023 ->     CDN and your own network.
-Mon Jan  2 02:00:01 2023 ->  4. Please do not open a ticket asking for an exemption from the rate limit,
-Mon Jan  2 02:00:01 2023 ->     it will not be granted.
-Mon Jan  2 02:00:01 2023 -> ^You are still on cool-down until after: 2023-01-02 09:34:25
+Mon Jan  9 02:00:01 2023 -> ClamAV update process started at Mon Jan  9 02:00:01 2023
+Mon Jan  9 02:00:01 2023 -> daily.cld database is up-to-date (version: 26775, sigs: 2015380, f-level: 90, builder: raynman)
+Mon Jan  9 02:00:01 2023 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Mon Jan  9 02:00:01 2023 -> bytecode.cvd database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)

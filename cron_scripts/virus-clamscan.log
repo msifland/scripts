@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;172m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;128m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;172m
+[1;38;5;128m
 Removing old build logs. . .
 
 [0m
-[1;38;5;172m
+[1;38;5;128m
 Start Time:
-Date: 01-02-23
+Date: 01-09-23
 Time: 02:15:16 AM
 
 Scanning: 
@@ -35,38 +35,61 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
-LibClamAV Warning: **************************************************
-LibClamAV Warning: ***  The virus database is older than 7 days!  ***
-LibClamAV Warning: ***   Please update it as soon as possible.    ***
-LibClamAV Warning: **************************************************
-LibClamAV Error: cli_loadinfo: Incorrect digital signature
-LibClamAV Error: cli_loadinfo: Problem parsing database at line 25
-LibClamAV Error: Can't load daily.info: Malformed database
-LibClamAV Error: cli_tgzload: Can't load daily.info
-LibClamAV Error: Can't load /var/lib/clamav/daily.cld: Malformed database
-LibClamAV Error: cli_loaddbdir(): error loading database /var/lib/clamav/daily.cld
-ERROR: Malformed database
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 27262976 bytes
+LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 0
+Known viruses: 8647316
 Engine version: 0.103.7
-Scanned directories: 0
-Scanned files: 0
+Scanned directories: 65945
+Scanned files: 705739
 Infected files: 0
-Data scanned: 0.00 MB
-Data read: 0.00 MB (ratio 0.00:1)
-Time: 0.006 sec (0 m 0 s)
-Start Date: 2023:01:02 02:15:24
-End Date:   2023:01:02 02:15:24
+Total errors: 382
+Data scanned: 64967.98 MB
+Data read: 137518.73 MB (ratio 0.47:1)
+Time: 17275.689 sec (287 m 55 s)
+Start Date: 2023:01:09 02:15:24
+End Date:   2023:01:09 07:03:20
 
 
 End Time:
-Date: 01-02-23
-Time: 02:15:24 AM
-It took 0 hours 0 minutes 8 seconds to scan your system.
+Date: 01-09-23
+Time: 07:03:20 AM
+It took 4 hours 48 minutes 4 seconds to scan your system.
 
 
-[1;38;5;172m
+[1;38;5;128m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
