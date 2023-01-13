@@ -8,7 +8,7 @@ sleep 1
 if [[ -d $HOME/pkg_bkups/backups/screenFetch ]]; then
 	#rm -rf $HOME/pkg_bkups/backups/screenFetch
 	cd $HOME/pkg_bkups/backups/screenFetch
-	git pull -a -v
+	git pull
 else
 	cd $HOME/pkg_bkups/backups/
 	git clone https://github.com/KittyKatt/screenFetch
