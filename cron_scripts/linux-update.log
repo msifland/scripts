@@ -2456,3 +2456,34 @@ Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
 [1;38;5;205mUpdating scripts. . .[0m
+[master e6e8553] auto commit
+ 8 files changed, 55426 insertions(+), 1645 deletions(-)
+To https://github.com/msifland/scripts
+   b5646b6..e6e8553  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;205mUpdating pkg_bkups. . .[0m
+[master 4138a7e] auto commit
+ 3 files changed, 71 insertions(+), 22 deletions(-)
+To https://github.com/msifland/pkg_bkups
+   837c65e..4138a7e  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;205mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;205mDowloading usb_pkg_bkups. . .[0m
+No local changes to save
+Already up to date.
+
+[1;38;5;123mAll is good.[0m
+
+[1;38;5;79m
+01-09-2023 05:44:21 PM
+[1;38;5;79mIt took 44 minutes 19 seconds to run whole process.[0m
+[0m
