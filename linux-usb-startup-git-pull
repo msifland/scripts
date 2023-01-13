@@ -15,35 +15,35 @@ echo $HOME/pkg_bkups
 cd $HOME/pkg_bkups
 git stash
 git fetch
-git pull -a -v
+git pull
 sleep 1
 echo
 echo $HOME/scripts
 cd $HOME/scripts
 git stash
 git fetch
-git pull -a -v
+git pull
 sleep 1
 echo
 echo $HOME/Documents
 cd $HOME/Documents
 git stash
 git fetch
-git pull -a -v
+git pull
 sleep 1
 echo
 echo $HOME/Projects
 cd $HOME/Projects
 git stash
 git fetch
-git pull -a -v
+git pull
 sleep 1
 echo
 echo $HOME/Modules-Apps
 cd $HOME/Modules-Apps
 git stash
 git fetch
-git pull -a -v
+git pull
 sleep 1
 echo
 echo All done, in 5 seconds and running script: linux-usb-update. . .
