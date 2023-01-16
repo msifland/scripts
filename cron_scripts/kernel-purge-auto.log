@@ -1,7 +1,10 @@
 [sudo] password for msifland: 
 Purging old kernels. Here are the kernels on your system, newest first: 
-1. linux-image-6.1.0-msi
-2. linux-image-6.0.0-5-amd64
------> Currently running 6.1.0-msi
+1. linux-image-6.1.5-msi
+2. linux-image-6.1.3-msi
+3. linux-image-6.1.1-msi
+4. linux-image-6.1.0-msi
+5. linux-image-6.1.0-1-amd64
+-----> Currently running 6.1.5-msi
 
-There are 2 kernels on your system, need more than 6 to auto-remove. Exiting now. . .
+There are 5 kernels on your system, need more than 6 to auto-remove. Exiting now. . .
