@@ -2,3 +2,8 @@
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
 Already up to date.
+From https://github.com/akinomyoga/blesh-contrib
+   4fc0bf6..d2c5eb3  master     -> origin/master
+Submodule path 'contrib': checked out 'd2c5eb3b7a6ff24498567d80ea8e0b7ee9f1a1c8'
+cp -p contrib/README.md out/doc/contrib/README.md
+bash make_command.sh install "out/doc/contrib/README.md" "/home/msifland/.local/share/blesh/doc/contrib/README.md"
