@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;121m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;214m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;121m
+[1;38;5;214m
 Removing old build logs. . .
 
 [0m
-[1;38;5;121m
+[1;38;5;214m
 Start Time:
-Date: 01-16-23
+Date: 01-30-23
 Time: 02:15:16 AM
 
 Scanning: 
@@ -83,7 +83,7 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 7975000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 7970000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -113,9 +113,9 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 7840000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 8005000 opcodes
 LibClamAV Warning: Bytecode 'BC.Legacy.Exploit.Andr-2.{Extra_Field,Master_Key}' (id: 35) failed to run: Exceeded time limit
-LibClamAV Warning: Bytecode run timed out in interpreter after 7870000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 7760000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -159,28 +159,3 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-
------------ SCAN SUMMARY -----------
-Known viruses: 8648702
-Engine version: 1.0.0
-Scanned directories: 69489
-Scanned files: 730713
-Infected files: 0
-Total errors: 407
-Data scanned: 89327.28 MB
-Data read: 142200.09 MB (ratio 0.63:1)
-Time: 20747.606 sec (345 m 47 s)
-Start Date: 2023:01:16 02:15:24
-End Date:   2023:01:16 08:01:12
-
-
-End Time:
-Date: 01-16-23
-Time: 08:01:12 AM
-It took 5 hours 45 minutes 56 seconds to scan your system.
-
-
-[1;38;5;121m
-You can edit included and excluded files and folders by typing edit-virus-clamscan
-
-[0m
