@@ -857,3 +857,46 @@ Everything up-to-date
 branch 'master' set up to track 'origin/master'.
 
 [1;38;5;13mUpdating scripts. . .[0m
+[master 88f2ea3] auto commit
+ 7 files changed, 41737 insertions(+), 40919 deletions(-)
+To https://github.com/msifland/scripts
+   8af303d..88f2ea3  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;13mUpdating pkg_bkups. . .[0m
+[master 6d14230] auto commit
+ 4 files changed, 30 insertions(+), 76 deletions(-)
+To https://github.com/msifland/pkg_bkups
+   275ab99..6d14230  master -> master
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;13mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+[1;38;5;13mDowloading usb_pkg_bkups. . .[0m
+No local changes to save
+From https://github.com/msifland/usb_pkg_bkups
+   3387510..618c619  master     -> origin/master
+Updating 3387510..618c619
+Fast-forward
+ apt.old/apt.conf.d/01autoremove          |   3 +
+ apt.old/apt.conf.d/20auto-upgrades       |   2 -
+ apt.old/apt.conf.d/50unattended-upgrades | 164 -------------------------------
+ apt.old/sources.list                     |   4 -
+ pkgs.txt.old                             |  51 ++++------
+ pkgs.txt.old-1                           |   3 +-
+ 6 files changed, 24 insertions(+), 203 deletions(-)
+ delete mode 100644 apt.old/apt.conf.d/20auto-upgrades
+ delete mode 100644 apt.old/apt.conf.d/50unattended-upgrades
+
+[1;38;5;133mAll is good.[0m
+
+[1;38;5;40m
+02-06-2023 07:07:32 AM
+[1;38;5;40mIt took 7 minutes 30 seconds to run whole process.[0m
+[0m
