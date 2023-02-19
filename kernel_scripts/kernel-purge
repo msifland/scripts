@@ -180,6 +180,14 @@ for j in $FOR_REM; do
 		sudo rm -rf /usr/src/nvidia-legacy-390xx-kernel-"$REM4"*.*
 	fi
 done
+sleep 1
+
+echo
+echo "Remove dbg kernels, not needed on your system. . ."
+for pk in $(dpkg --get-selections | grep linux-image | grep dbg |
+ awk '{ print $1 }'); do
+ 	sudo dpkg --purge $pk
+done
 
 # Check for errors.
 if [ $? -eq 0 ]; then

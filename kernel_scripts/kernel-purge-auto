@@ -43,7 +43,7 @@ echo "${ILCOLOR3}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
 sleep 1
 
 KERN_COUNT=$(cat $KERN_FILE | wc -l)
-if [[ $KERN_COUNT > 6 ]]; then
+if (( $KERN_COUNT > 6 )); then
 	echo
 	echo "Too many kernels on your system, removing some now. . ."
 	sleep 1
@@ -176,6 +176,14 @@ for j in $FOR_REM; do
 		echo "sudo rm -rf /usr/src/nvidia-legacy-390xx-kernel-$REM4*.*"
 		sudo rm -rf /usr/src/nvidia-legacy-390xx-kernel-"$REM4"*.*
 	fi
+done
+sleep 1
+
+echo
+echo "Remove dbg kernels, not needed on your system. . ."
+for pk in $(dpkg --get-selections | grep linux-image | grep dbg |
+ awk '{ print $1 }'); do
+ 	sudo dpkg --purge $pk
 done
 
 # Check for errors.
