@@ -84,10 +84,10 @@ total 2.9G
 -rw-r--r-- 1 msifland msifland 580M Mar  5 01:40 msifland-03-05-2023.tar.gz
 -rw-r--r-- 1 msifland msifland 609M Mar  6 01:30 msifland-03-06-2023.tar.gz
 -rw-r--r-- 1 msifland msifland 576M Mar  7 01:40 msifland-03-07-2023.tar.gz
--rw-r--r-- 1 msifland msifland 2.4K Mar  7 01:40 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 3.0K Mar  7 11:35 my_backup_log.txt
 
 [1;38;5;185mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-03-07-2023 01:40:07 AM
-[1;38;5;185mIt took 10 minutes 5 seconds to run whole process.[0m
+03-07-2023 11:35:40 AM
+[1;38;5;185mIt took 5 minutes 39 seconds to run whole process.[0m
 
