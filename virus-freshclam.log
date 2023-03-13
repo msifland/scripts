@@ -1,4 +1,32 @@
-Mon Mar  6 02:00:01 2023 -> ClamAV update process started at Mon Mar  6 02:00:01 2023
-Mon Mar  6 02:00:01 2023 -> daily.cld database is up-to-date (version: 26832, sigs: 2023049, f-level: 90, builder: raynman)
-Mon Mar  6 02:00:01 2023 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon Mar  6 02:00:01 2023 -> bytecode.cvd database is up-to-date (version: 334, sigs: 91, f-level: 90, builder: anvilleg)
+Mon Mar 13 02:00:01 2023 -> ClamAV update process started at Mon Mar 13 02:00:01 2023
+Mon Mar 13 02:00:01 2023 -> ^Can't query current.cvd.clamav.net
+Mon Mar 13 02:00:01 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:01 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:01 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:01 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:06 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:06 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:06 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:06 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:11 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:11 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:11 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:11 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:16 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:16 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:16 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:16 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:21 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:21 2023 -> !remote_cvdhead: Download failed (6) Mon Mar 13 02:00:21 2023 -> ! Message: Couldn't resolve host name
+Mon Mar 13 02:00:21 2023 -> Giving up on https://database.clamav.net...
+Mon Mar 13 02:00:21 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:21 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:21 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:21 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:26 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:26 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:26 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:26 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:31 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:31 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:31 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:31 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:36 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:36 2023 -> ^remote_cvdhead: Download failed (6) Mon Mar 13 02:00:36 2023 -> ^ Message: Couldn't resolve host name
+Mon Mar 13 02:00:36 2023 -> Trying again in 5 secs...
+Mon Mar 13 02:00:41 2023 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Mon Mar 13 02:00:41 2023 -> !remote_cvdhead: Download failed (6) Mon Mar 13 02:00:41 2023 -> ! Message: Couldn't resolve host name
+Mon Mar 13 02:00:41 2023 -> Giving up on https://database.clamav.net...
