@@ -159,3 +159,28 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8657331
+Engine version: 1.0.1
+Scanned directories: 78576
+Scanned files: 821151
+Infected files: 0
+Total errors: 443
+Data scanned: 87391.33 MB
+Data read: 139948.81 MB (ratio 0.62:1)
+Time: 21846.074 sec (364 m 6 s)
+Start Date: 2023:03:13 02:15:25
+End Date:   2023:03:13 08:19:31
+
+
+End Time:
+Date: 03-13-23
+Time: 08:19:31 AM
+It took 6 hours 4 minutes 14 seconds to scan your system.
+
+
+[1;38;5;24m
+You can edit included and excluded files and folders by typing edit-virus-clamscan
+
+[0m
