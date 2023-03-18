@@ -259,3 +259,30 @@ nothing to commit, working tree clean
 fatal: unable to access 'https://github.com/msifland/Documents.git/': Could not resolve host: github.com
 
 [1;38;5;7mUpdating scripts. . .[0m
+[master 8c7dade] auto commit
+ 7 files changed, 41538 insertions(+), 42833 deletions(-)
+fatal: unable to access 'https://github.com/msifland/scripts/': Could not resolve host: github.com
+
+[1;38;5;7mUpdating pkg_bkups. . .[0m
+[master b9803ab] auto commit
+ 5 files changed, 92 insertions(+), 64 deletions(-)
+fatal: unable to access 'https://github.com/msifland/pkg_bkups/': Could not resolve host: github.com
+
+[1;38;5;7mUpdating Modules-Apps. . .[0m
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+fatal: unable to access 'https://github.com/msifland/Modules-Apps.git/': Could not resolve host: github.com
+
+[1;38;5;7mDowloading usb_pkg_bkups. . .[0m
+No local changes to save
+fatal: unable to access 'https://github.com/msifland/usb_pkg_bkups.git/': Could not resolve host: github.com
+fatal: unable to access 'https://github.com/msifland/usb_pkg_bkups.git/': Could not resolve host: github.com
+
+[1;38;5;98mAll is good.[0m
+
+[1;38;5;42m
+03-13-2023 07:01:29 AM
+[1;38;5;42mIt took 1 minutes 27 seconds to run whole process.[0m
+[0m
