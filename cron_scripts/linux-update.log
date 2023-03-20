@@ -1,158 +1,106 @@
-[H[2J[3J[1;38;5;240m           ###########    Updating your system now   ###########[0m
-[1;38;5;42m
-03-13-2023 07:00:02 AM
-Updating Linux debian 6.2.3-msi #1 SMP PREEMPT_DYNAMIC Sat Mar 11 03:55:58 CST 2023 x86_64 GNU/Linux[0m
-[1;38;5;98mRunning as sudo. . .[0m
+[H[2J[3J[1;38;5;133m           ###########    Updating your system now   ###########[0m
+[1;38;5;12m
+03-20-2023 07:00:01 AM
+Updating Linux debian 6.2.7-msi #1 SMP PREEMPT_DYNAMIC Sat Mar 18 03:51:46 CDT 2023 x86_64 GNU/Linux[0m
+[1;38;5;55mRunning as sudo. . .[0m
 [sudo] password for msifland: 
-[1;38;5;7mUpdating sources and checking for app updates. . .[0m
+[1;38;5;239mUpdating sources and checking for app updates. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Ign:1 http://deb.debian.org/debian testing InRelease
-Ign:2 http://ftp.us.debian.org/debian testing InRelease
-Ign:3 http://ftp.debian.org/debian bullseye-backports InRelease
-Ign:4 https://download.sublimetext.com apt/stable/ InRelease
-Ign:5 http://linux.dropbox.com/debian sid InRelease
-Ign:6 http://apt.llvm.org/unstable llvm-toolchain InRelease
-Ign:7 https://packages.cisofy.com/community/lynis/deb stable InRelease
-Ign:8 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease
-Ign:9 https://repo.skype.com/deb stable InRelease
-Ign:10 https://dl.google.com/linux/chrome/deb stable InRelease
-Ign:11 https://mega.nz/linux/repo/Debian_11 ./ InRelease
-Ign:12 https://dl.winehq.org/wine-builds/debian bullseye InRelease
-Ign:13 http://deb.debian.org/debian testing-updates InRelease
-Ign:14 http://deb.debian.org/debian-security testing-security InRelease
-Ign:15 http://security.debian.org/debian-security testing-security InRelease
-Ign:16 http://security.debian.org/debian-security stable-security InRelease
-Ign:17 http://ftp.us.debian.org/debian testing-updates InRelease
-Ign:18 http://http.kali.org/kali kali-rolling InRelease
-Ign:19 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
-Ign:20 http://deb.debian.org/debian unstable InRelease
-Ign:21 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
-Ign:22 http://deb.debian.org/debian stable InRelease
-Ign:23 http://deb.debian.org/debian stable-updates InRelease
-Ign:1 http://deb.debian.org/debian testing InRelease
-Ign:13 http://deb.debian.org/debian testing-updates InRelease
-Ign:2 http://ftp.us.debian.org/debian testing InRelease
-Ign:17 http://ftp.us.debian.org/debian testing-updates InRelease
-Ign:3 http://ftp.debian.org/debian bullseye-backports InRelease
-Ign:18 http://http.kali.org/kali kali-rolling InRelease
-Ign:4 https://download.sublimetext.com apt/stable/ InRelease
-Ign:19 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
-Ign:5 http://linux.dropbox.com/debian sid InRelease
-Ign:6 http://apt.llvm.org/unstable llvm-toolchain InRelease
-Ign:7 https://packages.cisofy.com/community/lynis/deb stable InRelease
-Ign:8 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease
-Ign:9 https://repo.skype.com/deb stable InRelease
-Ign:12 https://dl.winehq.org/wine-builds/debian bullseye InRelease
-Ign:14 http://deb.debian.org/debian-security testing-security InRelease
-Ign:15 http://security.debian.org/debian-security testing-security InRelease
-Ign:10 https://dl.google.com/linux/chrome/deb stable InRelease
-Ign:11 https://mega.nz/linux/repo/Debian_11 ./ InRelease
-Ign:16 http://security.debian.org/debian-security stable-security InRelease
-Ign:21 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
-Ign:20 http://deb.debian.org/debian unstable InRelease
-Ign:22 http://deb.debian.org/debian stable InRelease
-Ign:23 http://deb.debian.org/debian stable-updates InRelease
-Ign:1 http://deb.debian.org/debian testing InRelease
-Ign:13 http://deb.debian.org/debian testing-updates InRelease
-Ign:15 http://security.debian.org/debian-security testing-security InRelease
-Ign:16 http://security.debian.org/debian-security stable-security InRelease
-Ign:2 http://ftp.us.debian.org/debian testing InRelease
-Ign:17 http://ftp.us.debian.org/debian testing-updates InRelease
-Ign:3 http://ftp.debian.org/debian bullseye-backports InRelease
-Ign:18 http://http.kali.org/kali kali-rolling InRelease
-Ign:4 https://download.sublimetext.com apt/stable/ InRelease
-Ign:19 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
-Ign:21 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
-Ign:5 http://linux.dropbox.com/debian sid InRelease
-Ign:6 http://apt.llvm.org/unstable llvm-toolchain InRelease
-Ign:7 https://packages.cisofy.com/community/lynis/deb stable InRelease
-Ign:9 https://repo.skype.com/deb stable InRelease
-Ign:11 https://mega.nz/linux/repo/Debian_11 ./ InRelease
-Ign:14 http://deb.debian.org/debian-security testing-security InRelease
-Ign:8 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease
-Ign:10 https://dl.google.com/linux/chrome/deb stable InRelease
-Ign:12 https://dl.winehq.org/wine-builds/debian bullseye InRelease
-Ign:20 http://deb.debian.org/debian unstable InRelease
-Ign:22 http://deb.debian.org/debian stable InRelease
-Ign:23 http://deb.debian.org/debian stable-updates InRelease
-Err:1 http://deb.debian.org/debian testing InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:13 http://deb.debian.org/debian testing-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:15 http://security.debian.org/debian-security testing-security InRelease
-  Temporary failure resolving 'security.debian.org'
-Err:16 http://security.debian.org/debian-security stable-security InRelease
-  Temporary failure resolving 'security.debian.org'
-Err:2 http://ftp.us.debian.org/debian testing InRelease
-  Temporary failure resolving 'ftp.us.debian.org'
-Err:17 http://ftp.us.debian.org/debian testing-updates InRelease
-  Temporary failure resolving 'ftp.us.debian.org'
-Err:3 http://ftp.debian.org/debian bullseye-backports InRelease
-  Temporary failure resolving 'ftp.debian.org'
-Err:18 http://http.kali.org/kali kali-rolling InRelease
-  Temporary failure resolving 'http.kali.org'
-Err:4 https://download.sublimetext.com apt/stable/ InRelease
-  Temporary failure resolving 'download.sublimetext.com'
-Err:19 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
-  Temporary failure resolving 'ppa.launchpad.net'
-Err:21 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
-  Temporary failure resolving 'ppa.launchpad.net'
-Err:6 http://apt.llvm.org/unstable llvm-toolchain InRelease
-  Temporary failure resolving 'apt.llvm.org'
-Err:9 https://repo.skype.com/deb stable InRelease
-  Temporary failure resolving 'repo.skype.com'
-Err:11 https://mega.nz/linux/repo/Debian_11 ./ InRelease
-  Temporary failure resolving 'mega.nz'
-Err:14 http://deb.debian.org/debian-security testing-security InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:5 http://linux.dropbox.com/debian sid InRelease
-  Temporary failure resolving 'linux.dropbox.com'
-Err:7 https://packages.cisofy.com/community/lynis/deb stable InRelease
-  Temporary failure resolving 'packages.cisofy.com'
-Err:8 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease
-  Temporary failure resolving 'mega.nz'
-Err:10 https://dl.google.com/linux/chrome/deb stable InRelease
-  Temporary failure resolving 'dl.google.com'
-Err:12 https://dl.winehq.org/wine-builds/debian bullseye InRelease
-  Temporary failure resolving 'dl.winehq.org'
-Err:20 http://deb.debian.org/debian unstable InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:22 http://deb.debian.org/debian stable InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:23 http://deb.debian.org/debian stable-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
+Get:1 http://deb.debian.org/debian testing InRelease [178 kB]
+Ign:2 http://linux.dropbox.com/debian sid InRelease
+Get:3 http://ftp.debian.org/debian bullseye-backports InRelease [49.0 kB]
+Hit:4 http://linux.dropbox.com/debian sid Release
+Get:5 http://ftp.us.debian.org/debian testing InRelease [178 kB]
+Get:6 https://dl.winehq.org/wine-builds/debian bullseye InRelease [8,045 B]
+Hit:7 https://repo.skype.com/deb stable InRelease
+Get:8 http://security.debian.org/debian-security testing-security InRelease [48.0 kB]
+Hit:9 https://download.sublimetext.com apt/stable/ InRelease
+Get:11 http://deb.debian.org/debian testing-updates InRelease [49.6 kB]
+Hit:12 https://dl.google.com/linux/chrome/deb stable InRelease
+Get:13 http://security.debian.org/debian-security stable-security InRelease [48.4 kB]
+Get:14 http://ftp.us.debian.org/debian testing-updates InRelease [49.6 kB]
+Hit:15 http://ppa.launchpad.net/tista/adapta/ubuntu bionic InRelease
+Get:10 http://mirrors.jevincanders.net/kali kali-rolling InRelease [41.2 kB]
+Get:17 http://mega.nz/linux/MEGAsync/Debian_9.0 ./ InRelease [2,464 B]
+Get:18 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
+Get:19 http://deb.debian.org/debian unstable InRelease [180 kB]
+Hit:20 http://deb.debian.org/debian stable InRelease
+Get:21 http://deb.debian.org/debian stable-updates InRelease [44.1 kB]
+Get:22 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:16 https://apt.llvm.org/unstable llvm-toolchain InRelease [6,833 B]
+Get:24 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:25 http://deb.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:26 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:27 http://ftp.debian.org/debian bullseye-backports/main Sources.diff/Index [63.3 kB]
+Get:28 https://packages.cisofy.com/community/lynis/deb stable InRelease [11.4 kB]
+Get:29 https://mega.nz/linux/repo/Debian_11 ./ InRelease [2,959 B]
+Hit:30 http://ppa.launchpad.net/snwh/pulp/ubuntu yakkety InRelease
+Get:31 http://ftp.debian.org/debian bullseye-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:32 http://ftp.debian.org/debian bullseye-backports/main i386 Packages.diff/Index [63.3 kB]
+Get:33 https://dl.winehq.org/wine-builds/debian bullseye/main i386 Packages [587 kB]
+Get:34 http://deb.debian.org/debian testing/main Sources T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [2,825 B]
+Get:34 http://deb.debian.org/debian testing/main Sources T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [2,825 B]
+Get:35 https://dl.winehq.org/wine-builds/debian bullseye/main amd64 Packages [576 kB]
+Get:36 http://ftp.debian.org/debian bullseye-backports/main Sources T-2023-03-19-1403.38-F-2023-03-18-0803.44.pdiff [1,640 B]
+Get:36 http://ftp.debian.org/debian bullseye-backports/main Sources T-2023-03-19-1403.38-F-2023-03-18-0803.44.pdiff [1,640 B]
+Get:37 http://deb.debian.org/debian testing/main amd64 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,980 B]
+Get:37 http://deb.debian.org/debian testing/main amd64 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,980 B]
+Get:38 http://ftp.debian.org/debian bullseye-backports/main amd64 Packages T-2023-03-19-1403.38-F-2023-03-18-1410.53.pdiff [417 B]
+Get:38 http://ftp.debian.org/debian bullseye-backports/main amd64 Packages T-2023-03-19-1403.38-F-2023-03-18-1410.53.pdiff [417 B]
+Get:39 http://deb.debian.org/debian testing/main i386 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,561 B]
+Get:39 http://deb.debian.org/debian testing/main i386 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,561 B]
+Get:40 http://ftp.us.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:41 http://deb.debian.org/debian testing/main Translation-en T-2023-03-19-2003.41-F-2023-03-19-2003.41.pdiff [72 B]
+Get:41 http://deb.debian.org/debian testing/main Translation-en T-2023-03-19-2003.41-F-2023-03-19-2003.41.pdiff [72 B]
+Get:42 http://deb.debian.org/debian testing/main amd64 DEP-11 Metadata [4,509 kB]
+Get:43 http://ftp.debian.org/debian bullseye-backports/main i386 Packages T-2023-03-19-1403.38-F-2023-03-18-1410.53.pdiff [415 B]
+Get:43 http://ftp.debian.org/debian bullseye-backports/main i386 Packages T-2023-03-19-1403.38-F-2023-03-18-1410.53.pdiff [415 B]
+Get:44 http://deb.debian.org/debian testing/main DEP-11 48x48 Icons [3,625 kB]
+Get:45 http://deb.debian.org/debian testing/main DEP-11 64x64 Icons [7,343 kB]
+Get:46 http://ftp.us.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:47 http://ftp.us.debian.org/debian testing/main i386 Packages.diff/Index [63.6 kB]
+Get:48 http://ftp.us.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:49 http://ftp.us.debian.org/debian testing/main Sources T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [2,825 B]
+Get:49 http://ftp.us.debian.org/debian testing/main Sources T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [2,825 B]
+Get:50 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,980 B]
+Get:50 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,980 B]
+Get:51 http://mirrors.jevincanders.net/kali kali-rolling/main Sources [15.7 MB]
+Get:52 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:53 http://ftp.us.debian.org/debian testing/main i386 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,561 B]
+Get:54 http://ftp.us.debian.org/debian testing/main Translation-en T-2023-03-19-2003.41-F-2023-03-19-2003.41.pdiff [72 B]
+Get:53 http://ftp.us.debian.org/debian testing/main i386 Packages T-2023-03-20-0203.39-F-2023-03-18-2023.14.pdiff [6,561 B]
+Get:54 http://ftp.us.debian.org/debian testing/main Translation-en T-2023-03-19-2003.41-F-2023-03-19-2003.41.pdiff [72 B]
+Get:55 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:56 http://deb.debian.org/debian unstable/main i386 Packages.diff/Index [63.6 kB]
+Get:57 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:58 http://ftp.us.debian.org/debian testing/main amd64 DEP-11 Metadata [4,509 kB]
+Get:59 http://ftp.us.debian.org/debian testing/main DEP-11 48x48 Icons [3,625 kB]
+Get:60 http://ftp.us.debian.org/debian testing/main DEP-11 64x64 Icons [7,343 kB]
+Get:61 http://mirrors.jevincanders.net/kali kali-rolling/main i386 Packages [19.2 MB]
+Get:62 http://deb.debian.org/debian unstable/main Sources T-2023-03-20-0803.46-F-2023-03-18-0803.44.pdiff [33.1 kB]
+Get:62 http://deb.debian.org/debian unstable/main Sources T-2023-03-20-0803.46-F-2023-03-18-0803.44.pdiff [33.1 kB]
+Get:63 https://apt.llvm.org/unstable llvm-toolchain/main Sources [2,544 B]
+Get:64 http://deb.debian.org/debian unstable/main amd64 Packages T-2023-03-20-0803.46-F-2023-03-18-0803.44.pdiff [32.7 kB]
+Get:64 http://deb.debian.org/debian unstable/main amd64 Packages T-2023-03-20-0803.46-F-2023-03-18-0803.44.pdiff [32.7 kB]
+Get:65 https://apt.llvm.org/unstable llvm-toolchain/main i386 Packages [19.0 kB]
+Get:66 https://apt.llvm.org/unstable llvm-toolchain/main amd64 Packages [22.7 kB]
+Get:67 http://deb.debian.org/debian unstable/main i386 Packages T-2023-03-20-0803.46-F-2023-03-18-0803.44.pdiff [19.0 kB]
+Get:67 http://deb.debian.org/debian unstable/main i386 Packages T-2023-03-20-0803.46-F-2023-03-18-0803.44.pdiff [19.0 kB]
+Get:68 http://deb.debian.org/debian unstable/main Translation-en T-2023-03-20-0803.46-F-2023-03-20-0203.39.pdiff [2,743 B]
+Get:68 http://deb.debian.org/debian unstable/main Translation-en T-2023-03-20-0803.46-F-2023-03-20-0203.39.pdiff [2,743 B]
+Get:69 http://deb.debian.org/debian unstable/main amd64 DEP-11 Metadata [4,595 kB]
+Get:70 http://deb.debian.org/debian unstable/main DEP-11 48x48 Icons [3,719 kB]
+Get:71 http://deb.debian.org/debian unstable/main DEP-11 64x64 Icons [7,586 kB]
+Get:72 http://mirrors.jevincanders.net/kali kali-rolling/main amd64 Packages [19.4 MB]
+Fetched 104 MB in 22s (4,670 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-All packages are up to date.
-W: Failed to fetch http://deb.debian.org/debian/dists/testing/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://security.debian.org/debian-security/dists/testing-security/InRelease  Temporary failure resolving 'security.debian.org'
-W: Failed to fetch http://ftp.us.debian.org/debian/dists/testing/InRelease  Temporary failure resolving 'ftp.us.debian.org'
-W: Failed to fetch http://ftp.us.debian.org/debian/dists/testing-updates/InRelease  Temporary failure resolving 'ftp.us.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/testing-updates/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian-security/dists/testing-security/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/unstable/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/stable/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://deb.debian.org/debian/dists/stable-updates/InRelease  Temporary failure resolving 'deb.debian.org'
-W: Failed to fetch http://security.debian.org/debian-security/dists/stable-security/InRelease  Temporary failure resolving 'security.debian.org'
-W: Failed to fetch http://ftp.debian.org/debian/dists/bullseye-backports/InRelease  Temporary failure resolving 'ftp.debian.org'
-W: Failed to fetch http://http.kali.org/kali/dists/kali-rolling/InRelease  Temporary failure resolving 'http.kali.org'
-W: Failed to fetch https://download.sublimetext.com/apt/stable/InRelease  Temporary failure resolving 'download.sublimetext.com'
-W: Failed to fetch http://ppa.launchpad.net/tista/adapta/ubuntu/dists/bionic/InRelease  Temporary failure resolving 'ppa.launchpad.net'
-W: Failed to fetch http://linux.dropbox.com/debian/dists/sid/InRelease  Temporary failure resolving 'linux.dropbox.com'
-W: Failed to fetch http://apt.llvm.org/unstable/dists/llvm-toolchain/InRelease  Temporary failure resolving 'apt.llvm.org'
-W: Failed to fetch https://packages.cisofy.com/community/lynis/deb/dists/stable/InRelease  Temporary failure resolving 'packages.cisofy.com'
-W: Failed to fetch http://mega.nz/linux/MEGAsync/Debian_9.0/./InRelease  Temporary failure resolving 'mega.nz'
-W: Failed to fetch http://ppa.launchpad.net/snwh/pulp/ubuntu/dists/yakkety/InRelease  Temporary failure resolving 'ppa.launchpad.net'
-W: Failed to fetch https://repo.skype.com/deb/dists/stable/InRelease  Temporary failure resolving 'repo.skype.com'
-W: Failed to fetch https://dl.google.com/linux/chrome/deb/dists/stable/InRelease  Temporary failure resolving 'dl.google.com'
-W: Failed to fetch https://mega.nz/linux/repo/Debian_11/./InRelease  Temporary failure resolving 'mega.nz'
-W: Failed to fetch https://dl.winehq.org/wine-builds/debian/dists/bullseye/InRelease  Temporary failure resolving 'dl.winehq.org'
-W: Some index files failed to download. They have been ignored, or old ones used instead.
+25 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
-[1;38;5;7mChecking for system upgrade. . .[0m
+[1;38;5;239mChecking for system upgrade. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -160,18 +108,143 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following packages will be upgraded:
+  fakeroot gcr gir1.2-javascriptcoregtk-4.0 gir1.2-javascriptcoregtk-4.1
+  gir1.2-webkit2-4.0 gir1.2-webkit2-4.1 libcpupower1 libfakeroot libgck-1-0
+  libgcr-base-3-1 libgcr-ui-3-1 libjavascriptcoregtk-4.0-18
+  libjavascriptcoregtk-4.1-0 libmuffin0 libwebkit2gtk-4.0-37
+  libwebkit2gtk-4.1-0 libzstd-dev libzstd1 libzstd1:i386
+  linux-compiler-gcc-12-x86 linux-kbuild-6.1 linux-perf muffin muffin-common
+  zstd
 The following packages will be DOWNGRADED:
   linux-libc-dev
-0 upgraded, 0 newly installed, 1 downgraded, 0 to remove and 0 not upgraded.
-Need to get 1,736 kB of archives.
-After this operation, 193 kB disk space will be freed.
-Ign:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-Ign:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-Ign:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-Err:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-  Temporary failure resolving 'deb.debian.org'
-E: Failed to fetch http://deb.debian.org/debian/pool/main/l/linux/linux-libc-dev_6.1.15-1_amd64.deb  Temporary failure resolving 'deb.debian.org'
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+25 upgraded, 0 newly installed, 1 downgraded, 0 to remove and 0 not upgraded.
+Need to get 64.3 MB of archives.
+After this operation, 18.0 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian unstable/main amd64 libzstd-dev amd64 1.5.4+dfsg2-5 [354 kB]
+Get:2 http://deb.debian.org/debian unstable/main i386 libzstd1 i386 1.5.4+dfsg2-5 [274 kB]
+Get:3 http://deb.debian.org/debian unstable/main amd64 libzstd1 amd64 1.5.4+dfsg2-5 [290 kB]
+Get:4 http://deb.debian.org/debian unstable/main amd64 libfakeroot amd64 1.31-1.2 [28.3 kB]
+Get:5 http://deb.debian.org/debian unstable/main amd64 fakeroot amd64 1.31-1.2 [66.9 kB]
+Get:6 http://deb.debian.org/debian unstable/main amd64 gcr amd64 3.41.1-2 [271 kB]
+Get:7 http://deb.debian.org/debian unstable/main amd64 libgcr-ui-3-1 amd64 3.41.1-2 [130 kB]
+Get:8 http://deb.debian.org/debian unstable/main amd64 libgcr-base-3-1 amd64 3.41.1-2 [197 kB]
+Get:9 http://deb.debian.org/debian unstable/main amd64 libgck-1-0 amd64 3.41.1-2 [74.9 kB]
+Get:10 http://deb.debian.org/debian unstable/main amd64 gir1.2-webkit2-4.0 amd64 2.40.0-2 [94.9 kB]
+Get:11 http://deb.debian.org/debian unstable/main amd64 gir1.2-javascriptcoregtk-4.0 amd64 2.40.0-2 [39.8 kB]
+Get:12 http://deb.debian.org/debian unstable/main amd64 libwebkit2gtk-4.0-37 amd64 2.40.0-2 [19.8 MB]
+Get:13 http://deb.debian.org/debian unstable/main amd64 libjavascriptcoregtk-4.0-18 amd64 2.40.0-2 [6,920 kB]
+Get:14 http://deb.debian.org/debian unstable/main amd64 gir1.2-webkit2-4.1 amd64 2.40.0-2 [94.9 kB]
+Get:15 http://deb.debian.org/debian unstable/main amd64 gir1.2-javascriptcoregtk-4.1 amd64 2.40.0-2 [39.8 kB]
+Get:16 http://deb.debian.org/debian unstable/main amd64 libwebkit2gtk-4.1-0 amd64 2.40.0-2 [19.8 MB]
+Get:17 http://deb.debian.org/debian unstable/main amd64 libjavascriptcoregtk-4.1-0 amd64 2.40.0-2 [6,921 kB]
+Get:18 http://deb.debian.org/debian unstable/main amd64 libcpupower1 amd64 6.1.20-1 [618 kB]
+Get:19 http://deb.debian.org/debian unstable/main amd64 muffin-common all 5.6.4-1 [433 kB]
+Get:20 http://deb.debian.org/debian unstable/main amd64 libmuffin0 amd64 5.6.4-1 [1,013 kB]
+Get:21 http://deb.debian.org/debian unstable/main amd64 linux-compiler-gcc-12-x86 amd64 6.1.20-1 [611 kB]
+Get:22 http://deb.debian.org/debian unstable/main amd64 linux-kbuild-6.1 amd64 6.1.20-1 [868 kB]
+Get:23 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.20-1 [1,756 kB]
+Get:24 http://deb.debian.org/debian unstable/main amd64 linux-perf amd64 6.1.20-1 [2,727 kB]
+Get:25 http://deb.debian.org/debian unstable/main amd64 muffin amd64 5.6.4-1 [122 kB]
+Get:26 http://deb.debian.org/debian unstable/main amd64 zstd amd64 1.5.4+dfsg2-5 [701 kB]
+apt-listchanges: Reading changelogs...
+Fetched 64.3 MB in 5s (12.6 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 607009 files and directories currently installed.)
+Preparing to unpack .../00-libzstd-dev_1.5.4+dfsg2-5_amd64.deb ...
+Unpacking libzstd-dev:amd64 (1.5.4+dfsg2-5) over (1.5.4+dfsg2-4) ...
+Preparing to unpack .../01-libzstd1_1.5.4+dfsg2-5_amd64.deb ...
+De-configuring libzstd1:i386 (1.5.4+dfsg2-4), to allow configuration of libzstd1:amd64 (1.5.4+dfsg2-5) ...
+Unpacking libzstd1:amd64 (1.5.4+dfsg2-5) over (1.5.4+dfsg2-4) ...
+Preparing to unpack .../02-libzstd1_1.5.4+dfsg2-5_i386.deb ...
+Unpacking libzstd1:i386 (1.5.4+dfsg2-5) over (1.5.4+dfsg2-4) ...
+Preparing to unpack .../03-libfakeroot_1.31-1.2_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.31-1.2) over (1.31-1.1) ...
+Preparing to unpack .../04-fakeroot_1.31-1.2_amd64.deb ...
+Unpacking fakeroot (1.31-1.2) over (1.31-1.1) ...
+Preparing to unpack .../05-gcr_3.41.1-2_amd64.deb ...
+Unpacking gcr (3.41.1-2) over (3.41.1-1+b1) ...
+Preparing to unpack .../06-libgcr-ui-3-1_3.41.1-2_amd64.deb ...
+Unpacking libgcr-ui-3-1:amd64 (3.41.1-2) over (3.41.1-1+b1) ...
+Preparing to unpack .../07-libgcr-base-3-1_3.41.1-2_amd64.deb ...
+Unpacking libgcr-base-3-1:amd64 (3.41.1-2) over (3.41.1-1+b1) ...
+Preparing to unpack .../08-libgck-1-0_3.41.1-2_amd64.deb ...
+Unpacking libgck-1-0:amd64 (3.41.1-2) over (3.41.1-1+b1) ...
+Preparing to unpack .../09-gir1.2-webkit2-4.0_2.40.0-2_amd64.deb ...
+Unpacking gir1.2-webkit2-4.0:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../10-gir1.2-javascriptcoregtk-4.0_2.40.0-2_amd64.deb ...
+Unpacking gir1.2-javascriptcoregtk-4.0:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../11-libwebkit2gtk-4.0-37_2.40.0-2_amd64.deb ...
+Unpacking libwebkit2gtk-4.0-37:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../12-libjavascriptcoregtk-4.0-18_2.40.0-2_amd64.deb ...
+Unpacking libjavascriptcoregtk-4.0-18:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../13-gir1.2-webkit2-4.1_2.40.0-2_amd64.deb ...
+Unpacking gir1.2-webkit2-4.1:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../14-gir1.2-javascriptcoregtk-4.1_2.40.0-2_amd64.deb ...
+Unpacking gir1.2-javascriptcoregtk-4.1:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../15-libwebkit2gtk-4.1-0_2.40.0-2_amd64.deb ...
+Unpacking libwebkit2gtk-4.1-0:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../16-libjavascriptcoregtk-4.1-0_2.40.0-2_amd64.deb ...
+Unpacking libjavascriptcoregtk-4.1-0:amd64 (2.40.0-2) over (2.38.5-1) ...
+Preparing to unpack .../17-libcpupower1_6.1.20-1_amd64.deb ...
+Unpacking libcpupower1 (6.1.20-1) over (6.1.15-1) ...
+Preparing to unpack .../18-muffin-common_5.6.4-1_all.deb ...
+Unpacking muffin-common (5.6.4-1) over (5.6.3-1) ...
+Preparing to unpack .../19-libmuffin0_5.6.4-1_amd64.deb ...
+Unpacking libmuffin0:amd64 (5.6.4-1) over (5.6.3-1) ...
+Preparing to unpack .../20-linux-compiler-gcc-12-x86_6.1.20-1_amd64.deb ...
+Unpacking linux-compiler-gcc-12-x86 (6.1.20-1) over (6.1.15-1) ...
+Preparing to unpack .../21-linux-kbuild-6.1_6.1.20-1_amd64.deb ...
+Unpacking linux-kbuild-6.1 (6.1.20-1) over (6.1.15-1) ...
+dpkg: warning: downgrading linux-libc-dev:amd64 from 6.2.7-msi-1 to 6.1.20-1
+Preparing to unpack .../22-linux-libc-dev_6.1.20-1_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (6.1.20-1) over (6.2.7-msi-1) ...
+Preparing to unpack .../23-linux-perf_6.1.20-1_amd64.deb ...
+Leaving 'diversion of /usr/bin/perf to /usr/bin/perf.wrapper by linux-perf'
+Leaving 'diversion of /usr/share/bash-completion/completions/perf to /usr/share/bash-completion/completions/perf.wrapper by linux-perf'
+Leaving 'diversion of /usr/share/man/man1/perf.1.gz to /usr/share/man/man1/perf.wrapper.1.gz by linux-perf'
+Unpacking linux-perf (6.1.20-1) over (6.1.15-1) ...
+Preparing to unpack .../24-muffin_5.6.4-1_amd64.deb ...
+Unpacking muffin (5.6.4-1) over (5.6.3-1) ...
+Preparing to unpack .../25-zstd_1.5.4+dfsg2-5_amd64.deb ...
+Unpacking zstd (1.5.4+dfsg2-5) over (1.5.4+dfsg2-4) ...
+Setting up libzstd1:amd64 (1.5.4+dfsg2-5) ...
+Setting up libzstd1:i386 (1.5.4+dfsg2-5) ...
+Setting up libzstd-dev:amd64 (1.5.4+dfsg2-5) ...
+Setting up libjavascriptcoregtk-4.0-18:amd64 (2.40.0-2) ...
+Setting up linux-libc-dev:amd64 (6.1.20-1) ...
+Setting up gir1.2-javascriptcoregtk-4.0:amd64 (2.40.0-2) ...
+Setting up libcpupower1 (6.1.20-1) ...
+Setting up libfakeroot:amd64 (1.31-1.2) ...
+Setting up linux-compiler-gcc-12-x86 (6.1.20-1) ...
+Setting up fakeroot (1.31-1.2) ...
+Setting up libjavascriptcoregtk-4.1-0:amd64 (2.40.0-2) ...
+Setting up linux-perf (6.1.20-1) ...
+Setting up muffin-common (5.6.4-1) ...
+Setting up libwebkit2gtk-4.0-37:amd64 (2.40.0-2) ...
+Setting up libgck-1-0:amd64 (3.41.1-2) ...
+Setting up linux-kbuild-6.1 (6.1.20-1) ...
+Setting up libgcr-base-3-1:amd64 (3.41.1-2) ...
+Setting up zstd (1.5.4+dfsg2-5) ...
+Setting up libwebkit2gtk-4.1-0:amd64 (2.40.0-2) ...
+Setting up libgcr-ui-3-1:amd64 (3.41.1-2) ...
+Setting up gir1.2-webkit2-4.0:amd64 (2.40.0-2) ...
+Setting up gir1.2-javascriptcoregtk-4.1:amd64 (2.40.0-2) ...
+Setting up gcr (3.41.1-2) ...
+Setting up gir1.2-webkit2-4.1:amd64 (2.40.0-2) ...
+Processing triggers for mailcap (3.70+nmu1) ...
+Processing triggers for bamfdaemon (0.5.6+repack-1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libglib2.0-0:i386 (2.74.6-1) ...
+Processing triggers for libglib2.0-0:amd64 (2.74.6-1) ...
+Processing triggers for mate-menus (1.26.0-3) ...
+Processing triggers for libc-bin (2.36-8) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for shared-mime-info (2.2-1) ...
+Setting up libmuffin0:amd64 (5.6.4-1) ...
+Setting up muffin (5.6.4-1) ...
+Processing triggers for libc-bin (2.36-8) ...
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -179,20 +252,9 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be DOWNGRADED:
-  linux-libc-dev
-0 upgraded, 0 newly installed, 1 downgraded, 0 to remove and 0 not upgraded.
-Need to get 1,736 kB of archives.
-After this operation, 193 kB disk space will be freed.
-Ign:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-Ign:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-Ign:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-Err:1 http://deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 6.1.15-1
-  Temporary failure resolving 'deb.debian.org'
-E: Failed to fetch http://deb.debian.org/debian/pool/main/l/linux/linux-libc-dev_6.1.15-1_amd64.deb  Temporary failure resolving 'deb.debian.org'
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;7mCleaning up system. . .[0m
+[1;38;5;239mCleaning up system. . .[0m
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -224,10 +286,10 @@ Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
-[1;38;5;42mBacking up important files and apps. . .[0m
-[1;38;5;7mCreating list of apps, and copying repos from /etc/apt. . .[0m
+[1;38;5;12mBacking up important files and apps. . .[0m
+[1;38;5;239mCreating list of apps, and copying repos from /etc/apt. . .[0m
 
-[1;38;5;7mBacking up important config files. . .[0m
+[1;38;5;239mBacking up important config files. . .[0m
 Backup up .bashrc
 Backup up .bash_profile
 Backup up .blerc
@@ -237,52 +299,27 @@ Backup up .nanorc
 Backup up .xprofile
 Backup up .Xresources
 
-[1;38;5;7mBacking up crontab. . .[0m
+[1;38;5;239mBacking up crontab. . .[0m
 
-[1;38;5;7mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
+[1;38;5;239mBacking up /etc/fstab for reference because of multi-partitions. . .[0m
 
 
-[1;38;5;42mUpdating local git repos. . .[0m
-[1;38;5;42mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
-[1;38;5;7mUpdating Projects. . .[0m
+[1;38;5;12mUpdating local git repos. . .[0m
+[1;38;5;12mWe will now update your personal git directories consisting of Documents, scripts, etc. . .[0m
+[1;38;5;239mUpdating Projects. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-fatal: unable to access 'https://github.com/msifland/Projects.git/': Could not resolve host: github.com
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
 
-[1;38;5;7mUpdating Documents. . .[0m
+[1;38;5;239mUpdating Documents. . .[0m
 On branch master
 Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
-fatal: unable to access 'https://github.com/msifland/Documents.git/': Could not resolve host: github.com
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
 
-[1;38;5;7mUpdating scripts. . .[0m
-[master 8c7dade] auto commit
- 7 files changed, 41538 insertions(+), 42833 deletions(-)
-fatal: unable to access 'https://github.com/msifland/scripts/': Could not resolve host: github.com
-
-[1;38;5;7mUpdating pkg_bkups. . .[0m
-[master b9803ab] auto commit
- 5 files changed, 92 insertions(+), 64 deletions(-)
-fatal: unable to access 'https://github.com/msifland/pkg_bkups/': Could not resolve host: github.com
-
-[1;38;5;7mUpdating Modules-Apps. . .[0m
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
-fatal: unable to access 'https://github.com/msifland/Modules-Apps.git/': Could not resolve host: github.com
-
-[1;38;5;7mDowloading usb_pkg_bkups. . .[0m
-No local changes to save
-fatal: unable to access 'https://github.com/msifland/usb_pkg_bkups.git/': Could not resolve host: github.com
-fatal: unable to access 'https://github.com/msifland/usb_pkg_bkups.git/': Could not resolve host: github.com
-
-[1;38;5;98mAll is good.[0m
-
-[1;38;5;42m
-03-13-2023 07:01:29 AM
-[1;38;5;42mIt took 1 minutes 27 seconds to run whole process.[0m
-[0m
+[1;38;5;239mUpdating scripts. . .[0m
