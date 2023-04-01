@@ -1,4 +1,4 @@
-Mon Mar 20 02:00:01 2023 -> ClamAV update process started at Mon Mar 20 02:00:01 2023
-Mon Mar 20 02:00:01 2023 -> daily.cld database is up-to-date (version: 26848, sigs: 2026691, f-level: 90, builder: raynman)
-Mon Mar 20 02:00:01 2023 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon Mar 20 02:00:01 2023 -> bytecode.cvd database is up-to-date (version: 334, sigs: 91, f-level: 90, builder: anvilleg)
+Mon Mar 27 02:00:01 2023 -> ClamAV update process started at Mon Mar 27 02:00:01 2023
+Mon Mar 27 02:00:01 2023 -> daily.cld database is up-to-date (version: 26855, sigs: 2027340, f-level: 90, builder: raynman)
+Mon Mar 27 02:00:01 2023 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Mon Mar 27 02:00:01 2023 -> bytecode.cvd database is up-to-date (version: 334, sigs: 91, f-level: 90, builder: anvilleg)
