@@ -2,41 +2,14 @@
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
 From https://github.com/akinomyoga/ble.sh
-   2eadcd5b..082f962e  master      -> origin/master
-   1dc5938c..3f4d8666  v0.1-master -> origin/v0.1-master
-   8f0acf3d..1118c803  v0.2-master -> origin/v0.2-master
-   4f14f7a9..9da6774f  v0.3-master -> origin/v0.3-master
- * [new tag]           v0.1.15     -> v0.1.15
- * [new tag]           v0.2.7      -> v0.2.7
- * [new tag]           v0.3.4      -> v0.3.4
- * [new tag]           v0.4.0-devel3 -> v0.4.0-devel3
-Fetching submodule contrib
-From https://github.com/akinomyoga/blesh-contrib
-   306c165..9700c79  master     -> origin/master
-Updating 2eadcd5b..082f962e
+   082f962e..09f5cec2  master     -> origin/master
+Updating 082f962e..09f5cec2
 Fast-forward
- GNUmakefile          |    10 +-
- LICENSE.md           |     2 +-
- README-ja_JP.md      |    43 +-
- README.md            |    26 +-
- ble.pp               |     8 +-
- contrib              |     2 +-
- docs/ChangeLog.md    |    26 +-
- docs/Release.md      |   559 ++
- keymap/vi.sh         |     2 +-
- keymap/vi_test.sh    |     4 +-
- lib/core-complete.sh |     5 +-
- lib/core-syntax.sh   |    10 +-
- lib/util.bgproc.sh   |    63 +-
- make_command.sh      |   130 +-
- memo/done.txt        | 26288 +++++++++++++++++++++++++++++++++++++++++++++++++
- note.txt             | 26263 +-----------------------------------------------
- src/color.sh         |     2 +-
- src/edit.sh          |     1 +
- src/history.sh       |     6 +-
- src/util.sh          |    88 +-
- 20 files changed, 27271 insertions(+), 26267 deletions(-)
-Submodule path 'contrib': checked out '9700c79eb97b3b5f0f06f7019097dc9d3ee93404'
+ docs/ChangeLog.md |  4 ++++
+ lib/test-util.sh  | 24 +++++++++++++++++++++---
+ note.txt          | 33 +++++++++++++++++++++++++++++++++
+ src/util.sh       | 43 ++++++++++++++++++++++++++-----------------
+ 4 files changed, 84 insertions(+), 20 deletions(-)
 DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
   FULLVER=0.4.0-devel4 \
   BUILD_GIT_VERSION="git version 2.40.0" \
@@ -44,25 +17,7 @@ DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/
   BUILD_GAWK_VERSION="GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)" \
   /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
 bash make_command.sh install  "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
-cp -p keymap/vi.sh out/keymap/vi.sh
-bash make_command.sh install  "out/keymap/vi.sh" "/home/msifland/.local/share/blesh/keymap/vi.sh"
-cp -p keymap/vi_test.sh out/keymap/vi_test.sh
-bash make_command.sh install  "out/keymap/vi_test.sh" "/home/msifland/.local/share/blesh/keymap/vi_test.sh"
-cp -p lib/core-complete.sh out/lib/core-complete.sh
-bash make_command.sh install  "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
-/usr/bin/gawk -f make/mwg_pp.awk lib/core-syntax.sh > out/lib/core-syntax.sh
-bash make_command.sh install  "out/lib/core-syntax.sh" "/home/msifland/.local/share/blesh/lib/core-syntax.sh"
-cp -p lib/util.bgproc.sh out/lib/util.bgproc.sh
-bash make_command.sh install  "out/lib/util.bgproc.sh" "/home/msifland/.local/share/blesh/lib/util.bgproc.sh"
-cp -p contrib/prompt-defer.bash out/contrib/prompt-defer.bash
-bash make_command.sh install  "out/contrib/prompt-defer.bash" "/home/msifland/.local/share/blesh/contrib/prompt-defer.bash"
-cp -p README.md out/doc/README.md
-bash make_command.sh install "out/doc/README.md" "/home/msifland/.local/share/blesh/doc/README.md"
-cp -p README-ja_JP.md out/doc/README-ja_JP.md
-bash make_command.sh install "out/doc/README-ja_JP.md" "/home/msifland/.local/share/blesh/doc/README-ja_JP.md"
-cp -p LICENSE.md out/doc/LICENSE.md
-bash make_command.sh install "out/doc/LICENSE.md" "/home/msifland/.local/share/blesh/doc/LICENSE.md"
+cp -p lib/test-util.sh out/lib/test-util.sh
+bash make_command.sh install  "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
 cp -p docs/ChangeLog.md out/doc/ChangeLog.md
 bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
-cp -p docs/Release.md out/doc/Release.md
-bash make_command.sh install "out/doc/Release.md" "/home/msifland/.local/share/blesh/doc/Release.md"
