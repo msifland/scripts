@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;155m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;38m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;155m
+[1;38;5;38m
 Removing old build logs. . .
 
 [0m
-[1;38;5;155m
+[1;38;5;38m
 Start Time:
-Date: 04-17-23
+Date: 04-24-23
 Time: 02:15:16 AM
 
 Scanning: 
@@ -35,6 +35,10 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -83,7 +87,7 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 6585000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 6550000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -113,9 +117,9 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 6385000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 6410000 opcodes
 LibClamAV Warning: Bytecode 'BC.Legacy.Exploit.Andr-2.{Extra_Field,Master_Key}' (id: 35) failed to run: Exceeded time limit
-LibClamAV Warning: Bytecode run timed out in interpreter after 6550000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 6590000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
