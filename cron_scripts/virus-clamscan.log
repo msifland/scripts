@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;6m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;110m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;6m
+[1;38;5;110m
 Removing old build logs. . .
 
 [0m
-[1;38;5;6m
+[1;38;5;110m
 Start Time:
-Date: 06-05-23
-Time: 02:15:16 AM
+Date: 06-12-23
+Time: 02:15:17 AM
 
 Scanning: 
 /
@@ -87,7 +87,7 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 5970000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 5985000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -117,5 +117,5 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 5865000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 5855000 opcodes
 LibClamAV Warning: Bytecode 'BC.Legacy.Exploit.Andr-2.{Extra_Field,Master_Key}' (id: 35) failed to run: Exceeded time limit
