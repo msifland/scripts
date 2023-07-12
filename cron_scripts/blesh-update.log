@@ -1,4 +1,27 @@
 
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
+<<<<<<< HEAD
 fatal: unable to access 'https://github.com/akinomyoga/ble.sh.git/': Could not resolve host: github.com
+=======
+From https://github.com/akinomyoga/ble.sh
+   082f962e..09f5cec2  master     -> origin/master
+Updating 082f962e..09f5cec2
+Fast-forward
+ docs/ChangeLog.md |  4 ++++
+ lib/test-util.sh  | 24 +++++++++++++++++++++---
+ note.txt          | 33 +++++++++++++++++++++++++++++++++
+ src/util.sh       | 43 ++++++++++++++++++++++++++-----------------
+ 4 files changed, 84 insertions(+), 20 deletions(-)
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
+  FULLVER=0.4.0-devel4 \
+  BUILD_GIT_VERSION="git version 2.40.0" \
+  BUILD_MAKE_VERSION="GNU Make 4.3" \
+  BUILD_GAWK_VERSION="GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.0, GNU MP 6.2.1)" \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install  "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp -p lib/test-util.sh out/lib/test-util.sh
+bash make_command.sh install  "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
+cp -p docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
+>>>>>>> refs/remotes/origin/master

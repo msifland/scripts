@@ -1,7 +1,11 @@
 
 Downloading screenfetch latest and updating screenfetch to reflect my custom colors. . .
 
+<<<<<<< HEAD
 fatal: unable to access 'https://github.com/KittyKatt/screenFetch/': Could not resolve host: github.com
+=======
+Already up to date.
+>>>>>>> refs/remotes/origin/master
 [sudo] password for msifland: Updating now. . .
 
 All is good.

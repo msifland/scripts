@@ -1,4 +1,8 @@
 Last Restart:
+<<<<<<< HEAD
 Date: 07-08-23
+=======
+Date: 04-15-23
+>>>>>>> refs/remotes/origin/master
 Time: 01:00:01 AM
 Rebooting now.....
