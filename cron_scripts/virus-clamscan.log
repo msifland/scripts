@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;110m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;128m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;110m
+[1;38;5;128m
 Removing old build logs. . .
 
 [0m
-[1;38;5;110m
+[1;38;5;128m
 Start Time:
-Date: 06-12-23
+Date: 07-10-23
 Time: 02:15:17 AM
 
 Scanning: 
@@ -87,7 +87,7 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 5985000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 5875000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -117,5 +117,77 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 5855000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 5745000 opcodes
 LibClamAV Warning: Bytecode 'BC.Legacy.Exploit.Andr-2.{Extra_Field,Master_Key}' (id: 35) failed to run: Exceeded time limit
+LibClamAV Warning: Bytecode run timed out in interpreter after 5880000 opcodes
+LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+LibClamAV Warning: PNG: Unexpected early end-of-file.
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8670022
+Engine version: 1.0.1
+Scanned directories: 86346
+Scanned files: 837580
+Infected files: 0
+Total errors: 473
+Data scanned: 83405.00 MB
+Data read: 139541.76 MB (ratio 0.60:1)
+Time: 26190.110 sec (436 m 30 s)
+Start Date: 2023:07:10 02:15:25
+End Date:   2023:07:10 09:31:55
+
+
+End Time:
+Date: 07-10-23
+Time: 09:31:55 AM
+It took 7 hours 16 minutes 38 seconds to scan your system.
+
+
+[1;38;5;128m
+You can edit included and excluded files and folders by typing edit-virus-clamscan
+
+[0m
