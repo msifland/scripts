@@ -1,841 +1,8 @@
 [sudo] password for msifland: 
 Purging old kernels. Here are the kernels on your system, newest first: 
-<<<<<<< HEAD
 1. linux-image-6.2.11-msi
 2. linux-image-6.2.10-msi
 3. linux-image-6.1.0-5-amd64
 -----> Currently running 6.2.11-msi
 
 There are 3 kernels on your system, need more than 6 to auto-remove. Exiting now. . .
-=======
-1. linux-image-6.2.10-msi
-2. linux-image-6.2.9-msi
-3. linux-image-6.2.8-msi
-4. linux-image-6.2.7-msi
-5. linux-image-6.2.3-msi
-6. linux-image-6.2.2-msi
-7. linux-image-6.2.0-msi
-8. linux-image-6.1.11-msi
-9. linux-image-6.1.0-5-amd64
------> Currently running 6.2.10-msi
-
-Too many kernels on your system, removing some now. . .
-
-Kernels set to remove: 
-2. linux-image-6.2.9-msi
-3. linux-image-6.2.8-msi
-4. linux-image-6.2.7-msi
-5. linux-image-6.2.3-msi
-6. linux-image-6.2.2-msi
-7. linux-image-6.2.0-msi
-8. linux-image-6.1.11-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.2.9-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 577 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 677705 files and directories currently installed.)
-Removing linux-image-6.2.9-msi (6.2.9-msi-1) ...
-dkms: removing: nvidia-tesla-470 470.161.03 (6.2.9-msi) (x86_64)
-Module nvidia-tesla-470-470.161.03 for kernel 6.2.9-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia-tesla-470.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-modeset.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-drm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-uvm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-peermem.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod..........
-dkms: removing: virtualbox 7.0.6 (6.2.9-msi) (x86_64)
-Module virtualbox-7.0.6 for kernel 6.2.9-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.9-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod...
-update-initramfs: Deleting /boot/initrd.img-6.2.9-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.2.10-msi
-Found initrd image: /boot/initrd.img-6.2.10-msi
-Found linux image: /boot/vmlinuz-6.2.8-msi
-Found initrd image: /boot/initrd.img-6.2.8-msi
-Found linux image: /boot/vmlinuz-6.2.7-msi
-Found initrd image: /boot/initrd.img-6.2.7-msi
-Found linux image: /boot/vmlinuz-6.2.3-msi
-Found initrd image: /boot/initrd.img-6.2.3-msi
-Found linux image: /boot/vmlinuz-6.2.2-msi
-Found initrd image: /boot/initrd.img-6.2.2-msi
-Found linux image: /boot/vmlinuz-6.2.0-msi
-Found initrd image: /boot/initrd.img-6.2.0-msi
-Found linux image: /boot/vmlinuz-6.1.11-msi
-Found initrd image: /boot/initrd.img-6.1.11-msi
-Found linux image: /boot/vmlinuz-6.1.0-5-amd64
-Found initrd image: /boot/initrd.img-6.1.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 672790 files and directories currently installed.)
-Purging configuration files for linux-image-6.2.9-msi (6.2.9-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.2.9-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 53.3 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 672790 files and directories currently installed.)
-Removing linux-headers-6.2.9-msi (6.2.9-msi-1) ...
-dpkg: warning: while removing linux-headers-6.2.9-msi, directory '/lib/modules/6.2.9-msi' not empty so not removed
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.2.9-msi
-E: Couldn't find any package by glob 'linux-modules-6.2.9-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.2.9-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.2.9-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.2.9-msi
-
-	No file /boot/initrd.img-6.2.9-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.2.8-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 567 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 659057 files and directories currently installed.)
-Removing linux-image-6.2.8-msi (6.2.8-msi-1) ...
-dkms: removing: nvidia-tesla-470 470.161.03 (6.2.8-msi) (x86_64)
-Module nvidia-tesla-470-470.161.03 for kernel 6.2.8-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia-tesla-470.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-modeset.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-drm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-uvm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-peermem.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod..........
-dkms: removing: virtualbox 7.0.6 (6.2.8-msi) (x86_64)
-Module virtualbox-7.0.6 for kernel 6.2.8-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.8-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod...
-update-initramfs: Deleting /boot/initrd.img-6.2.8-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.2.10-msi
-Found initrd image: /boot/initrd.img-6.2.10-msi
-Found linux image: /boot/vmlinuz-6.2.7-msi
-Found initrd image: /boot/initrd.img-6.2.7-msi
-Found linux image: /boot/vmlinuz-6.2.3-msi
-Found initrd image: /boot/initrd.img-6.2.3-msi
-Found linux image: /boot/vmlinuz-6.2.2-msi
-Found initrd image: /boot/initrd.img-6.2.2-msi
-Found linux image: /boot/vmlinuz-6.2.0-msi
-Found initrd image: /boot/initrd.img-6.2.0-msi
-Found linux image: /boot/vmlinuz-6.1.11-msi
-Found initrd image: /boot/initrd.img-6.1.11-msi
-Found linux image: /boot/vmlinuz-6.1.0-5-amd64
-Found initrd image: /boot/initrd.img-6.1.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 654142 files and directories currently installed.)
-Purging configuration files for linux-image-6.2.8-msi (6.2.8-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.2.8-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 53.3 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 654142 files and directories currently installed.)
-Removing linux-headers-6.2.8-msi (6.2.8-msi-1) ...
-dpkg: warning: while removing linux-headers-6.2.8-msi, directory '/lib/modules/6.2.8-msi' not empty so not removed
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.2.8-msi
-E: Couldn't find any package by glob 'linux-modules-6.2.8-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.2.8-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.2.8-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.2.8-msi
-
-	No file /boot/initrd.img-6.2.8-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.2.7-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 572 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 640409 files and directories currently installed.)
-Removing linux-image-6.2.7-msi (6.2.7-msi-1) ...
-dkms: removing: nvidia-tesla-470 470.161.03 (6.2.7-msi) (x86_64)
-Module nvidia-tesla-470-470.161.03 for kernel 6.2.7-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia-tesla-470.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-modeset.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-drm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-uvm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-peermem.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod.........
-dkms: removing: virtualbox 7.0.6 (6.2.7-msi) (x86_64)
-Module virtualbox-7.0.6 for kernel 6.2.7-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.7-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod...
-update-initramfs: Deleting /boot/initrd.img-6.2.7-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.2.10-msi
-Found initrd image: /boot/initrd.img-6.2.10-msi
-Found linux image: /boot/vmlinuz-6.2.3-msi
-Found initrd image: /boot/initrd.img-6.2.3-msi
-Found linux image: /boot/vmlinuz-6.2.2-msi
-Found initrd image: /boot/initrd.img-6.2.2-msi
-Found linux image: /boot/vmlinuz-6.2.0-msi
-Found initrd image: /boot/initrd.img-6.2.0-msi
-Found linux image: /boot/vmlinuz-6.1.11-msi
-Found initrd image: /boot/initrd.img-6.1.11-msi
-Found linux image: /boot/vmlinuz-6.1.0-5-amd64
-Found initrd image: /boot/initrd.img-6.1.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 635494 files and directories currently installed.)
-Purging configuration files for linux-image-6.2.7-msi (6.2.7-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.2.7-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 53.3 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 635494 files and directories currently installed.)
-Removing linux-headers-6.2.7-msi (6.2.7-msi-1) ...
-dpkg: warning: while removing linux-headers-6.2.7-msi, directory '/lib/modules/6.2.7-msi' not empty so not removed
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.2.7-msi
-E: Couldn't find any package by glob 'linux-modules-6.2.7-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.2.7-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.2.7-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.2.7-msi
-
-	No file /boot/initrd.img-6.2.7-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.2.3-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 569 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 621761 files and directories currently installed.)
-Removing linux-image-6.2.3-msi (6.2.3-msi-1) ...
-dkms: removing: nvidia-tesla-470 470.161.03 (6.2.3-msi) (x86_64)
-Module nvidia-tesla-470-470.161.03 for kernel 6.2.3-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia-tesla-470.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-modeset.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-drm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-uvm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-peermem.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod...........
-dkms: removing: virtualbox 7.0.6 (6.2.3-msi) (x86_64)
-Module virtualbox-7.0.6 for kernel 6.2.3-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.3-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod...
-update-initramfs: Deleting /boot/initrd.img-6.2.3-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.2.10-msi
-Found initrd image: /boot/initrd.img-6.2.10-msi
-Found linux image: /boot/vmlinuz-6.2.2-msi
-Found initrd image: /boot/initrd.img-6.2.2-msi
-Found linux image: /boot/vmlinuz-6.2.0-msi
-Found initrd image: /boot/initrd.img-6.2.0-msi
-Found linux image: /boot/vmlinuz-6.1.11-msi
-Found initrd image: /boot/initrd.img-6.1.11-msi
-Found linux image: /boot/vmlinuz-6.1.0-5-amd64
-Found initrd image: /boot/initrd.img-6.1.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 616846 files and directories currently installed.)
-Purging configuration files for linux-image-6.2.3-msi (6.2.3-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.2.3-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 53.3 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 616846 files and directories currently installed.)
-Removing linux-headers-6.2.3-msi (6.2.3-msi-1) ...
-dpkg: warning: while removing linux-headers-6.2.3-msi, directory '/lib/modules/6.2.3-msi' not empty so not removed
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.2.3-msi
-E: Couldn't find any package by glob 'linux-modules-6.2.3-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.2.3-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.2.3-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.2.3-msi
-
-	No file /boot/initrd.img-6.2.3-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.2.2-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 580 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 603113 files and directories currently installed.)
-Removing linux-image-6.2.2-msi (6.2.2-msi-1) ...
-dkms: removing: nvidia-tesla-470 470.161.03 (6.2.2-msi) (x86_64)
-Module nvidia-tesla-470-470.161.03 for kernel 6.2.2-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-nvidia-tesla-470.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-modeset.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-drm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-uvm.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-nvidia-tesla-470-peermem.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod.........
-dkms: removing: virtualbox 7.0.6 (6.2.2-msi) (x86_64)
-Module virtualbox-7.0.6 for kernel 6.2.2-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.2-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod...
-update-initramfs: Deleting /boot/initrd.img-6.2.2-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.2.10-msi
-Found initrd image: /boot/initrd.img-6.2.10-msi
-Found linux image: /boot/vmlinuz-6.2.0-msi
-Found initrd image: /boot/initrd.img-6.2.0-msi
-Found linux image: /boot/vmlinuz-6.1.11-msi
-Found initrd image: /boot/initrd.img-6.1.11-msi
-Found linux image: /boot/vmlinuz-6.1.0-5-amd64
-Found initrd image: /boot/initrd.img-6.1.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 598198 files and directories currently installed.)
-Purging configuration files for linux-image-6.2.2-msi (6.2.2-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.2.2-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 53.3 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 598198 files and directories currently installed.)
-Removing linux-headers-6.2.2-msi (6.2.2-msi-1) ...
-dpkg: warning: while removing linux-headers-6.2.2-msi, directory '/lib/modules/6.2.2-msi' not empty so not removed
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.2.2-msi
-E: Couldn't find any package by glob 'linux-modules-6.2.2-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.2.2-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.2.2-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.2.2-msi
-
-	No file /boot/initrd.img-6.2.2-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.2.0-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 565 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 584465 files and directories currently installed.)
-Removing linux-image-6.2.0-msi (6.2.0-msi-1) ...
-dkms: removing: virtualbox 7.0.6 (6.2.0-msi) (x86_64)
-Module virtualbox-7.0.6 for kernel 6.2.0-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.0-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.0-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.2.0-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod..........
-update-initramfs: Deleting /boot/initrd.img-6.2.0-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.2.10-msi
-Found initrd image: /boot/initrd.img-6.2.10-msi
-Found linux image: /boot/vmlinuz-6.1.11-msi
-Found initrd image: /boot/initrd.img-6.1.11-msi
-Found linux image: /boot/vmlinuz-6.1.0-5-amd64
-Found initrd image: /boot/initrd.img-6.1.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 579550 files and directories currently installed.)
-Purging configuration files for linux-image-6.2.0-msi (6.2.0-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.2.0-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 53.3 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 579550 files and directories currently installed.)
-Removing linux-headers-6.2.0-msi (6.2.0-msi-1) ...
-dpkg: warning: while removing linux-headers-6.2.0-msi, directory '/lib/modules/6.2.0-msi' not empty so not removed
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-E: Unable to locate package linux-modules-6.2.0-msi
-E: Couldn't find any package by glob 'linux-modules-6.2.0-msi'
-
-Errors while trying to remove. Trying to remove manually. . .
-sudo rm -rf /lib/modules/6.2.0-msi
-sudo rm -rf /usr/lib/debug/lib/modules/6.2.0-msi
-
-Succeeded removal.
-
-Removing /boot/initrd.img-6.2.0-msi
-
-	No file /boot/initrd.img-6.2.0-msi
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-image-6.1.11-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 519 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 565817 files and directories currently installed.)
-Removing linux-image-6.1.11-msi (6.1.11-msi-1) ...
-dkms: removing: virtualbox 7.0.6 (6.1.11-msi) (x86_64)
-Module virtualbox-7.0.6 for kernel 6.1.11-msi (x86_64).
-Before uninstall, this module version was ACTIVE on this kernel.
-
-vboxdrv.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.1.11-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetadp.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.1.11-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-
-vboxnetflt.ko:
- - Uninstallation
-   - Deleting from: /lib/modules/6.1.11-msi/updates/dkms/
- - Original module
-   - No original module was found for this module on this kernel.
-   - Use the dkms install command to reinstall any previous module version.
-depmod...........
-update-initramfs: Deleting /boot/initrd.img-6.1.11-msi
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-6.2.10-msi
-Found initrd image: /boot/initrd.img-6.2.10-msi
-Found linux image: /boot/vmlinuz-6.1.0-5-amd64
-Found initrd image: /boot/initrd.img-6.1.0-5-amd64
-Warning: os-prober will be executed to detect other bootable partitions.
-Its output will be used to detect bootable binaries on them and create new boot entries.
-done
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 560911 files and directories currently installed.)
-Purging configuration files for linux-image-6.1.11-msi (6.1.11-msi-1) ...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  linux-headers-6.1.11-msi*
-0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
-After this operation, 52.7 MB disk space will be freed.
-Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 560911 files and directories currently installed.)
-Removing linux-headers-6.1.11-msi (6.1.11-msi-1) ...
-
-No modules files found. 6.1.11-msi
-
-Removing /boot/initrd.img-6.1.11-msi
-
-	No file /boot/initrd.img-6.1.11-msi
-
-Remove dbg kernels, not needed on your system. . .
-(Reading database ... 547230 files and directories currently installed.)
-Removing linux-image-6.2.0-msi-dbg (6.2.0-msi-1) ...
-(Reading database ... 542327 files and directories currently installed.)
-Removing linux-image-6.2.10-msi-dbg (6.2.10-msi-1) ...
-(Reading database ... 537424 files and directories currently installed.)
-Removing linux-image-6.2.2-msi-dbg (6.2.2-msi-1) ...
-(Reading database ... 532521 files and directories currently installed.)
-Removing linux-image-6.2.3-msi-dbg (6.2.3-msi-1) ...
-(Reading database ... 527618 files and directories currently installed.)
-Removing linux-image-6.2.7-msi-dbg (6.2.7-msi-1) ...
-(Reading database ... 522715 files and directories currently installed.)
-Removing linux-image-6.2.8-msi-dbg (6.2.8-msi-1) ...
-(Reading database ... 517812 files and directories currently installed.)
-Removing linux-image-6.2.9-msi-dbg (6.2.9-msi-1) ...
-
-All is good.
-
-
-Showing remaining kernles now on your system. . .
-linux-image-6.2.10-msi
-linux-image-6.1.0-5-amd64
------> Currently running 6.2.10-msi
-
->>>>>>> refs/remotes/origin/master

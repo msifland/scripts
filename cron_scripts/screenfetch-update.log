@@ -2,11 +2,11 @@
 Downloading screenfetch latest and updating screenfetch to reflect my custom colors. . .
 
 From https://github.com/KittyKatt/screenFetch
-   fb602f8..2f12dde  master     -> origin/master
-Updating fb602f8..2f12dde
+   6cdbba9..b56b044  master     -> origin/master
+Updating 6cdbba9..b56b044
 Fast-forward
- screenfetch-dev | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ screenfetch-dev | 39 +++++++++++++++++++++++++++++++++------
+ 1 file changed, 33 insertions(+), 6 deletions(-)
 [sudo] password for msifland: Updating now. . .
 
 All is good.
