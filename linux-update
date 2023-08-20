@@ -12,7 +12,7 @@ echo "Updating $(uname --all)${ILRESTORE}"
 sleep 1
 
 echo
-read -p -t30 "${ILCOLOR4}Would you like to run the script 'my-bakcup' first? " mb
+read -t 30 -p "${ILCOLOR4}Would you like to run the script 'my-bakcup' first? " mb
 if [[ "$mb" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "${ILCOLOR4}Creating backup of your files first by running scrip 'my-backup'$(ILRESTORE)"
 	$HOME/scripts/my-backup
