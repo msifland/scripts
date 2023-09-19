@@ -46,7 +46,7 @@ function start(){
 			sudo wipefs --all --force $DEVBLOCK
 			# Format to vfat or ext4 and lable and show progress.
 			echo
-			read -p "What filesystem would you like to use(ext4, ext2, vfat, etc.)? " TYP
+			read -p "What filesystem type would you like to format to(ext4, ext2, vfat, etc.)? " TYP
 			sudo mkfs -t "$TYP" -L "$LBL" $DEVBLOCK | sudo pv -trebI
 			sudo hdparm -r0 $DEVBLOCK
 			echo
