@@ -9,7 +9,6 @@ function version_gt() {
 }
 
 WORK_DIR="$HOME/tmp/kernel_build"
-GIT_DIR="$HOME/tmp/kernel_build/linux"
 STOR_DIR="$HOME/tmp/kernel_build/kernel_storage"
 
 # Change to dir and remove any old files, create variables and files.
@@ -24,9 +23,6 @@ fi
 if [[ ! -d $WORK_DIR ]]; then
 	mkdir "$WORK_DIR"
 fi
-if [[ ! -d $GIT_DIR ]]; then
-	mkdir "$GIT_DIR"
-fi
 if [[ ! -d $STOR_DIR ]]; then
 	mkdir $STOR_DIR
 fi
@@ -37,8 +33,7 @@ rm -rf $WORK_DIR/*.deb.*
 rm -rf $WORK_DIR/linux-upstream*.*
 echo
 
-KERN_SOURCE="https://git.kernel.org/pub/scm/linux/kernel/
-git/stable/linux.git"
+KERN_SOURCE="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git"
 
 # Get kernel name without extra numbers at the end. The awk section here is nice in that everything after the '-' is deleted.
 RNNING=$(uname -r | awk -F '\\-' '{print $1}')
@@ -62,12 +57,12 @@ if version_gt "$GET_VER" "$RNNING"; then
 	echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 	echo 'spike' | sudo -S apt build-dep -y linux
 
-	if [[ ! -d $GIT_DIR/.git ]]; then
-		cd $GIT_DIR
+	if [[ ! -d $WORK_DIR/linux ]]; then
+		cd $WORK_DIR
 		git clone $KERN_SOURCE
 		git switch linux-rolling-stable
 	else
-		cd $GIT_DIR
+		cd $WORK_DIR/linux
 		git switch linux-rolling-stable
 		git stash
 		git fetch
