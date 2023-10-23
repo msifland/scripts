@@ -4,6 +4,21 @@
 # Updating git repos first
 
 clear
+echo "!!!!!IMPORTANT!!!!! PLEASE READ NEXT INSTRUCTIONS!!!"
+sleep 3
+echo "Be sure to run 'sudo apt update' MANUALLY,  before continuing this script. This is due to having to accept and apt sources.list distro changes."
+sleep 5
+read -p "Have you don this??? " have_not
+if [[ $have_not =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		echo
+		echo "${ILCOLOR3}Ok, running rest of script. . .${ILRESTORE}"
+	else
+		echo
+		echo "${ILCOLOR3}Okay, not running script and exitng now.${ILRESTORE}"
+		sleep 1
+		exit 1
+	fi
+
 echo "${ILCOLOR4}           ###########    Updating your USB system now   ###########${ILRESTORE}"
 echo -e ${ILCOLOR2}
 echo $(date +%m-%d-%Y) $(date +"%r")
