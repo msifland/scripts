@@ -20,7 +20,7 @@ echo
 echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 
 # Run script
-sudo apt update -y
+sudo apt update
 sleep 1
 
 echo
