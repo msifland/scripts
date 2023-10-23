@@ -109,6 +109,7 @@ for j in $FOR_REM; do
 	REM_HDRS1=$(echo $REM1)
 	k_file=$(echo $REM_HDRS1 | sed 's:linux-image:vmlinuz:' | sed 's:unsigned-::g')
 	if [[ -f /boot/"$k_file" ]]; then
+		echo
 		echo "y" | apt purge $REM_HDRS1
 	else
 		echo
@@ -119,6 +120,7 @@ for j in $FOR_REM; do
 	# Headers all and specific
 	REM_HDRS2=$(echo $REM2)
 	if ls /usr/src/$REM_HDRS2 > /dev/null 2>&1; then
+		echo
 		echo "y" | apt purge $REM_HDRS2
 	else
 		echo

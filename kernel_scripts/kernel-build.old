@@ -1,0 +1,199 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# Removing old files and creating new ones.
+echo 'spike' | sudo -S -v
+# This function allows version number comparison.
+function version_gt() { 
+	test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; 
+}
+
+STOR_DIR="$HOME/tmp/kernel_storage"
+WORK_DIR="$HOME/tmp/kernel_build"
+# Change to dir and remove any old files, create variables and files.
+if [[ ! -d $HOME/tmp ]]; then
+	mkdir $HOME/tmp
+fi
+cd $HOME/tmp
+
+if [[ -d "$WORK_DIR" ]]; then
+	rm -rf "$WORK_DIR"
+fi
+
+if [[ -f *.tar.xz ]]; then
+	rm -rf *.tar.xz
+fi
+mkdir "$WORK_DIR"
+if [[ ! -d $STOR_DIR ]]; then
+	mkdir $STOR_DIR
+fi
+cd $WORK_DIR
+
+rm -fr $WORK_DIR/*.deb
+rm -rf $WORK_DIR/*.deb.*
+echo
+KERN_FILE=$WORK_DIR/KERN-FILE
+
+if [[ ! -f $KERN_FILE ]]; then
+	touch $KERN_FILE
+fi
+echo "" > $KERN_FILE
+
+# Set kernel version number to look for.
+VER="6"
+read -p "Current kernel version in script is $VER, would you like to keep it[Y/n]? " YNVER
+if [[ "$YNVER" =~ ^([yY][eE][sS]|[yY]|'')$ ]]; then	
+	echo "OK, keeping current version of $VER"
+else
+	read -p "What verion would you like to change the script to(e.g. 4, 5, etc.)? " NEWVER
+	sed -i "s:VER=\"$VER\":VER=\"$NEWVER\":g" $HOME/scripts/kernel_scripts/kernel-build
+	$HOME/scripts/kernel_scripts/kernel-build && exit
+fi
+echo
+
+# Searching website for versions available and showing the last 30. Also figured out after trial and error that the brackets had to be escaped.
+echo "${ILCOLOR2}Here are the 40 lastest available kernels from kernel.org. . .${ILRESTORE}"
+sleep 3
+
+KERN_LIST=$(wget -qO- https://www.kernel.org/pub/linux/kernel/v"$VER".x/ | grep "linux-$VER" | grep ".tar.xz" | sed -e 's:.*"linux-::' -e 's:.tar.xz.*$::' | sort -V | tail -n40)
+
+# Loop to list the kernels in the file on numbered lines and echo them on screen.
+n=0
+for i in $KERN_LIST; do
+	let n=n+1
+	echo "$n. $i" >> $KERN_FILE
+	echo "$n. $i"
+done
+
+# Get kernel name without extra numbers at the end. The awk section here is nice in that everything after the '-' is deleted.
+RNNING=$(uname -r | awk -F '\\-' '{print $1}')
+echo "${ILCOLOR2}-----> Currently running $RNNING" | pv -qL 50
+sleep 1
+
+function install_kern(){
+# Ask to select line numbers for install
+echo
+read -p "Type the line number of the kernel you want to install(Type 0 to exit): " INST
+sleep 1
+if [[ "$INST" = "0" ]]; then
+	# Remove old files.
+	if [[ -d $WORK_DIR ]]; then
+		rm -rf $WORK_DIR
+	fi
+	exit
+fi
+
+# Format for web search purposes.
+FOR_INST=$(grep "^$INST. " $KERN_FILE | sed "s:$INST. ::g")
+
+cd $WORK_DIR
+if test $FOR_INST; then
+	tm_wh_start=$(date +"%s")
+		clear
+		echo $FOR_INST
+		echo
+		sleep 1
+		# Formatting for web search.
+		echo "${ILCOLOR2}Downloding latest kernel now. . .${ILRESTORE}"
+		wget https://cdn.kernel.org/pub/linux/kernel/v"$VER".x/linux-"$FOR_INST".tar.xz 
+		echo
+
+		echo "${ILCOLOR2}Unzipping kernel and building now, this will take a while. . .${ILRESTORE}"
+		sleep 1
+		echo
+
+		echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
+		echo 'spike' | sudo -S apt build-dep -y linux
+		tar -xf linux-"$FOR_INST".tar.xz
+		cd linux-"$FOR_INST"
+		echo
+
+		CURR_STAB=$(ls /boot | grep "config" | sort -g | head -1)
+		echo "${ILCOLOR2}Copying current STABLE kernel - ${ILRESTORE}$CURR_STAB. . ."
+		cp /boot/$CURR_STAB .config
+		echo
+
+		echo "${ILCOLOR2}Append to Kernel Number for Local Version name.
+    Current running kernel:${ILRESTORE} $(uname -r)"
+		CONF_VER=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+		echo
+		echo "${ILCOLOR2}Local version from .config file:${ILRESTORE} $CONF_VER"
+		echo
+		
+		read -p "Add custom tag to kernel name. Leave blank for same as STABLE. A dash will be appended before custom version name.('Enter' for blank, or '0' to remove custom version altogether.)? " LOC_VER
+		# If using kernel .config from local machine and it already has an appended version, this captures that appended version to add to initramfs update below, otherwise modules folder name will not match kernel name.		
+		scripts/config --disable DEBUG_INFO
+
+		if [[ "$LOC_VER" != "" ]]; then
+			sed -i "/CONFIG_LOCALVERSION=/c\CONFIG_LOCALVERSION=\"-$LOC_VER\"" .config
+		fi
+		if [[ "$LOC_VER" = "0" ]]; then
+			sed -i "s:CONFIG_LOCALVERSION=.*:CONFIG_LOCALVERSION=\"\":g" .config
+		fi
+		
+		echo
+		echo "${ILCOLOR2}Removing \"CONFIG_SYSTEM_TRUSTED_KEYS=\" from .config${ILRESTORE}"
+		if grep -w "^CONFIG_SYSTEM_TRUSTED_KEYS=" .config; then
+			sed -i 's:CONFIG_SYSTEM_TRUSTED_KEYS=:#CONFIG_SYSTEM_TRUSTED_KEYS=:g' .config
+		fi
+
+		# Build, remove uneeded files, install.
+		# oldefconfig pulls current options from .config file and automatically answers new options without prompt.
+		make olddefconfig
+		make -j `getconf _NPROCESSORS_ONLN` deb-pkg
+		echo 'spike' | sudo -S make modules_install
+
+		# This variable is here before we change out of this directory, for initramfs update format below.
+		CONF_VER_WRT=$(grep 'CONFIG_LOCALVERSION="' .config | cut -d'=' -f2 | sed 's:"::g')
+
+		cd ..
+
+		echo 'spike' | sudo -S dpkg -i *.deb
+		
+		# Get .config version for next step.
+		echo 'spike' | sudo -S update-initramfs -c -t -k "$FOR_INST$CONF_VER_WRT"
+		echo 'spike' | sudo -S update-grub
+
+		sleep 1
+		# End timing process
+		tm_wh_end=$(date +"%s")
+		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
+		echo
+		echo "${ILCOLOR2}It took $(($tm_wh_diff / 3600 )) hours $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
+		sleep 1
+		
+		# This section is for if you are using nvidia drivers.
+		# Build nvidia-kernel at boot
+		#3if ! dpkg --get-selections | awk '{print $1}' | grep -wq "module-assistant"; then
+		#	echo 'spike' | sudo -S apt -y install module-assistant
+		#fi
+		#echo
+		#echo "On reboot, nvidia drivers will be built and installed." 
+		#$HOME/scripts/kernel_scripts/nvidia-build
+		echo
+		echo "Running script: get-kernel-firmware. . ."
+####		$HOME/scripts/kernel_scripts/get-kernel-firmware
+		sleep 1
+else
+	echo
+	echo "Invalid entry, try again. . ."
+	sleep 1
+	install_kern
+fi
+}
+install_kern
+# Remove old files.
+# Create kernel storage directory.
+if [[ ! -d $STOR_DIR ]]; then
+	mkdir $STOR_DIR
+fi
+# Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
+if [[ $(ls $STOR_DIR) ]]; then
+	ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
+fi
+if [[ -d $WORK_DIR ]]; then
+	if ls $WORK_DIR/*.deb > /dev/null 2>&1; then
+		cp $WORK_DIR/*.deb $STOR_DIR
+	fi
+####	rm -rf $WORK_DIR
+fi

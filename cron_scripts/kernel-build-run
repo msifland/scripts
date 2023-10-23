@@ -1,0 +1,6 @@
+#!/bin/bash
+# This script runs ****your script**** from cron. Needed to run in terminal. Put you crontab -e job as a path to this script. The 'read' at the end is to hold the window open until [ENTER] is pressed. 'read -n1' would exit by pressing any key. environment is copied from the env scripts.
+env $(cat ~/scripts/cron_scripts/env-environment) /usr/bin/mate-terminal -e "bash -c \"source ~/.bashrc; clear; $HOME/scripts/kernel_scripts/kernel-build 2>&1 | tee $HOME/scripts/cron_scripts/kernel-build.log; /usr/bin/pluma $HOME/scripts/cron_scripts/kernel-build.log\""
+
+# To keep terminal open
+#  echo; echo Press [ENTER] To Exit; read\""
