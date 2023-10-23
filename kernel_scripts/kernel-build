@@ -9,6 +9,7 @@ function version_gt() {
 }
 
 WORK_DIR="$HOME/tmp/kernel_build"
+GIT_DIR="$HOME/tmp/kernel_build/linux"
 STOR_DIR="$HOME/tmp/kernel_build/kernel_storage"
 
 # Change to dir and remove any old files, create variables and files.
@@ -23,7 +24,9 @@ fi
 if [[ ! -d $WORK_DIR ]]; then
 	mkdir "$WORK_DIR"
 fi
-
+if [[ ! -d $GIT_DIR ]]; then
+	mkdir "$GIT_DIR"
+fi
 if [[ ! -d $STOR_DIR ]]; then
 	mkdir $STOR_DIR
 fi
@@ -59,11 +62,12 @@ if version_gt "$GET_VER" "$RNNING"; then
 	echo "${ILCOLOR2}Checking dependencies. . .${ILRESTORE}"
 	echo 'spike' | sudo -S apt build-dep -y linux
 
-	if [[ ! -d $WORK_DIR/linux ]]; then
+	if [[ ! -d $GIT_DIR/.git ]]; then
+		cd $GIT_DIR
 		git clone $KERN_SOURCE
 		git switch linux-rolling-stable
 	else
-		cd linux
+		cd $GIT_DIR
 		git switch linux-rolling-stable
 		git stash
 		git fetch
