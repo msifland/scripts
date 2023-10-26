@@ -60,6 +60,7 @@ if version_gt "$GET_VER" "$RNNING"; then
 	if [[ ! -d $WORK_DIR/linux ]]; then
 		cd $WORK_DIR
 		git clone $KERN_SOURCE
+		cd $WORK_DIR/linux
 		git switch linux-rolling-stable
 	else
 		cd $WORK_DIR/linux
