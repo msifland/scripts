@@ -9,7 +9,7 @@ function version_gt() {
 }
 
 WORK_DIR="$HOME/tmp/kernel_build"
-STOR_DIR="$HOME/tmp/kernel_build/kernel_storage"
+STOR_DIR="$HOME/Dropbox/Linux/kernel_storage"
 
 # Change to dir and remove any old files, create variables and files.
 if [[ ! -d $HOME/tmp ]]; then
@@ -150,7 +150,7 @@ if [[ ! -d $STOR_DIR ]]; then
 fi
 # Error handling if directory exists but is empty. Using ls instead of [[ -f ]] for wildcards.
 if [[ $(ls $STOR_DIR) ]]; then
-	ls $STOR_DIR/* -t | tail -n +22 | xargs rm -f
+	ls $STOR_DIR/* -t | tail -n +13 | xargs rm -f
 fi
 if [[ -d $WORK_DIR ]]; then
 	if ls $WORK_DIR/*.deb > /dev/null 2>&1; then
