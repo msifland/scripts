@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;223m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;85m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;223m
+[1;38;5;85m
 Removing old build logs. . .
 
 [0m
-[1;38;5;223m
+[1;38;5;85m
 Start Time:
-Date: 10-23-23
+Date: 12-18-23
 Time: 02:15:16 AM
 
 Scanning: 
@@ -83,7 +83,7 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 7055000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 7000000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -113,9 +113,9 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
-LibClamAV Warning: Bytecode run timed out in interpreter after 6995000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 6900000 opcodes
 LibClamAV Warning: Bytecode 'BC.Legacy.Exploit.Andr-2.{Extra_Field,Master_Key}' (id: 35) failed to run: Exceeded time limit
-LibClamAV Warning: Bytecode run timed out in interpreter after 7085000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 7025000 opcodes
 LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
@@ -161,26 +161,26 @@ LibClamAV Warning: PNG: Unexpected early end-of-file.
 LibClamAV Warning: PNG: Unexpected early end-of-file.
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8676514
+Known viruses: 8680767
 Engine version: 1.0.3
-Scanned directories: 91311
-Scanned files: 1008386
+Scanned directories: 94813
+Scanned files: 1036598
 Infected files: 0
 Total errors: 541
-Data scanned: 91270.07 MB
-Data read: 149941.93 MB (ratio 0.61:1)
-Time: 25746.226 sec (429 m 6 s)
-Start Date: 2023:10:23 02:15:24
-End Date:   2023:10:23 09:24:31
+Data scanned: 94745.88 MB
+Data read: 157169.94 MB (ratio 0.60:1)
+Time: 26606.831 sec (443 m 26 s)
+Start Date: 2023:12:18 02:15:24
+End Date:   2023:12:18 09:38:51
 
 
 End Time:
-Date: 10-23-23
-Time: 09:24:31 AM
-It took 7 hours 9 minutes 15 seconds to scan your system.
+Date: 12-18-23
+Time: 09:38:51 AM
+It took 7 hours 23 minutes 35 seconds to scan your system.
 
 
-[1;38;5;223m
+[1;38;5;85m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
