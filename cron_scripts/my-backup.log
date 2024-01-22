@@ -1,10 +1,10 @@
 [sudo] password for msifland: 
 
-12-20-2023 01:30:01 AM
+01-17-2024 01:30:01 AM
 
 [1;38;5;111mRemove old backups first. . .[0m
 ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm -f
-/home/msifland/Dropbox/Linux/Backups/msifland-11-15-2023.tar.gz
+/home/msifland/Dropbox/Linux/Backups/msifland-12-13-2023.tar.gz
 
 [1;38;5;111mBacking up:[0m
 /home/msifland/Brother_Printer
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm 
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;111mTo /home/msifland/Dropbox/Linux/Backups/msifland-12-20-2023.tar.gz
+[1;38;5;111mTo /home/msifland/Dropbox/Linux/Backups/msifland-01-17-2024.tar.gz
 
 
 Excluding:[0m
@@ -75,19 +75,19 @@ tar: Removing leading `/' from hard link targets
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-12-20-2023.tar.gz from root:root to msifland:msifland. . .
-sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-12-20-2023.tar.gz
+Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-01-17-2024.tar.gz from root:root to msifland:msifland. . .
+sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-01-17-2024.tar.gz
 [1;38;5;111mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
 total 3.4G
--rw-r--r-- 1 msifland msifland 669M Nov 22 01:38 msifland-11-22-2023.tar.gz
--rw-r--r-- 1 msifland msifland 677M Nov 29 01:41 msifland-11-29-2023.tar.gz
--rw-r--r-- 1 msifland msifland 677M Dec  6 01:41 msifland-12-06-2023.tar.gz
--rw-r--r-- 1 msifland msifland 689M Dec 13 01:39 msifland-12-13-2023.tar.gz
+-rw-r--r-- 1 msifland msifland 682M Jan  3 01:43 msifland-01-03-2024.tar.gz
+-rw-r--r-- 1 msifland msifland 675M Jan 10 01:42 msifland-01-10-2024.tar.gz
+-rw-r--r-- 1 msifland msifland 675M Jan 17 01:43 msifland-01-17-2024.tar.gz
 -rw-r--r-- 1 msifland msifland 673M Dec 20 01:40 msifland-12-20-2023.tar.gz
--rw-r--r-- 1 msifland msifland 2.4K Dec 20 01:40 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 688M Dec 27 01:43 msifland-12-27-2023.tar.gz
+-rw-r--r-- 1 msifland msifland 2.4K Jan 17 01:43 my_backup_log.txt
 
 [1;38;5;111mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-12-20-2023 01:40:42 AM
-[1;38;5;111mIt took 10 minutes 41 seconds to run whole process.[0m
+01-17-2024 01:43:37 AM
+[1;38;5;111mIt took 13 minutes 36 seconds to run whole process.[0m
 
