@@ -83,14 +83,6 @@ function backup(){
 	# Remove old backups if more than 2
 	echo "${ILCOLOR2}Remove old backups first. . .${ILRESTORE}"
 	sleep 2
-<<comment
-	RMV_FLS=$(ls $DEST/* -t | sed -e '1,5d')
-	for fle in $RMV_FLS
-	do 
-		echo $fle
-		sleep .25
-	done
-comment
 	echo "ls $DEST/* -t | sed -e '1,5d' | xargs -d '\n' rm -f"
 	ls $DEST/* -t | sed -e '1,5d'
 	if [[ ! -d "$DEST" ]]; then

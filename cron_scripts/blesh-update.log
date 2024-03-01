@@ -1,4 +1,72 @@
 
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
-Already up to date.
+From https://github.com/akinomyoga/ble.sh
+   98a2ae15..ac84c153  master     -> origin/master
+Fetching submodule contrib
+From https://github.com/akinomyoga/blesh-contrib
+   cbbb136..852eece  master     -> origin/master
+Updating 98a2ae15..ac84c153
+Fast-forward
+ .github/workflows/build.yml          |   10 +-
+ .gitignore                           |    1 +
+ README-ja_JP.md                      |   64 +-
+ README.md                            |   65 +-
+ ble.pp                               |  215 +++--
+ blerc.template                       |   50 +-
+ contrib                              |    2 +-
+ docs/ChangeLog.md                    |   38 +-
+ lib/core-complete.sh                 |  281 ++++--
+ lib/core-test.sh                     |    1 +
+ lib/init-msys1.sh                    |    6 +-
+ lib/init-term.sh                     |    2 +-
+ lib/test-bash.sh                     |   44 +-
+ lib/util.bgproc.sh                   |    2 +-
+ make_command.sh                      |   21 +-
+ memo/D1779.func-source-and-lineno.sh |    2 +-
+ memo/D1956.sh                        |    4 +-
+ memo/D2165/reduced.c                 |   37 +
+ memo/D2165/reduced.sh                |   54 ++
+ memo/D2165/reduced7.sh               |    8 +
+ note.txt                             | 1752 ++++++++++++++++++++++++++++++++--
+ src/color.sh                         |   82 +-
+ src/decode.sh                        |    2 +-
+ src/edit.sh                          |  226 +++--
+ src/history.sh                       |   35 +-
+ src/util.sh                          |  616 +++++++++---
+ 26 files changed, 3177 insertions(+), 443 deletions(-)
+ create mode 100644 memo/D2165/reduced.c
+ create mode 100644 memo/D2165/reduced.sh
+ create mode 100644 memo/D2165/reduced7.sh
+Submodule path 'contrib': checked out '852eece1e099ba714e132009d9fc8f65bfe62792'
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
+  FULLVER=0.4.0-devel4 \
+  BUILD_GIT_VERSION="git version 2.43.0" \
+  BUILD_MAKE_VERSION="GNU Make 4.3" \
+  BUILD_GAWK_VERSION="GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)" \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install  "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp lib/init-term.sh out/lib/init-term.sh
+bash make_command.sh install  "out/lib/init-term.sh" "/home/msifland/.local/share/blesh/lib/init-term.sh"
+/usr/bin/gawk -f make/mwg_pp.awk lib/init-msys1.sh > out/lib/init-msys1.sh
+bash make_command.sh install  "out/lib/init-msys1.sh" "/home/msifland/.local/share/blesh/lib/init-msys1.sh"
+cp lib/core-complete.sh out/lib/core-complete.sh
+bash make_command.sh install  "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
+cp lib/core-test.sh out/lib/core-test.sh
+bash make_command.sh install  "out/lib/core-test.sh" "/home/msifland/.local/share/blesh/lib/core-test.sh"
+cp lib/test-bash.sh out/lib/test-bash.sh
+bash make_command.sh install  "out/lib/test-bash.sh" "/home/msifland/.local/share/blesh/lib/test-bash.sh"
+cp lib/util.bgproc.sh out/lib/util.bgproc.sh
+bash make_command.sh install  "out/lib/util.bgproc.sh" "/home/msifland/.local/share/blesh/lib/util.bgproc.sh"
+cp contrib/histdb.bash out/contrib/histdb.bash
+bash make_command.sh install  "out/contrib/histdb.bash" "/home/msifland/.local/share/blesh/contrib/histdb.bash"
+cp contrib/integration/fzf-git.bash out/contrib/integration/fzf-git.bash
+bash make_command.sh install  "out/contrib/integration/fzf-git.bash" "/home/msifland/.local/share/blesh/contrib/integration/fzf-git.bash"
+bash make_command.sh install  "out/contrib/fzf-git.bash" "/home/msifland/.local/share/blesh/contrib/fzf-git.bash"
+cp README.md out/doc/README.md
+bash make_command.sh install "out/doc/README.md" "/home/msifland/.local/share/blesh/doc/README.md"
+cp README-ja_JP.md out/doc/README-ja_JP.md
+bash make_command.sh install "out/doc/README-ja_JP.md" "/home/msifland/.local/share/blesh/doc/README-ja_JP.md"
+cp docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
+ble: Please run `[1m[34mstty sane(B[m' to recover the correct TTY state.
