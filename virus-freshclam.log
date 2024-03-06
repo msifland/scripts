@@ -1,7 +1,4 @@
-Mon Feb 26 02:00:02 2024 -> ClamAV update process started at Mon Feb 26 02:00:02 2024
-Mon Feb 26 02:00:02 2024 -> daily database available for update (local version: 27189, remote version: 27196)
-Mon Feb 26 02:00:04 2024 -> Testing database: '/var/lib/clamav/tmp.6fdb1fa3e9/clamav-63edb7575ed5954705662a8ec2d68492.tmp-daily.cld' ...
-Mon Feb 26 02:00:09 2024 -> Database test passed.
-Mon Feb 26 02:00:11 2024 -> daily.cld updated (version: 27196, sigs: 2054014, f-level: 90, builder: raynman)
-Mon Feb 26 02:00:11 2024 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon Feb 26 02:00:11 2024 -> bytecode.cvd database is up-to-date (version: 334, sigs: 91, f-level: 90, builder: anvilleg)
+Mon Mar  4 02:00:01 2024 -> ClamAV update process started at Mon Mar  4 02:00:01 2024
+Mon Mar  4 02:00:01 2024 -> daily.cld database is up-to-date (version: 27203, sigs: 2054194, f-level: 90, builder: raynman)
+Mon Mar  4 02:00:01 2024 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Mon Mar  4 02:00:01 2024 -> bytecode.cld database is up-to-date (version: 335, sigs: 86, f-level: 90, builder: raynman)
