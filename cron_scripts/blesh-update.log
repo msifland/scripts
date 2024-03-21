@@ -1,37 +1,4 @@
 
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
-From https://github.com/akinomyoga/ble.sh
-   ac84c153..18dd51ab  master     -> origin/master
-Updating ac84c153..18dd51ab
-Fast-forward
- README-ja_JP.md                    |   6 +-
- README.md                          |   6 +-
- ble.pp                             |   6 ++
- docs/ChangeLog.md                  |   9 ++-
- lib/core-decode.vi_nmap-rlfunc.txt |   2 +-
- lib/init-term.sh                   |   6 ++
- note.txt                           | 161 ++++++++++++++++++++++++++++++-------
- src/color.sh                       |  15 ++--
- src/edit.sh                        |   7 +-
- src/history.sh                     |   2 +-
- src/util.hook.sh                   |  14 ++--
- src/util.sh                        |  65 +++++++++++----
- 12 files changed, 226 insertions(+), 73 deletions(-)
-DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
-  FULLVER=0.4.0-devel4 \
-  BUILD_GIT_VERSION="git version 2.43.0" \
-  BUILD_MAKE_VERSION="GNU Make 4.3" \
-  BUILD_GAWK_VERSION="GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)" \
-  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
-bash make_command.sh install  "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
-cp lib/init-term.sh out/lib/init-term.sh
-bash make_command.sh install  "out/lib/init-term.sh" "/home/msifland/.local/share/blesh/lib/init-term.sh"
-cp lib/core-decode.vi_nmap-rlfunc.txt out/lib/core-decode.vi_nmap-rlfunc.txt
-bash make_command.sh install  "out/lib/core-decode.vi_nmap-rlfunc.txt" "/home/msifland/.local/share/blesh/lib/core-decode.vi_nmap-rlfunc.txt"
-cp README.md out/doc/README.md
-bash make_command.sh install "out/doc/README.md" "/home/msifland/.local/share/blesh/doc/README.md"
-cp README-ja_JP.md out/doc/README-ja_JP.md
-bash make_command.sh install "out/doc/README-ja_JP.md" "/home/msifland/.local/share/blesh/doc/README-ja_JP.md"
-cp docs/ChangeLog.md out/doc/ChangeLog.md
-bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
+Already up to date.
