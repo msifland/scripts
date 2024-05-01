@@ -1,0 +1,67 @@
+#!/bin/bash
+# This is a bash script.
+# Put your description below this line and code below that.
+# 
+echo 'spike' | sudo -S -v
+# This function allows version number comparison.
+function version_gt() { 
+	test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; 
+}
+
+WORK_DIR="$HOME/tmp/rustdesk"
+
+# Change to dir and remove any old files, create variables and files.
+if [[ ! -d $HOME/tmp ]]; then
+	mkdir $HOME/tmp
+fi
+cd $HOME/tmp
+
+APP_SOURCE="https://github.com/rustdesk/rustdesk/releases"
+RNNING=$(rustdesk --version)
+echo "${ILCOLOR2}-----> Currently running $RNNING" | pv -qL 50
+sleep 1
+
+GET=$(wget -qO- https://github.com/rustdesk/rustdesk/releases | grep -o "https.*x86_64.deb" | sed 's/.*|//' | sed '/.deb/{s/\(.*.deb\).*/\1/;q}' | sed -e 's:<a href="::' | awk -F 'download|rustdesk' '$2{print $4}' | sed 's:/::' | sed 's:/::' | sed 's/-.*//')
+
+GET_VER=$(echo $GET)
+echo
+echo "Newest version is listed in this file: $GET_VER"
+
+if version_gt "$GET_VER" "$RNNING"; then
+	FILE=$(wget -qO- https://github.com/rustdesk/rustdesk/releases | grep -o "https.*x86_64.deb" | sed 's/.*|//' | sed '/.deb/{s/\(.*.deb\).*/\1/;q}' | sed -e 's:<a href="::' | sed 's: ::')
+	echo
+	echo "Downloading new rustdesk file. . ."
+	sleep 1
+	wget $FILE
+	echo
+	echo "Now installing RustDesk. . ."
+	sleep 1
+	sudo dpkg -i rustdesk*.*
+	sleep 1
+
+	ehco
+	echo "Cleaning up files and setting up rustdesk for your desktop. . ."
+	rm -rf *rustdesk*.*
+	sudo sed -i 's/XSession=lightdm-xsession/XSession=mate.desktop/g' /var/lib/AccountsService/users/msifland
+	sleep 1
+
+	echo
+	echo "Starting RustDesk. . ."
+	sleep 1
+else
+	echo
+	echo "Rustdesk is alreday the newest version. Exiting now."
+	sleep 1
+fi
+
+if [ $? -eq 0 ]; then
+	echo
+	echo "${ILCOLOR3}All is good.${ILRESTORE}"
+else
+	echo
+	echo "${ILCOLOR1}Error detected!!!${ILRESTORE}"
+fi
+sleep 1
+sudo pkill rustdesk
+sleep 1
+$HOME/scripts/rustdesk-start

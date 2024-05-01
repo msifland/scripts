@@ -9,5 +9,5 @@ if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xdotool"; then
 	fi
 
 # Run command to search for visible(open) windows by app name and minimze.
-sleep 10
+sleep 5
 xdotool search --onlyvisible --classname --sync rustdesk windowminimize
