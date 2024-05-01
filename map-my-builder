@@ -233,11 +233,17 @@ comment
 	# Check for completed .img file and move to home/maps folder and the to Garmin device, if connected.
 	if [[ -f $HOME/maps/combine/gmapsupp.img ]]; then
 		echo
-		echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and renaming to "$MAP_NAME"_gmapsupp.img...${ILRESTORE}"
+		echo "${ILCOLOR1}Moving gmapsupp.img to completed_maps folder and to Dropbox folder, also renaming to "$MAP_NAME"_gmapsupp.img...${ILRESTORE}"
 		# Nameing and removing previous images in folder "completed_maps".
 		if [[ -f "$HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img" ]]; then
 			rm -rf $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img.old
 			mv $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img.old
+			# Checking for Dropbox folder and copying there.
+			if [[ ! -d $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps ]]; then
+				mkdir $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps
+			fi
+			rm -rf $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps/*.*
+			cp $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps/
 		fi
 		# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
 		mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img
