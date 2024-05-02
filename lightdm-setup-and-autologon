@@ -11,7 +11,20 @@ CONF="/etc/lightdm/lightdm.conf"
 
 # Script explains what it's doing.
 echo
-echo "${ILCOLOR3}Setting up auto-login and auto numlock. . .${ILRESTORE}"
+echo "${ILCOLOR3}Setting up lightdm, auto-login and auto numlock. . .${ILRESTORE}"
+sleep 1
+echo
+if dpkg --get-selections | awk '{print $1}' | grep -wq "lightdm"; then
+	sleep 1
+	echo
+	echo "Lightdm is already installed."
+else
+	sleep
+	echo
+	echo "Lightdm not installed, installing now. . ."
+	sudo apt -y install lightdm
+fi
+
 echo
 sleep 1
 echo "${ILCOLOR3}Editing file $CONF. Umcommenting and adding user file.${ILRESTORE}"
@@ -99,14 +112,10 @@ else
 		sleep 1
 	fi
 fi
+sudo systemctl enable lightdm
+sudo systemclt start lightdm
 
-# Check for errors and let user know if there were.
-if [[ $? -eq 0 ]]; then
-	echo
-	echo "All is good."
-	sleep 1
-else
-	echo
-	echo "Errors were detected. Check file manually."
-	sleep 1
-fi
+echo
+echo "Rebooting now. . ."
+sleep 5
+sudo reboot

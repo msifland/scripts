@@ -42,26 +42,15 @@ if version_gt "$GET_VER" "$RNNING"; then
 	ehco
 	echo "Cleaning up files and setting up rustdesk for your desktop. . ."
 	rm -rf *rustdesk*.*
-	sudo sed -i 's/XSession=lightdm-xsession/XSession=mate.desktop/g' /var/lib/AccountsService/users/msifland
+	#sudo sed -i 's/XSession=lightdm-xsession/XSession=mate.desktop/g' /var/lib/AccountsService/users/msifland
 	sleep 1
 
 	echo
-	echo "Starting RustDesk. . ."
+	echo "Rustdesk installed, restarting your machine. . ."
 	sleep 1
+	sudo reboot
 else
 	echo
 	echo "Rustdesk is alreday the newest version. Exiting now."
 	sleep 1
 fi
-
-if [ $? -eq 0 ]; then
-	echo
-	echo "${ILCOLOR3}All is good.${ILRESTORE}"
-else
-	echo
-	echo "${ILCOLOR1}Error detected!!!${ILRESTORE}"
-fi
-sleep 1
-sudo pkill rustdesk
-sleep 1
-$HOME/scripts/rustdesk-start
