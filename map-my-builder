@@ -238,6 +238,9 @@ comment
 		if [[ -f "$HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img" ]]; then
 			rm -rf $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img.old
 			mv $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img.old
+			# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
+			mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img
+			sleep 5
 			# Checking for Dropbox folder and copying there.
 			if [[ ! -d $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps ]]; then
 				mkdir $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps
@@ -245,9 +248,6 @@ comment
 			rm -rf $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps/*.*
 			cp $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img $HOME/Dropbox/'Saved from Web'/Custom_Garmin_Maps/
 		fi
-		# Renaming creeated image to custom named image and moving to correct directory "completed_maps".
-		mv $HOME/maps/combine/gmapsupp.img $HOME/maps/completed_maps/"$MAP_NAME"_gmapsupp.img
-		sleep 1
 
 		echo
 		echo "${ILCOLOR1}Checking for Garmin Device. . .${ILRESTORE}"
