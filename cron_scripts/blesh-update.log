@@ -1,4 +1,530 @@
 
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
-fatal: unable to access 'https://github.com/akinomyoga/ble.sh.git/': Could not resolve host: github.com
+From https://github.com/akinomyoga/ble.sh
+   61968497..b72d78a9  master     -> origin/master
+Fetching submodule contrib
+From https://github.com/akinomyoga/blesh-contrib
+   54b444c..fff3d10  master     -> origin/master
+Updating 61968497..b72d78a9
+Fast-forward
+ .gitignore                                         |   2 +
+ ble.pp                                             |   4 +-
+ contrib                                            |   2 +-
+ docs/ChangeLog.md                                  |  18 +-
+ lib/core-cmdspec.sh                                |   4 +-
+ lib/core-complete.sh                               |  29 +-
+ lib/core-syntax-def.sh                             |   2 +-
+ lib/core-syntax.sh                                 |   2 +-
+ lib/init-term.sh                                   |   4 +-
+ lib/keymap.emacs.sh                                |   2 +-
+ lib/keymap.vi.sh                                   |  58 ++-
+ lib/test-bash.sh                                   |   2 +-
+ lib/test-keymap.vi.sh                              |   4 +-
+ lib/test-util.sh                                   |   2 +-
+ make/README.md                                     |  24 +
+ .../vim-airline.ConvertAirlineThemes.sh            |  60 ++-
+ .../vim-airline.DumpAirlineThemes.vim              |   2 +-
+ make_command.sh                                    |   2 +-
+ memo/D2207.measure.sh                              | 106 +++++
+ memo/done.txt                                      |   7 +
+ note.txt                                           | 484 ++++++++++++++++++++-
+ src/benchmark.sh                                   |   2 +-
+ src/color.sh                                       |   2 +-
+ src/decode.sh                                      | 168 ++++---
+ src/def.sh                                         |   2 +-
+ src/edit.sh                                        | 158 ++++---
+ src/util.hook.sh                                   |   2 +-
+ src/util.sh                                        |  20 +-
+ 28 files changed, 981 insertions(+), 193 deletions(-)
+ rename memo/D1589-ConvertAirlineThemes.sh => make/vim-airline.ConvertAirlineThemes.sh (70%)
+ rename memo/D1589-DumpAirlineThemes.vim => make/vim-airline.DumpAirlineThemes.vim (93%)
+ create mode 100755 memo/D2207.measure.sh
+Submodule path 'contrib': checked out 'fff3d100380b8e0298ece98b3d339757501aa0f6'
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
+  FULLVER=0.4.0-devel4 \
+  BUILD_GIT_VERSION="git version 2.45.1" \
+  BUILD_MAKE_VERSION="GNU Make 4.3" \
+  BUILD_GAWK_VERSION="GNU Awk 5.2.1, API 3.2, PMA Avon 8-g1, (GNU MPFR 4.2.1, GNU MP 6.3.0)" \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install  "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp lib/keymap.emacs.sh out/lib/keymap.emacs.sh
+bash make_command.sh install  "out/lib/keymap.emacs.sh" "/home/msifland/.local/share/blesh/lib/keymap.emacs.sh"
+cp lib/keymap.vi.sh out/lib/keymap.vi.sh
+bash make_command.sh install  "out/lib/keymap.vi.sh" "/home/msifland/.local/share/blesh/lib/keymap.vi.sh"
+cp lib/init-term.sh out/lib/init-term.sh
+bash make_command.sh install  "out/lib/init-term.sh" "/home/msifland/.local/share/blesh/lib/init-term.sh"
+cp lib/core-complete.sh out/lib/core-complete.sh
+bash make_command.sh install  "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
+/usr/bin/gawk -f make/mwg_pp.awk lib/core-syntax.sh > out/lib/core-syntax.sh
+bash make_command.sh install  "out/lib/core-syntax.sh" "/home/msifland/.local/share/blesh/lib/core-syntax.sh"
+cp lib/core-cmdspec.sh out/lib/core-cmdspec.sh
+bash make_command.sh install  "out/lib/core-cmdspec.sh" "/home/msifland/.local/share/blesh/lib/core-cmdspec.sh"
+cp lib/test-bash.sh out/lib/test-bash.sh
+bash make_command.sh install  "out/lib/test-bash.sh" "/home/msifland/.local/share/blesh/lib/test-bash.sh"
+cp lib/test-util.sh out/lib/test-util.sh
+bash make_command.sh install  "out/lib/test-util.sh" "/home/msifland/.local/share/blesh/lib/test-util.sh"
+cp lib/test-keymap.vi.sh out/lib/test-keymap.vi.sh
+bash make_command.sh install  "out/lib/test-keymap.vi.sh" "/home/msifland/.local/share/blesh/lib/test-keymap.vi.sh"
+/usr/bin/gawk -f make/mwg_pp.awk lib/benchmark.ksh > out/lib/benchmark.ksh
+bash make_command.sh install  "out/lib/benchmark.ksh" "/home/msifland/.local/share/blesh/lib/benchmark.ksh"
+cp contrib/airline/alduin.bash out/contrib/airline/alduin.bash
+bash make_command.sh install  "out/contrib/airline/alduin.bash" "/home/msifland/.local/share/blesh/contrib/airline/alduin.bash"
+cp contrib/airline/angr.bash out/contrib/airline/angr.bash
+bash make_command.sh install  "out/contrib/airline/angr.bash" "/home/msifland/.local/share/blesh/contrib/airline/angr.bash"
+cp contrib/airline/apprentice.bash out/contrib/airline/apprentice.bash
+bash make_command.sh install  "out/contrib/airline/apprentice.bash" "/home/msifland/.local/share/blesh/contrib/airline/apprentice.bash"
+cp contrib/airline/ayu_dark.bash out/contrib/airline/ayu_dark.bash
+bash make_command.sh install  "out/contrib/airline/ayu_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/ayu_dark.bash"
+cp contrib/airline/ayu_light.bash out/contrib/airline/ayu_light.bash
+bash make_command.sh install  "out/contrib/airline/ayu_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/ayu_light.bash"
+cp contrib/airline/ayu_mirage.bash out/contrib/airline/ayu_mirage.bash
+bash make_command.sh install  "out/contrib/airline/ayu_mirage.bash" "/home/msifland/.local/share/blesh/contrib/airline/ayu_mirage.bash"
+cp contrib/airline/badwolf.bash out/contrib/airline/badwolf.bash
+bash make_command.sh install  "out/contrib/airline/badwolf.bash" "/home/msifland/.local/share/blesh/contrib/airline/badwolf.bash"
+cp contrib/airline/base16_3024.bash out/contrib/airline/base16_3024.bash
+bash make_command.sh install  "out/contrib/airline/base16_3024.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_3024.bash"
+cp contrib/airline/base16_adwaita.bash out/contrib/airline/base16_adwaita.bash
+bash make_command.sh install  "out/contrib/airline/base16_adwaita.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_adwaita.bash"
+cp contrib/airline/base16_apathy.bash out/contrib/airline/base16_apathy.bash
+bash make_command.sh install  "out/contrib/airline/base16_apathy.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_apathy.bash"
+cp contrib/airline/base16_ashes.bash out/contrib/airline/base16_ashes.bash
+bash make_command.sh install  "out/contrib/airline/base16_ashes.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_ashes.bash"
+cp contrib/airline/base16_atelier_cave.bash out/contrib/airline/base16_atelier_cave.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_cave.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_cave.bash"
+cp contrib/airline/base16_atelier_cave_light.bash out/contrib/airline/base16_atelier_cave_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_cave_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_cave_light.bash"
+cp contrib/airline/base16_atelier_dune.bash out/contrib/airline/base16_atelier_dune.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_dune.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_dune.bash"
+cp contrib/airline/base16_atelierdune.bash out/contrib/airline/base16_atelierdune.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelierdune.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelierdune.bash"
+cp contrib/airline/base16_atelier_dune_light.bash out/contrib/airline/base16_atelier_dune_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_dune_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_dune_light.bash"
+cp contrib/airline/base16_atelier_estuary.bash out/contrib/airline/base16_atelier_estuary.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_estuary.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_estuary.bash"
+cp contrib/airline/base16_atelier_estuary_light.bash out/contrib/airline/base16_atelier_estuary_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_estuary_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_estuary_light.bash"
+cp contrib/airline/base16_atelier_forest.bash out/contrib/airline/base16_atelier_forest.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_forest.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_forest.bash"
+cp contrib/airline/base16_atelierforest.bash out/contrib/airline/base16_atelierforest.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelierforest.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelierforest.bash"
+cp contrib/airline/base16_atelier_forest_light.bash out/contrib/airline/base16_atelier_forest_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_forest_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_forest_light.bash"
+cp contrib/airline/base16_atelier_heath.bash out/contrib/airline/base16_atelier_heath.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_heath.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_heath.bash"
+cp contrib/airline/base16_atelierheath.bash out/contrib/airline/base16_atelierheath.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelierheath.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelierheath.bash"
+cp contrib/airline/base16_atelier_heath_light.bash out/contrib/airline/base16_atelier_heath_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_heath_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_heath_light.bash"
+cp contrib/airline/base16_atelier_lakeside.bash out/contrib/airline/base16_atelier_lakeside.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_lakeside.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_lakeside.bash"
+cp contrib/airline/base16_atelierlakeside.bash out/contrib/airline/base16_atelierlakeside.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelierlakeside.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelierlakeside.bash"
+cp contrib/airline/base16_atelier_lakeside_light.bash out/contrib/airline/base16_atelier_lakeside_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_lakeside_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_lakeside_light.bash"
+cp contrib/airline/base16_atelier_plateau.bash out/contrib/airline/base16_atelier_plateau.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_plateau.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_plateau.bash"
+cp contrib/airline/base16_atelier_plateau_light.bash out/contrib/airline/base16_atelier_plateau_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_plateau_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_plateau_light.bash"
+cp contrib/airline/base16_atelier_savanna.bash out/contrib/airline/base16_atelier_savanna.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_savanna.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_savanna.bash"
+cp contrib/airline/base16_atelier_savanna_light.bash out/contrib/airline/base16_atelier_savanna_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_savanna_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_savanna_light.bash"
+cp contrib/airline/base16_atelier_seaside.bash out/contrib/airline/base16_atelier_seaside.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_seaside.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_seaside.bash"
+cp contrib/airline/base16_atelierseaside.bash out/contrib/airline/base16_atelierseaside.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelierseaside.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelierseaside.bash"
+cp contrib/airline/base16_atelier_seaside_light.bash out/contrib/airline/base16_atelier_seaside_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_seaside_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_seaside_light.bash"
+cp contrib/airline/base16_atelier_sulphurpool.bash out/contrib/airline/base16_atelier_sulphurpool.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_sulphurpool.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_sulphurpool.bash"
+cp contrib/airline/base16_atelier_sulphurpool_light.bash out/contrib/airline/base16_atelier_sulphurpool_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_atelier_sulphurpool_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atelier_sulphurpool_light.bash"
+cp contrib/airline/base16_atlas.bash out/contrib/airline/base16_atlas.bash
+bash make_command.sh install  "out/contrib/airline/base16_atlas.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_atlas.bash"
+cp contrib/airline/base16.bash out/contrib/airline/base16.bash
+bash make_command.sh install  "out/contrib/airline/base16.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16.bash"
+cp contrib/airline/base16_bespin.bash out/contrib/airline/base16_bespin.bash
+bash make_command.sh install  "out/contrib/airline/base16_bespin.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_bespin.bash"
+cp contrib/airline/base16_black_metal.bash out/contrib/airline/base16_black_metal.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal.bash"
+cp contrib/airline/base16_black_metal_bathory.bash out/contrib/airline/base16_black_metal_bathory.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_bathory.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_bathory.bash"
+cp contrib/airline/base16_black_metal_burzum.bash out/contrib/airline/base16_black_metal_burzum.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_burzum.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_burzum.bash"
+cp contrib/airline/base16_black_metal_dark_funeral.bash out/contrib/airline/base16_black_metal_dark_funeral.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_dark_funeral.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_dark_funeral.bash"
+cp contrib/airline/base16_black_metal_gorgoroth.bash out/contrib/airline/base16_black_metal_gorgoroth.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_gorgoroth.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_gorgoroth.bash"
+cp contrib/airline/base16_black_metal_immortal.bash out/contrib/airline/base16_black_metal_immortal.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_immortal.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_immortal.bash"
+cp contrib/airline/base16_black_metal_khold.bash out/contrib/airline/base16_black_metal_khold.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_khold.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_khold.bash"
+cp contrib/airline/base16_black_metal_marduk.bash out/contrib/airline/base16_black_metal_marduk.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_marduk.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_marduk.bash"
+cp contrib/airline/base16_black_metal_mayhem.bash out/contrib/airline/base16_black_metal_mayhem.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_mayhem.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_mayhem.bash"
+cp contrib/airline/base16_black_metal_nile.bash out/contrib/airline/base16_black_metal_nile.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_nile.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_nile.bash"
+cp contrib/airline/base16_black_metal_venom.bash out/contrib/airline/base16_black_metal_venom.bash
+bash make_command.sh install  "out/contrib/airline/base16_black_metal_venom.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_black_metal_venom.bash"
+cp contrib/airline/base16_brewer.bash out/contrib/airline/base16_brewer.bash
+bash make_command.sh install  "out/contrib/airline/base16_brewer.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_brewer.bash"
+cp contrib/airline/base16_bright.bash out/contrib/airline/base16_bright.bash
+bash make_command.sh install  "out/contrib/airline/base16_bright.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_bright.bash"
+cp contrib/airline/base16_brogrammer.bash out/contrib/airline/base16_brogrammer.bash
+bash make_command.sh install  "out/contrib/airline/base16_brogrammer.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_brogrammer.bash"
+cp contrib/airline/base16_brushtrees.bash out/contrib/airline/base16_brushtrees.bash
+bash make_command.sh install  "out/contrib/airline/base16_brushtrees.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_brushtrees.bash"
+cp contrib/airline/base16_brushtrees_dark.bash out/contrib/airline/base16_brushtrees_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_brushtrees_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_brushtrees_dark.bash"
+cp contrib/airline/base16_chalk.bash out/contrib/airline/base16_chalk.bash
+bash make_command.sh install  "out/contrib/airline/base16_chalk.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_chalk.bash"
+cp contrib/airline/base16_circus.bash out/contrib/airline/base16_circus.bash
+bash make_command.sh install  "out/contrib/airline/base16_circus.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_circus.bash"
+cp contrib/airline/base16_classic.bash out/contrib/airline/base16_classic.bash
+bash make_command.sh install  "out/contrib/airline/base16_classic.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_classic.bash"
+cp contrib/airline/base16_classic_dark.bash out/contrib/airline/base16_classic_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_classic_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_classic_dark.bash"
+cp contrib/airline/base16_classic_light.bash out/contrib/airline/base16_classic_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_classic_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_classic_light.bash"
+cp contrib/airline/base16_codeschool.bash out/contrib/airline/base16_codeschool.bash
+bash make_command.sh install  "out/contrib/airline/base16_codeschool.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_codeschool.bash"
+cp contrib/airline/base16color.bash out/contrib/airline/base16color.bash
+bash make_command.sh install  "out/contrib/airline/base16color.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16color.bash"
+cp contrib/airline/base16_colors.bash out/contrib/airline/base16_colors.bash
+bash make_command.sh install  "out/contrib/airline/base16_colors.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_colors.bash"
+cp contrib/airline/base16_cupcake.bash out/contrib/airline/base16_cupcake.bash
+bash make_command.sh install  "out/contrib/airline/base16_cupcake.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_cupcake.bash"
+cp contrib/airline/base16_cupertino.bash out/contrib/airline/base16_cupertino.bash
+bash make_command.sh install  "out/contrib/airline/base16_cupertino.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_cupertino.bash"
+cp contrib/airline/base16_darktooth.bash out/contrib/airline/base16_darktooth.bash
+bash make_command.sh install  "out/contrib/airline/base16_darktooth.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_darktooth.bash"
+cp contrib/airline/base16_decaf.bash out/contrib/airline/base16_decaf.bash
+bash make_command.sh install  "out/contrib/airline/base16_decaf.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_decaf.bash"
+cp contrib/airline/base16_default.bash out/contrib/airline/base16_default.bash
+bash make_command.sh install  "out/contrib/airline/base16_default.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_default.bash"
+cp contrib/airline/base16_default_dark.bash out/contrib/airline/base16_default_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_default_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_default_dark.bash"
+cp contrib/airline/base16_default_light.bash out/contrib/airline/base16_default_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_default_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_default_light.bash"
+cp contrib/airline/base16_dracula.bash out/contrib/airline/base16_dracula.bash
+bash make_command.sh install  "out/contrib/airline/base16_dracula.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_dracula.bash"
+cp contrib/airline/base16_edge_dark.bash out/contrib/airline/base16_edge_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_edge_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_edge_dark.bash"
+cp contrib/airline/base16_edge_light.bash out/contrib/airline/base16_edge_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_edge_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_edge_light.bash"
+cp contrib/airline/base16_eighties.bash out/contrib/airline/base16_eighties.bash
+bash make_command.sh install  "out/contrib/airline/base16_eighties.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_eighties.bash"
+cp contrib/airline/base16_embers.bash out/contrib/airline/base16_embers.bash
+bash make_command.sh install  "out/contrib/airline/base16_embers.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_embers.bash"
+cp contrib/airline/base16_espresso.bash out/contrib/airline/base16_espresso.bash
+bash make_command.sh install  "out/contrib/airline/base16_espresso.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_espresso.bash"
+cp contrib/airline/base16_flat.bash out/contrib/airline/base16_flat.bash
+bash make_command.sh install  "out/contrib/airline/base16_flat.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_flat.bash"
+cp contrib/airline/base16_framer.bash out/contrib/airline/base16_framer.bash
+bash make_command.sh install  "out/contrib/airline/base16_framer.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_framer.bash"
+cp contrib/airline/base16_fruit_soda.bash out/contrib/airline/base16_fruit_soda.bash
+bash make_command.sh install  "out/contrib/airline/base16_fruit_soda.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_fruit_soda.bash"
+cp contrib/airline/base16_gigavolt.bash out/contrib/airline/base16_gigavolt.bash
+bash make_command.sh install  "out/contrib/airline/base16_gigavolt.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gigavolt.bash"
+cp contrib/airline/base16_github.bash out/contrib/airline/base16_github.bash
+bash make_command.sh install  "out/contrib/airline/base16_github.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_github.bash"
+cp contrib/airline/base16_google.bash out/contrib/airline/base16_google.bash
+bash make_command.sh install  "out/contrib/airline/base16_google.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_google.bash"
+cp contrib/airline/base16_google_dark.bash out/contrib/airline/base16_google_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_google_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_google_dark.bash"
+cp contrib/airline/base16_google_light.bash out/contrib/airline/base16_google_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_google_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_google_light.bash"
+cp contrib/airline/base16_grayscale.bash out/contrib/airline/base16_grayscale.bash
+bash make_command.sh install  "out/contrib/airline/base16_grayscale.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_grayscale.bash"
+cp contrib/airline/base16_grayscale_dark.bash out/contrib/airline/base16_grayscale_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_grayscale_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_grayscale_dark.bash"
+cp contrib/airline/base16_grayscale_light.bash out/contrib/airline/base16_grayscale_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_grayscale_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_grayscale_light.bash"
+cp contrib/airline/base16_greenscreen.bash out/contrib/airline/base16_greenscreen.bash
+bash make_command.sh install  "out/contrib/airline/base16_greenscreen.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_greenscreen.bash"
+cp contrib/airline/base16_gruvbox_dark_hard.bash out/contrib/airline/base16_gruvbox_dark_hard.bash
+bash make_command.sh install  "out/contrib/airline/base16_gruvbox_dark_hard.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gruvbox_dark_hard.bash"
+cp contrib/airline/base16_gruvbox_dark_medium.bash out/contrib/airline/base16_gruvbox_dark_medium.bash
+bash make_command.sh install  "out/contrib/airline/base16_gruvbox_dark_medium.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gruvbox_dark_medium.bash"
+cp contrib/airline/base16_gruvbox_dark_pale.bash out/contrib/airline/base16_gruvbox_dark_pale.bash
+bash make_command.sh install  "out/contrib/airline/base16_gruvbox_dark_pale.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gruvbox_dark_pale.bash"
+cp contrib/airline/base16_gruvbox_dark_soft.bash out/contrib/airline/base16_gruvbox_dark_soft.bash
+bash make_command.sh install  "out/contrib/airline/base16_gruvbox_dark_soft.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gruvbox_dark_soft.bash"
+cp contrib/airline/base16_gruvbox_light_hard.bash out/contrib/airline/base16_gruvbox_light_hard.bash
+bash make_command.sh install  "out/contrib/airline/base16_gruvbox_light_hard.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gruvbox_light_hard.bash"
+cp contrib/airline/base16_gruvbox_light_medium.bash out/contrib/airline/base16_gruvbox_light_medium.bash
+bash make_command.sh install  "out/contrib/airline/base16_gruvbox_light_medium.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gruvbox_light_medium.bash"
+cp contrib/airline/base16_gruvbox_light_soft.bash out/contrib/airline/base16_gruvbox_light_soft.bash
+bash make_command.sh install  "out/contrib/airline/base16_gruvbox_light_soft.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_gruvbox_light_soft.bash"
+cp contrib/airline/base16_harmonic16.bash out/contrib/airline/base16_harmonic16.bash
+bash make_command.sh install  "out/contrib/airline/base16_harmonic16.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_harmonic16.bash"
+cp contrib/airline/base16_harmonic_dark.bash out/contrib/airline/base16_harmonic_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_harmonic_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_harmonic_dark.bash"
+cp contrib/airline/base16_harmonic_light.bash out/contrib/airline/base16_harmonic_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_harmonic_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_harmonic_light.bash"
+cp contrib/airline/base16_heetch.bash out/contrib/airline/base16_heetch.bash
+bash make_command.sh install  "out/contrib/airline/base16_heetch.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_heetch.bash"
+cp contrib/airline/base16_heetch_light.bash out/contrib/airline/base16_heetch_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_heetch_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_heetch_light.bash"
+cp contrib/airline/base16_helios.bash out/contrib/airline/base16_helios.bash
+bash make_command.sh install  "out/contrib/airline/base16_helios.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_helios.bash"
+cp contrib/airline/base16_hopscotch.bash out/contrib/airline/base16_hopscotch.bash
+bash make_command.sh install  "out/contrib/airline/base16_hopscotch.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_hopscotch.bash"
+cp contrib/airline/base16_horizon_dark.bash out/contrib/airline/base16_horizon_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_horizon_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_horizon_dark.bash"
+cp contrib/airline/base16_horizon_light.bash out/contrib/airline/base16_horizon_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_horizon_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_horizon_light.bash"
+cp contrib/airline/base16_horizon_terminal_dark.bash out/contrib/airline/base16_horizon_terminal_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_horizon_terminal_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_horizon_terminal_dark.bash"
+cp contrib/airline/base16_horizon_terminal_light.bash out/contrib/airline/base16_horizon_terminal_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_horizon_terminal_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_horizon_terminal_light.bash"
+cp contrib/airline/base16_ia_dark.bash out/contrib/airline/base16_ia_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_ia_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_ia_dark.bash"
+cp contrib/airline/base16_ia_light.bash out/contrib/airline/base16_ia_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_ia_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_ia_light.bash"
+cp contrib/airline/base16_icy.bash out/contrib/airline/base16_icy.bash
+bash make_command.sh install  "out/contrib/airline/base16_icy.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_icy.bash"
+cp contrib/airline/base16_irblack.bash out/contrib/airline/base16_irblack.bash
+bash make_command.sh install  "out/contrib/airline/base16_irblack.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_irblack.bash"
+cp contrib/airline/base16_isotope.bash out/contrib/airline/base16_isotope.bash
+bash make_command.sh install  "out/contrib/airline/base16_isotope.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_isotope.bash"
+cp contrib/airline/base16_londontube.bash out/contrib/airline/base16_londontube.bash
+bash make_command.sh install  "out/contrib/airline/base16_londontube.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_londontube.bash"
+cp contrib/airline/base16_macintosh.bash out/contrib/airline/base16_macintosh.bash
+bash make_command.sh install  "out/contrib/airline/base16_macintosh.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_macintosh.bash"
+cp contrib/airline/base16_marrakesh.bash out/contrib/airline/base16_marrakesh.bash
+bash make_command.sh install  "out/contrib/airline/base16_marrakesh.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_marrakesh.bash"
+cp contrib/airline/base16_materia.bash out/contrib/airline/base16_materia.bash
+bash make_command.sh install  "out/contrib/airline/base16_materia.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_materia.bash"
+cp contrib/airline/base16_material.bash out/contrib/airline/base16_material.bash
+bash make_command.sh install  "out/contrib/airline/base16_material.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_material.bash"
+cp contrib/airline/base16_material_darker.bash out/contrib/airline/base16_material_darker.bash
+bash make_command.sh install  "out/contrib/airline/base16_material_darker.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_material_darker.bash"
+cp contrib/airline/base16_material_lighter.bash out/contrib/airline/base16_material_lighter.bash
+bash make_command.sh install  "out/contrib/airline/base16_material_lighter.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_material_lighter.bash"
+cp contrib/airline/base16_material_palenight.bash out/contrib/airline/base16_material_palenight.bash
+bash make_command.sh install  "out/contrib/airline/base16_material_palenight.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_material_palenight.bash"
+cp contrib/airline/base16_material_vivid.bash out/contrib/airline/base16_material_vivid.bash
+bash make_command.sh install  "out/contrib/airline/base16_material_vivid.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_material_vivid.bash"
+cp contrib/airline/base16_mellow_purple.bash out/contrib/airline/base16_mellow_purple.bash
+bash make_command.sh install  "out/contrib/airline/base16_mellow_purple.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_mellow_purple.bash"
+cp contrib/airline/base16_mexico_light.bash out/contrib/airline/base16_mexico_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_mexico_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_mexico_light.bash"
+cp contrib/airline/base16_mocha.bash out/contrib/airline/base16_mocha.bash
+bash make_command.sh install  "out/contrib/airline/base16_mocha.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_mocha.bash"
+cp contrib/airline/base16_monokai.bash out/contrib/airline/base16_monokai.bash
+bash make_command.sh install  "out/contrib/airline/base16_monokai.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_monokai.bash"
+cp contrib/airline/base16_nord.bash out/contrib/airline/base16_nord.bash
+bash make_command.sh install  "out/contrib/airline/base16_nord.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_nord.bash"
+cp contrib/airline/base16_nova.bash out/contrib/airline/base16_nova.bash
+bash make_command.sh install  "out/contrib/airline/base16_nova.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_nova.bash"
+cp contrib/airline/base16_ocean.bash out/contrib/airline/base16_ocean.bash
+bash make_command.sh install  "out/contrib/airline/base16_ocean.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_ocean.bash"
+cp contrib/airline/base16_oceanicnext.bash out/contrib/airline/base16_oceanicnext.bash
+bash make_command.sh install  "out/contrib/airline/base16_oceanicnext.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_oceanicnext.bash"
+cp contrib/airline/base16_onedark.bash out/contrib/airline/base16_onedark.bash
+bash make_command.sh install  "out/contrib/airline/base16_onedark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_onedark.bash"
+cp contrib/airline/base16_one_light.bash out/contrib/airline/base16_one_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_one_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_one_light.bash"
+cp contrib/airline/base16_outrun_dark.bash out/contrib/airline/base16_outrun_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_outrun_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_outrun_dark.bash"
+cp contrib/airline/base16_papercolor_dark.bash out/contrib/airline/base16_papercolor_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_papercolor_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_papercolor_dark.bash"
+cp contrib/airline/base16_papercolor_light.bash out/contrib/airline/base16_papercolor_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_papercolor_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_papercolor_light.bash"
+cp contrib/airline/base16_paraiso.bash out/contrib/airline/base16_paraiso.bash
+bash make_command.sh install  "out/contrib/airline/base16_paraiso.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_paraiso.bash"
+cp contrib/airline/base16_phd.bash out/contrib/airline/base16_phd.bash
+bash make_command.sh install  "out/contrib/airline/base16_phd.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_phd.bash"
+cp contrib/airline/base16_pico.bash out/contrib/airline/base16_pico.bash
+bash make_command.sh install  "out/contrib/airline/base16_pico.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_pico.bash"
+cp contrib/airline/base16_pop.bash out/contrib/airline/base16_pop.bash
+bash make_command.sh install  "out/contrib/airline/base16_pop.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_pop.bash"
+cp contrib/airline/base16_porple.bash out/contrib/airline/base16_porple.bash
+bash make_command.sh install  "out/contrib/airline/base16_porple.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_porple.bash"
+cp contrib/airline/base16_railscasts.bash out/contrib/airline/base16_railscasts.bash
+bash make_command.sh install  "out/contrib/airline/base16_railscasts.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_railscasts.bash"
+cp contrib/airline/base16_rebecca.bash out/contrib/airline/base16_rebecca.bash
+bash make_command.sh install  "out/contrib/airline/base16_rebecca.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_rebecca.bash"
+cp contrib/airline/base16_sandcastle.bash out/contrib/airline/base16_sandcastle.bash
+bash make_command.sh install  "out/contrib/airline/base16_sandcastle.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_sandcastle.bash"
+cp contrib/airline/base16_seti.bash out/contrib/airline/base16_seti.bash
+bash make_command.sh install  "out/contrib/airline/base16_seti.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_seti.bash"
+cp contrib/airline/base16_shapeshifter.bash out/contrib/airline/base16_shapeshifter.bash
+bash make_command.sh install  "out/contrib/airline/base16_shapeshifter.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_shapeshifter.bash"
+cp contrib/airline/base16_shell.bash out/contrib/airline/base16_shell.bash
+bash make_command.sh install  "out/contrib/airline/base16_shell.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_shell.bash"
+cp contrib/airline/base16_snazzy.bash out/contrib/airline/base16_snazzy.bash
+bash make_command.sh install  "out/contrib/airline/base16_snazzy.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_snazzy.bash"
+cp contrib/airline/base16_solarflare.bash out/contrib/airline/base16_solarflare.bash
+bash make_command.sh install  "out/contrib/airline/base16_solarflare.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_solarflare.bash"
+cp contrib/airline/base16_solarized.bash out/contrib/airline/base16_solarized.bash
+bash make_command.sh install  "out/contrib/airline/base16_solarized.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_solarized.bash"
+cp contrib/airline/base16_solarized_dark.bash out/contrib/airline/base16_solarized_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_solarized_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_solarized_dark.bash"
+cp contrib/airline/base16_solarized_light.bash out/contrib/airline/base16_solarized_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_solarized_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_solarized_light.bash"
+cp contrib/airline/base16_spacemacs.bash out/contrib/airline/base16_spacemacs.bash
+bash make_command.sh install  "out/contrib/airline/base16_spacemacs.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_spacemacs.bash"
+cp contrib/airline/base16_summerfruit.bash out/contrib/airline/base16_summerfruit.bash
+bash make_command.sh install  "out/contrib/airline/base16_summerfruit.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_summerfruit.bash"
+cp contrib/airline/base16_summerfruit_dark.bash out/contrib/airline/base16_summerfruit_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_summerfruit_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_summerfruit_dark.bash"
+cp contrib/airline/base16_summerfruit_light.bash out/contrib/airline/base16_summerfruit_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_summerfruit_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_summerfruit_light.bash"
+cp contrib/airline/base16_synth_midnight_dark.bash out/contrib/airline/base16_synth_midnight_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_synth_midnight_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_synth_midnight_dark.bash"
+cp contrib/airline/base16_tomorrow.bash out/contrib/airline/base16_tomorrow.bash
+bash make_command.sh install  "out/contrib/airline/base16_tomorrow.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_tomorrow.bash"
+cp contrib/airline/base16_tomorrow_night.bash out/contrib/airline/base16_tomorrow_night.bash
+bash make_command.sh install  "out/contrib/airline/base16_tomorrow_night.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_tomorrow_night.bash"
+cp contrib/airline/base16_tomorrow_night_eighties.bash out/contrib/airline/base16_tomorrow_night_eighties.bash
+bash make_command.sh install  "out/contrib/airline/base16_tomorrow_night_eighties.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_tomorrow_night_eighties.bash"
+cp contrib/airline/base16_tube.bash out/contrib/airline/base16_tube.bash
+bash make_command.sh install  "out/contrib/airline/base16_tube.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_tube.bash"
+cp contrib/airline/base16_twilight.bash out/contrib/airline/base16_twilight.bash
+bash make_command.sh install  "out/contrib/airline/base16_twilight.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_twilight.bash"
+cp contrib/airline/base16_unikitty_dark.bash out/contrib/airline/base16_unikitty_dark.bash
+bash make_command.sh install  "out/contrib/airline/base16_unikitty_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_unikitty_dark.bash"
+cp contrib/airline/base16_unikitty_light.bash out/contrib/airline/base16_unikitty_light.bash
+bash make_command.sh install  "out/contrib/airline/base16_unikitty_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_unikitty_light.bash"
+cp contrib/airline/base16_vim.bash out/contrib/airline/base16_vim.bash
+bash make_command.sh install  "out/contrib/airline/base16_vim.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_vim.bash"
+cp contrib/airline/base16_woodland.bash out/contrib/airline/base16_woodland.bash
+bash make_command.sh install  "out/contrib/airline/base16_woodland.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_woodland.bash"
+cp contrib/airline/base16_xcode_dusk.bash out/contrib/airline/base16_xcode_dusk.bash
+bash make_command.sh install  "out/contrib/airline/base16_xcode_dusk.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_xcode_dusk.bash"
+cp contrib/airline/base16_zenburn.bash out/contrib/airline/base16_zenburn.bash
+bash make_command.sh install  "out/contrib/airline/base16_zenburn.bash" "/home/msifland/.local/share/blesh/contrib/airline/base16_zenburn.bash"
+cp contrib/airline/behelit.bash out/contrib/airline/behelit.bash
+bash make_command.sh install  "out/contrib/airline/behelit.bash" "/home/msifland/.local/share/blesh/contrib/airline/behelit.bash"
+cp contrib/airline/biogoo.bash out/contrib/airline/biogoo.bash
+bash make_command.sh install  "out/contrib/airline/biogoo.bash" "/home/msifland/.local/share/blesh/contrib/airline/biogoo.bash"
+cp contrib/airline/blood_red.bash out/contrib/airline/blood_red.bash
+bash make_command.sh install  "out/contrib/airline/blood_red.bash" "/home/msifland/.local/share/blesh/contrib/airline/blood_red.bash"
+cp contrib/airline/bubblegum.bash out/contrib/airline/bubblegum.bash
+bash make_command.sh install  "out/contrib/airline/bubblegum.bash" "/home/msifland/.local/share/blesh/contrib/airline/bubblegum.bash"
+cp contrib/airline/cobalt2.bash out/contrib/airline/cobalt2.bash
+bash make_command.sh install  "out/contrib/airline/cobalt2.bash" "/home/msifland/.local/share/blesh/contrib/airline/cobalt2.bash"
+cp contrib/airline/cool.bash out/contrib/airline/cool.bash
+bash make_command.sh install  "out/contrib/airline/cool.bash" "/home/msifland/.local/share/blesh/contrib/airline/cool.bash"
+cp contrib/airline/cyberpunk.bash out/contrib/airline/cyberpunk.bash
+bash make_command.sh install  "out/contrib/airline/cyberpunk.bash" "/home/msifland/.local/share/blesh/contrib/airline/cyberpunk.bash"
+cp contrib/airline/dark.bash out/contrib/airline/dark.bash
+bash make_command.sh install  "out/contrib/airline/dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/dark.bash"
+cp contrib/airline/desertink.bash out/contrib/airline/desertink.bash
+bash make_command.sh install  "out/contrib/airline/desertink.bash" "/home/msifland/.local/share/blesh/contrib/airline/desertink.bash"
+cp contrib/airline/deus.bash out/contrib/airline/deus.bash
+bash make_command.sh install  "out/contrib/airline/deus.bash" "/home/msifland/.local/share/blesh/contrib/airline/deus.bash"
+cp contrib/airline/distinguished.bash out/contrib/airline/distinguished.bash
+bash make_command.sh install  "out/contrib/airline/distinguished.bash" "/home/msifland/.local/share/blesh/contrib/airline/distinguished.bash"
+cp contrib/airline/durant.bash out/contrib/airline/durant.bash
+bash make_command.sh install  "out/contrib/airline/durant.bash" "/home/msifland/.local/share/blesh/contrib/airline/durant.bash"
+cp contrib/airline/fairyfloss.bash out/contrib/airline/fairyfloss.bash
+bash make_command.sh install  "out/contrib/airline/fairyfloss.bash" "/home/msifland/.local/share/blesh/contrib/airline/fairyfloss.bash"
+cp contrib/airline/fruit_punch.bash out/contrib/airline/fruit_punch.bash
+bash make_command.sh install  "out/contrib/airline/fruit_punch.bash" "/home/msifland/.local/share/blesh/contrib/airline/fruit_punch.bash"
+cp contrib/airline/google_dark.bash out/contrib/airline/google_dark.bash
+bash make_command.sh install  "out/contrib/airline/google_dark.bash" "/home/msifland/.local/share/blesh/contrib/airline/google_dark.bash"
+cp contrib/airline/google_light.bash out/contrib/airline/google_light.bash
+bash make_command.sh install  "out/contrib/airline/google_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/google_light.bash"
+cp contrib/airline/hybrid.bash out/contrib/airline/hybrid.bash
+bash make_command.sh install  "out/contrib/airline/hybrid.bash" "/home/msifland/.local/share/blesh/contrib/airline/hybrid.bash"
+cp contrib/airline/hybridline.bash out/contrib/airline/hybridline.bash
+bash make_command.sh install  "out/contrib/airline/hybridline.bash" "/home/msifland/.local/share/blesh/contrib/airline/hybridline.bash"
+cp contrib/airline/jellybeans.bash out/contrib/airline/jellybeans.bash
+bash make_command.sh install  "out/contrib/airline/jellybeans.bash" "/home/msifland/.local/share/blesh/contrib/airline/jellybeans.bash"
+cp contrib/airline/jet.bash out/contrib/airline/jet.bash
+bash make_command.sh install  "out/contrib/airline/jet.bash" "/home/msifland/.local/share/blesh/contrib/airline/jet.bash"
+cp contrib/airline/kalisi.bash out/contrib/airline/kalisi.bash
+bash make_command.sh install  "out/contrib/airline/kalisi.bash" "/home/msifland/.local/share/blesh/contrib/airline/kalisi.bash"
+cp contrib/airline/kolor.bash out/contrib/airline/kolor.bash
+bash make_command.sh install  "out/contrib/airline/kolor.bash" "/home/msifland/.local/share/blesh/contrib/airline/kolor.bash"
+cp contrib/airline/laederon.bash out/contrib/airline/laederon.bash
+bash make_command.sh install  "out/contrib/airline/laederon.bash" "/home/msifland/.local/share/blesh/contrib/airline/laederon.bash"
+cp contrib/airline/lessnoise.bash out/contrib/airline/lessnoise.bash
+bash make_command.sh install  "out/contrib/airline/lessnoise.bash" "/home/msifland/.local/share/blesh/contrib/airline/lessnoise.bash"
+cp contrib/airline/light.bash out/contrib/airline/light.bash
+bash make_command.sh install  "out/contrib/airline/light.bash" "/home/msifland/.local/share/blesh/contrib/airline/light.bash"
+cp contrib/airline/lighthaus.bash out/contrib/airline/lighthaus.bash
+bash make_command.sh install  "out/contrib/airline/lighthaus.bash" "/home/msifland/.local/share/blesh/contrib/airline/lighthaus.bash"
+cp contrib/airline/lucius.bash out/contrib/airline/lucius.bash
+bash make_command.sh install  "out/contrib/airline/lucius.bash" "/home/msifland/.local/share/blesh/contrib/airline/lucius.bash"
+cp contrib/airline/luna.bash out/contrib/airline/luna.bash
+bash make_command.sh install  "out/contrib/airline/luna.bash" "/home/msifland/.local/share/blesh/contrib/airline/luna.bash"
+cp contrib/airline/minimalist.bash out/contrib/airline/minimalist.bash
+bash make_command.sh install  "out/contrib/airline/minimalist.bash" "/home/msifland/.local/share/blesh/contrib/airline/minimalist.bash"
+cp contrib/airline/molokai.bash out/contrib/airline/molokai.bash
+bash make_command.sh install  "out/contrib/airline/molokai.bash" "/home/msifland/.local/share/blesh/contrib/airline/molokai.bash"
+cp contrib/airline/monochrome.bash out/contrib/airline/monochrome.bash
+bash make_command.sh install  "out/contrib/airline/monochrome.bash" "/home/msifland/.local/share/blesh/contrib/airline/monochrome.bash"
+cp contrib/airline/murmur.bash out/contrib/airline/murmur.bash
+bash make_command.sh install  "out/contrib/airline/murmur.bash" "/home/msifland/.local/share/blesh/contrib/airline/murmur.bash"
+cp contrib/airline/night_owl.bash out/contrib/airline/night_owl.bash
+bash make_command.sh install  "out/contrib/airline/night_owl.bash" "/home/msifland/.local/share/blesh/contrib/airline/night_owl.bash"
+cp contrib/airline/nord_minimal.bash out/contrib/airline/nord_minimal.bash
+bash make_command.sh install  "out/contrib/airline/nord_minimal.bash" "/home/msifland/.local/share/blesh/contrib/airline/nord_minimal.bash"
+cp contrib/airline/onedark.bash out/contrib/airline/onedark.bash
+bash make_command.sh install  "out/contrib/airline/onedark.bash" "/home/msifland/.local/share/blesh/contrib/airline/onedark.bash"
+cp contrib/airline/ouo.bash out/contrib/airline/ouo.bash
+bash make_command.sh install  "out/contrib/airline/ouo.bash" "/home/msifland/.local/share/blesh/contrib/airline/ouo.bash"
+cp contrib/airline/owo.bash out/contrib/airline/owo.bash
+bash make_command.sh install  "out/contrib/airline/owo.bash" "/home/msifland/.local/share/blesh/contrib/airline/owo.bash"
+cp contrib/airline/papercolor.bash out/contrib/airline/papercolor.bash
+bash make_command.sh install  "out/contrib/airline/papercolor.bash" "/home/msifland/.local/share/blesh/contrib/airline/papercolor.bash"
+cp contrib/airline/peaksea.bash out/contrib/airline/peaksea.bash
+bash make_command.sh install  "out/contrib/airline/peaksea.bash" "/home/msifland/.local/share/blesh/contrib/airline/peaksea.bash"
+cp contrib/airline/powerlineish.bash out/contrib/airline/powerlineish.bash
+bash make_command.sh install  "out/contrib/airline/powerlineish.bash" "/home/msifland/.local/share/blesh/contrib/airline/powerlineish.bash"
+cp contrib/airline/qwq.bash out/contrib/airline/qwq.bash
+bash make_command.sh install  "out/contrib/airline/qwq.bash" "/home/msifland/.local/share/blesh/contrib/airline/qwq.bash"
+cp contrib/airline/raven.bash out/contrib/airline/raven.bash
+bash make_command.sh install  "out/contrib/airline/raven.bash" "/home/msifland/.local/share/blesh/contrib/airline/raven.bash"
+cp contrib/airline/ravenpower.bash out/contrib/airline/ravenpower.bash
+bash make_command.sh install  "out/contrib/airline/ravenpower.bash" "/home/msifland/.local/share/blesh/contrib/airline/ravenpower.bash"
+cp contrib/airline/seagull.bash out/contrib/airline/seagull.bash
+bash make_command.sh install  "out/contrib/airline/seagull.bash" "/home/msifland/.local/share/blesh/contrib/airline/seagull.bash"
+cp contrib/airline/selenized.bash out/contrib/airline/selenized.bash
+bash make_command.sh install  "out/contrib/airline/selenized.bash" "/home/msifland/.local/share/blesh/contrib/airline/selenized.bash"
+cp contrib/airline/selenized_bw.bash out/contrib/airline/selenized_bw.bash
+bash make_command.sh install  "out/contrib/airline/selenized_bw.bash" "/home/msifland/.local/share/blesh/contrib/airline/selenized_bw.bash"
+cp contrib/airline/seoul256.bash out/contrib/airline/seoul256.bash
+bash make_command.sh install  "out/contrib/airline/seoul256.bash" "/home/msifland/.local/share/blesh/contrib/airline/seoul256.bash"
+cp contrib/airline/serene.bash out/contrib/airline/serene.bash
+bash make_command.sh install  "out/contrib/airline/serene.bash" "/home/msifland/.local/share/blesh/contrib/airline/serene.bash"
+cp contrib/airline/sierra.bash out/contrib/airline/sierra.bash
+bash make_command.sh install  "out/contrib/airline/sierra.bash" "/home/msifland/.local/share/blesh/contrib/airline/sierra.bash"
+cp contrib/airline/silver.bash out/contrib/airline/silver.bash
+bash make_command.sh install  "out/contrib/airline/silver.bash" "/home/msifland/.local/share/blesh/contrib/airline/silver.bash"
+cp contrib/airline/simple.bash out/contrib/airline/simple.bash
+bash make_command.sh install  "out/contrib/airline/simple.bash" "/home/msifland/.local/share/blesh/contrib/airline/simple.bash"
+cp contrib/airline/soda.bash out/contrib/airline/soda.bash
+bash make_command.sh install  "out/contrib/airline/soda.bash" "/home/msifland/.local/share/blesh/contrib/airline/soda.bash"
+cp contrib/airline/solarized.bash out/contrib/airline/solarized.bash
+bash make_command.sh install  "out/contrib/airline/solarized.bash" "/home/msifland/.local/share/blesh/contrib/airline/solarized.bash"
+cp contrib/airline/sol.bash out/contrib/airline/sol.bash
+bash make_command.sh install  "out/contrib/airline/sol.bash" "/home/msifland/.local/share/blesh/contrib/airline/sol.bash"
+cp contrib/airline/supernova.bash out/contrib/airline/supernova.bash
+bash make_command.sh install  "out/contrib/airline/supernova.bash" "/home/msifland/.local/share/blesh/contrib/airline/supernova.bash"
+cp contrib/airline/term.bash out/contrib/airline/term.bash
+bash make_command.sh install  "out/contrib/airline/term.bash" "/home/msifland/.local/share/blesh/contrib/airline/term.bash"
+cp contrib/airline/term_light.bash out/contrib/airline/term_light.bash
+bash make_command.sh install  "out/contrib/airline/term_light.bash" "/home/msifland/.local/share/blesh/contrib/airline/term_light.bash"
+cp contrib/airline/tomorrow.bash out/contrib/airline/tomorrow.bash
+bash make_command.sh install  "out/contrib/airline/tomorrow.bash" "/home/msifland/.local/share/blesh/contrib/airline/tomorrow.bash"
+cp contrib/airline/transparent.bash out/contrib/airline/transparent.bash
+bash make_command.sh install  "out/contrib/airline/transparent.bash" "/home/msifland/.local/share/blesh/contrib/airline/transparent.bash"
+cp contrib/airline/ubaryd.bash out/contrib/airline/ubaryd.bash
+bash make_command.sh install  "out/contrib/airline/ubaryd.bash" "/home/msifland/.local/share/blesh/contrib/airline/ubaryd.bash"
+cp contrib/airline/understated.bash out/contrib/airline/understated.bash
+bash make_command.sh install  "out/contrib/airline/understated.bash" "/home/msifland/.local/share/blesh/contrib/airline/understated.bash"
+cp contrib/airline/violet.bash out/contrib/airline/violet.bash
+bash make_command.sh install  "out/contrib/airline/violet.bash" "/home/msifland/.local/share/blesh/contrib/airline/violet.bash"
+cp contrib/airline/wombat.bash out/contrib/airline/wombat.bash
+bash make_command.sh install  "out/contrib/airline/wombat.bash" "/home/msifland/.local/share/blesh/contrib/airline/wombat.bash"
+cp contrib/airline/zenburn.bash out/contrib/airline/zenburn.bash
+bash make_command.sh install  "out/contrib/airline/zenburn.bash" "/home/msifland/.local/share/blesh/contrib/airline/zenburn.bash"
+cp docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
