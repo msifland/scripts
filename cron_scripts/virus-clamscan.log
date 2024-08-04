@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;156m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;73m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;156m
+[1;38;5;73m
 Removing old build logs. . .
 
 [0m
-[1;38;5;156m
+[1;38;5;73m
 Start Time:
-Date: 05-27-24
-Time: 02:15:16 AM
+Date: 07-29-24
+Time: 02:15:17 AM
 
 Scanning: 
 /
@@ -40,34 +40,34 @@ LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanni
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
-LibClamAV Warning: Bytecode run timed out in interpreter after 8325000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 8205000 opcodes
 LibClamAV Warning: Bytecode 42 failed to run: Exceeded time limit
-LibClamAV Warning: Bytecode run timed out in interpreter after 8500000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 8250000 opcodes
 LibClamAV Warning: Bytecode 'BC.Legacy.Exploit.Andr-2.{Extra_Field,Master_Key}' (id: 23) failed to run: Exceeded time limit
-LibClamAV Warning: Bytecode run timed out in interpreter after 8215000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 8260000 opcodes
 LibClamAV Warning: Bytecode 42 failed to run: Exceeded time limit
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8693613
+Known viruses: 8696747
 Engine version: 1.0.6
-Scanned directories: 97574
-Scanned files: 1045609
+Scanned directories: 96820
+Scanned files: 1048978
 Infected files: 0
-Total errors: 523
-Data scanned: 94364.86 MB
-Data read: 156076.57 MB (ratio 0.60:1)
-Time: 24409.646 sec (406 m 49 s)
-Start Date: 2024:05:27 02:15:24
-End Date:   2024:05:27 09:02:14
+Total errors: 524
+Data scanned: 95112.21 MB
+Data read: 173007.38 MB (ratio 0.55:1)
+Time: 24707.128 sec (411 m 47 s)
+Start Date: 2024:07:29 02:15:25
+End Date:   2024:07:29 09:07:12
 
 
 End Time:
-Date: 05-27-24
-Time: 09:02:14 AM
-It took 6 hours 46 minutes 58 seconds to scan your system.
+Date: 07-29-24
+Time: 09:07:12 AM
+It took 6 hours 51 minutes 55 seconds to scan your system.
 
 
-[1;38;5;156m
+[1;38;5;73m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
