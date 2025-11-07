@@ -1,0 +1,33 @@
+#!/bin/bash
+# This is a bash script.
+# Put your description below this line and code below that.
+# 
+echo
+echo "${ILCOLOR2}Installing latest Google Chrome...${ILRESTORE}"
+sleep 3
+
+echo
+echo "${ILCOLOR2}Cleaning downloads folder of other chrome files...${ILRESTORE}"
+cd $HOME/Downloads
+sleep 1
+if [[ -f google-chrome*.* ]]; then
+	rm -rf google-chrome*.*
+fi
+sleep 2
+
+echo
+echo "${ILCOLOR2}Downloading latest Google Chrome...${ILRESTORE}"
+sleep 1
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sleep 2
+
+echo
+echo "${ILCOLOR1}Installing latest Google Chrome...${ILRESTORE}"
+sleep 1
+sudo dpkg -i google-chrome*.*
+sleep 2
+
+echo
+echo "${ILCOLOR3}Done!${ILRESTORE}"
+cd $HOME
+sleep 3
