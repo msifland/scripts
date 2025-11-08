@@ -1,0 +1,10 @@
+# This keeps the xsession-errors log from getting to big
+
+~/.xsession-errors {
+    missingok
+    copytruncate
+    notifempty
+    rotate 4
+    size 1M
+    create
+}
