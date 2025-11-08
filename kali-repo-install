@@ -7,42 +7,38 @@ echo
 echo "${ILCOLOR3}This will install the kali-rolling repo to your system."
 sleep 1
 
-YEAR=$(date +"%Y")
-SOURCES="/etc/apt/sources.list"
-KALI_ADDR="https://http.kali.org/kali/pool/main/k/kali-archive-keyring/"
-KALI_FILE="kali-archive-keyring_$YEAR.1_all.deb"
-
+#YEAR=$(date +"%Y")
+SOURCES="/etc/apt/sources.list.d/kali.sources"
+#KALI_ADDR="https://http.kali.org/kali/pool/main/k/kali-archive-keyring/"
+#KALI_FILE="kali-archive-keyring_$YEAR.1_all.deb"
+if [[ ! -f $SOURCES ]]; then
+	sudo touch $SOURCES
+fi
 echo
 echo "${ILCOLOR3}Adding repos to${ILRESTORE} $SOURCES. . ."
 echo
 sleep 1
 # Removing all white space from end of file.
 sudo sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' $SOURCES
-echo -e "\n" | sudo tee -a $SOURCES
-echo "${ILCOLOR3}echo${ILRESTORE} ###Kali linux repos(for hacking tools) | sudo tee -a $SOURCES"
-echo "###Kali linux repos(for hacking tools)" | sudo tee -a $SOURCES
+echo "${ILCOLOR3}Adding:${ILRESTORE}"
+echo "###Kali linux repos(for hacking tools)
+Types: deb deb-src
+URIs: http://http.kali.org/kali/
+Suites: kali-rolling
+Components: main contrib non-free non-free-firmware
+Signed-By: /etc/apt/keyrings/kali-archive-keyring.gpg" | sudo tee $SOURCES
 echo
-sleep 3
-echo "${ILCOLOR3}echo${ILRESTORE} deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali/ kali-rolling main non-free contrib | sudo tee -a $SOURCES"
-echo "deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali/ kali-rolling main non-free contrib" | sudo tee -a $SOURCES
-echo
-sleep 3
-echo "${ILCOLOR3}echo${ILRESTORE} deb-src [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali/ kali-rolling main non-free contrib | sudo tee -a $SOURCES"
-echo "deb-src [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali/ kali-rolling main non-free contrib" | sudo tee -a $SOURCES
-echo
+echo "${ILCOLOR3}to $SOURCES file.${ILRESTORE}"
 sleep 3
 
 echo
-echo "${ILCOLOR3}Adding trusted key to /usr/share/keyrings. . .${ILRESTORE}"
+echo "${ILCOLOR3}Adding trusted key to /etc/apt/keyrings. . .${ILRESTORE}"
 sleep 1
 
-echo "${ILCOLOR3}Getting file${ILRESTORE} $KALI_ADDR$KALI_FILE. . ."
+echo "${ILCOLOR3}Getting file with${ILRESTORE} sudo wget https://archive.kali.org/archive-keyring.gpg -O /etc/apt/keyrings/kali-archive-keyring.gpg. . ."
 sleep 1
-if [[ ! -d "$HOME/Downloads" ]]; then
-	mkdir "$HOME/Downloads"
-fi
-cd $HOME/Downloads
-wget $KALI_ADDR$KALI_FILE
+sudo wget https://archive.kali.org/archive-keyring.gpg -O /etc/apt/keyrings/kali-archive-keyring.gpg
+sleep 3
 
-echo "${ILCOLOR3}Installing $KALI_FILE${ILRESTORE}"
-sudo dpkg -i $HOME/Downloads/$KALI_FILE
+echo
+echo "${ILCOLOR3}All Finished. Run sudo apt upate to verify${ILRESTORE}"
