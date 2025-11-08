@@ -1,10 +1,12 @@
 # This keeps the xsession-errors log from getting to big
 
 ~/.xsession-errors {
+    rotate 3
+    compress
     missingok
     copytruncate
     notifempty
     rotate 4
     size 1M
-    create
+    create 750 msifland msifland
 }
