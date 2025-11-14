@@ -1,0 +1,53 @@
+#!/bin/bash
+# Calling this from alias: linux-usb-update. Alias needs to be put in .bashrc: alias linux-usb-update="clear; echo \"Running alias for 'linux-usb-startup-git-pull'\"; sleep 1; $HOME/scripts/linux-usb-startup-git-pull"
+# It updated files before running actual script: scripts/linux-usb-update.
+# This is for the usb linux installation on flash drive.
+# This scripts updates git repos when the device starts. 
+#
+if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xterm"; then
+	sudo apt install xterm
+fi
+#/usr/bin/xterm -e "bash -c \"source ~/.bashrc; clear
+echo Running update git repos to this system. . .
+echo
+sleep 2
+echo $HOME/pkg_bkups
+cd $HOME/pkg_bkups
+git stash
+git fetch
+git pull
+sleep 1
+echo
+echo $HOME/scripts
+cd $HOME/scripts
+git stash
+git fetch
+git pull
+sleep 1
+echo
+echo $HOME/Documents
+cd $HOME/Documents
+git stash
+git fetch
+git pull
+sleep 1
+echo
+echo $HOME/Projects
+cd $HOME/Projects
+git stash
+git fetch
+git pull
+sleep 1
+echo
+echo $HOME/Modules-Apps
+cd $HOME/Modules-Apps
+git stash
+git fetch
+git pull
+sleep 1
+echo
+echo All done, in 5 seconds and running script: linux-usb-update. . .
+sleep 5
+cd
+
+$HOME/scripts/linux-usb-update
