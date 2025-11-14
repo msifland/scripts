@@ -78,14 +78,30 @@ sleep 1
 
 echo
 echo "Unmounting drives. . ."
-sudo umount -f /mnt/chroot/dev/pts
-sudo umount -f /mnt/chroot/dev
-sudo umount -f /mnt/chroot/proc
-sudo umount -f /mnt/chroot/sys
-sudo umount -f /mnt/chroot/run
-sudo umount -f /mnt/chroot/boot
-sudo umount -f /mnt/chroot/home
-sudo umount -f /mnt/chroot
+if [[ -d /mnt/chroot/dev/pts ]]; then
+	sudo umount -f /mnt/chroot/dev/pts
+fi
+if [[ -d /mnt/chroot/dev ]]; then
+	sudo umount -f /mnt/chroot/dev
+fi
+if [[ -d /mnt/chroot/proc ]]; then
+	sudo umount -f /mnt/chroot/proc
+fi
+if [[ -d /mnt/chroot/sys ]]; then
+	sudo umount -f /mnt/chroot/sys
+fi
+if [[ -d /mnt/chroot/run ]]; then
+	sudo umount -f /mnt/chroot/run
+fi
+if [[ -d /mnt/chroot/boot ]]; then
+	sudo umount -f /mnt/chroot/boot
+fi
+if [[ -d /mnt/chroot/home ]]; then
+	sudo umount -f /mnt/chroot/home
+fi
+if [[ -d /mnt/chroot ]]; then
+	sudo umount -f /mnt/chroot
+fi
 sleep 1
 
 echo
