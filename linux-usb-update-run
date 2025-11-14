@@ -1,0 +1,158 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# Updating git repos first
+
+echo
+read -p "${ILCOLOR2}
+                            !!!!!!!!CAUTION!!!!!!!!
+
+This script should be run from the script: scripts/linux-usb-update. Have you run it from that script? [Y/n].${ILRESTORE} " scryn
+echo
+if [[ ! "$scryn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	exit
+fi
+sleep 1
+
+clear
+echo "${ILCOLOR4}           ###########    Updating your USB system now   ###########${ILRESTORE}"
+echo -e ${ILCOLOR2}
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_start=$(date +"%s")
+sleep 1
+echo "Updating $(uname --all)${ILRESTORE}"
+sleep 1
+
+# Password to run as sudo.
+PW="spike"
+echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
+sleep 1
+echo $PW | sudo -S -v
+echo
+echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
+
+# Run script
+sudo apt update
+sleep 1
+
+echo
+echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+sudo apt upgrade -y --allow-downgrades
+sudo apt full-upgrade -y --allow-downgrades
+sleep 1
+
+echo
+echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
+sudo apt autoremove -y
+sudo apt clean -y
+sudo apt autoclean -y
+sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
+rm -v -f ~/.cache/thumbnails/*/*.png ~/.thumbnails/*/*.png
+rm -v -f ~/.cache/thumbnails/*/*/*.png ~/.thumbnails/*/*/*.png
+sleep 1
+
+echo
+echo "${ILCOLOR2}Backing up important files and apps. . .${ILRESTORE}"
+echo "${ILCOLOR1}Creating list of apps, and copying repos from /etc/apt. . .${ILRESTORE}"
+# Set backups folders and files, and only keep 3 of each.
+DEST="$HOME/usb_pkg_bkups"
+if [[ ! -d "$DEST" ]]; then
+	mkdir $DEST
+else
+	if ls $DEST/* 1> /dev/null 2>&1; then
+		ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f > /dev/null 2>&1
+	fi
+fi
+if [[ ! -d "$DEST/apt" ]]; then
+	mkdir "$DEST/apt"
+fi
+if [[ ! -d "$DEST/apt.old" ]]; then
+	mkdir "$DEST/apt.old"
+fi
+if [[ ! -d "$DEST/apt.old-1" ]]; then
+	mkdir "$DEST/apt.old-1"
+fi
+
+# Rename .old lists to .old-1
+if [[ -f $DEST/pkgs.txt.old ]]; then
+	mv $DEST/pkgs.txt.old $DEST/pkgs.txt.old-1
+fi
+
+# Rename lists to .old
+if [[ -f $DEST/pkgs.txt ]]; then
+	mv $DEST/pkgs.txt $DEST/pkgs.txt.old
+fi
+
+# Creating list for restore purposes.
+dpkg --get-selections | awk '{print $1}' > $DEST/pkgs.txt
+
+# This section copies /etc/apt folder and keeps 3 copies.
+if ls $DEST/apt.old-1/* > /dev/null 2>&1; then
+	rm -rf $DEST/apt.old-1/*
+fi
+if ls $DEST/apt.old/* > /dev/null 2>&1; then
+	cp -rf $DEST/apt.old/* $DEST/apt.old-1/
+	rm -rf $DEST/apt.old/*
+fi
+if ls $DEST/apt/* > /dev/null 2>&1; then
+	cp -rf $DEST/apt/* $DEST/apt.old/
+	rm -rf $DEST/apt/*
+fi
+cp -rf /etc/apt/* $DEST/apt/
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating important files from github. . .${ILRESTORE}"
+sleep 1
+RC_ARR=($HOME/pkg_bkups/backups/.bashrc $HOME/pkg_bkups/backups/.bash_profile $HOME/pkg_bkups/backups/.blerc $HOME/pkg_bkups/backups/.conkyrc $HOME/pkg_bkups/backups/.nanorc $HOME/pkg_bkups/backups/.Xresources)
+for file in ${RC_ARR[@]}; do
+echo "Updating $file"
+cp -f $file $HOME/
+sleep .25
+done
+echo "${ILCOLOR1}Backing up .xprofile. . .${ILRESTORE}"
+cp $HOME/.xprofile $DEST/backups
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating usb_pkg_bkups. . .${ILRESTORE}"
+cd ~/usb_pkg_bkups
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+echo
+echo "${ILCOLOR1}Backing up crontab. . .${ILRESTORE}"
+if sudo test -s "/var/spool/cron/crontabs/msifland"; then
+	crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
+fi
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating ble.sh. . .${ILRESTORE}"
+$HOME/scripts/blesh-update
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating sublime text. . .${ILRESTORE}"
+$HOME/scripts/subl-update
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating screenfetch. . .${ILRESTORE}"
+$HOME/scripts/screenfetch-update
+sleep 1
+
+echo
+echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
+sleep 1
+
+echo
+echo -e ${ILCOLOR2}
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_end=$(date +"%s")
+		tm_wh_diff=$(($tm_wh_end - $tm_wh_start))
+		echo "${ILCOLOR2}It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
+echo -e ${ILRESTORE}
+sleep 1
