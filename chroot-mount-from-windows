@@ -4,7 +4,6 @@ $HOME/startusb.sh
 
 IP_ADR=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
 
-
 if ! dpkg --get-selections | grep -q "usbip"; then
 	echo 'spike' | sudo -S apt install -y usbip
 fi
@@ -38,7 +37,7 @@ sleep 1
 echo
 echo "Detaching usb device from system with: sudo usbip detach --remote=$IP_ADR --busid=$BS_ID"
 sleep 1
-echo 'spike' | sudo -S usbip attach --remote="$IP_ADR" --busid="$BS_ID"
+echo 'spike' | sudo -S usbip detach --remote="$IP_ADR" --busid="$BS_ID"
 
 echo
 echo "Ready to exit wsl. Close window when done."
