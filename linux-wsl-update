@@ -3,50 +3,52 @@
 # It updated files before running actual script: scripts/linux-usb-update.
 # This is for the usb linux installation on flash drive.
 # This scripts updates git repos when the device starts. 
-#
+# This is for updateing the window linux subsystem
+# This script will run from the scripts/linux-usb-update
+
 if ! dpkg --get-selections | awk '{print $1}' | grep -xq "xterm"; then
 	sudo apt install xterm
 fi
 #/usr/bin/xterm -e "bash -c \"source ~/.bashrc; clear
-echo Running update git repos to this system. . .
+echo "Running update git repos to this system. . ."
 echo
 sleep 2
-echo $HOME/pkg_bkups
+echo "$HOME/pkg_bkups"
 cd $HOME/pkg_bkups
 git stash
 git fetch
 git pull
 sleep 1
 echo
-echo $HOME/scripts
+echo "$HOME/scripts"
 cd $HOME/scripts
 git stash
 git fetch
 git pull
 sleep 1
 echo
-echo $HOME/Documents
+echo "$HOME/Documents"
 cd $HOME/Documents
 git stash
 git fetch
 git pull
 sleep 1
 echo
-echo $HOME/Projects
+echo "$HOME/Projects"
 cd $HOME/Projects
 git stash
 git fetch
 git pull
 sleep 1
 echo
-echo $HOME/Modules-Apps
+echo "$HOME/Modules-Apps"
 cd $HOME/Modules-Apps
 git stash
 git fetch
 git pull
 sleep 1
 echo
-echo All done, in 5 seconds and running script: linux-usb-update. . .
+echo "All done, in 5 seconds and running script: linux-wsl-update-run. . ."
 sleep 5
 cd
 

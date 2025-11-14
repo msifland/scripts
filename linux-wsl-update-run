@@ -2,6 +2,18 @@
 # This is a blank bash script document.
 # Put your code below this line.
 # Updating git repos first
+# This is for updating the window linux subsystem
+# This will run from the script: scripts/linux-wsl-update
+echo
+read -p "${ILCOLOR2}
+                            !!!!!!!!CAUTION!!!!!!!!
+
+This script should be run from the script: scripts/linux-wsl-update. Have you run it from that script? [Y/n].${ILRESTORE} " scryn
+echo
+if [[ ! "$scryn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	exit
+fi
+sleep 1
 
 clear
 echo "${ILCOLOR4}           ###########    Updating your WSL system now   ###########${ILRESTORE}"
