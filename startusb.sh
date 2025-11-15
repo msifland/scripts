@@ -1,4 +1,8 @@
 #!/bin/bash
+#=====================================================
+# This file goes in main home folder with startusb.sh
+#=====================================================
+
 echo 'spike' | sudo -S -v
 sudo modprobe usbcore
 sudo modprobe usb-common

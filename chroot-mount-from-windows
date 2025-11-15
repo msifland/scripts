@@ -1,9 +1,15 @@
 #!/bin/bash
+#=====================================================
+# This file goes in main home folder with startusb.sh
+#=====================================================
 
+# Run modprobe functions
 $HOME/startusb.sh
 
+# Get server ip from windows usbipd attachement
 IP_ADR=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
 
+# Get linux dependencies
 if ! dpkg --get-selections | grep -q "usbip"; then
 	echo 'spike' | sudo -S apt install -y usbip
 fi
@@ -12,21 +18,24 @@ if ! dpkg --get-selections | grep -q "usbutils"; then
 fi
 sleep 1
 
+# Enter correct busid from windows
 echo
 read -p "Enter the busid from the Windows Shell that you shared[ex. 1-11, 1-9, etc.]: " BS_ID
 sleep 1
 
+# Attach to busid
 echo
 echo "Attaching usb device to system with: sudo usbip attach --remote=$IP_ADR --busid=$BS_ID"
 sleep 5
 echo 'spike' | sudo -S usbip attach --remote="$IP_ADR" --busid="$BS_ID"
 
+# Check that it's available
 echo
 echo "Show a list of attached devices to make sure the usb device attached correctly. . ."
-
 lsblk
 sleep 1
 
+# Attemptin to mount with script
 echo
 echo "Running script: chroot-mount. . ."
 sleep 1
@@ -34,11 +43,16 @@ sleep 1
 $HOME/scripts/chroot-mount
 sleep 1
 
+# After exiting, attempting to detach from linux and reminding of detacemnt in windows power shell after disconection
 echo
 echo "Detaching usb device from system with: sudo usbip detach --remote=$IP_ADR --busid=$BS_ID"
 sleep 1
 echo 'spike' | sudo -S usbip detach --remote="$IP_ADR" --busid="$BS_ID"
 
 echo
-echo "Ready to exit wsl. Close window when done."
-sleep 1
+echo "Ready to exit wsl. 
+After exiting to Windows Power Shell, don't forget to unattach by typing:
+	usbipd detach --busid #-#(ex. 1-11, 3-4, 1-9)
+
+Close window when done."
+sleep 5
