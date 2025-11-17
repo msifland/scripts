@@ -1,0 +1,82 @@
+#!/bin/bash
+# This scripts allows sorting of serval words alphabetically and removes duplicates, eiterh on screen or in a file
+ILREST='\033[0m'
+ILRESTORE=`echo -e "${ILREST}"`
+		
+function START(){
+	echo
+	# Ask which option you would like, either file or on screen. If choosing file then type in file name in current directory or full file path. It will automaticaly name the new sorted file in directory as $filename_sorted
+	echo -n "${ILRESTORE}Would you like to sort to a file or on screen[\"file name/path\" or \"screen\"]? "
+	read filescreen
+		
+	# Read filename input and decide what to do
+	if [[ $filescreen != "screen" ]]; then
+		sleep 1
+		echo
+		
+		if [[ -f $filescreen ]]; then
+			function NLSP(){
+				echo -n "Would you like to sort with:
+1. Spaces
+2. Newlines 
+[Enter Selection]: "
+				read spsnls
+	
+				case $spsnls in
+				1)					  #xargs -n1 removes empty newlines
+					cat $filescreen | xargs -n1 | sort -u | xargs > "${filescreen}_sorted"
+					;;
+				2)
+					cat $filescreen | xargs -n1 | sort -u | tr ' ' '\n' > "${filescreen}_sorted"
+					;;
+				*)
+					# Restart function if something esle beside 1 or 2 is entered
+					echo
+					echo "${ILCOLOR4}Invalid selection..."
+					sleep 1
+					NLSP
+					;;
+				esac
+			}
+			NLSP
+			echo "${ILCOLOR2}New sorted file is called ${filescreen}_sorted"
+			sleep 1
+		
+			# Ask to open file
+			echo
+			echo -n "${ILRESTORE}Would you like to view it now[y/n]? "
+			read yn
+			case $yn in
+			[yY]|[yY][eE][sS])
+				sleep 1
+				echo
+				# Opening newly created filename_sorted
+				echo "Opening ${filescreen}_sorted now. . ."
+				sleep 1
+				detach subl ${filescreen}_sorted
+				;;
+			*)
+				sleep 1
+				echo
+				# Chose not to open
+				echo "${ILCOLOR2}Ok, not opening ${filescreen}_sorted now."
+				echo
+				;;
+			esac
+		else
+			echo "File $filescreen does not exist. Please try again. . ."
+			START
+		fi
+	else
+		# Ask for serveral words to sort command prompt input
+		echo "Enter the words would you like to sort?"
+		read words
+		echo
+		# List out sorted words in terminal
+		echo "${ILCOLOR1}Sorted words: "
+		echo ${ILCOLOR2}$words | xargs -n1 | sort -u | xargs
+		echo
+	fi
+}
+START
+echo -e ${ILRESTORE}

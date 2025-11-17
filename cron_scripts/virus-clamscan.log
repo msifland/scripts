@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;165m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;125m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;165m
+[1;38;5;125m
 Removing old build logs. . .
 
 [0m
-[1;38;5;165m
+[1;38;5;125m
 Start Time:
-Date: 11-10-25
+Date: 11-17-25
 Time: 02:15:16 AM
 
 Scanning: 
@@ -37,30 +37,6 @@ Excluding:
 Running clamscan to scan for viruses. . .
 
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
-LibClamAV Warning: Bytecode run timed out in interpreter after 8610000 opcodes
+LibClamAV Warning: Bytecode run timed out in interpreter after 8565000 opcodes
 LibClamAV Warning: Bytecode 39 failed to run: Exceeded time limit
-
------------ SCAN SUMMARY -----------
-Known viruses: 8708706
-Engine version: 1.4.3
-Scanned directories: 82114
-Scanned files: 767724
-Infected files: 0
-Total errors: 517
-Data scanned: 55349.81 MB
-Data read: 81924.21 MB (ratio 0.68:1)
-Time: 17630.019 sec (293 m 50 s)
-Start Date: 2025:11:10 02:15:24
-End Date:   2025:11:10 07:09:14
-
-
-End Time:
-Date: 11-10-25
-Time: 07:09:15 AM
-It took 4 hours 53 minutes 59 seconds to scan your system.
-
-
-[1;38;5;165m
-You can edit included and excluded files and folders by typing edit-virus-clamscan
-
-[0m
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo
+echo "Mounting your Samsung live usb-drive by UUID..."
+echo
+sleep 1
+echo 'spike' | sudo -S -v
+
+#/dev/sdX2
+sudo mount --mkdir --uuid e2f19ca9-a3b5-4999-86d3-0aabe6e0a174 /mnt/usb/
+sleep 1
+
+#/dev/sdX1
+sudo mount --mkdir --uuid b118611a-20d3-4be4-ad92-0d42a5f3b720 /mnt/usb/boot
+sleep 1
+
+#/dev/sdX3
+sudo mount --mkdir --uuid 92300847-9837-47e4-9f4b-bed5edc32e48 /mnt/usb/home
+sleep 1
+
+#/dev/sdX4
+sudo mount --mkdir --uuid 7f895ba6-f644-4750-a70a-0ec30ddaea21 /mnt/usb/misc
+sleep 1
+
+echo
+echo "Devices have been mounted to /mnt/usb/"
+echo
+sleep 1
+
+echo
+echo "Opening in Caja..."
+sleep 1
+detach caja /mnt/usb
+echo
+echo
+
+function umnt(){
+read -p "Type \"y\", then push ENTER to unmount: " yn
+	if [[ $yn = "y" ]]; then
+		echo
+		echo "Unmounting devices..."
+		sleep 1
+		sudo umount /dev/disk/by-uuid/b118611a-20d3-4be4-ad92-0d42a5f3b720
+		sleep 1
+		sudo umount /dev/disk/by-uuid/92300847-9837-47e4-9f4b-bed5edc32e48
+		sleep 1
+		sudo umount /dev/disk/by-uuid/7f895ba6-f644-4750-a70a-0ec30ddaea21
+		sleep 1
+		sudo umount /dev/disk/by-uuid/e2f19ca9-a3b5-4999-86d3-0aabe6e0a174
+		sleep 1
+		echo
+		echo "Devices unmounted."
+		exit
+	else
+		umnt
+	fi
+}
+umnt
+
+exit

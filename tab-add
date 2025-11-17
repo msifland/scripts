@@ -1,0 +1,37 @@
+#!/bin/bash
+# This super simple script add a tab before all line in a file. Usage for re-adjusting file format after adding a funcion or similar formatting
+	
+function MAIN(){
+	echo
+	echo -n "Enter the full path of the file to add a tab character to the beginning of each line in the file: "
+	read fpath
+	sleep 1
+	if [[ -f "$fpath" ]]; then
+		sed -i.bak $'s/^/\t/' $fpath
+		echo
+		echo -n "File was created, with a backup. Would you like to view it now?[y/n] "
+		read ynview
+		if [[ $ynview =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			subl $fpath
+		fi
+		echo
+		echo -n "If file looks good, we can delete the backup file now?[y/n] "
+		read delbk
+		if [[ $delbk =~ ^([yY][eE][sS]|[yY])$ ]]; then
+			rm -rf "$fpath.bak"
+			sleep 1
+			echo "File was removed."
+			sleep 1
+		else
+			echo
+			echo "Not removing file now. Backup file is in same directory with same name'.bak'"
+			sleep 1
+		fi
+	else
+		echo
+		echo "$fpath NOT a valid file, try again..."
+		sleep 1
+		MAIN
+	fi
+}
+MAIN

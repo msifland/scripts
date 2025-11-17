@@ -1,4 +1,4 @@
-Mon Nov 10 02:00:01 2025 -> ClamAV update process started at Mon Nov 10 02:00:01 2025
-Mon Nov 10 02:00:01 2025 -> daily.cld database is up-to-date (version: 27817, sigs: 2077007, f-level: 90, builder: svc.clamav-publisher)
-Mon Nov 10 02:00:01 2025 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon Nov 10 02:00:01 2025 -> bytecode.cld database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+Mon Nov 17 02:00:01 2025 -> ClamAV update process started at Mon Nov 17 02:00:01 2025
+Mon Nov 17 02:00:02 2025 -> daily.cld database is up-to-date (version: 27822, sigs: 2077041, f-level: 90, builder: svc.clamav-publisher)
+Mon Nov 17 02:00:02 2025 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Mon Nov 17 02:00:02 2025 -> bytecode.cld database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)

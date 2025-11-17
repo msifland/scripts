@@ -27,7 +27,6 @@ git commit -m 'auto commit'
 git push -u origin master
 sleep 1
 
-
 echo
 echo "${ILCOLOR1}Updating pkg_bkups. . .${ILRESTORE}"
 cd ~/pkg_bkups
@@ -36,10 +35,17 @@ git commit -m 'auto commit'
 git push -u origin master
 sleep 1
 
-
 echo
 echo "${ILCOLOR1}Updating Modules-Apps. . .${ILRESTORE}"
 cd ~/Modules-Apps
+git add --all
+git commit -m 'auto commit'
+git push -u origin master
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating MSI_live-build. . .${ILRESTORE}"
+cd ~/MSI_live-build
 git add --all
 git commit -m 'auto commit'
 git push -u origin master
@@ -53,4 +59,4 @@ git fetch
 git pull
 sleep 1
 
-cd
+cd $HOME

@@ -1,0 +1,48 @@
+#!/bin/bash
+# This is a bash script.
+# Put your description below this line and code below that.
+#
+
+echo
+echo "${ILCOLOR2}#############################################################
+This will run a custom Debian MSI_live-build config, then build. When finished, the .iso file will be in ~/MSI_live-build. Instructions to follow after build is done.
+#############################################################${ILRESTORE}"
+sleep 3
+
+echo
+echo "${ILCOLOR1}Entering into MSI_live-build directory...${ILRESTORE}"
+MSI_LIVE_DIR="$HOME/MSI_live-build"
+cd $MSI_LIVE_DIR
+sleep 1
+
+echo
+echo "${ILCOLOR3}Running my custom config script 'lb_config'...${ILRESTORE}"
+./my_configs/lb_config
+
+echo
+echo "${ILCOLOR4}Configs have been generated.${ILRESTORE}"
+sleep 1
+
+echo
+echo -n "Would you like to run a build now?[y/n] "
+read buildyn
+if [[ $buildyn =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	cd $MSI_LIVE_DIR
+	echo
+	echo "${ILCOLOR3}Building MSI_live-build Debian ISO. This will take a while!${ILRESTORE}"
+	sleep 3
+	echo
+	echo
+	sudo lb build
+	echo
+	echo "${ILCOLOR4}lb build completed, check for errors...
+Opening directory...${ILRESTORE}"
+	sleep 3
+	detach caja $MSI_LIVE_DIR
+else
+	echo
+	echo "${ILCOLOR2}Not building now, you can alway run a build manually by opening terminal in $MSI_LIVE_DIR and running 'sudo lb build'${ILRESTORE}"
+	sleep 3
+fi
+
+cd $HOME

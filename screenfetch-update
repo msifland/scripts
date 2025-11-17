@@ -5,7 +5,7 @@ echo
 echo "Downloading screenfetch latest and updating screenfetch to reflect my custom colors. . ."
 echo
 sleep 1
-if [[ -d $HOME/pkg_bkups/backups/screenFetch ]]; then
+if [[ -d $HOME/pkg_bkups/backups/screenFetch/.git ]]; then
 	#rm -rf $HOME/pkg_bkups/backups/screenFetch
 	cd $HOME/pkg_bkups/backups/screenFetch
 	git pull
