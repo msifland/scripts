@@ -10,7 +10,7 @@ fi
 INST_PTH="/mnt/deb-inst"
 echo
 echo
-echo "This script is set up to install Debian Mate from a full working linux distro. Make sure you have this script(debina-install) and the additional script(debian-install-continue) in the same directory.
+echo "This script is set up to install Debian Mate from a full working linux distro on an external source/dev block. Make sure you have this script(debina-install) and the additional script(debian-install-continue) in the same directory.
 
 Be sure to select Mate Desktop when this time comes, along with any other various packages."
 echo
@@ -106,7 +106,7 @@ echo
 echo "Now you need to format earch partition as ext4. A new terminal will open for this."
 sleep 5
 /usr/bin/xterm -e "bash -c \"echo; echo 'For each partition type: 
-	mkfs -t ext4 -L \"label\" /dev/sdXY. (You may have to unmount first)
+	mkfs -t ext4 -L \"<label name>\" /dev/sdXY. (You may have to unmount first)
 
 Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
 echo
@@ -132,8 +132,11 @@ cp /etc/network/interfaces $INST_PTH/etc/network/interfaces
 cp /etc/resolv.conf $INST_PTH/etc/resolv.conf
 cp /etc/hosts $INST_PTH/etc/hosts
 cp /etc/hostname $INST_PTH/etc/hostname
-cp /etc/apt/sources.list $INST_PTH/etc/apt/sources.list
-nano $INST_PTH/etc/apt/sources.list
+if [[ -f $INST_PTH/etc/apt/sources.list ]]; then
+	sudo rm -rf $INST_PTH/etc/apt/sources.list
+fi
+cp /etc/apt/sources.list.d $INST_PTH/etc/apt/
+nano $INST_PTH/etc/apt/sources.list.d/debian.sources
 cp /home/msifland/scripts/debian-install-continue $INST_PTH/debian-install-continue
 
 echo
@@ -155,6 +158,7 @@ function separate_parts(){
 	echo
 	read -p "This function will loop over until you leave this field blank.
 It is very important that you type these entries correctly in this section.
+Be sure that you don't write over your filesystem partion from earlier: $part_name
 
 Enter single partition name. (ex. home boot var tmp, etc.): " part
 	echo

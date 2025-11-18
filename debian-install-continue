@@ -34,9 +34,11 @@ echo
 echo "Installing linux-image and firmware files. . ."
 echo
 sleep 1
-LX_IMG=$(wget -qO- https://packages.debian.org/testing/linux-image-amd64 | grep "linux-image" | sort -V | head -1 | sed -e 's:.*eye/::' -e 's:">.*::')
-apt install -y "$LX_IMG"
+
+apt install -y linux-image-amd64 linux-headers-amd64
 apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree
+# Debian installer options for installing debian to exteral devices
+apt install -y calamares calamares-settings-debian debian-installer debian-installer-launcher
 
 echo
 echo "Using tasksel to install the rest of the system. . ."
