@@ -41,13 +41,6 @@ git fetch
 git pull
 sleep 1
 echo
-echo "$HOME/Modules-Apps"
-cd $HOME/Modules-Apps
-git stash
-git fetch
-git pull
-sleep 1
-echo
 echo "All done, in 5 seconds and running script: linux-wsl-update-run. . ."
 sleep 5
 cd
