@@ -96,14 +96,14 @@ fi
 sleep 1
 
 echo
-read -p "Moving on to cfdisk to create and configure patitions. If creating separate boot partition it should be a minimum of 500M, 2G to be have extra kernels. Root partition should be minimun of 20G and the rest for home partition. Be sure to configure to 'dos'. Press [ENTER] to continue."
+read -p "Moving on to cfdisk to create and configure patitions. If creating separate boot partition it should be a minimum of 500M, 2G to have extra kernels. Root partition should be minimun of 20G and the rest for home partition. Be sure to configure to 'dos'. Press [ENTER] to continue."
 sleep 1
 cfdisk $part_conf
 echo
 
 lsblk
 echo
-echo "Now you need to format earch partition as ext4. A new terminal will open and for this."
+echo "Now you need to format earch partition as ext4. A new terminal will open for this."
 sleep 5
 /usr/bin/xterm -e "bash -c \"echo; echo 'For each partition type: 
 	mkfs -t ext4 -L \"label\" /dev/sdXY. (You may have to unmount first)
