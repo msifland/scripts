@@ -13,6 +13,8 @@ if [[ ! -d $HOME/"Modules-Apps"/ble.sh ]]; then
 	mkdir $HOME/"Modules-Apps"/ble.sh
 else
 	rm -rf $HOME/"Modules-Apps"/ble.sh
+	sleep 1
+	mkdir $HOME/"Modules-Apps"/ble.sh
 fi
 cd $HOME/"Modules-Apps"/ble.sh
 git clone https://github.com/akinomyoga/ble.sh.git
