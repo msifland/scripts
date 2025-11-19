@@ -106,19 +106,19 @@ echo
 echo "Now you need to format earch partition as ext4. A new terminal will open for this."
 sleep 5
 /usr/bin/xterm -e "bash -c \"echo; echo 'For each partition type: 
-	mkfs -t ext4 -L \"<label name>\" /dev/sdXY. (You may have to unmount first)
+	mkfs -t ext4 -L <LABEL NAME> /dev/sdXY. (You may have to unmount first)
 
 Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
 echo
 
 lsblk
 echo
-read -p "Enter the partition in which to install the Debian root file system(ex. /dev/sdb2): " part_name
+read -p "Enter the partition in which to install the Debian root file system(ex. /dev/sdb2) This should coincide with the label you just type in: " part_name
 sleep 1
 umount $part_name
 umount $part_conf
 mount $part_name $INST_PTH
-debootstrap --arch amd64 testing $INST_PTH http://ftp.us.debian.org/debian/
+debootstrap --arch=amd64 --components=main,non-free,non-free-firmware,contrib testing $INST_PTH http://ftp.us.debian.org/debian/
 
 echo
 echo "Mounting system folders and copying /etc files for internet connection. . ."
@@ -135,7 +135,7 @@ cp /etc/hostname $INST_PTH/etc/hostname
 if [[ -f $INST_PTH/etc/apt/sources.list ]]; then
 	sudo rm -rf $INST_PTH/etc/apt/sources.list
 fi
-cp /etc/apt/sources.list.d $INST_PTH/etc/apt/
+cp /etc/apt/sources.list.d/debian.sources $INST_PTH/etc/apt/sources.list.d/
 nano $INST_PTH/etc/apt/sources.list.d/debian.sources
 cp /home/msifland/scripts/debian-install-continue $INST_PTH/debian-install-continue
 
@@ -147,7 +147,7 @@ cat << EOF | part_name="$part_name" chroot $INST_PTH env /bin/bash
 source /debian-install-continue
 EOF
 sudo rm -rf $INST_PTH/debian-install-continue
-sudo nano $INST_PTH/etc/apt/sources.list
+sudo nano $INST_PTH/etc/apt/sources.list.d/debian.sources
 
 echo
 sudo blkid

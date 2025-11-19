@@ -28,7 +28,8 @@ apt install -y ca-certificates
 dpkg-reconfigure tzdata
 apt install -y locales
 dpkg-reconfigure locales
-apt install -y wget nano pv git screenfetch jshon dialog tasksel
+locale-gen
+apt install -y wget nano pv git fzf curl screenfetch jshon dialog tasksel
 
 echo
 echo "Installing linux-image and firmware files. . ."
@@ -38,7 +39,7 @@ sleep 1
 apt install -y linux-image-amd64 linux-headers-amd64
 apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree
 # Debian installer options for installing debian to exteral devices
-apt install -y calamares calamares-settings-debian debian-installer debian-installer-launcher
+apt install -y calamares calamares-settings-debian debian-installer debian-installer-launcher qt5-image-formats-plugins qml-module-qtquick-controls qml-module-qtquick-controls2 qml-module-qtquick-templates2 qml-module-qtquick-window2 qml-module-qtquick2 udisks2 dosfstools e2fsprogs btrfs-progs f2fs-tools xfsprogs jfsutils reiserfsprogs ntfs-3g grub-efi-amd64-bin
 
 echo
 echo "Using tasksel to install the rest of the system. . ."

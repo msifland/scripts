@@ -1,12 +1,11 @@
 [sudo] password for msifland: 
 
-11-05-2025 01:30:01 AM
+11-19-2025 01:30:02 AM
 
-[1;38;5;80mRemove old backups first. . .[0m
+[1;38;5;91mRemove old backups first. . .[0m
 ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm -f
-/home/msifland/Dropbox/Linux/Backups/msifland-10-01-2025.tar.gz
 
-[1;38;5;80mBacking up:[0m
+[1;38;5;91mBacking up:[0m
 /home/msifland/Brother_Printer
 /home/msifland/Documents
 /home/msifland/Dropbox
@@ -18,6 +17,7 @@ ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm 
 /home/msifland/scripts
 /home/msifland/Templates
 /home/msifland/Wallpapers
+/home/msifland/usb_pkg_bkups
 /home/msifland/.anydesk
 /home/msifland/.blerc
 /home/msifland/.cache
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm 
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;80mTo /home/msifland/Dropbox/Linux/Backups/msifland-11-05-2025.tar.gz
+[1;38;5;91mTo /home/msifland/Dropbox/Linux/Backups/msifland-11-19-2025.tar.gz
 
 
 Excluding:[0m
@@ -68,27 +68,24 @@ Excluding:[0m
 /home/msifland/.local/share/data
 /home/msifland/Dropbox
 
-[1;38;5;80mBacking up now. . .[0m
+[1;38;5;91mBacking up now. . .[0m
 tar: Removing leading `/' from member names
 tar: Removing leading `/' from hard link targets
 tar: /home/msifland/.cache/keyring-5QZ6E3/control: socket ignored
-[1;38;5;80mBackup finished
+[1;38;5;91mBackup finished
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-11-05-2025.tar.gz from root:root to msifland:msifland. . .
-sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-11-05-2025.tar.gz
-[1;38;5;80mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
-total 24G
--rw-r--r-- 1 msifland msifland 4.8G Oct  8 04:51 msifland-10-08-2025.tar.gz
--rw-r--r-- 1 msifland msifland 4.8G Oct 15 04:52 msifland-10-15-2025.tar.gz
--rw-r--r-- 1 msifland msifland 4.8G Oct 22 04:50 msifland-10-22-2025.tar.gz
--rw-r--r-- 1 msifland msifland 4.8G Oct 29 04:50 msifland-10-29-2025.tar.gz
--rw-r--r-- 1 msifland msifland 4.8G Nov  5 04:57 msifland-11-05-2025.tar.gz
--rw-r--r-- 1 msifland msifland 2.4K Nov  5 04:57 my_backup_log.txt
+Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-11-19-2025.tar.gz from root:root to msifland:msifland. . .
+sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-11-19-2025.tar.gz
+[1;38;5;91mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
+total 1.5G
+-rw-r--r-- 1 msifland msifland 777M Nov 17 13:51 msifland-11-17-2025.tar.gz
+-rw-r--r-- 1 msifland msifland 734M Nov 19 01:38 msifland-11-19-2025.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K Nov 19 01:38 my_backup_log.txt
 
-[1;38;5;80mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
+[1;38;5;91mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-11-05-2025 04:57:22 AM
-[1;38;5;80mIt took 27 minutes 21 seconds to run whole process.[0m
+11-19-2025 01:38:37 AM
+[1;38;5;91mIt took 8 minutes 35 seconds to run whole process.[0m
 
