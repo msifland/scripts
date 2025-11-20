@@ -235,7 +235,7 @@ USR_PTH="$INST_PTH/home/$usrnme"
 for dir in \
         $USR_PTH/Downloads \
         $USR_PTH/Documents \
-        $USR_PTH/"Modules&Apps" \
+        $USR_PTH/"Modules-Apps" \
         $USR_PTH/pkg_bkups \
         $USR_PTH/Projects \
         $USR_PTH/scripts \
@@ -258,7 +258,7 @@ sleep 1
 
 echo
 read -p "Would you like to install your personal files for this installation(scripts, pkg_bkups, Documents, etc.[y/n]? " per_fls
-sleep 1cf
+	sleep 1
 	cp -rf $HOME/Documents $INST_PTH/home/$usrnme/
 	cp -rf $HOME/"Modules&Apps" $INST_PTH/home/$usrnme/
 	cp -rf $HOME/pkg_bkups $INST_PTH/home/$usrnme/
@@ -270,6 +270,7 @@ sleep 1cf
 	cp -rf $HOME/Videos $INST_PTH/home/$usrnme/
 	cp -rf $HOME/tmp $INST_PTH/home/$usrnme/
 	cp -rf $HOME/Wallpapers $INST_PTH/home/$usrnme/
+	cp -rf $HOME/usb_pkc_bkups $INST_PTH/home/$usrnme/
 	echo "Files copied."
 	sleep 2
 
@@ -277,12 +278,12 @@ echo
 read -p "Would you like to install your config files for this installation(.config, .local, .cache, etc.[y/n]? " con_fls
 sleep 1
 if [[ "$con_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo "Copying config files from current system to new system. . ."
+	echo "Copying config files from current system to new system, this will take a while. . ."
 	cp -rf $HOME/.config $INST_PTH/home/$usrnme/
 	cp -rf $HOME/.local $INST_PTH/home/$usrnme/
 	cp -rf $HOME/.cache $INST_PTH/home/$usrnme/
 	cp -rf $HOME/.Xresources $INST_PTH/home/$usrnme/
-	echo "Files copied. You may want to delete select autostart files from .config/autostart."
+	echo "Files copied. You may want to look at and delete some autostart files from .config/autostart."
 	sleep 2
 fi
 
