@@ -258,9 +258,11 @@ sleep 1
 
 echo
 read -p "Would you like to install your personal files for this installation(scripts, pkg_bkups, Documents, etc.[y/n]? " per_fls
-	sleep 1
+sleep 1
+if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	echo "Copying config files from your personal docs to new system, this will take a while. . ."
 	cp -rf $HOME/Documents $INST_PTH/home/$usrnme/
-	cp -rf $HOME/"Modules&Apps" $INST_PTH/home/$usrnme/
+	cp -rf $HOME/"Modules-Apps" $INST_PTH/home/$usrnme/
 	cp -rf $HOME/pkg_bkups $INST_PTH/home/$usrnme/
 	cp -rf $HOME/Projects $INST_PTH/home/$usrnme/
 	cp -rf $HOME/scripts $INST_PTH/home/$usrnme/
@@ -273,6 +275,7 @@ read -p "Would you like to install your personal files for this installation(scr
 	cp -rf $HOME/usb_pkc_bkups $INST_PTH/home/$usrnme/
 	echo "Files copied."
 	sleep 2
+fi
 
 echo 
 read -p "Would you like to install your config files for this installation(.config, .local, .cache, etc.[y/n]? " con_fls
