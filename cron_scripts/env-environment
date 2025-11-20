@@ -1,6 +1,6 @@
 SHELL=/bin/bash
-SESSION_MANAGER=local/debian:@/tmp/.ICE-unix/6979,unix/debian:/tmp/.ICE-unix/6979
-WINDOWID=65012196
+SESSION_MANAGER=local/debian:@/tmp/.ICE-unix/7996,unix/debian:/tmp/.ICE-unix/7996
+WINDOWID=60817969
 QT_ACCESSIBILITY=1
 COLORTERM=truecolor
 XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
@@ -28,7 +28,7 @@ LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd
 XDG_CURRENT_DESKTOP=MATE
 VTE_VERSION=8201
 XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
-XDG_ACTIVATION_TOKEN=mate-panel-8743-debian-mate-terminal-0_TIME136531
+XDG_ACTIVATION_TOKEN=mate-panel-9534-debian-mate-terminal-0_TIME131927
 XDG_SESSION_CLASS=user
 TERM=xterm-256color
 GTK_OVERLAY_SCROLLING=0
@@ -36,13 +36,13 @@ USER=msifland
 DISPLAY=:0
 SHLVL=2
 USE_SDK_WRAPPER=true
-ILCOLOR4=[1;38;5;54m
-ILCOLOR1=[1;38;5;50m
+ILCOLOR4=[1;38;5;221m
+ILCOLOR1=[1;38;5;156m
 XDG_VTNR=7
-ILCOLOR3=[1;38;5;86m
-ILCOLOR2=[1;38;5;91m
+ILCOLOR3=[1;38;5;180m
+ILCOLOR2=[1;38;5;206m
 UBUNTU_MENUPROXY=1
-XDG_SESSION_ID=3
+XDG_SESSION_ID=2
 XDG_RUNTIME_DIR=/run/user/1000
 GTK3_MODULES=xapp-gtk3-module
 GCC_COLORS=error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01
