@@ -35,7 +35,7 @@ sleep 1
 apt install -y linux-image-amd64 linux-headers-amd64
 apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree
 # Debian installer options for installing debian to exteral devices
-apt install -y calamares calamares-settings-debian debian-installer debian-installer-launcher qt5-image-formats-plugins qml-module-qtquick-controls qml-module-qtquick-controls2 qml-module-qtquick-templates2 qml-module-qtquick-window2 qml-module-qtquick2 udisks2 dosfstools e2fsprogs btrfs-progs f2fs-tools xfsprogs jfsutils reiserfsprogs ntfs-3g grub-efi-amd64-bin chromium make gawk
+apt install -y calamares calamares-settings-debian debian-installer debian-installer-launcher qt5-image-formats-plugins qml-module-qtquick-controls qml-module-qtquick-controls2 qml-module-qtquick-templates2 qml-module-qtquick-window2 qml-module-qtquick2 udisks2 dosfstools e2fsprogs btrfs-progs f2fs-tools xfsprogs jfsutils reiserfsprogs ntfs-3g grub-efi-amd64-bin chromium make gawk kexec-tools
 
 echo
 echo "Using tasksel to install the rest of the system. . ."
@@ -93,12 +93,12 @@ apt --fix-broken -y install
 dpkg --configure -a
 apt update
 apt upgrade -y
-apt purge mate-screensaver
-apt autoremove
-apt install -y conky-all aircrack-ng curl gparted software-properties-common hdparm xscreensaver xscreensaver-data-extra lightdm lightdm-settings slick-greeter variety mate-applets mate-desktop-environment-extras mate-applet-appmenu chromium genisoimage net-tools numlockx aptitude
+apt purge -y mate-screensaver
+apt autoremove -y
+apt install -y conky-all aircrack-ng curl gparted software-properties-common hdparm xscreensaver xscreensaver-data-extra lightdm lightdm-settings slick-greeter variety mate-applets mate-desktop-environment-extras mate-applet-appmenu chromium genisoimage net-tools numlockx aptitude live-build live-config live-boot live-tools
 apt update
 apt upgrade -y
-apt autoremove
+apt autoremove -y
 rm -rf /work
 
 DEBIAN_FRONTEND=noninteractive apt -y install grub2
