@@ -115,29 +115,32 @@ lsblk
 echo
 read -p "Enter the partition in which to install the Debian root file system(ex. /dev/sdb2) This should coincide with the label you just type in: " part_name
 sleep 1
-umount $part_name
-umount $part_conf
-mount $part_name $INST_PTH
+sudo umount $part_name
+sudo umount $part_conf
+sudo mount $part_name $INST_PTH
 debootstrap --arch=amd64 --components=main,non-free,non-free-firmware,contrib testing $INST_PTH http://ftp.us.debian.org/debian/
 
 echo
 echo "Mounting system folders and copying /etc files for internet connection. . ."
 echo
 sleep 1
-mount -t proc /proc $INST_PTH/proc
-mount -t sysfs /sys $INST_PTH/sys
-mount -o bind /dev $INST_PTH/dev
-mount -o bind /dev/pts $INST_PTH/dev/pts
-cp /etc/network/interfaces $INST_PTH/etc/network/interfaces
-cp /etc/resolv.conf $INST_PTH/etc/resolv.conf
-cp /etc/hosts $INST_PTH/etc/hosts
-cp /etc/hostname $INST_PTH/etc/hostname
+sudo mount -t proc /proc $INST_PTH/proc
+sudo mount -t sysfs /sys $INST_PTH/sys
+sudo mount -o bind /dev $INST_PTH/dev
+sudo mount -o bind /dev/pts $INST_PTH/dev/pts
+sudo cp /etc/network/interfaces $INST_PTH/etc/network/interfaces
+sudo cp /etc/resolv.conf $INST_PTH/etc/resolv.conf
+sudo cp /etc/hosts $INST_PTH/etc/hosts
+sudo cp /etc/hostname $INST_PTH/etc/hostname
 if [[ -f $INST_PTH/etc/apt/sources.list ]]; then
 	sudo rm -rf $INST_PTH/etc/apt/sources.list
 fi
-cp /etc/apt/sources.list.d/debian.sources $INST_PTH/etc/apt/sources.list.d/
-nano $INST_PTH/etc/apt/sources.list.d/debian.sources
-cp /home/msifland/scripts/debian-install-continue $INST_PTH/debian-install-continue
+sudo cp /etc/apt/sources.list.d/debian.sources $INST_PTH/etc/apt/sources.list.d/
+sudo cp $HOME/MSI_live-build/my_configs/my_preferences.pref $INST_PTH/etc/apt/preferences.d/
+sudo nano $INST_PTH/etc/apt/sources.list.d/debian.sources
+sudo cp $HOME/scripts/debian-install-continue $INST_PTH/debian-install-continue
+sudo cp -arf /usr/share/terminfo/* $INST_PTH/usr/share/terminfo/
+sudo cp $HOME/MSI_live-build/my_configs/my_packs.list.chroot $INST_PTH/
 
 echo
 echo "Chroot'ing into new install to finish the process. . ."
@@ -148,6 +151,7 @@ source /debian-install-continue
 EOF
 sudo rm -rf $INST_PTH/debian-install-continue
 sudo nano $INST_PTH/etc/apt/sources.list.d/debian.sources
+sudo rm -rf $INST_PTH/my_packs.list.chroot
 
 echo
 sudo blkid
@@ -241,6 +245,7 @@ for dir in \
         $USR_PTH/scripts \
         $USR_PTH/Templates \
         $USR_PTH/Music \
+        $USR_PTH/MSI_live-build \
         $USR_PTH/Pictures \
         $USR_PTH/Videos \
         $USR_PTH/tmp \
@@ -267,6 +272,7 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	rsync -a --exclude=".git"  $HOME/Projects $INST_PTH/home/$usrnme/
 	rsync -a --exclude=".git"  $HOME/scripts $INST_PTH/home/$usrnme/
 	rsync -a --exclude=".git"  $HOME/usb_pkg_bkups $INST_PTH/home/$usrnme/
+	rsync -a --exclude=".git"  $HOME/MSI_live-build/my_configs $INST_PTH/
 	echo "Files copied."
 	sleep 2
 fi
@@ -328,6 +334,7 @@ echo
 echo "Making sure ownership is correct on /home/$usrnme directory. . ."
 sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
 sleep 1
+sudo cp $HOME/MSI_live-build/my_configs/msifland $INST_PTH/etc/sudoers.d/
 
 echo
 echo "Attempting to umount devices and system files. . ."

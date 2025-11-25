@@ -36,15 +36,6 @@ apt install -y linux-image-amd64 linux-headers-amd64
 apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree
 # Debian installer options for installing debian to exteral devices
 apt install -y $(cat /my_packs.list.chroot)
-<<comment
-echo
-echo "Using tasksel to install the rest of the system. . ."
-echo
-sleep 1
-dpkg --configure -a
-tasksel
-dpkg --configure -a
-comment
 
 echo
 echo "Setting up root password and new user. . ."
