@@ -1,0 +1,96 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+
+echo
+echo "Updating apt and installing initial applications. . ."
+echo
+sleep 1
+apt update
+apt upgrade
+apt install -y xterm bash-completion ncurses-term
+export TERM=xterm-color
+
+cd /
+
+echo
+echo "Setting up time zones and locales. . ."
+echo
+sleep 1
+apt install -y wget nano pv git fzf curl screenfetch jshon dialog ca-certificates locales
+ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime   # or your zone
+echo "America/Chicago" | tee /etc/timezone
+DEBIAN_FRONTEND=noninteractive dpkg-reconfigure tzdata
+
+sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/default/locale
+dpkg-reconfigure -f noninteractive locales
+locale-gen
+
+echo
+echo "Installing linux-image and firmware files. . ."
+echo
+sleep 1
+
+apt install -y linux-image-amd64 linux-headers-amd64
+apt install -y firmware-linux firmware-linux-free firmware-linux-nonfree firmware-misc-nonfree
+# Debian installer options for installing debian to exteral devices
+apt install -y $(cat /my_packs.list.chroot)
+<<comment
+echo
+echo "Using tasksel to install the rest of the system. . ."
+echo
+sleep 1
+dpkg --configure -a
+tasksel
+dpkg --configure -a
+comment
+
+echo
+echo "Setting up root password and new user. . ."
+echo
+sleep 2
+dialog --inputbox "Enter root password: " 10 50 2>new_psswrd.txt
+new_psswrd=$(<new_psswrd.txt)
+{ echo $new_psswrd; echo $new_psswrd; } | passwd
+sleep 2
+dialog --inputbox "Type a new user name: " 10 50 2>usrnme.txt
+dialog --inputbox "Type the user name's password: " 10 50 2>usrnme_psswrd.txt
+usrnme=$(<usrnme.txt)
+usrnme_psswrd=$(<usrnme_psswrd.txt)
+{ echo $usrnme_psswrd; echo $usrnme_psswrd; } | adduser $usrnme
+
+echo
+echo "Installing generic firmware files. . ."
+echo
+sleep 1
+
+echo
+mkdir /firm_work
+cd /firm_work
+wget http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
+mkdir firmware && tar -C firmware -xvf firmware.tar.gz
+cd firmware
+dpkg -i *.deb
+cd /
+rm -rf /firm_work
+
+
+echo
+echo "Finishing up installation and installing final apps. . ."
+echo
+sleep 1
+apt --fix-broken -y install
+dpkg --configure -a
+apt update
+apt upgrade -y
+apt purge -y mate-screensaver
+apt autoremove -y
+apt update
+apt upgrade -y
+apt autoremove -y
+rm -rf /work
+
+DEBIAN_FRONTEND=noninteractive apt -y install grub2
+
+exit

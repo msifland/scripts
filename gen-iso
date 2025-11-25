@@ -41,6 +41,7 @@ Ready to run?: " RDY
 		sleep 1
 		if [[ $RDY =~ ^([yY][eE][sS]|[yY])$ ]]; then
 			sleep 1
+			#if xorriso -as mkisofs -o "$ISO_NM" -r -J -l -V "$ISO_NM" -cache-inodes -isohybrid-mbr $ISO_NM/isolinux/isohdpfx.bin -partition_offset 16 -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e '--interval:appended_partition_2:::' -no-emul-boot $ISO_NM_OR; then
 			if genisoimage -o $ISO_NM -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -J -R -V -D $ISO_NM_OR; then
 				echo
 				echo "Iso image ${ILCOLOR4}\"$ISO_NM\"${ILRESTORE} created."

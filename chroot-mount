@@ -5,7 +5,7 @@ echo "Creating directories. . ."
 if [[ ! -d /mnt/chroot ]]; then
 	echo
 	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
-	sudo mkdir /mnt/chroot
+	sudo mkdir -p /mnt/chroot
 else
 	echo
 	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
@@ -27,8 +27,8 @@ read -p "${ILCOLOR3}Type device in which you would like to mount the main file s
 sleep 1
 
 echo
-echo "Mounting with: sudo mount $MNT_DVC /mnt/chroot"
-sudo mount $MNT_DVC /mnt/chroot
+echo "Mounting with: sudo mount --mkdir $MNT_DVC /mnt/chroot"
+sudo mount --mkdir $MNT_DVC /mnt/chroot
 sleep 1
 
 function dev_mnt(){
@@ -40,8 +40,8 @@ if [[ ! $MNT_DVC2 = "" ]]; then
 	echo
 	read -p "${ILCOLOR3}What folder to mount $MNT_DVC2 to(ex. home, boot, etc.)${ILRESTORE} " MNT_DVC2_FLDR
 	sleep 1
-	echo "Mounting with: sudo mount $MNT_DVC2 \"/mnt/chroot/$MNT_DVC2_FLDR\""
-	sudo mount "$MNT_DVC2" "/mnt/chroot/$MNT_DVC2_FLDR"
+	echo "Mounting with: sudo mount --mkdir $MNT_DVC2 \"/mnt/chroot/$MNT_DVC2_FLDR\""
+	sudo mount --mkdir "$MNT_DVC2" "/mnt/chroot/$MNT_DVC2_FLDR"
 	sleep 1
 	dev_mnt
 else

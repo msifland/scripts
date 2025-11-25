@@ -10,13 +10,11 @@ fi
 INST_PTH="/mnt/deb-inst"
 echo
 echo
-echo "This script is set up to install Debian Mate from a full working linux distro on an external source/dev block. Make sure you have this script(debina-install) and the additional script(debian-install-continue) in the same directory.
-
-Be sure to select Mate Desktop when this time comes, along with any other various packages."
+echo "This script is set up to install Debian Mate chroot environment. Then create a live-iso file to put on a usb drive."
 echo
 sleep 1
 echo
-read -p "Are you ready to continue? " YNCON
+read -p "Are you ready to continue?[y/N] " YNCON
 if [[ $YNCON =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo
 	echo "Ok, moving forward with install..."
@@ -75,154 +73,59 @@ wget http://ftp.debian.org/debian/pool/main/d/debootstrap/"$DEBOOT_STRP"
 
 cd /
 dpkg -i $INST_PTH/work/*.deb
-
-echo
-lsblk
-echo
-read -p "Enter main partition block to configure for installation.(ex. /dev/sdb). " part_conf
-sleep 1
-for blk in $(df -h | grep "$part_conf" | awk '{ print $1 }'); do
-	sudo umount $blk
-done
-echo
-
-read -p "Would you like to completely wipe $part_conf first[y/n] " wipe_part
-if [[ "$wipe_part" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	dd if=/dev/zero of="$part_conf"  bs=512  count=1
-	echo "Device wiped succesfully."
-else
-	echo "	Not wiping."
-fi
 sleep 1
 
+#####################################################
 echo
-read -p "Moving on to cfdisk to create and configure patitions. If creating separate boot partition it should be a minimum of 500M, 2G to have extra kernels. Root partition should be minimun of 20G and the rest for home partition. Be sure to configure to 'dos'. Press [ENTER] to continue."
+echo "Installing to $INST_PTH for .iso build later."
 sleep 1
-cfdisk $part_conf
-echo
 
-lsblk
-echo
-echo "Now you need to format earch partition as ext4. A new terminal will open for this."
-sleep 5
-/usr/bin/xterm -e "bash -c \"echo; echo 'For each partition type: 
-	mkfs -t ext4 -L <LABEL NAME> /dev/sdXY. (You may have to unmount first)
+	echo
+	echo "Setting up install path as $INST_PTH..."
+	part_name=$INST_PTH
+	sleep 1
+#######################################
 
-Then type exit to close the terminal and continue the install process.'; echo; lsblk; echo; echo; sh\""
-echo
-
-lsblk
-echo
-read -p "Enter the partition in which to install the Debian root file system(ex. /dev/sdb2) This should coincide with the label you just type in: " part_name
-sleep 1
-umount $part_name
-umount $part_conf
-mount $part_name $INST_PTH
 debootstrap --arch=amd64 --components=main,non-free,non-free-firmware,contrib testing $INST_PTH http://ftp.us.debian.org/debian/
 
 echo
 echo "Mounting system folders and copying /etc files for internet connection. . ."
 echo
 sleep 1
-mount -t proc /proc $INST_PTH/proc
-mount -t sysfs /sys $INST_PTH/sys
-mount -o bind /dev $INST_PTH/dev
-mount -o bind /dev/pts $INST_PTH/dev/pts
-cp /etc/network/interfaces $INST_PTH/etc/network/interfaces
-cp /etc/resolv.conf $INST_PTH/etc/resolv.conf
-cp /etc/hosts $INST_PTH/etc/hosts
-cp /etc/hostname $INST_PTH/etc/hostname
+sudo mount -t proc /proc $INST_PTH/proc
+sudo mount -t sysfs /sys $INST_PTH/sys
+sudo mount -o bind /dev $INST_PTH/dev
+sudo mount -o bind /dev/pts $INST_PTH/dev/pts
+sudo cp /etc/network/interfaces $INST_PTH/etc/network/interfaces
+sudo cp /etc/resolv.conf $INST_PTH/etc/resolv.conf
+sudo cp /etc/hosts $INST_PTH/etc/hosts
+sudo cp /etc/hostname $INST_PTH/etc/hostname
 if [[ -f $INST_PTH/etc/apt/sources.list ]]; then
 	sudo rm -rf $INST_PTH/etc/apt/sources.list
 fi
-cp /etc/apt/sources.list.d/debian.sources $INST_PTH/etc/apt/sources.list.d/
-nano $INST_PTH/etc/apt/sources.list.d/debian.sources
-cp /home/msifland/scripts/debian-install-continue $INST_PTH/debian-install-continue
+sudo cp /etc/apt/sources.list.d/debian.sources $INST_PTH/etc/apt/sources.list.d/
+sudo cp $HOME/MSI_live-build/my_configs/my_preferences.pref $INST_PTH/etc/apt/preferences.d/
+sudo nano $INST_PTH/etc/apt/sources.list.d/debian.sources
+sudo cp $HOME/scripts/debian-install-continue-iso $INST_PTH/debian-install-continue-iso
+sudo cp -arf /usr/share/terminfo/* $INST_PTH/usr/share/terminfo/
+sudo cp $HOME/MSI_live-build/my_configs/my_packs.list.chroot $INST_PTH/
 
 echo
 echo "Chroot'ing into new install to finish the process. . ."
 echo
 sleep 1
-cat << EOF | part_name="$part_name" chroot $INST_PTH env /bin/bash
-source /debian-install-continue
+cat << EOF | part_name="$part_name" sudo chroot $INST_PTH env /bin/bash
+source /debian-install-continue-iso
 EOF
-sudo rm -rf $INST_PTH/debian-install-continue
+sudo rm -rf $INST_PTH/debian-install-continue-iso
+sudo rm -rf $INST_PTH/my_packs.list.chroot
 sudo nano $INST_PTH/etc/apt/sources.list.d/debian.sources
 
-echo
-sudo blkid
-echo
 
-function separate_parts(){
-	lsblk
-	echo
-	read -p "This function will loop over until you leave this field blank.
-It is very important that you type these entries correctly in this section.
-Be sure that you don't write over your filesystem partion from earlier: $part_name
-
-Enter single partition name. (ex. home boot var tmp, etc.): " part
-	echo
-	if [[ ! $part = "" ]]; then
-		read -p "What partition for $part(ex. /dev/sdb3)? " new_prt
-		if [[ ! -d $INST_PTH/temp ]]; then
-			sudo mkdir $INST_PTH/temp
-		fi
-		sudo mkdir $INST_PTH/temp/$part
-		sudo mount $new_prt $INST_PTH/temp/$part
-		if [[ ! -d $INST_PTH/$part ]]; then
-			sudo mkdir $INST_PTH/$part
-		fi
-		if [[ ! -d $INST_PTH/$part ]]; then
-			sudo mkdir $INST_PTH/$part
-		fi
-		sudo cp -rf $INST_PTH/$part/* $INST_PTH/temp/$part/
-		sudo rm -rf $INST_PTH/$part/*
-		sudo umount $INST_PTH/temp/$part
-		sudo mount $new_prt $INST_PTH/$part
-		echo "$part created. . ."
-		echo
-		echo "Putting entry $part into /etc/fstab. . ."
-		fstab_entry=$(sudo blkid -s UUID | grep "$new_prt" | sed -e 's#.*: ##' | sed 's:"::g')
-		if [[ ! -d $INST_PTH/etc ]]; then
-			sudo mkdir $INST_PTH/etc
-			if [[ ! -f $INST_PTH/etc/fstab ]]; then
-				sudo touch $INST_PTH/etc/fstab
-			fi
-		fi
-		echo "" | sudo tee -a $INST_PTH/etc/fstab > /dev/null
-		echo "$fstab_entry    /$part    ext4    defaults    0    2" | sudo tee -a $INST_PTH/etc/fstab > /dev/null
-		sleep 1
-		echo
-		separate_parts
-	else
-		echo
-		echo "No other devices entered. Moving on. . ."
-		sleep 1
-		sudo rm -rf $INST_PTH/temp
-	fi
-}
-echo
-read -p "Did you use a separate /home or other partition[y/n]? " sep_hm
-sleep 1
-if [[ $sep_hm =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo
-	separate_parts
-else
-	echo
-	echo "No separate patitions used. Moving on. . ."
-	sleep 1
-fi
-echo
-read -p "Opening /etc/fstab to review and manually make changes. Showing you the UUID's for any partitions to add, eg. /home, /boot, /tmp, etc. Be sure to remove the \" after 'UUID='. All partition formatting should be pretty much the same, with the exception of the last number. Root partition should be a '1', others should be a '2'.(Press [ENTER] to continue) "
-echo
-echo
-
+##########################################
 if ! dpkg --get-selections | grep -wq "xterm"; then
 	apt install xterm
 fi
-sudo blkid
-/usr/bin/xterm -e "bash -c \"sudo nano $INST_PTH/etc/fstab\""
-echo
 sleep 1
 
 echo
@@ -241,6 +144,7 @@ for dir in \
         $USR_PTH/scripts \
         $USR_PTH/Templates \
         $USR_PTH/Music \
+        $USR_PTH/MSI_live-build \
         $USR_PTH/Pictures \
         $USR_PTH/Videos \
         $USR_PTH/tmp \
@@ -267,6 +171,7 @@ if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	rsync -a --exclude=".git"  $HOME/Projects $INST_PTH/home/$usrnme/
 	rsync -a --exclude=".git"  $HOME/scripts $INST_PTH/home/$usrnme/
 	rsync -a --exclude=".git"  $HOME/usb_pkg_bkups $INST_PTH/home/$usrnme/
+	rsync -a --exclude=".git"  $HOME/MSI_live-build/my_configs $INST_PTH/home/$usrnme/MSI_live-build/
 	echo "Files copied."
 	sleep 2
 fi
@@ -286,37 +191,11 @@ if [[ "$con_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "Files copied. You may want to look at and delete some autostart files from .config/autostart."
 	sleep 2
 fi
-sleep 1
 
 echo
-read -p "Would you like to disable os-prober in grub[y/n]? " dis_ospr
-sleep 1
-	if [[ "$dis_ospr" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-		if grep "GRUB_DISABLE_OS_PROBER=true" /mnt/deb_inst/etc/default/grub; then
-			echo
-			echo "Already disabled."
-			sleep 1
-		else
-			echo
-			echo "Adding \"GRUB_DISABLE_OS_PROBER=true\" to $INST_PTH/default/grub"
-			sleep 1
-			echo "GRUB_DISABLE_OS_PROBER=true" | sudo tee -a $INST_PTH/etc/default/grub
-		fi
-	fi
-sleep 1
+##################################################
 
 echo
-echo "Chroot'ing back in to environment to update grub and anything else you need. Type 'exit' when done. . ."
-sleep 1
-echo
-grb_inst_su=$(echo "${part_name%?}")
-grb_inst="$grb_inst_su"
-sleep 1
-grb_inst="$grb_inst" sudo chroot $INST_PTH env /bin/sh -c "echo \"grub-install $grb_inst\"; grub-install $grb_inst; echo; echo \"update-grub\"; update-grub; echo; echo; sh"
-echo
-sleep 1
-echo
-
 echo "Updating permissions to $usrnme"
 sleep 1
 sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
@@ -328,7 +207,8 @@ echo
 echo "Making sure ownership is correct on /home/$usrnme directory. . ."
 sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
 sleep 1
-
+sudo cp $HOME/MSI_live-build/my_configs/msifland $INST_PTH/etc/sudoers.d/
+$HOME/scripts/debian-install-make-live-iso
 echo
 echo "Attempting to umount devices and system files. . ."
 echo
@@ -346,7 +226,7 @@ if blkid | grep -i "boot"; then
 	sudo mount $blk_mnt /boot
 fi
 echo
-echo "All done."
+echo "All done. Now you can copy to a usb stick. Open file, extract initrd and vmlinuz to same dir as .iso file, and tell /etc/grub.d/40_cusotm to point to it."
 echo
 sleep 1
 
