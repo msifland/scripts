@@ -6,14 +6,6 @@
 
 set -euo pipefail
 
-# Colors (assuming these are defined in your .bashrc or sourced elsewhere)
-# If not, uncomment and adjust as needed
-# ILCOLOR1="\033[1;31m"  # Red
-# ILCOLOR2="\033[1;32m"  # Green
-# ILCOLOR3="\033[1;33m"  # Yellow
-# ILCOLOR4="\033[1;34m"  # Blue
-# ILRESTORE="\033[0m"
-
 BACKUP_DIR="$HOME/pkg_bkups"
 BACKUP_CONFIG_DIR="$BACKUP_DIR/backups"
 MAX_BACKUPS=4
@@ -29,7 +21,7 @@ echo -e "${ILCOLOR2}$(date '+%m-%d-%Y %r')${ILRESTORE}\n"
 START_TIME=$(date +%s)
 
 # Keep sudo alive
-sudo -v
+echo 'spike' | sudo -S -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo -e "${ILCOLOR3}Updating system information...${ILRESTORE}"
