@@ -10,7 +10,7 @@ set -euo pipefail
 clear
 echo -e "${ILCOLOR2}
                         ┌────────────────────────────────────────────┐
-                        │               ⚠️  CAUTION ⚠️                 │
+                        │               ⚠️  CAUTION ⚠️               │
                         │ This script must be run from:              │
                         │     ~/scripts/linux-wsl-update             │
                         │                                            │
