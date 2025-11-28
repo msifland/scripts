@@ -1,157 +1,153 @@
 #!/bin/bash
-# This is a blank bash script document.
-# Put your code below this line.
+# =============================================================================
+# System Update & Backup Script
+# Cleans, updates, and backs up packages, apt sources, configs, and crontab
+# =============================================================================
 
+set -euo pipefail
+
+# Colors (assuming these are defined in your .bashrc or sourced elsewhere)
+# If not, uncomment and adjust as needed
+# ILCOLOR1="\033[1;31m"  # Red
+# ILCOLOR2="\033[1;32m"  # Green
+# ILCOLOR3="\033[1;33m"  # Yellow
+# ILCOLOR4="\033[1;34m"  # Blue
+# ILRESTORE="\033[0m"
+
+BACKUP_DIR="$HOME/pkg_bkups"
+BACKUP_CONFIG_DIR="$BACKUP_DIR/backups"
+MAX_BACKUPS=4
+
+# Files to back up from home
+CONFIG_FILES=(".bashrc" ".bash_profile" ".blerc" ".conkyrc" ".conkyrc.bak" 
+              ".nanorc" ".xprofile" ".Xresources")
+
+# Start timing
 clear
-echo "${ILCOLOR4}           ###########    Updating your system now   ###########${ILRESTORE}"
-echo -e ${ILCOLOR2}
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_start=$(date +"%s")
-sleep 1
-echo "Updating $(uname --all)${ILRESTORE}"
+echo -e "${ILCOLOR4}########### Starting System Update & Backup ###########${ILRESTORE}"
+echo -e "${ILCOLOR2}$(date '+%m-%d-%Y %r')${ILRESTORE}\n"
+START_TIME=$(date +%s)
+
+# Keep sudo alive
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+echo -e "${ILCOLOR3}Updating system information...${ILRESTORE}"
+echo "Running on: $(uname -a)"
 sleep 1
 
-# Password to run as sudo.
-PW="spike"
-echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
-sleep 1
-echo $PW | sudo -S -v
-echo
-echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
-
-# Run script
+# =============================================================================
+# 1. System Update
+# =============================================================================
+echo -e "\n${ILCOLOR1}Updating package lists...${ILRESTORE}"
 sudo apt update
-sleep 1
 
-echo
-echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+echo -e "\n${ILCOLOR1}Upgrading installed packages...${ILRESTORE}"
 sudo apt upgrade -y --allow-downgrades
 sudo apt full-upgrade -y --allow-downgrades
-sleep 1
 
-echo
-echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
+echo -e "\n${ILCOLOR1}Cleaning up...${ILRESTORE}"
 sudo apt autopurge -y
 sudo apt autoremove -y
-sudo apt clean -y
-sudo apt autoclean -y
-sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
-rm -v -f ~/.cache/thumbnails/*/*.png ~/.thumbnails/*/*.png
-rm -v -f ~/.cache/thumbnails/*/*/*.png ~/.thumbnails/*/*/*.png
-sleep 1
+sudo apt clean
+sudo apt autoclean
 
-echo
-echo "${ILCOLOR2}Backing up important files and apps. . .${ILRESTORE}"
-echo "${ILCOLOR1}Creating list of apps, and copying repos from /etc/apt. . .${ILRESTORE}"
-# Set backups folders and files, and only keep 3 of each.
-DEST="$HOME/pkg_bkups"
-if [[ ! -d "$DEST" ]]; then
-	mkdir $DEST
-else
-	if ls $DEST/* 1> /dev/null 2>&1; then
-		ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f > /dev/null 2>&1
-	fi
-fi
-if [[ ! -d "$DEST/apt" ]]; then
-	mkdir "$DEST/apt"
-fi
-if [[ ! -d "$DEST/apt.old-1" ]]; then
-	mkdir "$DEST/apt.old-1"
-fi
-if [[ ! -d "$DEST/apt.old-2" ]]; then
-	mkdir "$DEST/apt.old-2"
-fi
-if [[ ! -d "$DEST/apt.old-3" ]]; then
-	mkdir "$DEST/apt.old-3"
-fi
-if [[ ! -d "$DEST/apt.old-4" ]]; then
-	mkdir "$DEST/apt.old-4"
-fi
+# Remove configuration files from uninstalled packages
+echo -e "${ILCOLOR1}Purging residual config files...${ILRESTORE}"
+sudo dpkg -l | awk '/^rc/ {print $2}' | xargs -r sudo apt purge -y
 
-# Rename pkgs.txt lists to keep 5 copies
-if [[ -f $DEST/pkgs.txt.old-3 ]]; then
-	mv $DEST/pkgs.txt.old-3 $DEST/pkgs.txt.old-4
-fi
-if [[ -f $DEST/pkgs.txt.old-2 ]]; then
-	mv $DEST/pkgs.txt.old-2 $DEST/pkgs.txt.old-3
-fi
-if [[ -f $DEST/pkgs.txt.old-1 ]]; then
-	mv $DEST/pkgs.txt.old-1 $DEST/pkgs.txt.old-2
-fi
-if [[ -f $DEST/pkgs.txt ]]; then
-	mv $DEST/pkgs.txt $DEST/pkgs.txt.old-1
-fi
+# Clear thumbnail cache
+echo -e "${ILCOLOR1}Clearing thumbnail cache...${ILRESTORE}"
+rm -rf ~/.cache/thumbnails/*/*
+rm -rf ~/.thumbnails/*/* 2>/dev/null || true
 
-# Creating list for restore purposes.
-dpkg --get-selections | awk '{print $1}' > $DEST/pkgs.txt
+# =============================================================================
+# 2. Create backup directories
+# =============================================================================
+mkdir -p "$BACKUP_DIR/apt" "$BACKUP_CONFIG_DIR"
 
-# This section copies /etc/apt folder and keeps 5 copies.
-if ls $DEST/apt.old-4/* > /dev/null 2>&1; then
-	rm -rf $DEST/apt.old-4/*
-fi
-if ls $DEST/apt.old-3/* > /dev/null 2>&1; then
-	cp -rf $DEST/apt.old-3/* $DEST/apt.old-4/
-	rm -rf $DEST/apt.old-3/*
-fi
-if ls $DEST/apt.old-2/* > /dev/null 2>&1; then
-	cp -rf $DEST/apt.old-2/* $DEST/apt.old-3/
-	rm -rf $DEST/apt.old-2/*
-fi
-if ls $DEST/apt.old-1/* > /dev/null 2>&1; then
-	cp -rf $DEST/apt.old-1/* $DEST/apt.old-2/
-	rm -rf $DEST/apt.old-1/*
-fi
-if ls $DEST/apt/* > /dev/null 2>&1; then
-	cp -rf $DEST/apt/* $DEST/apt.old-1/
-	rm -rf $DEST/apt/*
-fi
-cp -rf /etc/apt/* $DEST/apt/
-sleep 1
+# =============================================================================
+# 3. Backup installed package list (rotate old ones)
+# =============================================================================
+echo -e "\n${ILCOLOR1}Backing up installed package list...${ILRESTORE}"
+PKG_LIST="$BACKUP_DIR/pkgs.txt"
 
-echo
-echo "${ILCOLOR1}Backing up important config files. . .${ILRESTORE}"
-sleep 1
-RC_ARR=(.bashrc .bash_profile .blerc .conkyrc .conkyrc.bak .nanorc .xprofile .Xresources)
-for file in ${RC_ARR[@]}; do
-echo "Backup up $file"
-cp -f $HOME/$file $HOME/pkg_bkups/backups/
-sleep .25
+# Rotate old package lists
+for i in $(seq $((MAX_BACKUPS - 1)) -1 1); do
+    if [[ -f "$BACKUP_DIR/pkgs.txt.old-$i" ]]; then
+        mv "$BACKUP_DIR/pkgs.txt.old-$i" "$BACKUP_DIR/pkgs.txt.old-$((i+1))"
+    fi
 done
-sleep 1
+[[ -f "$PKG_LIST" ]] && mv "$PKG_LIST" "$BACKUP_DIR/pkgs.txt.old-1"
 
-echo
-echo "${ILCOLOR1}Backing up crontab. . .${ILRESTORE}"
-if sudo test -s "/var/spool/cron/crontabs/msifland"; then
-	crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
-	sudo crontab -l > $HOME/pkg_bkups/backups/cron-jobs-SUDO.txt
+dpkg --get-selections | awk '{print $1}' > "$PKG_LIST"
+
+# =============================================================================
+# 4. Backup /etc/apt (sources & keys) - rotate folders
+# =============================================================================
+echo -e "${ILCOLOR1}Backing up APT sources and keys...${ILRESTORE}"
+
+# Rotate old apt backups
+for i in $(seq $((MAX_BACKUPS - 1)) -1 1); do
+    if [[ -d "$BACKUP_DIR/apt.old-$i" ]]; then
+        rm -rf "$BACKUP_DIR/apt.old-$((i+1))"
+        mv "$BACKUP_DIR/apt.old-$i" "$BACKUP_DIR/apt.old-$((i+1))"
+    fi
+done
+[[ -d "$BACKUP_DIR/apt" ]] && mv "$BACKUP_DIR/apt" "$BACKUP_DIR/apt.old-1"
+
+mkdir -p "$BACKUP_DIR/apt"
+cp -a /etc/apt/{sources.list,sources.list.d,trusted.gpg*} "$BACKUP_DIR/apt/" 2>/dev/null || true
+
+# =============================================================================
+# 5. Backup important config files
+# =============================================================================
+echo -e "\n${ILCOLOR1}Backing up personal configuration files...${ILRESTORE}"
+for file in "${CONFIG_FILES[@]}"; do
+    [[ -f "$HOME/$file" ]] && cp -f "$HOME/$file" "$BACKUP_CONFIG_DIR/" && \
+        echo "  Backed up ~/$file"
+done
+
+# =============================================================================
+# 6. Backup crontab (user + root if exists)
+# =============================================================================
+echo -e "\n${ILCOLOR1}Backing up crontab...${ILRESTORE}"
+if crontab -l &>/dev/null; then
+    crontab -l > "$BACKUP_CONFIG_DIR/cron-jobs.txt"
+    echo "  User crontab saved"
 fi
-sleep 1
 
-echo
-echo "${ILCOLOR1}Backing up /etc/fstab for reference because of multi-partitions. . .${ILRESTORE}"
-cp /etc/fstab $HOME/pkg_bkups/backups/fstab
-sleep 1
+if sudo crontab -l &>/dev/null; then
+    sudo crontab -l > "$BACKUP_CONFIG_DIR/cron-jobs-SUDO.txt"
+    echo "  Root crontab saved"
+fi
 
-echo
-echo
-echo "${ILCOLOR2}Updating local git repos. . .${ILRESTORE}"
-$HOME/scripts/git-update
-sleep 1
+# =============================================================================
+# 7. Backup fstab
+# =============================================================================
+echo -e "\n${ILCOLOR1}Backing up /etc/fstab...${ILRESTORE}"
+cp -f /etc/fstab "$BACKUP_CONFIG_DIR/fstab"
 
-if [ $? -eq 0 ]; then
-	echo
-	echo "${ILCOLOR3}All is good.${ILRESTORE}"
+# =============================================================================
+# 8. Update local git repos (optional script)
+# =============================================================================
+if [[ -x "$HOME/scripts/git-update" ]]; then
+    echo -e "\n${ILCOLOR2}Updating local git repositories...${ILRESTORE}"
+    "$HOME/scripts/git-update" && echo -e "${ILCOLOR3}Git update successful${ILRESTORE}" \
+                               || echo -e "${ILCOLOR1}Git update failed${ILRESTORE}"
 else
-	echo
-	echo "${ILCOLOR1}Error detected!!!${ILRESTORE}"
+    echo -e "\n${ILCOLOR3}git-update script not found or not executable — skipping${ILRESTORE}"
 fi
-sleep 1
 
-echo
-echo -e ${ILCOLOR2}
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_end=$(date +"%s")
-		tm_wh_diff=$(( $tm_wh_end - $tm_wh_start))
-		echo "${ILCOLOR2}It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
-echo -e ${ILRESTORE}
-sleep 1
+# =============================================================================
+# Finish
+# =============================================================================
+END_TIME=$(date +%s)
+DURATION=$((END_TIME - START_TIME))
+
+echo -e "\n${ILCOLOR2}$(date '+%m-%d-%Y %r')${ILRESTORE}"
+echo -e "${ILCOLOR2}System update and backup completed in ${DURATION} seconds "
+echo -e "        ($((DURATION / 60)) minutes and $((DURATION % 60)) seconds)${ILRESTORE}"
+echo -e "${ILCOLOR4}All done!${ILRESTORE}\n"
+
+exit 0
