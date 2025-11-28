@@ -1,153 +1,185 @@
 #!/bin/bash
-# This is a blank bash script document.
-# Put your code below this line.
-# Updating git repos first
+# =============================================================================
+# USB Live System Update Script
+# Updates system, pulls latest configs from main backups, pushes USB backups
+# Should only be run from: ~/scripts/linux-usb-update
+# =============================================================================
 
-echo
-read -p "${ILCOLOR2}
-                            !!!!!!!!CAUTION!!!!!!!!
+set -euo pipefail
 
-This script should be run from the script: scripts/linux-usb-update. Have you run it from that script? [Y/n].${ILRESTORE} " scryn
-echo
-if [[ ! "$scryn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	exit
-fi
-sleep 1
+# ----------------------------- Config --------------------------------
+MAIN_BACKUP_DIR="$HOME/pkg_bkups/backups"
+USB_BACKUP_DIR="$HOME/usb_pkg_bkups"
+USB_BACKUP_CONFIG_DIR="$USB_BACKUP_DIR/backups"
+MAX_BACKUPS=3
 
+# Files to sync from main backup → live home
+CONFIG_FILES_TO_SYNC=(
+    ".bashrc"
+    ".bash_profile"
+    ".blerc"
+    ".conkyrc"
+    ".nanorc"
+    ".Xresources"
+)
+
+# ----------------------------- Safety Check --------------------------
 clear
-echo "${ILCOLOR4}           ###########    Updating your USB system now   ###########${ILRESTORE}"
-echo -e ${ILCOLOR2}
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_start=$(date +"%s")
-sleep 1
-echo "Updating $(uname --all)${ILRESTORE}"
-sleep 1
+echo -e "${ILCOLOR2}
+                        ┌────────────────────────────────────────────┐
+                        │           ⚠️  CAUTION ⚠️                    │
+                        │ This script should ONLY be run from:       │
+                        │     ~/scripts/linux-usb-update             │
+                        │                                            │
+                        └────────────────────────────────────────────┘${ILRESTORE}"
 
-# Password to run as sudo.
-PW="spike"
-echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
-sleep 1
-echo $PW | sudo -S -v
+read -rp "Have you launched this via linux-usb-update? [Y/n]: " answer
 echo
-echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 
-# Run script
+if [[ ! "$answer" =~ ^([yY]|[Yy][eE][sS])$ ]]; then
+    echo -e "${ILCOLOR1}Aborted. Run this only from linux-usb-update.${ILRESTORE}"
+    exit 1
+fi
+
+# ----------------------------- Start Timing -------------------------
+clear
+echo -e "${ILCOLOR4}########### Updating USB Live System ###########${ILRESTORE}"
+echo -e "${ILCOLOR2}$(date '+%m-%d-%Y %r')${ILRESTORE}\n"
+
+START_TIME=$(date +%s)
+
+# Keep sudo alive for the duration
+echo 'spike' | sudo -S -v
+( while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done ) 2>/dev/null &
+
+echo -e "${ILCOLOR3}Running on: $(uname -a)${ILRESTORE}\n"
+
+# =============================================================================
+# 1. System Update
+# =============================================================================
+echo -e "${ILCOLOR1}Updating package lists...${ILRESTORE}"
 sudo apt update
-sleep 1
 
-echo
-echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+echo -e "\n${ILCOLOR1}Upgrading packages...${ILRESTORE}"
 sudo apt upgrade -y --allow-downgrades
 sudo apt full-upgrade -y --allow-downgrades
-sleep 1
 
-echo
-echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
+echo -e "\n${ILCOLOR1}Cleaning up...${ILRESTORE}"
 sudo apt autoremove -y
-sudo apt clean -y
-sudo apt autoclean -y
-sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
-rm -v -f ~/.cache/thumbnails/*/*.png ~/.thumbnails/*/*.png
-rm -v -f ~/.cache/thumbnails/*/*/*.png ~/.thumbnails/*/*/*.png
-sleep 1
+sudo apt clean
+sudo apt autoclean
 
-echo
-echo "${ILCOLOR2}Backing up important files and apps. . .${ILRESTORE}"
-echo "${ILCOLOR1}Creating list of apps, and copying repos from /etc/apt. . .${ILRESTORE}"
-# Set backups folders and files, and only keep 3 of each.
-DEST="$HOME/usb_pkg_bkups"
-if [[ ! -d "$DEST" ]]; then
-	mkdir $DEST
-else
-	if ls $DEST/* 1> /dev/null 2>&1; then
-		ls $DEST/* -t | sed -e '1,4d' | xargs -d '\n' rm -f > /dev/null 2>&1
-	fi
-fi
-if [[ ! -d "$DEST/apt" ]]; then
-	mkdir "$DEST/apt"
-fi
-if [[ ! -d "$DEST/apt.old" ]]; then
-	mkdir "$DEST/apt.old"
-fi
-if [[ ! -d "$DEST/apt.old-1" ]]; then
-	mkdir "$DEST/apt.old-1"
+# Purge removed packages' config files
+if dpkg -l | grep -q '^rc'; then
+    echo -e "${ILCOLOR1}Removing residual config files...${ILRESTORE}"
+    sudo dpkg -l | awk '/^rc/ {print $2}' | xargs -r sudo apt purge -y
 fi
 
-# Rename .old lists to .old-1
-if [[ -f $DEST/pkgs.txt.old ]]; then
-	mv $DEST/pkgs.txt.old $DEST/pkgs.txt.old-1
-fi
+# Clear thumbnail cache
+echo -e "${ILCOLOR1}Clearing thumbnail caches...${ILRESTORE}"
+rm -rf ~/.cache/thumbnails/*/* ~/.thumbnails/*/* 2>/dev/null || true
 
-# Rename lists to .old
-if [[ -f $DEST/pkgs.txt ]]; then
-	mv $DEST/pkgs.txt $DEST/pkgs.txt.old
-fi
+# =============================================================================
+# 2. Prepare USB backup directory
+# =============================================================================
+mkdir -p "$USB_BACKUP_DIR/apt" "$USB_BACKUP_CONFIG_DIR"
 
-# Creating list for restore purposes.
-dpkg --get-selections | awk '{print $1}' > $DEST/pkgs.txt
+# =============================================================================
+# 3. Backup current package list (with rotation)
+# =============================================================================
+echo -e "\n${ILCOLOR1}Backing up installed package list...${ILRESTORE}"
+PKG_LIST="$USB_BACKUP_DIR/pkgs.txt"
 
-# This section copies /etc/apt folder and keeps 3 copies.
-if ls $DEST/apt.old-1/* > /dev/null 2>&1; then
-	rm -rf $DEST/apt.old-1/*
-fi
-if ls $DEST/apt.old/* > /dev/null 2>&1; then
-	cp -rf $DEST/apt.old/* $DEST/apt.old-1/
-	rm -rf $DEST/apt.old/*
-fi
-if ls $DEST/apt/* > /dev/null 2>&1; then
-	cp -rf $DEST/apt/* $DEST/apt.old/
-	rm -rf $DEST/apt/*
-fi
-cp -rf /etc/apt/* $DEST/apt/
-sleep 1
-
-echo
-echo "${ILCOLOR1}Updating important files from github. . .${ILRESTORE}"
-sleep 1
-RC_ARR=($HOME/pkg_bkups/backups/.bashrc $HOME/pkg_bkups/backups/.bash_profile $HOME/pkg_bkups/backups/.blerc $HOME/pkg_bkups/backups/.conkyrc $HOME/pkg_bkups/backups/.nanorc $HOME/pkg_bkups/backups/.Xresources)
-for file in ${RC_ARR[@]}; do
-echo "Updating $file"
-cp -f $file $HOME/
-sleep .25
+# Rotate old backups
+for i in $(seq $((MAX_BACKUPS - 1)) -1 1); do
+    [[ -f "$USB_BACKUP_DIR/pkgs.txt.old-$i" ]] && \
+        mv "$USB_BACKUP_DIR/pkgs.txt.old-$i" "$USB_BACKUP_DIR/pkgs.txt.old-$((i+1))"
 done
-echo "${ILCOLOR1}Backing up .xprofile. . .${ILRESTORE}"
-cp $HOME/.xprofile $DEST/backups
-sleep 1
+[[ -f "$PKG_LIST" ]] && mv "$PKG_LIST" "$USB_BACKUP_DIR/pkgs.txt.old-1"
 
-echo
-echo "${ILCOLOR1}Updating usb_pkg_bkups. . .${ILRESTORE}"
-cd ~/usb_pkg_bkups
-git add --all
-git commit -m 'auto commit'
-git push -u origin master
-sleep 1
+dpkg --get-selections | awk '{print $1}' > "$PKG_LIST"
 
-echo
-echo "${ILCOLOR1}Backing up crontab. . .${ILRESTORE}"
-if sudo test -s "/var/spool/cron/crontabs/msifland"; then
-	crontab -l > $HOME/pkg_bkups/backups/cron-jobs.txt
+# =============================================================================
+# 4. Backup /etc/apt sources (with rotation)
+# =============================================================================
+echo -e "\n${ILCOLOR1}Backing up APT sources and keys...${ILRESTORE}"
+
+for i in $(seq $((MAX_BACKUPS - 1)) -1 1); do
+    [[ -d "$USB_BACKUP_DIR/apt.old-$i" ]] && \
+        rm -rf "$USB_BACKUP_DIR/apt.old-$((i+1))" && \
+        mv "$USB_BACKUP_DIR/apt.old-$i" "$USB_BACKUP_DIR/apt.old-$((i+1))"
+done
+
+[[ -d "$USB_BACKUP_DIR/apt" ]] && mv "$USB_BACKUP_DIR/apt" "$USB_BACKUP_DIR/apt.old-1"
+mkdir -p "$USB_BACKUP_DIR/apt"
+cp -a /etc/apt/{sources.list,sources.list.d,trusted.gpg*} "$USB_BACKUP_DIR/apt/" 2>/dev/null || true
+
+# =============================================================================
+# 5. Sync latest configs from main backup → live system
+# =============================================================================
+echo -e "\n${ILCOLOR1}Updating personal config files from main backup...${ILRESTORE}"
+for file in "${CONFIG_FILES_TO_SYNC[@]}"; do
+    src="$MAIN_BACKUP_DIR/$file"
+    dest="$HOME/$file"
+    if [[ -f "$src" ]]; then
+        cp -f "$src" "$dest" && echo "  → Updated ~/$file"
+    else
+        echo "  ⚠️  $file not found in main backup (skipped)"
+    fi
+done
+
+# Backup current .xprofile to USB backup
+[[ -f "$HOME/.xprofile" ]] && cp -f "$HOME/.xprofile" "$USB_BACKUP_CONFIG_DIR/.xprofile"
+
+# =============================================================================
+# 6. Backup crontab (if exists)
+# =============================================================================
+echo -e "\n${ILCOLOR1}Backing up user crontab...${ILRESTORE}"
+if crontab -l &>/dev/null; then
+    crontab -l > "$USB_BACKUP_CONFIG_DIR/cron-jobs.txt"
+    echo "  User crontab saved"
 fi
-sleep 1
 
-echo
-echo "${ILCOLOR1}Updating ble.sh. . .${ILRESTORE}"
-$HOME/scripts/blesh-update
-sleep 1
+# =============================================================================
+# 7. Update external tools
+# =============================================================================
+echo -e "\n${ILCOLOR1}Updating ble.sh...${ILRESTORE}"
+if [[ -x "$HOME/scripts/blesh-update" ]]; then
+    "$HOME/scripts/blesh-update" && echo "  ble.sh updated" || echo "  ble.sh update failed"
+else
+    echo "  blesh-update script not found"
+fi
 
-echo
-echo "${ILCOLOR1}Updating sublime text. . .${ILRESTORE}"
-$HOME/scripts/subl-update
-sleep 1
+echo -e "\n${ILCOLOR1}Updating Sublime Text...${ILRESTORE}"
+if [[ -x "$HOME/scripts/subl-update" ]]; then
+    "$HOME/scripts/subl-update" && echo "  Sublime Text updated" || echo "  Sublime Text update failed"
+else
+    echo "  subl-update script not found"
+fi
 
-echo
-echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
-sleep 1
+# =============================================================================
+# 8. Commit & Push USB backup to GitHub
+# =============================================================================
+if [[ -d "$USB_BACKUP_DIR/.git" ]]; then
+    echo -e "\n${ILCOLOR1}Pushing usb_pkg_bkups to GitHub...${ILRESTORE}"
+    cd "$USB_BACKUP_DIR"
+    git add --all
+    git commit -m "USB update: $(date '+%Y-%m-%d %H:%M')" || echo "  Nothing to commit"
+    if git push origin master; then
+        echo -e "  ${ILCOLOR2}Successfully pushed to GitHub${ILRESTORE}"
+    else
+        echo -e "  ${ILCOLOR1}Git push failed${ILRESTORE}"
+    fi
+else
+    echo -e "\n${ILCOLOR3}Warning: usb_pkg_bkups is not a git repo — skipping push${ILRESTORE}"
+fi
 
-echo
-echo -e ${ILCOLOR2}
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_end=$(date +"%s")
-		tm_wh_diff=$(($tm_wh_end - $tm_wh_start))
-		echo "${ILCOLOR2}It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
-echo -e ${ILRESTORE}
-sleep 1
+# =============================================================================
+# Done
+# =============================================================================
+END_TIME=$(date +%s)
+DURATION=$((END_TIME - START_TIME))
+
+echo -e "\n${ILCOLOR2}$(date '+%m-%d-%Y %r')${ILRESTORE}"
+echo -e "${ILCOLOR2}USB system update completed in $((DURATION / 60)) min $((DURATION % 60)) sec${ILRESTORE}"
+echo -e "${ILCOLOR4}All done! Review output above for any warnings.${ILRESTORE}\n"

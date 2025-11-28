@@ -1,0 +1,71 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# Updating git repos first
+# This is for updating the window linux subsystem
+# This will run from the script: scripts/linux-wsl-update
+echo
+read -p "${ILCOLOR2}
+                            !!!!!!!!CAUTION!!!!!!!!
+
+This script should be run from the script: scripts/linux-wsl-update. Have you run it from that script? [Y/n].${ILRESTORE} " scryn
+echo
+if [[ ! "$scryn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	exit
+fi
+sleep 1
+
+clear
+echo "${ILCOLOR4}           ###########    Updating your WSL system now   ###########${ILRESTORE}"
+echo -e ${ILCOLOR2}
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_start=$(date +"%s")
+sleep 1
+echo "Updating $(uname --all)${ILRESTORE}"
+sleep 1
+
+# Password to run as sudo.
+PW="spike"
+echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
+sleep 1
+echo $PW | sudo -S -v
+echo
+echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
+
+# Run script
+echo
+echo "sudo apt update"
+sudo apt update
+sleep 1
+
+echo
+echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+sudo apt upgrade -y --allow-downgrades
+sudo apt full-upgrade -y --allow-downgrades
+sleep 1
+
+echo
+echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
+sudo apt autoremove -y
+sudo apt clean -y
+sudo apt autoclean -y
+sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
+sleep 1
+
+echo
+echo "${ILCOLOR1}Updating ble.sh. . .${ILRESTORE}"
+$HOME/scripts/blesh-update
+sleep 1
+
+echo
+echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
+sleep 1
+
+echo
+echo -e ${ILCOLOR2}
+echo $(date +%m-%d-%Y) $(date +"%r")
+tm_wh_end=$(date +"%s")
+		tm_wh_diff=$(($tm_wh_end - $tm_wh_start))
+		echo "${ILCOLOR2}It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
+echo -e ${ILRESTORE}
+sleep 1

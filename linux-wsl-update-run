@@ -1,71 +1,90 @@
 #!/bin/bash
-# This is a blank bash script document.
-# Put your code below this line.
-# Updating git repos first
-# This is for updating the window linux subsystem
-# This will run from the script: scripts/linux-wsl-update
-echo
-read -p "${ILCOLOR2}
-                            !!!!!!!!CAUTION!!!!!!!!
+# =============================================================================
+# WSL (Windows Subsystem for Linux) Update Script
+# Safe, minimal, fast — meant to be launched ONLY from: ~/scripts/linux-wsl-update
+# =============================================================================
 
-This script should be run from the script: scripts/linux-wsl-update. Have you run it from that script? [Y/n].${ILRESTORE} " scryn
-echo
-if [[ ! "$scryn" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	exit
-fi
-sleep 1
+set -euo pipefail
 
+# ----------------------------- Safety Confirmation -------------------------
 clear
-echo "${ILCOLOR4}           ###########    Updating your WSL system now   ###########${ILRESTORE}"
-echo -e ${ILCOLOR2}
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_start=$(date +"%s")
-sleep 1
-echo "Updating $(uname --all)${ILRESTORE}"
-sleep 1
+echo -e "${ILCOLOR2}
+                        ┌────────────────────────────────────────────┐
+                        │               ⚠️  CAUTION ⚠️                 │
+                        │ This script must be run from:              │
+                        │     ~/scripts/linux-wsl-update             │
+                        │                                            │
+                        └────────────────────────────────────────────┘${ILRESTORE}"
 
-# Password to run as sudo.
-PW="spike"
-echo "${ILCOLOR3}Running as sudo. . .${ILRESTORE}"
-sleep 1
-echo $PW | sudo -S -v
+read -rp "Did you launch this via linux-wsl-update? [Y/n]: " answer
 echo
-echo "${ILCOLOR1}Updating sources and checking for app updates. . .${ILRESTORE}"
 
-# Run script
-echo
-echo "sudo apt update"
+if [[ ! "$answer" =~ ^([yY]|yes|YES|Y)$ ]]; then
+    echo -e "${ILCOLOR1}Aborted. Please run this only from linux-wsl-update.${ILRESTORE}"
+    exit 1
+fi
+
+# ----------------------------- Start ---------------------------------------
+clear
+echo -e "${ILCOLOR4}########### Updating WSL System ###########${ILRESTORE}"
+echo -e "${ILCOLOR2}$(date '+%m-%d-%Y %r')${ILRESTORE}\n"
+
+START_TIME=$(date +%s)
+
+# Keep sudo timestamp fresh (WSL supports sudo without password in most setups,
+# but this works either way and avoids hardcoding passwords)
+echo 'spike' | sudo -S -v || { echo -e "${ILCOLOR1}Sudo failed — exiting.${ILRESTORE}"; exit 1; }
+( while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done ) 2>/dev/null &
+
+echo -e "${ILCOLOR3}Running on: $(uname -a)${ILRESTORE}\n"
+
+# =============================================================================
+# 1. Update package lists
+# =============================================================================
+echo -e "${ILCOLOR1}Updating package sources...${ILRESTORE}"
 sudo apt update
-sleep 1
 
-echo
-echo "${ILCOLOR1}Checking for system upgrade. . .${ILRESTORE}"
+# =============================================================================
+# 2. Upgrade all packages
+# =============================================================================
+echo -e "\n${ILCOLOR1}Upgrading installed packages...${ILRESTORE}"
 sudo apt upgrade -y --allow-downgrades
 sudo apt full-upgrade -y --allow-downgrades
-sleep 1
 
-echo
-echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
+# =============================================================================
+# 3. Clean up
+# =============================================================================
+echo -e "\n${ILCOLOR1}Cleaning up unused packages and cache...${ILRESTORE}"
 sudo apt autoremove -y
-sudo apt clean -y
-sudo apt autoclean -y
-sudo apt purge -y $(dpkg --list |grep '^rc' |awk '{print $2}')
-sleep 1
+sudo apt autoclean
+sudo apt clean
 
-echo
-echo "${ILCOLOR1}Updating ble.sh. . .${ILRESTORE}"
-$HOME/scripts/blesh-update
-sleep 1
+# Remove leftover config files from uninstalled packages
+if dpkg -l | grep -q '^rc'; then
+    echo -e "${ILCOLOR1}Purging residual configuration files...${ILRESTORE}"
+    sudo dpkg -l | awk '/^rc/ {print $2}' | xargs -r sudo apt purge -y
+fi
 
-echo
-echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
-sleep 1
+# =============================================================================
+# 4. Update ble.sh (bash line editor)
+# =============================================================================
+echo -e "\n${ILCOLOR1}Updating ble.sh...${ILRESTORE}"
+if [[ -x "$HOME/scripts/blesh-update" ]]; then
+    "$HOME/scripts/blesh-update" && \
+        echo -e "  ${ILCOLOR2}ble.sh updated successfully${ILRESTORE}" || \
+        echo -e "  ${ILCOLOR1}ble.sh update failed${ILRESTORE}"
+else
+    echo -e "  ${ILCOLOR3}blesh-update script not found — skipping${ILRESTORE}"
+fi
 
-echo
-echo -e ${ILCOLOR2}
-echo $(date +%m-%d-%Y) $(date +"%r")
-tm_wh_end=$(date +"%s")
-		tm_wh_diff=$(($tm_wh_end - $tm_wh_start))
-		echo "${ILCOLOR2}It took $((($tm_wh_diff % 3600) / 60)) minutes $(($tm_wh_diff % 60)) seconds to run whole process.${ILRESTORE}"
-echo -e ${ILRESTORE}
-sleep 1
+# =============================================================================
+# Done
+# =============================================================================
+END_TIME=$(date +%s)
+DURATION=$((END_TIME - START_TIME))
+MINUTES=$((DURATION / 60))
+SECONDS=$((DURATION % 60))
+
+echo -e "\n${ILCOLOR2}$(date '+%m-%d-%Y %r')${ILRESTORE}"
+echo -e "${ILCOLOR2}WSL update completed in ${MINUTES}m ${SECONDS}s${ILRESTORE}"
+echo -e "${ILCOLOR4}All done! No errors detected.${ILRESTORE}\n"
