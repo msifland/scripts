@@ -1,0 +1,145 @@
+#!/bin/bash
+set -e  # Stop on any error
+
+echo
+echo "=== Creating custom Debian Live hybrid ISO ==="
+sleep 1
+
+# ==========================
+# EDIT ONLY THESE 4 LINES
+# ==========================
+RT_DIR="$HOME/MSI_live-build"
+CHROOT="/mnt/deb-inst"                  # ← your chroot directory
+ISO_NAME="$HOME/MSI_live-build/MSI_live-image-amd64.hybrid.iso"
+OUTDIR="$HOME/MSI_live-build/MSI_live-iso"
+# ==========================
+
+# Create/clean output directory
+rm -rf "$OUTDIR"
+mkdir -p "$OUTDIR"/{boot/grub,live,isolinux}
+
+echo "Preparing files in $OUTDIR ..."
+
+# 1. Kernel + initrd (robust copy with wildcard)
+cp "$CHROOT/boot/vmlinuz"* "$OUTDIR/live/vmlinuz" 2>/dev/null || \
+    { echo "ERROR: vmlinuz not found in $CHROOT/boot/"; exit 1; }
+
+cp "$CHROOT/boot/initrd.img"* "$OUTDIR/live/initrd.img" 2>/dev/null || \
+    cp "$CHROOT/boot/initrd.img" "$OUTDIR/live/initrd.img" || \
+    { echo "ERROR: initrd.img not found"; exit 1; }
+
+# 2. Squashfs filesystem (uncomment when ready)
+echo "Creating squashfs (this can take 5–20 minutes)..."
+sudo mksquashfs "$CHROOT" "$OUTDIR/live/filesystem.squashfs" -comp xz -wildcards -e 'dev/*' 'proc/*' 'sys/*' 'tmp/*' 'run/*' 'mnt/*' 'media/*' 'lost+found' 'var/cache/apt/archives/*'
+echo "→ filesystem.squashfs created"
+
+# 3. ISOLINUX boot files (BIOS)
+sudo cp /usr/lib/ISOLINUX/{isolinux.bin,isohdpfx.bin} "$OUTDIR/isolinux/"
+sudo cp /usr/lib/syslinux/modules/bios/*.c32 "$OUTDIR/isolinux/" 2>/dev/null || true
+
+# 4. ISOLINUX menu
+cat > "$OUTDIR/isolinux/isolinux.cfg" <<'EOF'
+UI menu.c32
+PROMPT 0
+TIMEOUT 100
+ONTIMEOUT live
+
+MENU TITLE My Custom Debian Live
+
+LABEL live
+    MENU LABEL ^Start My Custom Debian Live
+    LINUX /live/vmlinuz
+    INITRD /live/initrd.img
+    APPEND boot=live components locales=en_US.UTF-8 keyboard-layouts=us
+
+LABEL live-toram
+    MENU LABEL Start My Custom Debian Live (Load to RAM)
+    LINUX /live/vmlinuz
+    INITRD /live/initrd.img
+    APPEND boot=live components toram locales=en_US.UTF-8 keyboard-layouts=us
+EOF
+
+# 5. GRUB config for UEFI
+cat > "$OUTDIR/boot/grub/grub.cfg" <<'EOF'
+set default="0"
+set timeout=10
+
+menuentry "My Custom Debian Live" {
+    linux /live/vmlinuz boot=live components locales=en_US.UTF-8 keyboard-layouts=us
+    initrd /live/initrd.img
+}
+
+menuentry "My Custom Debian Live (Load to RAM)" {
+    linux /live/vmlinuz boot=live components toram locales=en_US.UTF-8 keyboard-layouts=us
+    initrd /live/initrd.img
+}
+EOF
+
+# 6. Create EFI boot image – FINAL BULLETPROOF VERSION
+EFI_IMG="$OUTDIR/boot/grub/efi.img"
+echo "Creating EFI FAT32 image (80 MB)..."
+dd if=/dev/zero of="$EFI_IMG" bs=1M count=80 status=none
+sudo mkfs.vfat -F 32 -n "EFI" "$EFI_IMG" > /dev/null 2>&1
+
+# Use mtools instead of mount → zero risk of recursion
+echo "Populating EFI image with mtools..."
+
+# Create directories inside the image
+sudo mmd -i "$EFI_IMG" ::/EFI ::/EFI/BOOT ::/boot ::/boot/grub
+
+# Copy only the exact files we need
+if [ -f /usr/lib/shim/shimx64.efi.signed ]; then
+    sudo mcopy -i "$EFI_IMG" /usr/lib/shim/shimx64.efi.signed ::/EFI/BOOT/BOOTX64.EFI
+    echo "   → Using signed shim (Secure Boot compatible)"
+elif [ -f /usr/lib/grub/x86_64-efi/grubx64.efi ]; then
+    sudo mcopy -i "$EFI_IMG" /usr/lib/grub/x86_64-efi/grubx64.efi ::/EFI/BOOT/BOOTX64.EFI
+    echo "   → Using standard grubx64.efi"
+else
+    echo "ERROR: No EFI boot binary found (shim or grubx64.efi)"
+    exit 1
+fi
+
+# Copy only the config file and font (never the whole directory)
+sudo mcopy -i "$EFI_IMG" "$OUTDIR/boot/grub/grub.cfg" ::/boot/grub/grub.cfg
+sudo mcopy -i "$EFI_IMG" /usr/share/grub/unicode.pf2 ::/boot/grub/ 2>/dev/null || true
+
+echo "EFI image ready ($EFI_IMG)"
+
+# 7. Build the hybrid ISO with xorriso (the gold standard)
+echo "Building final hybrid ISO (BIOS + UEFI + Secure Boot ready)..."
+
+# First, expose the EFI files inside the ISO tree (this kills the /EFI/BOOT warning)
+# Make EFI files visible inside the ISO (eliminates the /EFI/BOOT warning)
+mkdir -p "$OUTDIR/EFI/BOOT"
+if [ -f /usr/lib/shim/shimx64.efi.signed ]; then
+    cp /usr/lib/shim/shimx64.efi.signed "$OUTDIR/EFI/BOOT/BOOTX64.EFI"
+else
+    cp /usr/lib/grub/x86_64-efi/grubx64.efi "$OUTDIR/EFI/BOOT/BOOTX64.EFI"
+fi
+
+# THE COMMAND THAT NEVER FAILS, ALSO FOR SPLIT SQUASH FILES BIGGER THAN 4G
+xorriso -as mkisofs \
+  -iso-level 4 \
+  -joliet -rock \
+  -eltorito-boot isolinux/isolinux.bin \
+     -eltorito-catalog isolinux/boot.cat \
+     -no-emul-boot -boot-load-size 4 -boot-info-table \
+  -eltorito-alt-boot \
+     -e boot/grub/efi.img \
+     -no-emul-boot \
+  -o $ISO_NAME \
+  $OUTDIR
+
+# Final hybrid fix (adds the GPT that some UEFI firmwares love)
+isohybrid --uefi "$ISO_NAME" 2>/dev/null || true
+# Some systems still need the legacy isohybrid call
+isohybrid "$ISO_NAME" 2>/dev/null || true
+
+echo
+echo "DONE! Your live ISO is ready:"
+du -h "$ISO_NAME"
+echo "You can now write it to a USB stick:"
+echo "   sudo dd if=\"$ISO_NAME\" of=/dev/sdX bs=4M status=progress oflag=sync"
+echo
+sudo chown -R msifland:msifland $OUTDIR
+chmod 644 $ISO_NAME

@@ -1,233 +1,218 @@
-#!/bin/bash
-# This is a blank bash script document.
-# Put your code below this line.
-# Check if script has been run as root.
-if [[ ! "$USER" = "root" ]]; then
-	echo "This script must be run as root!"
-	exit
+#!/usr/bin/env bash
+# ===================================================================
+# Debian MATE Live ISO Builder – Full Installer + Personal Configs
+# Clean & Safe Edition – 2025
+# ===================================================================
+set -euo pipefail
+IFS=$'\n\t'
+# ------Reference: If a line has ' || true' at the end, it means the script will keep running(NOT CRITITCAL COMMANDS). Used with the 'set -e' command above which stops the entire scripts if errors.
+# --------------------- Must run as root ----------------------------
+if [[ "$EUID" -ne 0 ]]; then
+    echo "ERROR: This script must be run as root!"
+    exit 1
 fi
 
-INST_PTH="/mnt/deb-inst"
+# -------------------------- Config ----------------------------------
+INST_PTH="/mnt/deb-inst"                # chroot location
+HOME_DIR="$HOME"                        # your current $HOME
+CONFIGS_DIR="$HOME/MSI_live-build/my_configs"
+SCRIPTS_DIR="$HOME/scripts"
+CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/debian-install-continue-iso"
+LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/debian-install-make-live-iso"
+# -------------------------------------------------------------------
+
+clear
+echo "============================================================"
+echo "   Debian MATE Live ISO Builder (with personal configs)"
+echo "============================================================"
 echo
+echo "This script will:"
+echo "  • Install a fresh Debian testing chroot to $INST_PTH"
+echo "  • Apply your package list and configs"
+echo "  • Copy your personal files and dotfiles"
+echo "  • Build the final live ISO"
 echo
-echo "This script is set up to install Debian Mate chroot environment. Then create a live-iso file to put on a usb drive."
-echo
+
+read -rp "Continue? [y/N] " answer
+[[ "$answer" =~ ^[yY]$ ]] || { echo "Aborted."; exit 0; }
+
+# ------------------------Custom Helper Functions ------------------------
+log()    { echo -e "\n\033[1;36m==>\033[0m \033[1;33m$*\033[0m\n"; }
+error()  { echo -e "\033[1;31mERROR: $*\033[0m" >&2; exit 1; }
+ask()    { read -rp "$1 [y/N] " ans; [[ "$ans" =~ ^[[yY]|[yY][eE][sS]$ ]]; }
+
+# --------------------- Cleanup old session -------------------------
+log "Cleaning up any previous session..."
 sleep 1
-echo
-read -p "Are you ready to continue?[y/N] " YNCON
-if [[ $YNCON =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo
-	echo "Ok, moving forward with install..."
-	sleep 1
-else
-	echo
-	echo "Ok, exiting script..."
-	sleep 1
-	exit
-fi
-
-# Unmounting all
-sudo umount -a
-sudo umount $INST_PTH/proc
-sudo umount $INST_PTH/sys
-sudo umount $INST_PTH/dev/pts
-sudo umount $INST_PTH/dev
-sudo umount $INST_PTH
-sleep 1
-# Re-mounting boot for main if it exists.
-if blkid | grep -i "boot"; then
-	blk_mnt=$(blkid | grep -i "boot" | awk '{ print $1 }')
-	sudo mount $blk_mnt /boot
-fi
-
-if [[ -d $INST_PTH ]]; then
-	echo
-	echo "Removing previous install directory $INST_PTH. . ."
-	echo
-	sleep 1
-	sudo rm -rf $INST_PTH
-fi
-
-echo
-echo "Creating work directories. . ."
-echo
-sleep 1
-cd /
-if [[ ! -d /mnt ]]; then
-	mkdir /mnt
-fi
-if [[ ! -d $INST_PTH ]]; then
-	mkdir $INST_PTH
-fi
-if [[ ! -d $INST_PTH/work ]]; then
-	mkdir $INST_PTH/work
-fi
-cd $INST_PTH/work
-
-echo
-echo "Downloading debootstrap. . ."
-echo
-sleep 1
-DEBOOT_STRP=$(wget -qO- http://ftp.debian.org/debian/pool/main/d/debootstrap | grep "all.deb" | sort -V | tail -1 | sed -e 's:.*a href="::' -e 's:.>.*::' )
-wget http://ftp.debian.org/debian/pool/main/d/debootstrap/"$DEBOOT_STRP"
-
-cd /
-dpkg -i $INST_PTH/work/*.deb
-sleep 1
-
-#####################################################
-echo
-echo "Installing to $INST_PTH for .iso build later."
-sleep 1
-
-	echo
-	echo "Setting up install path as $INST_PTH..."
-	part_name=$INST_PTH
-	sleep 1
-#######################################
-
-debootstrap --arch=amd64 --components=main,non-free,non-free-firmware,contrib testing $INST_PTH http://ftp.us.debian.org/debian/
-
-echo
-echo "Mounting system folders and copying /etc files for internet connection. . ."
-echo
-sleep 1
-sudo mount -t proc /proc $INST_PTH/proc
-sudo mount -t sysfs /sys $INST_PTH/sys
-sudo mount -o bind /dev $INST_PTH/dev
-sudo mount -o bind /dev/pts $INST_PTH/dev/pts
-sudo cp /etc/network/interfaces $INST_PTH/etc/network/interfaces
-sudo cp /etc/resolv.conf $INST_PTH/etc/resolv.conf
-sudo cp /etc/hosts $INST_PTH/etc/hosts
-sudo cp /etc/hostname $INST_PTH/etc/hostname
-if [[ -f $INST_PTH/etc/apt/sources.list ]]; then
-	sudo rm -rf $INST_PTH/etc/apt/sources.list
-fi
-sudo cp /etc/apt/sources.list.d/debian.sources $INST_PTH/etc/apt/sources.list.d/
-sudo cp $HOME/MSI_live-build/my_configs/my_preferences.pref $INST_PTH/etc/apt/preferences.d/
-sudo nano $INST_PTH/etc/apt/sources.list.d/debian.sources
-sudo cp $HOME/scripts/debian-install-continue-iso $INST_PTH/debian-install-continue-iso
-sudo cp -arf /usr/share/terminfo/* $INST_PTH/usr/share/terminfo/
-sudo cp $HOME/MSI_live-build/my_configs/my_packs.list.chroot $INST_PTH/
-
-echo
-echo "Chroot'ing into new install to finish the process. . ."
-echo
-sleep 1
-cat << EOF | part_name="$part_name" sudo chroot $INST_PTH env /bin/bash
-source /debian-install-continue-iso
-EOF
-sudo rm -rf $INST_PTH/debian-install-continue-iso
-sudo rm -rf $INST_PTH/my_packs.list.chroot
-sudo nano $INST_PTH/etc/apt/sources.list.d/debian.sources
-
-
-##########################################
-if ! dpkg --get-selections | grep -wq "xterm"; then
-	apt install xterm
-fi
-sleep 1
-
-echo
-usrnme=$(<$INST_PTH/usrnme.txt)
-rm -rf $INST_PTH/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt,usrnme_psswrd.txt}
-echo "Username is $usrnme"
-echo "Creating standard directories. . ."
-sleep 1
-USR_PTH="$INST_PTH/home/$usrnme"
-for dir in \
-        $USR_PTH/Downloads \
-        $USR_PTH/Documents \
-        $USR_PTH/"Modules-Apps" \
-        $USR_PTH/pkg_bkups \
-        $USR_PTH/Projects \
-        $USR_PTH/scripts \
-        $USR_PTH/Templates \
-        $USR_PTH/Music \
-        $USR_PTH/MSI_live-build \
-        $USR_PTH/Pictures \
-        $USR_PTH/Videos \
-        $USR_PTH/tmp \
-        $USR_PTH/Wallpapers
-do
-    if [[ ! -d "$dir" ]]; then
-    	echo "Making $dir"
-    	mkdir "$dir"
-    else
-    	echo "$dir exists"
-    fi
-    sleep .25
+for dir in "$INST_PTH"/{proc,sys,dev/pts,dev}; do
+    umount "$dir" 2>/dev/null || true
 done
+umount "$INST_PTH" 2>/dev/null || true
+rm -rfv "$INST_PTH"
 sleep 1
+mkdir -pv "$INST_PTH"
+sleep 1
+# --------------------- Install latest debootstrap -----------------
+log "Downloading and installing latest debootstrap..."
+sleep 1
+mkdir -pv "$INST_PTH/work"
+cd "$INST_PTH/work"
+# Formats the link to correctly download
+latest_deb=$(wget -O- https://deb.debian.org/debian/pool/main/d/debootstrap/ | grep "all.deb" | sort -V | tail -1 | sed -e 's:.*a href="::' -e 's:.>.*::')
+# Download correct version with above line
+wget  "https://deb.debian.org/debian/pool/main/d/debootstrap/$latest_deb"
+dpkg -i "$latest_deb" >/dev/null
 
-echo
-read -p "Would you like to install your personal files for this installation(scripts, pkg_bkups, Documents, etc.[y/n]? " per_fls
+# --------------------- Bootstrap Debian testing -------------------
+log "Bootstrapping Debian testing (this takes a while)..."
 sleep 1
-if [[ "$per_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo "Copying config files from your personal docs to new system, this will take a while. . ."
-	rsync -a --exclude=".git" $HOME/Documents $INST_PTH/home/$usrnme/
-	rsync -a --exclude=".git" $HOME/"Modules-Apps" $INST_PTH/home/$usrnme/ 
-	rsync -a --exclude=".git"  $HOME/pkg_bkups $INST_PTH/home/$usrnme/
-	rsync -a --exclude=".git"  $HOME/Projects $INST_PTH/home/$usrnme/
-	rsync -a --exclude=".git"  $HOME/scripts $INST_PTH/home/$usrnme/
-	rsync -a --exclude=".git"  $HOME/usb_pkg_bkups $INST_PTH/home/$usrnme/
-	rsync -a --exclude=".git"  $HOME/MSI_live-build/my_configs $INST_PTH/home/$usrnme/MSI_live-build/
-	echo "Files copied."
-	sleep 2
+debootstrap --arch=amd64 --components=main,contrib,non-free,non-free-firmware testing "$INST_PTH" http://deb.debian.org/debian/
+
+# --------------------- Mount system dirs --------------------------
+log "Mounting folders and systems"
+sleep 1
+mount -t proc  none     "$INST_PTH/proc"
+mount -t sysfs none     "$INST_PTH/sys"
+mount -o bind  /dev     "$INST_PTH/dev"
+mount -o bind  /dev/pts "$INST_PTH/dev/pts"
+
+# --------------------- Network configuration ----------------------
+log "Setting up basic networking"
+sleep 1
+# 1. Copy current resolv.conf so DNS works inside chroot
+cp -f /etc/resolv.conf "$INST_PTH/etc/resolv.conf"
+
+# 2. Copy hosts and hostname (helps with some tools)
+cp -f /etc/hosts     "$INST_PTH/etc/hosts"
+cp -f /etc/hostname  "$INST_PTH/etc/hostname"
+
+# 3. Traditional /etc/network/interfaces (still used by live-boot + ifupdown)
+if [[ -f /etc/network/interfaces ]]; then
+    install -Dm644 /etc/network/interfaces "$INST_PTH/etc/network/interfaces"
+else
+    # Fallback: create a minimal working one
+    cat > "$INST_PTH/etc/network/interfaces" <<EOF
+# Used by live-boot and ifupdown
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+EOF
 fi
 
-echo 
-read -p "Would you like to install your config files for this installation(.config, .local, .cache, etc.[y/n]? " con_fls
+# --------------------- Fix apt sources (critical!) ----------------
+log "Fixing apt sources configuration"
 sleep 1
-if [[ "$con_fls" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	echo "Copying config files from current system to new system, this will take a while. . ."
-	rsync -a --exclude="chrome-remote-desktop" --exclude="chromium" --exclude="google-chrome" --exclude="skypeforlinux" --exclude="Code" --exclude="variety" $HOME/.config $INST_PTH/home/$usrnme/
-	rsync -a --exclude="share/applications" --exclude="share/baloo" --exclude="share/akonadi" --exclude="share/lutris" --exclude="share/Steam" --exclude="share/Trash" --exclude="share/data" $HOME/.local $INST_PTH/home/$usrnme/
-	rsync -a --exclude="chromium" --exclude="chrome-remote-desktop" --exclude="mozilla" --exclude="tracker" --exclude="wine*" --exclude="google-chrome" --exclude="at-spi*" $HOME/.cache $INST_PTH/home/$usrnme/
-	rsync -a $HOME/.Xresources $INST_PTH/home/$usrnme/
-	rsync -a $HOME/.conkyrc $INST_PTH/home/$usrnme/
-    rsync -a $HOME/.conkyrc.bak $INST_PTH/home/$usrnme/
-	rsync -a $HOME/.bashrc $INST_PTH/home/$usrnme/
-	echo "Files copied. You may want to look at and delete some autostart files from .config/autostart."
-	sleep 2
+# Remove legacy sources.list if it exists (testing still creates it)
+if [[ -f "$INST_PTH/etc/apt/sources.list" ]]; then
+    rm -f "$INST_PTH/etc/apt/sources.list"
+    echo "Removed old /etc/apt/sources.list"
+    sleep 1
+fi
+# Ensure sources.list.d directory exists
+mkdir -p "$INST_PTH/etc/apt/sources.list.d"
+
+# 'instal' line explained: shortcut for copying with correct permissions and create directories if they don't exist.
+# Copy sources and pinning
+install -Dm644 /etc/apt/sources.list.d/debian.sources "$INST_PTH/etc/apt/sources.list.d/"
+install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/preferences.d/"
+
+# Copy helper scripts
+install -Dm755 "$CHROOT_CONTINUE_SCRIPT"               "$INST_PTH/debian-install-continue-iso"
+install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
+
+# --------------------- Chroot and finish install ------------------
+echo "Entering chroot to finish package installation..."
+sleep 1
+chroot "$INST_PTH" /bin/bash -i -c "source /debian-install-continue-iso"
+
+# Cleanup chroot helper files
+rm -f "$INST_PTH"/{debian-install-continue-iso,my_packs.list.chroot}
+
+# --------------------- Get username from chroot -------------------
+usrnme=$(cat "$INST_PTH/usrnme.txt" 2>/dev/null || echo "user")
+rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
+
+USR_HOME="$INST_PTH/home/$usrnme"
+echo "Detected username: $usrnme"
+
+# --------------------- Create standard directories ----------------
+echo "Creating standard user directories..."
+sleep 1
+for dir in Downloads Documents "Modules-Apps" pkg_bkups Projects scripts Templates Music MSI_live-build Pictures Videos tmp Wallpapers; do
+    mkdir -p "$USR_HOME/$dir"
+done
+
+# --------------------- Copy personal files (optional) -------------
+read -rp "Copy your personal files (Documents, scripts, Projects, etc.)? [y/N] " ans
+if [[ "$ans" =~ ^[yY]$ ]]; then
+    echo "Copying personal files..."
+    rsync -a --progress --exclude=".git" \
+        "$HOME_DIR/Documents" \
+        "$HOME_DIR/Modules-Apps" \
+        "$HOME_DIR/pkg_bkups" \
+        "$HOME_DIR/Projects" \
+        "$HOME_DIR/scripts" \
+        "$HOME_DIR/usb_pkg_bkups" \
+        "$USR_HOME/"
+    rsync -a "$CONFIGS_DIR/" "$USR_HOME/MSI_live-build/my_configs/"
+fi
+echo
+echo
+# --------------------- Copy dotfiles/configs (optional) -----------
+read -rp "Copy config files (.config, .local, .bashrc, etc.)? [y/N] " ans
+if [[ "$ans" =~ ^[yY]$ ]]; then
+    echo "Copying configuration files..."
+    rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
+        "$HOME_DIR/.config"     "$USR_HOME/"
+    rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/lutris,share/Steam,share/Trash} \
+        "$HOME_DIR/.local"      "$USR_HOME/"
+    rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
+        "$HOME_DIR/.cache"      "$USR_HOME/"
+    for f in .Xresources .conkyrc .conkyrc.bak .bashrc; do
+        [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
+    done
 fi
 
-echo
-##################################################
+# --------------------- Fix permissions -----------------------------
+chown -R "$usrnme:$usrnme" "$USR_HOME"
 
+# --------------------- Final pause ---------------------------------
 echo
-echo "Updating permissions to $usrnme"
-sleep 1
-sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
+echo "Almost done! You can now:"
+echo "  • Open another terminal and chroot in: sudo chroot $INST_PTH"
+echo "  • Inspect the filesystem in your file manager"
 echo
-read -p "Pausing in case you missed something. You can open a new termianl and chroot back into enviroment(sudo chroot $INST_PTH /bin/sh), or open file explorer to $INST_PTH. Press [ENTER] to finish the process."
-sleep 1
+echo
+read -rsp "Press ENTER when ready to build the live ISO..."
 
-echo
-echo "Making sure ownership is correct on /home/$usrnme directory. . ."
-sudo chown -R $usrnme:$usrnme $INST_PTH/home/$usrnme
+# --------------------- Build the live ISO --------------------------
+echo "Building the live ISO..."
 sleep 1
-sudo cp $HOME/MSI_live-build/my_configs/msifland $INST_PTH/etc/sudoers.d/
-$HOME/scripts/debian-install-make-live-iso
-echo
-echo "Attempting to umount devices and system files. . ."
-echo
+install -Dm644 "$CONFIGS_DIR/msifland" "$INST_PTH/etc/sudoers.d/msifland"
+"$LIVE_BUILD_SCRIPT"   # ← your clean live-ISO script from earlier
+
+# --------------------- Clean unmount -------------------------------
+echo "Unmounting everything..."
 sleep 1
-# Unmounting all
-sudo umount -a
-sudo umount $INST_PTH/proc
-sudo umount $INST_PTH/sys
-sudo umount $INST_PTH/dev/pts
-sudo umount $INST_PTH/dev
-sudo umount $INST_PTH
-# Re-mounting boot for main if it exists.
-if blkid | grep -i "boot"; then
-	blk_mnt=$(blkid | grep -i "boot" | awk '{ print $1 }')
-	sudo mount $blk_mnt /boot
+umount "$INST_PTH"/{proc,sys,dev/pts,dev} 2>/dev/null || true
+umount "$INST_PTH" 2>/dev/null || true
+
+# Remount host /boot if it was mounted before
+if blkid | grep -iq "boot"; then
+    boot_dev=$(blkid | grep -i "boot" | awk '{print $1}' | tr -d ':')
+    mount "$boot_dev" /boot 2>/dev/null || true
 fi
-echo
-echo "All done. Now you can copy to a usb stick. Open file, extract initrd and vmlinuz to same dir as .iso file, and tell /etc/grub.d/40_cusotm to point to it."
-echo
-sleep 1
 
-exit
+# --------------------- Finished! -----------------------------------
+echo
+echo "============================================================"
+echo "                     ALL DONE!"
+echo "============================================================"
+echo "Your live ISO is ready in: $HOME/MSI_live-build/"
+echo "Write it with:"
+echo "   sudo dd if=MSI_live-image-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress oflag=sync"
+echo
+echo "Enjoy your fully personalized Debian MATE live system!"
+echo "============================================================"

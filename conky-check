@@ -36,7 +36,7 @@ $HOME/scripts/conky_iface_var.sh
 echo
 echo 'Starting conky in:'
 # Start a countdown to action.
-secs=$((1 * 30))
+secs=$((1 * 15))
 while [ $secs -gt 0 ]; do
    echo -ne "$secs\033[0K\r"
    sleep 1
@@ -45,10 +45,8 @@ done
 
 # Start conky
 echo "Starting conky now. . ."
-detach conky
-sleep 10
-# Kill current terminal that this process is running in.
-#kill -9 $PPID
+setsid conky
+sleep 1
 
 if [ $? -eq 0 ]; then
 	echo
@@ -57,4 +55,3 @@ else
 	echo
 	echo "Error detected!!!"
 fi
-sleep 2

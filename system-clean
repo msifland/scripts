@@ -1,0 +1,88 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+if [[ "$EUID" -ne 0 ]]; then
+    echo "ERROR: This script must be run as root!"
+    exit 1
+fi
+
+# ------------------------Custom Helper Functions ------------------------
+log()    { echo -e "\n\033[1;36m==>\033[0m \033[1;33m$*\033[0m\n"; }
+error()  { echo -e "\033[1;31mERROR: $*\033[0m" >&2; exit 1; }
+ask()    { read -rp "$1 [y/N] " ans; [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; }
+
+echo
+log "This script fully cleans your system."
+sleep 2
+
+log "Running apt update and upgrade first"
+sleep 2
+# 1. Update everything first (so removals are clean)
+sudo apt update && sudo apt full-upgrade -y
+
+log "Now running apt autoremove and autoclean"
+sleep 2
+# 2. Remove every package that is no longer needed
+sudo apt autoremove --purge -y
+sudo apt autoclean
+
+log "Removing apt config files"
+sleep 2
+# 3. Remove orphaned config files from long-gone packages
+sudo apt purge $(dpkg -l | awk '/^rc/ {print $2}') -y
+
+# 4. Remove ALL cached .deb files (frees gigabytes)
+sudo apt clean      # removes everything
+# or
+sudo apt autoclean  # keeps packages for currently installed versions only
+
+log "Removing snap packs leftovers, if installed"
+sleep 2
+# 5. Clean package manager leftovers (snaps, flatpaks, etc.)
+# Snap
+sudo snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision; do
+        sudo snap remove "$snapname" --revision=$revision
+    done
+
+log "Removing flatpak files, if installed"
+sleep 2
+# Flatpak
+flatpak uninstall --unused -y
+flatpak repair
+
+log "Removing leftover files from .cache, .local, etc."
+sleep 2
+# 6. Clear user caches (the biggest space hogs)
+rm -rf ~/.cache/*                        # 90 % of the time this is 2–20 GB
+rm -rf ~/.local/share/Trash/*            # emptied recycle bin
+rm -rf ~/.thumbnails/*                   # old thumbnail cache
+rm -rf ~/.nv/                            # NVIDIA shader cache (can be huge)
+rm -rf ~/.local/share/baloo/             # KDE search index (if you ever used Plasma)
+
+log "Removing system journals, logs, caches and archives"
+sleep 2
+# 7. Clean system-wide caches & logs
+sudo journalctl --vacuum-time=7d               # keep only last 7 days of logs
+sudo journalctl --vacuum-size=100M             # or cap at 100 MB
+sudo rm -rf /var/cache/apt/archives/*.deb      # just in case
+sudo rm -rf /var/tmp/*                         # temp files older than reboot
+sudo find /var/log -type f -name "*.log" -delete 2>/dev/null || true
+sudo find /var/log -type f -name "*.old" -delete
+
+# 8. Remove leftover flatpak/snap/appimage junk (optional but nice)
+rm -rf ~/snap ~/flatpak ~/Apps 2>/dev/null || true
+
+# 9. Reclaim space from old kernels (keeps current + one backup)
+sudo apt autoremove --purge -y         # usually removes old kernels too
+# or manually:
+
+# 10. Final sweep – show what you gained
+echo
+echo
+log "=== Space reclaimed ==="
+df -h /
+du -sh ~/.cache 2>/dev/null || log "~/.cache cleaned"
+sleep 2
+echo
+log "Done. Reboot recommended."
