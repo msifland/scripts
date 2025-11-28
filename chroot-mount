@@ -1,109 +1,115 @@
 #!/bin/bash
-# This is a blank bash script document.
-# Put your code below this line.
-echo "Creating directories. . ."
-if [[ ! -d /mnt/chroot ]]; then
-	echo
-	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
-	sudo mkdir -p /mnt/chroot
-else
-	echo
-	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
-	sudo rm -rf /mnt/chroot/*
-fi
-sleep 1
+# ============================================================================
+# Linux Chroot Rescue / Repair Script
+# Mounts a broken or live system into /mnt/chroot and drops you in as your user
+# Features: safe mounts, recursive extra partitions, auto cleanup on exit/error
+# =============================================================================
 
-echo
-echo "${ILCOLOR3}Mounting a folder for full chroot.${ILRESTORE}"
-echo
-sleep 1
+set -euo pipefail
+shopt -s nocasematch  # case-insensitive matching for yes/no
 
-echo "${ILCOLOR3}Showing drives:${ILRESTORE} "
-lsblk
-sleep 1
+CHROOT="/mnt/chroot"
+USER="msifland"  # Change if your username is different
 
-echo
-read -p "${ILCOLOR3}Type device in which you would like to mount the main file system(ex. /dev/sdb1):${ILRESTORE} " MNT_DVC
-sleep 1
+# ----------------------------- Cleanup Function (critical!) -------------
+cleanup() {
+    echo -e "\n${ILCOLOR1}Unmounting everything safely...${ILRESTORE}"
+    local mounts=()
+    mapfile -t mounts < <(mount | awk -v chroot="$CHROOT" '$3 ~ "^"chroot {print $3}' | sort -r)
 
-echo
-echo "Mounting with: sudo mount --mkdir $MNT_DVC /mnt/chroot"
-sudo mount --mkdir $MNT_DVC /mnt/chroot
-sleep 1
+    for m in "${mounts[@]}"; do
+        echo "  Unmounting $m"
+        sudo umount -f "$m" || sudo umount -l "$m"  # -l = lazy if busy
+    done
 
-function dev_mnt(){
-echo
-read -p "${ILCOLOR3}Type any other devices to mount(ex. /dev/sda2. This is for separate home and/or boot partitions)? Leave blank for none:${ILRESTORE} " MNT_DVC2
-sleep 1
-
-if [[ ! $MNT_DVC2 = "" ]]; then
-	echo
-	read -p "${ILCOLOR3}What folder to mount $MNT_DVC2 to(ex. home, boot, etc.)${ILRESTORE} " MNT_DVC2_FLDR
-	sleep 1
-	echo "Mounting with: sudo mount --mkdir $MNT_DVC2 \"/mnt/chroot/$MNT_DVC2_FLDR\""
-	sudo mount --mkdir "$MNT_DVC2" "/mnt/chroot/$MNT_DVC2_FLDR"
-	sleep 1
-	dev_mnt
-else
-	echo
-	echo "${ILCOLOR3}No other device selected.${ILRESTORE}"
-	sleep 1
-fi
+    echo -e "${ILCOLOR2}Cleanup complete.${ILRESTORE}"
 }
-dev_mnt
 
-echo
-echo "${ILCOLOR3}Mounting other needed drives to /mnt.${ILRESTORE}"
-echo "for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt/chroot$i; done"
-for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt/chroot$i; done
-sleep 1
+trap cleanup EXIT  # ← This guarantees unmount even on Ctrl+C or error
 
-echo
-echo "Adding resolv.conf for connection with: sudo cp /etc/resolv.conf /mnt/etc/"
-sudo cp /etc/resolv.conf /mnt/chroot/etc/
-sleep 1
+# ----------------------------- Header -----------------------------
+clear
+echo -e "${ILCOLOR4}╔═══════════════════════════════════════════════════════════════╗"
+echo -e "${ILCOLOR4}║                Linux Chroot Rescue / Repair Tool              ║"
+echo -e "${ILCOLOR4}╚═══════════════════════════════════════════════════════════════╝${ILRESTORE}\n"
 
-echo
-echo "${ILCOLOR3}Chroot'ing now. . .${ILRESTORE}"
-sleep 1
-echo "To log into a user, instead of root, type: su [USER NAME]"
-echo "Don't foget to type 'bash' to execute bash profile."
-echo "When loging out, type exit twice if you've typed bash to start."
-echo "sudo chroot /mnt/chroot /bin/bash -c \"su msifland\""
-sudo chroot /mnt/chroot /bin/bash -c "su msifland"
+# ----------------------------- Prepare chroot dir ------------------------
+echo -e "${ILCOLOR3}Preparing $CHROOT directory...${ILRESTORE}"
+if [[ ! -d "$CHROOT" ]]; then
+    sudo mkdir -p "$CHROOT"
+else
+    echo -e "${ILCOLOR3}Cleaning existing $CHROOT contents...${ILRESTORE}"
+    sudo rm -rf "$CHROOT"/*
+fi
 
+# ----------------------------- Show disks -----------------------------
+echo -e "\n${ILCOLOR3}Available block devices:${ILRESTORE}"
+lsblk -fpo NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT
 echo
-echo "${ILCOLOR3}Exiting script. . .${ILRESTORE}"
-sleep 1 
 
-echo
-echo "Unmounting drives. . ."
-if [[ -d /mnt/chroot/dev/pts ]]; then
-	sudo umount -f /mnt/chroot/dev/pts
-fi
-if [[ -d /mnt/chroot/dev ]]; then
-	sudo umount -f /mnt/chroot/dev
-fi
-if [[ -d /mnt/chroot/proc ]]; then
-	sudo umount -f /mnt/chroot/proc
-fi
-if [[ -d /mnt/chroot/sys ]]; then
-	sudo umount -f /mnt/chroot/sys
-fi
-if [[ -d /mnt/chroot/run ]]; then
-	sudo umount -f /mnt/chroot/run
-fi
-if [[ -d /mnt/chroot/boot ]]; then
-	sudo umount -f /mnt/chroot/boot
-fi
-if [[ -d /mnt/chroot/home ]]; then
-	sudo umount -f /mnt/chroot/home
-fi
-if [[ -d /mnt/chroot ]]; then
-	sudo umount -f /mnt/chroot
-fi
-sleep 1
+# ----------------------------- Mount root partition -----------------------
+while true; do
+    read -rp "${ILCOLOR3}Enter device for root filesystem (e.g. /dev/sda1, /dev/sdd2): ${ILRESTORE}" ROOT_DEV
+    if [[ -b "$ROOT_DEV" ]]; then
+        echo -e "${ILCOLOR3}Mounting $ROOT_DEV → $CHROOT${ILRESTORE}"
+        sudo mount --mkdir "$ROOT_DEV" "$CHROOT" && break
+    else
+        echo -e "${ILCOLOR1}Device $ROOT_DEV not found. Try again.${ILRESTORE}"
+    fi
+done
 
-echo
-echo "All done!"
-sleep 1
+# --------------- Mount additional partitions -----------------------------
+mount_extra() {
+    while true; do
+        echo
+        read -rp "${ILCOLOR3}Additional partition to mount? (e.g. /dev/sda2) [blank = done]: ${ILRESTORE}" EXTRA_DEV
+        [[ -z "$EXTRA_DEV" ]] && break
+
+        if [[ ! -b "$EXTRA_DEV" ]]; then
+            echo -e "${ILCOLOR1}Invalid device. Try again.${ILRESTORE}"
+            continue
+        fi
+
+        read -rp "${ILCOLOR3}Mount $EXTRA_DEV inside chroot as (e.g. home, boot, var): ${ILRESTORE}" TARGET_DIR
+        TARGET_DIR="${TARGET_DIR#/}"  # strip leading slash if present
+        FULL_PATH="$CHROOT/$TARGET_DIR"
+
+        sudo mkdir -p "$FULL_PATH"
+        echo -e "${ILCOLOR3}Mounting $EXTRA_DEV → $FULL_PATH${ILRESTORE}"
+        sudo mount --mkdir "$EXTRA_DEV" "$FULL_PATH"
+    done
+}
+
+echo -e "\n${ILCOLOR3}Mount additional partitions (separate /home, /boot, etc.)?${ILRESTORE}"
+mount_extra
+
+# ----------------------------- Bind mounts -----------------------------
+echo -e "\n${ILCOLOR3}Binding essential system directories...${ILRESTORE}"
+for dir in /dev /dev/pts /proc /sys /run; do
+    sudo mount --bind "$dir" "$CHROOT$dir" 2>/dev/null || sudo mount --make-rslave "$dir" "$CHROOT$dir"
+done
+
+# Special case for /dev/pts
+sudo mount -t devpts devpts "$CHROOT/dev/pts" 2>/dev/null || true
+
+# ----------------------------- DNS -----------------------------
+echo -e "${ILCOLOR3}Copying DNS configuration...${ILRESTORE}"
+sudo cp -f /etc/resolv.conf "$CHROOT/etc/resolv.conf"
+
+# ----------------------------- Final instructions -------------------------
+clear
+echo -e "${ILCOLOR4}╔═══════════════════════════════════════════════════════════════╗"
+echo -e "${ILCOLOR4}║                       CHROOT READY                            ║"
+echo -e "${ILCOLOR4}╚═══════════════════════════════════════════════════════════════╝${ILRESTORE}\n"
+echo -e "${ILCOLOR2}You will be dropped into the chroot as user: $USER${ILRESTORE}"
+echo -e "${ILCOLOR2}→ If needed, run 'sudo -i' to become root${ILRESTORE}"
+echo -e "${ILCOLOR2}→ When finished, type 'exit' (possibly twice if you ran 'bash')${ILRESTORE}\n"
+
+sleep 3
+
+# ----------------------------- Enter chroot -----------------------------
+sudo chroot "$CHROOT" /bin/bash -c "su - $USER" || echo -e "${ILCOLOR1}Chroot failed. Check mounts above.${ILRESTORE}"
+
+# ----------------------------- Script ends → trap runs cleanup -----------
+echo -e "\n${ILCOLOR2}You are now back in the live system.${ILRESTORE}"
+echo -e "${ILCOLOR4}All mounts have been safely unmounted. Have a great day!${ILRESTORE}\n"

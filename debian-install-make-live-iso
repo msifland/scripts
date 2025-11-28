@@ -141,7 +141,8 @@ echo "DONE! Your live ISO is ready:"
 du -h "$ISO_NAME"
 echo
 echo "Write it to USB with:"
-echo "   sudo dd if=\"$(basename "$ISO_NAME")\" of=/dev/sdX bs=4M status=progress oflag=sync"
+echo "   Primary system: sudo dd if=\"$(basename "$ISO_NAME")\" of=/dev/sdX bs=4M status=progress oflag=sync"
+echo "   Secondary system: Put it in a folder on you device and reference it with /etc/grub.d/40_custom"
 echo
 sleep 1
 # Fix ownership (optional convenience)

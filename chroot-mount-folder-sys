@@ -1,0 +1,108 @@
+#!/bin/bash
+# =============================================================================
+# Folder-to-Chroot Rescue Script
+# Chroots into an existing directory that contains a full Linux root filesystem
+# Example use: chroot into /mnt/old-root, /backup/ubuntu-root, ~/restored-system, etc.
+# =============================================================================
+
+set -euo pipefail
+shopt -s nocasematch
+
+USER="${SUDO_USER:-$(whoami)}"   # Tries to detect your real username
+DEFAULT_CHROOT="/mnt/chroot"
+
+# ----------------------------- Auto Cleanup -----------------------------
+cleanup() {
+    [[ -z "${CHROOT_DIR:-}" ]] && return
+
+    echo -e "\n${ILCOLOR1}Unmounting bind mounts from $CHROOT_DIR ...${ILRESTORE}"
+    local mounts=()
+    mapfile -t mounts < <(mount | awk -v dir="$CHROOT_DIR" '$3 ~ "^"dir {print $3}' | sort -r)
+
+    for m in "${mounts[@]}"; do
+        echo "  Unmounting $m"
+        sudo umount -f "$m" || sudo umount -l "$m"
+    done
+
+    echo -e "${ILCOLOR2}All clean!${ILRESTORE}"
+}
+trap cleanup EXIT
+
+# ----------------------------- Header -----------------------------
+clear
+echo -e "${ILCOLOR4}╔═══════════════════════════════════════════════════════════════╗"
+echo -e "${ILCOLOR4}║            Folder → Chroot Rescue Tool (No Block Device)      ║"
+echo -e "${ILCOLOR4}╚═══════════════════════════════════════════════════════════════╝${ILRESTORE}\n"
+
+# ----------------------------- Choose target folder -----------------------
+while true; do
+    echo -e "${ILCOLOR3}Enter the full path to the root filesystem folder you want to chroot into${ILRESTORE}"
+    read -rp "  (e.g. /mnt/old-root, /backup/ubuntu-2025, /home/user/extracted) → " CHROOT_DIR
+
+    CHROOT_DIR="${CHROOT_DIR%/}"  # remove trailing slash
+    [[ -z "$CHROOT_DIR" ]] && CHROOT_DIR="$DEFAULT_CHROOT"
+
+    if [[ -d "$CHROOT_DIR" ]]; then
+        if [[ -d "$CHROOT_DIR/etc" && -d "$CHROOT_DIR/bin" && -d "$CHROOT_DIR/lib" ]]; then
+            echo -e "${ILCOLOR2}Valid root filesystem detected: $CHROOT_DIR${ILRESTORE}"
+            break
+        else
+            echo -e "${ILCOLOR1}This doesn't look like a Linux root (missing /etc, /bin, or /lib)${ILRESTORE}"
+        fi
+    else
+        echo -e "${ILCOLOR1}Directory not found: $CHROOT_DIR${ILRESTORE}"
+    fi
+    echo
+done
+
+# Optional: ask for subdirectories (in case /home or /boot are separate folders)
+echo -e "\n${ILCOLOR3}Do you have separate folders for /home, /boot, etc. that should be bind-mounted?${ILRESTORE}"
+read -rp "  [y/N] → " answer
+if [[ "$answer" =~ ^[yY] ]]; then
+    while true; do
+        echo
+        read -rp "${ILCOLOR3}Source folder to bind-mount (blank = done): ${ILRESTORE}" src
+        [[ -z "$src" ]] && break
+        [[ ! -d "$src" ]] && { echo "Not a directory. Skipping."; continue; }
+
+        read -rp "${ILCOLOR3}Mount inside chroot as (e.g. home, boot, var/log): ${ILRESTORE}" target
+        target="${target#/}"  # strip leading slash
+        full_target="$CHROOT_DIR/$target"
+
+        sudo mkdir -p "$full_target"
+        echo -e "${ILCOLOR3}Binding $src → $full_target${ILRESTORE}"
+        sudo mount --bind "$src" "$full_target"
+    done
+fi
+
+# ----------------------------- Essential bind mounts -----------------------------
+echo -e "\n${ILCOLOR3}Binding essential system directories...${ILRESTORE}"
+for dir in /dev /dev/pts /proc /sys /run; do
+    sudo mkdir -p "$CHROOT_DIR$dir"
+    sudo mount --bind "$dir" "$CHROOT_DIR$dir"
+done
+
+# Ensure /dev/pts is properly mounted
+sudo mount -t devpts devpts "$CHROOT_DIR/dev/pts" 2>/dev/null || true
+
+# DNS
+echo -e "${ILCOLOR3}Setting up DNS...${ILRESTORE}"
+sudo cp -f /etc/resolv.conf "$CHROOT_DIR/etc/resolv.conf"
+
+# ----------------------------- Ready! -----------------------------
+clear
+echo -e "${ILCOLOR4}╔═══════════════════════════════════════════════════════════════╗"
+echo -e "${ILCOLOR4}║                     CHROOT READY (Folder Mode)                ║"
+echo -e "${ILCOLOR4}╚═══════════════════════════════════════════════════════════════╝${ILRESTORE}\n"
+echo -e "${ILCOLOR2}Target directory: $CHROOT_DIR${ILRESTORE}"
+echo -e "${ILCOLOR2}You will enter as user: $USER${ILRESTORE}"
+echo -e "${ILCOLOR2}→ Type 'exit' twice if needed when finished${ILRESTORE}\n"
+
+sleep 3
+
+# ----------------------------- Enter chroot -----------------------------
+sudo chroot "$CHROOT_DIR" /bin/bash -c "su - $USER"
+
+# ----------------------------- Back in live system ------------------------
+echo -e "\n${ILCOLOR2}Welcome back! All bind mounts have been automatically cleaned up.${ILRESTORE}"
+echo -e "${ILCOLOR4}Have a great day!${ILRESTORE}\n"

@@ -1,0 +1,109 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo "Creating directories. . ."
+if [[ ! -d /mnt/chroot ]]; then
+	echo
+	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
+	sudo mkdir -p /mnt/chroot
+else
+	echo
+	echo "Sudo creating and cleaning dir /mnt/chroot. . ."
+	sudo rm -rf /mnt/chroot/*
+fi
+sleep 1
+
+echo
+echo "${ILCOLOR3}Mounting a folder for full chroot.${ILRESTORE}"
+echo
+sleep 1
+
+echo "${ILCOLOR3}Showing drives:${ILRESTORE} "
+lsblk
+sleep 1
+
+echo
+read -p "${ILCOLOR3}Type device in which you would like to mount the main file system(ex. /dev/sdb1):${ILRESTORE} " MNT_DVC
+sleep 1
+
+echo
+echo "Mounting with: sudo mount --mkdir $MNT_DVC /mnt/chroot"
+sudo mount --mkdir $MNT_DVC /mnt/chroot
+sleep 1
+
+function dev_mnt(){
+echo
+read -p "${ILCOLOR3}Type any other devices to mount(ex. /dev/sda2. This is for separate home and/or boot partitions)? Leave blank for none:${ILRESTORE} " MNT_DVC2
+sleep 1
+
+if [[ ! $MNT_DVC2 = "" ]]; then
+	echo
+	read -p "${ILCOLOR3}What folder to mount $MNT_DVC2 to(ex. home, boot, etc.)${ILRESTORE} " MNT_DVC2_FLDR
+	sleep 1
+	echo "Mounting with: sudo mount --mkdir $MNT_DVC2 \"/mnt/chroot/$MNT_DVC2_FLDR\""
+	sudo mount --mkdir "$MNT_DVC2" "/mnt/chroot/$MNT_DVC2_FLDR"
+	sleep 1
+	dev_mnt
+else
+	echo
+	echo "${ILCOLOR3}No other device selected.${ILRESTORE}"
+	sleep 1
+fi
+}
+dev_mnt
+
+echo
+echo "${ILCOLOR3}Mounting other needed drives to /mnt.${ILRESTORE}"
+echo "for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt/chroot$i; done"
+for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt/chroot$i; done
+sleep 1
+
+echo
+echo "Adding resolv.conf for connection with: sudo cp /etc/resolv.conf /mnt/etc/"
+sudo cp /etc/resolv.conf /mnt/chroot/etc/
+sleep 1
+
+echo
+echo "${ILCOLOR3}Chroot'ing now. . .${ILRESTORE}"
+sleep 1
+echo "To log into a user, instead of root, type: su [USER NAME]"
+echo "Don't foget to type 'bash' to execute bash profile."
+echo "When loging out, type exit twice if you've typed bash to start."
+echo "sudo chroot /mnt/chroot /bin/bash -c \"su msifland\""
+sudo chroot /mnt/chroot /bin/bash -c "su msifland"
+
+echo
+echo "${ILCOLOR3}Exiting script. . .${ILRESTORE}"
+sleep 1 
+
+echo
+echo "Unmounting drives. . ."
+if [[ -d /mnt/chroot/dev/pts ]]; then
+	sudo umount -f /mnt/chroot/dev/pts
+fi
+if [[ -d /mnt/chroot/dev ]]; then
+	sudo umount -f /mnt/chroot/dev
+fi
+if [[ -d /mnt/chroot/proc ]]; then
+	sudo umount -f /mnt/chroot/proc
+fi
+if [[ -d /mnt/chroot/sys ]]; then
+	sudo umount -f /mnt/chroot/sys
+fi
+if [[ -d /mnt/chroot/run ]]; then
+	sudo umount -f /mnt/chroot/run
+fi
+if [[ -d /mnt/chroot/boot ]]; then
+	sudo umount -f /mnt/chroot/boot
+fi
+if [[ -d /mnt/chroot/home ]]; then
+	sudo umount -f /mnt/chroot/home
+fi
+if [[ -d /mnt/chroot ]]; then
+	sudo umount -f /mnt/chroot
+fi
+sleep 1
+
+echo
+echo "All done!"
+sleep 1

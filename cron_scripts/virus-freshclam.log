@@ -1,6 +1,6 @@
 [sudo] password for msifland: freshclam: no process found
-Mon Sep 20 08:37:14 2021 -> ClamAV update process started at Mon Sep 20 08:37:14 2021
-Mon Sep 20 08:37:14 2021 -> daily.cld database is up-to-date (version: 26298, sigs: 1934493, f-level: 90, builder: raynman)
-Mon Sep 20 08:37:14 2021 -> main.cld database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon Sep 20 08:37:14 2021 -> bytecode.cld database is up-to-date (version: 333, sigs: 92, f-level: 63, builder: awillia2)
+Fri Nov 28 16:27:38 2025 -> ClamAV update process started at Fri Nov 28 16:27:38 2025
+Fri Nov 28 16:27:38 2025 -> daily.cvd database is up-to-date (version: 27834, sigs: 2077241, f-level: 90, builder: svc.clamav-publisher)
+Fri Nov 28 16:27:38 2025 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+Fri Nov 28 16:27:38 2025 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 
