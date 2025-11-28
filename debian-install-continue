@@ -25,7 +25,7 @@ export TERM=xterm-color
 log "Configuring timezone → $TIMEZONE"
 sleep 1
 apt install -y --no-install-recommends \
-     wget nano zstd pv git fzf curl screenfetch dialog gnupg2 software-properties-common jshon ca-certificates locales
+     wget nano zstd pv git fzf curl fastfetch dialog gnupg2 software-properties-common jshon ca-certificates locales
 
 ln -sf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime
 echo "$TIMEZONE" > /etc/timezone

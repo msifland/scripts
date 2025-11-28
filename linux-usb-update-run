@@ -140,11 +140,6 @@ $HOME/scripts/subl-update
 sleep 1
 
 echo
-echo "${ILCOLOR1}Updating screenfetch. . .${ILRESTORE}"
-$HOME/scripts/screenfetch-update
-sleep 1
-
-echo
 echo "${ILCOLOR1}All done. Check for errors. . .${ILRESTORE}"
 sleep 1
 

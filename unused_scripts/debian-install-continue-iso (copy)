@@ -17,7 +17,7 @@ echo
 echo "Setting up time zones and locales. . ."
 echo
 sleep 1
-apt install -y wget nano pv git fzf curl screenfetch jshon dialog ca-certificates locales
+apt install -y wget nano pv git fzf curl fastfetch jshon dialog ca-certificates locales
 ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime   # or your zone
 echo "America/Chicago" | tee /etc/timezone
 DEBIAN_FRONTEND=noninteractive dpkg-reconfigure tzdata
