@@ -120,10 +120,10 @@ sleep 1
 xorriso -as mkisofs \
     -iso-level 4 -joliet -rock \
     -eltorito-boot isolinux/isolinux.bin \
-        -no-emul-boot -boot-load-size 4 -boot-info-table \
-        -eltorito-catalog isolinux/boot.cat \
+    -no-emul-boot -boot-load-size 4 -boot-info-table \
+    -eltorito-catalog isolinux/boot.cat \
     -eltorito-alt-boot \
-        -e boot/grub/efi.img -no-emul-boot \
+    -e boot/grub/efi.img -no-emul-boot \
     -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
     -isohybrid-gpt-basdat \
     -o "$ISO_NAME" \
