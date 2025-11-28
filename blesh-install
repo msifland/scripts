@@ -30,7 +30,7 @@ if ! dpkg --get-selections | awk '{print $1}' | grep -xq "gawk"; then
 	echo
 	echo "Gawk not found, installing now. . ."
 	sleep 1
-	echo "spike" | sudo -S apt install gawk
+	echo "spike" | sudo -S apt install -y gawk
 fi
 make
 source out/ble.sh

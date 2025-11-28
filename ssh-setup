@@ -13,7 +13,7 @@ echo
 echo "Checking if openssh is installed. . ."
 sleep 1
 if ! dpkg --get-selections | awk '{print $1}' | grep -wq "openssh"; then
-	sudo apt install openssh
+	sudo apt install -y openssh
 else
 	echo "openssh is installed."
 fi

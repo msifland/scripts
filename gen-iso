@@ -7,7 +7,7 @@ sleep 1
 if ! dpkg --get-selections | grep "genisoimage"; then
 	echo
 	echo "Package genisoimage not found, installing now. . ."
-	sudo apt install genisoimage
+	sudo apt install -y genisoimage
 	sleep 1
 else
 	echo
