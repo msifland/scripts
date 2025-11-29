@@ -19,6 +19,7 @@ CONFIGS_DIR="$HOME/MSI_live-build/my_configs"
 SCRIPTS_DIR="$HOME/scripts"
 CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/debian-install-continue-iso"
 LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/debian-install-make-live-iso"
+GOOGLE_CHRM_SCRIPT="$HOME/scripts/google-chrome-latest-install"
 # -------------------------------------------------------------------
 
 clear
@@ -121,6 +122,7 @@ install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/prefer
 # Copy helper scripts
 install -Dm755 "$CHROOT_CONTINUE_SCRIPT"               "$INST_PTH/debian-install-continue-iso"
 install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
+install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-latest-install"
 
 # --------------------- Chroot and finish install ------------------
 echo "Entering chroot to finish package installation..."
@@ -154,6 +156,7 @@ if [[ "$ans" =~ ^[yY]$ ]]; then
         "$HOME_DIR/pkg_bkups" \
         "$HOME_DIR/Projects" \
         "$HOME_DIR/scripts" \
+        "$HOME_DIR/Templates" \
         "$HOME_DIR/usb_pkg_bkups" \
         "$USR_HOME/"
     rsync -a "$CONFIGS_DIR/" "$USR_HOME/MSI_live-build/my_configs/"
@@ -180,9 +183,9 @@ chown -R "$usrnme:$usrnme" "$USR_HOME"
 
 # --------------------- Final pause ---------------------------------
 echo
-echo "Almost done! You can now:"
-echo "  • Open another terminal and chroot in: sudo chroot $INST_PTH"
-echo "  • Inspect the filesystem in your file manager"
+log "Almost done! You can now:
+        • Open another terminal and chroot in: sudo chroot $INST_PTH
+        • Inspect the filesystem in your file manager"
 echo
 echo
 read -rsp "Press ENTER when ready to build the live ISO..."

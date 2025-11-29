@@ -130,6 +130,11 @@ tar -xzf firmware.tar.gz
 dpkg -i ./*.deb || apt install -f -y  # fix any missing deps
 cd /; rm -rf /tmp/firmware
 
+#---------------Install lates google chrome--------------------------
+log "Installing latest Google Chrome Stable on system"
+sleep 1
+/bin/sh /google-chrome-latest-install || true
+rm google* || true
 # -------------------------- Final cleanup --------------------------
 log "Final system upgrade & cleanup"
 sleep 1

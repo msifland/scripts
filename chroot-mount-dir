@@ -13,12 +13,18 @@ DEFAULT_CHROOT="/mnt/chroot"
 
 # ----------------------------- Auto Cleanup -----------------------------
 cleanup() {
-    [[ -z "${CHROOT_DIR:-}" ]] && return
+    #expands var if exists and is empty,else empty string
+    if [[ -z "${CHROOT_DIR:-}" ]]; then
+        return
+    fi
 
     echo -e "\n${ILCOLOR1}Unmounting bind mounts from $CHROOT_DIR ...${ILRESTORE}"
+    # local variable array of mount points
     local mounts=()
+    # mapfile -t mounts → reads lines from stdin and puts each line as an element into the array mounts. -t strips the trailing newlines.
+    # < <(…) → process substitution. Bash runs the command inside (…) in a subshell and gives you a file descriptor you can redirect from (like a temporary file). So this line fills the mounts array with the output of the big command inside.
     mapfile -t mounts < <(mount | awk -v dir="$CHROOT_DIR" '$3 ~ "^"dir {print $3}' | sort -r)
-
+    # loop through array of mount points and unmount
     for m in "${mounts[@]}"; do
         echo "  Unmounting $m"
         sudo umount -f "$m" || sudo umount -l "$m"
@@ -26,6 +32,7 @@ cleanup() {
 
     echo -e "${ILCOLOR2}All clean!${ILRESTORE}"
 }
+# sets to run function on exit or ctrl-c or error
 trap cleanup EXIT
 
 # ----------------------------- Header -----------------------------
@@ -40,14 +47,15 @@ while true; do
     read -rp "  (e.g. /mnt/old-root, /backup/ubuntu-2025, /home/user/extracted) → " CHROOT_DIR
 
     CHROOT_DIR="${CHROOT_DIR%/}"  # remove trailing slash
-    [[ -z "$CHROOT_DIR" ]] && CHROOT_DIR="$DEFAULT_CHROOT"
-
+    if [[ -z "$CHROOT_DIR" ]]; then     # -z is zero input or zero file
+        CHROOT_DIR="$DEFAULT_CHROOT"
+    fi
     if [[ -d "$CHROOT_DIR" ]]; then
         if [[ -d "$CHROOT_DIR/etc" && -d "$CHROOT_DIR/bin" && -d "$CHROOT_DIR/lib" ]]; then
             echo -e "${ILCOLOR2}Valid root filesystem detected: $CHROOT_DIR${ILRESTORE}"
-            break
+            break    # exit loop if dirs exist
         else
-            echo -e "${ILCOLOR1}This doesn't look like a Linux root (missing /etc, /bin, or /lib)${ILRESTORE}"
+            echo -e "${ILCOLOR1}This doesn't look like a Linux root (missing /etc, /bin, or /lib)${ILRESTORE}" # error if dirs don't exist
         fi
     else
         echo -e "${ILCOLOR1}Directory not found: $CHROOT_DIR${ILRESTORE}"
@@ -62,8 +70,12 @@ if [[ "$answer" =~ ^[yY] ]]; then
     while true; do
         echo
         read -rp "${ILCOLOR3}Source folder to bind-mount (blank = done): ${ILRESTORE}" src
-        [[ -z "$src" ]] && break
-        [[ ! -d "$src" ]] && { echo "Not a directory. Skipping."; continue; }
+        if [[ -z "$src" ]]; then
+            break
+        fi
+        if [[ ! -d "$src" ]]; then
+            echo "Not a directory. Skipping."; continue;
+        fi
 
         read -rp "${ILCOLOR3}Mount inside chroot as (e.g. home, boot, var/log): ${ILRESTORE}" target
         target="${target#/}"  # strip leading slash

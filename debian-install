@@ -12,6 +12,7 @@ CONFIGS_DIR="$HOME/MSI_live-build/my_configs"
 SCRIPTS_DIR="$HOME/scripts"
 CHROOT_SCRIPT="$SCRIPTS_DIR/debian-install-continue"
 PACKLIST="$CONFIGS_DIR/my_packs.list.chroot"
+GOOGLE_CHRM_SCRIPT="$HOME/scripts/google-chrome-latest-install"
 
 # -------------------------- Must be root ---------------------------
 [[ "$EUID" -eq 0 ]] || error "This script must be run as root!"
@@ -131,13 +132,12 @@ install -Dm644 /etc/apt/sources.list.d/debian.sources "$INST_PTH/etc/apt/sources
 
 install -Dm755 "$CHROOT_SCRIPT" "$INST_PTH/debian-install-continue"
 install -Dm644 "$PACKLIST" "$INST_PTH/my_packs.list.chroot"
-sleep 1
+install -Dm755 "$GOOGLE_CHRM_SCRIPT" "$INST_PTH/google-chrome-latest-install"
 
 # -------------------------- Chroot & finish -----------------------
 log "Entering chroot to complete installation"
 sleep 1
 chroot $INST_PTH /bin/bash -i -c "part_name='$part_name' source /debian-install-continue"
-sleep 1
 
 # Cleanup chroot helpers
 rm -f "$INST_PTH"/{debian-install-continue,my_packs.list.chroot}
@@ -187,7 +187,7 @@ done
 # Personal files
 ask "Copy personal files (Documents, scripts, Projects, etc.)?" && {
     rsync -a --progress --exclude=".git" \
-        "$HOME"/{Documents,"Modules-Apps",pkg_bkups,Projects,scripts,usb_pkg_bkups} \
+        "$HOME"/{Documents,"Modules-Apps",pkg_bkups,Projects,scripts, Templates, usb_pkg_bkups} \
         "$USR_HOME/"
     rsync -a "$CONFIGS_DIR/" "$USR_HOME/MSI_live-build/my_configs/"
     sleep 1
@@ -230,6 +230,16 @@ ask "Disable os-prober in GRUB? (recommended for privacy)" && {
 # -------------------------- Final steps ----------------------------
 install -Dm644 "$CONFIGS_DIR/msifland" "$INST_PTH/etc/sudoers.d/msifland"
 
+# --------------------- Final pause ---------------------------------
+echo
+log "Almost done! You can now:
+        • Open another terminal and chroot in: sudo chroot $INST_PTH
+        • Inspect the filesystem in your file manager"
+echo
+echo
+read -rsp "Press ENTER when ready to build the live ISO..."
+
+echo
 log "Installation complete! Unmounting..."
 sleep 1
 umount "$INST_PTH"/{proc,sys,dev/pts,dev} 2>/dev/null || true
