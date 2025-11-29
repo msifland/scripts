@@ -1,0 +1,70 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+
+# Create variables
+XPROF="$HOME/.xprofile"
+AUTSTRT="$HOME/.config/autostart/display-start.desktop"
+
+# Clean up
+rm -rf $XPROF
+rm -rf $AUTSTRT
+
+echo
+echo "Setting up custom display size using cvt and xrandr. Adding to $XPROF and creating startup app in $AUTSTRT to call $XPROF at start."
+echo
+sleep 2
+
+read -p "What display size would you like(width height, ex. 1752 985)? " DISP_SIZE
+
+# Setup xrandr properties for custom display and write to .xprofile
+RES="$DISP_SIZE"
+DISP=$(xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
+MODELINE=$(cvt $(echo $RES) | grep -e "Modeline [^(]" | sed -r 's/.*Modeline (.*)/\1/')
+MODERES=$(echo $MODELINE | grep -o -P '(?<=").*(?=")')
+
+# Check for .xprofile file and create and make executable
+if [[ ! -f $XPROF ]]; then
+	touch $XPROF
+	chmod +x $XPROF
+fi
+cat > $XPROF << _EOF
+#!/bin/sh
+# The following two lines are for NVIDIA only(possibly for hdmi to work). Uncomment to use these lines.
+#xrandr --setprovideroutputsource NVIDIA-GO modesetting
+#xrandr --auto
+xrandr --newmode $MODELINE
+xrandr --addmode $DISP $MODERES
+xrandr --output $DISP --mode $MODERES
+_EOF
+# Pulled out of above lines to write for test purposes, may not need.
+#xrandr -s $MODERES
+
+# Run .xprofile
+$XPROF
+
+# Check for .config/autostart file and create.
+if [[ ! -f $AUTSTRT ]]; then
+	touch $AUTSTRT
+fi
+
+# Write .xprofile to execute on startup
+echo "[Desktop Entry]" > $AUTSTRT
+echo "Type=Application" >> $AUTSTRT
+echo "Exec=$XPROF" >> $AUTSTRT
+echo "Hidden=false" >> $AUTSTRT
+echo "NoDisplay=false" >> $AUTSTRT
+echo "X-GNOME-Autostart-enabled=true" >> $AUTSTRT
+echo "Name[en_US]=display-start" >> $AUTSTRT
+echo "Name=display-start" >> $AUTSTRT
+echo "Comment[en_US]=Starts custom display size, created by display-setup script" >> $AUTSTRT
+echo "Comment=" >> $AUTSTRT
+chmod 644 $AUTSTRT
+# Check output status for errors.
+if [[ $? -eq 0 ]]; then
+	echo "No errors detected."
+else
+	echo "Error detected!!! Check output above in terminal."
+fi
+sleep 1
+exit

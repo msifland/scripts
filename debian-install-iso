@@ -20,6 +20,7 @@ SCRIPTS_DIR="$HOME/scripts"
 CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/debian-install-continue-iso"
 LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/debian-install-make-live-iso"
 GOOGLE_CHRM_SCRIPT="$HOME/scripts/google-chrome-latest-install"
+DISPY_SET="$HOME/scripts/display-setup"
 # -------------------------------------------------------------------
 
 clear
@@ -123,7 +124,6 @@ install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/prefer
 install -Dm755 "$CHROOT_CONTINUE_SCRIPT"               "$INST_PTH/debian-install-continue-iso"
 install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
 install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-latest-install"
-
 # --------------------- Chroot and finish install ------------------
 echo "Entering chroot to finish package installation..."
 sleep 1
