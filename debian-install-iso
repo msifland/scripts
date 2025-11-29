@@ -173,7 +173,7 @@ if [[ "$ans" =~ ^[yY]$ ]]; then
         "$HOME_DIR/.local"      "$USR_HOME/"
     rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
         "$HOME_DIR/.cache"      "$USR_HOME/"
-    for f in .Xresources .conkyrc .conkyrc.bak .bashrc; do
+    for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
         [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
     done
 fi
