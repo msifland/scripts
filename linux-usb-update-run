@@ -27,7 +27,7 @@ CONFIG_FILES_TO_SYNC=(
 clear
 echo -e "${ILCOLOR2}
                         ┌────────────────────────────────────────────┐
-                        │           ⚠️  CAUTION ⚠️                   │
+                        │           ⚠️  CAUTION ⚠️                     │
                         │ This script should ONLY be run from:       │
                         │     ~/scripts/linux-usb-update             │
                         │                                            │
