@@ -138,28 +138,23 @@ rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
 USR_HOME="$INST_PTH/home/$usrnme"
 echo "Detected username: $usrnme"
 
+
 # --------------------- Create standard directories ----------------
 echo "Creating standard user directories..."
 sleep 1
-for dir in Downloads Documents "Modules-Apps" pkg_bkups Projects scripts Templates Music MSI_live-build Pictures Videos tmp Wallpapers; do
+for dir in Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$dir"
 done
 
 # --------------------- Copy personal files (optional) -------------
 read -rp "Copy your personal files (Documents, scripts, Projects, etc.)? [y/N] " ans
 if [[ "$ans" =~ ^[yY]$ ]]; then
-    echo "Copying personal files..."
-    rsync -a --progress --exclude=".git" \
-        "$HOME_DIR/Documents" \
-        "$HOME_DIR/Modules-Apps" \
-        "$HOME_DIR/pkg_bkups" \
-        "$HOME_DIR/Projects" \
-        "$HOME_DIR/scripts" \
-        "$HOME_DIR/Templates" \
-        "$HOME_DIR/usb_pkg_bkups" \
-        "$USR_HOME/"
-    rsync -a "$CONFIGS_DIR/" "$USR_HOME/MSI_live-build/my_configs/"
-fi
+    echo "Copying personal files using git clone..."
+    cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+    cd $USR_HOME
+    /bin/bash git-clone-my-repos
+    cd "$INST_PTH"
+
 echo
 echo
 # --------------------- Copy dotfiles/configs (optional) -----------
