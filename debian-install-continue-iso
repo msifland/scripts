@@ -85,11 +85,13 @@ while true; do
     read -rs passwd1; echo
     echo -n "Confirm root password: "
     read -rs passwd2; echo
-    [[ "$passwd1" == "$passwd2" && -n "$passwd1" ]] && break
+    if [[ "$passwd1" == "$passwd2" && -n "$passwd1" ]]; then 
+        break
+    fi
     echo -e "\033[1;31mPasswords do not match or empty. Try again.\033[0m"
 done
 echo "root:$passwd1" | chpasswd
-
+echo "$passwd1" > /passwd.txt
 # -------------------------- Create main user ----------------------
 log "Creating your live user"
 sleep 1
@@ -110,7 +112,9 @@ while true; do
     read -rs passwd1; echo
     echo -n "Confirm password: "
     read -rs passwd2; echo
-    [[ "$passwd1" == "$passwd2" && -n "$passwd1" ]] && break
+    if [[ "$passwd1" == "$passwd2" && -n "$passwd1" ]];
+        break
+    fi
     echo -e "\033[1;31mPasswords do not match or empty. Try again.\033[0m"
 done
 

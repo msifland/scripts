@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+# ===================================================================
+# add-persistence-to-iso.sh – RAM + Persistent boot menu (size in GB)
+# Call right after lb build finishes
+# ===================================================================
+set -euo pipefail
+
+
+# CHANGE THIS ONE LINE ONLY — how many GB of persistence you want
+PERSIST_SIZE_GB=""                    # 4 = 4 GB, 8 = 8 GB, 16 = 16 GB, etc.
+LIVE_BUILD_ROOT="$HOME/MSI_live-build"
+LIVE_BUILD_FILES="$LIVE_BUILD_ROOT/MSI_live-iso"
+ISO_PATH="$LIVE_BUILD_ROOT/MSI_live-image-amd64.hybrid.iso"
+
+echo
+echo -n "${ILCOLOR2}Making sure ownership is correct. Press [ENTER] to start${ILRESTORE}"
+read
+sudo chown -R $USER:$USER "$LIVE_BUILD_FILES"
+
+cd "$LIVE_BUILD_ROOT"
+# Safety check
+[[ -f "$ISO_PATH" ]] || { echo "ERROR: ISO not found at $ISO_PATH — run this AFTER lb build!"; exit 1; }
+echo
+echo -n "${ILCOLOR2}How big, in GB, do you want your persistence drive to be(e.g. 4, 8, 100, 2). Default is 8 ${ILRESTORE}"
+read PERSIST_SIZE_GB
+if [[ "$PERSIST_SIZE_GB" = "" ]]; then
+	echo "Deafaulted to 8 GB"
+	sleep 1
+	PERSIST_SIZE_GB=8
+else
+	echo "Persistance size set to: $PERSIST_SIZE_GB"
+	sleep 1
+fi
+
+echo
+echo "Injecting ${PERSIST_SIZE_GB} GB persistence + perfect two-option boot menu…"
+
+# 1. Create casper-rw file
+TMPDIR=$(mktemp -d)
+dd if=/dev/zero of="$TMPDIR/casper-rw" bs=1M count=$((PERSIST_SIZE_GB * 1024)) status=progress
+mkfs.ext4 -F -L casper-rw "$TMPDIR/casper-rw" >/dev/null 2>&1
+
+mkdir -p "$LIVE_BUILD_FILES/live"
+cp -f "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/live/casper-rw"
+cp -f "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/live/CASPER-RW"
+
+echo "/ union" > "$LIVE_BUILD_FILES/persistence.conf"
+
+# 2. Replace GRUB menu with exactly the two entries you want
+GRUB_CFG="$LIVE_BUILD_FILES/boot/grub/grub.cfg"
+cat > "$GRUB_CFG" <<EOF
+set default="0"
+set timeout=10
+
+menuentry "Debian MATE Live (RAM mode – fresh every boot)" {
+    set gfxpayload=keep
+    linux   /live/vmlinuz boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+    initrd  /live/initrd.img
+}
+
+menuentry "Debian MATE Live (persistent all changes saved)" {
+    set gfxpayload=keep
+    linux   /live/vmlinuz boot=live config persistence persistence-label=casper-rw \\
+            locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+    initrd  /live/initrd.img
+}
+EOF
+echo "Updated GRUB menu to match UEFI (RAM + Persistent)"
+# Make ISOLINUX (BIOS) menu match the UEFI one exactly
+cat > "$LIVE_BUILD_FILES/isolinux/isolinux.cfg" <<'EOF'
+UI menu.c32
+PROMPT 0
+TIMEOUT 100
+ONTIMEOUT 1
+
+MENU TITLE Debian MATE Live
+MENU BACKGROUND splash.png
+MENU COLOR border       30;44   #ffffffff #00000000 std
+MENU COLOR title        1;36;44 #ff00ff00 #00000000 std
+MENU COLOR sel          7;37;40 #ff000000 #ffffffff std
+
+LABEL ram
+    MENU LABEL Debian MATE Live (RAM mode – fresh every boot)
+    boot)
+    LINUX /live/vmlinuz
+    INITRD /live/initrd.img
+    APPEND boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+
+LABEL persistent
+    MENU LABEL Debian MATE Live (persistent – all changes saved)
+    LINUX /live/vmlinuz
+    INITRD /live/initrd.img
+    APPEND boot=live config persistence persistence-label=casper-rw locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+EOF
+echo "Updated ISOLINUX menu to match UEFI (RAM + Persistent)"
+
+# Cleanup
+rm -rf "$TMPDIR"
+
+echo
+echo "SUCCESS! Your ISO now has a clean two-option boot menu:"
+echo "   • RAM mode – fresh every boot"
+echo "   • Persistent mode – ${PERSIST_SIZE_GB} GB (all changes saved)"
+echo "Works perfectly with dd, Rufus, Ventoy, balenaEtcher, etc."
+echo

@@ -20,7 +20,6 @@ SCRIPTS_DIR="$HOME/scripts"
 CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/debian-install-continue-iso"
 LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/debian-install-make-live-iso"
 GOOGLE_CHRM_SCRIPT="$HOME/scripts/google-chrome-latest-install"
-DISPY_SET="$HOME/scripts/display-setup"
 # -------------------------------------------------------------------
 
 clear
@@ -215,7 +214,11 @@ echo "                     ALL DONE!"
 echo "============================================================"
 echo "Your live ISO is ready in: $HOME/MSI_live-build/"
 echo "Install it by:"
-echo "   Primary system: sudo dd if=MSI_live-image-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress oflag=sync"
+echo "   Primary system:
+Wipe first:
+    sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress oflag=direct
+Write file:
+    sudo dd if=MSI_live-image-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress oflag=sync"
 echo "   Secondary system: Put it in a folder on you device and reference it with /etc/grub.d/40_custom"
 echo "Enjoy your fully personalized Debian MATE live system!"
 echo "============================================================"
