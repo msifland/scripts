@@ -1,0 +1,64 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+echo "This will clone and setup your pesonal repos in this device. Make sure your are in the correct HOME directory. If this is being called by your debian-install scripts, it is already set to the correct directory."
+echo -n "Press [ENTER] when ready, or CTRL-C to cancel."
+read
+sleep 1
+
+echo
+echo "scripts"
+rm -rf scripts
+git clone https://github.com/msifland/scripts.git
+sudo chown -R $USER:$USER "scripts"
+sleep 1
+
+echo
+echo "pkg_bkups"
+rm -rf pkg_bkups
+git clone https://github.com/msifland/pkg_bkups.git
+sudo chown -R $USER:$USER "pkg_bkups"
+sleep 1
+
+echo
+echo "usb_pkg_bkups"
+rm -rf usb_pkg_bkups
+git clone https://github.com/msifland/usb_pkg_bkups.git
+sudo chown -R $USER:$USER "usb_pkg_bkups"
+sleep 1
+
+echo
+echo "Documents"
+rm -rf Documents
+git clone https://github.com/msifland/Documents.git
+sudo chown -R $USER:$USER "Documents"
+sleep 1
+
+echo
+echo "MSI_live-build"
+rm -rf MSI_live-build
+git clone https://github.com/msifland/MSI_live-build.git
+sudo chown -R $USER:$USER "MSI_live-build"
+sleep 1
+
+echo
+echo "Projects"
+rm -rf Projects
+git clone https://github.com/msifland/Projects.git
+sudo chown -R $USER:$USER "Projects"
+sleep 1
+
+echo
+echo "Templates"
+rm -rf Templates
+git clone https://github.com/msifland/Templates.git
+sudo chown -R $USER:$USER "Templates"
+sleep 1
+
+echo
+echo "Modules-Apps"
+rm -rf Modules-Apps
+git clone https://github.com/msifland/Modules-Apps.git
+sudo chown -R $USER:$USER "Modules-Apps"
+sleep 1
