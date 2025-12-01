@@ -180,24 +180,26 @@ rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
 USR_HOME="$INST_PTH/home/$usrname"
 
 # Create standard dirs
-for d in Downloads Documents "Modules-Apps" pkg_bkups Projects scripts \
-         Templates Music Pictures Videos tmp Wallpapers MSI_live-build; do
+for d in Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$d"
 done
 
+# --------------------- Copy personal files (optional) -------------
+cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Copy your personal files (Documents, scripts, Projects, etc.)? [y/N] " ans
 if [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying personal files using git clone..."
     cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
     cd $USR_HOME
     /bin/bash git-clone-my-repos
+    rm -f "git-clone-my-repos"
     cd "$INST_PTH"
 echo
 echo "Done cloning pernal git repos"
 
 # --------------------- Copy dotfiles/configs (optional) -----------
 read -rp "Copy config files (.config, .local, .bashrc, etc.)? [y/N] " ans
-if [[ "$ans" =~ ^[yY]$ ]]; then
+if [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying configuration files..."
     rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
         "$HOME_DIR/.config"     "$USR_HOME/"

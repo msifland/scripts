@@ -35,24 +35,28 @@ fi
 echo
 echo "Injecting ${PERSIST_SIZE_GB} GB persistence + perfect two-option boot menu…"
 
-# 1. Create casper-rw file
+# 1. Create live-rw file
 echo "Applying bullet-proof persistence + dual BIOS/UEFI boot menu..."
 
-TMPDIR=$(mktemp -d)
-dd if=/dev/zero of="$TMPDIR/casper-rw" bs=1M count=$((PERSIST_SIZE_GB * 1024)) status=progress
-mkfs.ext4 -F -L casper-rw "$TMPDIR/casper-rw" >/dev/null 2>&1
+# Inside your debian-install-make-persistent script – replace the whole block
+TMPDIR=$LIVE_BUILD_ROOT/tmp
+mkdir -p $TMPDIR
+cd $TMPDIR
+sudo dd if=/dev/zero of="live-rw" bs=1M count=$((PERSIST_SIZE_GB * 1024)) status=progress
+sudo mkfs.ext4 -F live-rw
 
-# Correct paths for your manual build
-mkdir -p "$LIVE_BUILD_FILES/live"
-cp -fv "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/casper-rw"
-cp -fv "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/live/casper-rw"
-cat > "$LIVE_BUILD_FILES/persistence.conf" <<EOF
+# Critical: set exact permissions and ownership that live-boot expects
+sudo cp "$TMPDIR/live-rw" "$LIVE_BUILD_FILES/live-rw"
+cd "$LIVE_BUILD_FILES"
+sudo mount --mkdir -o loop live-rw /mnt/live-rw
+# Critical: create persistence.conf with exact content and permissions
+#echo "/ union" | sudo tee "/mnt/live-rw/persistence.conf"
+sudo bash -c 'cat > /mnt/live-rw/persistence.conf<<EOF
 / union
--/tmp
--/var/tmp
--/var/cache/apt/archives
-EOF
-
+EOF'
+sudo umount /mnt/live-rw
+cd $LIVE_BUILD_ROOT
+rm -rf $TMPDIR
 # UEFI GRUB (keeps working if someone boots UEFI)
 cat > "$LIVE_BUILD_FILES/boot/grub/grub.cfg" <<'EOF'
 set default="0"
@@ -60,12 +64,12 @@ set timeout=10
 set gfxpayload=keep
 
 menuentry "Debian MATE Live – RAM mode (grub.cfg)" {
-    linux   /live/vmlinuz boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+    linux   /live/vmlinuz boot=live config quickreboot
     initrd  /live/initrd.img
 }
 
 menuentry "Debian MATE Live – Persistent mode (grub.cfg)" {
-    linux   /live/vmlinuz boot=live persistence config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+    linux   /live/vmlinuz boot=live persistent config quickreboot
     initrd  /live/initrd.img
 }
 EOF
@@ -83,13 +87,13 @@ LABEL ram
     MENU LABEL Debian MATE Live – RAM mode (isolinux.cfg)
     LINUX /live/vmlinuz
     INITRD /live/initrd.img
-    APPEND boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+    APPEND boot=live config quickreboot
 
 LABEL persistent
     MENU LABEL Debian MATE Live – Persistent mode (isolinux.cfg)
     LINUX /live/vmlinuz
     INITRD /live/initrd.img
-    APPEND boot=live persistent config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+    APPEND boot=live persistent config quickreboot
 EOF
 
 rm -rf "$TMPDIR"
