@@ -9,6 +9,7 @@ IFS=$'\n\t'
 # -------------------------- Config ----------------------------------
 INST_PTH="/mnt/deb-inst"
 CONFIGS_DIR="$HOME/MSI_live-build/my_configs"
+HOME_DIR="$HOME"
 SCRIPTS_DIR="$HOME/scripts"
 CHROOT_SCRIPT="$SCRIPTS_DIR/debian-install-continue"
 PACKLIST="$CONFIGS_DIR/my_packs.list.chroot"
@@ -184,24 +185,32 @@ for d in Downloads Documents "Modules-Apps" pkg_bkups Projects scripts \
     mkdir -p "$USR_HOME/$d"
 done
 
-# Personal files
-ask "Copy personal files (Documents, scripts, Projects, etc.)?" && {
-    rsync -a --progress --exclude=".git" \
-        "$HOME"/{Documents,"Modules-Apps",pkg_bkups,Projects,scripts, Templates, usb_pkg_bkups} \
-        "$USR_HOME/"
-    rsync -a "$CONFIGS_DIR/" "$USR_HOME/MSI_live-build/my_configs/"
-    sleep 1
-}
+read -rp "Copy your personal files (Documents, scripts, Projects, etc.)? [y/N] " ans
+if [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; then
+    echo "Copying personal files using git clone..."
+    cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+    cd $USR_HOME
+    /bin/bash git-clone-my-repos
+    cd "$INST_PTH"
+echo
+echo "Done cloning pernal git repos"
 
-# Config files
-ask "Copy dotfiles (.config, .local, .bashrc, etc.)?" && {
-    rsync -a --progress \
-        --exclude={chrome-remote-desktop,chromium,google-chrome,Code,variety,Steam} \
-        "$HOME/.config" "$HOME/.local" "$HOME/.cache" "$USR_HOME/"
-    cp -a "$HOME"/{.Xresources,.conkyrc,.conkyrc.bak,.bashrc} "$USR_HOME/" 2>/dev/null || true
-    sleep 1
-}
+# --------------------- Copy dotfiles/configs (optional) -----------
+read -rp "Copy config files (.config, .local, .bashrc, etc.)? [y/N] " ans
+if [[ "$ans" =~ ^[yY]$ ]]; then
+    echo "Copying configuration files..."
+    rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
+        "$HOME_DIR/.config"     "$USR_HOME/"
+    rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/lutris,share/Steam,share/Trash} \
+        "$HOME_DIR/.local"      "$USR_HOME/"
+    rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
+        "$HOME_DIR/.cache"      "$USR_HOME/"
+    for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
+        [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
+    done
+fi
 
+# --------------------- Fix permissions -----------------------------
 chown -R "$usrname:$usrname" "$USR_HOME"
 
 # -------------------------- GRUB install ---------------------------
@@ -238,7 +247,7 @@ log "Almost done! You can now:
 echo
 echo
 read -rsp "Press ENTER when ready to build the live ISO..."
-
+rm -rf "$INST_PTH/work"
 echo
 log "Installation complete! Unmounting..."
 sleep 1

@@ -13,13 +13,13 @@ LIVE_BUILD_FILES="$LIVE_BUILD_ROOT/MSI_live-iso"
 ISO_PATH="$LIVE_BUILD_ROOT/MSI_live-image-amd64.hybrid.iso"
 
 echo
-echo -n "${ILCOLOR2}Making sure ownership is correct. Press [ENTER] to start${ILRESTORE}"
+echo -n "${ILCOLOR2}Making sure ownership is correct for Persistent build. Press [ENTER] to start${ILRESTORE}"
 read
 sudo chown -R $USER:$USER "$LIVE_BUILD_FILES"
+sleep 1
 
 cd "$LIVE_BUILD_ROOT"
-# Safety check
-[[ -f "$ISO_PATH" ]] || { echo "ERROR: ISO not found at $ISO_PATH — run this AFTER lb build!"; exit 1; }
+
 echo
 echo -n "${ILCOLOR2}How big, in GB, do you want your persistence drive to be(e.g. 4, 8, 100, 2). Default is 8 ${ILRESTORE}"
 read PERSIST_SIZE_GB
@@ -36,37 +36,41 @@ echo
 echo "Injecting ${PERSIST_SIZE_GB} GB persistence + perfect two-option boot menu…"
 
 # 1. Create casper-rw file
+echo "Applying bullet-proof persistence + dual BIOS/UEFI boot menu..."
+
 TMPDIR=$(mktemp -d)
 dd if=/dev/zero of="$TMPDIR/casper-rw" bs=1M count=$((PERSIST_SIZE_GB * 1024)) status=progress
 mkfs.ext4 -F -L casper-rw "$TMPDIR/casper-rw" >/dev/null 2>&1
 
+# Correct paths for your manual build
 mkdir -p "$LIVE_BUILD_FILES/live"
-cp -f "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/live/casper-rw"
-cp -f "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/live/CASPER-RW"
+cp -fv "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/casper-rw"
+cp -fv "$TMPDIR/casper-rw" "$LIVE_BUILD_FILES/live/casper-rw"
+cat > "$LIVE_BUILD_FILES/persistence.conf" <<EOF
+/ union
+-/tmp
+-/var/tmp
+-/var/cache/apt/archives
+EOF
 
-echo "/ union" > "$LIVE_BUILD_FILES/persistence.conf"
-
-# 2. Replace GRUB menu with exactly the two entries you want
-GRUB_CFG="$LIVE_BUILD_FILES/boot/grub/grub.cfg"
-cat > "$GRUB_CFG" <<EOF
+# UEFI GRUB (keeps working if someone boots UEFI)
+cat > "$LIVE_BUILD_FILES/boot/grub/grub.cfg" <<'EOF'
 set default="0"
 set timeout=10
+set gfxpayload=keep
 
-menuentry "Debian MATE Live (RAM mode – fresh every boot)" {
-    set gfxpayload=keep
+menuentry "Debian MATE Live – RAM mode (grub.cfg)" {
     linux   /live/vmlinuz boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
     initrd  /live/initrd.img
 }
 
-menuentry "Debian MATE Live (persistent all changes saved)" {
-    set gfxpayload=keep
-    linux   /live/vmlinuz boot=live config persistence persistence-label=casper-rw \\
-            locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+menuentry "Debian MATE Live – Persistent mode (grub.cfg)" {
+    linux   /live/vmlinuz boot=live persistence config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
     initrd  /live/initrd.img
 }
 EOF
-echo "Updated GRUB menu to match UEFI (RAM + Persistent)"
-# Make ISOLINUX (BIOS) menu match the UEFI one exactly
+
+# BIOS/ISOLINUX – this is the one your machine is actually using right now
 cat > "$LIVE_BUILD_FILES/isolinux/isolinux.cfg" <<'EOF'
 UI menu.c32
 PROMPT 0
@@ -74,29 +78,24 @@ TIMEOUT 100
 ONTIMEOUT 1
 
 MENU TITLE Debian MATE Live
-MENU BACKGROUND splash.png
-MENU COLOR border       30;44   #ffffffff #00000000 std
-MENU COLOR title        1;36;44 #ff00ff00 #00000000 std
-MENU COLOR sel          7;37;40 #ff000000 #ffffffff std
 
 LABEL ram
-    MENU LABEL Debian MATE Live (RAM mode – fresh every boot)
-    boot)
+    MENU LABEL Debian MATE Live – RAM mode (isolinux.cfg)
     LINUX /live/vmlinuz
     INITRD /live/initrd.img
     APPEND boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
 
 LABEL persistent
-    MENU LABEL Debian MATE Live (persistent – all changes saved)
+    MENU LABEL Debian MATE Live – Persistent mode (isolinux.cfg)
     LINUX /live/vmlinuz
     INITRD /live/initrd.img
-    APPEND boot=live config persistence persistence-label=casper-rw locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
+    APPEND boot=live persistent config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
 EOF
-echo "Updated ISOLINUX menu to match UEFI (RAM + Persistent)"
 
-# Cleanup
 rm -rf "$TMPDIR"
-
+cd "$LIVE_BUILD_ROOT"
+echo "Both BIOS and UEFI menus fixed. Persistence will work after next build."
+sleep 1
 echo
 echo "SUCCESS! Your ISO now has a clean two-option boot menu:"
 echo "   • RAM mode – fresh every boot"

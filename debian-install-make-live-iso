@@ -36,12 +36,10 @@ cp "$CHROOT/boot/initrd.img"* "$OUTDIR/live/initrd.img" || \
 # 2. Create squashfs (fast xz, excludes junk)
 # ------------------------------------------------------------------
 echo "Creating filesystem.squashfs (this may take 5–20 min)..."
-#sudo mksquashfs "$CHROOT" "$OUTDIR/live/filesystem.squashfs" \
-#    -comp xz -wildcards \
-#    -e 'dev/*' 'proc/*' 'sys/*' 'run/*' 'tmp/*' 'mnt/*' 'media/*' 'lost+found' 'var/cache/apt/archives/*'
+#sudo mksquashfs "$CHROOT" "$OUTDIR/live/filesystem.squashfs" -comp xz -wildcards -e 'dev/*' 'proc/*' 'sys/*' 'run/*' 'tmp/*' 'mnt/*' 'media/*' 'lost+found' 'var/cache/apt/archives/*'
 echo "filesystem.squashfs created"
 
-$HOME/scripts/debian-install-make-persistence
+/bin/bash $HOME/scripts/debian-install-make-persistence
 # ------------------------------------------------------------------
 # 3. ISOLINUX (BIOS) files
 # ------------------------------------------------------------------
@@ -105,8 +103,9 @@ du -h "$ISO_NAME"
 echo
 echo "Write it to USB with:"
 echo "   Primary system:
+cd to containing folder
 Wipe first:
-    sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress oflag=direct
+    sudo dd if=/dev/zero of=/dev/sdX bs=4M count=100 status=progress oflag=direct
 Write file:
     sudo dd if=\"$(basename "$ISO_NAME")\" of=/dev/sdX bs=4M status=progress oflag=sync"
 echo "   Secondary system: Put it in a folder on you device and reference it with /etc/grub.d/40_custom"
@@ -118,4 +117,5 @@ echo "Making sure ownership is correct..."
 sudo chown -R "${SUDO_USER:-$USER}":"${SUDO_USER:-$USER}" "$OUTDIR" "$ISO_NAME" 2>/dev/null || true
 sleep 2
 chmod 644 $ISO_NAME || true
+cd "$RT_DIR"
 echo "Happy hacking!"

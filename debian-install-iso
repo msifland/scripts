@@ -154,9 +154,9 @@ if [[ "$ans" =~ ^[yY]$ ]]; then
     cd $USR_HOME
     /bin/bash git-clone-my-repos
     cd "$INST_PTH"
+echo
+echo "Done cloning pernal git repos"
 
-echo
-echo
 # --------------------- Copy dotfiles/configs (optional) -----------
 read -rp "Copy config files (.config, .local, .bashrc, etc.)? [y/N] " ans
 if [[ "$ans" =~ ^[yY]$ ]]; then
@@ -183,7 +183,7 @@ log "Almost done! You can now:
 echo
 echo
 read -rsp "Press ENTER when ready to build the live ISO..."
-
+rm -rf "$INST_PTH/work"
 # --------------------- Build the live ISO --------------------------
 echo "Building the live ISO..."
 sleep 1
