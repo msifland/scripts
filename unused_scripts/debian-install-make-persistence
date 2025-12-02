@@ -13,10 +13,9 @@ LIVE_BUILD_FILES="$LIVE_BUILD_ROOT/MSI_live-iso"
 ISO_PATH="$LIVE_BUILD_ROOT/MSI_live-image-amd64.hybrid.iso"
 
 echo
-echo -n "${ILCOLOR2}Making sure ownership is correct for Persistent build. Press [ENTER] to start${ILRESTORE}"
-read
+echo "${ILCOLOR2}Making sure ownership is correct for Persistent build. Press [ENTER] to start${ILRESTORE}"
 sudo chown -R $USER:$USER "$LIVE_BUILD_FILES"
-sleep 1
+sleep 3
 
 cd "$LIVE_BUILD_ROOT"
 
@@ -33,30 +32,29 @@ else
 fi
 
 echo
-echo "Injecting ${PERSIST_SIZE_GB} GB persistence + perfect two-option boot menu…"
+echo "Injecting ${PERSIST_SIZE_GB} GB persistence nand perfect two-option boot menu…"
 
 # 1. Create live-rw file
-echo "Applying bullet-proof persistence + dual BIOS/UEFI boot menu..."
+echo "Applying persistence and dual BIOS/UEFI boot menu..."
 
 # Inside your debian-install-make-persistent script – replace the whole block
-TMPDIR=$LIVE_BUILD_ROOT/tmp
-mkdir -p $TMPDIR
-cd $TMPDIR
-sudo dd if=/dev/zero of="live-rw" bs=1M count=$((PERSIST_SIZE_GB * 1024)) status=progress
-sudo mkfs.ext4 -F live-rw
+PERDIR=$LIVE_BUILD_FILES/persistence
+mkdir -p $PERDIR
+cd $PERDIR
+dd if=/dev/zero of=persistence.img bs=1M count=$((PERSIST_SIZE_GB * 1024)) status=progress
+mkfs.ext4 -L persistence persistence.img
 
-# Critical: set exact permissions and ownership that live-boot expects
-sudo cp "$TMPDIR/live-rw" "$LIVE_BUILD_FILES/live-rw"
-cd "$LIVE_BUILD_FILES"
-sudo mount --mkdir -o loop live-rw /mnt/live-rw
-# Critical: create persistence.conf with exact content and permissions
-#echo "/ union" | sudo tee "/mnt/live-rw/persistence.conf"
-sudo bash -c 'cat > /mnt/live-rw/persistence.conf<<EOF
-/ union
-EOF'
-sudo umount /mnt/live-rw
+# Inject persistence.conf
+if [[ -d /tmp/ov ]]; then
+    sudo rm -rf /tmp/ov
+fi
+sudo mkdir -p /tmp/ov
+sudo mount -o loop persistence.img /tmp/ov
+echo "/ union" | sudo tee /tmp/ov/persistence.conf > /dev/null
+sudo umount /tmp/ov
+sudo rm -rf /tmp/ov
+
 cd $LIVE_BUILD_ROOT
-rm -rf $TMPDIR
 # UEFI GRUB (keeps working if someone boots UEFI)
 cat > "$LIVE_BUILD_FILES/boot/grub/grub.cfg" <<'EOF'
 set default="0"
@@ -64,12 +62,12 @@ set timeout=10
 set gfxpayload=keep
 
 menuentry "Debian MATE Live – RAM mode (grub.cfg)" {
-    linux   /live/vmlinuz boot=live config quickreboot
+    linux   /live/vmlinuz boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
     initrd  /live/initrd.img
 }
 
 menuentry "Debian MATE Live – Persistent mode (grub.cfg)" {
-    linux   /live/vmlinuz boot=live persistent config quickreboot
+    linux   /live/vmlinuz boot=live persistence config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
     initrd  /live/initrd.img
 }
 EOF
@@ -87,16 +85,15 @@ LABEL ram
     MENU LABEL Debian MATE Live – RAM mode (isolinux.cfg)
     LINUX /live/vmlinuz
     INITRD /live/initrd.img
-    APPEND boot=live config quickreboot
+    APPEND boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
 
 LABEL persistent
     MENU LABEL Debian MATE Live – Persistent mode (isolinux.cfg)
     LINUX /live/vmlinuz
     INITRD /live/initrd.img
-    APPEND boot=live persistent config quickreboot
+    APPEND boot=live persistence config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
 EOF
 
-rm -rf "$TMPDIR"
 cd "$LIVE_BUILD_ROOT"
 echo "Both BIOS and UEFI menus fixed. Persistence will work after next build."
 sleep 1

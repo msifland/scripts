@@ -21,7 +21,8 @@ sleep 2
 # ------------------------------------------------------------------
 # 0. Cleanup & prepare
 # ------------------------------------------------------------------
-#rm -rf "$OUTDIR"
+#
+rm -rf "$OUTDIR"
 mkdir -p "$OUTDIR"/{boot/grub,live,isolinux,EFI/BOOT}
 
 # ------------------------------------------------------------------
@@ -36,7 +37,8 @@ cp "$CHROOT/boot/initrd.img"* "$OUTDIR/live/initrd.img" || \
 # 2. Create squashfs (fast xz, excludes junk)
 # ------------------------------------------------------------------
 echo "Creating filesystem.squashfs (this may take 5–20 min)..."
-#sudo mksquashfs "$CHROOT" "$OUTDIR/live/filesystem.squashfs" -comp xz -wildcards -e 'dev/*' 'proc/*' 'sys/*' 'run/*' 'tmp/*' 'mnt/*' 'media/*' 'lost+found' 'var/cache/apt/archives/*'
+#
+sudo mksquashfs "$CHROOT" "$OUTDIR/live/filesystem.squashfs" -comp xz -wildcards -e 'dev/*' 'proc/*' 'sys/*' 'run/*' 'tmp/*' 'mnt/*' 'media/*' 'lost+found' 'var/cache/apt/archives/*'
 echo "filesystem.squashfs created"
 
 # ------------------------------------------------------------------
@@ -71,7 +73,6 @@ LABEL ram
     INITRD /live/initrd.img
     APPEND boot=live config locales=en_US.UTF-8 keyboard-layouts=us timezone=America/Chicago quickreboot
 EOF
-
 
 # ------------------------------------------------------------------
 # 5. Build EFI boot image (80 MB FAT32)

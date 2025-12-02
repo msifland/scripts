@@ -112,7 +112,7 @@ while true; do
     read -rs passwd1; echo
     echo -n "Confirm password: "
     read -rs passwd2; echo
-    if [[ "$passwd1" == "$passwd2" && -n "$passwd1" ]];
+    if [[ "$passwd1" == "$passwd2" && -n "$passwd1" ]]; then
         break
     fi
     echo -e "\033[1;31mPasswords do not match or empty. Try again.\033[0m"
