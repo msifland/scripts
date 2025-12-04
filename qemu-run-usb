@@ -1,9 +1,17 @@
 #!/bin/bash
 # This is a blank bash script document.
 # Put your code below this line.
-qemu-system-x86_64 \
-  -m 4G \
-  -enable-kvm \
-  -cpu host \
-  -drive file=/dev/sdb,format=raw,if=virtio \
-  -boot menu=on
+if [[ ! -z $1 ]]; then
+    qemu-system-x86_64 \
+    -m 4G \
+    -enable-kvm \
+    -cpu host \
+    -drive file=$1,format=raw,if=virtio \
+    -boot menu=on
+else
+    echo "
+    You must enter a /dev/block
+    ex:
+    qemu-run-usb /dev/sdb1
+    qemu-run-usb /dev/sda2"
+  fi

@@ -1,0 +1,224 @@
+#!/usr/bin/env bash
+# Description: This script prepares a multi-boot persistent USB drive using GPT,
+#              a VFAT ISO storage partition, and a dedicated EXT4 persistence partition.
+#              It uses a dynamic GRUB menu to automatically detect and boot ISOs.
+
+echo
+echo "This will prepare a USB drive for live-persistent ISOs to be installed in the 'isos' folder on the drive."
+sleep 1
+
+echo
+echo "Showing available block devices..."
+sleep 1
+echo
+lsblk -d -p -o NAME,SIZE,MODEL
+echo
+echo
+
+# Loop to ensure a valid disk is selected
+while true; do
+    read -rp "Enter target disk (e.g., /dev/sdb, /dev/sdc, /dev/sdd) (No trailing slash): " TARGET_DISK
+    
+    # Remove trailing spaces and check if empty
+    TARGET_DISK="${TARGET_DISK%"${TARGET_DISK##*[![:space:]]}"}"
+    
+    if [[ -z "$TARGET_DISK" ]]; then
+        echo "Error: No disk entered. Please try again."
+        continue
+    fi
+    
+    if [[ -b "$TARGET_DISK" ]]; then        
+        # Double-check that lsblk can see it
+        if lsblk -d -p --output NAME "$TARGET_DISK" >/dev/null 2>&1; then
+            echo "Selected: $TARGET_DISK"
+            break
+        else
+            echo "Error: '$TARGET_DISK' is not recognized by lsblk (maybe a typo?)."
+        fi
+    else
+        echo "Error: '$TARGET_DISK' is not a valid block device."
+    fi
+    
+    echo "Please choose one of the disks listed above."
+    echo
+done
+
+# At this point, $TARGET_DISK contains a valid whole disk
+echo "Proceeding with $TARGET_DISK ..."
+sleep 2
+
+dev=$TARGET_DISK
+mountpoint=/mnt/usb
+# Unmount and remove old mountpoint if necessary
+sudo umount -f $mountpoint 2>/dev/null || true
+sudo rm -rf $mountpoint
+
+echo
+echo "Wiping and creating reliable 3-partition layout (GPT): a bios_grub, a fat32 gpt (ISO Storage), and a persistent ext4 partition."
+sleep 1
+echo
+echo "  The persistent drive will keep files from multiple distros/ISOs. Notice the size of your /dev/block above. If you have a large enough drive, set this to 15 to 20 gigs, for storing multiple iso's. The rest of the space will be for persistence for each iso. Enter the size of the ISO Storage partition now."
+sleep 1
+
+echo
+read -p "   What size, in gigs, would you like your ISO storage partition to be (number only, e.g., 8): " isofldr
+# Fix bash variable assignment syntax
+if [[ -z "$isofldr" ]]; then
+    isofldr=8 # Default to 8GB if empty
+fi
+sleep 1
+
+# 1. Wipe & create GPT layout with 3 partitions
+sudo wipefs -a $dev
+sudo parted $dev --script \
+  mklabel gpt \
+  mkpart primary 1MiB 2MiB set 1 bios_grub on \
+  mkpart primary fat32 2MiB "$isofldr"GiB set 2 esp on name 2 LIVEUSB \
+  mkpart primary ext4 "$isofldr"GiB 100% name 3 persistence \
+  print
+sleep 1
+
+echo
+echo "Formatting partitions..."
+# Format the LIVEUSB partition (sdb2)
+sudo mkfs.vfat -F32 -n LIVEUSB "$dev"2
+# Format the persistence partition (sdb3) with the unified 'casper-rw' label
+sudo mkfs.ext4 -L casper-rw "$dev"3
+sleep 1
+
+echo
+echo "Mounting LIVEUSB partition..."
+# 3. Mount the LIVEUSB partition
+sudo mkdir -p $mountpoint
+sudo umount -f $mountpoint 2>/dev/null || true
+sudo mount "$dev"2 $mountpoint
+sleep 1
+
+echo
+echo "Installing grub (BIOS + UEFI)..."
+# 4. Install GRUB (BIOS + UEFI)
+sudo grub-install --target=i386-pc --boot-directory=$mountpoint/boot $dev
+sudo grub-install --target=x86_64-efi \
+                  --efi-directory=$mountpoint \
+                  --boot-directory=$mountpoint/boot \
+                  --removable \
+                  --no-nvram \
+                  $dev
+sleep 1
+
+echo
+echo "Making isos directory, to put iso's in..."
+# 5. Generic folder for your ISOs
+sudo mkdir -p $mountpoint/isos
+sleep 1
+
+echo
+echo "Creating dynamic grub files for looping through isos on disk..."
+# 6. Dynamic grub.cfg for multi-distro support
+sudo tee "$mountpoint"/boot/grub/grub.cfg <<'EOF'
+set timeout=10
+set default=0
+insmod loopback
+insmod iso9650
+insmod fat
+insmod part_gpt
+insmod all_video
+insmod ext2
+insmod regexp
+insmod echo
+
+# --- Dynamic ISO Loop ---
+for isofile in /isos/*.iso ; do
+    if regexp --set name_wo_ext="\(.*\)\.iso" "$isofile" ; then
+        menutitle="${name_wo_ext}"
+    else
+        menutitle="ISO: ${isofile}"
+    fi
+
+    menuentry "Boot $menutitle (with Persistence)" {
+        set current_iso="$isofile"
+        search --no-floppy --set=root -f "$current_iso"
+        loopback loop "$current_iso"
+
+        # --- Detection Logic: Check specific paths for kernel/initrd variants ---
+
+        # Check standard Debian 'live' path
+        if [ -f (loop)/live/vmlinuz ] ; then
+            set vmlinuz_path=(loop)/live/vmlinuz
+            set boot_param="boot=live"
+            # Debian parameter is 'persistence' (uses the 'casper-rw' label and requires persistence.conf)
+            set persist_param="persistence persistence-label=casper-rw findiso=$current_iso"
+            # Now find initrd in /live/
+            if [ -f (loop)/live/initrd.img ] ; then set initrd_path=(loop)/live/initrd.img;
+            elif [ -f (loop)/live/initrd.lz ] ; then set initrd_path=(loop)/live/initrd.lz;
+            elif [ -f (loop)/live/initrd ] ; then set initrd_path=(loop)/live/initrd; fi
+
+        # Check standard Ubuntu 'casper' path (handles Ubuntu Mate/Pop_OS/Mint)
+        elif [ -f (loop)/casper/vmlinuz ] ; then
+            set vmlinuz_path=(loop)/casper/vmlinuz
+            set boot_param="boot=casper"
+            # Ubuntu parameter is 'persistent' (defaults to 'casper-rw' label)
+            set persist_param="persistent persistence-label=casper-rw iso-scan/filename=$current_iso"
+            # Now find initrd in /casper/
+            if [ -f (loop)/casper/initrd.img ] ; then set initrd_path=(loop)/casper/initrd.img;
+            elif [ -f (loop)/casper/initrd.lz ] ; then set initrd_path=(loop)/casper/initrd.lz;
+            elif [ -f (loop)/casper/initrd ] ; then set initrd_path=(loop)/casper/initrd; fi
+        
+        # Fallback message if neither structure is found
+        else
+            echo "Error: Kernel or Initrd files not found in standard /live or /casper paths!"
+            sleep 5
+            return
+        fi
+        # --- End Detection Logic ---
+
+        # Common kernel command line parameters
+        set common_params="rw config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago"
+
+        # Execute the boot command using the variables we set
+        if [ -n "$vmlinuz_path" -a -n "$initrd_path" ] ; then
+            linux $vmlinuz_path $boot_param $persist_param $common_params
+            initrd $initrd_path
+        else
+            echo "Error: Failed to set both kernel and initrd paths successfully."
+            sleep 5
+        fi
+    }
+done
+# --- End Dynamic ISO Loop ---
+
+menuentry "Reboot System" { reboot }
+menuentry "Power off" { halt }
+EOF
+sleep 1
+
+# Add back the creation of the universal persistence.conf file that Debian needs
+echo
+echo "Creating universal /persistence.conf file on the casper-rw partition..."
+sudo mkdir -p /tmp/persist_part
+# Mount the new persistence partition (sdb3)
+sudo mount "$dev"3 /tmp/persist_part
+# Write the config file at the root of the EXT4 partition
+echo "/ union" | sudo tee /tmp/persist_part/persistence.conf
+
+sudo umount /tmp/persist_part
+sudo rm -rf /tmp/persist_part
+sleep 1
+
+echo
+echo "Now just open a file manager and copy your ISOs into "$mountpoint"/isos."
+sleep 3
+
+echo
+read -s -r -p "Press [ENTER] when ready to unmount..."
+
+# 8. Unmount when done
+sudo umount -f $mountpoint
+sleep 1
+
+echo
+echo "At any time you can re-mount the ISO partition with:
+sudo mount --mkdir /dev/sdb2 "$mountpoint"
+    ---- or whatever your /dev/sdX2 is.
+
+After mounting, just copy or remove any ISOs you like."

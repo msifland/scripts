@@ -57,11 +57,11 @@ echo
 echo "Wiping and creating reliable 3-partition layout (GPT): a bios_grub, a fat32 gpt (ISO Storage), and a persistent ext4 partition."
 sleep 1
 echo
-echo "The persistent drive will keep files from multiple distros/ISOs. Notice the size of your /dev/block above. If you have a large enough drive, set this to 15 to 20 gigs, for storing multiple iso's. The rest of the space will be for persistence for each iso. Enter the size of the ISO Storage partition now."
+echo "  The persistent drive will keep files from multiple distros/ISOs. Notice the size of your /dev/block above. If you have a large enough drive, set this to 15 to 20 gigs, for storing multiple iso's. The rest of the space will be for persistence for each iso. Enter the size of the ISO Storage partition now."
 sleep 1
 
 echo
-read -p "What size, in gigs, would you like your ISO storage partition to be (number only, e.g., 8): " isofldr
+read -p "   What size, in gigs, would you like your ISO storage partition to be (number only, e.g., 8): " isofldr
 # Fix bash variable assignment syntax
 if [[ -z "$isofldr" ]]; then
     isofldr=8 # Default to 8GB if empty

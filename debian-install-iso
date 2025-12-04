@@ -116,6 +116,7 @@ mkdir -p "$INST_PTH/etc/apt/sources.list.d"
 
 # 'instal' line explained: shortcut for copying with correct permissions and create directories if they don't exist.
 # Copy sources and pinning
+rsync -a --progress /etc/apt/ "$INST_PTH/etc/apt/"
 install -Dm644 /etc/apt/sources.list.d/debian.sources "$INST_PTH/etc/apt/sources.list.d/"
 install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/preferences.d/"
 
@@ -149,11 +150,10 @@ done
 # --------------------- Copy personal files (optional) -------------
 echo
 echo
-cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+install -Dm755 "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Copy your personal files (Documents, scripts, Projects, etc.)? [y/N] " ans
 if [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying personal files using git clone..."
-    cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
     cd $USR_HOME
     /bin/bash git-clone-my-repos
     rm -f "git-clone-my-repos"

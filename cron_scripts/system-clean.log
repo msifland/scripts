@@ -8,45 +8,77 @@
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-Hit:1 http://security.debian.org/debian-security testing-security InRelease
-Get:2 http://deb.debian.org/debian testing InRelease [148 kB]
-Ign:3 http://dl.google.com/linux/chrome-remote-desktop/deb stable InRelease
-Hit:4 http://ftp.us.debian.org/debian testing InRelease
-Hit:5 http://http.kali.org/kali kali-rolling InRelease
-Hit:6 http://ftp.us.debian.org/debian testing-updates InRelease
-Hit:7 http://security.debian.org/debian-security stable-security InRelease
-Hit:8 http://dl.google.com/linux/chrome-remote-desktop/deb stable Release
-Get:10 http://deb.debian.org/debian testing-updates InRelease [45.1 kB]
-Hit:11 https://dl.google.com/linux/chrome/deb stable InRelease
-Get:12 https://download.sublimetext.com apt/stable/ InRelease [3,271 B]
-Hit:13 http://deb.debian.org/debian-security testing-security InRelease
-Get:14 http://deb.debian.org/debian unstable InRelease [176 kB]
-Hit:15 http://deb.debian.org/debian stable InRelease
-Get:16 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:17 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
-Get:18 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
-Get:19 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
-Get:20 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
-Get:21 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
-Get:22 https://mega.nz/linux/repo/Debian_13 ./ InRelease [2,959 B]
-Get:23 http://deb.debian.org/debian testing/main Sources T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [874 B]
-Get:23 http://deb.debian.org/debian testing/main Sources T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [874 B]
-Get:24 http://deb.debian.org/debian testing/main amd64 Packages T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [606 B]
-Get:24 http://deb.debian.org/debian testing/main amd64 Packages T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [606 B]
-Get:25 http://deb.debian.org/debian unstable/main Sources T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [15.1 kB]
-Get:25 http://deb.debian.org/debian unstable/main Sources T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [15.1 kB]
-Get:26 http://deb.debian.org/debian unstable/main amd64 Packages T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [16.6 kB]
-Get:26 http://deb.debian.org/debian unstable/main amd64 Packages T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [16.6 kB]
-Get:27 http://deb.debian.org/debian unstable/main Translation-en T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [2,872 B]
-Get:27 http://deb.debian.org/debian unstable/main Translation-en T-2025-11-28-2006.41-F-2025-11-28-2006.41.pdiff [2,872 B]
-Get:28 http://deb.debian.org/debian testing/main amd64 Components [5,087 kB]
-Get:29 http://deb.debian.org/debian unstable/main amd64 Components [5,299 kB]
-Get:30 http://deb.debian.org/debian unstable/contrib amd64 Components [44.8 kB]
-Fetched 11.2 MB in 6s (1,850 kB/s)
+Get:1 http://security.debian.org/debian-security testing-security InRelease [43.4 kB]
+Get:2 http://security.debian.org/debian-security stable-security InRelease [43.4 kB]
+Get:3 https://dl.google.com/linux/chrome/deb stable InRelease [1,825 B]
+Get:5 http://ftp.us.debian.org/debian testing InRelease [137 kB]
+Get:6 http://deb.debian.org/debian testing InRelease [137 kB]
+Get:7 http://ftp.us.debian.org/debian testing-updates InRelease [40.6 kB]
+Get:4 http://mirror.us.cdn-perfprod.com/kali kali-rolling InRelease [34.0 kB]
+Get:8 http://deb.debian.org/debian testing-updates InRelease [40.6 kB]
+Get:9 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,198 B]
+Get:10 https://download.sublimetext.com apt/stable/ InRelease [3,271 B]
+Get:11 http://deb.debian.org/debian-security testing-security InRelease [43.4 kB]
+Get:12 http://deb.debian.org/debian unstable InRelease [176 kB]
+Hit:13 http://deb.debian.org/debian stable InRelease
+Get:14 http://ftp.us.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:15 http://mirror.us.cdn-perfprod.com/kali kali-rolling/contrib Sources [80.1 kB]
+Get:16 http://ftp.us.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:17 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
+Get:18 http://deb.debian.org/debian testing/contrib Sources.diff/Index [63.3 kB]
+Get:19 http://deb.debian.org/debian testing/main Sources.diff/Index [63.6 kB]
+Get:20 http://deb.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:21 http://deb.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:22 http://deb.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:23 http://ftp.us.debian.org/debian testing/main amd64 Packages.diff/Index [63.6 kB]
+Get:24 http://ftp.us.debian.org/debian testing/main Translation-en.diff/Index [63.6 kB]
+Get:25 http://ftp.us.debian.org/debian testing/contrib amd64 Packages.diff/Index [63.3 kB]
+Get:26 https://mega.nz/linux/repo/Debian_13 ./ InRelease [2,959 B]
+Get:27 http://deb.debian.org/debian unstable/main Sources.diff/Index [63.6 kB]
+Get:28 http://mirror.us.cdn-perfprod.com/kali kali-rolling/main Sources [17.5 MB]
+Get:29 http://deb.debian.org/debian unstable/main amd64 Packages.diff/Index [63.6 kB]
+Get:30 http://deb.debian.org/debian unstable/main Translation-en.diff/Index [63.6 kB]
+Get:31 http://ftp.us.debian.org/debian testing/contrib Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [331 B]
+Get:32 http://ftp.us.debian.org/debian testing/main Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [37.3 kB]
+Get:33 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [60.7 kB]
+Get:34 http://ftp.us.debian.org/debian testing/main Translation-en T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [2,859 B]
+Get:35 http://mirror.us.cdn-perfprod.com/kali kali-rolling/non-free Sources [115 kB]
+Get:36 http://mirror.us.cdn-perfprod.com/kali kali-rolling/main amd64 Packages [21.0 MB]
+Get:37 http://mirror.us.cdn-perfprod.com/kali kali-rolling/contrib amd64 Packages [115 kB]
+Get:38 http://mirror.us.cdn-perfprod.com/kali kali-rolling/non-free amd64 Packages [187 kB]
+Get:34 http://ftp.us.debian.org/debian testing/main Translation-en T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [2,859 B]
+Get:33 http://ftp.us.debian.org/debian testing/main amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [60.7 kB]
+Get:32 http://ftp.us.debian.org/debian testing/main Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [37.3 kB]
+Get:31 http://ftp.us.debian.org/debian testing/contrib Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [331 B]
+Get:39 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [205 B]
+Get:39 http://ftp.us.debian.org/debian testing/contrib amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [205 B]
+Get:40 http://ftp.us.debian.org/debian testing/main amd64 Components [5,116 kB]
+Get:41 http://deb.debian.org/debian testing/contrib Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [331 B]
+Get:41 http://deb.debian.org/debian testing/contrib Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [331 B]
+Get:42 http://deb.debian.org/debian testing/main Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [37.3 kB]
+Get:42 http://deb.debian.org/debian testing/main Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [37.3 kB]
+Get:43 http://deb.debian.org/debian testing/main amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [60.7 kB]
+Get:43 http://deb.debian.org/debian testing/main amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [60.7 kB]
+Get:44 http://deb.debian.org/debian testing/main Translation-en T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [2,859 B]
+Get:44 http://deb.debian.org/debian testing/main Translation-en T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [2,859 B]
+Get:45 http://deb.debian.org/debian testing/contrib amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [205 B]
+Get:45 http://deb.debian.org/debian testing/contrib amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [205 B]
+Get:46 http://deb.debian.org/debian unstable/main Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [10.2 kB]
+Get:46 http://deb.debian.org/debian unstable/main Sources T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [10.2 kB]
+Get:47 http://deb.debian.org/debian unstable/main amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [56.2 kB]
+Get:47 http://deb.debian.org/debian unstable/main amd64 Packages T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [56.2 kB]
+Get:48 http://deb.debian.org/debian unstable/main Translation-en T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [3,567 B]
+Get:48 http://deb.debian.org/debian unstable/main Translation-en T-2025-12-03-0224.07-F-2025-12-03-0224.07.pdiff [3,567 B]
+Get:49 http://deb.debian.org/debian testing/main amd64 Components [5,116 kB]
+Get:50 http://deb.debian.org/debian unstable/main amd64 Components [5,340 kB]
+Get:51 http://deb.debian.org/debian unstable/main Icons (48x48) [3,735 kB]
+Get:52 http://deb.debian.org/debian unstable/main Icons (64x64) [7,552 kB]
+Get:53 http://deb.debian.org/debian unstable/main Icons (128x128) [11.6 MB]
+Fetched 79.3 MB in 11s (6,900 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-All packages are up to date.
+28 packages can be upgraded. Run 'apt list --upgradable' to see them.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -54,8 +86,142 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+Upgrading:
+  cracklib-runtime       libselinux1                 python3-fuse
+  libbrotli1             libxml2-16                  python3-pylibacl
+  libcap-ng0             libxml2-utils               python3-pyqt5.sip
+  libcrack2              mupdf-tools                 python3-pyqt6.sip
+  libmupdf25.1           python3-apt                 python3-pyxattr
+  libnewt0.52            python3-brotli              python3-setproctitle
+  libprotobuf-lite32t64  python3-cairo               python3-smbc
+  libprotobuf32t64       python3-cffi-backend        whiptail
+  libre2-11              python3-charset-normalizer
+  libseccomp2            python3-cups
+
 Summary:
-  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
+  Upgrading: 28, Installing: 0, Removing: 0, Not Upgrading: 0
+  Download size: 35.0 MB
+  Space needed: 1,599 kB / 110 GB available
+
+Get:1 http://deb.debian.org/debian unstable/main amd64 libcap-ng0 amd64 0.8.5-4+b2 [17.5 kB]
+Get:2 http://deb.debian.org/debian unstable/main amd64 libseccomp2 amd64 2.6.0-2+b1 [52.2 kB]
+Get:3 http://deb.debian.org/debian unstable/main amd64 libselinux1 amd64 3.9-4+b1 [86.1 kB]
+Get:4 http://deb.debian.org/debian unstable/main amd64 libnewt0.52 amd64 0.52.25-1+b1 [61.1 kB]
+Get:5 http://deb.debian.org/debian unstable/main amd64 whiptail amd64 0.52.25-1+b1 [25.2 kB]
+Get:6 http://deb.debian.org/debian unstable/main amd64 libcrack2 amd64 2.9.6-5.2+b2 [44.4 kB]
+Get:7 http://deb.debian.org/debian unstable/main amd64 cracklib-runtime amd64 2.9.6-5.2+b2 [144 kB]
+Get:8 http://deb.debian.org/debian unstable/main amd64 libbrotli1 amd64 1.1.0-2+b9 [304 kB]
+Get:9 http://deb.debian.org/debian unstable/main amd64 mupdf-tools amd64 1.25.1+ds1-9+b2 [189 kB]
+Get:10 http://deb.debian.org/debian unstable/main amd64 libmupdf25.1 amd64 1.25.1+ds1-9+b2 [30.7 MB]
+Get:11 http://deb.debian.org/debian unstable/main amd64 libprotobuf-lite32t64 amd64 3.21.12-14+b1 [282 kB]
+Get:12 http://deb.debian.org/debian unstable/main amd64 libprotobuf32t64 amd64 3.21.12-14+b1 [987 kB]
+Get:13 http://deb.debian.org/debian unstable/main amd64 libre2-11 amd64 20250805-1+b2 [168 kB]
+Get:14 http://deb.debian.org/debian unstable/main amd64 libxml2-16 amd64 2.15.1+dfsg-2+b1 [641 kB]
+Get:15 http://deb.debian.org/debian unstable/main amd64 libxml2-utils amd64 2.15.1+dfsg-2+b1 [123 kB]
+Get:16 http://deb.debian.org/debian unstable/main amd64 python3-apt amd64 3.0.0+b1 [194 kB]
+Get:17 http://deb.debian.org/debian unstable/main amd64 python3-brotli amd64 1.1.0-2+b9 [309 kB]
+Get:18 http://deb.debian.org/debian unstable/main amd64 python3-cairo amd64 1.27.0-2+b1 [132 kB]
+Get:19 http://deb.debian.org/debian unstable/main amd64 python3-cffi-backend amd64 2.0.0-2+b1 [112 kB]
+Get:20 http://deb.debian.org/debian unstable/main amd64 python3-charset-normalizer amd64 3.4.4-1+b1 [133 kB]
+Get:21 http://deb.debian.org/debian unstable/main amd64 python3-cups amd64 2.0.4-3+b1 [75.0 kB]
+Get:22 http://deb.debian.org/debian unstable/main amd64 python3-fuse amd64 2:1.0.9-1+b2 [41.2 kB]
+Get:23 http://deb.debian.org/debian unstable/main amd64 python3-pylibacl amd64 0.7.2-1+b2 [23.8 kB]
+Get:24 http://deb.debian.org/debian unstable/main amd64 python3-pyqt5.sip amd64 12.17.1-1+b1 [75.7 kB]
+Get:25 http://deb.debian.org/debian unstable/main amd64 python3-pyqt6.sip amd64 13.10.2-2+b1 [67.4 kB]
+Get:26 http://deb.debian.org/debian unstable/main amd64 python3-pyxattr amd64 0.8.1-1+b7 [18.7 kB]
+Get:27 http://deb.debian.org/debian unstable/main amd64 python3-setproctitle amd64 1.3.7-1+b1 [19.8 kB]
+Get:28 http://deb.debian.org/debian unstable/main amd64 python3-smbc amd64 1.0.25.1-1+b5 [22.8 kB]
+Fetched 35.0 MB in 1s (24.2 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 454533 files and directories currently installed.)
+Preparing to unpack .../libcap-ng0_0.8.5-4+b2_amd64.deb ...
+Unpacking libcap-ng0:amd64 (0.8.5-4+b2) over (0.8.5-4+b1) ...
+Setting up libcap-ng0:amd64 (0.8.5-4+b2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 454533 files and directories currently installed.)
+Preparing to unpack .../libseccomp2_2.6.0-2+b1_amd64.deb ...
+Unpacking libseccomp2:amd64 (2.6.0-2+b1) over (2.6.0-2) ...
+Setting up libseccomp2:amd64 (2.6.0-2+b1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 454534 files and directories currently installed.)
+Preparing to unpack .../libselinux1_3.9-4+b1_amd64.deb ...
+Unpacking libselinux1:amd64 (3.9-4+b1) over (3.9-4) ...
+Setting up libselinux1:amd64 (3.9-4+b1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 454535 files and directories currently installed.)
+Preparing to unpack .../00-libnewt0.52_0.52.25-1+b1_amd64.deb ...
+Unpacking libnewt0.52:amd64 (0.52.25-1+b1) over (0.52.25-1) ...
+Preparing to unpack .../01-whiptail_0.52.25-1+b1_amd64.deb ...
+Unpacking whiptail (0.52.25-1+b1) over (0.52.25-1) ...
+Preparing to unpack .../02-libcrack2_2.9.6-5.2+b2_amd64.deb ...
+Unpacking libcrack2:amd64 (2.9.6-5.2+b2) over (2.9.6-5.2+b1) ...
+Preparing to unpack .../03-cracklib-runtime_2.9.6-5.2+b2_amd64.deb ...
+Unpacking cracklib-runtime (2.9.6-5.2+b2) over (2.9.6-5.2+b1) ...
+Preparing to unpack .../04-libbrotli1_1.1.0-2+b9_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.1.0-2+b9) over (1.1.0-2+b8) ...
+Preparing to unpack .../05-mupdf-tools_1.25.1+ds1-9+b2_amd64.deb ...
+Unpacking mupdf-tools (1.25.1+ds1-9+b2) over (1.25.1+ds1-9+b1) ...
+Preparing to unpack .../06-libmupdf25.1_1.25.1+ds1-9+b2_amd64.deb ...
+Unpacking libmupdf25.1 (1.25.1+ds1-9+b2) over (1.25.1+ds1-9+b1) ...
+Preparing to unpack .../07-libprotobuf-lite32t64_3.21.12-14+b1_amd64.deb ...
+Unpacking libprotobuf-lite32t64:amd64 (3.21.12-14+b1) over (3.21.12-14) ...
+Preparing to unpack .../08-libprotobuf32t64_3.21.12-14+b1_amd64.deb ...
+Unpacking libprotobuf32t64:amd64 (3.21.12-14+b1) over (3.21.12-14) ...
+Preparing to unpack .../09-libre2-11_20250805-1+b2_amd64.deb ...
+Unpacking libre2-11:amd64 (20250805-1+b2) over (20250805-1+b1) ...
+Preparing to unpack .../10-libxml2-16_2.15.1+dfsg-2+b1_amd64.deb ...
+Unpacking libxml2-16:amd64 (2.15.1+dfsg-2+b1) over (2.15.1+dfsg-2) ...
+Preparing to unpack .../11-libxml2-utils_2.15.1+dfsg-2+b1_amd64.deb ...
+Unpacking libxml2-utils (2.15.1+dfsg-2+b1) over (2.15.1+dfsg-2) ...
+Preparing to unpack .../12-python3-apt_3.0.0+b1_amd64.deb ...
+Unpacking python3-apt (3.0.0+b1) over (3.0.0) ...
+Preparing to unpack .../13-python3-brotli_1.1.0-2+b9_amd64.deb ...
+Unpacking python3-brotli (1.1.0-2+b9) over (1.1.0-2+b8) ...
+Preparing to unpack .../14-python3-cairo_1.27.0-2+b1_amd64.deb ...
+Unpacking python3-cairo (1.27.0-2+b1) over (1.27.0-2) ...
+Preparing to unpack .../15-python3-cffi-backend_2.0.0-2+b1_amd64.deb ...
+Unpacking python3-cffi-backend:amd64 (2.0.0-2+b1) over (2.0.0-2) ...
+Preparing to unpack .../16-python3-charset-normalizer_3.4.4-1+b1_amd64.deb ...
+Unpacking python3-charset-normalizer (3.4.4-1+b1) over (3.4.4-1) ...
+Preparing to unpack .../17-python3-cups_2.0.4-3+b1_amd64.deb ...
+Unpacking python3-cups (2.0.4-3+b1) over (2.0.4-3) ...
+Preparing to unpack .../18-python3-fuse_2%3a1.0.9-1+b2_amd64.deb ...
+Unpacking python3-fuse (2:1.0.9-1+b2) over (2:1.0.9-1+b1) ...
+Preparing to unpack .../19-python3-pylibacl_0.7.2-1+b2_amd64.deb ...
+Unpacking python3-pylibacl:amd64 (0.7.2-1+b2) over (0.7.2-1+b1) ...
+Preparing to unpack .../20-python3-pyqt5.sip_12.17.1-1+b1_amd64.deb ...
+Unpacking python3-pyqt5.sip (12.17.1-1+b1) over (12.17.1-1) ...
+Preparing to unpack .../21-python3-pyqt6.sip_13.10.2-2+b1_amd64.deb ...
+Unpacking python3-pyqt6.sip (13.10.2-2+b1) over (13.10.2-2) ...
+Preparing to unpack .../22-python3-pyxattr_0.8.1-1+b7_amd64.deb ...
+Unpacking python3-pyxattr:amd64 (0.8.1-1+b7) over (0.8.1-1+b6) ...
+Preparing to unpack .../23-python3-setproctitle_1.3.7-1+b1_amd64.deb ...
+Unpacking python3-setproctitle:amd64 (1.3.7-1+b1) over (1.3.7-1) ...
+Preparing to unpack .../24-python3-smbc_1.0.25.1-1+b5_amd64.deb ...
+Unpacking python3-smbc (1.0.25.1-1+b5) over (1.0.25.1-1+b4) ...
+Setting up python3-smbc (1.0.25.1-1+b5) ...
+Setting up libprotobuf-lite32t64:amd64 (3.21.12-14+b1) ...
+Setting up python3-pylibacl:amd64 (0.7.2-1+b2) ...
+Setting up libre2-11:amd64 (20250805-1+b2) ...
+Setting up libprotobuf32t64:amd64 (3.21.12-14+b1) ...
+Setting up libnewt0.52:amd64 (0.52.25-1+b1) ...
+Setting up python3-cairo (1.27.0-2+b1) ...
+Setting up python3-apt (3.0.0+b1) ...
+Setting up python3-charset-normalizer (3.4.4-1+b1) ...
+Setting up libxml2-16:amd64 (2.15.1+dfsg-2+b1) ...
+Setting up libbrotli1:amd64 (1.1.0-2+b9) ...
+Setting up libmupdf25.1 (1.25.1+ds1-9+b2) ...
+Setting up mupdf-tools (1.25.1+ds1-9+b2) ...
+Setting up python3-cups (2.0.4-3+b1) ...
+Setting up python3-brotli (1.1.0-2+b9) ...
+Setting up python3-setproctitle:amd64 (1.3.7-1+b1) ...
+Setting up libcrack2:amd64 (2.9.6-5.2+b2) ...
+Setting up python3-pyqt5.sip (12.17.1-1+b1) ...
+Setting up whiptail (0.52.25-1+b1) ...
+Setting up python3-fuse (2:1.0.9-1+b2) ...
+Setting up python3-pyqt6.sip (13.10.2-2+b1) ...
+Setting up libxml2-utils (2.15.1+dfsg-2+b1) ...
+Setting up python3-cffi-backend:amd64 (2.0.0-2+b1) ...
+Setting up python3-pyxattr:amd64 (0.8.1-1+b7) ...
+Setting up cracklib-runtime (2.9.6-5.2+b2) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for libc-bin (2.41-12) ...
 
 [1;36m==>[0m [1;33mNow running apt autoremove and autoclean[0m
 
@@ -109,17 +275,32 @@ Pruning objects
 
 [1;36m==>[0m [1;33mRemoving leftover files from .cache, .local, etc.[0m
 
-rm: cannot remove '/home/msifland/.cache/doc/by-app': Operation not permitted
 
 [1;36m==>[0m [1;33mRemoving system journals, logs, caches and archives[0m
 
-Vacuuming done, freed 0B of archived journals from /var/log/journal.
+Vacuuming done, freed 0B of archived journals from /run/log/journal.
 Vacuuming done, freed 0B of archived journals from /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c.
-Vacuuming done, freed 0B of archived journals from /run/log/journal.
+Vacuuming done, freed 0B of archived journals from /var/log/journal.
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/user-1000@72bd2016e9e644ad9cc378d41e86c5f2-00000000000aa685-0006449dfd875f02.journal (6.3M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000000bb5f0-000644a4f4fcdd0c.journal (44.2M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000000cc57a-000644ac74c6c104.journal (44.1M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000000dd6d6-000644b336fda13c.journal (44.2M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000000ee68d-000644b9ce6e6225.journal (44M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000000ff3c2-000644c18444b0d2.journal (44.1M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-0000000000110322-000644c890a6fc81.journal (44.2M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-000000000012128f-000644cf653c402e.journal (44.4M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-0000000000132563-000644d658c3349a.journal (16.3M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-0000000000137ec6-000644d871efd0ea.journal (44.4M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/user-1000@000644effe0aa486-f1cecdcf7be94246.journal~ (8M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000001496e5-000644df41433b96.journal (44.2M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@000644ec0db940e6-73ded9710405837c.journal~ (16M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@000644effbfe8959-24a1a20ce084e7f7.journal~ (32M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000001694c3-000644effbf47484.journal (44M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/user-1000@72bd2016e9e644ad9cc378d41e86c5f2-0000000000169aff-000644effe07fc72.journal (5.6M).
+Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-000000000017a3fe-000644f6b1ca794a.journal (44.1M).
+Vacuuming done, freed 570.7M of archived journals from /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c.
 Vacuuming done, freed 0B of archived journals from /var/log/journal.
 Vacuuming done, freed 0B of archived journals from /run/log/journal.
-Deleted archived journal /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c/system@72bd2016e9e644ad9cc378d41e86c5f2-00000000000aa683-0006449dfd6dd004.journal (44.1M).
-Vacuuming done, freed 44.1M of archived journals from /var/log/journal/3aa1298ab88b4962b04c8f4036e1b06c.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -135,7 +316,7 @@ Summary:
 [1;36m==>[0m [1;33m=== Space reclaimed ===[0m
 
 Filesystem      Size  Used Avail Use% Mounted on
-/dev/sda1       141G   28G  107G  21% /
+/dev/sda1       141G   32G  103G  24% /
 40K	/home/msifland/.cache
 
 

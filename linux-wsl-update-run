@@ -7,7 +7,6 @@
 set -euo pipefail
 
 # ----------------------------- Safety Confirmation -------------------------
-clear
 echo -e "${ILCOLOR2}
                         ┌────────────────────────────────────────────┐
                         │               ⚠️  CAUTION ⚠️               │

@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+echo
+echo "This will prepare a USB drive for live-persistent ISOs to be installed in the 'isos' folder on the drive."
+sleep 1
+
+echo
+echo "Showing available block devices..."
+sleep 1
+echo
+lsblk -d -p -o NAME,SIZE,MODEL
+echo
+echo
+
+# Loop to ensure a valid disk is selected
+while true; do
+    read -rp "Enter target disk (e.g., /dev/sdb, /dev/sdc, /dev/sdd) (No trailing slash): " TARGET_DISK
+    
+    # Remove trailing spaces and check if empty
+    TARGET_DISK="${TARGET_DISK%"${TARGET_DISK##*[![:space:]]}"}"
+    
+    if [[ -z "$TARGET_DISK" ]]; then
+        echo "Error: No disk entered. Please try again."
+        continue
+    fi
+    
+    if [[ -b "$TARGET_DISK" ]]; then        
+        # Double-check that lsblk can see it
+        if lsblk -d -p --output NAME "$TARGET_DISK" >/dev/null 2>&1; then
+            echo "Selected: $TARGET_DISK"
+            break
+        else
+            echo "Error: '$TARGET_DISK' is not recognized by lsblk (maybe a typo?)."
+        fi
+    else
+        echo "Error: '$TARGET_DISK' is not a valid block device."
+    fi
+    
+    echo "Please choose one of the disks listed above."
+    echo
+done
+
+# At this point, $TARGET_DISK contains a valid whole disk
+echo "Proceeding with $TARGET_DISK ..."
+sleep 2
+
+dev=$TARGET_DISK
+mntpnt=/mnt/usb
+mntpnt_perst=/mnt/usb_persist
+
+sudo umount -f "$mntpnt" "$mntpnt_perst" 2>/dev/null || true
+sudo rm -rf "$mntpnt" "$mntpnt_perst"
+
+echo
+echo "Wiping and creating reliable 3-partition layout (GPT): a bios_grub, a fat32 gpt (ISO Storage), and a persistent ext4 partition."
+sleep 1
+echo
+echo "  The persistent drive will keep files from multiple distros/ISOs. Notice the size of your /dev/block above. If you have a large enough drive, set this to 15 to 20 gigs, for storing multiple iso's. The rest of the space will be for persistence for each iso. Enter the size of the ISO Storage partition now."
+sleep 1
+
+echo
+read -p "   What size, in gigs, would you like your ISO storage partition to be (number only, e.g., 8): " isofldr
+# Fix bash variable assignment syntax
+if [[ -z "$isofldr" ]]; then
+    isofldr=8 # Default to 8GB if empty
+fi
+sleep 1
+
+# Partitions
+sudo wipefs -a "$dev"
+sudo parted "$dev" --script \
+    mklabel msdos \
+    mkpart primary ext4 1MiB "${isofldr}GiB" set 1 boot on \
+    mkpart primary ext4 "${isofldr}GiB" 100%
+
+sudo mkfs.ext4 -F -L LIVEUSB "${dev}1"
+sudo mkfs.ext4 -F -L casper-rw "${dev}2"
+
+sudo mkdir -p "$mntpnt" "$mntpnt_perst"
+sudo mount "${dev}1" "$mntpnt"
+sudo mount "${dev}2" "$mntpnt_perst"
+
+# GRUB Legacy BIOS
+sudo grub-install --target=i386-pc --boot-directory="$mntpnt/boot" --force "$dev"
+
+sudo mkdir -p "$mntpnt/isos" "$mntpnt/boot/grub"
+
+# Get UUID once
+#echo; lsblk -f
+#read -p "Paste the UUID of the LIVEUSB partition: " UUID
+
+# AUTOMATIC UUID DETECTION (this is the only thing that changed)
+echo
+echo "Detecting UUID of the LIVEUSB partition automatically..."
+while true; do
+    UUID=$(lsblk -no UUID,LABEL "${dev}1" | grep -w LIVEUSB | awk '{print $1}')
+    if [[ -n "$UUID" ]]; then
+        echo "   Found LIVEUSB UUID: $UUID"
+        break
+    fi
+    sleep 1
+done
+
+# ==============================================================
+# 1. Tiny static grub.cfg – never causes syntax errors
+# ==============================================================
+cat <<EOF | sudo tee "$mntpnt/boot/grub/grub.cfg" >/dev/null
+# Dynamic GRUB configuration generated for multi-ISO boot
+set timeout=12
+set default=0
+
+insmod part_msdos
+insmod ext2
+insmod loopback
+insmod iso9660
+insmod all_video
+insmod regexp
+insmod echo
+
+# The UUID of the partition containing the /isos folder (will be set by your bash script)
+set uuid=PUT_UUID_HERE
+
+# Your one specific persistent ISO (you still need to handle this separately if you want persistence)
+set persistent_iso="/isos/MSI_live-image-amd64.hybrid.iso"
+
+menuentry "MSI_live-image-amd64.hybrid.iso" {
+    # Format for Debian
+    search --no-floppy --fs-uuid --set=root $uuid
+    set isofile=$persistent_iso
+    search --set -f $isofile
+    loopback loop $isofile
+    linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config persistence persistence-label=casper-rw persistence-storage=filesystem live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+    initrd (loop)/live/initrd.img
+}
+
+menuentry "========================================" { true }
+#########Templates for different types of iso's. Just open the iso's
+#########and look at the paths for clarification
+
+# Template for debian-live non-persist
+# menuentry "MSI_live-image-amd64.hybrid.iso" {
+#    # Format for Debian
+#    search --no-floppy --fs-uuid --set=root $uuid
+#    set isofile=$persistent_iso
+#    search --set -f $isofile
+#    loopback loop $isofile
+#    linux (loop)/live/vmlinuz quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+ #   initrd (loop)/live/initrd.img
+# }
+
+# Example Template 1 (Ubuntu Live non-persistent):
+# menuentry "Example-Ubuntu-NonPersistent.iso" {
+#     search --no-floppy --fs-uuid --set=root $uuid
+#     set isofile="/isos/Example-Ubuntu-NonPersistent.iso"
+#     loopback loop $isofile
+#     linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+#     initrd (loop)/casper/initrd.lz
+# }
+
+# Example Template 2 (Arch):
+# menuentry "Example-ArchLinux.iso" {
+#     search --no-floppy --fs-uuid --set=root $uuid
+#     set isofile="/isos/Example-ArchLinux.iso"
+#     loopback loop $isofile
+#     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop
+#     initrd (loop)/arch/boot/x86_64/initramfs-linux.img
+# }
+EOF
+
+# Replace UUID in the correct file: grub.cfg
+# The variable is referenced as \$persistent_iso inside the EOF block to escape the shell variable interpretation.
+sudo sed -i "s|PUT_UUID_HERE|$UUID|g" "$mntpnt/boot/grub/grub.cfg"
+
+# Persistence file
+echo "/ union" | sudo tee "$mntpnt_perst/persistence.conf" >/dev/null
+
+echo
+echo "Copy your MSI_live-image-amd64.hybrid.iso + any other ISOs into $mntpnt/isos. When addid new iso's, you will also need to update the /boot/grub.cfg file with the new iso name and path. There are templates in the files for direction."
+read -p "Press Enter when done..."
+sudo umount "$mntpnt" "$mntpnt_perst"
+
+echo "FINISHED."
