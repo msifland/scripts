@@ -10,8 +10,11 @@ if [[ ! -z $1 ]]; then
     -boot menu=on
 else
     echo "
-    You must enter a /dev/block
-    ex:
-    qemu-run-usb /dev/sdb1
-    qemu-run-usb /dev/sda2"
-  fi
+    This command runs qemu virtal box.
+    Usage:
+    qemu-run [full directory]
+    qemu-run ~/live-build/MY_live-debian.iso
+    qemu-run /home/msifland/iso/Debian-14-1.iso
+    sudo qemu-run-usb /dev/sdb
+    sudo qemu-run-usb /dev/sda"
+fi
