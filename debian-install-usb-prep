@@ -174,7 +174,9 @@ sudo sed -i "s|PUT_UUID_HERE|$UUID|g" "$mntpnt/boot/grub/grub.cfg"
 echo "/ union" | sudo tee "$mntpnt_perst/persistence.conf" >/dev/null
 
 echo
-echo "Copy your MSI_live-image-amd64.hybrid.iso + any other ISOs into $mntpnt/isos. When addid new iso's, you will also need to update the /boot/grub.cfg file with the new iso name and path. There are templates in the files for direction."
+echo "Copy your MSI_live-image-amd64.hybrid.iso + any other ISOs into $mntpnt/isos. When addid new iso's, you will also need to update the /boot/grub.cfg file with the new iso name and path. There are templates in the files for direction.
+Here is your grub.cfg: "
+sudo subl "$mntpnt/boot/grub/grub.cfg"
 read -p "Press Enter when done..."
 sudo umount "$mntpnt" "$mntpnt_perst"
 

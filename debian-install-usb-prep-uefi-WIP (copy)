@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # Description: This script prepares a multi-boot persistent USB drive using GPT,
 #              a VFAT ISO storage partition, and a dedicated EXT4 persistence partition.
-#              It uses a dynamic GRUB menu to automatically detect and boot ISOs non-persistently,
-#              and a static entry for a single persistent ISO.
+#              It uses a dynamic GRUB menu to automatically detect and boot ISOs.
 
 echo
 echo "This will prepare a USB drive for live-persistent ISOs to be installed in the 'isos' folder on the drive."
@@ -113,25 +112,10 @@ echo "Making isos directory, to put iso's in..."
 sudo mkdir -p $mountpoint/isos
 sleep 1
 
-# --- AUTOMATIC UUID DETECTION ADDED HERE ---
 echo
-echo "Detecting UUID of the LIVEUSB partition (partition 2) automatically..."
-while true; do
-    UUID=$(lsblk -no UUID,LABEL "${dev}2" | grep -w LIVEUSB | awk '{print $1}')
-    if [[ -n "$UUID" ]]; then
-        echo "   Found LIVEUSB UUID: $UUID"
-        break
-    fi
-    sleep 1
-done
-sleep 1
-# -------------------------------------------
-
-
-echo
-echo "Creating dynamic grub files for looping through isos on disk (non-persistent), plus a static persistent entry..."
-# 6. Dynamic grub.cfg for multi-distro support + Static Persistent Entry
-sudo tee "$mountpoint"/boot/grub/grub.cfg <<EOF
+echo "Creating dynamic grub files for looping through isos on disk..."
+# 6. Dynamic grub.cfg for multi-distro support
+sudo tee "$mountpoint"/boot/grub/grub.cfg <<'EOF'
 set timeout=10
 set default=0
 insmod loopback
@@ -143,82 +127,58 @@ insmod ext2
 insmod regexp
 insmod echo
 
-# Set the UUID of the ISO storage partition automatically by the script
-set uuid=$UUID
-# Define the specific ISO file name requested
-set persistent_iso="/isos/MSI_live-image-amd64.hybrid.iso"
-
-
-# --- Static ISO Entry (Persistent ONLY for this ISO) ---
-menuentry "MSI_live-image-amd64.hybrid.iso (Persistent)" {
-    search --no-floppy --fs-uuid --set=root \$uuid
-    set isofile=\$persistent_iso
-    loopback loop \$isofile
-    linux (loop)/live/vmlinuz rw findiso=\$isofile boot=live config persistence persistence-label=casper-rw persistence-storage=filesystem
-    initrd (loop)/live/initrd.img
-}
-menuentry "----------------------------------------" { true }
-
-# --- Dynamic ISO Loop (Non-Persistent for all others) ---
+# --- Dynamic ISO Loop ---
 for isofile in /isos/*.iso ; do
-    # Skip the specific static ISO from the dynamic loop
-    if [ "\$isofile" = "\$persistent_iso" ] ; then
-        continue
-    fi
-    
-    if regexp --set name_only="^/isos/\(.*\)\.iso\$" "\$isofile" ; then
-        menutitle="\${name_only}" # This is GRUB syntax for referencing the variable later in the script scope
+    if regexp --set name_wo_ext="\(.*\)\.iso" "$isofile" ; then
+        menutitle="${name_wo_ext}"
     else
-        menutitle="ISO: \$isofile"
+        menutitle="ISO: ${isofile}"
     fi
 
-    #set menutitle="Boot \$isofile (Non-Persistent)"
-
-    menuentry "\$menutitle" {
-        set current_iso="\$isofile"
-        search --no-floppy --fs-uuid --set=root \$uuid
-        loopback loop "\$current_iso"
-        set common_params="rw config"
+    menuentry "Boot $menutitle (with Persistence)" {
+        set current_iso="$isofile"
+        search --no-floppy --set=root -f "$current_iso"
+        loopback loop "$current_iso"
 
         # --- Detection Logic: Check specific paths for kernel/initrd variants ---
 
-        # 1. Check for Arch Linux paths
-        if [ -f (loop)/arch/boot/x86_64/vmlinuz-linux ] ; then
-            set vmlinuz_path=(loop)/arch/boot/x86_64/vmlinuz-linux
-            set initrd_path=(loop)/arch/boot/x86_64/initramfs-linux.img
-            # Arch parameters for loopback boot (no persistence params needed here)
-            set boot_param="img_dev=/dev/disk/by-uuid/\$uuid img_loop=\$current_iso earlymodules=loop"
-
-        # 2. Check standard Debian 'live' path
-        elif [ -f (loop)/live/vmlinuz ] ; then
+        # Check standard Debian 'live' path
+        if [ -f (loop)/live/vmlinuz ] ; then
             set vmlinuz_path=(loop)/live/vmlinuz
             set boot_param="boot=live"
-            set persist_param="findiso=\$current_iso"
+            # Debian parameter is 'persistence' (uses the 'casper-rw' label and requires persistence.conf)
+            set persist_param="persistence persistence-label=casper-rw findiso=$current_iso"
+            # Now find initrd in /live/
             if [ -f (loop)/live/initrd.img ] ; then set initrd_path=(loop)/live/initrd.img;
             elif [ -f (loop)/live/initrd.lz ] ; then set initrd_path=(loop)/live/initrd.lz;
             elif [ -f (loop)/live/initrd ] ; then set initrd_path=(loop)/live/initrd; fi
 
-        # 3. Check standard Ubuntu 'casper' path
+        # Check standard Ubuntu 'casper' path (handles Ubuntu Mate/Pop_OS/Mint)
         elif [ -f (loop)/casper/vmlinuz ] ; then
             set vmlinuz_path=(loop)/casper/vmlinuz
             set boot_param="boot=casper"
-            set persist_param="iso-scan/filename=\$current_iso"
+            # Ubuntu parameter is 'persistent' (defaults to 'casper-rw' label)
+            set persist_param="persistent persistence-label=casper-rw iso-scan/filename=$current_iso"
+            # Now find initrd in /casper/
             if [ -f (loop)/casper/initrd.img ] ; then set initrd_path=(loop)/casper/initrd.img;
             elif [ -f (loop)/casper/initrd.lz ] ; then set initrd_path=(loop)/casper/initrd.lz;
             elif [ -f (loop)/casper/initrd ] ; then set initrd_path=(loop)/casper/initrd; fi
         
-        # Fallback message
+        # Fallback message if neither structure is found
         else
-            echo "Error: Kernel or Initrd files not found in standard paths (/arch, /live, or /casper)!"
+            echo "Error: Kernel or Initrd files not found in standard /live or /casper paths!"
             sleep 5
             return
         fi
         # --- End Detection Logic ---
 
-        if [ -n "\$vmlinuz_path" -a -n "\$initrd_path" ] ; then
-            # We combine all params: common_params, boot_param, and persist_param
-            linux \$vmlinuz_path \$common_params \$boot_param \$persist_param
-            initrd \$initrd_path
+        # Common kernel command line parameters
+        set common_params="rw config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago"
+
+        # Execute the boot command using the variables we set
+        if [ -n "$vmlinuz_path" -a -n "$initrd_path" ] ; then
+            linux $vmlinuz_path $boot_param $persist_param $common_params
+            initrd $initrd_path
         else
             echo "Error: Failed to set both kernel and initrd paths successfully."
             sleep 5
@@ -234,26 +194,25 @@ sleep 1
 
 # Add back the creation of the universal persistence.conf file that Debian needs
 echo
-echo "Creating universal /persistence.conf file on the casper-rw partition (partition 3)... This is needed for the static entry to work."
+echo "Creating universal /persistence.conf file on the casper-rw partition..."
 sudo mkdir -p /tmp/persist_part
 # Mount the new persistence partition (sdb3)
 sudo mount "$dev"3 /tmp/persist_part
 # Write the config file at the root of the EXT4 partition
-echo "/ union" | sudo tee /tmp/persist_part/persistence.conf >/dev/null
+echo "/ union" | sudo tee /tmp/persist_part/persistence.conf
 
 sudo umount /tmp/persist_part
 sudo rm -rf /tmp/persist_part
 sleep 1
 
 echo
-echo "Now just open a file manager and copy your ISOs (Arch, Debian, Ubuntu, etc.) into "$mountpoint"/isos. Max 4GB per ISO."
-echo "Here is your grub.cfg: "
+echo "Now just open a file manager and copy your ISOs into "$mountpoint"/isos.
+Here is your grub.cfg: "
 sleep 1
 sudo subl "$mountpoint"/boot/grub/grub.cfg
 
 echo
-echo -n "Press [ENTER] when ready to unmount..."
-read -sr
+read -s -r -p "Press [ENTER] when ready to unmount..."
 
 # 8. Unmount when done
 sudo umount -f $mountpoint
@@ -261,7 +220,7 @@ sleep 1
 
 echo
 echo "At any time you can re-mount the ISO partition with:
-sudo mount --mkdir ${dev}2 "$mountpoint"
-    ---- or whatever your partition 2 is.
+sudo mount --mkdir /dev/sdb2 "$mountpoint"
+    ---- or whatever your /dev/sdX2 is.
 
 After mounting, just copy or remove any ISOs you like."
