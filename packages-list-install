@@ -1,0 +1,12 @@
+#!/bin/bash
+# You installing from a list, missing packages from repos stop the install, this script prevents that and continues to install non-missing packages.
+export DEBIAN_FRONTEND=noninteractive
+
+echo "This script will install packages from a list of your choosing"
+echo
+read -p "Type the full path of the list to install(ex. HOME/pkg_bkups/pkgs.txt" pkgs_list
+
+# Then this runs back through them
+echo
+echo "Scanning packages, hold please..."
+xargs apt list 2>/dev/null < "$pkgs_list" | awk -F'/' '/\//{print $1}' | xargs sudo apt install -y
