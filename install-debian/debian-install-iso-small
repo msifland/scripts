@@ -14,17 +14,17 @@ fi
 
 # -------------------------- Config ----------------------------------
 INST_PTH="/mnt/deb-inst"                # chroot location
-HOME_DIR="$HOME"                        # your current $HOME
-CONFIGS_DIR="$HOME/MSI_live-build/my_configs"
-SCRIPTS_DIR="$HOME/scripts"
-CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/debian-install-continue-iso"
-LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/debian-install-make-live-iso"
-GOOGLE_CHRM_SCRIPT="$HOME/scripts/google-chrome-latest-install"
+export HOME_DIR="$HOME"                        # your current $HOME
+CONFIGS_DIR="$HOME_DIR/MSI_live-build/my_configs"
+SCRIPTS_DIR="$HOME_DIR/scripts"
+CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-continue-iso-small"
+LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-make-live-iso"
+GOOGLE_CHRM_SCRIPT="$HOME_DIR/scripts/google-chrome-latest-install"
 # -------------------------------------------------------------------
 
 clear
 echo "============================================================"
-echo "   Debian MATE Live ISO Builder (with personal configs)"
+echo "   Debian MATE Live ISO Builder-SMALL ISO (with personal configs)"
 echo "============================================================"
 echo
 echo "This script will:"
@@ -122,7 +122,7 @@ install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/prefer
 
 # Copy helper scripts
 install -Dm755 "$CHROOT_CONTINUE_SCRIPT"               "$INST_PTH/debian-install-continue-iso"
-install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
+install -Dm644 "$CONFIGS_DIR/my_packs-small.list.chroot"     "$INST_PTH/my_packs-small.list.chroot"
 install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-latest-install"
 # --------------------- Chroot and finish install ------------------
 log "Entering chroot to finish package installation..."
@@ -130,7 +130,7 @@ sleep 1
 chroot "$INST_PTH" /bin/bash -i -c "source /debian-install-continue-iso"
 
 # Cleanup chroot helper files
-rm -f "$INST_PTH"/{debian-install-continue-iso,my_packs.list.chroot}
+rm -f "$INST_PTH"/{debian-install-continue-iso,my_packs-small.list.chroot}
 
 # --------------------- Get username from chroot -------------------
 usrnme=$(cat "$INST_PTH/usrnme.txt" 2>/dev/null || echo "user")
@@ -143,44 +143,34 @@ log "Detected username: $usrnme"
 # --------------------- Create standard directories ----------------
 log "Creating standard user directories..."
 sleep 1
-for dir in Downloads Music Pictures Videos tmp Wallpapers; do
+for dir in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$dir"
 done
 
 # --------------------- Copy personal files (optional) -------------
 echo
 echo
-install -Dm755 "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
-read -rp "Copy your personal files (Documents, scripts, Projects, etc.)? [y/N] " ans
-if [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; then
-    echo "Copying personal files using git clone..."
-    cd $USR_HOME
-    /bin/bash git-clone-my-repos
-    rm -f "git-clone-my-repos"
-    cd "$INST_PTH"
-fi
-echo
-log "Done cloning pernal git repos"
+install -Dm755 "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+echo "Copying the script 'git-clone-my-repos' to $USR_HOME. If you want to install all your personal scipts and files, run this script when you start your new system."
+sleep 3
 
 # --------------------- Copy dotfiles/configs (optional) -----------
 echo
 echo
-read -rp "Copy config files (.config, .local, .bashrc, etc.)? [y/N] " ans
-if [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; then
-    echo "Copying configuration files..."
-    rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
-        "$HOME_DIR/.config"     "$USR_HOME/"
-    rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/lutris,share/Steam,share/Trash} \
-        "$HOME_DIR/.local"      "$USR_HOME/"
-    rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
-        "$HOME_DIR/.cache"      "$USR_HOME/"
-    for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
-        [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
-    done
-fi
+echo "Copy config files (.config, .local, .bashrc, etc.)"
+rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} "$HOME_DIR/.config" "$USR_HOME/"
+rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/lutris,share/logs,share/skypeweb,share/Steam,share/Trash} "$HOME_DIR/.local" "$USR_HOME/"
+rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi} "$HOME_DIR/.cache" "$USR_HOME/"
+for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
+    [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
+done
+sleep 1
 
 # --------------------- Fix permissions -----------------------------
+echo
+echo "Making sure ownership is correct..."
 chown -R "$usrnme:$usrnme" "$USR_HOME"
+sleep 1
 
 # --------------------- Final pause ---------------------------------
 echo
@@ -189,8 +179,15 @@ log "Almost done! You can now:
         • Inspect the filesystem in your file manager"
 echo
 echo
-read -rsp "Press ENTER when ready to build the live ISO..."
+read -rsp "Removing junk files and preparing to build you live ISO.
+
+Press ENTER when ready to build the live ISO..."
 rm -rf "$INST_PTH/work"
+rm -rf "$INST_PTH/usr/share/doc/*"
+rm -rf "$INST_PTH/usr/share/man/*"
+rm -rf "$INST_PTH//var/cache/apt/archives/*"
+rm -rf "$INST_PTH/tmp/*"
+rm -rf "$INST_PTH/var/tmp/*"
 # --------------------- Build the live ISO --------------------------
 echo
 log "Building the live ISO..."
@@ -216,13 +213,13 @@ echo
 echo "============================================================"
 echo "                     ALL DONE!"
 echo "============================================================"
-echo "Your live ISO is ready in: $HOME/MSI_live-build/"
+echo "Your live ISO is ready in: $HOME_DIR/MSI_live-build/"
 echo "Install it by:"
 echo "   Primary system:
 Wipe first:
     sudo dd if=/dev/zero of=/dev/sdX bs=1M count=10 status=progress oflag=direct
 Write file:
     sudo dd if=MSI_live-image-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress oflag=sync"
-echo "   Secondary system: Put it in a folder on you device and reference it with /etc/grub.d/40_custom"
+echo "   Secondary system: Put it in a folder on you device and reference it with /etc/grub.d/40_custom OR by running your other scripts: debian-instal-usb-prep, then installing manually via drag and drop."
 echo "Enjoy your fully personalized Debian MATE live system!"
 echo "============================================================"

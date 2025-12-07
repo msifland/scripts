@@ -1,0 +1,195 @@
+#!/usr/bin/env bash
+# Description: This script prepares a multi-boot persistent USB drive using GPT,
+#              a VFAT EFI partition, an exFAT ISO storage partition (for large files), 
+#              and a dedicated EXT4 persistence partition. Mounts are persistent until script end.
+
+echo
+echo "This will prepare a USB drive for live-persistent ISO to be installed in the 'isos' folder on a usb drive. The first(persistent) menu option should be your custom iso file. Check the grub.cfg to make sure name is correct. This supports iso's over 4G AND UEFI, however, other iso's must be added manually to the grub.cfg with the templates in the file. Make sure names of the iso's are added into the grub are correct and match exactly."
+sleep 2
+
+echo
+echo "Showing available block devices..."
+sleep 1
+lsblk -d -p -o NAME,SIZE,MODEL
+echo
+
+# Loop to ensure a valid disk is selected
+while true; do
+    read -rp "Enter target disk (e.g., /dev/sdb, /dev/sdc, /dev/sdd) (No trailing slash): " TARGET_DISK
+    TARGET_DISK="${TARGET_DISK%"${TARGET_DISK##*[![:space:]]}"}"
+    if [[ -z "$TARGET_DISK" ]]; then echo "Error: No disk entered."; continue; fi
+    if [[ -b "$TARGET_DISK" ]]; then        
+        if lsblk -d -p --output NAME "$TARGET_DISK" >/dev/null 2>&1; then
+            echo "Selected: $TARGET_DISK"; break
+        else echo "Error: '$TARGET_DISK' not recognized."; fi
+    else echo "Error: '$TARGET_DISK' not a valid block device."; fi
+done
+
+dev=$TARGET_DISK
+# Define dedicated mount points
+mount_iso_storage=/mnt/usb_iso
+mount_efi=/mnt/usb_efi
+mount_persist=/mnt/usb_persist
+
+echo "Proceeding with $TARGET_DISK ..."
+sleep 2
+
+# Clean up any previous mounts/folders
+sudo umount -f "$mount_iso_storage" 2>/dev/null || true
+sudo umount -f "$mount_efi" 2>/dev/null || true
+sudo umount -f "$mount_persist" 2>/dev/null || true
+sudo rm -rf "$mount_iso_storage" "$mount_efi" "$mount_persist"
+
+echo
+read -p "   What size, in gigs, would you like your main ISO storage partition (exFAT) to be (number only, e.g., 8). Remainder goes to persistence: " isofldr
+if [[ -z "$isofldr" ]]; then isofldr=8; fi
+sleep 1
+
+echo "Wiping and creating 4-partition layout (GPT)..."
+# Partition 1: BIOS GRUB (1 MiB -> 2 MiB)
+# Partition 2: FAT32 EFI System Partition (2 MiB -> 514 MiB)
+# Partition 3: exFAT ISO storage ($isofldr GiB start)
+# Partition 4: EXT4 persistence (remainder)
+sudo wipefs -a "$dev"
+sudo parted "$dev" --script \
+  mklabel gpt \
+  mkpart primary 1MiB 2MiB set 1 bios_grub on \
+  mkpart primary fat32 2MiB 514MiB set 2 esp on name 2 EFI_SYSTEM \
+  mkpart primary fat32 514MiB "$isofldr"GiB name 3 LIVEUSB \
+  mkpart primary ext4 "$isofldr"GiB 100% name 4 persistence \
+  print
+sleep 1
+
+echo "Formatting partitions..."
+sudo mkfs.vfat -F32 -n EFI_SYSTEM "${dev}2" 
+sudo mkfs.exfat -L LIVEUSB "${dev}3"
+sudo mkfs.ext4 -L casper-rw "${dev}4"
+sleep 1
+
+# --- Mount all partitions ---
+echo "Mounting all partitions to dedicated mount points..."
+sudo mkdir -p "$mount_efi" "$mount_iso_storage" "$mount_persist"
+
+# Mount the required partitions
+sudo mount "${dev}2" "$mount_efi"
+sudo mount "${dev}3" "$mount_iso_storage"
+sudo mount "${dev}4" "$mount_persist"
+sleep 1
+
+echo "Installing grub (BIOS + UEFI)..."
+# Install GRUB (BIOS + UEFI) using the EFI mount point for the --efi-directory
+sudo grub-install --target=i386-pc --boot-directory="$mount_efi/boot" "$dev"
+sudo grub-install --target=x86_64-efi \
+                  --efi-directory="$mount_efi" \
+                  --boot-directory="$mount_efi/boot" \
+                  --removable \
+                  --no-nvram \
+                  "$dev"
+sleep 1
+
+echo "Making isos directory on the exFAT storage partition..."
+sudo mkdir -p "$mount_iso_storage/isos"
+sleep 1
+
+# --- AUTOMATIC UUID DETECTION ---
+echo "Detecting UUID of the LIVEUSB partition (partition 3/exFAT) automatically..."
+UUID=$(lsblk -no UUID,LABEL "${dev}3" | grep -w LIVEUSB | awk '{print $1}')
+echo "   Found LIVEUSB UUID: $UUID"
+sleep 1
+
+echo "Creating dynamic grub files for looping through isos on disk..."
+# Write grub.cfg to the correct location within the EFI partition's mount point
+sudo tee "$mount_efi"/boot/grub/grub.cfg >/dev/null <<EOF
+set timeout=10
+set default=0
+insmod loopback
+insmod iso9660
+insmod exfat 
+insmod part_gpt
+insmod all_video
+insmod ext2
+insmod regexp
+insmod echo
+
+# Set the UUID of the ISO storage partition automatically by the script
+set uuid=$UUID
+# Define the specific ISO file name requested
+set persistent_iso="/isos/MSI_live-image-amd64.hybrid.iso"
+
+
+# --- Static ISO Entry (Persistent ONLY for this ISO) ---
+menuentry "MSI_live-image-amd64.hybrid.iso (Persistent)" {
+    search --no-floppy --fs-uuid --set=root \$uuid
+    set isofile=\$persistent_iso
+    loopback loop \$isofile
+    linux (loop)/live/vmlinuz rw findiso=\$isofile boot=live config persistence persistence-label=casper-rw persistence-storage=filesystem
+    initrd (loop)/live/initrd.img
+}
+menuentry "----------------------------------------" { true }
+
+#########Templates for different types of iso's. Just open the iso's
+#########and look at the paths for clarification
+
+# Template for debian-live non-persist
+# menuentry "debian-live-iso-lxde.iso" {
+#    # Format for Debian
+#    search --no-floppy --fs-uuid --set=root $uuid
+#    set isofile="/isos/debian-live-iso-lxde.iso"
+#    search --set -f $isofile
+#    loopback loop $isofile
+#    linux (loop)/live/vmlinuz quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+#    initrd (loop)/live/initrd.img
+# }
+
+# Example Template 1 (Ubuntu Live non-persistent):
+# menuentry "Example-Ubuntu-NonPersistent.iso" {
+#     search --no-floppy --fs-uuid --set=root $uuid
+#     set isofile="/isos/Example-Ubuntu-NonPersistent.iso"
+#     loopback loop $isofile
+#     linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+#     initrd (loop)/casper/initrd.lz
+# }
+
+# Example Template 2 (Arch):
+# menuentry "Example-ArchLinux.iso" {
+#     search --no-floppy --fs-uuid --set=root $uuid
+#     set isofile="/isos/Example-ArchLinux.iso"
+#     loopback loop $isofile
+#     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop
+#     initrd (loop)/arch/boot/x86_64/initramfs-linux.img
+# }
+EOF
+sleep 1
+
+# Create persistence.conf file on the EXT4 partition
+echo "Creating universal /persistence.conf file on the casper-rw partition..."
+# The persistence partition is already mounted at $mount_persist
+echo "/ union" | sudo tee "$mount_persist"/persistence.conf >/dev/null
+sleep 1
+
+
+echo
+echo "Setup complete. The following mount points are still active:"
+echo "EFI System (FAT32): $mount_efi"
+echo "ISO Storage (exFAT): $mount_iso_storage"
+echo "Persistence (EXT4): $mount_persist"
+echo
+echo "Copy your ISO files into $mount_iso_storage/isos"
+echo "Here is your grub.cfg: "
+sleep 1
+sudo subl "$mount_efi"/boot/grub/grub.cfg
+
+echo
+echo -n "Press [ENTER] when ready to unmount all partitions and finish..."
+echo
+read -sr
+
+# 8. Unmount all when done
+sudo umount -f "$mount_iso_storage"
+sudo umount -f "$mount_efi"
+sudo umount -f "$mount_persist"
+
+sudo rm -rf "$mount_iso_storage" "$mount_efi" "$mount_persist"
+sleep 1
+
+echo "All partitions unmounted. The USB drive is ready."

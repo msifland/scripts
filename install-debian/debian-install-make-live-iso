@@ -7,7 +7,8 @@ IFS=$'\n\t'                           # Safe word splitting
 # ------Reference: If a line has ' || true' at the end, it means the script will keep running(NOT CRITITCAL COMMANDS). Used with the 'set -e' command above which stops the entire scripts if errors.
 # ========================== CONFIGURATION ==========================
 # Edit only these lines!
-RT_DIR="$HOME/MSI_live-build"
+export HOME_DIR="$HOME"
+RT_DIR="$HOME_DIR/MSI_live-build"
 CHROOT="/mnt/deb-inst"                             # Your populated chroot
 ISO_NAME="$RT_DIR/MSI_live-image-amd64.hybrid.iso" # Final ISO path
 OUTDIR="$RT_DIR/MSI_live-iso"                      # Temporary ISO tree

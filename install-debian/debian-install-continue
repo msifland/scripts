@@ -70,7 +70,7 @@ log "Installing your custom package selection"
 sleep 1
 if [[ -f "$PACKLIST" ]]; then
     echo "Scanning packages, hold please..."
-    xargs apt list 2>/dev/null < "$PACKLIST" | awk -F'/' '/\//{print $1}' | xargs sudo apt install -y
+    cat "$PACKLIST" | xargs apt list 2>/dev/null < "$PACKLIST" | awk -F'/' '/\//{print $1}' | xargs apt install -y
     #apt install -y $(grep -vE "^\s*($|#)" "$PACKLIST")
 else
     error "Package list not found: $PACKLIST"

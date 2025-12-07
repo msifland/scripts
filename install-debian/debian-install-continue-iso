@@ -7,7 +7,7 @@ set -euo pipefail
 IFS=$'\n\t'
 # ------Reference: If a line has ' || true' at the end, it means the script will keep running(NOT CRITITCAL COMMANDS). Used with the 'set -e' command above which stops the entire scripts if errors.
 # -------------------------- Config ----------------------------------
-PACKLIST="/my_packs-small.list.chroot"          # Your big package list
+PACKLIST="/my_packs.list.chroot"          # Your big package list
 TIMEZONE="America/Chicago"                # Change if needed
 LOCALE="en_US.UTF-8"
 
@@ -73,7 +73,7 @@ log "Installing your custom package selection"
 sleep 1
 if [[ -f "$PACKLIST" ]]; then
     echo "Scanning packages, hold please..."
-    xargs apt list 2>/dev/null < "$PACKLIST" | awk -F'/' '/\//{print $1}' | xargs sudo apt install -y
+    cat "$PACKLIST" | xargs apt list 2>/dev/null < "$PACKLIST" | awk -F'/' '/\//{print $1}' | xargs apt install -y
     #apt install -y $(grep -vE "^\s*($|#)" "$PACKLIST")
 else
     error "Package list not found: $PACKLIST"

@@ -7,13 +7,13 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # -------------------------- Config ----------------------------------
+export HOME_DIR="$HOME"
 INST_PTH="/mnt/deb-inst"
-CONFIGS_DIR="$HOME/MSI_live-build/my_configs"
-HOME_DIR="$HOME"
-SCRIPTS_DIR="$HOME/scripts"
-CHROOT_SCRIPT="$SCRIPTS_DIR/debian-install-continue"
+CONFIGS_DIR="$HOME_DIR/MSI_live-build/my_configs"
+SCRIPTS_DIR="$HOME_DIR/scripts"
+CHROOT_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-continue"
 PACKLIST="$CONFIGS_DIR/my_packs.list.chroot"
-GOOGLE_CHRM_SCRIPT="$HOME/scripts/google-chrome-latest-install"
+GOOGLE_CHRM_SCRIPT="$HOME_DIR/scripts/google-chrome-latest-install"
 
 # -------------------------- Must be root ---------------------------
 [[ "$EUID" -eq 0 ]] || error "This script must be run as root!"
@@ -180,16 +180,16 @@ rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
 USR_HOME="$INST_PTH/home/$usrname"
 
 # Create standard dirs
-for d in Downloads Music Pictures Videos tmp Wallpapers; do
+for d in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$d"
 done
 
 # --------------------- Copy personal files (optional) -------------
-cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Copy your personal files (Documents, scripts, Projects, etc.)? [y/N] " ans
 if [[ "$ans" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying personal files using git clone..."
-    cp "$HOME/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+    cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
     cd $USR_HOME
     /bin/bash git-clone-my-repos
     rm -f "git-clone-my-repos"
