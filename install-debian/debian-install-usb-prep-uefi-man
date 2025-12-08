@@ -39,17 +39,21 @@ sudo umount -f "$mount_iso_storage" 2>/dev/null || true
 sudo umount -f "$mount_efi" 2>/dev/null || true
 sudo umount -f "$mount_persist" 2>/dev/null || true
 sudo rm -rf "$mount_iso_storage" "$mount_efi" "$mount_persist"
+sleep 1 
+
+echo
+echo "  Wiping and creating 4-partition layout (GPT), Partition 1: BIOS GRUB (1 MiB -> 2 MiB), Partition 2: FAT32 EFI System Partition (2 MiB -> 514 MiB), Partition 3: exFAT ISO storage ($isofldr GiB start), Partition 4: EXT4 persistence (remainder)"
+sleep 1
+
+echo
+echo "  The persistent drive will keep files from multiple distros/ISOs. Notice the size of your /dev/block above. If you have a large enough drive, set this to 15 to 30 gigs, for storing multiple iso's. The rest of the space will be for persistence for each iso. Enter the size of the ISO Storage partition now."
+sleep 1
 
 echo
 read -p "   What size, in gigs, would you like your main ISO storage partition (exFAT) to be (number only, e.g., 8). Remainder goes to persistence: " isofldr
 if [[ -z "$isofldr" ]]; then isofldr=8; fi
 sleep 1
 
-echo "Wiping and creating 4-partition layout (GPT)..."
-# Partition 1: BIOS GRUB (1 MiB -> 2 MiB)
-# Partition 2: FAT32 EFI System Partition (2 MiB -> 514 MiB)
-# Partition 3: exFAT ISO storage ($isofldr GiB start)
-# Partition 4: EXT4 persistence (remainder)
 sudo wipefs -a "$dev"
 sudo parted "$dev" --script \
   mklabel gpt \
@@ -97,7 +101,7 @@ UUID=$(lsblk -no UUID,LABEL "${dev}3" | grep -w LIVEUSB | awk '{print $1}')
 echo "   Found LIVEUSB UUID: $UUID"
 sleep 1
 
-echo "Creating dynamic grub files for looping through isos on disk..."
+echo "Creating grub.cfg with templates inside to customize. Simply paste the iso file names in the spots below, path show be fine, only names to paste."
 # Write grub.cfg to the correct location within the EFI partition's mount point
 sudo tee "$mount_efi"/boot/grub/grub.cfg >/dev/null <<EOF
 set timeout=10
@@ -127,14 +131,14 @@ menuentry "MSI_live-image-amd64.hybrid.iso (Persistent)" {
 }
 menuentry "----------------------------------------" { true }
 
-#########Templates for different types of iso's. Just open the iso's
-#########and look at the paths for clarification
+######### Templates for different types of iso's. Just open the iso's
+######### and look at the paths for clarification
 
 # Template for debian-live non-persist
-# menuentry "debian-live-iso-lxde.iso" {
+# menuentry "debian-live-iso-lxde.iso" { #<<<< ISO NAME HERE
 #    # Format for Debian
 #    search --no-floppy --fs-uuid --set=root $uuid
-#    set isofile="/isos/debian-live-iso-lxde.iso"
+#    set isofile="/isos/debian-live-iso-lxde.iso" #<<<< ISO NAME HERE
 #    search --set -f $isofile
 #    loopback loop $isofile
 #    linux (loop)/live/vmlinuz quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
@@ -142,18 +146,18 @@ menuentry "----------------------------------------" { true }
 # }
 
 # Example Template 1 (Ubuntu Live non-persistent):
-# menuentry "Example-Ubuntu-NonPersistent.iso" {
+# menuentry "Example-Ubuntu-NonPersistent.iso" { #<<<< ISO NAME HERE
 #     search --no-floppy --fs-uuid --set=root $uuid
-#     set isofile="/isos/Example-Ubuntu-NonPersistent.iso"
+#     set isofile="/isos/Example-Ubuntu-NonPersistent.iso" #<<<< ISO NAME HERE
 #     loopback loop $isofile
 #     linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
 #     initrd (loop)/casper/initrd.lz
 # }
 
 # Example Template 2 (Arch):
-# menuentry "Example-ArchLinux.iso" {
+# menuentry "Example-ArchLinux.iso" { #<<<< ISO NAME HERE
 #     search --no-floppy --fs-uuid --set=root $uuid
-#     set isofile="/isos/Example-ArchLinux.iso"
+#     set isofile="/isos/Example-ArchLinux.iso" #<<<< ISO NAME HERE
 #     loopback loop $isofile
 #     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop
 #     initrd (loop)/arch/boot/x86_64/initramfs-linux.img

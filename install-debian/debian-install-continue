@@ -70,12 +70,12 @@ log "Installing your custom package selection"
 sleep 1
 if [[ -f "$PACKLIST" ]]; then
     echo "Scanning packages, hold please..."
-    cat "$PACKLIST" | xargs apt list 2>/dev/null < "$PACKLIST" | awk -F'/' '/\//{print $1}' | xargs apt install -y
+    PGK_LIST=$(cat "$PACKLIST" | xargs apt list 2>/dev/null | awk -F'/' '/\//{print $1}')
+    apt install -y $PGK_LIST
     #apt install -y $(grep -vE "^\s*($|#)" "$PACKLIST")
 else
     error "Package list not found: $PACKLIST"
 fi
-
 # -------------------------- Root password --------------------------
 log "Setting root password"
 sleep 1
