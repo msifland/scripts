@@ -3,7 +3,7 @@
 # debian-install – Full Debian MATE System Installer to Disk
 # With Your Original sed + All sleep Pauses – 2025
 # ===================================================================
-set -euo pipefail
+#set -euo pipefail
 IFS=$'\n\t'
 
 # -------------------------- Config ----------------------------------
@@ -48,6 +48,9 @@ if ! ask "ARE YOU SURE YOU WANT TO WIPE $TARGET_DISK"; then
     sleep 1
     exit
 fi
+# get size of /dev/block
+BS_NM=$(basename "$TARGET_DISK")
+TTL_SIZE=$(lsblk "$TARGET_DISK" | grep -w "$BS_NM" | awk '{print $4}' | grep -oE '[0-9]+(\.[0-9]+)?')
 # Unmount anything on this disk
 mapfile -t mounted < <(lsblk -nrp -o NAME,MOUNTPOINT "$TARGET_DISK" | grep -v '^$')
 for mnt in "${mounted[@]}"; do
@@ -74,57 +77,69 @@ rm -rfv "$INST_PTH"
 mkdir -p "$INST_PTH"
 sleep 1
 
-# -------------------------- Install latest debootstrap (YOUR WAY) ---
-log "Downloading latest debootstrap"
-sleep 1
-mkdir -p "$INST_PTH/work"
-cd "$INST_PTH/work"
-
-DEBOOT_STRP=$(wget -qO- http://ftp.debian.org/debian/pool/main/d/debootstrap | grep "all.deb" | sort -V | tail -1 | sed -e 's:.*a href="::' -e 's:.>.*::')
-
-wget "http://ftp.debian.org/debian/pool/main/d/debootstrap/$DEBOOT_STRP"
-dpkg -i "$DEBOOT_STRP" >/dev/null
-sleep 1
-
 # -------------------------- Partition with cfdisk ------------------
-log "Launching parted on $TARGET_DISK"
+echo
+read -rp "There will be multiple partitions added. / /home /boot /boot/efi /misc. Let's figure out what size you want those to be. The total size of the $TARGET_DISK is ${TTL_SIZE}G.
+In gigs, 
+How big for root(ex. 30): " rt_sz
+echo
+read -rp "How big for /home(ex. 60): " hm_sz
+echo
+read -rp "How big for /boot(kernel storage, ex. 4): " bt_sz
+RMN_SIZE=$(echo "scale=2; $TTL_SIZE - ($rt_sz + $hm_sz + $bt_sz + 1)" | bc)
+echo
+echo "The remaining $RMN_SIZE, will be for /misc"
 sleep 1
-read -rsp "Press ENTER when ready to launch parted a setup all partitions..."
+echo
+if ! ask "Is this correct:
+    /boot = $bt_sz
+    /home = $hm_sz
+    /(root) = $rt_sz
+    /misc = $RMN_SIZE
+    "; then
+    echo
+    sleep 1
+    echo
+    echo "Exiting script...."
+    sleep 1
+    exit
+fi
+
+# convert input to MiB
+rt_sz_mib=$(($rt_sz * 1024))
+hm_sz_mib=$(($hm_sz * 1024))
+bt_sz_mib=$(($bt_sz * 1024))
+log "Launching parted on $TARGET_DISK"
 wipefs -a "$TARGET_DISK"
 sleep 1
 
-# Define partition END POINTS in GiB
-# E.g., The root partition will end at the 30GiB mark.
-BIOS_GRUB_END=10MiB # legacy boot
-EFI_END=1 # ~550 MiB EFI boot
-BOOT_END=4
-ROOT_END=35
-HOME_END=95
-# MISC uses the rest (100%)
-wipefs -a "$TARGET_DISK"
-parted "$TARGET_DISK" --script \
+# Define partition END POINTS in GiB (Cumulative Sizes using bc)
+# The user input variables $rt_sz, $hm_sz, $bt_sz hold the *size* of the partition in GiB
+
+# Define partition END POINTS in MiB (Cumulative Integers)
+BIOS_GRUB_MiB_SIZE=10
+EFI_MiB_SIZE=550
+
+# Use original variable names for the final CUMULATIVE MiB END points
+BIOS_GRUB_END=$BIOS_GRUB_MiB_SIZE
+EFI_END=$((BIOS_GRUB_END + EFI_MiB_SIZE))
+BOOT_END=$((EFI_END + bt_sz_mib))
+ROOT_END=$((BOOT_END + rt_sz_mib))
+HOME_END=$((ROOT_END + hm_sz_mib))
+
+parted "$TARGET_DISK" --script --align optimal \
   mklabel gpt \
-  mkpart primary 1MiB "$BIOS_GRUB_END" \
-  set 1 bios_grub on \
-  name 1 "BIOS_GRUB" \
-  mkpart primary fat32 "$BIOS_GRUB_END" "$EFI_END"GiB \
-  set 2 esp on \
-  set 2 boot on \
-  name 2 EFI \
-  mkpart primary ext4 "$EFI_END"GiB "$BOOT_END"GiB \
-  name 3 BOOT \
-  mkpart primary ext4 "$BOOT_END"GiB "$ROOT_END"GiB \
-  name 4 ROOT \
-  mkpart primary ext4 "$ROOT_END"GiB "$HOME_END"GiB \
-  name 5 HOME \
-  mkpart primary ext4 "$HOME_END"GiB 100% \
-  name 6 MISC \
+  mkpart primary 1MiB "${BIOS_GRUB_END}MiB" set 1 bios_grub on name 1 "BIOS_GRUB" \
+  mkpart primary fat32 "${BIOS_GRUB_END}MiB" "${EFI_END}MiB" set 2 esp on set 2 boot on name 2 EFI \
+  mkpart primary ext4 "${EFI_END}MiB" "${BOOT_END}MiB" name 3 BOOT \
+  mkpart primary ext4 "${BOOT_END}MiB" "${ROOT_END}MiB" name 4 ROOT \
+  mkpart primary ext4 "${ROOT_END}MiB" "${HOME_END}MiB" name 5 HOME \
+  mkpart primary ext4 "${HOME_END}MiB" 100% name 6 MISC \
   print
 
 sleep 1
 
 log "Current partition table:"
-sleep 1
 lsblk -f "$TARGET_DISK"
 sleep 1
 
@@ -138,7 +153,7 @@ echo 'y' | mkfs.ext4 "$TARGET_DISK"5  # This is your HOME (/home)
 echo 'y' | mkfs.ext4 "$TARGET_DISK"6  # This is your MISC (/misc)
 
 # -------------------------- Choose root partition ------------------
-log "Selecting root partition as "$TARGET_DISK"2"
+log "Selecting root partition as "$TARGET_DISK"4"
 sleep 1
 lsblk -f "$TARGET_DISK"
 sleep 1
@@ -149,7 +164,7 @@ ROOT_PART="$TARGET_DISK"4
 HOME_PART="$TARGET_DISK"5
 MISC_PART="$TARGET_DISK"6
 # -------------------------- Debootstrap -----------------------------
-log "Running debootstrap (this takes 5–15 minutes)"
+log "Mounting devices..."
 sleep 1
 mount "$ROOT_PART" "$INST_PTH"
 mount "$HOME_PART" "$INST_PTH/home" --mkdir
@@ -158,6 +173,19 @@ mount "$UEFI_PART" "$INST_PTH/boot/efi" --mkdir
 mount "$MISC_PART" "$INST_PTH/misc" --mkdir
 sleep 1
 
+# -------------------------- Install latest debootstrap (YOUR WAY) ---
+log "Downloading latest debootstrap"
+sleep 1
+mkdir -p "$INST_PTH/work"
+cd "$INST_PTH/work"
+
+DEBOOT_STRP=$(wget -qO- http://ftp.debian.org/debian/pool/main/d/debootstrap | grep "all.deb" | sort -V | tail -1 | sed -e 's:.*a href="::' -e 's:.>.*::')
+
+wget "http://ftp.debian.org/debian/pool/main/d/debootstrap/$DEBOOT_STRP"
+dpkg -i "$DEBOOT_STRP" >/dev/null
+sleep 1
+
+log "Running debootstrap (this takes 5–15 minutes)"
 #Show curretn mount pouints
 log "Current mounts:"
 lsblk -f
