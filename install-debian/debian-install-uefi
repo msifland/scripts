@@ -53,6 +53,16 @@ mapfile -t mounted < <(lsblk -nrp -o NAME,MOUNTPOINT "$TARGET_DISK" | grep -v '^
 for mnt in "${mounted[@]}"; do
     umount "${mnt%% *}" 2>/dev/null || true
 done
+umount -R "$INST_PTH/home" || true
+umount -R "$INST_PTH/boot/efi" || true
+umount -R "$INST_PTH/boot" || true
+umount -R "$INST_PTH/misc" || true
+umount -R "$INST_PTH/proc" || true
+umount -R "$INST_PTH/dev/pts" || true
+umount -R "$INST_PTH/dev" || true
+umount -R "$INST_PTH/sysfs" || true
+umount -R "$INST_PTH/sys" || true
+umount -R "$INST_PTH" || true
 
 # Optional wipe
 log "Wiping first 10MB of $TARGET_DISK (secure headers)"
@@ -85,11 +95,11 @@ sleep 1
 
 # Define partition END POINTS in GiB
 # E.g., The root partition will end at the 30GiB mark.
-BIOS_GRUB_END=10MiB
-EFI_END=1 # ~550 MiB
-BOOT_END=5  # Ends at 30GiB
-ROOT_END=35 # Ends at 90GiB (giving 60GiB to home)
-HOME_END=95  # Ends at 94GiB (giving 4GiB to boot)
+BIOS_GRUB_END=10MiB # legacy boot
+EFI_END=1 # ~550 MiB EFI boot
+BOOT_END=4
+ROOT_END=35
+HOME_END=95
 # MISC uses the rest (100%)
 wipefs -a "$TARGET_DISK"
 parted "$TARGET_DISK" --script \
@@ -229,15 +239,21 @@ echo "###### msifland custom install script ######" > "$INST_PTH/etc/fstab" || t
 
 # --- Add the EFI partition ---
 EFI_UUID=$(blkid -s UUID -o value "${TARGET_DISK}2")  || true
-echo "UUID=$EFI_UUID /boot/efi vfat umask=0077 0 1" >> "$INST_PTH/etc/fstab" || true
+echo "UUID=$EFI_UUID    /boot/efi    vfat    umask=0077            0   1" >> "$INST_PTH/etc/fstab" || true
 
 # --- Define remaining partitions to loop through ---
 # Array format: "PartitionNumber MountPoint FSType Options DumpPass"
+# Reference:
+#UEFI_PART="$TARGET_DISK"2
+#BOOT_PART="$TARGET_DISK"3
+#ROOT_PART="$TARGET_DISK"4
+#HOME_PART="$TARGET_DISK"5
+#MISC_PART="$TARGET_DISK"6
 PARTITIONS=(
-    "3 / ext4 errors=remount-ro 0 1"
-    "4 /home ext4 defaults 0 2"
-    "5 /boot ext4 defaults 0 2"
-    "6 /misc ext4 defaults 0 2"
+    "3  /boot    ext4    errors=remount-ro   0   1"
+    "4  /        ext4    defaults            0   2"
+    "5  /home    ext4    defaults            0   2"
+    "6  /misc    ext4    defaults            0   2"
 )
 
 # --- Loop and add entries ---
