@@ -3,7 +3,7 @@
 # debian-install – Full Debian MATE System Installer to Disk
 # With Your Original sed + All sleep Pauses – 2025
 # ===================================================================
-#set -euo pipefail
+set -euo pipefail
 IFS=$'\n\t'
 
 # -------------------------- Config ----------------------------------
@@ -240,30 +240,20 @@ PARTITIONS=(
     "6 /misc ext4 defaults 0 2"
 )
 
+# --- Loop and add entries ---
 for entry in "${PARTITIONS[@]}"; do
-    # Split the $entry into variables using array slicing
-    # We only need the first element (the partition number)
-    
-    # Get the partition number reliably
-    part_num=$(echo "$entry" | awk '{print $1}')
-    
-    # Get the rest of the variables for the echo statement
-    read -r -a entry_parts <<< "$entry"
-    mount_point="${entry_parts[1]}"
-    fs_type="${entry_parts[2]}"
-    options="${entry_parts[3]}"
-    dump_pass="${entry_parts[4]}"
-    
-    # Get the UUID for the current partition (FIXED LINE WITH CURLY BRACES)
+    # VITAL FIX: Temporarily set IFS to allow 'read' to split by spaces
+    IFS=' ' read -r part_num mount_point fs_type options dump_pass <<< "$entry"
+
+    # Get the UUID for the current partition (use curly braces for safety)
     UUID=$(blkid -s UUID -o value "${TARGET_DISK}${part_num}")
 
     # Append the fstab entry using UUID
     if [ -n "$UUID" ]; then
         echo "UUID=$UUID $mount_point $fs_type $options $dump_pass" >> "$INST_PTH/etc/fstab"
     else
-        echo "Warning: Could not find UUID for ${TARGET_DISK}${part_num}. Check blkid output."
-        # Add this exit command back in once you have verified the syntax is fixed
-        # exit 3 
+        echo "Warning: Could not find UUID for ${TARGET_DISK}${part_num} ($mount_point). Check blkid output."
+        exit 3 # Fail hard if a UUID is missing
     fi
 done
 
@@ -302,7 +292,7 @@ echo "Done cloning pernal git repos"
 echo "Copying configuration files..."
 rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
     "$HOME_DIR/.config"     "$USR_HOME/"
-rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/logs,share/lutris,share/Steam,share/Trash} \
+rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/logs,share/lutris,share/skypeweb,share/Steam,share/Trash} \
     "$HOME_DIR/.local"      "$USR_HOME/"
 rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
     "$HOME_DIR/.cache"      "$USR_HOME/"
