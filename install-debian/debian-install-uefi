@@ -323,26 +323,39 @@ done
 
 # --------------------- Copy personal files (optional) -------------
 cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
-echo "Copying personal files using git clone..."
-cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
-cd $USR_HOME
-/bin/bash git-clone-my-repos
-rm -f "git-clone-my-repos"
-cd "$INST_PTH"
-echo
-echo "Done cloning pernal git repos"
+read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
+if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS}$ ]]; then
+    echo "Copying personal files using git clone..."
+    cd $USR_HOME
+    /bin/bash git-clone-my-repos
+    rm -f "git-clone-my-repos"
+    cd "$INST_PTH"
+    echo
+    echo "Done cloning pernal git repos"
+else
+    echo
+    echo "Okay, skipping personal docs."
+fi
+sleep 1
 
 # --------------------- Copy dotfiles/configs (optional) -----------
-echo "Copying configuration files..."
-rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
-    "$HOME_DIR/.config"     "$USR_HOME/"
-rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/logs,share/lutris,share/skypeweb,share/Steam,share/Trash} \
-    "$HOME_DIR/.local"      "$USR_HOME/"
-rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
-    "$HOME_DIR/.cache"      "$USR_HOME/"
-for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
-    [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
-done
+read -rp "Would you like to add you config files(.conig, .local, .cache, etc>)[y/N]: " add_confs
+if [[ "$add_confs" =~ ^[yY]|[yY][eE][sS}$ ]]; then
+    echo "Copying configuration files..."
+    rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
+        "$HOME_DIR/.config"     "$USR_HOME/"
+    rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/logs,share/lutris,share/skypeweb,share/Steam,share/Trash} \
+        "$HOME_DIR/.local"      "$USR_HOME/"
+    rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
+        "$HOME_DIR/.cache"      "$USR_HOME/"
+    for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
+        [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
+    done
+else
+    echo
+    echo "Okay, skipping config files."
+fi
+sleep 1
 
 # --------------------- Fix permissions -----------------------------
 chown -R "$usrname:$usrname" "$USR_HOME"
