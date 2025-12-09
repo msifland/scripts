@@ -106,6 +106,25 @@ echo "Creating grub.cfg with templates inside to customize. Simply paste the iso
 sudo tee "$mount_efi"/boot/grub/grub.cfg >/dev/null <<EOF
 set timeout=10
 set default=0
+
+# Set preferred resolution (e.g., 1024x768). Add 'auto' as a fallback.
+set gfxmode=1024x768,800x600,auto
+set gfxpayload=keep
+# Load all video modules
+insmod all_video
+insmod gfxterm
+insmod vbe
+insmod efi_gop
+insmod efi_uga
+terminal_output gfxterm
+insmod font
+# Check for the font file location (standard location is /boot/grub/fonts/)
+if loadfont /boot/grub/fonts/unicode.pf2; then
+    set locale_dir=/boot/grub/locale
+    set lang=en_US
+fi
+
+# Normal mods
 insmod loopback
 insmod iso9660
 insmod exfat 
@@ -122,11 +141,13 @@ set persistent_iso="/isos/MSI_live-image-amd64.hybrid.iso"
 
 
 # --- Static ISO Entry (Persistent ONLY for this ISO) ---
-menuentry "MSI_live-image-amd64.hybrid.iso (Persistent)" {
-    search --no-floppy --fs-uuid --set=root \$uuid
-    set isofile=\$persistent_iso
-    loopback loop \$isofile
-    linux (loop)/live/vmlinuz rw findiso=\$isofile boot=live config persistence persistence-label=casper-rw persistence-storage=filesystem
+menuentry "MSI_live-image-amd64.hybrid.iso - (Main-Persist)" {
+    # Format for Debian
+    search --no-floppy --fs-uuid --set=root $uuid
+    set isofile=$persistent_iso
+    search --set -f $isofile
+    loopback loop $isofile
+    linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config persistence persistence-label=casper-rw persistence-storage=filesystem live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
     initrd (loop)/live/initrd.img
 }
 menuentry "----------------------------------------" { true }
@@ -162,6 +183,11 @@ menuentry "----------------------------------------" { true }
 #     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop
 #     initrd (loop)/arch/boot/x86_64/initramfs-linux.img
 # }
+
+menuentry "----------------------------------------" { true }
+
+menuentry "Reboot System" { reboot }
+menuentry "Power off" { halt }
 EOF
 sleep 1
 

@@ -65,6 +65,17 @@ apt install -y --no-install-recommends \
     linux-image-amd64 linux-headers-amd64 \
     firmware-linux firmware-linux-nonfree firmware-misc-nonfree || true
 
+# -------------------------- Your big package list ------------------
+log "Installing your custom package selection"
+sleep 1
+if [[ -f "$PACKLIST" ]]; then
+    echo "Scanning packages, hold please..."
+    PGK_LIST=$(cat "$PACKLIST" | xargs apt list 2>/dev/null | awk -F'/' '/\//{print $1}')
+    apt install -y $PGK_LIST
+    #apt install -y $(grep -vE "^\s*($|#)" "$PACKLIST")
+else
+    error "Package list not found: $PACKLIST"
+fi
 
 # -------------------------- Root password --------------------------
 log "Setting root password"
@@ -110,6 +121,20 @@ usermod -aG sudo,adm,cdrom,floppy,audio,dip,video,plugdev,netdev "$username"
 # Save username for the outer script
 echo "$username" > /usrnme.txt
 
+# -------------------------- Latest non-free firmware (testing) ----
+log "Installing latest unofficial non-free firmware (testing)"
+sleep 1
+mkdir -p /tmp/firmware && cd /tmp/firmware
+wget -q http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
+tar -xzf firmware.tar.gz
+dpkg -i ./*.deb || apt install -f -y  # fix any missing deps
+cd /; rm -rf /tmp/firmware
+
+#---------------Install lates google chrome--------------------------
+log "Installing latest Google Chrome Stable on system"
+sleep 1
+/bin/sh /google-chrome-latest-install || true
+rm google* || true
 
 # -------------------------- Final cleanup --------------------------
 log "Final system upgrade & cleanup"

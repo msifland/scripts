@@ -104,14 +104,33 @@ done
 echo "Creating grub.cfg with templates inside to customize. Simply paste the iso file names in the spots below, path show be fine, only names to paste."
 cat <<EOF | sudo tee "$mntpnt/boot/grub/grub.cfg" >/dev/null
 # Dynamic GRUB configuration generated for multi-ISO boot
-set timeout=12
+set timeout=10
 set default=0
 
-insmod part_msdos
-insmod ext2
+# Set preferred resolution (e.g., 1024x768). Add 'auto' as a fallback.
+set gfxmode=1024x768,800x600,auto
+set gfxpayload=keep
+# Load all video modules
+insmod all_video
+insmod gfxterm
+insmod vbe
+insmod efi_gop
+insmod efi_uga
+terminal_output gfxterm
+insmod font
+# Check for the font file location (standard location is /boot/grub/fonts/)
+if loadfont /boot/grub/fonts/unicode.pf2; then
+    set locale_dir=/boot/grub/locale
+    set lang=en_US
+fi
+
+# Normal mods
 insmod loopback
 insmod iso9660
+insmod exfat 
+insmod part_gpt
 insmod all_video
+insmod ext2
 insmod regexp
 insmod echo
 
@@ -121,7 +140,7 @@ set uuid=PUT_UUID_HERE
 # Your one specific persistent ISO (you still need to handle this separately if you want persistence)
 set persistent_iso="/isos/MSI_live-image-amd64.hybrid.iso"
 
-menuentry "MSI_live-image-amd64.hybrid.iso" {
+menuentry "MSI_live-image-amd64.hybrid.iso - (Main-Persist)" {
     # Format for Debian
     search --no-floppy --fs-uuid --set=root $uuid
     set isofile=$persistent_iso
