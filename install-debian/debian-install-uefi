@@ -339,7 +339,7 @@ fi
 sleep 1
 
 # --------------------- Copy dotfiles/configs (optional) -----------
-read -rp "Would you like to add you config files(.conig, .local, .cache, etc>)[y/N]: " add_confs
+read -rp "Would you like to add you config files(.conig, .local, .cache, etc.)[y/N]: " add_confs
 if [[ "$add_confs" =~ ^[yY]|[yY][eE][sS}$ ]]; then
     echo "Copying configuration files..."
     rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
