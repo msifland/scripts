@@ -15,7 +15,7 @@ fi
 # -------------------------- Config ----------------------------------
 INST_PTH="/mnt/deb-inst"                # chroot location
 export HOME_DIR="$HOME"                        # your current $HOME
-CONFIGS_DIR="$HOME_DIR/MSI_live-build/my_configs"
+CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
 SCRIPTS_DIR="$HOME_DIR/scripts"
 CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-continue-iso-small"
 LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-make-live-iso"

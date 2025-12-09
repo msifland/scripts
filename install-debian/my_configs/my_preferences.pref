@@ -1,0 +1,28 @@
+# You will probably question this from time to time Michael, but this is the way it should be for running the testing release.
+# release- a=suite, o=proper name(Debian or Kali), n=codename(bookworm or sid), v=version(5.2*), c=component(contrib or main), l=label(Debian)
+# Priority- 1 to 100 only install if no other version. Above 1000 keeps only the specified version, see 'bash' below. 
+# Use command: apt-cache policy to get release letters and names.
+
+Package: *
+Pin: release a=testing
+Pin-Priority: 50
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 900
+
+Package: *
+Pin: release a=stable
+Pin-Priority: 40
+
+Package: *
+Pin: release a=kali-rolling
+Pin-Priority: 10
+
+Package: linux-image*
+Pin: release a=stable
+Pin-Priority: 950
+
+Package: linux-headers*
+Pin: release a=stable
+Pin-Priority: 950

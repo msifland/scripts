@@ -9,7 +9,7 @@ IFS=$'\n\t'
 # -------------------------- Config ----------------------------------
 export HOME_DIR="$HOME"
 INST_PTH="/mnt/deb-inst"
-CONFIGS_DIR="$HOME_DIR/MSI_live-build/my_configs"
+CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
 SCRIPTS_DIR="$HOME_DIR/scripts"
 CHROOT_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-continue"
 PACKLIST="$CONFIGS_DIR/my_packs.list.chroot"
