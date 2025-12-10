@@ -178,4 +178,4 @@ sudo gufw
 echo
 echo "Also opening up a web page for router setting, set up port forwarding in your router to the Port $PRT."
 sleep 3
-detach /usr/bin/chromium
+setsid /usr/bin/chromium

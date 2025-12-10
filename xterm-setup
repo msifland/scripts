@@ -16,7 +16,7 @@ if [[ ! -f $X_FILE ]]; then
 	touch $X_FILE
 	sleep 2
 fi
-if grep -wq "xterm\*geometry: 80x40" $X_FILE; then
+if grep -wq "xterm\*geometry: 100x60" $X_FILE; then
 	echo
 	echo "${ILCOLOR4}xterm*geometry: 80x40 is already added to X_FILE. Finishing up. . .${ILRESTORE}"
 	sleep 2
