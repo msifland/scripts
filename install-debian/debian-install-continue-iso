@@ -212,8 +212,30 @@ apt clean
 # Remove annoying screensaver if present
 apt purge -y mate-screensaver 2>/dev/null || true
 
-# Install GRUB (needed for live-build later)
-apt install -y --no-install-recommends grub2
+log "Installing GRUB bootloader packages..."
+# We install both sets of binaries so the outer script can choose UEFI or BIOS
+apt install -y --no-install-recommends \
+    grub2-common grub-pc-bin grub-efi-amd64 grub-efi-amd64-signed shim-signed isolinux
+
+# --- ADDED: Install UEFI GRUB from INSIDE CHROOT ---
+log "Installing UEFI GRUB using --removable flag (inside chroot)"
+
+# Note: Inside the chroot, /boot/efi is the correct, canonical path.
+grub-install --target=x86_64-efi \
+    --efi-directory=/boot/efi \
+    --removable \
+    --bootloader-id=Debian_Hybrid_UEFI \
+    --recheck
+
+# --- ADDED: Install Legacy BIOS/MBR GRUB from INSIDE CHROOT ---
+log "Installing Legacy BIOS MBR GRUB (inside chroot)"
+
+# grub-install inside chroot can identify the correct disk when run this way
+# We don't specify the disk device path here, grub handles it internally
+grub-install --target=i386-pc \
+    "$TARGET_DISK" # NOTE: this var passed from main script
+
+update-grub
 
 log "Chroot setup complete! Returning to host script..."
 sleep 1

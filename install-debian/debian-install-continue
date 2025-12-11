@@ -203,7 +203,7 @@ apt purge -y mate-screensaver 2>/dev/null || true
 log "Installing GRUB bootloader packages..."
 # We install both sets of binaries so the outer script can choose UEFI or BIOS
 apt install -y --no-install-recommends \
-    grub2-common grub-pc-bin grub-efi-amd64 grub-efi-amd64-signed shim-signed
+    grub2-common grub-pc-bin grub-efi-amd64 grub-efi-amd64-signed shim-signed isolinux
 
 # --- ADDED: Install UEFI GRUB from INSIDE CHROOT ---
 log "Installing UEFI GRUB using --removable flag (inside chroot)"
