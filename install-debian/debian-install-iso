@@ -128,7 +128,7 @@ install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-
 # --------------------- Chroot and finish install ------------------
 log "Entering chroot to finish package installation..."
 sleep 1
-chroot $INST_PTH /bin/bash -i -c "export TARGET_DISK='$TARGET_DISK'; source /debian-install-continue-iso"
+chroot $INST_PTH /bin/bash -i -c "source /debian-install-continue-iso"
 
 # Cleanup chroot helper files
 rm -f "$INST_PTH"/{debian-install-continue-iso,my_packs.list.chroot}
