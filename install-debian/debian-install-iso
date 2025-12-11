@@ -48,7 +48,18 @@ sleep 1
 for dir in "$INST_PTH"/{proc,sys,dev/pts,dev}; do
     umount "$dir" 2>/dev/null || true
 done
-umount "$INST_PTH" 2>/dev/null || true
+umount -R "$INST_PTH" 2>/dev/null || true
+umount -R "$INST_PTH/home" || true
+umount -R "$INST_PTH/boot/efi" || true
+umount -R "$INST_PTH/boot" || true
+umount -R "$INST_PTH/misc" || true
+umount -R "$INST_PTH/proc" || true
+umount -R "$INST_PTH/dev/pts" || true
+umount -R "$INST_PTH/dev" || true
+umount -R "$INST_PTH/sysfs" || true
+umount -R "$INST_PTH/sys" || true
+umount -R "$INST_PTH" || true
+
 rm -rfv "$INST_PTH"
 sleep 1
 mkdir -pv "$INST_PTH"
