@@ -7,7 +7,7 @@ sleep 1
 if ! dpkg --get-selections | awk '{print $1}' | grep -q "conky"; then
 	echo "conky not found, installing now. . ."
 	sleep 1
-	sudo apt install -y conky
+	sudo apt install -y conky-all
 else
 	echo "conky found."
 	sleep 1
