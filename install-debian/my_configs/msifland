@@ -1,5 +1,0 @@
-msifland        ALL=(ALL:ALL) ALL
-
-Defaults	env_keep+="HOME"
-
-Defaults timestamp_timeout=-1

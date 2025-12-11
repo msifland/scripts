@@ -6,11 +6,9 @@ echo
 echo "This scripts is going to format a usb drive or partition. . ."
 echo
 echo
-sleep 1
-read -p "Would you like to continue[y/n]: " yn_con
-if [[ ! $yn_con = "y" ]]; then
-	exit
-fi
+sleep 3
+
+echo
 function start(){
 	# Show blocks on device and ask what block you would like to use.
 	lsblk
@@ -24,7 +22,7 @@ function start(){
 	# Check if block exists.
 	if [[ -b $DEVBLOCK ]]; then
 		if [[ "$YN" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-			read -p "Would you like to label the new device? " LBL_YN
+			read -p "Would you like to label the new device?[y/N] " LBL_YN
 			if [[ "$LBL_YN" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 				read -p "What would you like to lable it?(ex. MSI_ARCH) " LBL
 			fi
@@ -34,7 +32,7 @@ function start(){
 			echo
 			sleep 1
 			# Reset usb ports.
-			sudo /home/msifland/scripts/reset-usb
+			sudo /home/msifland/scripts/usb-reset
 			for blk in $(df -h | grep "$DEVBLOCK" | awk '{ print $1 }'); do
 				sudo umount $blk
 			done
@@ -46,12 +44,27 @@ function start(){
 			sudo wipefs --all --force $DEVBLOCK
 			# Format to vfat or ext4 and lable and show progress.
 			echo
-			read -p "What filesystem type would you like to format to(ext4, ext2, vfat, etc.)? " TYP
-			sudo mkfs -t "$TYP" -L "$LBL" $DEVBLOCK | sudo pv -trebI
+			read -p "What filesystem type would you like to format to(options are: ext4, ext2, vfat, msdos, and ext2)? " TYP
+			function stk_frmt(){
+				case $TYP in
+					ext4|ext2)	
+						sudo mkfs."$TYP" -L "$LBL" $DEVBLOCK | sudo pv -trebI
+					;;
+					vfat|msdos)
+						sudo mkfs."$TYP" -n "$LBL" $DEVBLOCK | sudo pv -trebI
+					;;
+					*)
+						echo
+						echo "Incorrect format, try again..."
+						stk_frmt
+					;;
+				esac
+			}
+			stk_frmt
 			sudo hdparm -r0 $DEVBLOCK
 			echo
 			sleep 1
-			sudo $HOME/scripts/reset-usb
+			sudo $HOME/scripts/usb-reset
 			while [[ ! -b $DEVBLOCK ]]; do
 				echo "Waiting for usb devices to be reset. . ."
 				sleep 2

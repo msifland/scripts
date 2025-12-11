@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Title      : clone-drive.sh
+# Description: Clone an entire disk (including MBR/GPT, all partitions) to another disk
+# Author     : Your Name
+# Usage      : sudo ./clone-drive.sh /dev/sdX /dev/sdY
+# WARNING    : THIS WILL COMPLETELY OVERWRITE THE TARGET DRIVE!
+# =============================================================================
+
+set -euo pipefail
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# ----------------------------- Safety Checks ---------------------------------
+if [[ $EUID -ne 0 ]]; then
+    echo -e "${RED}This script must be run as root (use sudo)${NC}"
+    exit 1
+fi
+
+if [[ $# -ne 2 ]]; then
+    echo "Usage: sudo $0 <source-drive>(drive to clone) <target-drive>(drive to clone to)"
+    echo "Example: sudo $0 /dev/sda /dev/sdb"
+    exit 1
+fi
+
+SRC="$1"
+DST="$2"
+
+# Check both devices actually exist
+for dev in "$SRC" "$DST"; do
+    if [[ ! -b "$dev" ]]; then
+        echo -e "${RED}Error: $dev is not a block device${NC}"
+        exit 1
+    fi
+done
+
+# Prevent common disasters (never clone TO your running system disk)
+ROOT_DEV=$(lsblk -no PKNAME $(findmnt -n -o SOURCE /) 2>/dev/null || echo "")
+if [[ "$DST" == "/dev/$ROOT_DEV" || "$DST" == "$(readlink -f /dev/disk/by-uuid/$(findmnt -n -o UUID /))" ]]; then
+    echo -e "${RED}FATAL: Target drive appears to be your running system disk!${NC}"
+    echo "Aborting to prevent catastrophe."
+    exit 1
+fi
+
+# Show info and ask for confirmation
+echo "=========================================="
+echo -e "${YELLOW}WARNING: This will ERASE ALL DATA on $DST${NC}"
+echo "=========================================="
+echo "Source drive : $SRC  →  $(lsblk -dno SIZE,ROTA,MODEL $SRC | tr '\n' ' ')"
+echo "Target drive : $DST  →  $(lsblk -dno SIZE,ROTA,MODEL $DST | tr '\n' ' ')"
+echo ""
+lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT "$SRC"
+echo ""
+echo -e "${YELLOW}Target drive $DST will be COMPLETELY OVERWRITTEN.${NC}"
+echo -n "Type the word 'yes' to continue: "
+read confirm
+if [[ "$confirm" == "yes" ]] || { echo "Aborted."; exit 1; }
+
+# ----------------------------- Unmount target --------------------------------
+echo "Unmounting any partitions on $DST just in case..."
+umount "${DST}"* 2>/dev/null || true
+
+# ----------------------------- Choose cloning tool ---------------------------
+if command -v ddrescue >/dev/null 2>&1; then
+    CLONER="ddrescue"
+    echo -e "${GREEN}Using ddrescue (recommended – handles errors gracefully)${NC}"
+else
+    CLONER="dd"
+    echo -e "${YELLOW}ddrescue not found → falling back to plain dd${NC}"
+fi
+
+# ----------------------------- Do the clone ---------------------------------
+echo "Starting clone $SRC → $DST ... This can take hours."
+
+if [[ "$CLONER" == "ddrescue" ]]; then
+    # Two-pass is safest: first pass with --no-scrape, then retry bad areas
+    ddrescue -f -n "$SRC" "$DST" clone.log
+    echo "First pass finished. Retrying bad sectors..."
+    ddrescue -d -r3 "$SRC" "$DST" clone.log
+    echo -e "${GREEN}Clone completed successfully with ddrescue!${NC}"
+else
+    # Plain dd (much riskier if there are bad blocks)
+    dd if="$SRC" of="$DST" bs=4M conv=noerror,sync status=progress
+    echo -e "${GREEN}Clone completed with dd!${NC}"
+fi
+
+# Force kernel to re-read partition table
+partprobe "$DST" 2>/dev/null || sync
+
+echo ""
+echo "================================================================================"
+echo -e "${GREEN}Disk cloning finished!${NC}"
+echo "You can now shut down, swap drives, or boot from the new one."
+echo "If it was a bootable OS drive, you may need to repair the bootloader on the target."
+echo "================================================================================"

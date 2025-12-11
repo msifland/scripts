@@ -13,8 +13,8 @@ if [[ "$EUID" -ne 0 ]]; then
 fi
 
 # -------------------------- Config ----------------------------------
-INST_PTH="/mnt/deb-inst"                # chroot location
-export HOME_DIR="$HOME"                 # your current $HOME
+export HOME_DIR="$HOME"
+INST_PTH="$HOME_DIR/tmp/deb-inst"
 CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
 SCRIPTS_DIR="$HOME_DIR/scripts"
 CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-continue-iso"
@@ -128,7 +128,7 @@ install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-
 # --------------------- Chroot and finish install ------------------
 log "Entering chroot to finish package installation..."
 sleep 1
-chroot "$INST_PTH" /bin/bash -i -c "source /debian-install-continue-iso"
+chroot $INST_PTH /bin/bash -i -c "export TARGET_DISK='$TARGET_DISK'; source /debian-install-continue-iso"
 
 # Cleanup chroot helper files
 rm -f "$INST_PTH"/{debian-install-continue-iso,my_packs.list.chroot}
@@ -151,31 +151,62 @@ done
 # --------------------- Copy personal files (optional) -------------
 echo
 echo
-install -Dm755 "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
-echo "Copying your personal files (Documents, scripts, Projects, etc.)"
-echo "Copying personal files using git clone..."
-sleep 3
-cd $USR_HOME
-/bin/bash git-clone-my-repos
-rm -f "git-clone-my-repos"
-cd "$INST_PTH"
-echo
-log "Done cloning pernal git repos"
+cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
+if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
+    echo "Copying personal files using git clone..."
+    cd $USR_HOME
+    /bin/bash git-clone-my-repos
+    rm -f "git-clone-my-repos"
+    cd "$INST_PTH"
+    echo
+    echo "Done cloning pernal git repos"
+else
+    echo
+    echo "Okay, skipping personal docs."
+fi
+sleep 1
 
 # --------------------- Copy dotfiles/configs (optional) -----------
 echo
 echo
-echo "Copying config files (.config, .local, .bashrc, etc.)"
-sleep 3
-rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} "$HOME_DIR/.config" "$USR_HOME/"
-rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/lutris,share/logs,share/skypeweb,share/Steam,share/Trash} "$HOME_DIR/.local" "$USR_HOME/"
-rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi} "$HOME_DIR/.cache" "$USR_HOME/"
+read -rp "Would you like to add you config files(.conig, .local, .cache, etc.)[y/N]: " add_confs
+if [[ "$add_confs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
+    echo "Copying configuration files..."
+    rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
+        "$HOME_DIR/.config"     "$USR_HOME/"
+    rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/logs,share/lutris,share/skypeweb,share/Steam,share/Trash} \
+        "$HOME_DIR/.local"      "$USR_HOME/"
+    rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
+        "$HOME_DIR/.cache"      "$USR_HOME/"
+else
+    echo
+    echo "Okay, skipping config files."
+fi
 for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
     [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
 done
+sleep 1
 
 # --------------------- Fix permissions -----------------------------
 chown -R "$usrnme:$usrnme" "$USR_HOME"
+
+# --------------------- Add user to sudo --------------------------
+log "Adding $usrnme to sudo"
+sleep 1
+SUDO_NM_FL="$INST_PTH/etc/sudoers.d/$usrnme"
+cat <<EOF > "$SUDO_NM_FL"  &>/dev/null
+$usrnme        ALL=(ALL:ALL) ALL
+
+Defaults    env_keep+="HOME"
+
+Defaults timestamp_timeout=-1
+EOF
+# 1. Set the correct ownership (usually root:root)
+chown root:root "$SUDO_NM_FL"
+
+# 2. Set the correct permissions (Read-only for owner and group, nothing for others)
+chmod 0440 "$SUDO_NM_FL"
 
 # --------------------- Final pause ---------------------------------
 echo
@@ -191,11 +222,11 @@ rm -rf "$INST_PTH/usr/share/man/*"
 rm -rf "$INST_PTH//var/cache/apt/archives/*"
 rm -rf "$INST_PTH/tmp/*"
 rm -rf "$INST_PTH/var/tmp/*"
+
 # --------------------- Build the live ISO --------------------------
 echo
 log "Building the live ISO..."
 sleep 1
-install -Dm644 "$CONFIGS_DIR/msifland" "$INST_PTH/etc/sudoers.d/msifland"
 "$LIVE_BUILD_SCRIPT"   # ← your clean live-ISO script from earlier
 
 # --------------------- Clean unmount -------------------------------

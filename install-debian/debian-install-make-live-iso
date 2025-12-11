@@ -8,8 +8,8 @@ IFS=$'\n\t'                           # Safe word splitting
 # ========================== CONFIGURATION ==========================
 # Edit only these lines!
 export HOME_DIR="$HOME"
-RT_DIR="$HOME_DIR/MSI_live-build"
-CHROOT="/mnt/deb-inst"                             # Your populated chroot
+CHROOT="$HOME_DIR/tmp/deb-inst"
+RT_DIR="$HOME_DIR/MSI_live-build"t
 ISO_NAME="$RT_DIR/MSI_live-image-amd64.hybrid.iso" # Final ISO path
 OUTDIR="$RT_DIR/MSI_live-iso"                      # Temporary ISO tree
 # ==================================================================
