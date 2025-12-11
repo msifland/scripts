@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [[ ! -z $1 ]]; then
+	echo
+	echo "Going to search for installed apps with the name $1.
+			Using: apt search $1 | grep installed"
+	apt search $1 | grep installed
+else
+	echo "
+	This command shows if you have any apps installed by name.
+	Usage:
+	apps-search-installed plasma
+	apps-search-installed xfce"
+fi

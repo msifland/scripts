@@ -87,34 +87,48 @@ function dsk_chc(){
             task-mate-desktop \
             mate-desktop-environment-extra mate-desktop-environment-extras \
             mate-session-manager mate-applet-brisk-menu mate-applets \
-            mate-applets-common mate-control-center mate-control-center-common
-            #mate-backgrounds mate-calc mate-calc-common mate-common mate-core mate-desktop mate-desktop-common mate-desktop-environment mate-desktop-environment-core
+            mate-applets-common mate-control-center \
+            mate-control-center-common mate-backgrounds mate-calc \
+            mate-calc-common mate-common mate-core mate-desktop \
+            mate-desktop-common mate-desktop-environment \
+            mate-desktop-environment-core
     ;;
     2)
         echo
         echo "Installing Xfce4"
         apt install -y --no-install-recommends \
-            task-xfce-desktop xfce4-whiskermenu-plugin
+            task-xfce-desktop \
+            xfce4-whiskermenu-plugin xfce4-goodies \
+            mousepad ristretto xfburn xfce4-screenshooter xfce4-terminal \
+            xfce4-taskmanager xfce4-dict xfce4-notifyd \
+            xfce4-weather-plugin xfce4-clipman-plugin xfce4-netload-plugin \
+            xfce4-sensors-plugin thunar-archive-plugin xfce4-datetime-plugin
     ;;
     3)
         echo
         echo "Installing lxde"
         apt install -y --no-install-recommends \
             task-lxde-desktop \
-            openbox obconf gvfs-backends
+            lxde-core lxde gpicview lxappearance \
+            openbox obconf gvfs-backends lxrandr lxterminal galculator \
+            mousepad xarchiver lxsession-edit lxtask \
+            network-manager-gnome
     ;;
     4)
         echo
         echo "Installing KDE"
         apt install -y --no-install-recommends \
-            task-kde-desktop
+            task-kde-desktop \
+            kde-full plasma-pa
     ;;
     5)
         echo
         echo "Installing gnome3"
         apt install -y --no-install-recommends \
             task-gnome-desktop \
-            gnome-tweaks
+            gnome-tweaks gnome-core gnome-shell-extensions \
+            gnome-shell-extension-dashtodock \
+            gnome-shell-extension-appindicator
     ;;
     *)
         echo
@@ -200,17 +214,9 @@ log "Installing latest Google Chrome Stable on system"
 sleep 1
 /bin/sh /google-chrome-latest-install || true
 rm google* || true
-# -------------------------- Final cleanup --------------------------
-log "Final system upgrade & cleanup"
-sleep 1
-apt upgrade -y
-apt full-upgrade -y || true
-apt --fix-broken install -y || true
-apt autoremove -y
-apt clean
 
 # Remove annoying screensaver if present
-apt purge -y mate-screensaver 2>/dev/null || true
+apt purge -y mate-screensaver* 2>/dev/null || true
 
 log "Installing GRUB bootloader packages..."
 # We install both sets of binaries so the outer script can choose UEFI or BIOS
@@ -218,7 +224,27 @@ apt install -y --no-install-recommends \
     grub2-common grub-pc-bin grub-efi-amd64 grub-efi-amd64-signed shim-signed isolinux
 
 log "grub and grub-uefi with be installed to the iso later in the script with script: debian-install-make-live-iso"
+sleep 1
+echo
+read -rp "Sometime plasma-desktop gets installed because of other packages. If you didn't select to install KDE desktop, you should unintall this.
 
+Would you like to uninstall plasma-desktop?[y/N] " un_pl
+if [[ "$un_pl" =~ ^([yY]|[yY][eE][sS])$ ]]; then
+	apt purge -y plasma*
+fi
+
+# -------------------------- Final cleanup --------------------------
+log "Final system upgrade & cleanup"
+sleep 1
+apt update -y
+apt upgrade -y
+apt full-upgrade -y || true
+apt --fix-broken install -y || true
+apt autopurge -y
+apt autoclean -y
+apt clean -y
+
+echo
 log "Chroot setup complete! Returning to host script..."
 sleep 1
 exit 0

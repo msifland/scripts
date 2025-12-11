@@ -54,7 +54,7 @@ sudo apt full-upgrade -y --allow-downgrades
 # 3. Clean up
 # =============================================================================
 echo -e "\n${ILCOLOR1}Cleaning up unused packages and cache...${ILRESTORE}"
-sudo apt autoremove -y
+sudo apt autopurge -y
 sudo apt autoclean
 sudo apt clean
 

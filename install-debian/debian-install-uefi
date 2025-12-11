@@ -457,6 +457,12 @@ rm -rf "$INST_PTH/usr/share/man/*"
 rm -rf "$INST_PTH//var/cache/apt/archives/*"
 rm -rf "$INST_PTH/tmp/*"
 rm -rf "$INST_PTH/var/tmp/*"
+
+# Final clean  up
+log "Final clean up before build is complete"
+chroot $INST_PTH /bin/bash -c "apt update -y; apt upgrade -y; apt full-upgrade -y; --fix-broken install -y; apt autopurge -y; apt autoclean -y; apt clean -y; exit"
+
+
 echo
 log "Installation complete! Unmounting..."
 sleep 1

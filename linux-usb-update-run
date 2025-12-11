@@ -64,7 +64,7 @@ sudo apt upgrade -y --allow-downgrades
 sudo apt full-upgrade -y --allow-downgrades
 
 echo -e "\n${ILCOLOR1}Cleaning up...${ILRESTORE}"
-sudo apt autoremove -y
+sudo apt autopurge -y
 sudo apt clean
 sudo apt autoclean
 

@@ -78,6 +78,7 @@ isc-dhcp-client
 iw
 jfsutils
 jshon
+kexec-tools
 less
 lightdm
 lightdm-gtk-greeter
@@ -174,7 +175,6 @@ ruby-sdbm:amd64
 ruby-webrick
 ruby-xmlrpc
 screen
-sddm
 sed
 setserial
 slick-greeter

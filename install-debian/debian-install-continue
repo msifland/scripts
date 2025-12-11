@@ -99,7 +99,7 @@ function dsk_chc(){
             mousepad ristretto xfburn xfce4-screenshooter xfce4-terminal \
             xfce4-taskmanager xfce4-dict xfce4-notifyd \
             xfce4-weather-plugin xfce4-clipman-plugin xfce4-netload-plugin \
-            xfce4-sensors-plugin thunar-archive-plugin
+            xfce4-sensors-plugin thunar-archive-plugin xfce4-datetime-plugin
     ;;
     3)
         echo
@@ -108,7 +108,7 @@ function dsk_chc(){
             task-lxde-desktop \
             lxde-core lxde gpicview lxappearance \
             openbox obconf gvfs-backends lxrandr lxterminal galculator \
-            mousepad xarchiver leafpad lxsession-edit lxtask \
+            mousepad xarchiver lxsession-edit lxtask \
             network-manager-gnome
     ;;
     4)
@@ -123,7 +123,7 @@ function dsk_chc(){
         echo "Installing gnome3"
         apt install -y --no-install-recommends \
             task-gnome-desktop \
-            gnome-tweaks gnome-extra gnome-shell-extensions \
+            gnome-tweaks gnome-core gnome-shell-extensions \
             gnome-shell-extension-dashtodock \
             gnome-shell-extension-appindicator
     ;;
@@ -202,17 +202,8 @@ tar -xzf firmware.tar.gz
 dpkg -i ./*.deb || apt install -f -y  # fix any missing deps
 cd /; rm -rf /tmp/firmware
 
-# -------------------------- Final cleanup --------------------------
-log "Final system upgrade & cleanup"
-sleep 1
-apt upgrade -y
-apt full-upgrade -y || true
-apt --fix-broken install -y || true
-apt autoremove -y
-apt clean
-
 # Remove annoying screensaver if present
-apt purge -y mate-screensaver 2>/dev/null || true
+apt purge -y mate-screensaver* 2>/dev/null || true
 
 log "Installing GRUB bootloader packages..."
 # We install both sets of binaries so the outer script can choose UEFI or BIOS
@@ -238,7 +229,28 @@ grub-install --target=i386-pc \
     "$TARGET_DISK" # NOTE: this var passed from main script
 
 update-grub
+sleep 1
 
+echo
+read -rp "Sometime plasma-desktop gets installed because of other packages. If you didn't select to install KDE desktop, you should unintall this.
+
+Would you like to uninstall plasma-desktop?[y/N] " un_pl
+if [[ "$un_pl" =~ ^([yY]|[yY][eE][sS])$ ]]; then
+	apt purge -y plasma*
+fi
+
+# -------------------------- Final cleanup --------------------------
+log "Final system upgrade & cleanup"
+sleep 1
+apt update -y
+apt upgrade -y
+apt full-upgrade -y || true
+apt --fix-broken install -y || true
+apt autopurge -y
+apt autoclean -y
+apt clean -y
+
+echo
 log "Chroot phase complete – returning to main installer..."
 sleep 2
 exit 0

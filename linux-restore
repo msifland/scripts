@@ -38,7 +38,7 @@ echo $PW | sudo -S sudo apt -y full-upgrade
 echo
 echo "${ILCOLOR1}Cleaning up system. . .${ILRESTORE}"
 sleep 1
-echo $PW | sudo -S sudo apt -y autoremove
+echo $PW | sudo -S sudo apt -y autopurge
 echo $PW | sudo -S sudo apt -y clean
 echo $PW | sudo -S sudo apt -y autoclean
 echo $PW | sudo -S sudo apt -y purge

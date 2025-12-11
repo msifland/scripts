@@ -20,11 +20,11 @@ sleep 2
 # 1. Update everything first (so removals are clean)
 sudo apt update && sudo apt full-upgrade -y
 
-log "Now running apt autoremove and autoclean"
+log "Now running apt autopurge and autoclean"
 sleep 2
 # 2. Remove every package that is no longer needed
-sudo apt autoremove --purge -y
-sudo apt autoclean
+sudo apt autopurge -y
+sudo apt autoclean -y
 
 log "Removing apt config files"
 sleep 2
@@ -74,7 +74,7 @@ sudo find /var/log -type f -name "*.old" -delete
 rm -rf ~/snap ~/flatpak ~/Apps 2>/dev/null || true
 
 # 9. Reclaim space from old kernels (keeps current + one backup)
-sudo apt autoremove --purge -y         # usually removes old kernels too
+sudo apt autopurge -y         # usually removes old kernels too
 # or manually:
 
 # 10. Final sweep – show what you gained
