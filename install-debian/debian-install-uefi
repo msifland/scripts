@@ -107,12 +107,14 @@ if ask "Would you like to wipe disk or install over current partition setup?
 	echo "The remaining $RMN_SIZE, will be for /misc"
 	sleep 1
 	echo
-	if ! ask "Is this correct:
-	    /boot = $bt_sz
-	    /home = $hm_sz
-	    /(root) = $rt_sz
-	    /misc = $RMN_SIZE
-	    "; then
+	if ! ask "Planned structure:
+	
+   		/boot = $bt_sz
+    	/home = $hm_sz
+    	/(root) = $rt_sz
+    	/misc = $RMN_SIZE
+    
+    	Is this correct"; then
 	    echo
 	    sleep 1
 	    echo
@@ -460,8 +462,9 @@ rm -rf "$INST_PTH/var/tmp/*"
 
 # Final clean  up
 log "Final clean up before build is complete"
-chroot $INST_PTH /bin/bash -c "apt update -y; apt upgrade -y; apt full-upgrade -y; --fix-broken install -y; apt autopurge -y; apt autoclean -y; apt clean -y; exit"
-
+# Remove uneeded apt sources
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 -name "*mega*" -exec rm -v {} \;
+chroot $INST_PTH /bin/bash -c "apt update -y || true; apt upgrade -y || true; apt full-upgrade -y || true;apt --fix-broken install -y || true; apt autopurge -y || true; apt autoclean -y || true; apt clean -y || true; exit"
 
 echo
 log "Installation complete! Unmounting..."

@@ -5,7 +5,7 @@
 # Example use: chroot into /mnt/old-root, /backup/ubuntu-root, ~/restored-system, etc.
 # =============================================================================
 
-set -euo pipefail
+#set -euo pipefail
 shopt -s nocasematch
 
 USER="${SUDO_USER:-$(whoami)}"   # Tries to detect your real username
@@ -113,7 +113,7 @@ echo -e "${ILCOLOR2}→ Type 'exit' twice if needed when finished${ILRESTORE}\n"
 sleep 3
 
 # ----------------------------- Enter chroot -----------------------------
-sudo chroot "$CHROOT_DIR" /bin/bash -c "su - $USER"
+sudo chroot "$CHROOT_DIR"
 
 # ----------------------------- Back in live system ------------------------
 echo -e "\n${ILCOLOR2}Welcome back! All bind mounts have been automatically cleaned up.${ILRESTORE}"

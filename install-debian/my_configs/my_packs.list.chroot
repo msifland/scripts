@@ -19,8 +19,6 @@ cmake
 conky-all
 coreutils
 curl
-debian-installer
-debian-installer-launcher
 dialog
 dmidecode
 dosfstools

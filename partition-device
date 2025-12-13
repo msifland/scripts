@@ -1,0 +1,140 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+echo
+IFS=$'\n\t'
+
+# -------------------------- Helpers -------------------------------#
+log()   { echo -e "\n\033[1;36m==>\033[0m \033[1;33m$*\033[0m\n"; sleep 1; }
+error() { echo -e "\033[1;31mERROR: $*\033[0m" >&2; exit 1; }
+ask()   { read -rp "$1[y/N]: " ans; [[ "$ans" =~ ^[yY]|[yY][eE][Ss]$ ]]; }
+
+# -------------------------- Must be root --------------------------#
+[[ "$EUID" -eq 0 ]] || error "This script must be run as root!"
+
+log "This will partition a drive with 6 partitons for a uefi drive install"
+log "All data on the disk will be lost"
+if ! ask "Would you like to continue"; then
+	echo
+	echo "Exiting..."
+	sleep 1
+	exit 0
+fi
+
+# -------------------------- Select target disk --------------------#
+log "Available disks:"
+sleep 1
+lsblk -d -p -o NAME,SIZE,MODEL
+echo
+read -rp "Enter target disk (e.g. /dev/sdb): " TARGET_DISK
+[[ -b "$TARGET_DISK" ]] || error "Not a valid block device: $TARGET_DISK"
+sleep 1
+log "Showing existing partitions on $TARGET_DISK"
+lsblk $TARGET_DISK
+echo
+#-------------------Wipe or no------------------------------------#
+echo
+
+# get size of /dev/block
+BS_NM=$(basename "$TARGET_DISK")
+TTL_SIZE=$(lsblk "$TARGET_DISK" | grep -w "$BS_NM" | awk '{print $4}' | grep -oE '[0-9]+(\.[0-9]+)?')
+# Unmount anything on this disk
+mapfile -t mounted < <(lsblk -nrp -o NAME,MOUNTPOINT "$TARGET_DISK" | grep -v '^$')
+for mnt in "${mounted[@]}"; do
+    umount "${mnt%% *}" 2>/dev/null || true
+done
+umount -R "$INST_PTH/home" || true
+umount -R "$INST_PTH/boot/efi" || true
+umount -R "$INST_PTH/boot" || true
+umount -R "$INST_PTH/misc" || true
+umount -R "$INST_PTH/proc" || true
+umount -R "$INST_PTH/dev/pts" || true
+umount -R "$INST_PTH/dev" || true
+umount -R "$INST_PTH/sysfs" || true
+umount -R "$INST_PTH/sys" || true
+umount -R "$INST_PTH" || true
+
+# Optional wipe
+log "Wiping first 10MB of $TARGET_DISK (secure headers)"
+dd if=/dev/zero of="$TARGET_DISK" bs=10M count=1 status=progress
+sleep 1
+
+# -------------------------- Partition with cfdisk -----------------#
+echo
+read -rp "There will be multiple partitions added. / /home /boot /boot/efi and /misc. Let's figure out what size you want those to be. The total size of the $TARGET_DISK is ${TTL_SIZE}G.
+	In gigs, 
+	How big for root(ex. 30): " rt_sz
+echo
+read -rp "How big for /home(ex. 60): " hm_sz
+echo
+read -rp "How big for /boot(kernel storage, ex. 4): " bt_sz
+RMN_SIZE=$(echo "scale=2; $TTL_SIZE - ($rt_sz + $hm_sz + $bt_sz + 1)" | bc)
+echo
+echo "The remaining $RMN_SIZE, will be for /misc"
+sleep 1
+echo
+if ! ask "Planned structure:
+	
+    /boot = $bt_sz
+    /home = $hm_sz
+    /(root) = $rt_sz
+    /misc = $RMN_SIZE
+    
+    Is this correct"; then
+    echo
+    sleep 1
+    echo
+    echo "Exiting script...."
+    sleep 1
+    exit
+fi
+
+# convert input to MiB
+rt_sz_mib=$(($rt_sz * 1024))
+hm_sz_mib=$(($hm_sz * 1024))
+bt_sz_mib=$(($bt_sz * 1024))
+log "Launching parted on $TARGET_DISK"
+wipefs -a "$TARGET_DISK"
+sleep 1
+
+# Define partition END POINTS in GiB (Cumulative Sizes using bc)
+# The user input variables $rt_sz, $hm_sz, $bt_sz hold the *size* of the partition in GiB
+
+# Define partition END POINTS in MiB (Cumulative Integers)
+BIOS_GRUB_MiB_SIZE=10
+EFI_MiB_SIZE=550
+
+# Use original variable names for the final CUMULATIVE MiB END points
+BIOS_GRUB_END=$BIOS_GRUB_MiB_SIZE
+EFI_END=$((BIOS_GRUB_END + EFI_MiB_SIZE))
+BOOT_END=$((EFI_END + bt_sz_mib))
+ROOT_END=$((BOOT_END + rt_sz_mib))
+HOME_END=$((ROOT_END + hm_sz_mib))
+
+parted "$TARGET_DISK" --script --align optimal \
+	  mklabel gpt \
+	  mkpart primary 1MiB "${BIOS_GRUB_END}MiB" set 1 bios_grub on name 1 "BIOS_GRUB" \
+	  mkpart primary fat32 "${BIOS_GRUB_END}MiB" "${EFI_END}MiB" set 2 esp on set 2 boot on name 2 EFI \
+	  mkpart primary ext4 "${EFI_END}MiB" "${BOOT_END}MiB" name 3 BOOT \
+	  mkpart primary ext4 "${BOOT_END}MiB" "${ROOT_END}MiB" name 4 ROOT \
+	  mkpart primary ext4 "${ROOT_END}MiB" "${HOME_END}MiB" name 5 HOME \
+	  mkpart primary ext4 "${HOME_END}MiB" 100% name 6 MISC \
+	  print
+
+sleep 1
+
+log "Current partition table:"
+lsblk "$TARGET_DISK" -o NAME,SIZE,TYPE,MOUNTPOINT,UUID
+sleep 1
+
+# -------------------------- Format partitions ---------------------#
+echo
+echo "Formatting created partitions..."
+echo 'y' | mkfs.fat -F 32 "$TARGET_DISK"2
+echo 'y' | mkfs.ext4 "$TARGET_DISK"3  # This is your BOOT (/boot)
+echo 'y' | mkfs.ext4 "$TARGET_DISK"4  # This is your ROOT (/)
+echo 'y' | mkfs.ext4 "$TARGET_DISK"5  # This is your HOME (/home)
+echo 'y' | mkfs.ext4 "$TARGET_DISK"6  # This is your MISC (/misc)
+
+log "Device has been partitioned. Showing partitions"
+lsblk "$TARGET_DISK" -o NAME,SIZE,TYPE,MOUNTPOINT,UUID

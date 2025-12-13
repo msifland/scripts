@@ -110,9 +110,11 @@ function dsk_chc(){
         apt install -y --no-install-recommends \
             task-lxde-desktop \
             lxde-core lxde gpicview lxappearance \
-            openbox obconf gvfs-backends lxrandr lxterminal galculator \
+            openbox obconf gvfs-backends lxrandr lxterminal \
             mousepad xarchiver lxsession-edit lxtask \
-            network-manager-gnome
+            network-manager-gnome task-desktop xserver-xorg-video-all \
+            xserver-xorg-video-amdgpu xserver-xorg-core keyboard-configuration \
+            xkb-data
     ;;
     4)
         echo
@@ -206,7 +208,7 @@ sleep 1
 mkdir -p /tmp/firmware && cd /tmp/firmware
 wget http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
 tar -xzf firmware.tar.gz
-dpkg -i ./*.deb || apt install -f -y  # fix any missing deps
+dpkg -i ./*.deb || apt install -f -y || true # fix any missing deps
 cd /; rm -rf /tmp/firmware
 
 #---------------Install lates google chrome--------------------------
@@ -225,24 +227,26 @@ apt install -y --no-install-recommends \
 
 log "grub and grub-uefi with be installed to the iso later in the script with script: debian-install-make-live-iso"
 sleep 1
-echo
-read -rp "Sometime plasma-desktop gets installed because of other packages. If you didn't select to install KDE desktop, you should unintall this.
 
-Would you like to uninstall plasma-desktop?[y/N] " un_pl
-if [[ "$un_pl" =~ ^([yY]|[yY][eE][sS])$ ]]; then
-	apt purge -y plasma*
-fi
+#echo
+#read -rp "Sometime plasma-desktop gets installed because of other packages. If you didn't select to install KDE desktop, you should unintall this.
+
+#Would you like to uninstall plasma-desktop?[y/N] " un_pl
+#if [[ "$un_pl" =~ ^([yY]|[yY][eE][sS])$ ]]; then
+#	apt purge -y plasma*
+#fi
 
 # -------------------------- Final cleanup --------------------------
 log "Final system upgrade & cleanup"
 sleep 1
-apt update -y
-apt upgrade -y
+apt update -y || true
+apt modernize-sources -y || true
+apt upgrade -y || true
 apt full-upgrade -y || true
 apt --fix-broken install -y || true
-apt autopurge -y
-apt autoclean -y
-apt clean -y
+apt autopurge -y || true
+apt autoclean -y || true
+apt clean -y || true
 
 echo
 log "Chroot setup complete! Returning to host script..."

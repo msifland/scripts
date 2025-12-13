@@ -199,7 +199,7 @@ sleep 1
 mkdir -p /tmp/firmware && cd /tmp/firmware
 wget -q http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/testing/current/firmware.tar.gz
 tar -xzf firmware.tar.gz
-dpkg -i ./*.deb || apt install -f -y  # fix any missing deps
+dpkg -i ./*.deb || apt install -f -y || true# fix any missing deps
 cd /; rm -rf /tmp/firmware
 
 # Remove annoying screensaver if present
@@ -231,24 +231,25 @@ grub-install --target=i386-pc \
 update-grub
 sleep 1
 
-echo
-read -rp "Sometime plasma-desktop gets installed because of other packages. If you didn't select to install KDE desktop, you should unintall this.
+#echo
+#read -rp "Sometime plasma-desktop gets installed because of other packages. If you didn't select to install KDE desktop, you should unintall this.
 
-Would you like to uninstall plasma-desktop?[y/N] " un_pl
-if [[ "$un_pl" =~ ^([yY]|[yY][eE][sS])$ ]]; then
-	apt purge -y plasma*
-fi
+#Would you like to uninstall plasma-desktop?[y/N] " un_pl
+#if [[ "$un_pl" =~ ^([yY]|[yY][eE][sS])$ ]]; then
+#	apt purge -y plasma*
+#fi
 
 # -------------------------- Final cleanup --------------------------
 log "Final system upgrade & cleanup"
 sleep 1
-apt update -y
-apt upgrade -y
+apt update -y || true
+apt modernize-sources -y || true
+apt upgrade -y || true
 apt full-upgrade -y || true
 apt --fix-broken install -y || true
-apt autopurge -y
-apt autoclean -y
-apt clean -y
+apt autopurge -y || true
+apt autoclean -y || true
+apt clean -y || true
 
 echo
 log "Chroot phase complete – returning to main installer..."

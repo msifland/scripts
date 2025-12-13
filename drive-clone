@@ -1,99 +1,91 @@
-#!/usr/bin/env bash
-# =============================================================================
-# Title      : clone-drive.sh
-# Description: Clone an entire disk (including MBR/GPT, all partitions) to another disk
-# Author     : Your Name
-# Usage      : sudo ./clone-drive.sh /dev/sdX /dev/sdY
-# WARNING    : THIS WILL COMPLETELY OVERWRITE THE TARGET DRIVE!
-# =============================================================================
+#!/bin/bash
 
-set -euo pipefail
-
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
-
-# ----------------------------- Safety Checks ---------------------------------
-if [[ $EUID -ne 0 ]]; then
-    echo -e "${RED}This script must be run as root (use sudo)${NC}"
+# --- Safety Check: Must run as root ---
+if [ "$EUID" -ne 0 ]; then
+    echo "This script must be run as root. Use 'sudo ./scriptname.sh'"
     exit 1
 fi
 
-if [[ $# -ne 2 ]]; then
-    echo "Usage: sudo $0 <source-drive>(drive to clone) <target-drive>(drive to clone to)"
-    echo "Example: sudo $0 /dev/sda /dev/sdb"
+# --- 1. Identify connected drives ---
+echo "Identifying available drives (excluding main hdd partitions):"
+lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | grep -E 'disk|usb' | grep -v 'part'
+
+echo ""
+
+# --- 2. Get user input for source and destination ---
+read -p "Enter the SOURCE drive (e.g., sdb): " SOURCE_DRIVE_NAME
+read -p "Enter the DESTINATION drive (e.g., sdc): " DEST_DRIVE_NAME
+
+SOURCE_DRIVE="/dev/$SOURCE_DRIVE_NAME"
+DEST_DRIVE="/dev/$DEST_DRIVE_NAME"
+
+# --- 3. Verify inputs ---
+if [ ! -b "$SOURCE_DRIVE" ] || [ ! -b "$DEST_DRIVE" ]; then
+    echo "Error: One or both devices do not exist or are not block devices."
     exit 1
 fi
 
-SRC="$1"
-DST="$2"
+echo ""
+echo "--- WARNING ---"
+echo "This operation will PERMANENTLY ERASE ALL data on $DEST_DRIVE."
+echo "Source: $SOURCE_DRIVE (input drive)"
+echo "Destination: $DEST_DRIVE (drive to be wiped and cloned to)"
+echo "--- WARNING ---"
 
-# Check both devices actually exist
-for dev in "$SRC" "$DST"; do
-    if [[ ! -b "$dev" ]]; then
-        echo -e "${RED}Error: $dev is not a block device${NC}"
-        exit 1
-    fi
-done
+read -p "Are you absolutely sure you want to proceed? (type 'yes' to continue): " CONFIRMATION
 
-# Prevent common disasters (never clone TO your running system disk)
-ROOT_DEV=$(lsblk -no PKNAME $(findmnt -n -o SOURCE /) 2>/dev/null || echo "")
-if [[ "$DST" == "/dev/$ROOT_DEV" || "$DST" == "$(readlink -f /dev/disk/by-uuid/$(findmnt -n -o UUID /))" ]]; then
-    echo -e "${RED}FATAL: Target drive appears to be your running system disk!${NC}"
-    echo "Aborting to prevent catastrophe."
+if [ "$CONFIRMATION" != "yes" ]; then
+    echo "Operation cancelled by user."
     exit 1
 fi
 
-# Show info and ask for confirmation
-echo "=========================================="
-echo -e "${YELLOW}WARNING: This will ERASE ALL DATA on $DST${NC}"
-echo "=========================================="
-echo "Source drive : $SRC  →  $(lsblk -dno SIZE,ROTA,MODEL $SRC | tr '\n' ' ')"
-echo "Target drive : $DST  →  $(lsblk -dno SIZE,ROTA,MODEL $DST | tr '\n' ' ')"
-echo ""
-lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT "$SRC"
-echo ""
-echo -e "${YELLOW}Target drive $DST will be COMPLETELY OVERWRITTEN.${NC}"
-echo -n "Type the word 'yes' to continue: "
-read confirm
-if [[ "$confirm" == "yes" ]] || { echo "Aborted."; exit 1; }
+# --- 4. Unmount any mounted partitions of the drives ---
+echo "Attempting to unmount any partitions on source and destination drives..."
+umount "$SOURCE_DRIVE"* 2>/dev/null
+umount "$DEST_DRIVE"* 2>/dev/null
+echo "Unmounting complete."
 
-# ----------------------------- Unmount target --------------------------------
-echo "Unmounting any partitions on $DST just in case..."
-umount "${DST}"* 2>/dev/null || true
+# --- 5. Execute the cloning command (dd) ---
+echo "Starting bit-by-bit cloning with dd..."
+echo "This may take a long time and will not show progress immediately."
+echo ""
 
-# ----------------------------- Choose cloning tool ---------------------------
-if command -v ddrescue >/dev/null 2>&1; then
-    CLONER="ddrescue"
-    echo -e "${GREEN}Using ddrescue (recommended – handles errors gracefully)${NC}"
-else
-    CLONER="dd"
-    echo -e "${YELLOW}ddrescue not found → falling back to plain dd${NC}"
+if ! command -v ddrescue &> /dev/null; then
+    log "ddrescue is not installed. Attempting to install using apt..."
+    sudo apt update && sudo apt install -y ddrescue gddrescue || error "Failed to install ddrescue and gddrescue. Please install it manually."
 fi
 
-# ----------------------------- Do the clone ---------------------------------
-echo "Starting clone $SRC → $DST ... This can take hours."
+sudo ddrescue -f "$SOURCE_DRIVE" "$DEST_DRIVE" "$HOME/tmp/rescue.log"
+#sudo dd if="$SOURCE_DRIVE" of="$DEST_DRIVE" bs=4M status=progress conv=fsync
 
-if [[ "$CLONER" == "ddrescue" ]]; then
-    # Two-pass is safest: first pass with --no-scrape, then retry bad areas
-    ddrescue -f -n "$SRC" "$DST" clone.log
-    echo "First pass finished. Retrying bad sectors..."
-    ddrescue -d -r3 "$SRC" "$DST" clone.log
-    echo -e "${GREEN}Clone completed successfully with ddrescue!${NC}"
-else
-    # Plain dd (much riskier if there are bad blocks)
-    dd if="$SRC" of="$DST" bs=4M conv=noerror,sync status=progress
-    echo -e "${GREEN}Clone completed with dd!${NC}"
-fi
+echo
+echo "Mounting partitons to update fstab"
+sleep 1
+sudo mount "${DEST_DRIVE}4" "$HOME/tmp/cloned" --mkdir
+sudo mount "${DEST_DRIVE}3" "$HOME/tmp/cloned/boot" --mkdir
+sudo mount "${DEST_DRIVE}5" "$HOME/tmp/cloned/home" --mkdir
+sudo mount "${DEST_DRIVE}6" "$HOME/tmp/cloned/misc" --mkdir
+sudo mount "${DEST_DRIVE}2" "$HOME/tmp/cloned/boot/efi" --mkdir
 
-# Force kernel to re-read partition table
-partprobe "$DST" 2>/dev/null || sync
+echo
+echo "Show partitions with UUID's"
+sleep 1
+lsblk "${DEST_DRIVE}" -f -o NAME,SIZE,TYPE,MOUNTPOINT,UUID
 
+echo
+echo "Opening fstad to add in UUID's"
+sudo subl "$HOME/tmp/cloned/etc/fstab"
+
+echo
+echo "Running chroot grub-mkconfig -o /boot/grub/grub.cfg"
+sudo chroot "$HOME/tmp/cloned" /bin/bash -c "grub-mkconfig -o /boot/grub/grub.cfg; exit"
+sleep 1
 echo ""
-echo "================================================================================"
-echo -e "${GREEN}Disk cloning finished!${NC}"
-echo "You can now shut down, swap drives, or boot from the new one."
-echo "If it was a bootable OS drive, you may need to repair the bootloader on the target."
-echo "================================================================================"
+echo "Cloning complete! Unmounting..."
+sudo umount -R "$HOME/tmp/cloned/boot/efi"
+sudo umount -R "$HOME/tmp/cloned/boot"
+sudo umount -R "$HOME/tmp/cloned/home"
+sudo umount -R "$HOME/tmp/cloned/misc"
+sudo umount -R "$HOME/tmp/cloned"
+sleep 1
+echo "You can now safely remove both USB drives."
