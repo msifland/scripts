@@ -10,8 +10,17 @@ IFS=$'\n\t'                           # Safe word splitting
 export HOME_DIR="$HOME"
 CHROOT="$HOME_DIR/tmp/deb-inst"
 RT_DIR="$HOME_DIR/MSI_live-build"
-ISO_NAME="$RT_DIR/MSI_live-image-amd64.hybrid.iso" # Final ISO path
 OUTDIR="$RT_DIR/MSI_live-iso"                      # Temporary ISO tree
+# --------- Grab desktop name if exists to append to iso file ------------
+if [[ -f "$CHROOT/inst_var.txt" ]]; then
+	IV=$(cat "$CHROOT/inst_var.txt")
+	inst_var=".$IV"
+	rm "$CHROOT/inst_var.txt"
+else
+	inst_var=""
+fi
+ISO_NAME="$RT_DIR/MSI_live-image-amd64.hybrid$inst_var.iso" # Final ISO path
+
 # ==================================================================
 
 echo "=== Creating custom Debian Live hybrid ISO ==="

@@ -30,7 +30,7 @@ export TERM=xterm-color
 log "Configuring timezone → $TIMEZONE"
 sleep 1
 apt install -y --no-install-recommends \
-     wget nano zstd pv git fzf curl fastfetch dialog gnupg2 software-properties-common jshon ca-certificates locales
+     wget nano zstd pv git fzf curl fastfetch dialog gnupg2 software-properties-common jshon ca-certificates locales aptitude
 
 ln -sf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime
 echo "$TIMEZONE" > /etc/timezone
@@ -78,8 +78,9 @@ function dsk_chc(){
     read -rp "Type the number of the one you want: " dsktp_inst
     case $dsktp_inst in
     1)
+    	inst_var="mate"
         echo
-        echo "Installing Mate..."
+        echo "Installing Mate..." #aptitude install --without-recommends \
         apt install -y --no-install-recommends \
             task-mate-desktop \
             mate-desktop-environment-extra mate-desktop-environment-extras \
@@ -91,6 +92,7 @@ function dsk_chc(){
             mate-desktop-environment-core
     ;;
     2)
+    	inst_var="xfce"
         echo
         echo "Installing Xfce4"
         apt install -y --no-install-recommends \
@@ -102,16 +104,20 @@ function dsk_chc(){
             xfce4-sensors-plugin thunar-archive-plugin xfce4-datetime-plugin
     ;;
     3)
+    	inst_var="lxde"
         echo
         echo "Installing lxde"
         apt install -y --no-install-recommends \
             task-lxde-desktop \
             lxde-core lxde gpicview lxappearance \
-            openbox obconf gvfs-backends lxrandr lxterminal galculator \
+            openbox obconf gvfs-backends lxrandr lxterminal \
             mousepad xarchiver lxsession-edit lxtask \
-            network-manager-gnome
+            network-manager-gnome task-desktop xserver-xorg-video-all \
+            xserver-xorg-video-amdgpu xserver-xorg-core keyboard-configuration \
+            xkb-data
     ;;
     4)
+    	inst_var="kde"
         echo
         echo "Installing KDE"
         apt install -y --no-install-recommends \
@@ -119,6 +125,7 @@ function dsk_chc(){
             kde-full plasma-pa
     ;;
     5)
+    	inst_var="gnome"
         echo
         echo "Installing gnome3"
         apt install -y --no-install-recommends \
@@ -150,7 +157,7 @@ else
 fi
 
 # -------------------------- Root password --------------------------
-log "Setting root password"
+log "Setting root password !!!!!TYPE CORRECTLY!!!!!"
 sleep 1
 while true; do
     echo -n "Enter new root password: "
@@ -163,7 +170,7 @@ done
 echo "root:$passwd1" | chpasswd
 
 # -------------------------- Create main user ----------------------
-log "Creating your live user"
+log "Creating your live user !!!!!TYPE CORRECTLY!!!!!"
 sleep 1
 while true; do
     echo -n "Enter username: "
@@ -202,6 +209,13 @@ tar -xzf firmware.tar.gz
 dpkg -i ./*.deb || apt install -f -y || true# fix any missing deps
 cd /; rm -rf /tmp/firmware
 
+#---------------Install lates google chrome--------------------------
+log "Installing latest Google Chrome Stable on system"
+sleep 1
+/bin/sh /google-chrome-latest-install || true
+rm google* || true
+apt --fix-broken install -y || true
+
 # Remove annoying screensaver if present
 apt purge -y mate-screensaver* 2>/dev/null || true
 
@@ -220,24 +234,8 @@ grub-install --target=x86_64-efi \
     --bootloader-id=Debian_Hybrid_UEFI \
     --recheck
 
-# --- ADDED: Install Legacy BIOS/MBR GRUB from INSIDE CHROOT ---
-log "Installing Legacy BIOS MBR GRUB (inside chroot)"
-
-# grub-install inside chroot can identify the correct disk when run this way
-# We don't specify the disk device path here, grub handles it internally
-grub-install --target=i386-pc \
-    "$TARGET_DISK" # NOTE: this var passed from main script
-
 update-grub
 sleep 1
-
-#echo
-#read -rp "Sometime plasma-desktop gets installed because of other packages. If you didn't select to install KDE desktop, you should unintall this.
-
-#Would you like to uninstall plasma-desktop?[y/N] " un_pl
-#if [[ "$un_pl" =~ ^([yY]|[yY][eE][sS])$ ]]; then
-#	apt purge -y plasma*
-#fi
 
 # -------------------------- Final cleanup --------------------------
 log "Final system upgrade & cleanup"

@@ -48,12 +48,7 @@ gparted
 gpg
 gpgv
 grep
-grub2-common
 grub-customizer
-grub-efi-amd64-bin
-grub-efi-amd64-signed
-grub-efi-amd64-unsigned
-grub-pc-bin
 gvfs-common
 gzip
 hdparm
@@ -208,7 +203,6 @@ util-linux-extra
 util-linux-locales
 uuid-dev:amd64
 uuid-runtime
-variety
 wget
 whois
 wireless-regdb

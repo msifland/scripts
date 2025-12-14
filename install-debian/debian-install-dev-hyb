@@ -4,7 +4,7 @@
 # debian-install – Full Debian MATE System Installer to Disk
 # With Your Original sed + All sleep Pauses – 2025
 # ===================================================================
-#set -euo pipefail
+set -euo pipefail
 IFS=$'\n\t'
 
 # -------------------------- Config ---------------------------------#
@@ -12,7 +12,7 @@ export HOME_DIR="$HOME"
 INST_PTH="$HOME_DIR/tmp/deb-inst"
 CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
 SCRIPTS_DIR="$HOME_DIR/scripts"
-CHROOT_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-continue"
+CHROOT_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-dev-continue"
 PACKLIST="$CONFIGS_DIR/my_packs.list.chroot"
 GOOGLE_CHRM_SCRIPT="$HOME_DIR/scripts/google-chrome-latest-install"
 
@@ -94,25 +94,40 @@ if ask "Would you like to wipe disk or install over current partition setup?
 	sleep 1
 
 	# -------------------------- Partition with cfdisk -----------------#
+		# Making sure we use whole numbers, no decimals
+	validate_size() {
+	    local size="$1"
+	    local name="$2"
+	    if ! [[ "$size" =~ ^[0-9]+$ ]]; then
+	        error "Please enter a whole number for $name (e.g., 50, not $size)"
+	    fi
+	}
 	echo
 	read -rp "There will be multiple partitions added. / /home /boot /boot/efi and /misc. Let's figure out what size you want those to be. The total size of the $TARGET_DISK is ${TTL_SIZE}G.
 	In gigs, 
-	How big for root(ex. 30): " rt_sz
+How big for root(ex. 30): " rt_sz
+	validate_size "$rt_sz" "/ (root)"
 	echo
 	read -rp "How big for /home(ex. 60): " hm_sz
+	validate_size "$hm_sz" "/home"
 	echo
-	read -rp "How big for /boot(kernel storage, ex. 4): " bt_sz
-	RMN_SIZE=$(echo "scale=2; $TTL_SIZE - ($rt_sz + $hm_sz + $bt_sz + 1)" | bc)
+	read -rp "How big for /boot(kernel storage, ex. 10): " bt_sz
+	validate_size "$bt_sz" "/boot"
 	echo
-	echo "The remaining $RMN_SIZE, will be for /misc"
+	read -rp "How big for /misc(isos/other storage, ex. 20): " ms_sz
+	validate_size "$ms_sz" "/misc"
+	RMN_SIZE=$(echo "scale=2; $TTL_SIZE - ($rt_sz + $hm_sz + $bt_sz + $ms_sz + 1)" | bc)
+	echo
+	echo "The remaining $RMN_SIZE, will be unallocated"
 	sleep 1
 	echo
 	if ! ask "Planned structure:
 	
-   		/boot = $bt_sz
+   	/boot = $bt_sz
     	/home = $hm_sz
     	/(root) = $rt_sz
-    	/misc = $RMN_SIZE
+    	/misc = $ms_sz
+    	unallocated = $RMN_SIZE
     
     	Is this correct"; then
 	    echo
@@ -127,6 +142,7 @@ if ask "Would you like to wipe disk or install over current partition setup?
 	rt_sz_mib=$(($rt_sz * 1024))
 	hm_sz_mib=$(($hm_sz * 1024))
 	bt_sz_mib=$(($bt_sz * 1024))
+	ms_sz_mib=$(($ms_sz * 1024))
 	log "Launching parted on $TARGET_DISK"
 	wipefs -a "$TARGET_DISK"
 	sleep 1
@@ -144,6 +160,7 @@ if ask "Would you like to wipe disk or install over current partition setup?
 	BOOT_END=$((EFI_END + bt_sz_mib))
 	ROOT_END=$((BOOT_END + rt_sz_mib))
 	HOME_END=$((ROOT_END + hm_sz_mib))
+	MISC_END=$((HOME_END + ms_sz_mib))
 
 	parted "$TARGET_DISK" --script --align optimal \
 	  mklabel gpt \
@@ -152,10 +169,12 @@ if ask "Would you like to wipe disk or install over current partition setup?
 	  mkpart primary ext4 "${EFI_END}MiB" "${BOOT_END}MiB" name 3 BOOT \
 	  mkpart primary ext4 "${BOOT_END}MiB" "${ROOT_END}MiB" name 4 ROOT \
 	  mkpart primary ext4 "${ROOT_END}MiB" "${HOME_END}MiB" name 5 HOME \
-	  mkpart primary ext4 "${HOME_END}MiB" 100% name 6 MISC \
+	  mkpart primary ext4 "${HOME_END}MiB" "${MISC_END}MiB" name 6 MISC \
 	  print
-
 	sleep 1
+
+	partprobe "$TARGET_DISK"
+	sleep 2
 
 	log "Current partition table:"
 	lsblk -f "$TARGET_DISK"
@@ -169,6 +188,7 @@ if ask "Would you like to wipe disk or install over current partition setup?
 	echo 'y' | mkfs.ext4 "$TARGET_DISK"4  # This is your ROOT (/)
 	echo 'y' | mkfs.ext4 "$TARGET_DISK"5  # This is your HOME (/home)
 	echo 'y' | mkfs.ext4 "$TARGET_DISK"6  # This is your MISC (/misc)
+	sync
 
 	# -------------------------- Choose root partition -----------------#
 	log "Selecting root partition as "$TARGET_DISK"4"
@@ -308,9 +328,8 @@ mkdir -p "$INST_PTH/etc/apt/sources.list.d"
 # 'instal' line explained: shortcut for copying with correct permissions and create directories if they don't exist.
 # Copy sources and pinning
 rsync -a --progress /etc/apt/ "$INST_PTH/etc/apt/"
-install -Dm644 /etc/apt/sources.list.d/debian.sources "$INST_PTH/etc/apt/sources.list.d/"
 install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/preferences.d/"
-
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
 # Copy helper scripts
 install -Dm755 "$CHROOT_SCRIPT"                        "$INST_PTH/debian-install-continue"
 install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
@@ -342,10 +361,10 @@ echo "UUID=$EFI_UUID    /boot/efi    vfat    umask=0077            0   1" >> "$I
 #HOME_PART="$TARGET_DISK"5
 #MISC_PART="$TARGET_DISK"6
 PARTITIONS=(
-    "3  /boot    ext4    errors=remount-ro   0   1"
-    "4  /        ext4    defaults            0   2"
-    "5  /home    ext4    defaults            0   2"
-    "6  /misc    ext4    defaults            0   2"
+    "3  /boot    ext4    defaults            		 	0   2"
+    "4  /        ext4    defaults,errors=remount-ro		0   1"
+    "5  /home    ext4    defaults            			0   2"
+    "6  /misc    ext4    defaults            			0   2"
 )
 
 # --- Loop and add entries ---
@@ -390,7 +409,7 @@ cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
 if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying personal files using git clone..."
-    cd $USR_HOME
+    cd "$USR_HOME"
     /bin/bash git-clone-my-repos
     rm -f "git-clone-my-repos"
     cd "$INST_PTH"
@@ -463,7 +482,7 @@ rm -rf "$INST_PTH/var/tmp/*"
 # Final clean  up
 log "Final clean up before build is complete"
 # Remove uneeded apt sources
-find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 -name "*mega*" -exec rm -v {} \;
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
 chroot $INST_PTH /bin/bash -c "apt update -y || true; apt upgrade -y || true; apt full-upgrade -y || true;apt --fix-broken install -y || true; apt autopurge -y || true; apt autoclean -y || true; apt clean -y || true; exit"
 
 echo

@@ -17,7 +17,7 @@ export HOME_DIR="$HOME"
 INST_PTH="$HOME_DIR/tmp/deb-inst"
 CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
 SCRIPTS_DIR="$HOME_DIR/scripts"
-CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-continue-iso"
+CHROOT_CONTINUE_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-iso-continue"
 LIVE_BUILD_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-make-live-iso"
 GOOGLE_CHRM_SCRIPT="$HOME_DIR/scripts/google-chrome-latest-install"
 # -------------------------------------------------------------------
@@ -128,9 +128,8 @@ mkdir -p "$INST_PTH/etc/apt/sources.list.d"
 # 'instal' line explained: shortcut for copying with correct permissions and create directories if they don't exist.
 # Copy sources and pinning
 rsync -a --progress /etc/apt/ "$INST_PTH/etc/apt/"
-install -Dm644 /etc/apt/sources.list.d/debian.sources "$INST_PTH/etc/apt/sources.list.d/"
 install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/preferences.d/"
-
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
 # Copy helper scripts
 install -Dm755 "$CHROOT_CONTINUE_SCRIPT"               "$INST_PTH/debian-install-continue-iso"
 install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
@@ -166,7 +165,7 @@ cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
 if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying personal files using git clone..."
-    cd $USR_HOME
+    cd "$USR_HOME"
     /bin/bash git-clone-my-repos
     rm -f "git-clone-my-repos"
     cd "$INST_PTH"
@@ -237,7 +236,7 @@ rm -rf "$INST_PTH/var/tmp/*"
 # Final clean  up
 log "Final clean up before build is complete"
 # Remove uneeded apt sources
-find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 -name "*mega*" -exec rm -v {} \;
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
 chroot $INST_PTH /bin/bash -c "apt update -y || true; apt upgrade -y || true; apt full-upgrade -y || true;apt --fix-broken install -y || true; apt autopurge -y || true; apt autoclean -y || true; apt clean -y || true; exit"
 
 # --------------------- Build the live ISO --------------------------
