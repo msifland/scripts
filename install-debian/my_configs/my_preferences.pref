@@ -26,3 +26,12 @@ Pin-Priority: 950
 Package: linux-headers*
 Pin: release a=stable
 Pin-Priority: 950
+
+Package: keyboard-configuration
+Pin: release a=stable
+Pin-Priority: 999
+
+Package: xkb-data
+Pin: release a=stable
+Pin-Priority: 999
+

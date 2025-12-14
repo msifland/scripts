@@ -45,7 +45,7 @@ echo
 #-------------------Wipe or no------------------------------------#
 echo
 if ask "Would you like to wipe disk or install over current partition setup?
-	If keeping current partitions, then there should be 6.
+	If keeping current partitions, then there should be 5 to 6.
 	1. bios_grub(tiny 5M-10M)
 	2. efi(small 550M)
 	3. boot(small 3G-5G)
@@ -246,8 +246,9 @@ else
 	ROOT_PART="$TARGET_DISK"4
 	HOME_PART="$TARGET_DISK"5
 	MISC_PART="$TARGET_DISK"6
+
 	# -------------------------- Debootstrap ----------------------------#
-	log "Mounting devices..."
+	log "Mounting devices, and cleaning bootstrap and boot and root directories. Leaving home and misc alone..."
 	sleep 1
 	mount "$ROOT_PART" "$INST_PTH"
 	mount "$HOME_PART" "$INST_PTH/home" --mkdir
@@ -255,12 +256,15 @@ else
 	mount "$UEFI_PART" "$INST_PTH/boot/efi" --mkdir
 	mount "$MISC_PART" "$INST_PTH/misc" --mkdir
 	sleep 1
-
+	find "$INST_PTH" -mindepth 1 \( -path "$INST_PTH/home" -o -path "$INST_PTH/misc" \) -prune -o -exec rm -rf {} + || true
 fi
+
+
+
 # -------------------------- Install latest debootstrap (YOUR WAY) ---
 log "Downloading latest debootstrap"
-sleep 1
-mkdir -p "$INST_PTH/work"
+mkdir -pv "$INST_PTH/work"
+rm -rf "$INST_PTH/work/*"
 cd "$INST_PTH/work"
 
 DEBOOT_STRP=$(wget -qO- http://ftp.debian.org/debian/pool/main/d/debootstrap | grep "all.deb" | sort -V | tail -1 | sed -e 's:.*a href="::' -e 's:.>.*::')
@@ -400,11 +404,15 @@ rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
 USR_HOME="$INST_PTH/home/$usrnme"
 
 # Create standard dirs
+log "Creating standard home directories"
+sleep 1
 for d in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$d"
 done
 
 # --------------------- Copy personal files (optional) ------------#
+log "Optional personal git repos"
+sleep 1
 cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
 if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
@@ -422,6 +430,8 @@ fi
 sleep 1
 
 # --------------------- Copy dotfiles/configs (optional) ----------#
+log "Optional personal config files and folders"
+sleep 1
 read -rp "Would you like to add you config files(.conig, .local, .cache, etc.)[y/N]: " add_confs
 if [[ "$add_confs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying configuration files..."

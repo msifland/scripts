@@ -45,7 +45,7 @@ echo
 #-------------------Wipe or no------------------------------------#
 echo
 if ask "Would you like to wipe disk or install over current partition setup?
-	If keeping current partitions, then there should be 6.
+	If keeping current partitions, then there should be 5 to 6.
 	1. efi(small 550M)
 	2. boot(small 3G-5G)
 	3. root(large 30G+)
@@ -398,11 +398,15 @@ rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
 USR_HOME="$INST_PTH/home/$usrnme"
 
 # Create standard dirs
+log "Creating standard home directories"
+sleep 1
 for d in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$d"
 done
 
 # --------------------- Copy personal files (optional) ------------#
+log "Optional personal git repos"
+sleep 1
 cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
 if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
@@ -420,6 +424,8 @@ fi
 sleep 1
 
 # --------------------- Copy dotfiles/configs (optional) ----------#
+log "Optional personal config files and folders"
+sleep 1
 read -rp "Would you like to add you config files(.conig, .local, .cache, etc.)[y/N]: " add_confs
 if [[ "$add_confs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying configuration files..."

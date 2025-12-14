@@ -8,8 +8,8 @@ sleep 3
 
 echo
 echo "Cleaning downloads folder of other chrome files..."
-if [[ ! -d "$HOME/Downloads" ]]; then
-	mkdir "$HOME/Downloads"
+if [ ! -d "$HOME/Downloads" ]; then
+	mkdir -p "$HOME/Downloads"
 fi
 cd $HOME/Downloads
 sleep 1

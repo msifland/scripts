@@ -25,7 +25,7 @@ apt upgrade -y
 log "Installing base tools & utilities"
 sleep 1
 apt install -y --no-install-recommends \
-    xterm bash-completion ncurses-term aptitude
+    xterm bash-completion ncurses-term
 
 export TERM=xterm-color
 
@@ -83,8 +83,8 @@ function dsk_chc(){
     1)
     	inst_var="mate"
         echo
-        echo "Installing Mate..." #apt install -y --no-install-recommends \
-        aptitude install --without-recommends \
+        echo "Installing Mate..." #aptitude install --without-recommends \
+        apt install -y --no-install-recommends \
             task-mate-desktop \
             mate-desktop-environment-extra mate-desktop-environment-extras \
             mate-session-manager mate-applet-brisk-menu mate-applets \
@@ -98,7 +98,7 @@ function dsk_chc(){
     	inst_var="xfce"
         echo
         echo "Installing Xfce4"
-        aptitude install --without-recommends \
+        apt install -y --no-install-recommends \
             task-xfce-desktop \
             xfce4-whiskermenu-plugin xfce4-goodies \
             mousepad ristretto xfburn xfce4-screenshooter xfce4-terminal \
@@ -110,20 +110,18 @@ function dsk_chc(){
     	inst_var="lxde"
         echo
         echo "Installing lxde"
-        aptitude install --without-recommends \
+        apt install -y --no-install-recommends \
             task-lxde-desktop \
             lxde-core lxde gpicview lxappearance \
             openbox obconf gvfs-backends lxrandr lxterminal \
             mousepad xarchiver lxsession-edit lxtask \
-            network-manager-gnome task-desktop xserver-xorg-video-all \
-            xserver-xorg-video-amdgpu xserver-xorg-core keyboard-configuration \
-            xkb-data
+            network-manager-gnome task-desktop xorg
     ;;
     4)
     	inst_var="kde"
         echo
         echo "Installing KDE"
-        aptitude install -y --without-recommends \
+        apt install -y --no-install-recommends \
             task-kde-desktop \
             kde-full plasma-pa
     ;;
@@ -131,7 +129,7 @@ function dsk_chc(){
     	inst_var="gnome"
         echo
         echo "Installing gnome3"
-        aptitude install --without-recommends \
+        apt install -y --no-install-recommends \
             task-gnome-desktop \
             gnome-tweaks gnome-core gnome-shell-extensions \
             gnome-shell-extension-dashtodock \
@@ -154,8 +152,7 @@ if [[ -f "$PACKLIST" ]]; then
     echo "Scanning packages, hold please..."
     PGK_LIST=$(cat "$PACKLIST" | xargs apt list 2>/dev/null | awk -F'/' '/\//{print $1}')
     # Filter the list of names using aptitude search to find only installable package names
-    #apt install -y $PGK_LIST
-	aptitude install -y --without-recommends $PGK_LIST
+    apt install -y $PGK_LIST
     #apt install -y $(grep -vE "^\s*($|#)" "$PACKLIST")
 else
     error "Package list not found: $PACKLIST"
@@ -255,7 +252,7 @@ apt --fix-broken install -y || true
 apt autopurge -y || true
 apt autoclean -y || true
 apt clean -y || true
-aptitude install xorg
+
 echo
 log "Chroot setup complete! Returning to host script..."
 sleep 1

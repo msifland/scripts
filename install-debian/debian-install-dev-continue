@@ -112,9 +112,7 @@ function dsk_chc(){
             lxde-core lxde gpicview lxappearance \
             openbox obconf gvfs-backends lxrandr lxterminal \
             mousepad xarchiver lxsession-edit lxtask \
-            network-manager-gnome task-desktop xserver-xorg-video-all \
-            xserver-xorg-video-amdgpu xserver-xorg-core keyboard-configuration \
-            xkb-data
+            network-manager-gnome task-desktop xorg
     ;;
     4)
     	inst_var="kde"
