@@ -1,17 +1,20 @@
 #!/bin/sh
 # This is a bash script.
 # Put your description below this line and code below that.
-# 
+#
+cd /
 echo
 echo "Installing latest Google Chrome..."
 sleep 3
 
+for usrs in $(ls /home | sed 's:lost+found::g'); do
+	HOME_DIR="/home/$usrs"
 echo
 echo "Cleaning downloads folder of other chrome files..."
-if [ ! -d "$HOME/Downloads" ]; then
-	mkdir -p "$HOME/Downloads"
+if [ ! -d "$HOME_DIR/Downloads" ]; then
+	mkdir -p "$HOME_DIR/Downloads"
 fi
-cd $HOME/Downloads
+cd $HOME_DIR/Downloads
 sleep 1
 if [ -f google-chrome*.* ]; then
 	rm -rf google-chrome*.*
@@ -29,8 +32,9 @@ echo "Installing latest Google Chrome..."
 sleep 1
 sudo dpkg -i google-chrome*.*
 sleep 2
+done
 
 echo
 echo "Done!"
-cd $HOME
+cd /
 sleep 3
