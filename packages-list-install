@@ -8,7 +8,15 @@ read -p "Type the full path of the list to install(ex. HOME/pkg_bkups/pkgs.txt):
 
 # Then this runs back through them
 echo
-echo "Scanning packages, hold please..."
+echo "Using aptitude in case of dependency problems...
+Scanning packages, hold please..."
 
 PGK_LIST=$(cat "$pkgs_list" | xargs apt list 2>/dev/null | awk -F'/' '/\//{print $1}')
-sudo apt install -y $PGK_LIST
+if ! command -v aptitude &> /dev/null; then
+	echo
+	echo "Aptitude not found, installing now..."
+	sleep 1
+	sudo apt install aptitude || echo "Failed to install aptitude. Please install it manually."
+fi
+sudo aptitude update; sudo aptitude install $PGK_LIST
+#sudo apt update; sudo apt install -y $PGK_LIST
