@@ -89,7 +89,7 @@ function dsk_chc(){
             mate-control-center-common mate-backgrounds mate-calc \
             mate-calc-common mate-common mate-core mate-desktop \
             mate-desktop-common mate-desktop-environment \
-            mate-desktop-environment-core
+            mate-desktop-environment-core mate-menu mate-menus
     ;;
     2)
     	inst_var="xfce"
@@ -231,7 +231,15 @@ grub-install --target=x86_64-efi \
     --removable \
     --bootloader-id=Debian_Hybrid_UEFI \
     --recheck
-
+    
+echo
+echo
+read -rp "If install for hybrid boot(uefi + bios), then you should install for bios here as well. Type yes for bios grub install: " bs_grb
+if [[ "$bs_grb" =~ ^[yY]|[yY][eE][sS]$ ]]; then
+	# --- ADDED: Install Legacy BIOS/MBR GRUB from INSIDE CHROOT ---
+	log "Installing Legacy BIOS MBR GRUB (inside chroot)"
+	grub-install --target=i386-pc "$TARGET_DISK"
+fi
 update-grub
 sleep 1
 

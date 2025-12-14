@@ -1,0 +1,21 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+if [[ ! -z $1 ]]; then
+    qemu-system-x86_64 \
+    -m 4G \
+    -enable-kvm \
+    -cpu host \
+    -drive if=pflash,format=raw,readonly=on,file=/usr/share/ovmf/OVMF.fd \
+    -drive file=$1,format=raw
+    -boot menu=on
+else
+    echo "
+    This command runs qemu virtal box.
+    Usage:
+    qemu-run-efi [full directory]
+    qemu-run-efi ~/live-build/MY_live-debian.iso
+    qemu-run-efi /home/msifland/iso/Debian-14-1.iso
+    sudo qemu-run-efi /dev/sdb
+    sudo qemu-run-efi /dev/sda"
+fi

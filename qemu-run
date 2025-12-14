@@ -15,6 +15,6 @@ else
     qemu-run [full directory]
     qemu-run ~/live-build/MY_live-debian.iso
     qemu-run /home/msifland/iso/Debian-14-1.iso
-    sudo qemu-run-usb /dev/sdb
-    sudo qemu-run-usb /dev/sda"
+    sudo qemu-run /dev/sdb
+    sudo qemu-run /dev/sda"
 fi
