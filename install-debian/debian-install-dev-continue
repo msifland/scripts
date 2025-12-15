@@ -234,12 +234,15 @@ grub-install --target=x86_64-efi \
     
 echo
 echo
-read -rp "If install for hybrid boot(uefi + bios), then you should install for bios here as well. Type yes for bios grub install: " bs_grb
+read -rp "If installing for hybrid boot/usb(uefi + bios), then you should install for bios here as well. Type yes for bios grub install: " bs_grb
 if [[ "$bs_grb" =~ ^[yY]|[yY][eE][sS]$ ]]; then
 	# --- ADDED: Install Legacy BIOS/MBR GRUB from INSIDE CHROOT ---
 	log "Installing Legacy BIOS MBR GRUB (inside chroot)"
 	grub-install --target=i386-pc "$TARGET_DISK"
 fi
+sleep 1
+
+echo
 update-grub
 sleep 1
 

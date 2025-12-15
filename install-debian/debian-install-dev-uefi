@@ -344,11 +344,11 @@ rm -f "$INST_PTH"/{debian-install-continue,my_packs.list.chroot}
 
 # -------------------------- Handle separate partitions ------------#
 # Clear existing fstab or add a header
-echo "###### msifland custom install script ######" > "$INST_PTH/etc/fstab" || true
+echo "			###### msifland custom install script ######" > "$INST_PTH/etc/fstab" || true
 
 # --- Add the EFI partition ---
 EFI_UUID=$(blkid -s UUID -o value "${TARGET_DISK}1")  || true
-echo "UUID=$EFI_UUID    /boot/efi    vfat    umask=0077            0   1" >> "$INST_PTH/etc/fstab" || true
+echo "UUID=$EFI_UUID    /boot/efi    vfat    umask=0077            0   2" >> "$INST_PTH/etc/fstab" || true
 
 # --- Define remaining partitions to loop through ---
 # Array format: "PartitionNumber MountPoint FSType Options DumpPass"

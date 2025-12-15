@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "This script will install packages from a list of your choosing"
 echo
-read -p "Type the full path of the list to install(ex. '$HOME/pkg_bkups/pkgs.txt'): " pkgs_list
+read -p "Type the full path of the list to install(ex. HOME/pkg_bkups/pkgs.txt): " pkgs_list
 
 # Then this runs back through them
 echo

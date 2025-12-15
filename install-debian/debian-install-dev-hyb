@@ -350,7 +350,7 @@ rm -f "$INST_PTH"/{debian-install-continue,my_packs.list.chroot}
 
 # -------------------------- Handle separate partitions ------------#
 # Clear existing fstab or add a header
-echo "###### msifland custom install script ######" > "$INST_PTH/etc/fstab" || true
+echo "			###### msifland custom install script ######" > "$INST_PTH/etc/fstab" || true
 
 # --- Add the EFI partition ---
 EFI_UUID=$(blkid -s UUID -o value "${TARGET_DISK}2")  || true
@@ -511,5 +511,5 @@ log "ALL DONE!"
 sleep 1
 echo "You can now reboot and boot from $TARGET_DISK"
 echo "Your username: $usrnme"
-echo "Enjoy your brand new personalized Debian MATE system!"
+echo "Enjoy your brand new personalized Debian system!"
 sleep 1
