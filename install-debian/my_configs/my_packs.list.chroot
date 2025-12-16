@@ -175,7 +175,6 @@ smartmontools
 snapd
 software-properties-common
 sudo
-synaptic
 systemd
 systemd-container
 systemd-cryptsetup

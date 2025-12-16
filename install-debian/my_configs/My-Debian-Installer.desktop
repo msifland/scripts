@@ -11,5 +11,5 @@ Terminal=false
 Categories=Qt;System;
 StartupWMClass=calamares
 StartupNotify=True
-Name[en_US]=My Debian Install
+Name[en_US]=My-Debian-Installer
 

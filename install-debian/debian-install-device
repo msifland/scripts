@@ -448,6 +448,7 @@ else
 fi
 for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
     [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
+    install -Dm755 "$CONFIGS_DIR/My-Debian-Installer.desktop" "$USR_HOME/Desktop/My-Debian-Installer.desktop"
 done
 sleep 1
 

@@ -135,19 +135,19 @@ insmod regexp
 insmod echo
 
 # Set the UUID of the ISO storage partition automatically by the script
-set uuid=$UUID
+set uuid="$UUID"
 # Define the specific ISO file name requested
-set persistent_iso="/isos/MSI_live-image-amd64.hybrid.iso"
+set persistent_iso="/isos/MSI_live-image-amd64.hybrid.iso" #<<<< ISO NAME HERE
 
 
 # --- Static ISO Entry (Persistent ONLY for this ISO) ---
 menuentry "MSI_live-image-amd64.hybrid.iso - (Main-Persist)" {
     # Format for Debian
-    search --no-floppy --fs-uuid --set=root $uuid
-    set isofile=$persistent_iso
-    search --set -f $isofile
-    loopback loop $isofile
-    linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config persistence persistence-label=casper-rw persistence-storage=filesystem live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+    search --no-floppy --fs-uuid --set=root \$uuid
+    set isofile=\$persistent_iso
+    search --set -f \$isofile
+    loopback loop \$isofile
+    linux (loop)/live/vmlinuz rw quickusbmodules isofrom=/dev/disk/by-uuid/\$uuid/\$isofile boot=live config persistence persistence-label=casper-rw persistence-storage=filesystem live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
     initrd (loop)/live/initrd.img
 }
 menuentry "----------------------------------------" { true }
@@ -158,29 +158,29 @@ menuentry "----------------------------------------" { true }
 # Template for debian-live non-persist
 # menuentry "debian-live-iso-lxde.iso" { #<<<< ISO NAME HERE
 #    # Format for Debian
-#    search --no-floppy --fs-uuid --set=root $uuid
+#    search --no-floppy --fs-uuid --set=root \$uuid
 #    set isofile="/isos/debian-live-iso-lxde.iso" #<<<< ISO NAME HERE
-#    search --set -f $isofile
-#    loopback loop $isofile
-#    linux (loop)/live/vmlinuz quickusbmodules isofrom=/dev/disk/by-uuid/$uuid/$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+#    search --set -f \$isofile
+#    loopback loop \$isofile
+#    linux (loop)/live/vmlinuz quickusbmodules isofrom=/dev/disk/by-uuid/\$uuid/\$isofile boot=live config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
 #    initrd (loop)/live/initrd.img
 # }
 
 # Example Template 1 (Ubuntu Live non-persistent):
 # menuentry "Example-Ubuntu-NonPersistent.iso" { #<<<< ISO NAME HERE
-#     search --no-floppy --fs-uuid --set=root $uuid
+#     search --no-floppy --fs-uuid --set=root \$uuid
 #     set isofile="/isos/Example-Ubuntu-NonPersistent.iso" #<<<< ISO NAME HERE
-#     loopback loop $isofile
-#     linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
+#     loopback loop \$isofile
+#     linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=\$isofile noprompt noeject config live-config live-config.locales=en_US.UTF-8 live-config.keyboard-layouts=us live-config.timezone=America/Chicago
 #     initrd (loop)/casper/initrd.lz
 # }
 
 # Example Template 2 (Arch):
 # menuentry "Example-ArchLinux.iso" { #<<<< ISO NAME HERE
-#     search --no-floppy --fs-uuid --set=root $uuid
+#     search --no-floppy --fs-uuid --set=root \$uuid
 #     set isofile="/isos/Example-ArchLinux.iso" #<<<< ISO NAME HERE
-#     loopback loop $isofile
-#     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/$uuid img_loop=$isofile earlymodules=loop
+#     loopback loop \$isofile
+#     linux (loop)/arch/boot/x86_64/vmlinuz-linux img_dev=/dev/disk/by-uuid/\$uuid img_loop=\$isofile earlymodules=loop
 #     initrd (loop)/arch/boot/x86_64/initramfs-linux.img
 # }
 
