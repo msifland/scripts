@@ -161,11 +161,13 @@ for j in $FOR_REM; do
 	echo "Removing /boot/$REM5"
 	sleep 1
 	if [[ -f /boot/$REM5 ]]; then
-		rm -rfv /boot/$REM5
 		REM6=$(echo $REM5 | sed 's:initrd.img:config:g')
 		REM7=$(echo $REM5 | sed 's:initrd.img:vmlinuz:g')
+		REM8=$(echo $REM5 | sed 's:initrd.img:System.map:g')
+		rm -rfv /boot/$REM5
 		rm -rfv /boot/$REM6
 		rm -rfv /boot/$REM7
+		rm -rfv /boot/$REM8
 		echo
 		echo "/boot/$REM5 removed."
 	else
