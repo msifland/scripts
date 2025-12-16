@@ -13,15 +13,7 @@ for k in $KERNS; do
 done
 echo "${ILCOLOR2}-----> Currently running $(uname -r)${ILRESTORE}" | pv -qL 35
 sleep 1
-echo
-echo "${ILCOLOR1}Also showing kernel info from /var/lib/initramfs-tools. This folder is where the system tries to create kernels from. If there are extra kernels listed there, delete them manually.${ILRESTORE}"
-sleep 1
-echo
-VAR_LIB_KERNS=$(ls /var/lib/initramfs-tools | tac)
-for v in $VAR_LIB_KERNS; do
-	echo $v
-	sleep .5
-done
+
 echo
 echo
 read -t 10 -p "${ILCOLOR2}Would you like to run 'kernel-purge'?[y/n] ${ILRESTORE}" kp
