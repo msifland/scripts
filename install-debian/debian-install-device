@@ -355,7 +355,7 @@ echo "			###### msifland custom install script ######" > "$INST_PTH/etc/fstab" |
 
 # --- Add the EFI partition ---
 EFI_UUID=$(blkid -s UUID -o value "${TARGET_DISK}2")  || true
-echo "UUID=$EFI_UUID    /boot/efi    vfat    umask=0077            0   1" >> "$INST_PTH/etc/fstab" || true
+echo "UUID=$EFI_UUID    /boot/efi    vfat    umask=0077            0   2" >> "$INST_PTH/etc/fstab" || true
 
 # --- Define remaining partitions to loop through ---
 # Array format: "PartitionNumber MountPoint FSType Options DumpPass"

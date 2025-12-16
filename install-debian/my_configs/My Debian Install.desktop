@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install Debian
+GenericName=Debian Script Installer
+Exec=mate-terminal -e "/bin/bash -c 'sudo ~/scripts/install-debian/debian-install-device'"
+Comment=Debian Script Installer
+Icon=/home/msifland/.face.icon
+Terminal=false
+Categories=Qt;System;
+StartupWMClass=calamares
+StartupNotify=True
+Name[en_US]=My Debian Install
+
