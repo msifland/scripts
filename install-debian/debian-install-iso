@@ -12,7 +12,7 @@ if [[ "$EUID" -ne 0 ]]; then
     exit 1
 fi
 
-# -------------------------- Config ----------------------------------
+# -------------------------- Config Directories ----------------------------------
 export HOME_DIR="$HOME"
 INST_PTH="$HOME_DIR/tmp/deb-inst"
 CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
@@ -135,7 +135,8 @@ install -Dm755 "$CHROOT_CONTINUE_SCRIPT"               "$INST_PTH/debian-install
 install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
 install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-latest-install"
 # Remove uneeded apt sources
-find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" -o -name "*dropbox*" \) -exec rm -v {} \;
+
 # --------------------- Chroot and finish install ------------------
 log "Entering chroot to finish package installation..."
 sleep 1
@@ -150,7 +151,6 @@ rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
 
 USR_HOME="$INST_PTH/home/$usrnme"
 log "Detected username: $usrnme"
-
 
 # --------------------- Create standard directories ----------------
 log "Creating standard user directories..."
@@ -241,9 +241,9 @@ chroot $INST_PTH /bin/bash -c "apt update -y || true; apt upgrade -y || true; ap
 
 # --------------------- Build the live ISO --------------------------
 echo
-log "Building the live ISO..."
+log "Building the live ISO, with built in grub menu..."
 sleep 1
-"$LIVE_BUILD_SCRIPT"   # ← your clean live-ISO script from earlier
+"$LIVE_BUILD_SCRIPT"   # ← your live-ISO script, creates iso with grub
 
 # --------------------- Clean unmount -------------------------------
 echo
@@ -270,6 +270,6 @@ Wipe first:
     sudo dd if=/dev/zero of=/dev/sdX bs=1M count=10 status=progress oflag=direct
 Write file:
     sudo dd if=MSI_live-image-amd64.hybrid.iso of=/dev/sdX bs=4M status=progress oflag=sync"
-echo "   Secondary system: Put it in a folder on you device and reference it with /etc/grub.d/40_custom OR by running your other scripts: debian-install-usb-prep, then installing manually via drag and drop."
-echo "Enjoy your fully personalized Debian MATE live system!"
+echo "   Secondary system: Put it in a folder on your device. depending on device, if you already have a running linux system then drag and drop to an iso folder, if you want to run a persistent iso, then first, run your other script: debian-install-usb-prep, then reference either option with /etc/grub.d/40_custom. Don't forget to update grub: sudo grub-mkconfig -o /boot/grub/grub.cfg"
+echo "Enjoy your fully personalized Debian live system!"
 echo "============================================================"

@@ -333,7 +333,7 @@ install -Dm755 "$CHROOT_SCRIPT"                        "$INST_PTH/debian-install
 install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
 install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-latest-install" 
 # Remove uneeded apt sources
-find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" -o -name "*dropbox*" \) -exec rm -v {} \;
 # -------------------------- Chroot & finish ----------------------#
 log "Entering chroot to complete installation"
 sleep 1
