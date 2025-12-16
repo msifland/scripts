@@ -231,15 +231,15 @@ grub-install --target=x86_64-efi \
     --removable \
     --bootloader-id=Debian_Hybrid_UEFI \
     --recheck
-    
+sleep 1
+
 echo
-echo
-read -rp "If installing for hybrid boot/usb(uefi + bios), then you should install for bios here as well. Type yes for bios grub install: " bs_grb
-if [[ "$bs_grb" =~ ^[yY]|[yY][eE][sS]$ ]]; then
+#read -rp "If installing for hybrid boot/usb(uefi + bios), then you should install for bios here as well. Type yes for bios grub install: " bs_grb
+#if [[ "$bs_grb" =~ ^[yY]|[yY][eE][sS]$ ]]; then
 	# --- ADDED: Install Legacy BIOS/MBR GRUB from INSIDE CHROOT ---
 	log "Installing Legacy BIOS MBR GRUB (inside chroot)"
 	grub-install --target=i386-pc "$TARGET_DISK"
-fi
+#fi
 sleep 1
 
 echo

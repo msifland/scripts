@@ -1,0 +1,515 @@
+#!/usr/bin/env bash
+#set -x
+# ===================================================================
+# debian-install – Full Debian MATE System Installer to Disk
+# With Your Original sed + All sleep Pauses – 2025
+# ===================================================================
+set -euo pipefail
+IFS=$'\n\t'
+
+# -------------------------- Config ---------------------------------#
+export HOME_DIR="$HOME"
+INST_PTH="$HOME_DIR/tmp/deb-inst"
+CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
+SCRIPTS_DIR="$HOME_DIR/scripts"
+CHROOT_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-dev-continue"
+PACKLIST="$CONFIGS_DIR/my_packs.list.chroot"
+GOOGLE_CHRM_SCRIPT="$HOME_DIR/scripts/google-chrome-latest-install"
+
+# -------------------------- Helpers -------------------------------#
+log()   { echo -e "\n\033[1;36m==>\033[0m \033[1;33m$*\033[0m\n"; sleep 1; }
+error() { echo -e "\033[1;31mERROR: $*\033[0m" >&2; exit 1; }
+ask()   { read -rp "$1[y/N]: " ans; [[ "$ans" =~ ^[yY]|[yY][eE][Ss]$ ]]; }
+
+# -------------------------- Must be root --------------------------#
+[[ "$EUID" -eq 0 ]] || error "This script must be run as root!"
+
+#---------------------Explanation---------------------------------------#
+clear
+log "Debian MATE Full System Installer"
+echo "This will install a complete, personalized Debian MATE system to a disk, with UEFI boot."
+echo "All data on the target disk will be erased if you choose to wipe it."
+sleep 1
+
+# -------------------------- Select target disk --------------------#
+log "Available disks:"
+sleep 1
+lsblk -d -p -o NAME,SIZE,MODEL
+echo
+read -rp "Enter target disk (e.g. /dev/sdb): " TARGET_DISK
+[[ -b "$TARGET_DISK" ]] || error "Not a valid block device: $TARGET_DISK"
+sleep 1
+log "Showing existing partitions on $TARGET_DISK"
+lsblk $TARGET_DISK
+echo
+#-------------------Wipe or no------------------------------------#
+echo
+if ask "Would you like to wipe disk or install over current partition setup?
+	If keeping current partitions, then there should be 5 to 6.
+	1. bios_grub(tiny 5M-10M)
+	2. efi(small 550M)
+	3. boot(small 3G-5G)
+	4. root(large 30G+)
+	5. home(large 30G+)
+	6. misc(medium 10G-30G)
+
+    y = wipe"; then
+
+	echo
+	if ! ask "ARE YOU SURE YOU WANT TO WIPE $TARGET_DISK"; then
+	    echo
+	    sleep 1
+	    echo
+	    echo "Exiting script...."
+	    sleep 1
+	    exit
+	fi
+	# get size of /dev/block
+	BS_NM=$(basename "$TARGET_DISK")
+	TTL_SIZE=$(lsblk "$TARGET_DISK" | grep -w "$BS_NM" | awk '{print $4}' | grep -oE '[0-9]+(\.[0-9]+)?')
+	# Unmount anything on this disk
+	mapfile -t mounted < <(lsblk -nrp -o NAME,MOUNTPOINT "$TARGET_DISK" | grep -v '^$')
+	for mnt in "${mounted[@]}"; do
+	    umount "${mnt%% *}" 2>/dev/null || true
+	done
+	umount -R "$INST_PTH/home" || true
+	umount -R "$INST_PTH/boot/efi" || true
+	umount -R "$INST_PTH/boot" || true
+	umount -R "$INST_PTH/misc" || true
+	umount -R "$INST_PTH/proc" || true
+	umount -R "$INST_PTH/dev/pts" || true
+	umount -R "$INST_PTH/dev" || true
+	umount -R "$INST_PTH/sysfs" || true
+	umount -R "$INST_PTH/sys" || true
+	umount -R "$INST_PTH" || true
+
+	# Optional wipe
+	log "Wiping first 10MB of $TARGET_DISK (secure headers)"
+	dd if=/dev/zero of="$TARGET_DISK" bs=10M count=1 status=progress
+	sleep 1
+
+	# -------------------------- Cleanup old session -------------------#
+	rm -rfv "$INST_PTH"
+	mkdir -p "$INST_PTH"
+	sleep 1
+
+	# -------------------------- Partition with cfdisk -----------------#
+		# Making sure we use whole numbers, no decimals
+	validate_size() {
+	    local size="$1"
+	    local name="$2"
+	    if ! [[ "$size" =~ ^[0-9]+$ ]]; then
+	        error "Please enter a whole number for $name (e.g., 50, not $size)"
+	    fi
+	}
+	echo
+	read -rp "There will be multiple partitions added. / /home /boot /boot/efi and /misc. Let's figure out what size you want those to be. The total size of the $TARGET_DISK is ${TTL_SIZE}G.
+	In gigs, 
+How big for root(ex. 30): " rt_sz
+	validate_size "$rt_sz" "/ (root)"
+	echo
+	read -rp "How big for /home(ex. 60): " hm_sz
+	validate_size "$hm_sz" "/home"
+	echo
+	read -rp "How big for /boot(kernel storage, ex. 10): " bt_sz
+	validate_size "$bt_sz" "/boot"
+	echo
+	read -rp "How big for /misc(isos/other storage, ex. 20): " ms_sz
+	validate_size "$ms_sz" "/misc"
+	RMN_SIZE=$(echo "scale=2; $TTL_SIZE - ($rt_sz + $hm_sz + $bt_sz + $ms_sz + 1)" | bc)
+	echo
+	echo "The remaining $RMN_SIZE, will be unallocated"
+	sleep 1
+	echo
+	if ! ask "Planned structure:
+	
+   	/boot = $bt_sz
+    	/home = $hm_sz
+    	/(root) = $rt_sz
+    	/misc = $ms_sz
+    	unallocated = $RMN_SIZE
+    
+    	Is this correct"; then
+	    echo
+	    sleep 1
+	    echo
+	    echo "Exiting script...."
+	    sleep 1
+	    exit
+	fi
+
+	# convert input to MiB
+	rt_sz_mib=$(($rt_sz * 1024))
+	hm_sz_mib=$(($hm_sz * 1024))
+	bt_sz_mib=$(($bt_sz * 1024))
+	ms_sz_mib=$(($ms_sz * 1024))
+	log "Launching parted on $TARGET_DISK"
+	wipefs -a "$TARGET_DISK"
+	sleep 1
+
+	# Define partition END POINTS in GiB (Cumulative Sizes using bc)
+	# The user input variables $rt_sz, $hm_sz, $bt_sz hold the *size* of the partition in GiB
+
+	# Define partition END POINTS in MiB (Cumulative Integers)
+	BIOS_GRUB_MiB_SIZE=10
+	EFI_MiB_SIZE=550
+
+	# Use original variable names for the final CUMULATIVE MiB END points
+	BIOS_GRUB_END=$BIOS_GRUB_MiB_SIZE
+	EFI_END=$((BIOS_GRUB_END + EFI_MiB_SIZE))
+	BOOT_END=$((EFI_END + bt_sz_mib))
+	ROOT_END=$((BOOT_END + rt_sz_mib))
+	HOME_END=$((ROOT_END + hm_sz_mib))
+	MISC_END=$((HOME_END + ms_sz_mib))
+
+	parted "$TARGET_DISK" --script --align optimal \
+	  mklabel gpt \
+	  mkpart primary 1MiB "${BIOS_GRUB_END}MiB" set 1 bios_grub on name 1 "BIOS_GRUB" \
+	  mkpart primary fat32 "${BIOS_GRUB_END}MiB" "${EFI_END}MiB" set 2 esp on set 2 boot on name 2 EFI \
+	  mkpart primary ext4 "${EFI_END}MiB" "${BOOT_END}MiB" name 3 BOOT \
+	  mkpart primary ext4 "${BOOT_END}MiB" "${ROOT_END}MiB" name 4 ROOT \
+	  mkpart primary ext4 "${ROOT_END}MiB" "${HOME_END}MiB" name 5 HOME \
+	  mkpart primary ext4 "${HOME_END}MiB" "${MISC_END}MiB" name 6 MISC \
+	  print
+	sleep 1
+
+	partprobe "$TARGET_DISK"
+	sleep 2
+
+	log "Current partition table:"
+	lsblk -f "$TARGET_DISK"
+	sleep 1
+
+	# -------------------------- Format partitions ---------------------#
+	echo
+	echo "Formatting created partitions..."
+	echo 'y' | mkfs.fat -F 32 "$TARGET_DISK"2
+	echo 'y' | mkfs.ext4 "$TARGET_DISK"3  # This is your BOOT (/boot)
+	echo 'y' | mkfs.ext4 "$TARGET_DISK"4  # This is your ROOT (/)
+	echo 'y' | mkfs.ext4 "$TARGET_DISK"5  # This is your HOME (/home)
+	echo 'y' | mkfs.ext4 "$TARGET_DISK"6  # This is your MISC (/misc)
+	sync
+
+	# -------------------------- Choose root partition -----------------#
+	log "Selecting root partition as "$TARGET_DISK"4"
+	sleep 1
+	lsblk -f "$TARGET_DISK"
+	sleep 1
+	# Creat mountpoint vars
+	UEFI_PART="$TARGET_DISK"2
+	BOOT_PART="$TARGET_DISK"3
+	ROOT_PART="$TARGET_DISK"4
+	HOME_PART="$TARGET_DISK"5
+	MISC_PART="$TARGET_DISK"6
+	# -------------------------- Debootstrap ----------------------------#
+	log "Mounting devices..."
+	sleep 1
+	mount "$ROOT_PART" "$INST_PTH"
+	mount "$HOME_PART" "$INST_PTH/home" --mkdir
+	mount "$BOOT_PART" "$INST_PTH/boot" --mkdir
+	mount "$UEFI_PART" "$INST_PTH/boot/efi" --mkdir
+	mount "$MISC_PART" "$INST_PTH/misc" --mkdir
+	sleep 1
+
+# If wipe else
+else
+    # Unmount anything on this disk
+    mapfile -t mounted < <(lsblk -nrp -o NAME,MOUNTPOINT "$TARGET_DISK" | grep -v '^$')
+    for mnt in "${mounted[@]}"; do
+        umount "${mnt%% *}" 2>/dev/null || true
+    done
+    umount -R "$INST_PTH/home" || true
+    umount -R "$INST_PTH/boot/efi" || true
+    umount -R "$INST_PTH/boot" || true
+    umount -R "$INST_PTH/misc" || true
+    umount -R "$INST_PTH/proc" || true
+    umount -R "$INST_PTH/dev/pts" || true
+    umount -R "$INST_PTH/dev" || true
+    umount -R "$INST_PTH/sysfs" || true
+    umount -R "$INST_PTH/sys" || true
+    umount -R "$INST_PTH" || true
+
+ 	#----------------- cleaning old work ------------------------#
+ 	log "Cleaning up old working directory..."
+ 	sleep 1
+    rm -rfv "$INST_PTH"
+	mkdir -p "$INST_PTH"
+
+    	# -------------------------- Choose root partition -----------------#
+	log "Selecting root partition as "$TARGET_DISK"4"
+	sleep 1
+	lsblk -f "$TARGET_DISK"
+	sleep 1
+	# Creat mountpoint vars
+	UEFI_PART="$TARGET_DISK"2
+	BOOT_PART="$TARGET_DISK"3
+	ROOT_PART="$TARGET_DISK"4
+	HOME_PART="$TARGET_DISK"5
+	MISC_PART="$TARGET_DISK"6
+
+	# -------------------------- Debootstrap ----------------------------#
+	log "Mounting devices, and cleaning bootstrap and boot and root directories. Leaving home and misc alone..."
+	sleep 1
+	mount "$ROOT_PART" "$INST_PTH"
+	mount "$HOME_PART" "$INST_PTH/home" --mkdir
+	mount "$BOOT_PART" "$INST_PTH/boot" --mkdir
+	mount "$UEFI_PART" "$INST_PTH/boot/efi" --mkdir
+	mount "$MISC_PART" "$INST_PTH/misc" --mkdir
+	sleep 1
+	find "$INST_PTH" -mindepth 1 \( -path "$INST_PTH/home" -o -path "$INST_PTH/misc" \) -prune -o -exec rm -rf {} + || true
+fi
+
+
+
+# -------------------------- Install latest debootstrap (YOUR WAY) ---
+log "Downloading latest debootstrap"
+mkdir -pv "$INST_PTH/work"
+rm -rf "$INST_PTH/work/*"
+cd "$INST_PTH/work"
+
+DEBOOT_STRP=$(wget -qO- http://ftp.debian.org/debian/pool/main/d/debootstrap | grep "all.deb" | sort -V | tail -1 | sed -e 's:.*a href="::' -e 's:.>.*::')
+
+wget "http://ftp.debian.org/debian/pool/main/d/debootstrap/$DEBOOT_STRP"
+dpkg -i "$DEBOOT_STRP" >/dev/null
+sleep 1
+
+log "Running debootstrap (this takes 5–15 minutes)"
+#Show curretn mount pouints
+log "Current mounts:"
+lsblk -f
+sleep 1
+#Start debian base install
+debootstrap --arch=amd64 \
+    --components=main,contrib,non-free,non-free-firmware \
+    testing "$INST_PTH" http://deb.debian.org/debian/
+sleep 1
+
+# -------------------------- Mounts & network ----------------------#
+log "Mounting system directories"
+sleep 1
+mount -t proc  none   "$INST_PTH/proc"
+mount -t sysfs none   "$INST_PTH/sys"
+mount -o bind  /dev   "$INST_PTH/dev"
+mount -o bind  /dev/pts "$INST_PTH/dev/pts"
+
+# --------------------- Network configuration ---------------------#
+log "Setting up basic networking"
+sleep 1
+# 1. Copy current resolv.conf so DNS works inside chroot
+cp -f /etc/resolv.conf "$INST_PTH/etc/resolv.conf"
+
+# 2. Copy hosts and hostname (helps with some tools)
+cp -f /etc/hosts     "$INST_PTH/etc/hosts"
+cp -f /etc/hostname  "$INST_PTH/etc/hostname"
+
+# 3. Traditional /etc/network/interfaces (still used by live-boot + ifupdown)
+if [[ -f /etc/network/interfaces ]]; then
+    install -Dm644 /etc/network/interfaces "$INST_PTH/etc/network/interfaces"
+else
+    # Fallback: create a minimal working one
+    cat > "$INST_PTH/etc/network/interfaces" <<EOF
+# Used by live-boot and ifupdown
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+EOF
+fi
+
+# --------------------- Fix apt sources (critical!) ---------------#
+log "Fixing apt sources configuration"
+sleep 1
+# Remove legacy sources.list if it exists (testing still creates it)
+if [[ -f "$INST_PTH/etc/apt/sources.list" ]]; then
+    rm -f "$INST_PTH/etc/apt/sources.list"
+    echo "Removed old /etc/apt/sources.list"
+    sleep 1
+fi
+# Ensure sources.list.d directory exists
+mkdir -p "$INST_PTH/etc/apt/sources.list.d"
+
+# 'instal' line explained: shortcut for copying with correct permissions and create directories if they don't exist.
+# Copy sources and pinning
+rsync -a --progress /etc/apt/ "$INST_PTH/etc/apt/"
+install -Dm644 "$CONFIGS_DIR/my_preferences.pref"      "$INST_PTH/etc/apt/preferences.d/"
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
+# Copy helper scripts
+install -Dm755 "$CHROOT_SCRIPT"                        "$INST_PTH/debian-install-continue"
+install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
+install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-latest-install" 
+# Remove uneeded apt sources
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" -o -name "*dropbox*" \) -exec rm -v {} \;
+# -------------------------- Chroot & finish ----------------------#
+log "Entering chroot to complete installation"
+sleep 1
+# exporting TARGET_DISK var to second script
+chroot $INST_PTH /bin/bash -i -c "export TARGET_DISK='$TARGET_DISK'; source /debian-install-continue"
+
+# Cleanup chroot helpers
+rm -f "$INST_PTH"/{debian-install-continue,my_packs.list.chroot}
+
+# -------------------------- Handle separate partitions ------------#
+# Clear existing fstab or add a header
+echo "			###### msifland custom install script ######" > "$INST_PTH/etc/fstab" || true
+
+# --- Add the EFI partition ---
+EFI_UUID=$(blkid -s UUID -o value "${TARGET_DISK}2")  || true
+echo "UUID=$EFI_UUID    /boot/efi    vfat    umask=0077            0   1" >> "$INST_PTH/etc/fstab" || true
+
+# --- Define remaining partitions to loop through ---
+# Array format: "PartitionNumber MountPoint FSType Options DumpPass"
+# Reference:
+#UEFI_PART="$TARGET_DISK"2
+#BOOT_PART="$TARGET_DISK"3
+#ROOT_PART="$TARGET_DISK"4
+#HOME_PART="$TARGET_DISK"5
+#MISC_PART="$TARGET_DISK"6
+PARTITIONS=(
+    "3  /boot    ext4    defaults            		 	0   2"
+    "4  /        ext4    defaults,errors=remount-ro		0   1"
+    "5  /home    ext4    defaults            			0   2"
+    "6  /misc    ext4    defaults            			0   2"
+)
+
+# --- Loop and add entries ---
+for entry in "${PARTITIONS[@]}"; do
+    # VITAL FIX: Temporarily set IFS to allow 'read' to split by spaces
+    IFS=' ' read -r part_num mount_point fs_type options dump_pass <<< "$entry"
+
+    # Get the UUID for the current partition (use curly braces for safety)
+    UUID=$(blkid -s UUID -o value "${TARGET_DISK}${part_num}")
+
+    # Append the fstab entry using UUID
+    if [ -n "$UUID" ]; then
+        echo "UUID=$UUID $mount_point $fs_type $options $dump_pass" >> "$INST_PTH/etc/fstab"
+    else
+        echo "Warning: Could not find UUID for ${TARGET_DISK}${part_num} ($mount_point). Check blkid output."
+        exit 3 # Fail hard if a UUID is missing
+    fi
+done
+
+echo "Finished generating $INST_PTH/etc/fstab:"
+
+# -------------------------- Final fstab review --------------------#
+log "Opening fstab for final review"
+sleep 1
+blkid
+sleep 1
+xterm -e "nano $INST_PTH/etc/fstab"
+sleep 1
+
+# -------------------------- Copy user data ------------------------#
+usrnme=$(cat "$INST_PTH/usrnme.txt" 2>/dev/null || echo "user")
+rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
+USR_HOME="$INST_PTH/home/$usrnme"
+
+# Create standard dirs
+log "Creating standard home directories"
+sleep 1
+for d in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
+    mkdir -p "$USR_HOME/$d"
+done
+
+# --------------------- Copy personal files (optional) ------------#
+log "Optional personal git repos"
+sleep 1
+cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
+read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
+if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
+    echo "Copying personal files using git clone..."
+    cd "$USR_HOME"
+    /bin/bash git-clone-my-repos
+    rm -f "git-clone-my-repos"
+    cd "$INST_PTH"
+    echo
+    echo "Done cloning pernal git repos"
+else
+    echo
+    echo "Okay, skipping personal docs."
+fi
+sleep 1
+
+# --------------------- Copy dotfiles/configs (optional) ----------#
+log "Optional personal config files and folders"
+sleep 1
+read -rp "Would you like to add you config files(.conig, .local, .cache, etc.)[y/N]: " add_confs
+if [[ "$add_confs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
+    echo "Copying configuration files..."
+    rsync -a --progress --exclude={chrome-remote-desktop,chromium,google-chrome,skypeforlinux,Code,variety} \
+        "$HOME_DIR/.config"     "$USR_HOME/"
+    rsync -a --progress --exclude={share/applications,share/baloo,share/akonadi,share/logs,share/lutris,share/skypeweb,share/Steam,share/Trash} \
+        "$HOME_DIR/.local"      "$USR_HOME/"
+    rsync -a --progress --exclude={chromium,mozilla,tracker,wine*,google-chrome,at-spi*} \
+        "$HOME_DIR/.cache"      "$USR_HOME/"
+else
+    echo
+    echo "Okay, skipping config files."
+fi
+for f in .Xresources .conkyrc .conkyrc.bak .bashrc .xprofile; do
+    [[ -f "$HOME_DIR/$f" ]] && cp -a "$HOME_DIR/$f" "$USR_HOME/"
+done
+sleep 1
+
+# --------------------- Fix permissions ----------------------------#
+chown -R "$usrnme:$usrnme" "$USR_HOME"
+sleep 1
+
+# --------------------- Add user to sudo -------------------------#
+log "Adding $usrnme to sudo"
+sleep 1
+SUDO_NM_FL="$INST_PTH/etc/sudoers.d/$usrnme"
+cat <<EOF > "$SUDO_NM_FL"  &>/dev/null
+$usrnme        ALL=(ALL:ALL) ALL
+
+Defaults    env_keep+="HOME"
+
+Defaults timestamp_timeout=-1
+EOF
+sleep 1
+
+log "Setting correct sudo permissions to files for $usrnme"
+# 1. Set the correct ownership (usually root:root)
+chown root:root "$SUDO_NM_FL"
+
+# 2. Set the correct permissions (Read-only for owner and group, nothing for others)
+chmod 0440 "$SUDO_NM_FL"
+
+# --------------------- Final pause --------------------------------#
+echo
+log "Almost done! You can now:
+        • Open another terminal and chroot in: sudo chroot $INST_PTH
+        • Inspect the filesystem in your file manager"
+echo
+echo
+read -rsp "Press ENTER when ready to clean up and finalize..."
+rm -rf "$INST_PTH/work"
+rm -rf "$INST_PTH/usr/share/doc/*"
+rm -rf "$INST_PTH/usr/share/man/*"
+rm -rf "$INST_PTH//var/cache/apt/archives/*"
+rm -rf "$INST_PTH/tmp/*"
+rm -rf "$INST_PTH/var/tmp/*"
+
+# Final clean  up
+log "Final clean up before build is complete"
+
+chroot $INST_PTH /bin/bash -c "apt update -y || true; apt upgrade -y || true; apt full-upgrade -y || true;apt --fix-broken install -y || true; apt autopurge -y || true; apt autoclean -y || true; apt clean -y || true; exit"
+
+echo
+log "Installation complete! Unmounting..."
+sleep 1
+mapfile -t mounted < <(lsblk -nrp -o NAME,MOUNTPOINT "$TARGET_DISK" | grep -v '^$')
+for mnt in "${mounted[@]}"; do
+    umount "${mnt%% *}" 2>/dev/null || true
+done
+umount "$INST_PTH"/{proc,sys,dev/pts,dev} 2>/dev/null || true
+umount "$INST_PTH"/* 2>/dev/null || true
+umount "$INST_PTH" 2>/dev/null || true
+sleep 1
+
+log "ALL DONE!"
+sleep 1
+echo "You can now reboot and boot from $TARGET_DISK"
+echo "Your username: $usrnme"
+echo "Enjoy your brand new personalized Debian system!"
+sleep 1
