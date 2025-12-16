@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;29m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;243m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;29m
+[1;38;5;243m
 Removing old build logs. . .
 
 [0m
-[1;38;5;29m
+[1;38;5;243m
 Start Time:
-Date: 12-08-25
+Date: 12-15-25
 Time: 02:15:16 AM
 
 Scanning: 
@@ -36,34 +36,44 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
-LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
-LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
-LibClamAV Warning: Bytecode run timed out in interpreter after 9210000 opcodes
-LibClamAV Warning: Bytecode 26 failed to run: Exceeded time limit
+/home/msifland/Dropbox/Home/Downloads/ModEngine-2.1.0.0-win64.zip: Win.Trojan.MSShellcode-10042644-0 FOUND
+/home/msifland/Dropbox/Home/Downloads/ModEngine-2.1.0.0-win64.zip: copied to '/home/msifland/infections/ModEngine-2.1.0.0-win64.zip'
+/home/msifland/Dropbox/Home/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: Win.Malware.Autohk-10045328-0 FOUND
+/home/msifland/Dropbox/Home/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: copied to '/home/msifland/infections/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip'
+/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/mod/randomizer/diste/ModEngine/modengine2/tools/scyllahide/HookLibraryx64.dll: Win.Trojan.MSShellcode-10042644-0 FOUND
+/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/mod/randomizer/diste/ModEngine/modengine2/tools/scyllahide/HookLibraryx64.dll: copied to '/home/msifland/infections/HookLibraryx64.dll'
+/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/modengine2/tools/scyllahide/HookLibraryx64.dll: Win.Trojan.MSShellcode-10042644-0 FOUND
+/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/modengine2/tools/scyllahide/HookLibraryx64.dll: copied to '/home/msifland/infections/HookLibraryx64.dll.001'
+/home/msifland/Dropbox/Windows/Downloads/ModEngine-2.0.0-preview3-win64.zip: Win.Trojan.MSShellcode-10042644-0 FOUND
+/home/msifland/Dropbox/Windows/Downloads/ModEngine-2.0.0-preview3-win64.zip: copied to '/home/msifland/infections/ModEngine-2.0.0-preview3-win64.zip'
+/home/msifland/Dropbox/Windows/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: Win.Malware.Autohk-10045328-0 FOUND
+/home/msifland/Dropbox/Windows/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: copied to '/home/msifland/infections/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip.001'
+/home/msifland/Dropbox/Windows/Software/Cool Edit Pro 2.0 Serial.zip: Win.Worm.W-405 FOUND
+/home/msifland/Dropbox/Windows/Software/Cool Edit Pro 2.0 Serial.zip: copied to '/home/msifland/infections/Cool Edit Pro 2.0 Serial.zip'
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8708983
+Known viruses: 8709007
 Engine version: 1.4.3
-Scanned directories: 77657
-Scanned files: 748583
-Infected files: 0
-Total errors: 295
-Data scanned: 60365.21 MB
-Data read: 105596.27 MB (ratio 0.57:1)
-Time: 18605.372 sec (310 m 5 s)
-Start Date: 2025:12:08 02:15:24
-End Date:   2025:12:08 07:25:29
+Scanned directories: 42444
+Scanned files: 389792
+Infected files: 7
+Total errors: 182
+Data scanned: 68319.25 MB
+Data read: 148356.46 MB (ratio 0.46:1)
+Time: 23567.743 sec (392 m 47 s)
+Start Date: 2025:12:15 02:15:24
+End Date:   2025:12:15 08:48:11
 
 
 End Time:
-Date: 12-08-25
-Time: 07:25:29 AM
-It took 5 hours 10 minutes 13 seconds to scan your system.
+Date: 12-15-25
+Time: 08:48:12 AM
+It took 6 hours 32 minutes 56 seconds to scan your system.
 
 
-[1;38;5;29m
+[1;38;5;243m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m

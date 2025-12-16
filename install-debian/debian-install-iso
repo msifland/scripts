@@ -134,7 +134,8 @@ find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name 
 install -Dm755 "$CHROOT_CONTINUE_SCRIPT"               "$INST_PTH/debian-install-continue-iso"
 install -Dm644 "$CONFIGS_DIR/my_packs.list.chroot"     "$INST_PTH/my_packs.list.chroot"
 install -Dm755 "$GOOGLE_CHRM_SCRIPT"                   "$INST_PTH/google-chrome-latest-install"
-
+# Remove uneeded apt sources
+find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
 # --------------------- Chroot and finish install ------------------
 log "Entering chroot to finish package installation..."
 sleep 1
@@ -235,8 +236,7 @@ rm -rf "$INST_PTH/var/tmp/*"
 
 # Final clean  up
 log "Final clean up before build is complete"
-# Remove uneeded apt sources
-find "$INST_PTH/etc/apt/sources.list.d/" -maxdepth 1 \( -name "*mega*" -o -name "*google*" \) -exec rm -v {} \;
+
 chroot $INST_PTH /bin/bash -c "apt update -y || true; apt upgrade -y || true; apt full-upgrade -y || true;apt --fix-broken install -y || true; apt autopurge -y || true; apt autoclean -y || true; apt clean -y || true; exit"
 
 # --------------------- Build the live ISO --------------------------
