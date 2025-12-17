@@ -1,0 +1,71 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+# -------------------------- Helpers -------------------------------#
+log()   { echo -e "\n\033[1;36m==>\033[0m \033[1;33m$*\033[0m\n"; sleep 1; }
+echo
+log "We are going to download and setup Dropbox"
+sleep 1
+
+if [[ ! -d ~/Downloads ]]; then
+	mkdir -p ~/Downloads
+fi
+cd ~/Downloads
+sleep 1
+
+echo "Downloading now..."
+sleep 1
+LATEST=$(wget -qO- https://linux.dropbox.com/packages/debian/ | grep -oE 'dropbox_[^"]+_amd64\.deb' | grep -v 'nautilus' | sort -V | tail -n 1)
+wget "https://linux.dropbox.com/packages/debian/$LATEST"
+
+log "Dropbox downloaded, installing now."
+sleep 1
+sudo dpkg -i *dropbox*.deb
+
+log "Checking dependencies..."
+sleep 1
+if ! dpkg --get-selections | grep ayatana-indicator-application; then
+	sudo apt install -y ayatana-indicator-application
+fi
+if ! dpkg --get-selections | grep libmate-panel-applet; then
+	sudo apt install -y libmate-panel-applet
+fi
+if ! dpkg --get-selections | grep mate-dock-applet; then
+	sudo apt install -y mate-dock-applet
+fi
+if ! dpkg --get-selections | grep mate-indicator-applet; then
+	sudo apt install -y mate-indicator-applet
+fi
+if ! dpkg --get-selections | grep mate-indicator-applet-common; then
+	sudo apt install -y mate-indicator-applet-common
+fi
+if ! dpkg --get-selections | grep mate-panel; then
+	sudo apt install -y mate-panel
+fi
+if ! dpkg --get-selections | grep libayatana-appindicator3-1; then
+	sudo apt install -y libayatana-appindicator3-1
+fi
+if ! dpkg --get-selections | grep libappindicator3-1; then
+	sudo apt install -y libappindicator3-1
+fi
+sleep 1
+
+echo
+echo "Cleaning up..."
+sleep 1
+rm *dropbox*
+
+log "Finished. You must reboot to see the Dropbox indicator."
+sleep 1
+
+echo
+read -rp "Would you like to reboot now?[y/N] " rbt
+if [[ "$rbt" =~ ^([yY]|[yY][eE][sS])$ ]]; then
+	log "Rebooting now..."
+	sleep 1
+	shutdown -r now
+else
+	log "Okay, not rebooting now."
+	sleep 1
+fi
+cd ~/
