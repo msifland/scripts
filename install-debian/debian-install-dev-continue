@@ -89,7 +89,8 @@ function dsk_chc(){
             mate-control-center-common mate-backgrounds mate-calc \
             mate-calc-common mate-common mate-core mate-desktop \
             mate-desktop-common mate-desktop-environment \
-            mate-desktop-environment-core mate-menu mate-menus
+            mate-desktop-environment-core mate-menu mate-menus \
+            mate-indicator-applet mate-indicator-applet-common
     ;;
     2)
     	inst_var="xfce"

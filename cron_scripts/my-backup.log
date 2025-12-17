@@ -1,11 +1,11 @@
 [sudo] password for msifland: 
 
-12-10-2025 01:30:01 AM
+12-17-2025 01:30:01 AM
 
-[1;38;5;66mRemove old backups first. . .[0m
+[1;38;5;55mRemove old backups first. . .[0m
 ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm -f
 
-[1;38;5;66mBacking up:[0m
+[1;38;5;55mBacking up:[0m
 /home/msifland/Brother_Printer
 /home/msifland/Documents
 /home/msifland/Dropbox
@@ -34,7 +34,7 @@ ls /home/msifland/Dropbox/Linux/Backups/* -t | sed -e '1,5d' | xargs -d '\n' rm 
 /home/msifland/.git*
 /home/msifland/.repo*
 /usr/share/mate*
-[1;38;5;66mTo /home/msifland/Dropbox/Linux/Backups/msifland-12-10-2025.tar.gz
+[1;38;5;55mTo /home/msifland/Dropbox/Linux/Backups/msifland-12-17-2025.tar.gz
 
 
 Excluding:[0m
@@ -68,26 +68,34 @@ Excluding:[0m
 /home/msifland/.local/share/data
 /home/msifland/Dropbox
 
-[1;38;5;66mBacking up now. . .[0m
+[1;38;5;55mBacking up now. . .[0m
 tar: Removing leading `/' from member names
 tar: Removing leading `/' from hard link targets
-tar: /home/msifland/.ssh/agent/s.x5Hv5QEBdS.agent.40HdIjbgAQ: socket ignored
-[1;38;5;66mBackup finished
+tar: /home/msifland/.anydesk: Cannot stat: No such file or directory
+tar: /home/msifland/.blerc: Cannot stat: No such file or directory
+tar: /home/msifland/.icons: Cannot stat: No such file or directory
+tar: /home/msifland/.ssh/agent/s.x5Hv5QEBdS.agent.TKL3AWawSU: socket ignored
+tar: /home/msifland/.themes: Cannot stat: No such file or directory
+tar: /home/msifland/.xprofile: Cannot stat: No such file or directory
+tar: /home/msifland/.repo*: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+[1;38;5;55mBackup finished
 
 Making sure ownership is correct. . .[0m
 
-Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-12-10-2025.tar.gz from root:root to msifland:msifland. . .
-sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-12-10-2025.tar.gz
-[1;38;5;66mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
+Changing ownership of /home/msifland/Dropbox/Linux/Backups/msifland-12-17-2025.tar.gz from root:root to msifland:msifland. . .
+sudo chown msifland:msifland /home/msifland/Dropbox/Linux/Backups/msifland-12-17-2025.tar.gz
+[1;38;5;55mShowing files in /home/msifland/Dropbox/Linux/Backups/ . . .[0m
 total 2.3G
--rw-r--r-- 1 msifland msifland 777M Nov 17 13:51 msifland-11-17-2025.tar.gz
 -rw-r--r-- 1 msifland msifland 734M Nov 19 01:38 msifland-11-19-2025.tar.gz
 -rw-r--r-- 1 msifland msifland 373M Dec  3 01:32 msifland-12-03-2025.tar.gz
 -rw-r--r-- 1 msifland msifland 389M Dec 10 01:32 msifland-12-10-2025.tar.gz
--rw-r--r-- 1 msifland msifland 2.3K Dec 10 01:32 my_backup_log.txt
+-rw-r--r-- 1 msifland msifland 386M Dec 14 13:02 msifland-12-14-2025.tar.gz
+-rw-r--r-- 1 msifland msifland 418M Dec 17 01:31 msifland-12-17-2025.tar.gz
+-rw-r--r-- 1 msifland msifland 2.3K Dec 17 01:31 my_backup_log.txt
 
-[1;38;5;66mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
+[1;38;5;55mYou can edit files and folders to backup and exclude in /home/msifland/scripts/my_backup or by typing edit-my-backup.[0m
 
-12-10-2025 01:32:56 AM
-[1;38;5;66mIt took 2 minutes 55 seconds to run whole process.[0m
+12-17-2025 01:31:25 AM
+[1;38;5;55mIt took 1 minutes 24 seconds to run whole process.[0m
 
