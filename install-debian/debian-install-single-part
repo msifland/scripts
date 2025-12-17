@@ -174,12 +174,16 @@ rm -f "$INST_PTH"/{usrnme.txt,usrnme_psswrd.txt,new_psswrd.txt}
 USR_HOME="$INST_PTH/home/$usrnme"
 
 # Create standard dirs
+log "Creating standard home directories"
+sleep 1
 for d in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$d"
     install -Dm755 "$CONFIGS_DIR/My-Debian-Installer.desktop" "$USR_HOME/Desktop/My-Debian-Installer.desktop"
 done
 
 # --------------------- Copy personal files (optional) ------------#
+log "Optional personal git repos"
+sleep 1
 cp "$HOME_DIR/scripts/git-clone-my-repos" "$USR_HOME/git-clone-my-repos"
 read -rp "Would you like to add you git directories(Document, scripts, pkg_bkups, etc.)[y/N]: " add_docs
 if [[ "$add_docs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
@@ -197,6 +201,8 @@ fi
 sleep 1
 
 # --------------------- Copy dotfiles/configs (optional) ----------#
+log "Optional personal config files and folders"
+sleep 1
 read -rp "Would you like to add you config files(.conig, .local, .cache, etc.)[y/N]: " add_confs
 if [[ "$add_confs" =~ ^[yY]|[yY][eE][sS]$ ]]; then
     echo "Copying configuration files..."
@@ -271,8 +277,11 @@ umount "$INST_PTH"/* 2>/dev/null || true
 umount "$INST_PTH" 2>/dev/null || true
 sleep 1
 
-log "ALL DONE!"
+log "ALL DONE! Updating grub..."
 sleep 1
+grub-mkconfig -o /boot/grub/grub.cfg
+sleep 1
+
 echo "You can now reboot and boot from $TARGET_DISK"
 echo "Your username: $usrnme"
 echo "Enjoy your brand new personalized Debian system!"

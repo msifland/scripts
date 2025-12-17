@@ -158,6 +158,7 @@ if [[ -f "$PACKLIST" ]]; then
 else
     error "Package list not found: $PACKLIST"
 fi
+apt install -y sublime-text || true
 
 # -------------------------- Root password --------------------------
 log "Setting root password !!!!!TYPE CORRECTLY!!!!!"
