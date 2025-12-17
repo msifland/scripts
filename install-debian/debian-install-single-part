@@ -32,6 +32,24 @@ lsblk
 echo
 read -rp "Please type the FULL partition to install Debian to(ex. /dev/sda4, /dev/sda2, /dev/sdb3): " TARGET_DISK
 
+# Unmount anything on this disk
+log "Making sure path is NOT mounted..."
+sleep 1
+mapfile -t mounted < <(lsblk -nrp -o NAME,MOUNTPOINT "$TARGET_DISK" | grep -v '^$')
+for mnt in "${mounted[@]}"; do
+    umount "${mnt%% *}" 2>/dev/null || true
+done
+umount -R "$INST_PTH/home" || true
+umount -R "$INST_PTH/boot/efi" || true
+umount -R "$INST_PTH/boot" || true
+umount -R "$INST_PTH/misc" || true
+umount -R "$INST_PTH/proc" || true
+umount -R "$INST_PTH/dev/pts" || true
+umount -R "$INST_PTH/dev" || true
+umount -R "$INST_PTH/sysfs" || true
+umount -R "$INST_PTH/sys" || true
+umount -R "$INST_PTH" || true
+
 log "Formatting the Root partition ($TARGET_DISK) as ext4..."
 mkfs.ext4 -L "DEBIAN_ROOT" "$TARGET_DISK"
 sync
