@@ -409,6 +409,7 @@ log "Creating standard home directories"
 sleep 1
 for d in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$d"
+    install -Dm755 "$CONFIGS_DIR/My-Debian-Installer.desktop" "$USR_HOME/Desktop/My-Debian-Installer.desktop"
 done
 
 # --------------------- Copy personal files (optional) ------------#

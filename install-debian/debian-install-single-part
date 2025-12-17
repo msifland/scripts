@@ -9,7 +9,7 @@ export HOME_DIR="$HOME"
 INST_PTH="$HOME_DIR/tmp/deb-inst"
 CONFIGS_DIR="$HOME_DIR/scripts/install-debian/my_configs"
 SCRIPTS_DIR="$HOME_DIR/scripts"
-CHROOT_SCRIPT="$SCRIPTS_DIR/debian-install-sngl-prt-continue"
+CHROOT_SCRIPT="$SCRIPTS_DIR/install-debian/debian-install-sngl-prt-continue"
 PACKLIST="$CONFIGS_DIR/my_packs.list.chroot"
 GOOGLE_CHRM_SCRIPT="$HOME_DIR/scripts/google-chrome-latest-install"
 
@@ -158,6 +158,7 @@ USR_HOME="$INST_PTH/home/$usrnme"
 # Create standard dirs
 for d in Desktop Downloads Music Pictures Videos tmp Wallpapers; do
     mkdir -p "$USR_HOME/$d"
+    install -Dm755 "$CONFIGS_DIR/My-Debian-Installer.desktop" "$USR_HOME/Desktop/My-Debian-Installer.desktop"
 done
 
 # --------------------- Copy personal files (optional) ------------#
