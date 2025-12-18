@@ -93,9 +93,9 @@ if [[ -b $DEVBLOCK ]]; then
 			echo
 			echo "Writing now, this could take a while. . ."
 			echo
-			sudo dd bs=4M if=$FILE | sudo pv -trebI | sudo dd of=$DEVBLOCK && sync
+			sudo dd if="$FILE" of="$DEVBLOCK" bs=4M status=progress && sync
 			sudo hdparm -r0 $DEVBLOCK
-			sudo $HOME/scripts/reset-usb
+			sudo $HOME/scripts/usb-reset
 			while [[ ! -b $DEVBLOCK ]]; do
 				echo "Waiting for usb devices to be reset. . ."
 				sleep 2

@@ -262,7 +262,6 @@ rm -rf "$INST_PTH/var/tmp/*"
 
 # Final clean  up
 log "Final clean up before build is complete"
-\;
 chroot $INST_PTH /bin/bash -c "apt update -y || true; apt upgrade -y || true; apt full-upgrade -y || true;apt --fix-broken install -y || true; apt autopurge -y || true; apt autoclean -y || true; apt clean -y || true; exit"
 
 echo
