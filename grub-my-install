@@ -1,0 +1,24 @@
+#!/bin/bash
+# This is a blank bash script document.
+# Put your code below this line.
+log() { echo -e "\n\033[1;36m==>\033[0m \033[1;33m$*\033[0m\n"; sleep 1; }
+echo
+log "You have decided to install/reinstall grub. So you know the commands, this tells you what to type in terminal. This is for installing uefi, bios, or both.
+Type the following commands"
+log "For uefi, the id can be what you want to name it, and the removeable option would be for a usb drive only: "
+echo "sudo grub-install --target=x86_64-efi \
+    --efi-directory=/boot/efi \
+    --removable \
+    --bootloader-id=Debian_Hybrid_UEFI \
+    --recheck"
+
+echo
+echo
+log "For bios, the /dev/sd'X' would would the drive, e.g. /dev/sda, /dev/sdb:"
+echo "sudo grub-install --target=i386-pc /dev/sd'X'"
+
+echo
+echo
+log "After running those commands, update grub by typing:"
+echo "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+echo
