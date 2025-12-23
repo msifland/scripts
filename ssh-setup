@@ -91,7 +91,7 @@ enter_port
 echo
 echo "Running commands to restart ssh. . ."
 sleep 1
-sudo sudo systemctl stop sshd
+sudo systemctl stop sshd
 sudo service ssh restart
 sleep 1
 

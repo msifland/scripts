@@ -1,0 +1,10 @@
+#!/bin/bash 
+
+echo "Restarting ssh services..."
+PW="spike"
+sleep 2
+echo $PW | sudo -S systemctl stop sshd
+echo $PW | sudo -S systemctl start sshd
+echo $PW | sudo -S service ssh restart
+
+exit
