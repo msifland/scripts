@@ -62,6 +62,25 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/.local/share/Steam
 --exclude=$HOME/.local/share/Trash
 --exclude=$HOME/.local/share/data
+--exclude=/usr/share/exploitdb
+--exclude=/usr/share/webshells
+--exclude=/usr/share/nishang
+--exclude=/usr/share/seclists
+--exclude=$HOME/infections
+--exclude=/usr/share/beef-xss
+--exclude=/usr/share/davtest
+--exclude=/usr/share/sqlninja
+--exclude=/usr/share/windows-resources
+--exclude=/usr/share/commix
+--exclude=/usr/share/set/src
+--exclude=/usr/share/veil
+--exclude=/usr/share/isr-evilgrade
+--exclude=/usr/share/bettercap
+--exclude=/usr/share/powershell-empire
+--exclude=/usr/share/peass
+--exclude=/usr/bin/cymothoa
+--exclude=/usr/lib/passing-the-hash
+--exclude=/etc/unicornscan/payloads.conf
 --exclude=$HOME/Dropbox"
 
 # Destination of Backup.

@@ -1,5 +1,13 @@
-[sudo] password for msifland: Mon Dec 15 02:10:03 2025 -> ClamAV update process started at Mon Dec 15 02:10:03 2025
-Mon Dec 15 02:10:03 2025 -> daily.cvd database is up-to-date (version: 27850, sigs: 2077314, f-level: 90, builder: svc.clamav-publisher)
-Mon Dec 15 02:10:03 2025 -> main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-Mon Dec 15 02:10:03 2025 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+[sudo] password for msifland: freshclam: no process found
+Mon Dec 22 02:10:04 2025 -> ClamAV update process started at Mon Dec 22 02:10:04 2025
+Mon Dec 22 02:10:04 2025 -> daily database available for update (local version: 27850, remote version: 27858)
+Mon Dec 22 02:10:13 2025 -> Testing database: '/var/lib/clamav/tmp.23e185bd01/clamav-a393293bddea13124bc0caa2019d6b2b.tmp-daily.cld' ...
+Mon Dec 22 02:10:16 2025 -> Database test passed.
+Mon Dec 22 02:10:16 2025 -> daily.cld updated (version: 27858, sigs: 354573, f-level: 90, builder: svc.clamav-publisher)
+Mon Dec 22 02:10:16 2025 -> main database available for update (local version: 62, remote version: 63)
+Mon Dec 22 02:10:33 2025 -> Testing database: '/var/lib/clamav/tmp.23e185bd01/clamav-2f826ff49b3af45d64801cabf758e38b.tmp-main.cld' ...
+Mon Dec 22 02:10:36 2025 -> Database test passed.
+Mon Dec 22 02:10:36 2025 -> main.cld updated (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Mon Dec 22 02:10:36 2025 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ERROR: Mon Dec 22 02:10:36 2025 -> NotifyClamd: Can't find or parse configuration file /etc/clamav/clamd.conf
 

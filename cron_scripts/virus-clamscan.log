@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;243m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;106m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;243m
+[1;38;5;106m
 Removing old build logs. . .
 
 [0m
-[1;38;5;243m
+[1;38;5;106m
 Start Time:
-Date: 12-15-25
+Date: 12-22-25
 Time: 02:15:16 AM
 
 Scanning: 
@@ -36,44 +36,1492 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
-/home/msifland/Dropbox/Home/Downloads/ModEngine-2.1.0.0-win64.zip: Win.Trojan.MSShellcode-10042644-0 FOUND
-/home/msifland/Dropbox/Home/Downloads/ModEngine-2.1.0.0-win64.zip: copied to '/home/msifland/infections/ModEngine-2.1.0.0-win64.zip'
-/home/msifland/Dropbox/Home/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: Win.Malware.Autohk-10045328-0 FOUND
-/home/msifland/Dropbox/Home/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: copied to '/home/msifland/infections/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip'
-/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/mod/randomizer/diste/ModEngine/modengine2/tools/scyllahide/HookLibraryx64.dll: Win.Trojan.MSShellcode-10042644-0 FOUND
-/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/mod/randomizer/diste/ModEngine/modengine2/tools/scyllahide/HookLibraryx64.dll: copied to '/home/msifland/infections/HookLibraryx64.dll'
-/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/modengine2/tools/scyllahide/HookLibraryx64.dll: Win.Trojan.MSShellcode-10042644-0 FOUND
-/home/msifland/Dropbox/Home/Documents/ER Backup/ModEngine2/modengine2/tools/scyllahide/HookLibraryx64.dll: copied to '/home/msifland/infections/HookLibraryx64.dll.001'
-/home/msifland/Dropbox/Windows/Downloads/ModEngine-2.0.0-preview3-win64.zip: Win.Trojan.MSShellcode-10042644-0 FOUND
-/home/msifland/Dropbox/Windows/Downloads/ModEngine-2.0.0-preview3-win64.zip: copied to '/home/msifland/infections/ModEngine-2.0.0-preview3-win64.zip'
-/home/msifland/Dropbox/Windows/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: Win.Malware.Autohk-10045328-0 FOUND
-/home/msifland/Dropbox/Windows/Downloads/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip: copied to '/home/msifland/infections/Lets Walk Together - Movement Speed Overhaul-3733-2-0-1-1695825903.zip.001'
-/home/msifland/Dropbox/Windows/Software/Cool Edit Pro 2.0 Serial.zip: Win.Worm.W-405 FOUND
-/home/msifland/Dropbox/Windows/Software/Cool Edit Pro 2.0 Serial.zip: copied to '/home/msifland/infections/Cool Edit Pro 2.0 Serial.zip'
+/usr/share/webshells/asp/cmdasp.asp: Win.Trojan.Ace-8 FOUND
+/usr/share/webshells/asp/cmdasp.asp: copied to '/home/msifland/infections/cmdasp.asp'
+/usr/share/nishang/Execution/Execute-DNSTXT-Code.ps1: Win.Exploit.Powershell-1 FOUND
+/usr/share/nishang/Execution/Execute-DNSTXT-Code.ps1: copied to '/home/msifland/infections/Execute-DNSTXT-Code.ps1'
+/usr/share/nishang/Client/Out-SCT.ps1: Xml.Malware.Squiblydoo-6728833-0 FOUND
+/usr/share/nishang/Client/Out-SCT.ps1: copied to '/home/msifland/infections/Out-SCT.ps1'
+/usr/share/nishang/Shells/Invoke-PowerShellTcpOneLine.ps1: Win.Trojan.PowershellReverseShellOneLine-9840826-0 FOUND
+/usr/share/nishang/Shells/Invoke-PowerShellTcpOneLine.ps1: copied to '/home/msifland/infections/Invoke-PowerShellTcpOneLine.ps1'
+/usr/share/seclists/Web-Shells/FuzzDB/nc.exe: Win.Tool.NetCat-9917183-0 FOUND
+/usr/share/seclists/Web-Shells/FuzzDB/nc.exe: copied to '/home/msifland/infections/nc.exe'
+/usr/share/seclists/Payloads/Zip-Bombs/zbsm.zip: Heuristics.Zip.OverlappingFiles FOUND
+/usr/share/seclists/Payloads/Zip-Bombs/zbsm.zip: copied to '/home/msifland/infections/zbsm.zip'
+/usr/share/seclists/Payloads/Zip-Bombs/zblg.zip: Heuristics.Zip.OverlappingFiles FOUND
+/usr/share/seclists/Payloads/Zip-Bombs/zblg.zip: copied to '/home/msifland/infections/zblg.zip'
+/usr/share/seclists/Payloads/Zip-Bombs/42-passwordless.zip: Win.Trojan.ArcBomb-2 FOUND
+/usr/share/seclists/Payloads/Zip-Bombs/42-passwordless.zip: copied to '/home/msifland/infections/42-passwordless.zip'
+/usr/share/seclists/Payloads/PHPInfo.zip: Win.Trojan.Hide-1 FOUND
+/usr/share/seclists/Payloads/PHPInfo.zip: copied to '/home/msifland/infections/PHPInfo.zip'
+/usr/share/seclists/Payloads/Anti-Virus/eicar-com.txt: Eicar-Signature FOUND
+/usr/share/seclists/Payloads/Anti-Virus/eicar-com.txt: copied to '/home/msifland/infections/eicar-com.txt'
+/usr/share/seclists/Fuzzing/XSS/robot-friendly/XSS-payloadbox.txt: Win.Trojan.Agent-35594 FOUND
+/usr/share/seclists/Fuzzing/XSS/robot-friendly/XSS-payloadbox.txt: copied to '/home/msifland/infections/XSS-payloadbox.txt'
+/usr/share/seclists/Fuzzing/XSS/robot-friendly/XSS-Jhaddix.txt: Img.Phishing.SvgJsPhishing-10044283-0 FOUND
+/usr/share/seclists/Fuzzing/XSS/robot-friendly/XSS-Jhaddix.txt: copied to '/home/msifland/infections/XSS-Jhaddix.txt'
+/usr/share/seclists/Fuzzing/XSS/robot-friendly/XSS-OFJAAAH.txt: Win.Trojan.Agent-35594 FOUND
+/usr/share/seclists/Fuzzing/XSS/robot-friendly/XSS-OFJAAAH.txt: copied to '/home/msifland/infections/XSS-OFJAAAH.txt'
+/usr/share/seclists/Fuzzing/XSS/human-friendly/XSS-payloadbox.txt: Win.Trojan.Agent-35594 FOUND
+/usr/share/seclists/Fuzzing/XSS/human-friendly/XSS-payloadbox.txt: copied to '/home/msifland/infections/XSS-payloadbox.txt.001'
+/usr/share/seclists/Fuzzing/XSS/human-friendly/XSS-Jhaddix.txt: Img.Phishing.SvgJsPhishing-10044283-0 FOUND
+/usr/share/seclists/Fuzzing/XSS/human-friendly/XSS-Jhaddix.txt: copied to '/home/msifland/infections/XSS-Jhaddix.txt.001'
+/usr/share/seclists/Fuzzing/XSS/human-friendly/XSS-OFJAAAH.txt: Win.Trojan.Agent-35594 FOUND
+/usr/share/seclists/Fuzzing/XSS/human-friendly/XSS-OFJAAAH.txt: copied to '/home/msifland/infections/XSS-OFJAAAH.txt.001'
+/usr/share/exploitdb/exploits/linux/dos/44876.rb: Html.Exploit.CVE_2018_8278-6623659-1 FOUND
+/usr/share/exploitdb/exploits/linux/dos/44876.rb: copied to '/home/msifland/infections/44876.rb'
+/usr/share/exploitdb/exploits/linux/local/44842.txt: Html.Exploit.CVE_2018_8278-6623659-1 FOUND
+/usr/share/exploitdb/exploits/linux/local/44842.txt: copied to '/home/msifland/infections/44842.txt'
+/usr/share/exploitdb/exploits/linux/local/22836.pl: Unix.Exploit.Youbin-1 FOUND
+/usr/share/exploitdb/exploits/linux/local/22836.pl: copied to '/home/msifland/infections/22836.pl'
+/usr/share/exploitdb/exploits/linux/remote/4315.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/linux/remote/4315.py: copied to '/home/msifland/infections/4315.py'
+/usr/share/exploitdb/exploits/linux/remote/4243.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/linux/remote/4243.c: copied to '/home/msifland/infections/4243.c'
+/usr/share/exploitdb/exploits/linux/remote/1355.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/linux/remote/1355.pl: copied to '/home/msifland/infections/1355.pl'
+/usr/share/exploitdb/exploits/linux/remote/31875.py: Unix.Exploit.CVE_2014_1912-2 FOUND
+/usr/share/exploitdb/exploits/linux/remote/31875.py: copied to '/home/msifland/infections/31875.py'
+/usr/share/exploitdb/exploits/linux/remote/47686.py: Java.Trojan.MSShellcode-19 FOUND
+/usr/share/exploitdb/exploits/linux/remote/47686.py: copied to '/home/msifland/infections/47686.py'
+/usr/share/exploitdb/exploits/linux/remote/22658.pl: Win.Exploit.Perl-14 FOUND
+/usr/share/exploitdb/exploits/linux/remote/22658.pl: copied to '/home/msifland/infections/22658.pl'
+/usr/share/exploitdb/exploits/aix/local/21904.pl: Win.Trojan.E-44 FOUND
+/usr/share/exploitdb/exploits/aix/local/21904.pl: copied to '/home/msifland/infections/21904.pl'
+/usr/share/exploitdb/exploits/hardware/dos/11427.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/hardware/dos/11427.txt: copied to '/home/msifland/infections/11427.txt'
+/usr/share/exploitdb/exploits/hardware/remote/18673.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/hardware/remote/18673.txt: copied to '/home/msifland/infections/18673.txt'
+/usr/share/exploitdb/exploits/hardware/remote/18675.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/hardware/remote/18675.txt: copied to '/home/msifland/infections/18675.txt'
+/usr/share/exploitdb/exploits/novell/remote/28835.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/novell/remote/28835.pl: copied to '/home/msifland/infections/28835.pl'
+/usr/share/exploitdb/exploits/osx/dos/1715.html: Win.Exploit.SafariCrash-1 FOUND
+/usr/share/exploitdb/exploits/osx/dos/1715.html: copied to '/home/msifland/infections/1715.html'
+/usr/share/exploitdb/exploits/windows_x86-64/dos/18275.txt: Win.Trojan.CVE_2011_5046-1 FOUND
+/usr/share/exploitdb/exploits/windows_x86-64/dos/18275.txt: copied to '/home/msifland/infections/18275.txt'
+/usr/share/exploitdb/exploits/windows_x86-64/remote/42354.html: Html.Exploit.CVE_2017_0059-6209421-0 FOUND
+/usr/share/exploitdb/exploits/windows_x86-64/remote/42354.html: copied to '/home/msifland/infections/42354.html'
+/usr/share/exploitdb/exploits/windows_x86/local/11408.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows_x86/local/11408.c: copied to '/home/msifland/infections/11408.c'
+/usr/share/exploitdb/exploits/windows_x86/local/37732.c: Win.Exploit.CVE_2013_5065-2 FOUND
+/usr/share/exploitdb/exploits/windows_x86/local/37732.c: copied to '/home/msifland/infections/37732.c'
+/usr/share/exploitdb/exploits/windows_x86/local/11112.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows_x86/local/11112.c: copied to '/home/msifland/infections/11112.c'
+/usr/share/exploitdb/exploits/windows_x86/remote/8613.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows_x86/remote/8613.py: copied to '/home/msifland/infections/8613.py'
+/usr/share/exploitdb/exploits/windows_x86/remote/43125.html: Html.Exploit.CVE_2017_0059-6209421-0 FOUND
+/usr/share/exploitdb/exploits/windows_x86/remote/43125.html: copied to '/home/msifland/infections/43125.html'
+/usr/share/exploitdb/exploits/windows_x86/remote/8621.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows_x86/remote/8621.py: copied to '/home/msifland/infections/8621.py'
+/usr/share/exploitdb/exploits/windows_x86/remote/8614.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows_x86/remote/8614.py: copied to '/home/msifland/infections/8614.py'
+/usr/share/exploitdb/exploits/windows_x86/remote/6100.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows_x86/remote/6100.py: copied to '/home/msifland/infections/6100.py'
+/usr/share/exploitdb/exploits/solaris/remote/101.pl: Win.Exploit.Perl-17 FOUND
+/usr/share/exploitdb/exploits/solaris/remote/101.pl: copied to '/home/msifland/infections/101.pl'
+/usr/share/exploitdb/exploits/windows/dos/40784.html: Html.Exploit.CVE_2016_7201-6565411-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/40784.html: copied to '/home/msifland/infections/40784.html'
+/usr/share/exploitdb/exploits/windows/dos/8335.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/dos/8335.c: copied to '/home/msifland/infections/8335.c'
+/usr/share/exploitdb/exploits/windows/dos/41661.html: Html.Exploit.CVE_2017_0059-6209421-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/41661.html: copied to '/home/msifland/infections/41661.html'
+/usr/share/exploitdb/exploits/windows/dos/44404.html: Html.Exploit.CVE_2018_0935-6468119-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/44404.html: copied to '/home/msifland/infections/44404.html'
+/usr/share/exploitdb/exploits/windows/dos/1220.pl: Win.Trojan.Faream-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/1220.pl: copied to '/home/msifland/infections/1220.pl'
+/usr/share/exploitdb/exploits/windows/dos/24448.svg: Html.Exploit.SVG-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/24448.svg: copied to '/home/msifland/infections/24448.svg'
+/usr/share/exploitdb/exploits/windows/dos/2400.html: Html.Exploit.VML-2 FOUND
+/usr/share/exploitdb/exploits/windows/dos/2400.html: copied to '/home/msifland/infections/2400.html'
+/usr/share/exploitdb/exploits/windows/dos/8135.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/dos/8135.pl: copied to '/home/msifland/infections/8135.pl'
+/usr/share/exploitdb/exploits/windows/dos/45924.html: Html.Exploit.CVE_2018_8552-6747770-2 FOUND
+/usr/share/exploitdb/exploits/windows/dos/45924.html: copied to '/home/msifland/infections/45924.html'
+/usr/share/exploitdb/exploits/windows/dos/43131.html: Html.Exploit.CVE_2017_11810-6337538-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/43131.html: copied to '/home/msifland/infections/43131.html'
+/usr/share/exploitdb/exploits/windows/dos/43367.html: Html.Exploit.CVE_2017_11903-6391202-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/43367.html: copied to '/home/msifland/infections/43367.html'
+/usr/share/exploitdb/exploits/windows/dos/43370.html: Html.Exploit.CVE_2017_11907-6393496-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/43370.html: copied to '/home/msifland/infections/43370.html'
+/usr/share/exploitdb/exploits/windows/dos/45217.js: Html.Exploit.CVE_2018_8298-6602925-2 FOUND
+/usr/share/exploitdb/exploits/windows/dos/45217.js: copied to '/home/msifland/infections/45217.js'
+/usr/share/exploitdb/exploits/windows/dos/42759.html: Html.Exploit.CVE_2017_8734-6336211-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/42759.html: copied to '/home/msifland/infections/42759.html'
+/usr/share/exploitdb/exploits/windows/dos/10210.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/dos/10210.txt: copied to '/home/msifland/infections/10210.txt'
+/usr/share/exploitdb/exploits/windows/dos/1604.html: Win.Exploit.CVE_2006_1359-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/1604.html: copied to '/home/msifland/infections/1604.html'
+/usr/share/exploitdb/exploits/windows/dos/40603.html: Html.Exploit.CVE_2016_7194-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/40603.html: copied to '/home/msifland/infections/40603.html'
+/usr/share/exploitdb/exploits/windows/dos/40786.html: Html.Exploit.CVE_2017_0141-6059986-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/40786.html: copied to '/home/msifland/infections/40786.html'
+/usr/share/exploitdb/exploits/windows/dos/32420.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/dos/32420.c: copied to '/home/msifland/infections/32420.c'
+/usr/share/exploitdb/exploits/windows/dos/40685.html: Html.Exploit.CVE_2015_0048-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/40685.html: copied to '/home/msifland/infections/40685.html'
+/usr/share/exploitdb/exploits/windows/dos/46001.html: Html.Exploit.CVE_2018_8631-6802951-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/46001.html: copied to '/home/msifland/infections/46001.html'
+/usr/share/exploitdb/exploits/windows/dos/7226.html: Win.Exploit.URLSpoof-2 FOUND
+/usr/share/exploitdb/exploits/windows/dos/7226.html: copied to '/home/msifland/infections/7226.html'
+/usr/share/exploitdb/exploits/windows/dos/40787.html: Html.Exploit.CVE_2016_7203-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/40787.html: copied to '/home/msifland/infections/40787.html'
+/usr/share/exploitdb/exploits/windows/dos/44758.html: Html.Exploit.CVE_2018_0946-6533289-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/44758.html: copied to '/home/msifland/infections/44758.html'
+/usr/share/exploitdb/exploits/windows/dos/19569.pl: Win.Tool.Tedla-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/19569.pl: copied to '/home/msifland/infections/19569.pl'
+/usr/share/exploitdb/exploits/windows/dos/39663.html: Html.Exploit.CVE_2016_0111-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/39663.html: copied to '/home/msifland/infections/39663.html'
+/usr/share/exploitdb/exploits/windows/dos/40773.html: Html.Exploit.CVE_2016_7240-3 FOUND
+/usr/share/exploitdb/exploits/windows/dos/40773.html: copied to '/home/msifland/infections/40773.html'
+/usr/share/exploitdb/exploits/windows/dos/41941.html: Html.Exploit.CVE_2017_0202-6208984-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/41941.html: copied to '/home/msifland/infections/41941.html'
+/usr/share/exploitdb/exploits/windows/dos/1990.html: Html.Trojan.Agent-35287 FOUND
+/usr/share/exploitdb/exploits/windows/dos/1990.html: copied to '/home/msifland/infections/1990.html'
+/usr/share/exploitdb/exploits/windows/dos/19777.txt: Win.Exploit.CVE_2012_1858-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/19777.txt: copied to '/home/msifland/infections/19777.txt'
+/usr/share/exploitdb/exploits/windows/dos/41623.html: Html.Exploit.CVE_2017_0070-6059988-0 FOUND
+/usr/share/exploitdb/exploits/windows/dos/41623.html: copied to '/home/msifland/infections/41623.html'
+/usr/share/exploitdb/exploits/windows/dos/19782.pl: Win.Tool.Nertt-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/19782.pl: copied to '/home/msifland/infections/19782.pl'
+/usr/share/exploitdb/exploits/windows/dos/20225.pl: Win.Tool.Tedla-1 FOUND
+/usr/share/exploitdb/exploits/windows/dos/20225.pl: copied to '/home/msifland/infections/20225.pl'
+/usr/share/exploitdb/exploits/windows/dos/14484.html: Win.Exploit.DoS-20 FOUND
+/usr/share/exploitdb/exploits/windows/dos/14484.html: copied to '/home/msifland/infections/14484.html'
+/usr/share/exploitdb/exploits/windows/local/7688.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7688.pl: copied to '/home/msifland/infections/7688.pl'
+/usr/share/exploitdb/exploits/windows/local/9536.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9536.py: copied to '/home/msifland/infections/9536.py'
+/usr/share/exploitdb/exploits/windows/local/49872.js: BC.Legacy.Exploit.CVE_2013_3893-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/49872.js: copied to '/home/msifland/infections/49872.js'
+/usr/share/exploitdb/exploits/windows/local/4051.rb: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4051.rb: copied to '/home/msifland/infections/4051.rb'
+/usr/share/exploitdb/exploits/windows/local/11573.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11573.c: copied to '/home/msifland/infections/11573.c'
+/usr/share/exploitdb/exploits/windows/local/14550.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/14550.py: copied to '/home/msifland/infections/14550.py'
+/usr/share/exploitdb/exploits/windows/local/6039.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/6039.c: copied to '/home/msifland/infections/6039.c'
+/usr/share/exploitdb/exploits/windows/local/8519.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8519.pl: copied to '/home/msifland/infections/8519.pl'
+/usr/share/exploitdb/exploits/windows/local/7536.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7536.cpp: copied to '/home/msifland/infections/7536.cpp'
+/usr/share/exploitdb/exploits/windows/local/4204.php: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4204.php: copied to '/home/msifland/infections/4204.php'
+/usr/share/exploitdb/exploits/windows/local/3727.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/3727.c: copied to '/home/msifland/infections/3727.c'
+/usr/share/exploitdb/exploits/windows/local/9580.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9580.pl: copied to '/home/msifland/infections/9580.pl'
+/usr/share/exploitdb/exploits/windows/local/2873.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/2873.c: copied to '/home/msifland/infections/2873.c'
+/usr/share/exploitdb/exploits/windows/local/4001.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4001.cpp: copied to '/home/msifland/infections/4001.cpp'
+/usr/share/exploitdb/exploits/windows/local/15994.rb: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/15994.rb: copied to '/home/msifland/infections/15994.rb'
+/usr/share/exploitdb/exploits/windows/local/7715.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7715.py: copied to '/home/msifland/infections/7715.py'
+/usr/share/exploitdb/exploits/windows/local/7745.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7745.py: copied to '/home/msifland/infections/7745.py'
+/usr/share/exploitdb/exploits/windows/local/17715.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/local/17715.html: copied to '/home/msifland/infections/17715.html'
+/usr/share/exploitdb/exploits/windows/local/8413.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8413.pl: copied to '/home/msifland/infections/8413.pl'
+/usr/share/exploitdb/exploits/windows/local/9628.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9628.pl: copied to '/home/msifland/infections/9628.pl'
+/usr/share/exploitdb/exploits/windows/local/9589.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9589.pl: copied to '/home/msifland/infections/9589.pl'
+/usr/share/exploitdb/exploits/windows/local/16264.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/16264.pl: copied to '/home/msifland/infections/16264.pl'
+/usr/share/exploitdb/exploits/windows/local/18826.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/18826.py: copied to '/home/msifland/infections/18826.py'
+/usr/share/exploitdb/exploits/windows/local/7334.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7334.pl: copied to '/home/msifland/infections/7334.pl'
+/usr/share/exploitdb/exploits/windows/local/9034.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9034.pl: copied to '/home/msifland/infections/9034.pl'
+/usr/share/exploitdb/exploits/windows/local/9064.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9064.pl: copied to '/home/msifland/infections/9064.pl'
+/usr/share/exploitdb/exploits/windows/local/11794.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11794.c: copied to '/home/msifland/infections/11794.c'
+/usr/share/exploitdb/exploits/windows/local/8214.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8214.c: copied to '/home/msifland/infections/8214.c'
+/usr/share/exploitdb/exploits/windows/local/11713.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11713.pl: copied to '/home/msifland/infections/11713.pl'
+/usr/share/exploitdb/exploits/windows/local/4361.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4361.pl: copied to '/home/msifland/infections/4361.pl'
+/usr/share/exploitdb/exploits/windows/local/17877.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/17877.py: copied to '/home/msifland/infections/17877.py'
+/usr/share/exploitdb/exploits/windows/local/7888.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7888.pl: copied to '/home/msifland/infections/7888.pl'
+/usr/share/exploitdb/exploits/windows/local/7727.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7727.pl: copied to '/home/msifland/infections/7727.pl'
+/usr/share/exploitdb/exploits/windows/local/9291.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9291.pl: copied to '/home/msifland/infections/9291.pl'
+/usr/share/exploitdb/exploits/windows/local/13895.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/13895.py: copied to '/home/msifland/infections/13895.py'
+/usr/share/exploitdb/exploits/windows/local/9038.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9038.py: copied to '/home/msifland/infections/9038.py'
+/usr/share/exploitdb/exploits/windows/local/8137.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8137.py: copied to '/home/msifland/infections/8137.py'
+/usr/share/exploitdb/exploits/windows/local/8640.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8640.pl: copied to '/home/msifland/infections/8640.pl'
+/usr/share/exploitdb/exploits/windows/local/16083.rb: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/16083.rb: copied to '/home/msifland/infections/16083.rb'
+/usr/share/exploitdb/exploits/windows/local/17166.py: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/17166.py: copied to '/home/msifland/infections/17166.py'
+/usr/share/exploitdb/exploits/windows/local/9618.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9618.py: copied to '/home/msifland/infections/9618.py'
+/usr/share/exploitdb/exploits/windows/local/6389.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/6389.cpp: copied to '/home/msifland/infections/6389.cpp'
+/usr/share/exploitdb/exploits/windows/local/9299.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9299.pl: copied to '/home/msifland/infections/9299.pl'
+/usr/share/exploitdb/exploits/windows/local/2056.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/2056.c: copied to '/home/msifland/infections/2056.c'
+/usr/share/exploitdb/exploits/windows/local/7713.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7713.pl: copied to '/home/msifland/infections/7713.pl'
+/usr/share/exploitdb/exploits/windows/local/4002.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4002.py: copied to '/home/msifland/infections/4002.py'
+/usr/share/exploitdb/exploits/windows/local/7492.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7492.py: copied to '/home/msifland/infections/7492.py'
+/usr/share/exploitdb/exploits/windows/local/10240.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10240.py: copied to '/home/msifland/infections/10240.py'
+/usr/share/exploitdb/exploits/windows/local/3617.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/3617.cpp: copied to '/home/msifland/infections/3617.cpp'
+/usr/share/exploitdb/exploits/windows/local/14612.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/14612.py: copied to '/home/msifland/infections/14612.py'
+/usr/share/exploitdb/exploits/windows/local/4938.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4938.py: copied to '/home/msifland/infections/4938.py'
+/usr/share/exploitdb/exploits/windows/local/16503.rb: Pdf.Exploit.CVE_2009_4324-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/16503.rb: copied to '/home/msifland/infections/16503.rb'
+/usr/share/exploitdb/exploits/windows/local/2880.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/2880.c: copied to '/home/msifland/infections/2880.c'
+/usr/share/exploitdb/exploits/windows/local/7714.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7714.pl: copied to '/home/msifland/infections/7714.pl'
+/usr/share/exploitdb/exploits/windows/local/17847.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/17847.py: copied to '/home/msifland/infections/17847.py'
+/usr/share/exploitdb/exploits/windows/local/10920.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10920.cpp: copied to '/home/msifland/infections/10920.cpp'
+/usr/share/exploitdb/exploits/windows/local/1992.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/1992.py: copied to '/home/msifland/infections/1992.py'
+/usr/share/exploitdb/exploits/windows/local/5077.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/5077.cpp: copied to '/home/msifland/infections/5077.cpp'
+/usr/share/exploitdb/exploits/windows/local/17144.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/17144.pl: copied to '/home/msifland/infections/17144.pl'
+/usr/share/exploitdb/exploits/windows/local/10782.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10782.pl: copied to '/home/msifland/infections/10782.pl'
+/usr/share/exploitdb/exploits/windows/local/4024.rb: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4024.rb: copied to '/home/msifland/infections/4024.rb'
+/usr/share/exploitdb/exploits/windows/local/10323.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10323.py: copied to '/home/msifland/infections/10323.py'
+/usr/share/exploitdb/exploits/windows/local/11171.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11171.pl: copied to '/home/msifland/infections/11171.pl'
+/usr/share/exploitdb/exploits/windows/local/9624.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9624.py: copied to '/home/msifland/infections/9624.py'
+/usr/share/exploitdb/exploits/windows/local/7975.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7975.py: copied to '/home/msifland/infections/7975.py'
+/usr/share/exploitdb/exploits/windows/local/8174.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8174.py: copied to '/home/msifland/infections/8174.py'
+/usr/share/exploitdb/exploits/windows/local/14581.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/14581.py: copied to '/home/msifland/infections/14581.py'
+/usr/share/exploitdb/exploits/windows/local/8193.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8193.py: copied to '/home/msifland/infections/8193.py'
+/usr/share/exploitdb/exploits/windows/local/9409.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9409.pl: copied to '/home/msifland/infections/9409.pl'
+/usr/share/exploitdb/exploits/windows/local/9418.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9418.pl: copied to '/home/msifland/infections/9418.pl'
+/usr/share/exploitdb/exploits/windows/local/9420.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9420.pl: copied to '/home/msifland/infections/9420.pl'
+/usr/share/exploitdb/exploits/windows/local/35936.py: Win.Exploit.CVE_2014_4076-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/35936.py: copied to '/home/msifland/infections/35936.py'
+/usr/share/exploitdb/exploits/windows/local/7006.txt: Win.Trojan.Agent-36168 FOUND
+/usr/share/exploitdb/exploits/windows/local/7006.txt: copied to '/home/msifland/infections/7006.txt'
+/usr/share/exploitdb/exploits/windows/local/13767.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/13767.c: copied to '/home/msifland/infections/13767.c'
+/usr/share/exploitdb/exploits/windows/local/17783.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/17783.pl: copied to '/home/msifland/infections/17783.pl'
+/usr/share/exploitdb/exploits/windows/local/9216.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9216.pl: copied to '/home/msifland/infections/9216.pl'
+/usr/share/exploitdb/exploits/windows/local/8178.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8178.pl: copied to '/home/msifland/infections/8178.pl'
+/usr/share/exploitdb/exploits/windows/local/1958.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/1958.pl: copied to '/home/msifland/infections/1958.pl'
+/usr/share/exploitdb/exploits/windows/local/9172.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9172.pl: copied to '/home/msifland/infections/9172.pl'
+/usr/share/exploitdb/exploits/windows/local/8242.rb: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8242.rb: copied to '/home/msifland/infections/8242.rb'
+/usr/share/exploitdb/exploits/windows/local/7923.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7923.c: copied to '/home/msifland/infections/7923.c'
+/usr/share/exploitdb/exploits/windows/local/10345.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10345.py: copied to '/home/msifland/infections/10345.py'
+/usr/share/exploitdb/exploits/windows/local/15919.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/15919.pl: copied to '/home/msifland/infections/15919.pl'
+/usr/share/exploitdb/exploits/windows/local/44741.html: Html.Exploit.CVE_2018_8174-6700490-0 FOUND
+/usr/share/exploitdb/exploits/windows/local/44741.html: copied to '/home/msifland/infections/44741.html'
+/usr/share/exploitdb/exploits/windows/local/8312.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8312.py: copied to '/home/msifland/infections/8312.py'
+/usr/share/exploitdb/exploits/windows/local/9548.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9548.pl: copied to '/home/msifland/infections/9548.pl'
+/usr/share/exploitdb/exploits/windows/local/9360.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9360.pl: copied to '/home/msifland/infections/9360.pl'
+/usr/share/exploitdb/exploits/windows/local/9190.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9190.pl: copied to '/home/msifland/infections/9190.pl'
+/usr/share/exploitdb/exploits/windows/local/18981.txt: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/18981.txt: copied to '/home/msifland/infections/18981.txt'
+/usr/share/exploitdb/exploits/windows/local/8126.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8126.py: copied to '/home/msifland/infections/8126.py'
+/usr/share/exploitdb/exploits/windows/local/8444.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8444.cpp: copied to '/home/msifland/infections/8444.cpp'
+/usr/share/exploitdb/exploits/windows/local/9060.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9060.pl: copied to '/home/msifland/infections/9060.pl'
+/usr/share/exploitdb/exploits/windows/local/8159.rb: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8159.rb: copied to '/home/msifland/infections/8159.rb'
+/usr/share/exploitdb/exploits/windows/local/11944.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11944.pl: copied to '/home/msifland/infections/11944.pl'
+/usr/share/exploitdb/exploits/windows/local/30014.py: Win.Exploit.CVE_2013_5065-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/30014.py: copied to '/home/msifland/infections/30014.py'
+/usr/share/exploitdb/exploits/windows/local/14428.py: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/14428.py: copied to '/home/msifland/infections/14428.py'
+/usr/share/exploitdb/exploits/windows/local/5498.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/5498.py: copied to '/home/msifland/infections/5498.py'
+/usr/share/exploitdb/exploits/windows/local/16965.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/16965.pl: copied to '/home/msifland/infections/16965.pl'
+/usr/share/exploitdb/exploits/windows/local/11647.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11647.pl: copied to '/home/msifland/infections/11647.pl'
+/usr/share/exploitdb/exploits/windows/local/9346.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9346.pl: copied to '/home/msifland/infections/9346.pl'
+/usr/share/exploitdb/exploits/windows/local/9186.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9186.pl: copied to '/home/msifland/infections/9186.pl'
+/usr/share/exploitdb/exploits/windows/local/11400.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11400.py: copied to '/home/msifland/infections/11400.py'
+/usr/share/exploitdb/exploits/windows/local/9412.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9412.pl: copied to '/home/msifland/infections/9412.pl'
+/usr/share/exploitdb/exploits/windows/local/9377.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9377.pl: copied to '/home/msifland/infections/9377.pl'
+/usr/share/exploitdb/exploits/windows/local/8311.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8311.py: copied to '/home/msifland/infections/8311.py'
+/usr/share/exploitdb/exploits/windows/local/8343.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8343.pl: copied to '/home/msifland/infections/8343.pl'
+/usr/share/exploitdb/exploits/windows/local/9567.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9567.pl: copied to '/home/msifland/infections/9567.pl'
+/usr/share/exploitdb/exploits/windows/local/10787.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10787.py: copied to '/home/msifland/infections/10787.py'
+/usr/share/exploitdb/exploits/windows/local/9152.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9152.pl: copied to '/home/msifland/infections/9152.pl'
+/usr/share/exploitdb/exploits/windows/local/18656.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/18656.pl: copied to '/home/msifland/infections/18656.pl'
+/usr/share/exploitdb/exploits/windows/local/8189.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8189.py: copied to '/home/msifland/infections/8189.py'
+/usr/share/exploitdb/exploits/windows/local/11205.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11205.pl: copied to '/home/msifland/infections/11205.pl'
+/usr/share/exploitdb/exploits/windows/local/17511.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/17511.pl: copied to '/home/msifland/infections/17511.pl'
+/usr/share/exploitdb/exploits/windows/local/38147.pl: Win.Exploit.Unicode_Mixed-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/38147.pl: copied to '/home/msifland/infections/38147.pl'
+/usr/share/exploitdb/exploits/windows/local/9070.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9070.pl: copied to '/home/msifland/infections/9070.pl'
+/usr/share/exploitdb/exploits/windows/local/9221.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9221.pl: copied to '/home/msifland/infections/9221.pl'
+/usr/share/exploitdb/exploits/windows/local/13940.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/13940.pl: copied to '/home/msifland/infections/13940.pl'
+/usr/share/exploitdb/exploits/windows/local/1985.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/1985.py: copied to '/home/msifland/infections/1985.py'
+/usr/share/exploitdb/exploits/windows/local/17854.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/17854.py: copied to '/home/msifland/infections/17854.py'
+/usr/share/exploitdb/exploits/windows/local/18657.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/18657.pl: copied to '/home/msifland/infections/18657.pl'
+/usr/share/exploitdb/exploits/windows/local/9458.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9458.pl: copied to '/home/msifland/infections/9458.pl'
+/usr/share/exploitdb/exploits/windows/local/8416.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8416.pl: copied to '/home/msifland/infections/8416.pl'
+/usr/share/exploitdb/exploits/windows/local/9619.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9619.pl: copied to '/home/msifland/infections/9619.pl'
+/usr/share/exploitdb/exploits/windows/local/10619.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10619.c: copied to '/home/msifland/infections/10619.c'
+/usr/share/exploitdb/exploits/windows/local/10618.py: Pdf.Exploit.JSCode-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/10618.py: copied to '/home/msifland/infections/10618.py'
+/usr/share/exploitdb/exploits/windows/local/17939.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/17939.py: copied to '/home/msifland/infections/17939.py'
+/usr/share/exploitdb/exploits/windows/local/11872.py: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/11872.py: copied to '/home/msifland/infections/11872.py'
+/usr/share/exploitdb/exploits/windows/local/9229.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9229.py: copied to '/home/msifland/infections/9229.py'
+/usr/share/exploitdb/exploits/windows/local/16162.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/16162.pl: copied to '/home/msifland/infections/16162.pl'
+/usr/share/exploitdb/exploits/windows/local/10936.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10936.c: copied to '/home/msifland/infections/10936.c'
+/usr/share/exploitdb/exploits/windows/local/8624.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8624.pl: copied to '/home/msifland/infections/8624.pl'
+/usr/share/exploitdb/exploits/windows/local/17012.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/17012.py: copied to '/home/msifland/infections/17012.py'
+/usr/share/exploitdb/exploits/windows/local/7695.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7695.pl: copied to '/home/msifland/infections/7695.pl'
+/usr/share/exploitdb/exploits/windows/local/8179.rb: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8179.rb: copied to '/home/msifland/infections/8179.rb'
+/usr/share/exploitdb/exploits/windows/local/8540.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8540.c: copied to '/home/msifland/infections/8540.c'
+/usr/share/exploitdb/exploits/windows/local/8620.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8620.pl: copied to '/home/msifland/infections/8620.pl'
+/usr/share/exploitdb/exploits/windows/local/15026.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/15026.py: copied to '/home/msifland/infections/15026.py'
+/usr/share/exploitdb/exploits/windows/local/14664.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/14664.py: copied to '/home/msifland/infections/14664.py'
+/usr/share/exploitdb/exploits/windows/local/4892.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4892.py: copied to '/home/msifland/infections/4892.py'
+/usr/share/exploitdb/exploits/windows/local/15663.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/15663.py: copied to '/home/msifland/infections/15663.py'
+/usr/share/exploitdb/exploits/windows/local/4263.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4263.cpp: copied to '/home/msifland/infections/4263.cpp'
+/usr/share/exploitdb/exploits/windows/local/11191.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11191.pl: copied to '/home/msifland/infections/11191.pl'
+/usr/share/exploitdb/exploits/windows/local/11413.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11413.pl: copied to '/home/msifland/infections/11413.pl'
+/usr/share/exploitdb/exploits/windows/local/8783.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8783.c: copied to '/home/msifland/infections/8783.c'
+/usr/share/exploitdb/exploits/windows/local/7853.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7853.pl: copied to '/home/msifland/infections/7853.pl'
+/usr/share/exploitdb/exploits/windows/local/15626.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/15626.py: copied to '/home/msifland/infections/15626.py'
+/usr/share/exploitdb/exploits/windows/local/8536.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8536.py: copied to '/home/msifland/infections/8536.py'
+/usr/share/exploitdb/exploits/windows/local/4252.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4252.c: copied to '/home/msifland/infections/4252.c'
+/usr/share/exploitdb/exploits/windows/local/11900.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11900.pl: copied to '/home/msifland/infections/11900.pl'
+/usr/share/exploitdb/exploits/windows/local/8171.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8171.py: copied to '/home/msifland/infections/8171.py'
+/usr/share/exploitdb/exploits/windows/local/9047.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9047.pl: copied to '/home/msifland/infections/9047.pl'
+/usr/share/exploitdb/exploits/windows/local/16085.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/16085.py: copied to '/home/msifland/infections/16085.py'
+/usr/share/exploitdb/exploits/windows/local/8770.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8770.py: copied to '/home/msifland/infections/8770.py'
+/usr/share/exploitdb/exploits/windows/local/8249.php: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8249.php: copied to '/home/msifland/infections/8249.php'
+/usr/share/exploitdb/exploits/windows/local/15589.wsf: Win.Trojan.Downloader-83 FOUND
+/usr/share/exploitdb/exploits/windows/local/15589.wsf: copied to '/home/msifland/infections/15589.wsf'
+/usr/share/exploitdb/exploits/windows/local/5667.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/5667.py: copied to '/home/msifland/infections/5667.py'
+/usr/share/exploitdb/exploits/windows/local/9509.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9509.pl: copied to '/home/msifland/infections/9509.pl'
+/usr/share/exploitdb/exploits/windows/local/7692.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7692.pl: copied to '/home/msifland/infections/7692.pl'
+/usr/share/exploitdb/exploits/windows/local/9343.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9343.pl: copied to '/home/msifland/infections/9343.pl'
+/usr/share/exploitdb/exploits/windows/local/11372.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11372.c: copied to '/home/msifland/infections/11372.c'
+/usr/share/exploitdb/exploits/windows/local/8251.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8251.py: copied to '/home/msifland/infections/8251.py'
+/usr/share/exploitdb/exploits/windows/local/17634.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/17634.pl: copied to '/home/msifland/infections/17634.pl'
+/usr/share/exploitdb/exploits/windows/local/8299.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8299.py: copied to '/home/msifland/infections/8299.py'
+/usr/share/exploitdb/exploits/windows/local/6329.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/6329.pl: copied to '/home/msifland/infections/6329.pl'
+/usr/share/exploitdb/exploits/windows/local/11154.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11154.py: copied to '/home/msifland/infections/11154.py'
+/usr/share/exploitdb/exploits/windows/local/9142.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9142.c: copied to '/home/msifland/infections/9142.c'
+/usr/share/exploitdb/exploits/windows/local/13761.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/13761.pl: copied to '/home/msifland/infections/13761.pl'
+/usr/share/exploitdb/exploits/windows/local/10646.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10646.c: copied to '/home/msifland/infections/10646.c'
+/usr/share/exploitdb/exploits/windows/local/9148.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9148.py: copied to '/home/msifland/infections/9148.py'
+/usr/share/exploitdb/exploits/windows/local/9136.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9136.pl: copied to '/home/msifland/infections/9136.pl'
+/usr/share/exploitdb/exploits/windows/local/9428.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9428.pl: copied to '/home/msifland/infections/9428.pl'
+/usr/share/exploitdb/exploits/windows/local/11161.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11161.pl: copied to '/home/msifland/infections/11161.pl'
+/usr/share/exploitdb/exploits/windows/local/8580.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8580.py: copied to '/home/msifland/infections/8580.py'
+/usr/share/exploitdb/exploits/windows/local/9149.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9149.pl: copied to '/home/msifland/infections/9149.pl'
+/usr/share/exploitdb/exploits/windows/local/17600.rb: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/17600.rb: copied to '/home/msifland/infections/17600.rb'
+/usr/share/exploitdb/exploits/windows/local/4262.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4262.cpp: copied to '/home/msifland/infections/4262.cpp'
+/usr/share/exploitdb/exploits/windows/local/8177.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8177.py: copied to '/home/msifland/infections/8177.py'
+/usr/share/exploitdb/exploits/windows/local/8662.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8662.py: copied to '/home/msifland/infections/8662.py'
+/usr/share/exploitdb/exploits/windows/local/8233.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8233.py: copied to '/home/msifland/infections/8233.py'
+/usr/share/exploitdb/exploits/windows/local/9329.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9329.pl: copied to '/home/msifland/infections/9329.pl'
+/usr/share/exploitdb/exploits/windows/local/15532.py: Win.Exploit.Unicode_Mixed-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/15532.py: copied to '/home/msifland/infections/15532.py'
+/usr/share/exploitdb/exploits/windows/local/8427.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8427.py: copied to '/home/msifland/infections/8427.py'
+/usr/share/exploitdb/exploits/windows/local/15575.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/15575.py: copied to '/home/msifland/infections/15575.py'
+/usr/share/exploitdb/exploits/windows/local/9560.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9560.py: copied to '/home/msifland/infections/9560.py'
+/usr/share/exploitdb/exploits/windows/local/11256.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11256.pl: copied to '/home/msifland/infections/11256.pl'
+/usr/share/exploitdb/exploits/windows/local/7547.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7547.py: copied to '/home/msifland/infections/7547.py'
+/usr/share/exploitdb/exploits/windows/local/15975.py: Win.Exploit.Unicode_Mixed-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/15975.py: copied to '/home/msifland/infections/15975.py'
+/usr/share/exploitdb/exploits/windows/local/5107.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/5107.c: copied to '/home/msifland/infections/5107.c'
+/usr/share/exploitdb/exploits/windows/local/8527.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8527.py: copied to '/home/msifland/infections/8527.py'
+/usr/share/exploitdb/exploits/windows/local/16686.rb: BC.Legacy.Exploit.CVE_2010_3333-5 FOUND
+/usr/share/exploitdb/exploits/windows/local/16686.rb: copied to '/home/msifland/infections/16686.rb'
+/usr/share/exploitdb/exploits/windows/local/7994.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/7994.c: copied to '/home/msifland/infections/7994.c'
+/usr/share/exploitdb/exploits/windows/local/9234.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9234.pl: copied to '/home/msifland/infections/9234.pl'
+/usr/share/exploitdb/exploits/windows/local/11314.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11314.py: copied to '/home/msifland/infections/11314.py'
+/usr/share/exploitdb/exploits/windows/local/8275.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8275.pl: copied to '/home/msifland/infections/8275.pl'
+/usr/share/exploitdb/exploits/windows/local/10298.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10298.c: copied to '/home/msifland/infections/10298.c'
+/usr/share/exploitdb/exploits/windows/local/9215.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9215.pl: copied to '/home/msifland/infections/9215.pl'
+/usr/share/exploitdb/exploits/windows/local/8661.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8661.pl: copied to '/home/msifland/infections/8661.pl'
+/usr/share/exploitdb/exploits/windows/local/8591.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8591.py: copied to '/home/msifland/infections/8591.py'
+/usr/share/exploitdb/exploits/windows/local/16073.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/16073.pl: copied to '/home/msifland/infections/16073.pl'
+/usr/share/exploitdb/exploits/windows/local/8267.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8267.py: copied to '/home/msifland/infections/8267.py'
+/usr/share/exploitdb/exploits/windows/local/4431.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/4431.py: copied to '/home/msifland/infections/4431.py'
+/usr/share/exploitdb/exploits/windows/local/8410.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8410.pl: copied to '/home/msifland/infections/8410.pl'
+/usr/share/exploitdb/exploits/windows/local/16623.rb: Pdf.Exploit.CVE_2009_4324-1 FOUND
+/usr/share/exploitdb/exploits/windows/local/16623.rb: copied to '/home/msifland/infections/16623.rb'
+/usr/share/exploitdb/exploits/windows/local/10745.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/10745.c: copied to '/home/msifland/infections/10745.c'
+/usr/share/exploitdb/exploits/windows/local/30392.rb: Win.Exploit.CVE_2013_5065-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/30392.rb: copied to '/home/msifland/infections/30392.rb'
+/usr/share/exploitdb/exploits/windows/local/9568.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9568.py: copied to '/home/msifland/infections/9568.py'
+/usr/share/exploitdb/exploits/windows/local/8411.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8411.c: copied to '/home/msifland/infections/8411.c'
+/usr/share/exploitdb/exploits/windows/local/6188.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/6188.c: copied to '/home/msifland/infections/6188.c'
+/usr/share/exploitdb/exploits/windows/local/15489.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/15489.py: copied to '/home/msifland/infections/15489.py'
+/usr/share/exploitdb/exploits/windows/local/15630.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/15630.py: copied to '/home/msifland/infections/15630.py'
+/usr/share/exploitdb/exploits/windows/local/8162.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8162.py: copied to '/home/msifland/infections/8162.py'
+/usr/share/exploitdb/exploits/windows/local/8412.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/8412.pl: copied to '/home/msifland/infections/8412.pl'
+/usr/share/exploitdb/exploits/windows/local/11315.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/11315.c: copied to '/home/msifland/infections/11315.c'
+/usr/share/exploitdb/exploits/windows/local/9895.txt: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/local/9895.txt: copied to '/home/msifland/infections/9895.txt'
+/usr/share/exploitdb/exploits/windows/webapps/49637.py: Asp.Trojan.HafniumWebshell-9840815-0 FOUND
+/usr/share/exploitdb/exploits/windows/webapps/49637.py: copied to '/home/msifland/infections/49637.py'
+/usr/share/exploitdb/exploits/windows/remote/14519.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/14519.html: copied to '/home/msifland/infections/14519.html'
+/usr/share/exploitdb/exploits/windows/remote/31046.cpp: Html.Trojan.Downloader-94 FOUND
+/usr/share/exploitdb/exploits/windows/remote/31046.cpp: copied to '/home/msifland/infections/31046.cpp'
+/usr/share/exploitdb/exploits/windows/remote/24886.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/24886.html: copied to '/home/msifland/infections/24886.html'
+/usr/share/exploitdb/exploits/windows/remote/5205.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5205.html: copied to '/home/msifland/infections/5205.html'
+/usr/share/exploitdb/exploits/windows/remote/4918.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4918.html: copied to '/home/msifland/infections/4918.html'
+/usr/share/exploitdb/exploits/windows/remote/11059.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/11059.html: copied to '/home/msifland/infections/11059.html'
+/usr/share/exploitdb/exploits/windows/remote/4903.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4903.html: copied to '/home/msifland/infections/4903.html'
+/usr/share/exploitdb/exploits/windows/remote/3531.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3531.py: copied to '/home/msifland/infections/3531.py'
+/usr/share/exploitdb/exploits/windows/remote/8804.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8804.py: copied to '/home/msifland/infections/8804.py'
+/usr/share/exploitdb/exploits/windows/remote/26167.pl: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/26167.pl: copied to '/home/msifland/infections/26167.pl'
+/usr/share/exploitdb/exploits/windows/remote/35686.pl: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/35686.pl: copied to '/home/msifland/infections/35686.pl'
+/usr/share/exploitdb/exploits/windows/remote/28682.rb: BC.Legacy.Exploit.CVE_2013_3893-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/28682.rb: copied to '/home/msifland/infections/28682.rb'
+/usr/share/exploitdb/exploits/windows/remote/4445.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4445.html: copied to '/home/msifland/infections/4445.html'
+/usr/share/exploitdb/exploits/windows/remote/9613.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9613.py: copied to '/home/msifland/infections/9613.py'
+/usr/share/exploitdb/exploits/windows/remote/2408.pl: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2408.pl: copied to '/home/msifland/infections/2408.pl'
+/usr/share/exploitdb/exploits/windows/remote/36209.html: Js.Trojan.CVE_2011_1999-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/36209.html: copied to '/home/msifland/infections/36209.html'
+/usr/share/exploitdb/exploits/windows/remote/1505.html: Html.Trojan.Downloader-95 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1505.html: copied to '/home/msifland/infections/1505.html'
+/usr/share/exploitdb/exploits/windows/remote/3495.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3495.py: copied to '/home/msifland/infections/3495.py'
+/usr/share/exploitdb/exploits/windows/remote/18187.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18187.c: copied to '/home/msifland/infections/18187.c'
+/usr/share/exploitdb/exploits/windows/remote/4987.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4987.html: copied to '/home/msifland/infections/4987.html'
+/usr/share/exploitdb/exploits/windows/remote/8757.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8757.html: copied to '/home/msifland/infections/8757.html'
+/usr/share/exploitdb/exploits/windows/remote/3579.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3579.py: copied to '/home/msifland/infections/3579.py'
+/usr/share/exploitdb/exploits/windows/remote/612.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/612.html: copied to '/home/msifland/infections/612.html'
+/usr/share/exploitdb/exploits/windows/remote/2076.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2076.pl: copied to '/home/msifland/infections/2076.pl'
+/usr/share/exploitdb/exploits/windows/remote/9992.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9992.txt: copied to '/home/msifland/infections/9992.txt'
+/usr/share/exploitdb/exploits/windows/remote/6227.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/6227.c: copied to '/home/msifland/infections/6227.c'
+/usr/share/exploitdb/exploits/windows/remote/5695.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5695.cpp: copied to '/home/msifland/infections/5695.cpp'
+/usr/share/exploitdb/exploits/windows/remote/8562.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8562.html: copied to '/home/msifland/infections/8562.html'
+/usr/share/exploitdb/exploits/windows/remote/10375.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/10375.html: copied to '/home/msifland/infections/10375.html'
+/usr/share/exploitdb/exploits/windows/remote/8716.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8716.py: copied to '/home/msifland/infections/8716.py'
+/usr/share/exploitdb/exploits/windows/remote/23695.txt: Html.Exploit.MHTRedir-18 FOUND
+/usr/share/exploitdb/exploits/windows/remote/23695.txt: copied to '/home/msifland/infections/23695.txt'
+/usr/share/exploitdb/exploits/windows/remote/20266.txt: Win.Trojan.JS-179 FOUND
+/usr/share/exploitdb/exploits/windows/remote/20266.txt: copied to '/home/msifland/infections/20266.txt'
+/usr/share/exploitdb/exploits/windows/remote/4027.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4027.py: copied to '/home/msifland/infections/4027.py'
+/usr/share/exploitdb/exploits/windows/remote/18538.rb: Html.Exploit.CVE_2012_4924-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18538.rb: copied to '/home/msifland/infections/18538.rb'
+/usr/share/exploitdb/exploits/windows/remote/17409.rb: Html.Exploit.CVE_2012_1526-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/17409.rb: copied to '/home/msifland/infections/17409.rb'
+/usr/share/exploitdb/exploits/windows/remote/17359.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/17359.pl: copied to '/home/msifland/infections/17359.pl'
+/usr/share/exploitdb/exploits/windows/remote/24187.txt: Html.Exploit.ADODB-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/24187.txt: copied to '/home/msifland/infections/24187.txt'
+/usr/share/exploitdb/exploits/windows/remote/14416.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/14416.html: copied to '/home/msifland/infections/14416.html'
+/usr/share/exploitdb/exploits/windows/remote/3482.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3482.pl: copied to '/home/msifland/infections/3482.pl'
+/usr/share/exploitdb/exploits/windows/remote/8354.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8354.py: copied to '/home/msifland/infections/8354.py'
+/usr/share/exploitdb/exploits/windows/remote/2749.html: Win.Trojan.Downloader-47 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2749.html: copied to '/home/msifland/infections/2749.html'
+/usr/share/exploitdb/exploits/windows/remote/1885.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1885.pl: copied to '/home/msifland/infections/1885.pl'
+/usr/share/exploitdb/exploits/windows/remote/18449.rb: Win.Trojan.Downloader-167 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18449.rb: copied to '/home/msifland/infections/18449.rb'
+/usr/share/exploitdb/exploits/windows/remote/1628.cpp: Html.Trojan.Shellcode-19 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1628.cpp: copied to '/home/msifland/infections/1628.cpp'
+/usr/share/exploitdb/exploits/windows/remote/10098.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/10098.py: copied to '/home/msifland/infections/10098.py'
+/usr/share/exploitdb/exploits/windows/remote/2426.pl: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2426.pl: copied to '/home/msifland/infections/2426.pl'
+/usr/share/exploitdb/exploits/windows/remote/10394.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/10394.py: copied to '/home/msifland/infections/10394.py'
+/usr/share/exploitdb/exploits/windows/remote/28968.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/28968.html: copied to '/home/msifland/infections/28968.html'
+/usr/share/exploitdb/exploits/windows/remote/30600.html: Html.Trojan.Shellcode-19 FOUND
+/usr/share/exploitdb/exploits/windows/remote/30600.html: copied to '/home/msifland/infections/30600.html'
+/usr/share/exploitdb/exploits/windows/remote/9137.html: Win.Trojan.Agent-35774 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9137.html: copied to '/home/msifland/infections/9137.html'
+/usr/share/exploitdb/exploits/windows/remote/3925.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3925.py: copied to '/home/msifland/infections/3925.py'
+/usr/share/exploitdb/exploits/windows/remote/3616.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3616.py: copied to '/home/msifland/infections/3616.py'
+/usr/share/exploitdb/exploits/windows/remote/9128.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9128.py: copied to '/home/msifland/infections/9128.py'
+/usr/share/exploitdb/exploits/windows/remote/11167.py: Win.Exploit.CVE_2010_0249-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/11167.py: copied to '/home/msifland/infections/11167.py'
+/usr/share/exploitdb/exploits/windows/remote/18818.py: Java.Trojan.MSShellcode-19 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18818.py: copied to '/home/msifland/infections/18818.py'
+/usr/share/exploitdb/exploits/windows/remote/8758.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8758.html: copied to '/home/msifland/infections/8758.html'
+/usr/share/exploitdb/exploits/windows/remote/43338.rb: Xml.Malware.Squiblydoo-6728833-0 FOUND
+/usr/share/exploitdb/exploits/windows/remote/43338.rb: copied to '/home/msifland/infections/43338.rb'
+/usr/share/exploitdb/exploits/windows/remote/10542.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/10542.py: copied to '/home/msifland/infections/10542.py'
+/usr/share/exploitdb/exploits/windows/remote/4982.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4982.html: copied to '/home/msifland/infections/4982.html'
+/usr/share/exploitdb/exploits/windows/remote/3474.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3474.py: copied to '/home/msifland/infections/3474.py'
+/usr/share/exploitdb/exploits/windows/remote/955.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/955.py: copied to '/home/msifland/infections/955.py'
+/usr/share/exploitdb/exploits/windows/remote/25999.rb: Html.Exploit.CVE_2013_1311-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/25999.rb: copied to '/home/msifland/infections/25999.rb'
+/usr/share/exploitdb/exploits/windows/remote/5087.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5087.html: copied to '/home/msifland/infections/5087.html'
+/usr/share/exploitdb/exploits/windows/remote/1607.cpp: Html.Trojan.Shellcode-19 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1607.cpp: copied to '/home/msifland/infections/1607.cpp'
+/usr/share/exploitdb/exploits/windows/remote/5052.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5052.html: copied to '/home/msifland/infections/5052.html'
+/usr/share/exploitdb/exploits/windows/remote/5751.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5751.pl: copied to '/home/msifland/infections/5751.pl'
+/usr/share/exploitdb/exploits/windows/remote/31118.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/31118.c: copied to '/home/msifland/infections/31118.c'
+/usr/share/exploitdb/exploits/windows/remote/8227.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8227.pl: copied to '/home/msifland/infections/8227.pl'
+/usr/share/exploitdb/exploits/windows/remote/28187.rb: Html.Exploit.CVE_2013_3163-5 FOUND
+/usr/share/exploitdb/exploits/windows/remote/28187.rb: copied to '/home/msifland/infections/28187.rb'
+/usr/share/exploitdb/exploits/windows/remote/2671.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2671.pl: copied to '/home/msifland/infections/2671.pl'
+/usr/share/exploitdb/exploits/windows/remote/943.html: Win.Trojan.E-47 FOUND
+/usr/share/exploitdb/exploits/windows/remote/943.html: copied to '/home/msifland/infections/943.html'
+/usr/share/exploitdb/exploits/windows/remote/2425.html: Win.Trojan.Downloader-47 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2425.html: copied to '/home/msifland/infections/2425.html'
+/usr/share/exploitdb/exploits/windows/remote/2460.c: Win.Exploit.CVE_2006_3730-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2460.c: copied to '/home/msifland/infections/2460.c'
+/usr/share/exploitdb/exploits/windows/remote/6278.txt: Html.Trojan.Shellcode-19 FOUND
+/usr/share/exploitdb/exploits/windows/remote/6278.txt: copied to '/home/msifland/infections/6278.txt'
+/usr/share/exploitdb/exploits/windows/remote/31040.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/31040.html: copied to '/home/msifland/infections/31040.html'
+/usr/share/exploitdb/exploits/windows/remote/5445.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5445.cpp: copied to '/home/msifland/infections/5445.cpp'
+/usr/share/exploitdb/exploits/windows/remote/4932.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4932.html: copied to '/home/msifland/infections/4932.html'
+/usr/share/exploitdb/exploits/windows/remote/730.html: Win.Exploit.MS05-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/730.html: copied to '/home/msifland/infections/730.html'
+/usr/share/exploitdb/exploits/windows/remote/18397.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18397.py: copied to '/home/msifland/infections/18397.py'
+/usr/share/exploitdb/exploits/windows/remote/10765.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/10765.py: copied to '/home/msifland/infections/10765.py'
+/usr/share/exploitdb/exploits/windows/remote/17672.html: Html.Exploit.CVE_2011_0065-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/17672.html: copied to '/home/msifland/infections/17672.html'
+/usr/share/exploitdb/exploits/windows/remote/8560.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8560.html: copied to '/home/msifland/infections/8560.html'
+/usr/share/exploitdb/exploits/windows/remote/21709.pl: Win.Exploit.Perl-18 FOUND
+/usr/share/exploitdb/exploits/windows/remote/21709.pl: copied to '/home/msifland/infections/21709.pl'
+/usr/share/exploitdb/exploits/windows/remote/3577.html: Win.Trojan.Downloader-47 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3577.html: copied to '/home/msifland/infections/3577.html'
+/usr/share/exploitdb/exploits/windows/remote/5111.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5111.html: copied to '/home/msifland/infections/5111.html'
+/usr/share/exploitdb/exploits/windows/remote/2052.sh: Win.Trojan.Downloader-82 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2052.sh: copied to '/home/msifland/infections/2052.sh'
+/usr/share/exploitdb/exploits/windows/remote/25129.html: Win.Exploit.MS05-3 FOUND
+/usr/share/exploitdb/exploits/windows/remote/25129.html: copied to '/home/msifland/infections/25129.html'
+/usr/share/exploitdb/exploits/windows/remote/2458.pl: Win.Exploit.CVE_2006_3730-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2458.pl: copied to '/home/msifland/infections/2458.pl'
+/usr/share/exploitdb/exploits/windows/remote/8203.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8203.pl: copied to '/home/msifland/infections/8203.pl'
+/usr/share/exploitdb/exploits/windows/remote/10099.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/10099.py: copied to '/home/msifland/infections/10099.py'
+/usr/share/exploitdb/exploits/windows/remote/18674.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18674.txt: copied to '/home/msifland/infections/18674.txt'
+/usr/share/exploitdb/exploits/windows/remote/12117.txt: Java.Exploit.CVE_2010_0886-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/12117.txt: copied to '/home/msifland/infections/12117.txt'
+/usr/share/exploitdb/exploits/windows/remote/5342.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5342.py: copied to '/home/msifland/infections/5342.py'
+/usr/share/exploitdb/exploits/windows/remote/4724.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4724.py: copied to '/home/msifland/infections/4724.py'
+/usr/share/exploitdb/exploits/windows/remote/5732.html: Win.Trojan.Downloader-167 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5732.html: copied to '/home/msifland/infections/5732.html'
+/usr/share/exploitdb/exploits/windows/remote/13903.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/13903.py: copied to '/home/msifland/infections/13903.py'
+/usr/share/exploitdb/exploits/windows/remote/8733.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8733.html: copied to '/home/msifland/infections/8733.html'
+/usr/share/exploitdb/exploits/windows/remote/4398.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4398.html: copied to '/home/msifland/infections/4398.html'
+/usr/share/exploitdb/exploits/windows/remote/15733.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/15733.html: copied to '/home/msifland/infections/15733.html'
+/usr/share/exploitdb/exploits/windows/remote/3296.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3296.c: copied to '/home/msifland/infections/3296.c'
+/usr/share/exploitdb/exploits/windows/remote/5025.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5025.html: copied to '/home/msifland/infections/5025.html'
+/usr/share/exploitdb/exploits/windows/remote/4042.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4042.html: copied to '/home/msifland/infections/4042.html'
+/usr/share/exploitdb/exploits/windows/remote/49663.py: Asp.Trojan.HafniumWebshell-9840815-0 FOUND
+/usr/share/exploitdb/exploits/windows/remote/49663.py: copied to '/home/msifland/infections/49663.py'
+/usr/share/exploitdb/exploits/windows/remote/3463.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3463.cpp: copied to '/home/msifland/infections/3463.cpp'
+/usr/share/exploitdb/exploits/windows/remote/38912.txt: Html.Exploit.CVE_2015_6127-6367674-0 FOUND
+/usr/share/exploitdb/exploits/windows/remote/38912.txt: copied to '/home/msifland/infections/38912.txt'
+/usr/share/exploitdb/exploits/windows/remote/5793.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5793.html: copied to '/home/msifland/infections/5793.html'
+/usr/share/exploitdb/exploits/windows/remote/31023.html: Win.Trojan.Dropper-76 FOUND
+/usr/share/exploitdb/exploits/windows/remote/31023.html: copied to '/home/msifland/infections/31023.html'
+/usr/share/exploitdb/exploits/windows/remote/9181.py: Win.Trojan.Agent-35774 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9181.py: copied to '/home/msifland/infections/9181.py'
+/usr/share/exploitdb/exploits/windows/remote/3462.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3462.cpp: copied to '/home/msifland/infections/3462.cpp'
+/usr/share/exploitdb/exploits/windows/remote/3661.pl: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3661.pl: copied to '/home/msifland/infections/3661.pl'
+/usr/share/exploitdb/exploits/windows/remote/8253.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8253.c: copied to '/home/msifland/infections/8253.c'
+/usr/share/exploitdb/exploits/windows/remote/3148.pl: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3148.pl: copied to '/home/msifland/infections/3148.pl'
+/usr/share/exploitdb/exploits/windows/remote/8117.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8117.pl: copied to '/home/msifland/infections/8117.pl'
+/usr/share/exploitdb/exploits/windows/remote/1606.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1606.html: copied to '/home/msifland/infections/1606.html'
+/usr/share/exploitdb/exploits/windows/remote/13808.txt: BC.Legacy.Exploit.CVE_2010_1885-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/13808.txt: copied to '/home/msifland/infections/13808.txt'
+/usr/share/exploitdb/exploits/windows/remote/2258.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2258.py: copied to '/home/msifland/infections/2258.py'
+/usr/share/exploitdb/exploits/windows/remote/14257.py: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/14257.py: copied to '/home/msifland/infections/14257.py'
+/usr/share/exploitdb/exploits/windows/remote/18812.rb: Win.Trojan.Script-43 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18812.rb: copied to '/home/msifland/infections/18812.rb'
+/usr/share/exploitdb/exploits/windows/remote/5051.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5051.html: copied to '/home/msifland/infections/5051.html'
+/usr/share/exploitdb/exploits/windows/remote/16599.rb: Win.Exploit.CVE_2010_0249-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/16599.rb: copied to '/home/msifland/infections/16599.rb'
+/usr/share/exploitdb/exploits/windows/remote/28766.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/28766.py: copied to '/home/msifland/infections/28766.py'
+/usr/share/exploitdb/exploits/windows/remote/4222.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4222.c: copied to '/home/msifland/infections/4222.c'
+/usr/share/exploitdb/exploits/windows/remote/4967.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4967.html: copied to '/home/msifland/infections/4967.html'
+/usr/share/exploitdb/exploits/windows/remote/2448.html: Win.Exploit.CVE_2006_3730-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2448.html: copied to '/home/msifland/infections/2448.html'
+/usr/share/exploitdb/exploits/windows/remote/4348.c: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4348.c: copied to '/home/msifland/infections/4348.c'
+/usr/share/exploitdb/exploits/windows/remote/5045.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5045.html: copied to '/home/msifland/infections/5045.html'
+/usr/share/exploitdb/exploits/windows/remote/9690.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9690.py: copied to '/home/msifland/infections/9690.py'
+/usr/share/exploitdb/exploits/windows/remote/9596.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9596.py: copied to '/home/msifland/infections/9596.py'
+/usr/share/exploitdb/exploits/windows/remote/4351.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4351.html: copied to '/home/msifland/infections/4351.html'
+/usr/share/exploitdb/exploits/windows/remote/5193.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5193.html: copied to '/home/msifland/infections/5193.html'
+/usr/share/exploitdb/exploits/windows/remote/3072.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3072.py: copied to '/home/msifland/infections/3072.py'
+/usr/share/exploitdb/exploits/windows/remote/4043.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4043.html: copied to '/home/msifland/infections/4043.html'
+/usr/share/exploitdb/exploits/windows/remote/4014.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4014.py: copied to '/home/msifland/infections/4014.py'
+/usr/share/exploitdb/exploits/windows/remote/12573.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/12573.html: copied to '/home/msifland/infections/12573.html'
+/usr/share/exploitdb/exploits/windows/remote/32129.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/32129.cpp: copied to '/home/msifland/infections/32129.cpp'
+/usr/share/exploitdb/exploits/windows/remote/30720.html: Html.Trojan.Downloader-94 FOUND
+/usr/share/exploitdb/exploits/windows/remote/30720.html: copied to '/home/msifland/infections/30720.html'
+/usr/share/exploitdb/exploits/windows/remote/9500.cpp: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9500.cpp: copied to '/home/msifland/infections/9500.cpp'
+/usr/share/exploitdb/exploits/windows/remote/8339.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8339.py: copied to '/home/msifland/infections/8339.py'
+/usr/share/exploitdb/exploits/windows/remote/16545.rb: BC.Legacy.Exploit.CVE_2010_1885-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/16545.rb: copied to '/home/msifland/infections/16545.rb'
+/usr/share/exploitdb/exploits/windows/remote/8248.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8248.py: copied to '/home/msifland/infections/8248.py'
+/usr/share/exploitdb/exploits/windows/remote/5048.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5048.html: copied to '/home/msifland/infections/5048.html'
+/usr/share/exploitdb/exploits/windows/remote/1079.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1079.html: copied to '/home/msifland/infections/1079.html'
+/usr/share/exploitdb/exploits/windows/remote/3540.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3540.py: copied to '/home/msifland/infections/3540.py'
+/usr/share/exploitdb/exploits/windows/remote/12834.py: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/12834.py: copied to '/home/msifland/infections/12834.py'
+/usr/share/exploitdb/exploits/windows/remote/4946.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4946.html: copied to '/home/msifland/infections/4946.html'
+/usr/share/exploitdb/exploits/windows/remote/8363.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8363.py: copied to '/home/msifland/infections/8363.py'
+/usr/share/exploitdb/exploits/windows/remote/4283.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4283.pl: copied to '/home/msifland/infections/4283.pl'
+/usr/share/exploitdb/exploits/windows/remote/7477.html: Win.Exploit.Shellcode-24 FOUND
+/usr/share/exploitdb/exploits/windows/remote/7477.html: copied to '/home/msifland/infections/7477.html'
+/usr/share/exploitdb/exploits/windows/remote/4784.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4784.pl: copied to '/home/msifland/infections/4784.pl'
+/usr/share/exploitdb/exploits/windows/remote/1144.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1144.html: copied to '/home/msifland/infections/1144.html'
+/usr/share/exploitdb/exploits/windows/remote/3996.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3996.c: copied to '/home/msifland/infections/3996.c'
+/usr/share/exploitdb/exploits/windows/remote/4053.c: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4053.c: copied to '/home/msifland/infections/4053.c'
+/usr/share/exploitdb/exploits/windows/remote/5106.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5106.html: copied to '/home/msifland/infections/5106.html'
+/usr/share/exploitdb/exploits/windows/remote/19186.rb: Win.Exploit.CVE_2012_1889-10 FOUND
+/usr/share/exploitdb/exploits/windows/remote/19186.rb: copied to '/home/msifland/infections/19186.rb'
+/usr/share/exploitdb/exploits/windows/remote/30897.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/30897.html: copied to '/home/msifland/infections/30897.html'
+/usr/share/exploitdb/exploits/windows/remote/719.txt: Win.Exploit.MS05-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/719.txt: copied to '/home/msifland/infections/719.txt'
+/usr/share/exploitdb/exploits/windows/remote/4052.c: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4052.c: copied to '/home/msifland/infections/4052.c'
+/usr/share/exploitdb/exploits/windows/remote/3570.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3570.c: copied to '/home/msifland/infections/3570.c'
+/usr/share/exploitdb/exploits/windows/remote/11204.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/11204.html: copied to '/home/msifland/infections/11204.html'
+/usr/share/exploitdb/exploits/windows/remote/36756.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/36756.html: copied to '/home/msifland/infections/36756.html'
+/usr/share/exploitdb/exploits/windows/remote/5100.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5100.html: copied to '/home/msifland/infections/5100.html'
+/usr/share/exploitdb/exploits/windows/remote/5190.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5190.html: copied to '/home/msifland/infections/5190.html'
+/usr/share/exploitdb/exploits/windows/remote/18805.txt: Win.Trojan.Script-43 FOUND
+/usr/share/exploitdb/exploits/windows/remote/18805.txt: copied to '/home/msifland/infections/18805.txt'
+/usr/share/exploitdb/exploits/windows/remote/3244.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3244.py: copied to '/home/msifland/infections/3244.py'
+/usr/share/exploitdb/exploits/windows/remote/6152.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/6152.html: copied to '/home/msifland/infections/6152.html'
+/usr/share/exploitdb/exploits/windows/remote/12244.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/12244.txt: copied to '/home/msifland/infections/12244.txt'
+/usr/share/exploitdb/exploits/windows/remote/6118.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/6118.pl: copied to '/home/msifland/infections/6118.pl'
+/usr/share/exploitdb/exploits/windows/remote/4959.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4959.html: copied to '/home/msifland/infections/4959.html'
+/usr/share/exploitdb/exploits/windows/remote/4979.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4979.html: copied to '/home/msifland/infections/4979.html'
+/usr/share/exploitdb/exploits/windows/remote/8554.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8554.py: copied to '/home/msifland/infections/8554.py'
+/usr/share/exploitdb/exploits/windows/remote/15809.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/15809.html: copied to '/home/msifland/infections/15809.html'
+/usr/share/exploitdb/exploits/windows/remote/8916.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8916.py: copied to '/home/msifland/infections/8916.py'
+/usr/share/exploitdb/exploits/windows/remote/3420.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3420.html: copied to '/home/msifland/infections/3420.html'
+/usr/share/exploitdb/exploits/windows/remote/8338.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8338.py: copied to '/home/msifland/infections/8338.py'
+/usr/share/exploitdb/exploits/windows/remote/9802.html: Win.Trojan.CVE_2009_3518-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9802.html: copied to '/home/msifland/infections/9802.html'
+/usr/share/exploitdb/exploits/windows/remote/44616.py: Win.Exploit.CVE_2017_11885-6416584-0 FOUND
+/usr/share/exploitdb/exploits/windows/remote/44616.py: copied to '/home/msifland/infections/44616.py'
+/usr/share/exploitdb/exploits/windows/remote/9214.pl: Win.Trojan.Agent-35774 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9214.pl: copied to '/home/msifland/infections/9214.pl'
+/usr/share/exploitdb/exploits/windows/remote/29857.rb: Html.Exploit.CVE_2013_3918-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/29857.rb: copied to '/home/msifland/infections/29857.rb'
+/usr/share/exploitdb/exploits/windows/remote/23754.rb: Js.Exploit.CVE_2012_4792-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/23754.rb: copied to '/home/msifland/infections/23754.rb'
+/usr/share/exploitdb/exploits/windows/remote/40721.html: Html.Exploit.CVE_2014_6363-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/40721.html: copied to '/home/msifland/infections/40721.html'
+/usr/share/exploitdb/exploits/windows/remote/8340.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8340.py: copied to '/home/msifland/infections/8340.py'
+/usr/share/exploitdb/exploits/windows/remote/4250.html: Win.Trojan.Downloader-47 FOUND
+/usr/share/exploitdb/exploits/windows/remote/4250.html: copied to '/home/msifland/infections/4250.html'
+/usr/share/exploitdb/exploits/windows/remote/11877.py: Win.Exploit.Alpha_Upper-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/11877.py: copied to '/home/msifland/infections/11877.py'
+/usr/share/exploitdb/exploits/windows/remote/5332.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/5332.html: copied to '/home/msifland/infections/5332.html'
+/usr/share/exploitdb/exploits/windows/remote/7913.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/7913.pl: copied to '/home/msifland/infections/7913.pl'
+/usr/share/exploitdb/exploits/windows/remote/1380.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1380.py: copied to '/home/msifland/infections/1380.py'
+/usr/share/exploitdb/exploits/windows/remote/27072.pl: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/27072.pl: copied to '/home/msifland/infections/27072.pl'
+/usr/share/exploitdb/exploits/windows/remote/25294.rb: Html.Exploit.CVE_2013_1347-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/25294.rb: copied to '/home/msifland/infections/25294.rb'
+/usr/share/exploitdb/exploits/windows/remote/8579.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/8579.html: copied to '/home/msifland/infections/8579.html'
+/usr/share/exploitdb/exploits/windows/remote/2440.rb: Win.Exploit.CVE_2006_3730-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2440.rb: copied to '/home/msifland/infections/2440.rb'
+/usr/share/exploitdb/exploits/windows/remote/753.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/753.html: copied to '/home/msifland/infections/753.html'
+/usr/share/exploitdb/exploits/windows/remote/22734.html: Html.Exploit.Codebase-5 FOUND
+/usr/share/exploitdb/exploits/windows/remote/22734.html: copied to '/home/msifland/infections/22734.html'
+/usr/share/exploitdb/exploits/windows/remote/15885.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/15885.html: copied to '/home/msifland/infections/15885.html'
+/usr/share/exploitdb/exploits/windows/remote/17328.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/17328.html: copied to '/home/msifland/infections/17328.html'
+/usr/share/exploitdb/exploits/windows/remote/11500.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/11500.py: copied to '/home/msifland/infections/11500.py'
+/usr/share/exploitdb/exploits/windows/remote/9108.py: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/9108.py: copied to '/home/msifland/infections/9108.py'
+/usr/share/exploitdb/exploits/windows/remote/41929.py: Win.Exploit.CVE_2017_11885-6416584-0 FOUND
+/usr/share/exploitdb/exploits/windows/remote/41929.py: copied to '/home/msifland/infections/41929.py'
+/usr/share/exploitdb/exploits/windows/remote/3137.html: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3137.html: copied to '/home/msifland/infections/3137.html'
+/usr/share/exploitdb/exploits/windows/remote/3055.html: Win.Trojan.Downloader-47 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3055.html: copied to '/home/msifland/infections/3055.html'
+/usr/share/exploitdb/exploits/windows/remote/3604.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/3604.py: copied to '/home/msifland/infections/3604.py'
+/usr/share/exploitdb/exploits/windows/remote/975.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/975.py: copied to '/home/msifland/infections/975.py'
+/usr/share/exploitdb/exploits/windows/remote/21840.rb: Js.Exploit.CVE_2012_4969-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/21840.rb: copied to '/home/msifland/infections/21840.rb'
+/usr/share/exploitdb/exploits/windows/remote/17373.py: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/windows/remote/17373.py: copied to '/home/msifland/infections/17373.py'
+/usr/share/exploitdb/exploits/windows/remote/2328.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/windows/remote/2328.php: copied to '/home/msifland/infections/2328.php'
+/usr/share/exploitdb/exploits/windows/remote/1520.pl: Html.Trojan.Downloader-95 FOUND
+/usr/share/exploitdb/exploits/windows/remote/1520.pl: copied to '/home/msifland/infections/1520.pl'
+/usr/share/exploitdb/exploits/windows/remote/24129.bat: Win.Exploit.Omni-1 FOUND
+/usr/share/exploitdb/exploits/windows/remote/24129.bat: copied to '/home/msifland/infections/24129.bat'
+/usr/share/exploitdb/exploits/linux_x86-64/local/15023.c: Unix.Exploit.CVE_2010_3301-1 FOUND
+/usr/share/exploitdb/exploits/linux_x86-64/local/15023.c: copied to '/home/msifland/infections/15023.c'
+/usr/share/exploitdb/exploits/ios/dos/11890.txt: Html.Exploit.IFrameBOF-7 FOUND
+/usr/share/exploitdb/exploits/ios/dos/11890.txt: copied to '/home/msifland/infections/11890.txt'
+/usr/share/exploitdb/exploits/multiple/dos/20178.pl: Win.Tool.Vqserver-1 FOUND
+/usr/share/exploitdb/exploits/multiple/dos/20178.pl: copied to '/home/msifland/infections/20178.pl'
+/usr/share/exploitdb/exploits/multiple/dos/18370.txt: Php.Exploit.CVE_2011_4153-2 FOUND
+/usr/share/exploitdb/exploits/multiple/dos/18370.txt: copied to '/home/msifland/infections/18370.txt'
+/usr/share/exploitdb/exploits/multiple/dos/45486.html: Html.Exploit.CVE_2018_4317-7151037-0 FOUND
+/usr/share/exploitdb/exploits/multiple/dos/45486.html: copied to '/home/msifland/infections/45486.html'
+/usr/share/exploitdb/exploits/multiple/local/11789.c: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/multiple/local/11789.c: copied to '/home/msifland/infections/11789.c'
+/usr/share/exploitdb/exploits/multiple/local/30474.rb: Html.Exploit.CVE_2012_3993-1 FOUND
+/usr/share/exploitdb/exploits/multiple/local/30474.rb: copied to '/home/msifland/infections/30474.rb'
+/usr/share/exploitdb/exploits/multiple/webapps/12715.pl: Win.Exploit.E107-1 FOUND
+/usr/share/exploitdb/exploits/multiple/webapps/12715.pl: copied to '/home/msifland/infections/12715.pl'
+/usr/share/exploitdb/exploits/multiple/remote/43458.py: Win.Trojan.MSShellcode-88 FOUND
+/usr/share/exploitdb/exploits/multiple/remote/43458.py: copied to '/home/msifland/infections/43458.py'
+/usr/share/exploitdb/exploits/multiple/remote/26135.rb: Java.Exploit.CVE_2013_1488-2 FOUND
+/usr/share/exploitdb/exploits/multiple/remote/26135.rb: copied to '/home/msifland/infections/26135.rb'
+/usr/share/exploitdb/exploits/multiple/remote/4093.pl: Txt.Exploit.MSShellcode-9951540-2 FOUND
+/usr/share/exploitdb/exploits/multiple/remote/4093.pl: copied to '/home/msifland/infections/4093.pl'
+/usr/share/exploitdb/exploits/multiple/remote/2082.html: Html.Trojan.Shellcode-19 FOUND
+/usr/share/exploitdb/exploits/multiple/remote/2082.html: copied to '/home/msifland/infections/2082.html'
+/usr/share/exploitdb/exploits/cgi/webapps/1041.pl: Win.Trojan.Perl-70 FOUND
+/usr/share/exploitdb/exploits/cgi/webapps/1041.pl: copied to '/home/msifland/infections/1041.pl'
+/usr/share/exploitdb/exploits/cgi/webapps/1677.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/cgi/webapps/1677.php: copied to '/home/msifland/infections/1677.php'
+/usr/share/exploitdb/exploits/cgi/webapps/954.pl: Win.Trojan.Perl-70 FOUND
+/usr/share/exploitdb/exploits/cgi/webapps/954.pl: copied to '/home/msifland/infections/954.pl'
+/usr/share/exploitdb/exploits/cgi/webapps/1048.pl: Win.Trojan.Perl-70 FOUND
+/usr/share/exploitdb/exploits/cgi/webapps/1048.pl: copied to '/home/msifland/infections/1048.pl'
+/usr/share/exploitdb/exploits/android/local/16098.c: Andr.Exploit.Exploid-1 FOUND
+/usr/share/exploitdb/exploits/android/local/16098.c: copied to '/home/msifland/infections/16098.c'
+/usr/share/exploitdb/exploits/android/local/16099.c: Andr.Exploit.Exploid-1 FOUND
+/usr/share/exploitdb/exploits/android/local/16099.c: copied to '/home/msifland/infections/16099.c'
+/usr/share/exploitdb/exploits/unix/local/21516.pl: Win.Exploit.Perl-16 FOUND
+/usr/share/exploitdb/exploits/unix/local/21516.pl: copied to '/home/msifland/infections/21516.pl'
+/usr/share/exploitdb/exploits/php/webapps/2697.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2697.php: copied to '/home/msifland/infections/2697.php'
+/usr/share/exploitdb/exploits/php/webapps/2321.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2321.php: copied to '/home/msifland/infections/2321.php'
+/usr/share/exploitdb/exploits/php/webapps/30102.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/30102.php: copied to '/home/msifland/infections/30102.php'
+/usr/share/exploitdb/exploits/php/webapps/2270.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2270.php: copied to '/home/msifland/infections/2270.php'
+/usr/share/exploitdb/exploits/php/webapps/2299.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2299.php: copied to '/home/msifland/infections/2299.php'
+/usr/share/exploitdb/exploits/php/webapps/4036.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4036.php: copied to '/home/msifland/infections/4036.php'
+/usr/share/exploitdb/exploits/php/webapps/2981.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2981.php: copied to '/home/msifland/infections/2981.php'
+/usr/share/exploitdb/exploits/php/webapps/4029.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4029.php: copied to '/home/msifland/infections/4029.php'
+/usr/share/exploitdb/exploits/php/webapps/2406.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2406.php: copied to '/home/msifland/infections/2406.php'
+/usr/share/exploitdb/exploits/php/webapps/3045.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3045.php: copied to '/home/msifland/infections/3045.php'
+/usr/share/exploitdb/exploits/php/webapps/1647.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1647.php: copied to '/home/msifland/infections/1647.php'
+/usr/share/exploitdb/exploits/php/webapps/1797.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1797.php: copied to '/home/msifland/infections/1797.php'
+/usr/share/exploitdb/exploits/php/webapps/1379.php: Win.Trojan.Shell-48 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1379.php: copied to '/home/msifland/infections/1379.php'
+/usr/share/exploitdb/exploits/php/webapps/8324.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/8324.php: copied to '/home/msifland/infections/8324.php'
+/usr/share/exploitdb/exploits/php/webapps/1777.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1777.php: copied to '/home/msifland/infections/1777.php'
+/usr/share/exploitdb/exploits/php/webapps/4006.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4006.php: copied to '/home/msifland/infections/4006.php'
+/usr/share/exploitdb/exploits/php/webapps/2087.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2087.php: copied to '/home/msifland/infections/2087.php'
+/usr/share/exploitdb/exploits/php/webapps/4054.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4054.php: copied to '/home/msifland/infections/4054.php'
+/usr/share/exploitdb/exploits/php/webapps/3387.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3387.php: copied to '/home/msifland/infections/3387.php'
+/usr/share/exploitdb/exploits/php/webapps/2012.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2012.php: copied to '/home/msifland/infections/2012.php'
+/usr/share/exploitdb/exploits/php/webapps/1811.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1811.php: copied to '/home/msifland/infections/1811.php'
+/usr/share/exploitdb/exploits/php/webapps/2291.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2291.php: copied to '/home/msifland/infections/2291.php'
+/usr/share/exploitdb/exploits/php/webapps/1796.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1796.php: copied to '/home/msifland/infections/1796.php'
+/usr/share/exploitdb/exploits/php/webapps/1960.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1960.php: copied to '/home/msifland/infections/1960.php'
+/usr/share/exploitdb/exploits/php/webapps/2859.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2859.php: copied to '/home/msifland/infections/2859.php'
+/usr/share/exploitdb/exploits/php/webapps/1904.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1904.php: copied to '/home/msifland/infections/1904.php'
+/usr/share/exploitdb/exploits/php/webapps/2231.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2231.php: copied to '/home/msifland/infections/2231.php'
+/usr/share/exploitdb/exploits/php/webapps/2415.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2415.php: copied to '/home/msifland/infections/2415.php'
+/usr/share/exploitdb/exploits/php/webapps/1617.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1617.php: copied to '/home/msifland/infections/1617.php'
+/usr/share/exploitdb/exploits/php/webapps/2631.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2631.php: copied to '/home/msifland/infections/2631.php'
+/usr/share/exploitdb/exploits/php/webapps/2447.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2447.php: copied to '/home/msifland/infections/2447.php'
+/usr/share/exploitdb/exploits/php/webapps/2498.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2498.php: copied to '/home/msifland/infections/2498.php'
+/usr/share/exploitdb/exploits/php/webapps/1659.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1659.php: copied to '/home/msifland/infections/1659.php'
+/usr/share/exploitdb/exploits/php/webapps/1652.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1652.php: copied to '/home/msifland/infections/1652.php'
+/usr/share/exploitdb/exploits/php/webapps/1760.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1760.php: copied to '/home/msifland/infections/1760.php'
+/usr/share/exploitdb/exploits/php/webapps/1566.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1566.php: copied to '/home/msifland/infections/1566.php'
+/usr/share/exploitdb/exploits/php/webapps/3262.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3262.php: copied to '/home/msifland/infections/3262.php'
+/usr/share/exploitdb/exploits/php/webapps/2842.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2842.php: copied to '/home/msifland/infections/2842.php'
+/usr/share/exploitdb/exploits/php/webapps/1697.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1697.php: copied to '/home/msifland/infections/1697.php'
+/usr/share/exploitdb/exploits/php/webapps/2322.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2322.php: copied to '/home/msifland/infections/2322.php'
+/usr/share/exploitdb/exploits/php/webapps/3124.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3124.php: copied to '/home/msifland/infections/3124.php'
+/usr/share/exploitdb/exploits/php/webapps/4106.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4106.php: copied to '/home/msifland/infections/4106.php'
+/usr/share/exploitdb/exploits/php/webapps/720.pl: Legacy.Trojan.Agent-59 FOUND
+/usr/share/exploitdb/exploits/php/webapps/720.pl: copied to '/home/msifland/infections/720.pl'
+/usr/share/exploitdb/exploits/php/webapps/3988.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3988.php: copied to '/home/msifland/infections/3988.php'
+/usr/share/exploitdb/exploits/php/webapps/2594.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2594.php: copied to '/home/msifland/infections/2594.php'
+/usr/share/exploitdb/exploits/php/webapps/2598.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2598.php: copied to '/home/msifland/infections/2598.php'
+/usr/share/exploitdb/exploits/php/webapps/1646.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1646.php: copied to '/home/msifland/infections/1646.php'
+/usr/share/exploitdb/exploits/php/webapps/2007.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2007.php: copied to '/home/msifland/infections/2007.php'
+/usr/share/exploitdb/exploits/php/webapps/2068.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2068.php: copied to '/home/msifland/infections/2068.php'
+/usr/share/exploitdb/exploits/php/webapps/1964.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1964.php: copied to '/home/msifland/infections/1964.php'
+/usr/share/exploitdb/exploits/php/webapps/2333.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2333.php: copied to '/home/msifland/infections/2333.php'
+/usr/share/exploitdb/exploits/php/webapps/2072.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2072.php: copied to '/home/msifland/infections/2072.php'
+/usr/share/exploitdb/exploits/php/webapps/1660.pm: Win.Trojan.Perl-45 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1660.pm: copied to '/home/msifland/infections/1660.pm'
+/usr/share/exploitdb/exploits/php/webapps/2268.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2268.php: copied to '/home/msifland/infections/2268.php'
+/usr/share/exploitdb/exploits/php/webapps/1877.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1877.php: copied to '/home/msifland/infections/1877.php'
+/usr/share/exploitdb/exploits/php/webapps/4145.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4145.php: copied to '/home/msifland/infections/4145.php'
+/usr/share/exploitdb/exploits/php/webapps/2118.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2118.php: copied to '/home/msifland/infections/2118.php'
+/usr/share/exploitdb/exploits/php/webapps/2117.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2117.php: copied to '/home/msifland/infections/2117.php'
+/usr/share/exploitdb/exploits/php/webapps/1673.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1673.php: copied to '/home/msifland/infections/1673.php'
+/usr/share/exploitdb/exploits/php/webapps/1586.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1586.php: copied to '/home/msifland/infections/1586.php'
+/usr/share/exploitdb/exploits/php/webapps/4076.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4076.php: copied to '/home/msifland/infections/4076.php'
+/usr/share/exploitdb/exploits/php/webapps/3143.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3143.php: copied to '/home/msifland/infections/3143.php'
+/usr/share/exploitdb/exploits/php/webapps/1145.pm: Win.Trojan.Perl-45 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1145.pm: copied to '/home/msifland/infections/1145.pm'
+/usr/share/exploitdb/exploits/php/webapps/2644.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2644.php: copied to '/home/msifland/infections/2644.php'
+/usr/share/exploitdb/exploits/php/webapps/3029.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3029.php: copied to '/home/msifland/infections/3029.php'
+/usr/share/exploitdb/exploits/php/webapps/2499.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2499.php: copied to '/home/msifland/infections/2499.php'
+/usr/share/exploitdb/exploits/php/webapps/1853.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1853.php: copied to '/home/msifland/infections/1853.php'
+/usr/share/exploitdb/exploits/php/webapps/2288.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2288.php: copied to '/home/msifland/infections/2288.php'
+/usr/share/exploitdb/exploits/php/webapps/2402.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2402.php: copied to '/home/msifland/infections/2402.php'
+/usr/share/exploitdb/exploits/php/webapps/30488.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/30488.php: copied to '/home/msifland/infections/30488.php'
+/usr/share/exploitdb/exploits/php/webapps/1701.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1701.php: copied to '/home/msifland/infections/1701.php'
+/usr/share/exploitdb/exploits/php/webapps/1585.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1585.php: copied to '/home/msifland/infections/1585.php'
+/usr/share/exploitdb/exploits/php/webapps/1993.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1993.php: copied to '/home/msifland/infections/1993.php'
+/usr/share/exploitdb/exploits/php/webapps/2310.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2310.php: copied to '/home/msifland/infections/2310.php'
+/usr/share/exploitdb/exploits/php/webapps/2035.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2035.php: copied to '/home/msifland/infections/2035.php'
+/usr/share/exploitdb/exploits/php/webapps/1785.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1785.php: copied to '/home/msifland/infections/1785.php'
+/usr/share/exploitdb/exploits/php/webapps/4891.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4891.php: copied to '/home/msifland/infections/4891.php'
+/usr/share/exploitdb/exploits/php/webapps/29864.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/29864.php: copied to '/home/msifland/infections/29864.php'
+/usr/share/exploitdb/exploits/php/webapps/1666.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1666.php: copied to '/home/msifland/infections/1666.php'
+/usr/share/exploitdb/exploits/php/webapps/1821.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1821.php: copied to '/home/msifland/infections/1821.php'
+/usr/share/exploitdb/exploits/php/webapps/4927.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4927.php: copied to '/home/msifland/infections/4927.php'
+/usr/share/exploitdb/exploits/php/webapps/28496.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/28496.php: copied to '/home/msifland/infections/28496.php'
+/usr/share/exploitdb/exploits/php/webapps/1588.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1588.php: copied to '/home/msifland/infections/1588.php'
+/usr/share/exploitdb/exploits/php/webapps/14654.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/14654.php: copied to '/home/msifland/infections/14654.php'
+/usr/share/exploitdb/exploits/php/webapps/2050.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2050.php: copied to '/home/msifland/infections/2050.php'
+/usr/share/exploitdb/exploits/php/webapps/1608.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1608.php: copied to '/home/msifland/infections/1608.php'
+/usr/share/exploitdb/exploits/php/webapps/1869.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1869.php: copied to '/home/msifland/infections/1869.php'
+/usr/share/exploitdb/exploits/php/webapps/3959.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3959.php: copied to '/home/msifland/infections/3959.php'
+/usr/share/exploitdb/exploits/php/webapps/4884.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4884.php: copied to '/home/msifland/infections/4884.php'
+/usr/share/exploitdb/exploits/php/webapps/1920.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1920.php: copied to '/home/msifland/infections/1920.php'
+/usr/share/exploitdb/exploits/php/webapps/4144.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4144.php: copied to '/home/msifland/infections/4144.php'
+/usr/share/exploitdb/exploits/php/webapps/4004.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4004.php: copied to '/home/msifland/infections/4004.php'
+/usr/share/exploitdb/exploits/php/webapps/2243.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2243.php: copied to '/home/msifland/infections/2243.php'
+/usr/share/exploitdb/exploits/php/webapps/4350.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4350.php: copied to '/home/msifland/infections/4350.php'
+/usr/share/exploitdb/exploits/php/webapps/2685.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2685.php: copied to '/home/msifland/infections/2685.php'
+/usr/share/exploitdb/exploits/php/webapps/1501.php: Win.Trojan.Shell-47 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1501.php: copied to '/home/msifland/infections/1501.php'
+/usr/share/exploitdb/exploits/php/webapps/1922.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1922.php: copied to '/home/msifland/infections/1922.php'
+/usr/share/exploitdb/exploits/php/webapps/2298.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2298.php: copied to '/home/msifland/infections/2298.php'
+/usr/share/exploitdb/exploits/php/webapps/4505.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4505.php: copied to '/home/msifland/infections/4505.php'
+/usr/share/exploitdb/exploits/php/webapps/2178.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2178.php: copied to '/home/msifland/infections/2178.php'
+/usr/share/exploitdb/exploits/php/webapps/1595.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1595.php: copied to '/home/msifland/infections/1595.php'
+/usr/share/exploitdb/exploits/php/webapps/5018.pl: Win.Trojan.R57-2 FOUND
+/usr/share/exploitdb/exploits/php/webapps/5018.pl: copied to '/home/msifland/infections/5018.pl'
+/usr/share/exploitdb/exploits/php/webapps/2863.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2863.php: copied to '/home/msifland/infections/2863.php'
+/usr/share/exploitdb/exploits/php/webapps/1605.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1605.php: copied to '/home/msifland/infections/1605.php'
+/usr/share/exploitdb/exploits/php/webapps/3017.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3017.php: copied to '/home/msifland/infections/3017.php'
+/usr/share/exploitdb/exploits/php/webapps/3221.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3221.php: copied to '/home/msifland/infections/3221.php'
+/usr/share/exploitdb/exploits/php/webapps/4078.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4078.php: copied to '/home/msifland/infections/4078.php'
+/usr/share/exploitdb/exploits/php/webapps/3958.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3958.php: copied to '/home/msifland/infections/3958.php'
+/usr/share/exploitdb/exploits/php/webapps/2583.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2583.php: copied to '/home/msifland/infections/2583.php'
+/usr/share/exploitdb/exploits/php/webapps/1780.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1780.php: copied to '/home/msifland/infections/1780.php'
+/usr/share/exploitdb/exploits/php/webapps/1874.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1874.php: copied to '/home/msifland/infections/1874.php'
+/usr/share/exploitdb/exploits/php/webapps/2694.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2694.php: copied to '/home/msifland/infections/2694.php'
+/usr/share/exploitdb/exploits/php/webapps/2198.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2198.php: copied to '/home/msifland/infections/2198.php'
+/usr/share/exploitdb/exploits/php/webapps/2247.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2247.php: copied to '/home/msifland/infections/2247.php'
+/usr/share/exploitdb/exploits/php/webapps/4924.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4924.php: copied to '/home/msifland/infections/4924.php'
+/usr/share/exploitdb/exploits/php/webapps/2593.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2593.php: copied to '/home/msifland/infections/2593.php'
+/usr/share/exploitdb/exploits/php/webapps/1621.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1621.php: copied to '/home/msifland/infections/1621.php'
+/usr/share/exploitdb/exploits/php/webapps/1816.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1816.php: copied to '/home/msifland/infections/1816.php'
+/usr/share/exploitdb/exploits/php/webapps/2867.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2867.php: copied to '/home/msifland/infections/2867.php'
+/usr/share/exploitdb/exploits/php/webapps/2655.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2655.php: copied to '/home/msifland/infections/2655.php'
+/usr/share/exploitdb/exploits/php/webapps/2088.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2088.php: copied to '/home/msifland/infections/2088.php'
+/usr/share/exploitdb/exploits/php/webapps/28488.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/28488.php: copied to '/home/msifland/infections/28488.php'
+/usr/share/exploitdb/exploits/php/webapps/2105.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2105.php: copied to '/home/msifland/infections/2105.php'
+/usr/share/exploitdb/exploits/php/webapps/2841.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2841.php: copied to '/home/msifland/infections/2841.php'
+/usr/share/exploitdb/exploits/php/webapps/1941.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1941.php: copied to '/home/msifland/infections/1941.php'
+/usr/share/exploitdb/exploits/php/webapps/6.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/6.php: copied to '/home/msifland/infections/6.php'
+/usr/share/exploitdb/exploits/php/webapps/2391.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2391.php: copied to '/home/msifland/infections/2391.php'
+/usr/share/exploitdb/exploits/php/webapps/2008.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2008.php: copied to '/home/msifland/infections/2008.php'
+/usr/share/exploitdb/exploits/php/webapps/3833.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3833.php: copied to '/home/msifland/infections/3833.php'
+/usr/share/exploitdb/exploits/php/webapps/1678.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1678.php: copied to '/home/msifland/infections/1678.php'
+/usr/share/exploitdb/exploits/php/webapps/1738.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1738.php: copied to '/home/msifland/infections/1738.php'
+/usr/share/exploitdb/exploits/php/webapps/3671.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3671.php: copied to '/home/msifland/infections/3671.php'
+/usr/share/exploitdb/exploits/php/webapps/4081.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4081.php: copied to '/home/msifland/infections/4081.php'
+/usr/share/exploitdb/exploits/php/webapps/4020.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/4020.php: copied to '/home/msifland/infections/4020.php'
+/usr/share/exploitdb/exploits/php/webapps/2261.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2261.php: copied to '/home/msifland/infections/2261.php'
+/usr/share/exploitdb/exploits/php/webapps/3956.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3956.php: copied to '/home/msifland/infections/3956.php'
+/usr/share/exploitdb/exploits/php/webapps/3109.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3109.php: copied to '/home/msifland/infections/3109.php'
+/usr/share/exploitdb/exploits/php/webapps/2071.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2071.php: copied to '/home/msifland/infections/2071.php'
+/usr/share/exploitdb/exploits/php/webapps/702.pl: Legacy.Trojan.Agent-713 FOUND
+/usr/share/exploitdb/exploits/php/webapps/702.pl: copied to '/home/msifland/infections/702.pl'
+/usr/share/exploitdb/exploits/php/webapps/3957.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/3957.php: copied to '/home/msifland/infections/3957.php'
+/usr/share/exploitdb/exploits/php/webapps/2647.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/webapps/2647.php: copied to '/home/msifland/infections/2647.php'
+/usr/share/exploitdb/exploits/php/webapps/1133.pm: Win.Trojan.Perl-45 FOUND
+/usr/share/exploitdb/exploits/php/webapps/1133.pm: copied to '/home/msifland/infections/1133.pm'
+/usr/share/exploitdb/exploits/php/remote/26443.php: Win.Trojan.Proxy-120 FOUND
+/usr/share/exploitdb/exploits/php/remote/26443.php: copied to '/home/msifland/infections/26443.php'
+/usr/share/exploitdb/shellcodes/windows_x86/13509.c: Win.Tool.Shellcode_13509-1 FOUND
+/usr/share/exploitdb/shellcodes/windows_x86/13509.c: copied to '/home/msifland/infections/13509.c'
+/usr/share/exploitdb/shellcodes/windows_x86/13512.c: Win.Tool.Shellcode_13512-1 FOUND
+/usr/share/exploitdb/shellcodes/windows_x86/13512.c: copied to '/home/msifland/infections/13512.c'
+/usr/share/exploitdb/shellcodes/windows_x86/13513.c: Win.Tool.Shellcode_13513-1 FOUND
+/usr/share/exploitdb/shellcodes/windows_x86/13513.c: copied to '/home/msifland/infections/13513.c'
+/usr/share/beef-xss/modules/social_engineering/edge_wscript_wsh_injection/module.rb: Xml.Malware.Squiblydoo-6728833-0 FOUND
+/usr/share/beef-xss/modules/social_engineering/edge_wscript_wsh_injection/module.rb: copied to '/home/msifland/infections/module.rb'
+/usr/share/beef-xss/modules/exploits/rfi_scanner/module.rb: Php.Trojan.MSShellcode-107 FOUND
+/usr/share/beef-xss/modules/exploits/rfi_scanner/module.rb: copied to '/home/msifland/infections/module.rb.001'
+/usr/share/beef-xss/modules/exploits/local_host/java_payload/Applet_ReverseTCP.jar: Java.Malware.Agent-5891455-0 FOUND
+/usr/share/beef-xss/modules/exploits/local_host/java_payload/Applet_ReverseTCP.jar: copied to '/home/msifland/infections/Applet_ReverseTCP.jar'
+/usr/share/davtest/backdoors/asp_cmd.asp: Win.Trojan.Ace-8 FOUND
+/usr/share/davtest/backdoors/asp_cmd.asp: copied to '/home/msifland/infections/asp_cmd.asp'
+/usr/share/sqlninja/apps/vdmallowed.exe: Win.Trojan.Thaus-6 FOUND
+/usr/share/sqlninja/apps/vdmallowed.exe: copied to '/home/msifland/infections/vdmallowed.exe'
+/usr/share/sqlninja/apps/vdmexploit.dll: Win.Tool.KiTrap-2 FOUND
+/usr/share/sqlninja/apps/vdmexploit.dll: copied to '/home/msifland/infections/vdmexploit.dll'
+/usr/share/sqlninja/apps/churrasco.exe: Win.Trojan.Toksteal-25 FOUND
+/usr/share/sqlninja/apps/churrasco.exe: copied to '/home/msifland/infections/churrasco.exe'
+/usr/share/sqlninja/apps/nc.exe: Win.Tool.NetCat-9917183-0 FOUND
+/usr/share/sqlninja/apps/nc.exe: copied to '/home/msifland/infections/nc.exe.001'
+/usr/share/windows-resources/powersploit/CodeExecution/Invoke-ReflectivePEInjection.ps1: Win.Trojan.PSempireInj-7013548-0 FOUND
+/usr/share/windows-resources/powersploit/CodeExecution/Invoke-ReflectivePEInjection.ps1: copied to '/home/msifland/infections/Invoke-ReflectivePEInjection.ps1'
+/usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1: Win.Countermeasure.DotNetToJScript-9804890-0 FOUND
+/usr/share/windows-resources/powersploit/Privesc/PowerUp.ps1: copied to '/home/msifland/infections/PowerUp.ps1'
+/usr/share/windows-resources/powersploit/Exfiltration/Invoke-CredentialInjection.ps1: Win.Trojan.PSempireInj-7013548-0 FOUND
+/usr/share/windows-resources/powersploit/Exfiltration/Invoke-CredentialInjection.ps1: copied to '/home/msifland/infections/Invoke-CredentialInjection.ps1'
+/usr/share/windows-resources/binaries/fgdump/cachedump.exe: Win.Trojan.Cachedump-4 FOUND
+/usr/share/windows-resources/binaries/fgdump/cachedump.exe: copied to '/home/msifland/infections/cachedump.exe'
+/usr/share/windows-resources/binaries/fgdump/fgdump.exe: Win.Tool.PWDump-33 FOUND
+/usr/share/windows-resources/binaries/fgdump/fgdump.exe: copied to '/home/msifland/infections/fgdump.exe'
+/usr/share/windows-resources/binaries/fgdump/servpw64.exe: Win.Trojan.Pwdump-50 FOUND
+/usr/share/windows-resources/binaries/fgdump/servpw64.exe: copied to '/home/msifland/infections/servpw64.exe'
+/usr/share/windows-resources/binaries/fgdump/servpw.exe: Win.Trojan.Pwdump-22 FOUND
+/usr/share/windows-resources/binaries/fgdump/servpw.exe: copied to '/home/msifland/infections/servpw.exe'
+/usr/share/windows-resources/binaries/fgdump/fgexec.exe: Win.Trojan.Pwdump-76 FOUND
+/usr/share/windows-resources/binaries/fgdump/fgexec.exe: copied to '/home/msifland/infections/fgexec.exe'
+/usr/share/windows-resources/binaries/fgdump/PwDump.exe: Win.Trojan.Pwdump-78 FOUND
+/usr/share/windows-resources/binaries/fgdump/PwDump.exe: copied to '/home/msifland/infections/PwDump.exe'
+/usr/share/windows-resources/binaries/fgdump/pstgdump.exe: Win.Trojan.Pwdump-62 FOUND
+/usr/share/windows-resources/binaries/fgdump/pstgdump.exe: copied to '/home/msifland/infections/pstgdump.exe'
+/usr/share/windows-resources/binaries/radmin.exe: Win.Trojan.Remoteadmin-52 FOUND
+/usr/share/windows-resources/binaries/radmin.exe: copied to '/home/msifland/infections/radmin.exe'
+/usr/share/windows-resources/binaries/klogger.exe: Win.Spyware.1752-2 FOUND
+/usr/share/windows-resources/binaries/klogger.exe: copied to '/home/msifland/infections/klogger.exe'
+/usr/share/windows-resources/sbd/sbd.exe: Win.Trojan.Agent-942582 FOUND
+/usr/share/windows-resources/sbd/sbd.exe: copied to '/home/msifland/infections/sbd.exe'
+/usr/share/windows-resources/mimikatz/Win32/mimidrv.sys: Win.Tool.Mimikatz-9862656-0 FOUND
+/usr/share/windows-resources/mimikatz/Win32/mimidrv.sys: copied to '/home/msifland/infections/mimidrv.sys'
+/usr/share/windows-resources/mimikatz/Win32/mimilib.dll: Win.Tool.Mimikatz-10030748-0 FOUND
+/usr/share/windows-resources/mimikatz/Win32/mimilib.dll: copied to '/home/msifland/infections/mimilib.dll'
+/usr/share/windows-resources/mimikatz/Win32/mimikatz.exe: Win.Dropper.Mimikatz-9778171-1 FOUND
+/usr/share/windows-resources/mimikatz/Win32/mimikatz.exe: copied to '/home/msifland/infections/mimikatz.exe'
+/usr/share/windows-resources/mimikatz/x64/mimidrv.sys: Win.Tool.Mimikatz-9741197-0 FOUND
+/usr/share/windows-resources/mimikatz/x64/mimidrv.sys: copied to '/home/msifland/infections/mimidrv.sys.001'
+/usr/share/windows-resources/mimikatz/x64/mimilib.dll: Win.Tool.Mimikatz-10030748-0 FOUND
+/usr/share/windows-resources/mimikatz/x64/mimilib.dll: copied to '/home/msifland/infections/mimilib.dll.001'
+/usr/share/windows-resources/mimikatz/x64/mimikatz.exe: Win.Dropper.Mimikatz-9778171-1 FOUND
+/usr/share/windows-resources/mimikatz/x64/mimikatz.exe: copied to '/home/msifland/infections/mimikatz.exe.001'
+/usr/share/windows-resources/shellter/shellcode_samples/krb3: Win.Trojan.MSShellcode-6360729-4 FOUND
+/usr/share/windows-resources/shellter/shellcode_samples/krb3: copied to '/home/msifland/infections/krb3'
+/usr/share/windows-resources/shellter/shellcode_samples/krb1: Win.Trojan.MSShellcode-6360729-4 FOUND
+/usr/share/windows-resources/shellter/shellcode_samples/krb1: copied to '/home/msifland/infections/krb1'
+/usr/share/windows-resources/ncat/ncat.exe: Win.Trojan.Agent-1798578 FOUND
+/usr/share/windows-resources/ncat/ncat.exe: copied to '/home/msifland/infections/ncat.exe'
+/usr/share/windows-resources/sqldict/sqldict.exe: Win.Trojan.Hacktool-1395 FOUND
+/usr/share/windows-resources/sqldict/sqldict.exe: copied to '/home/msifland/infections/sqldict.exe'
+/usr/share/windows-resources/powercat/powercat.ps1: Win.Trojan.Powercat-9840812-0 FOUND
+/usr/share/windows-resources/powercat/powercat.ps1: copied to '/home/msifland/infections/powercat.ps1'
+/usr/share/windows-resources/wce/wce32.exe: Win.Tool.Wincred-6333920-0 FOUND
+/usr/share/windows-resources/wce/wce32.exe: copied to '/home/msifland/infections/wce32.exe'
+/usr/share/windows-resources/wce/wce-universal.exe: Win.Tool.Wincred-6333920-0 FOUND
+/usr/share/windows-resources/wce/wce-universal.exe: copied to '/home/msifland/infections/wce-universal.exe'
+/usr/share/windows-resources/wce/wce64.exe: Win.Tool.Wincred-6333920-0 FOUND
+/usr/share/windows-resources/wce/wce64.exe: copied to '/home/msifland/infections/wce64.exe'
+/usr/share/commix/src/core/shells/reverse_tcp.py: Win.Exploit.Powershell-1 FOUND
+/usr/share/commix/src/core/shells/reverse_tcp.py: copied to '/home/msifland/infections/reverse_tcp.py'
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+/usr/share/set/src/powershell/shellcode_injection.powershell: Win.Exploit.Powershell-1 FOUND
+/usr/share/set/src/powershell/shellcode_injection.powershell: copied to '/home/msifland/infections/shellcode_injection.powershell'
+/usr/share/set/src/fasttrack/exploits/solarwinds.py: Java.Trojan.MSShellcode-19 FOUND
+/usr/share/set/src/fasttrack/exploits/solarwinds.py: copied to '/home/msifland/infections/solarwinds.py'
+/usr/share/set/src/fasttrack/exploits/__pycache__/solarwinds.cpython-313.pyc: Java.Trojan.MSShellcode-19 FOUND
+/usr/share/set/src/fasttrack/exploits/__pycache__/solarwinds.cpython-313.pyc: copied to '/home/msifland/infections/solarwinds.cpython-313.pyc'
+/usr/share/set/src/fasttrack/exploits/__pycache__/firefox_3_6_16.cpython-313.pyc: Html.Exploit.CVE_2011_0065-1 FOUND
+/usr/share/set/src/fasttrack/exploits/__pycache__/firefox_3_6_16.cpython-313.pyc: copied to '/home/msifland/infections/firefox_3_6_16.cpython-313.pyc'
+/usr/share/set/src/fasttrack/exploits/firefox_3_6_16.py: Html.Exploit.CVE_2011_0065-1 FOUND
+/usr/share/set/src/fasttrack/exploits/firefox_3_6_16.py: copied to '/home/msifland/infections/firefox_3_6_16.py'
+/usr/share/set/src/core/setcore.py: Win.Exploit.Powershell-1 FOUND
+/usr/share/set/src/core/setcore.py: copied to '/home/msifland/infections/setcore.py'
+/usr/share/veil/tools/evasion/payloads/powershell/shellcode_inject/psexec_virtual.py: Win.Exploit.Powershell-1 FOUND
+/usr/share/veil/tools/evasion/payloads/powershell/shellcode_inject/psexec_virtual.py: copied to '/home/msifland/infections/psexec_virtual.py'
+/usr/share/veil/tools/evasion/payloads/powershell/shellcode_inject/virtual.py: Win.Exploit.Powershell-1 FOUND
+/usr/share/veil/tools/evasion/payloads/powershell/shellcode_inject/virtual.py: copied to '/home/msifland/infections/virtual.py'
+/usr/share/isr-evilgrade/agent/osx/update.dmg: Win.Trojan.Shell-65 FOUND
+/usr/share/isr-evilgrade/agent/osx/update.dmg: copied to '/home/msifland/infections/update.dmg'
+/usr/share/bettercap/caplets/crypto-miner/crypto-miner.js: Js.Coinminer.Generic-6836639-1 FOUND
+/usr/share/bettercap/caplets/crypto-miner/crypto-miner.js: copied to '/home/msifland/infections/crypto-miner.js'
+/usr/share/powershell-empire/empire/server/data/module_source/credentials/Invoke-CredentialInjection.ps1: Win.Trojan.PSempireInj-7013548-0 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/credentials/Invoke-CredentialInjection.ps1: copied to '/home/msifland/infections/Invoke-CredentialInjection.ps1.001'
+/usr/share/powershell-empire/empire/server/data/module_source/privesc/PowerUp.ps1: Win.Countermeasure.DotNetToJScript-9804890-0 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/privesc/PowerUp.ps1: copied to '/home/msifland/infections/PowerUp.ps1.001'
+/usr/share/powershell-empire/empire/server/data/module_source/python/situational_awareness/LinPEAS.py: Unix.Tool.LinPEASS-10004077-0 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/python/situational_awareness/LinPEAS.py: copied to '/home/msifland/infections/LinPEAS.py'
+/usr/share/powershell-empire/empire/server/data/module_source/lateral_movement/Invoke-SMBExec.ps1: Win.Exploit.CVE_2017_0144-7404604-0 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/lateral_movement/Invoke-SMBExec.ps1: copied to '/home/msifland/infections/Invoke-SMBExec.ps1'
+/usr/share/powershell-empire/empire/server/data/module_source/management/Invoke-PSInject.ps1: Win.Trojan.PSempireInj-7013548-0 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/management/Invoke-PSInject.ps1: copied to '/home/msifland/infections/Invoke-PSInject.ps1'
+/usr/share/powershell-empire/empire/server/data/module_source/management/Invoke-ReflectivePEInjection.ps1: Win.Exploit.PowerSploit-6983656-2 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/management/Invoke-ReflectivePEInjection.ps1: copied to '/home/msifland/infections/Invoke-ReflectivePEInjection.ps1.001'
+/usr/share/powershell-empire/empire/server/data/module_source/management/powercat.ps1: Win.Trojan.Powercat-9840812-0 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/management/powercat.ps1: copied to '/home/msifland/infections/powercat.ps1.001'
+/usr/share/powershell-empire/empire/server/data/module_source/collection/Get-Keystrokes.ps1: Win.Trojan.BabySharkPS1-3-7404875-2 FOUND
+/usr/share/powershell-empire/empire/server/data/module_source/collection/Get-Keystrokes.ps1: copied to '/home/msifland/infections/Get-Keystrokes.ps1'
+/usr/share/powershell-empire/empire/server/data/misc/x86_slim.dll: Win.Trojan.Generic-10024536-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/x86_slim.dll: copied to '/home/msifland/infections/x86_slim.dll'
+/usr/share/powershell-empire/empire/server/data/misc/ReflectivePick_x86_orig.dll: Win.Trojan.Generic-10024536-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/ReflectivePick_x86_orig.dll: copied to '/home/msifland/infections/ReflectivePick_x86_orig.dll'
+/usr/share/powershell-empire/empire/server/data/misc/x64_slim.dll: Win.Trojan.Generic-10024536-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/x64_slim.dll: copied to '/home/msifland/infections/x64_slim.dll'
+/usr/share/powershell-empire/empire/server/data/misc/machotemplate: Osx.Malware.Agent-6509323-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/machotemplate: copied to '/home/msifland/infections/machotemplate'
+/usr/share/powershell-empire/empire/server/data/misc/apptemplateResources/empty/macho: Osx.Malware.Agent-6537989-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/apptemplateResources/empty/macho: copied to '/home/msifland/infections/macho'
+/usr/share/powershell-empire/empire/server/data/misc/apptemplateResources/x64/launcher.app/Contents/MacOS/launcher: Osx.Malware.Agent-7367901-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/apptemplateResources/x64/launcher.app/Contents/MacOS/launcher: copied to '/home/msifland/infections/launcher'
+/usr/share/powershell-empire/empire/server/data/misc/apptemplateResources/x86/launcher.app/Contents/MacOS/launcher: Osx.Malware.Agent-6494195-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/apptemplateResources/x86/launcher.app/Contents/MacOS/launcher: copied to '/home/msifland/infections/launcher.001'
+/usr/share/powershell-empire/empire/server/data/misc/ReflectivePick_x64_orig.dll: Win.Trojan.Generic-10024536-0 FOUND
+/usr/share/powershell-empire/empire/server/data/misc/ReflectivePick_x64_orig.dll: copied to '/home/msifland/infections/ReflectivePick_x64_orig.dll'
+/usr/share/powershell-empire/empire/server/utils/listener_util.py: Osx.Trojan.EmPyre-6861250-0 FOUND
+/usr/share/powershell-empire/empire/server/utils/listener_util.py: copied to '/home/msifland/infections/listener_util.py'
+/usr/share/peass/linpeas/linpeas_small.sh: Unix.Tool.LinPEASS-10004077-0 FOUND
+/usr/share/peass/linpeas/linpeas_small.sh: copied to '/home/msifland/infections/linpeas_small.sh'
+/usr/share/peass/linpeas/linpeas.sh: Unix.Tool.LinPEASS-10004077-0 FOUND
+/usr/share/peass/linpeas/linpeas.sh: copied to '/home/msifland/infections/linpeas.sh'
+/usr/share/peass/linpeas/linpeas_fat.sh: Unix.Tool.LinPEASS-10004077-0 FOUND
+/usr/share/peass/linpeas/linpeas_fat.sh: copied to '/home/msifland/infections/linpeas_fat.sh'
+/usr/bin/cymothoa: Unix.Tool.13323-1 FOUND
+/usr/bin/cymothoa: copied to '/home/msifland/infections/cymothoa'
+/usr/lib/passing-the-hash/pth-samba.so: Unix.Malware.SMBAgent-9911804-0 FOUND
+/usr/lib/passing-the-hash/pth-samba.so: copied to '/home/msifland/infections/pth-samba.so'
 LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+/etc/unicornscan/payloads.conf: Py.Trojan.NecroBot-9868091-0 FOUND
+/etc/unicornscan/payloads.conf: copied to '/home/msifland/infections/payloads.conf'
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 8709007
+Known viruses: 3626999
 Engine version: 1.4.3
-Scanned directories: 42444
-Scanned files: 389792
-Infected files: 7
-Total errors: 182
-Data scanned: 68319.25 MB
-Data read: 148356.46 MB (ratio 0.46:1)
-Time: 23567.743 sec (392 m 47 s)
-Start Date: 2025:12:15 02:15:24
-End Date:   2025:12:15 08:48:11
+Scanned directories: 77739
+Scanned files: 644829
+Infected files: 731
+Total errors: 349
+Data scanned: 51726.52 MB
+Data read: 80746.27 MB (ratio 0.64:1)
+Time: 19020.053 sec (317 m 0 s)
+Start Date: 2025:12:22 02:15:24
+End Date:   2025:12:22 07:32:24
 
 
 End Time:
-Date: 12-15-25
-Time: 08:48:12 AM
-It took 6 hours 32 minutes 56 seconds to scan your system.
+Date: 12-22-25
+Time: 07:32:24 AM
+It took 5 hours 17 minutes 8 seconds to scan your system.
 
 
-[1;38;5;243m
+[1;38;5;106m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
