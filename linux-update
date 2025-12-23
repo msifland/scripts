@@ -99,6 +99,8 @@ for file in "${CONFIG_FILES[@]}"; do
         echo "  Backed up ~/$file"
 done
 sudo cp /etc/ssh/sshd_config "$BACKUP_CONFIG_DIR/"
+echo "  Backup up sshd_config"
+
 # =============================================================================
 # 6. Backup crontab (user + root if exists)
 # =============================================================================
