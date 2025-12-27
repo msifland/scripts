@@ -54,6 +54,24 @@ EXCLUDE="--exclude-dir=^$HOME/roms
 --exclude-dir=^/sys
 --exclude-dir=^/dev
 --exclude-dir=^/proc
+--exclude-dir=^/usr/share/exploitdb
+--exclude-dir=^/usr/share/webshells
+--exclude-dir=^/usr/share/nishang
+--exclude-dir=^/usr/share/seclists
+--exclude-dir=^/usr/share/beef-xss
+--exclude-dir=^/usr/share/davtest
+--exclude-dir=^/usr/share/sqlninja
+--exclude-dir=^/usr/share/windows-resources
+--exclude-dir=^/usr/share/commix
+--exclude-dir=^/usr/share/set/src
+--exclude-dir=^/usr/share/veil
+--exclude-dir=^/usr/share/isr-evilgrade
+--exclude-dir=^/usr/share/bettercap
+--exclude-dir=^/usr/share/powershell-empire
+--exclude-dir=^/usr/share/peass
+--exclude-dir=^/usr/bin/cymothoa
+--exclude-dir=^/usr/lib/passing-the-hash
+--exclude-dir=^/etc/unicornscan/payloads.conf
 --exclude=.*metasploit-framework.*
 "
 # Example for exclusion:
