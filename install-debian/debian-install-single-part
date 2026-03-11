@@ -22,7 +22,7 @@ ask()   { read -rp "$1[y/N]: " ans; [[ "$ans" =~ ^[yY]|[yY][eE][Ss]$ ]]; }
 
 #---------------------Explanation---------------------------------------#
 clear
-log "This is for insalling Debian to a single partition on a system that already has a running Linux system. Not boot partitions, or grub install. System will be read from grub os-prober from existing OS."
+log "This is for insalling Debian to a single partition on a system that already has a running Linux system. No boot partitions, or grub install. System will be read from grub os-prober from existing OS."
 if ! ask "Would you like to continue?"; then
 	echo
 	echo "Exiting script"

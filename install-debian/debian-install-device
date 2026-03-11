@@ -26,9 +26,17 @@ ask()   { read -rp "$1[y/N]: " ans; [[ "$ans" =~ ^[yY]|[yY][eE][Ss]$ ]]; }
 
 #---------------------Explanation---------------------------------------#
 clear
-log "Debian MATE Full System Installer"
-echo "This will install a complete, personalized Debian MATE system to a disk, with UEFI boot."
-echo "All data on the target disk will be erased if you choose to wipe it."
+echo "============================================================"
+echo "   			Debian Full System Installer"
+echo "============================================================"
+echo
+echo "This script will:"
+echo "  • Install a complete, personalized Debian system to a disk, with UEFI boot"
+echo "  • Apply your package list and configs"
+echo "  • Copy your personal files and dotfiles"
+echo "  • Build the final live ISO"
+echo "  • Let you choose a distro to install"
+echo "  • All data on the target disk will be erased if you choose to wipe it"
 sleep 1
 
 # -------------------------- Select target disk --------------------#

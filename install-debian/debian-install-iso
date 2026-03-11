@@ -24,7 +24,7 @@ GOOGLE_CHRM_SCRIPT="$HOME_DIR/scripts/google-chrome-latest-install"
 
 clear
 echo "============================================================"
-echo "   Debian MATE Live ISO Builder-FULL ISO (with personal configs)"
+echo "   Debian Live ISO Builder-FULL ISO (with personal configs)"
 echo "============================================================"
 echo
 echo "This script will:"
