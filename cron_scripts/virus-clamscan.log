@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;49m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;168m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;49m
+[1;38;5;168m
 Removing old build logs. . .
 
 [0m
-[1;38;5;49m
+[1;38;5;168m
 Start Time:
-Date: 02-23-26
-Time: 02:15:16 AM
+Date: 03-30-26
+Time: 02:15:17 AM
 
 Scanning: 
 /
@@ -54,3 +54,136 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+/home/msifland/openwrt/build_dir/target-aarch64_cortex-a53_musl/privoxy-4.0.0-stable/tests/cts/content-filters/data/test33: Win.Exploit.URLSpoof-2 FOUND
+/home/msifland/openwrt/build_dir/target-aarch64_cortex-a53_musl/privoxy-4.0.0-stable/tests/cts/content-filters/data/test33: copied to '/home/msifland/infections/test33'
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Warning: cli_scanxz: decompress file size exceeds limits - only scanning 105906176 bytes
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: premature end of compressed stream
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
+LibClamAV Error: cli_scanxz: decompress error: 1
