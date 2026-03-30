@@ -16,21 +16,14 @@ $HOME/scripts
 $HOME/Templates
 $HOME/Wallpapers
 $HOME/usb_pkg_bkups
-$HOME/.anydesk
-$HOME/.blerc
 $HOME/.cache
 $HOME/.config
-$HOME/.icons
 $HOME/.local
 $HOME/.profile
-$HOME/.ssh
-$HOME/.themes
-$HOME/.xprofile
 $HOME/.Xresources
 $HOME/.bash*
 $HOME/.conky*
 $HOME/.git*
-$HOME/.repo*
 /usr/share/mate*"
 
 # Excluded files and folders
@@ -54,6 +47,7 @@ EXCLUDE="--exclude=$HOME/.cache/chromium
 --exclude=$HOME/.config/google-chrome
 --exclude=$HOME/.config/skypeforlinux
 --exclude=$HOME/.config/Code
+--exclude=$HOME/.config/variety/Downloaded
 --exclude=$HOME/.config/variety/variety.log
 --exclude=$HOME/.local/share/applications
 --exclude=$HOME/.local/share/baloo
