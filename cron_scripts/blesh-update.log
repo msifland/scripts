@@ -1,4 +1,63 @@
 
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
-Already up to date.
+From https://github.com/akinomyoga/ble.sh
+   f38850cb..6cffa910  master     -> origin/master
+Fetching submodule contrib
+From https://github.com/akinomyoga/blesh-contrib
+   261b229..68a24b2  master     -> origin/master
+Updating f38850cb..6cffa910
+Fast-forward
+ README.md             |   8 +-
+ ble.pp                |   2 +-
+ contrib               |   2 +-
+ docs/CONTRIBUTING.md  |  10 +-
+ docs/ChangeLog.md     |  36 +++--
+ docs/Release.md       |  44 +++---
+ lib/core-complete.sh  |  62 ++++++--
+ lib/keymap.emacs.sh   |   2 +-
+ lib/keymap.vi.sh      |   2 +-
+ lib/test-keymap.vi.sh |  34 ++--
+ lib/test-syntax.sh    |   2 +-
+ lib/util.bgproc.sh    |  26 +--
+ make_command.sh       |   3 +
+ note.txt              | 427 +++++++++++++++++++++++++++++++++++++++++++++++++-
+ src/canvas.sh         |   2 +-
+ src/decode.sh         |  10 +-
+ src/edit.sh           |  17 ++
+ src/util.sh           | 114 +++++++++++---
+ 18 files changed, 670 insertions(+), 133 deletions(-)
+Submodule path 'contrib': checked out '68a24b27769d70d057d9839c1b9a88a1b21a8474'
+DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
+  FULLVER=0.4.0-devel4 \
+  BLE_GIT_COMMIT_ID="6cffa910" \
+  BLE_GIT_BRANCH="master" \
+  BUILD_GIT_VERSION="git version 2.53.0" \
+  BUILD_MAKE_VERSION="GNU Make 4.4.1" \
+  BUILD_GAWK_VERSION="GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)" \
+  /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
+bash make_command.sh install  "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
+cp lib/keymap.emacs.sh out/lib/keymap.emacs.sh
+bash make_command.sh install  "out/lib/keymap.emacs.sh" "/home/msifland/.local/share/blesh/lib/keymap.emacs.sh"
+cp lib/keymap.vi.sh out/lib/keymap.vi.sh
+bash make_command.sh install  "out/lib/keymap.vi.sh" "/home/msifland/.local/share/blesh/lib/keymap.vi.sh"
+cp lib/core-complete.sh out/lib/core-complete.sh
+bash make_command.sh install  "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
+cp lib/util.bgproc.sh out/lib/util.bgproc.sh
+bash make_command.sh install  "out/lib/util.bgproc.sh" "/home/msifland/.local/share/blesh/lib/util.bgproc.sh"
+cp lib/test-syntax.sh out/lib/test-syntax.sh
+bash make_command.sh install  "out/lib/test-syntax.sh" "/home/msifland/.local/share/blesh/lib/test-syntax.sh"
+cp lib/test-keymap.vi.sh out/lib/test-keymap.vi.sh
+bash make_command.sh install  "out/lib/test-keymap.vi.sh" "/home/msifland/.local/share/blesh/lib/test-keymap.vi.sh"
+cp contrib/histdb.bash out/contrib/histdb.bash
+bash make_command.sh install  "out/contrib/histdb.bash" "/home/msifland/.local/share/blesh/contrib/histdb.bash"
+cp README.md out/doc/README.md
+bash make_command.sh install "out/doc/README.md" "/home/msifland/.local/share/blesh/doc/README.md"
+cp docs/CONTRIBUTING.md out/doc/CONTRIBUTING.md
+bash make_command.sh install "out/doc/CONTRIBUTING.md" "/home/msifland/.local/share/blesh/doc/CONTRIBUTING.md"
+cp docs/ChangeLog.md out/doc/ChangeLog.md
+bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
+cp docs/Release.md out/doc/Release.md
+bash make_command.sh install "out/doc/Release.md" "/home/msifland/.local/share/blesh/doc/Release.md"
+cp contrib/colorglass.md out/doc/contrib/colorglass.md
+bash make_command.sh install "out/doc/contrib/colorglass.md" "/home/msifland/.local/share/blesh/doc/contrib/colorglass.md"
