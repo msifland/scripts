@@ -1,0 +1,131 @@
+#!/bin/bash
+# This script is for scanning a certain selected partition for viruses.
+
+PSWD="spike"
+
+echo $PSWD | sudo -S -v
+sudo umount /media &> /dev/null
+
+echo
+echo "Checking dependencies. . ."
+if ! dpkg --get-selections | grep -qw "clamav"; then
+	sudo apt install clamav
+else
+	echo
+	echo "clamav found."
+fi
+sleep 1
+
+# Description
+echo
+echo "${ILCOLOR2}We are going to scan a selected partition or folder for viruses.${ILRESTORE}"
+echo
+sleep 1
+
+# Showing available partitions.
+echo
+echo "${ILCOLOR2}Here are the available partitions:${ILRESTORE} "
+sleep 1
+lsblk --path
+#sudo blkid | awk '{print $1 " " $2}' | sed 's#:##g'
+echo
+sleep 1
+
+echo
+echo "${ILCOLOR2}Here are the root directories:${ILRESTORE} "
+sleep 1
+ls -d /*
+echo
+sleep 1    
+
+echo
+INFS_DIR=/infections
+read -p "${ILCOLOR2}Type the path where you want to place logs and infected files. Type full path, i.e. C:/Users/user/infections, C:/, /home/user/infections. If no path typed, default is $INFS_DIR: ${ILRESTORE}" INFS_DIR
+INFS_DIR=${user_input:-$INFS_DIR}
+if [[ ! -d $INFS_DIR ]]; then
+		mkdir $INFS_DIR
+fi
+
+# Function to scan, listed first so we can call it later.
+function scan_it(){
+	# Ask if you would like to copy or move found infections to the infections folder. Then run scan.
+	echo
+	WHR="c"
+	read -p "${ILCOLOR2}Would you like to move any found viruses to a folder, or would you like to copy them to a folder for analasys and manual removal((C)opy/(m)ove)?:${ILRESTORE} " WHR
+	WHR=${user_input:-$WHR}
+	sleep 1
+	echo
+	echo "${ILCOLOR2}Putting a log in $INFS_DIR/.custom-scan.txt${ILRESTORE}"
+	sleep 1
+	if [[ $WHR =~ ^([mM][oO][vV][eE]|[mM])$ ]]; then
+		echo "${ILCOLOR2}MOVING infected files to $INFS_DIR. . .${ILRESTORE}"
+		sleep 1
+		echo "${ILCOLOR2}sudo clamscan -r -i -v $PTH --move=$INFS_DIR${ILRESTORE}"
+		sleep 2
+		
+		sudo killall freshclam
+		sudo freshclam
+		sudo clamscan -r -i -v $PTH --move=$INFS_DIR
+	else
+		echo "${ILCOLOR2}COPYING infected files to $INFS_DIR${ILRESTORE}"
+		sleep 1
+		echo "${ILCOLOR2}sudo clamscan -r -i -v $PTH --copy=$INFS_DIR${ILRESTORE}"
+		sleep 2
+		# Delete this file as it seems to get locked up and can't update.
+		if [[ -f /var/log/clamav/freshclam.log ]]; then
+			sudo rm /var/log/clamav/freshclam.log
+		fi
+		sudo freshclam
+		sudo clamscan -r -i -v $PTH --copy=$INFS_DIR
+	fi
+}
+
+# Function to setup scan.
+# This is called first to run.
+function selected_path(){
+	# Ask name of directory or partition to scan.
+	echo
+	read -p "${ILCOLOR2}Scan location: You can either type in one of the partitions above for a full scan of that partition(/dev/sda2), or you can type in a custom location full path(/home/msifland/scripts):${ILRESTORE} " PTH
+	PTH_MNT="$PTH"
+	# Error handling if path or dev block exists. If exists call scan function, if not, then start over with this function.
+	if [[ -d $PTH ]]; then
+		echo
+		sleep 1
+		echo "${ILCOLOR2}Ok scanning $PTH. . .${ILRESTORE}"
+		sleep 1
+		scan_it
+	else
+		echo
+		sleep 1
+		echo "${ILCOLOR2}Path $PTH does not exist, checking /proc/mounts(mount points). . .${ILRESTORE}"
+		sleep 1
+		if sudo blkid | awk '{print $1}' | grep -w "$PTH"; then
+			echo
+			sleep 1
+			if sudo blkid | grep "$PTH" | grep -i "type=\"ntfs\""; then
+				echo "${ILCOLOR2}Ok, mounting $PTH to /mnt/ntfs and scanning. . .${ILRESTORE}"
+				if [[ ! -d /mnt/ntfs ]]; then
+					sudo mkdir /mnt/ntfs
+				fi
+				sudo mount -t ntfs "$PTH" /mnt/ntfs
+				PTH=/mnt/ntfs
+				sleep 1
+			else
+				echo "${ILCOLOR2}Ok, mounting $PTH to /media and scanning. . .${ILRESTORE}"
+				sudo mount $PTH /media
+				PTH=/media
+				sleep 1
+			fi
+			scan_it
+			sudo umount "$PTH_MNT"
+		else
+			echo
+			sleep 1
+			echo "${ILCOLOR2}Mount point $PTH does not exist, try again. . .${ILRESTORE}"
+			sleep 1
+			selected_path
+		fi
+	fi
+}
+# Call to start script at selected_path function, which will then call scan_it function.
+selected_path | tee $INFS_DIR/.custom-scan.txt
