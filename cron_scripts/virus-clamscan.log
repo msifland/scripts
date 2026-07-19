@@ -2,17 +2,17 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;246m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;17m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;246m
+[1;38;5;17m
 Removing old build logs. . .
 
 [0m
-[1;38;5;246m
+[1;38;5;17m
 Start Time:
-Date: 06-22-26
-Time: 02:15:17 AM
+Date: 07-13-26
+Time: 02:15:16 AM
 
 Scanning: 
 /
@@ -57,26 +57,26 @@ Running clamscan to scan for viruses. . .
 
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 3627878
+Known viruses: 3627896
 Engine version: 1.4.4
-Scanned directories: 70092
-Scanned files: 490144
+Scanned directories: 70613
+Scanned files: 493436
 Infected files: 0
-Total errors: 274
-Data scanned: 45598.93 MB
-Data read: 55605.70 MB (ratio 0.82:1)
-Time: 14997.922 sec (249 m 57 s)
-Start Date: 2026:06:22 02:15:25
-End Date:   2026:06:22 06:25:23
+Total errors: 277
+Data scanned: 45492.69 MB
+Data read: 53758.63 MB (ratio 0.85:1)
+Time: 14313.835 sec (238 m 33 s)
+Start Date: 2026:07:13 02:15:24
+End Date:   2026:07:13 06:13:58
 
 
 End Time:
-Date: 06-22-26
-Time: 06:25:23 AM
-It took 4 hours 10 minutes 6 seconds to scan your system.
+Date: 07-13-26
+Time: 06:13:58 AM
+It took 3 hours 58 minutes 42 seconds to scan your system.
 
 
-[1;38;5;246m
+[1;38;5;17m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m

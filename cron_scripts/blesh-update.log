@@ -2,62 +2,50 @@
 Updating ble.sh(bash syntax highlighting. . .
 cd into /home/msifland/Modules-Apps/ble.sh/ble.sh...
 From https://github.com/akinomyoga/ble.sh
-   f38850cb..6cffa910  master     -> origin/master
+   5d39ebe6..d69e4d54  master     -> origin/master
+   aafa3cf9..9bc7f182  gh-pages   -> origin/gh-pages
 Fetching submodule contrib
 From https://github.com/akinomyoga/blesh-contrib
-   261b229..68a24b2  master     -> origin/master
-Updating f38850cb..6cffa910
+   68a24b2..4ce6cff  master     -> origin/master
+Updating 5d39ebe6..d69e4d54
 Fast-forward
- README.md             |   8 +-
- ble.pp                |   2 +-
- contrib               |   2 +-
- docs/CONTRIBUTING.md  |  10 +-
- docs/ChangeLog.md     |  36 +++--
- docs/Release.md       |  44 +++---
- lib/core-complete.sh  |  62 ++++++--
- lib/keymap.emacs.sh   |   2 +-
- lib/keymap.vi.sh      |   2 +-
- lib/test-keymap.vi.sh |  34 ++--
- lib/test-syntax.sh    |   2 +-
- lib/util.bgproc.sh    |  26 +--
- make_command.sh       |   3 +
- note.txt              | 427 +++++++++++++++++++++++++++++++++++++++++++++++++-
- src/canvas.sh         |   2 +-
- src/decode.sh         |  10 +-
- src/edit.sh           |  17 ++
- src/util.sh           | 114 +++++++++++---
- 18 files changed, 670 insertions(+), 133 deletions(-)
-Submodule path 'contrib': checked out '68a24b27769d70d057d9839c1b9a88a1b21a8474'
-DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
+ contrib                           |   2 +-
+ docs/ChangeLog.md                 |   4 +-
+ make/color.sample.sh              |   8 +-
+ memo/D2416.alias.sh               | 148 ++++++++++++++++++++++++
+ memo/D2416.refactor-catppuccin.sh |  26 +++++
+ note.txt                          |  66 +++++++++++
+ src/color.sh                      | 238 +++++++++++++++++++++++++-------------
+ 7 files changed, 406 insertions(+), 86 deletions(-)
+ create mode 100755 memo/D2416.alias.sh
+ create mode 100755 memo/D2416.refactor-catppuccin.sh
+Submodule path 'contrib': checked out '4ce6cff7b784508cba4eea8b877699eb35f37b62'
+MWGPP_FLAGS=e \
+  DEPENDENCIES_PHONY=1 DEPENDENCIES_OUTPUT="out/ble.dep" DEPENDENCIES_TARGET="out/ble.sh" \
   FULLVER=0.4.0-devel4 \
-  BLE_GIT_COMMIT_ID="6cffa910" \
+  BLE_GIT_COMMIT_ID="d69e4d54" \
   BLE_GIT_BRANCH="master" \
   BUILD_GIT_VERSION="git version 2.53.0" \
   BUILD_MAKE_VERSION="GNU Make 4.4.1" \
   BUILD_GAWK_VERSION="GNU Awk 5.3.2, API 4.0, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)" \
   /usr/bin/gawk -f make/mwg_pp.awk ble.pp >/dev/null
 bash make_command.sh install  "out/ble.sh" "/home/msifland/.local/share/blesh/ble.sh"
-cp lib/keymap.emacs.sh out/lib/keymap.emacs.sh
-bash make_command.sh install  "out/lib/keymap.emacs.sh" "/home/msifland/.local/share/blesh/lib/keymap.emacs.sh"
-cp lib/keymap.vi.sh out/lib/keymap.vi.sh
-bash make_command.sh install  "out/lib/keymap.vi.sh" "/home/msifland/.local/share/blesh/lib/keymap.vi.sh"
-cp lib/core-complete.sh out/lib/core-complete.sh
-bash make_command.sh install  "out/lib/core-complete.sh" "/home/msifland/.local/share/blesh/lib/core-complete.sh"
-cp lib/util.bgproc.sh out/lib/util.bgproc.sh
-bash make_command.sh install  "out/lib/util.bgproc.sh" "/home/msifland/.local/share/blesh/lib/util.bgproc.sh"
-cp lib/test-syntax.sh out/lib/test-syntax.sh
-bash make_command.sh install  "out/lib/test-syntax.sh" "/home/msifland/.local/share/blesh/lib/test-syntax.sh"
-cp lib/test-keymap.vi.sh out/lib/test-keymap.vi.sh
-bash make_command.sh install  "out/lib/test-keymap.vi.sh" "/home/msifland/.local/share/blesh/lib/test-keymap.vi.sh"
-cp contrib/histdb.bash out/contrib/histdb.bash
-bash make_command.sh install  "out/contrib/histdb.bash" "/home/msifland/.local/share/blesh/contrib/histdb.bash"
-cp README.md out/doc/README.md
-bash make_command.sh install "out/doc/README.md" "/home/msifland/.local/share/blesh/doc/README.md"
-cp docs/CONTRIBUTING.md out/doc/CONTRIBUTING.md
-bash make_command.sh install "out/doc/CONTRIBUTING.md" "/home/msifland/.local/share/blesh/doc/CONTRIBUTING.md"
+cp contrib/colorglass.bash out/contrib/colorglass.bash
+bash make_command.sh install  "out/contrib/colorglass.bash" "/home/msifland/.local/share/blesh/contrib/colorglass.bash"
+cp contrib/scheme/catppuccin_mocha.bash out/contrib/scheme/catppuccin_mocha.bash
+bash make_command.sh install  "out/contrib/scheme/catppuccin_mocha.bash" "/home/msifland/.local/share/blesh/contrib/scheme/catppuccin_mocha.bash"
+cp contrib/scheme/dracula.bash out/contrib/scheme/dracula.bash
+bash make_command.sh install  "out/contrib/scheme/dracula.bash" "/home/msifland/.local/share/blesh/contrib/scheme/dracula.bash"
+cp contrib/scheme/rosepine_dawn.bash out/contrib/scheme/rosepine_dawn.bash
+bash make_command.sh install  "out/contrib/scheme/rosepine_dawn.bash" "/home/msifland/.local/share/blesh/contrib/scheme/rosepine_dawn.bash"
+cp contrib/scheme/rosepine_moon.bash out/contrib/scheme/rosepine_moon.bash
+bash make_command.sh install  "out/contrib/scheme/rosepine_moon.bash" "/home/msifland/.local/share/blesh/contrib/scheme/rosepine_moon.bash"
+cp contrib/scheme/tokyonight.bash out/contrib/scheme/tokyonight.bash
+bash make_command.sh install  "out/contrib/scheme/tokyonight.bash" "/home/msifland/.local/share/blesh/contrib/scheme/tokyonight.bash"
+cp contrib/colorglass.base16.dat out/contrib/colorglass.base16.dat
+bash make_command.sh install  "out/contrib/colorglass.base16.dat" "/home/msifland/.local/share/blesh/contrib/colorglass.base16.dat"
 cp docs/ChangeLog.md out/doc/ChangeLog.md
 bash make_command.sh install "out/doc/ChangeLog.md" "/home/msifland/.local/share/blesh/doc/ChangeLog.md"
-cp docs/Release.md out/doc/Release.md
-bash make_command.sh install "out/doc/Release.md" "/home/msifland/.local/share/blesh/doc/Release.md"
-cp contrib/colorglass.md out/doc/contrib/colorglass.md
-bash make_command.sh install "out/doc/contrib/colorglass.md" "/home/msifland/.local/share/blesh/doc/contrib/colorglass.md"
+mkdir -p out/doc/contrib/scheme
+cp contrib/scheme/README.md out/doc/contrib/scheme/README.md
+bash make_command.sh install "out/doc/contrib/scheme/README.md" "/home/msifland/.local/share/blesh/doc/contrib/scheme/README.md"
