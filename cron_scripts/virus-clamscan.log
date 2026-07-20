@@ -2,16 +2,16 @@
 Checking dependencies. . .
 
 clamav found.
-Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;17m
+Would you like to update virus definitions first(sudo freshclam)[y/n]? [1;38;5;31m
 Ok, not updating virus definitions now. . .
 [0m
-[1;38;5;17m
+[1;38;5;31m
 Removing old build logs. . .
 
 [0m
-[1;38;5;17m
+[1;38;5;31m
 Start Time:
-Date: 07-13-26
+Date: 07-20-26
 Time: 02:15:16 AM
 
 Scanning: 
@@ -55,28 +55,454 @@ Excluding:
 
 Running clamscan to scan for viruses. . .
 
+traverse_to: Failed open sudoers
+WARNING: Can't open file /home/msifland/tmp/sudoers for safe quarantine action: Can't open file or directory
+traverse_to: Failed open grub.cfg
+WARNING: Can't open file /boot/grub/grub.cfg for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smbXsrv_open_global.tdb
+WARNING: Can't open file /run/samba/smbXsrv_open_global.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smbXsrv_tcon_global.tdb
+WARNING: Can't open file /run/samba/smbXsrv_tcon_global.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smbXsrv_session_global.tdb
+WARNING: Can't open file /run/samba/smbXsrv_session_global.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smbXsrv_client_global.tdb
+WARNING: Can't open file /run/samba/smbXsrv_client_global.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smbXsrv_version_global.tdb
+WARNING: Can't open file /run/samba/smbXsrv_version_global.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open names.tdb
+WARNING: Can't open file /run/samba/names.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open agetty.reload
+WARNING: Can't open file /run/agetty.reload for safe quarantine action: Can't open file or directory
+traverse_to: Failed open sm-notify.pid
+WARNING: Can't open file /run/sm-notify.pid for safe quarantine action: Can't open file or directory
+traverse_to: Failed open .sesman.socket.lock
+WARNING: Can't open file /run/xrdp/sockdir/.sesman.socket.lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open lo.nmconnection
+WARNING: Can't open file /run/NetworkManager/system-connections/lo.nmconnection for safe quarantine action: Can't open file or directory
+traverse_to: Failed open crond.reboot
+WARNING: Can't open file /run/crond.reboot for safe quarantine action: Can't open file or directory
+traverse_to: Failed open info
+WARNING: Can't open file /run/rpc_pipefs/gssd/clntXX/info for safe quarantine action: Can't open file or directory
+traverse_to: Failed open reg
+WARNING: Can't open file /run/user/1000/systemd/inaccessible/reg for safe quarantine action: Can't open file or directory
+traverse_to: Failed open .s.PGSQL.5432.lock
+WARNING: Can't open file /run/postgresql/.s.PGSQL.5432.lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open mysqld.pid
+WARNING: Can't open file /run/mysqld/mysqld.pid for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:213479747
+WARNING: Can't open file /run/systemd/journal/streams/10:213479747 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:213477070
+WARNING: Can't open file /run/systemd/journal/streams/10:213477070 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:198782575
+WARNING: Can't open file /run/systemd/journal/streams/10:198782575 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:198758724
+WARNING: Can't open file /run/systemd/journal/streams/10:198758724 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:198722643
+WARNING: Can't open file /run/systemd/journal/streams/10:198722643 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:198714673
+WARNING: Can't open file /run/systemd/journal/streams/10:198714673 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:198706213
+WARNING: Can't open file /run/systemd/journal/streams/10:198706213 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:198699293
+WARNING: Can't open file /run/systemd/journal/streams/10:198699293 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:22318781
+WARNING: Can't open file /run/systemd/journal/streams/10:22318781 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:452577
+WARNING: Can't open file /run/systemd/journal/streams/10:452577 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:41947
+WARNING: Can't open file /run/systemd/journal/streams/10:41947 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:35505
+WARNING: Can't open file /run/systemd/journal/streams/10:35505 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:35504
+WARNING: Can't open file /run/systemd/journal/streams/10:35504 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:42383
+WARNING: Can't open file /run/systemd/journal/streams/10:42383 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:42382
+WARNING: Can't open file /run/systemd/journal/streams/10:42382 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:44252
+WARNING: Can't open file /run/systemd/journal/streams/10:44252 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:44251
+WARNING: Can't open file /run/systemd/journal/streams/10:44251 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:44250
+WARNING: Can't open file /run/systemd/journal/streams/10:44250 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:44249
+WARNING: Can't open file /run/systemd/journal/streams/10:44249 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:46144
+WARNING: Can't open file /run/systemd/journal/streams/10:46144 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:46143
+WARNING: Can't open file /run/systemd/journal/streams/10:46143 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:46140
+WARNING: Can't open file /run/systemd/journal/streams/10:46140 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:46086
+WARNING: Can't open file /run/systemd/journal/streams/10:46086 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:46083
+WARNING: Can't open file /run/systemd/journal/streams/10:46083 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:46082
+WARNING: Can't open file /run/systemd/journal/streams/10:46082 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:36862
+WARNING: Can't open file /run/systemd/journal/streams/10:36862 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:44164
+WARNING: Can't open file /run/systemd/journal/streams/10:44164 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:44159
+WARNING: Can't open file /run/systemd/journal/streams/10:44159 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:33718
+WARNING: Can't open file /run/systemd/journal/streams/10:33718 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:36438
+WARNING: Can't open file /run/systemd/journal/streams/10:36438 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:36437
+WARNING: Can't open file /run/systemd/journal/streams/10:36437 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:31729
+WARNING: Can't open file /run/systemd/journal/streams/10:31729 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:36391
+WARNING: Can't open file /run/systemd/journal/streams/10:36391 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:33317
+WARNING: Can't open file /run/systemd/journal/streams/10:33317 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:36384
+WARNING: Can't open file /run/systemd/journal/streams/10:36384 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:36229
+WARNING: Can't open file /run/systemd/journal/streams/10:36229 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:35945
+WARNING: Can't open file /run/systemd/journal/streams/10:35945 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:32651
+WARNING: Can't open file /run/systemd/journal/streams/10:32651 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:32441
+WARNING: Can't open file /run/systemd/journal/streams/10:32441 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:26734
+WARNING: Can't open file /run/systemd/journal/streams/10:26734 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:26733
+WARNING: Can't open file /run/systemd/journal/streams/10:26733 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:26732
+WARNING: Can't open file /run/systemd/journal/streams/10:26732 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:26731
+WARNING: Can't open file /run/systemd/journal/streams/10:26731 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:26188
+WARNING: Can't open file /run/systemd/journal/streams/10:26188 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:20913
+WARNING: Can't open file /run/systemd/journal/streams/10:20913 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:25860
+WARNING: Can't open file /run/systemd/journal/streams/10:25860 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:16262
+WARNING: Can't open file /run/systemd/journal/streams/10:16262 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:14960
+WARNING: Can't open file /run/systemd/journal/streams/10:14960 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:14959
+WARNING: Can't open file /run/systemd/journal/streams/10:14959 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:19467
+WARNING: Can't open file /run/systemd/journal/streams/10:19467 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:19465
+WARNING: Can't open file /run/systemd/journal/streams/10:19465 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:15765
+WARNING: Can't open file /run/systemd/journal/streams/10:15765 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:15763
+WARNING: Can't open file /run/systemd/journal/streams/10:15763 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:17125
+WARNING: Can't open file /run/systemd/journal/streams/10:17125 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:14772
+WARNING: Can't open file /run/systemd/journal/streams/10:14772 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:18546
+WARNING: Can't open file /run/systemd/journal/streams/10:18546 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:15711
+WARNING: Can't open file /run/systemd/journal/streams/10:15711 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:15708
+WARNING: Can't open file /run/systemd/journal/streams/10:15708 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:12845
+WARNING: Can't open file /run/systemd/journal/streams/10:12845 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:12111
+WARNING: Can't open file /run/systemd/journal/streams/10:12111 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:15495
+WARNING: Can't open file /run/systemd/journal/streams/10:15495 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:15494
+WARNING: Can't open file /run/systemd/journal/streams/10:15494 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:16431
+WARNING: Can't open file /run/systemd/journal/streams/10:16431 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:16430
+WARNING: Can't open file /run/systemd/journal/streams/10:16430 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:16419
+WARNING: Can't open file /run/systemd/journal/streams/10:16419 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:16418
+WARNING: Can't open file /run/systemd/journal/streams/10:16418 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open 10:3996
+WARNING: Can't open file /run/systemd/journal/streams/10:3996 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open reg
+WARNING: Can't open file /run/systemd/inaccessible/reg for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smbspool_krb5_wrapper
+WARNING: Can't open file /usr/libexec/samba/smbspool_krb5_wrapper for safe quarantine action: Can't open file or directory
+traverse_to: Failed open cups-brf
+WARNING: Can't open file /usr/lib/cups/backend/cups-brf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open implicitclass
+WARNING: Can't open file /usr/lib/cups/backend/implicitclass for safe quarantine action: Can't open file or directory
+/usr/lib/python3/dist-packages/src/core/shells/reverse_tcp.py: Win.Exploit.Powershell-1 FOUND
+/usr/lib/python3/dist-packages/src/core/shells/reverse_tcp.py: copied to '/home/msifland/infections/reverse_tcp.py'
+traverse_to: Failed open cron.weekly
+WARNING: Can't open file /var/spool/anacron/cron.weekly for safe quarantine action: Can't open file or directory
+traverse_to: Failed open cron.yearly
+WARNING: Can't open file /var/spool/anacron/cron.yearly for safe quarantine action: Can't open file or directory
+traverse_to: Failed open cron.monthly
+WARNING: Can't open file /var/spool/anacron/cron.monthly for safe quarantine action: Can't open file or directory
+traverse_to: Failed open cron.daily
+WARNING: Can't open file /var/spool/anacron/cron.daily for safe quarantine action: Can't open file or directory
+traverse_to: Failed open passwords.dat
+WARNING: Can't open file /var/cache/debconf/passwords.dat for safe quarantine action: Can't open file or directory
+traverse_to: Failed open lock
+WARNING: Can't open file /var/cache/apt/archives/lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open default_key.pem
+WARNING: Can't open file /var/lib/inetsim/certs/default_key.pem for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pop3.session
+WARNING: Can't open file /var/lib/inetsim/pop3/pop3.session for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pop3s.data
+WARNING: Can't open file /var/lib/inetsim/pop3/pop3s.data for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pop3.data
+WARNING: Can't open file /var/lib/inetsim/pop3/pop3.data for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pop3s.lock
+WARNING: Can't open file /var/lib/inetsim/pop3/pop3s.lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pop3s.session
+WARNING: Can't open file /var/lib/inetsim/pop3/pop3s.session for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pop3.lock
+WARNING: Can't open file /var/lib/inetsim/pop3/pop3.lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smtps.mbox
+WARNING: Can't open file /var/lib/inetsim/smtp/smtps.mbox for safe quarantine action: Can't open file or directory
+traverse_to: Failed open smtp.mbox
+WARNING: Can't open file /var/lib/inetsim/smtp/smtp.mbox for safe quarantine action: Can't open file or directory
+traverse_to: Failed open tftp.session
+WARNING: Can't open file /var/lib/inetsim/tftp/upload/tftp.session for safe quarantine action: Can't open file or directory
+traverse_to: Failed open lock
+WARNING: Can't open file /var/lib/apt/lists/lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open status
+WARNING: Can't open file /var/lib/logrotate/status for safe quarantine action: Can't open file or directory
+traverse_to: Failed open random-seed
+WARNING: Can't open file /var/lib/systemd/random-seed for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ddl_recovery.log
+WARNING: Can't open file /var/lib/mysql/ddl_recovery.log for safe quarantine action: Can't open file or directory
+traverse_to: Failed open aria_log_control
+WARNING: Can't open file /var/lib/mysql/aria_log_control for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ddl_recovery-backup.log
+WARNING: Can't open file /var/lib/mysql/ddl_recovery-backup.log for safe quarantine action: Can't open file or directory
+traverse_to: Failed open multi-master.info
+WARNING: Can't open file /var/lib/mysql/multi-master.info for safe quarantine action: Can't open file or directory
+traverse_to: Failed open undo001
+WARNING: Can't open file /var/lib/mysql/undo001 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open tc.log
+WARNING: Can't open file /var/lib/mysql/tc.log for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ib_buffer_pool
+WARNING: Can't open file /var/lib/mysql/ib_buffer_pool for safe quarantine action: Can't open file or directory
+traverse_to: Failed open undo002
+WARNING: Can't open file /var/lib/mysql/undo002 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open aria_log.00000001
+WARNING: Can't open file /var/lib/mysql/aria_log.00000001 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open undo003
+WARNING: Can't open file /var/lib/mysql/undo003 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ib_logfile0
+WARNING: Can't open file /var/lib/mysql/ib_logfile0 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ibtmp1
+WARNING: Can't open file /var/lib/mysql/ibtmp1 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ibdata1
+WARNING: Can't open file /var/lib/mysql/ibdata1 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open mok.key
+WARNING: Can't open file /var/lib/dkms/mok.key for safe quarantine action: Can't open file or directory
+traverse_to: Failed open lock
+WARNING: Can't open file /var/lib/dpkg/lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open lock-frontend
+WARNING: Can't open file /var/lib/dpkg/lock-frontend for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Lock
+WARNING: Can't open file /var/lib/dpkg/triggers/Lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open snmpd.conf
+WARNING: Can't open file /var/lib/snmp/snmpd.conf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open share_info.tdb
+WARNING: Can't open file /var/lib/samba/share_info.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open secrets.tdb
+WARNING: Can't open file /var/lib/samba/private/secrets.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open passdb.tdb
+WARNING: Can't open file /var/lib/samba/private/passdb.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open group_mapping.tdb
+WARNING: Can't open file /var/lib/samba/group_mapping.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open account_policy.tdb
+WARNING: Can't open file /var/lib/samba/account_policy.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open registry.tdb
+WARNING: Can't open file /var/lib/samba/registry.tdb for safe quarantine action: Can't open file or directory
+traverse_to: Failed open secret.key
+WARNING: Can't open file /var/lib/fwupd/pki/secret.key for safe quarantine action: Can't open file or directory
+traverse_to: Failed open plocate.db
+WARNING: Can't open file /var/lib/plocate/plocate.db for safe quarantine action: Can't open file or directory
+traverse_to: Failed open state.json
+WARNING: Can't open file /var/lib/snapd/state.json for safe quarantine action: Can't open file or directory
+traverse_to: Failed open xfs_scrub_all_media.stamp
+WARNING: Can't open file /var/lib/xfsprogs/xfs_scrub_all_media.stamp for safe quarantine action: Can't open file or directory
+traverse_to: Failed open clock.txt
+WARNING: Can't open file /var/lib/libuuid/clock.txt for safe quarantine action: Can't open file or directory
+traverse_to: Failed open clock-cont.txt
+WARNING: Can't open file /var/lib/libuuid/clock-cont.txt for safe quarantine action: Can't open file or directory
+traverse_to: Failed open :etc:default:sysstat
+WARNING: Can't open file /var/lib/ucf/cache/:etc:default:sysstat for safe quarantine action: Can't open file or directory
+traverse_to: Failed open .lock
+WARNING: Can't open file /var/lib/flatpak/repo/.lock for safe quarantine action: Can't open file or directory
+traverse_to: Failed open boot.log.3
+WARNING: Can't open file /var/log/boot.log.3 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open openvas.log.2.gz
+WARNING: Can't open file /var/log/gvm/openvas.log.2.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open openvas.log.1.gz
+WARNING: Can't open file /var/log/gvm/openvas.log.1.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open openvas.log.4.gz
+WARNING: Can't open file /var/log/gvm/openvas.log.4.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open openvas.log.5.gz
+WARNING: Can't open file /var/log/gvm/openvas.log.5.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open openvas.log.7.gz
+WARNING: Can't open file /var/log/gvm/openvas.log.7.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open openvas.log.3.gz
+WARNING: Can't open file /var/log/gvm/openvas.log.3.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open openvas.log.6.gz
+WARNING: Can't open file /var/log/gvm/openvas.log.6.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open xrdp-sesman.log.2.gz
+WARNING: Can't open file /var/log/xrdp-sesman.log.2.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open boot.log.7
+WARNING: Can't open file /var/log/boot.log.7 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open boot.log.5
+WARNING: Can't open file /var/log/boot.log.5 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open boot.log.1
+WARNING: Can't open file /var/log/boot.log.1 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open xrdp.log.2.gz
+WARNING: Can't open file /var/log/xrdp.log.2.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open xrdp-sesman.log.1.gz
+WARNING: Can't open file /var/log/xrdp-sesman.log.1.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open boot.log.2
+WARNING: Can't open file /var/log/boot.log.2 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open boot.log.6
+WARNING: Can't open file /var/log/boot.log.6 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open xrdp.log.1.gz
+WARNING: Can't open file /var/log/xrdp.log.1.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open boot.log.4
+WARNING: Can't open file /var/log/boot.log.4 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open freshclam.log.12.gz
+WARNING: Can't open file /var/log/clamav/freshclam.log.12.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open freshclam.log.3.gz
+WARNING: Can't open file /var/log/clamav/freshclam.log.3.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open freshclam.log.7.gz
+WARNING: Can't open file /var/log/clamav/freshclam.log.7.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open freshclam.log.1
+WARNING: Can't open file /var/log/clamav/freshclam.log.1 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open freshclam.log.11.gz
+WARNING: Can't open file /var/log/clamav/freshclam.log.11.gz for safe quarantine action: Can't open file or directory
+traverse_to: Failed open btmp.1
+WARNING: Can't open file /var/log/btmp.1 for safe quarantine action: Can't open file or directory
+traverse_to: Failed open btmp
+WARNING: Can't open file /var/log/btmp for safe quarantine action: Can't open file or directory
+traverse_to: Failed open mail
+WARNING: Can't open file /var/mail/mail for safe quarantine action: Can't open file or directory
+traverse_to: Failed open opasswd
+WARNING: Can't open file /etc/security/opasswd for safe quarantine action: Can't open file or directory
+traverse_to: Failed open gshadow
+WARNING: Can't open file /etc/gshadow for safe quarantine action: Can't open file or directory
+traverse_to: Failed open sudoers.dpkg-dist
+WARNING: Can't open file /etc/sudoers.dpkg-dist for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Home.profile
+WARNING: Can't open file /etc/gufw/Home.profile for safe quarantine action: Can't open file or directory
+traverse_to: Failed open firewall_profile.profile
+WARNING: Can't open file /etc/gufw/firewall_profile.profile for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Public.profile
+WARNING: Can't open file /etc/gufw/Public.profile for safe quarantine action: Can't open file or directory
+traverse_to: Failed open gufw.cfg
+WARNING: Can't open file /etc/gufw/gufw.cfg for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Office.profile
+WARNING: Can't open file /etc/gufw/Office.profile for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Ifland.nmconnection
+WARNING: Can't open file /etc/NetworkManager/system-connections/Ifland.nmconnection for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Ifland-5g.nmconnection
+WARNING: Can't open file /etc/NetworkManager/system-connections/Ifland-5g.nmconnection for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Ifland-5g 1.nmconnection
+WARNING: Can't open file /etc/NetworkManager/system-connections/Ifland-5g 1.nmconnection for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Wired connection 1.nmconnection
+WARNING: Can't open file /etc/NetworkManager/system-connections/Wired connection 1.nmconnection for safe quarantine action: Can't open file or directory
+traverse_to: Failed open subscriptions.conf.O
+WARNING: Can't open file /etc/cups/subscriptions.conf.O for safe quarantine action: Can't open file or directory
+traverse_to: Failed open subscriptions.conf
+WARNING: Can't open file /etc/cups/subscriptions.conf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open printers.conf
+WARNING: Can't open file /etc/cups/printers.conf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open printers.conf.O
+WARNING: Can't open file /etc/cups/printers.conf.O for safe quarantine action: Can't open file or directory
+traverse_to: Failed open Brother_MFC_9130CW.ppd
+WARNING: Can't open file /etc/cups/ppd/Brother_MFC_9130CW.ppd for safe quarantine action: Can't open file or directory
+traverse_to: Failed open msifland
+WARNING: Can't open file /etc/sudoers.d/msifland for safe quarantine action: Can't open file or directory
+traverse_to: Failed open server.key
+WARNING: Can't open file /etc/hostapd-mana/certs/server.key for safe quarantine action: Can't open file or directory
+traverse_to: Failed open chap-secrets
+WARNING: Can't open file /etc/ppp/chap-secrets for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pap-secrets
+WARNING: Can't open file /etc/ppp/pap-secrets for safe quarantine action: Can't open file or directory
+traverse_to: Failed open sudoers
+WARNING: Can't open file /etc/sudoers for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pg_ident.conf
+WARNING: Can't open file /etc/postgresql/18/main/pg_ident.conf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open pg_hba.conf
+WARNING: Can't open file /etc/postgresql/18/main/pg_hba.conf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open shadow-
+WARNING: Can't open file /etc/shadow- for safe quarantine action: Can't open file or directory
+traverse_to: Failed open debian.cnf
+WARNING: Can't open file /etc/mysql/debian.cnf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open passwd.client
+WARNING: Can't open file /etc/exim4/passwd.client for safe quarantine action: Can't open file or directory
+traverse_to: Failed open shadow
+WARNING: Can't open file /etc/shadow for safe quarantine action: Can't open file or directory
+traverse_to: Failed open before6.rules
+WARNING: Can't open file /etc/ufw/before6.rules for safe quarantine action: Can't open file or directory
+traverse_to: Failed open after.rules
+WARNING: Can't open file /etc/ufw/after.rules for safe quarantine action: Can't open file or directory
+traverse_to: Failed open before.init
+WARNING: Can't open file /etc/ufw/before.init for safe quarantine action: Can't open file or directory
+traverse_to: Failed open user6.rules
+WARNING: Can't open file /etc/ufw/user6.rules for safe quarantine action: Can't open file or directory
+traverse_to: Failed open before.rules
+WARNING: Can't open file /etc/ufw/before.rules for safe quarantine action: Can't open file or directory
+traverse_to: Failed open user.rules
+WARNING: Can't open file /etc/ufw/user.rules for safe quarantine action: Can't open file or directory
+traverse_to: Failed open after.init
+WARNING: Can't open file /etc/ufw/after.init for safe quarantine action: Can't open file or directory
+traverse_to: Failed open after6.rules
+WARNING: Can't open file /etc/ufw/after6.rules for safe quarantine action: Can't open file or directory
+traverse_to: Failed open snmpd.conf
+WARNING: Can't open file /etc/snmp/snmpd.conf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open gshadow-
+WARNING: Can't open file /etc/gshadow- for safe quarantine action: Can't open file or directory
+traverse_to: Failed open fwupd.conf
+WARNING: Can't open file /etc/fwupd/fwupd.conf for safe quarantine action: Can't open file or directory
+traverse_to: Failed open rsakeys.ini
+WARNING: Can't open file /etc/xrdp/rsakeys.ini for safe quarantine action: Can't open file or directory
+traverse_to: Failed open master.key
+WARNING: Can't open file /etc/dradis/shared/master.key for safe quarantine action: Can't open file or directory
+traverse_to: Failed open iodine
+WARNING: Can't open file /etc/default/iodine for safe quarantine action: Can't open file or directory
+traverse_to: Failed open cacerts
+WARNING: Can't open file /etc/default/cacerts for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ssh_host_ecdsa_key
+WARNING: Can't open file /etc/ssh/ssh_host_ecdsa_key for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ssh_host_ed25519_key
+WARNING: Can't open file /etc/ssh/ssh_host_ed25519_key for safe quarantine action: Can't open file or directory
+traverse_to: Failed open ssh_host_rsa_key
+WARNING: Can't open file /etc/ssh/ssh_host_rsa_key for safe quarantine action: Can't open file or directory
+traverse_to: Failed open .pwd.lock
+WARNING: Can't open file /etc/.pwd.lock for safe quarantine action: Can't open file or directory
 
 ----------- SCAN SUMMARY -----------
-Known viruses: 3627896
-Engine version: 1.4.4
-Scanned directories: 70613
-Scanned files: 493436
-Infected files: 0
-Total errors: 277
-Data scanned: 45492.69 MB
-Data read: 53758.63 MB (ratio 0.85:1)
-Time: 14313.835 sec (238 m 33 s)
-Start Date: 2026:07:13 02:15:24
-End Date:   2026:07:13 06:13:58
+Known viruses: 3627921
+Engine version: 1.4.5
+Scanned directories: 70834
+Scanned files: 502739
+Infected files: 1
+Total errors: 307
+Data scanned: 45662.71 MB
+Data read: 53634.81 MB (ratio 0.85:1)
+Time: 13740.098 sec (229 m 0 s)
+Start Date: 2026:07:20 02:15:24
+End Date:   2026:07:20 06:04:24
 
 
 End Time:
-Date: 07-13-26
-Time: 06:13:58 AM
-It took 3 hours 58 minutes 42 seconds to scan your system.
+Date: 07-20-26
+Time: 06:04:24 AM
+It took 3 hours 49 minutes 8 seconds to scan your system.
 
 
-[1;38;5;17m
+[1;38;5;31m
 You can edit included and excluded files and folders by typing edit-virus-clamscan
 
 [0m
